@@ -1,0 +1,776 @@
+#LyX 1.6.8 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass scrreprt
+\options a4paper,titlepage
+\use_default_options false
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 0
+\cite_engine natbib_authoryear
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Introduction
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "cha:Introduction"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Semiconductor microcavities (MC) are structures consisting of a heterostructure,
+ such as a quantum well (QW) or a heterojunction, which are embedded between
+ two high reflectivity distributed Bragg reflectors (DBR).
+ In these structures the photonic mode is spatially confined inside the
+ cavity layer.
+ When the cavity layer width is comparable to the exciton wavelength, interactio
+n between the exciton and the confined photon takes place.
+ The interaction strength can be described in two regimes: (a) the weak
+ coupling regime, where this interaction can be described by perturbation
+ theory, and (b) the strong coupling regime, where the system eigenenergies
+ are Rabi split modes termed cavity polaritons.
+\end_layout
+
+\begin_layout Plain Layout
+Recently, reflection and photoluminescence (PL) spectroscopy studies of
+ such structures containing a two-dimensional electron gas (2DEG) have been
+ reported, revealing sharp polaritonic lines, composed of a cavity photon
+ which is in strong interaction with unbound electron-hole (e-h) pair excitation
+s, located at the Fermi edge of the 2DEG.
+ In this study, we present a theoretical framework for the modeling of MCs
+ with embedded QWs, and thereby investigate the interaction of such electron-hol
+e pairs with the light field excitations within these structures near the
+ Fermi edge.
+ We start by considering the electronic properties of a bare QW via a two-level
+ 
+\begin_inset Formula $\mathbf{k\cdot p}$
+\end_inset
+
+ method, where the 2DEG influence is incorporated through a self-consistent
+ the Schrödinger-Poisson model.
+ Once the electronic properties of the QW are found, the light-matter interactio
+n in the QW is modeled via a semi classical approach.
+ We assume a dipole light-matter interaction, and discuss two approximated
+ methods to model the optical properties of the considered QW: (a) the free-carr
+ier model, where the Coulombic interaction is absent and the dephasing is
+ modeled phenomenologically, and (b) the screened Coulomb-correlated model,
+ where we incorporate both the Coulombic interactions between the charge
+ carrier and also discuss the mutual screening effect.
+ This calculation is performed with and without the presence of the 2DEG
+ in the well region of the QW, yielding the complex electrical susceptibility,
+ absorption and spontaneous emission spectra of the investigated of the
+ structure.
+\end_layout
+
+\begin_layout Plain Layout
+Next, the obtained electronic and optical properties of a bare QW are then
+ used to calculate the reflection spectra of the full MC structure, with
+ QW embedded in their cavity region.
+ This is achieved by using the refractive index spectrum of the QW, obtained
+ from its electrical susceptibility calculation, in the transfer matrix
+ calculation of the entire MC reflection spectrum.
+ As for the bare QW, the calculation is performed with and without the presence
+ of 2DEG of various concentrations.
+ Finally, the formulated approach is utilized to calculate the reflection
+ anti-crossing curves of the investigated MC structures, which are analyzed
+ manually and through a fitting procedure to the coupled-oscillator model.
+ This allows us to investigate the influence of the 2DEG of variable concentrati
+ons on the coupling strength of the electron-hole resonances with the cavity
+ photons and of the polaritonic linewidths.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+We show that the strong interaction of the cavity-confined photon with the
+ interband excitations of the two-dimensional electron gas leads to the
+ formation of cavity polaritons.
+ The most significant result is the demonstration that cavity polaritons
+ are indeed formed for high 2DEG densities at the Fermi edge energies.
+ In comparison, our model calculations show that excitons are not formed
+ in bare QWs having a 2DEG with such densities.
+ The coherence between all these e-h pair excitations is induced by the
+ strong interaction with the cavity mode, in contrast with the exciton-polariton
+s case, where the coherence stems from the Coulomb interaction between the
+ electron and hole.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Semiconductor microcavities (MC), which typically consist of a 
+\begin_inset Formula $GaAs$
+\end_inset
+
+ layer with Bragg mirrors on the top and bottom, have been the subject of
+ intense research more than a decade, since the first experimental evidence
+ of strong coupling between the excitations of an electronic system located
+ in the cavity and the confined photons 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Weisbuch1992"
+
+\end_inset
+
+.
+ This strong coupling is typically realized by embedding a quantum well
+ (QW) in the center of the MC.
+ If the QW exhibits a pronounced exciton transition whose energy is nearly
+ resonant with that of the confined photon, and when both bare exciton and
+ empty cavity linewidths are small enough, a strong exciton-photon coupling
+ is manifest by the appearance of two lines on the reflection spectra.
+ The so called Rabi splitting between these two modes is controlled by the
+ cavity and the QW exciton properties 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Quattropani1995,Burstein1995"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In fact, much of the physics of light-matter interaction was first studied
+ in the field of atomic physics, where a Rabi splitting was manifest for
+ a single atom confined in a metallic cavity 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Burstein1995"
+
+\end_inset
+
+.
+ The simplest model for the interaction of a radiation field with atoms
+ is the Jaynes-Cummings model 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Jaynes1962"
+
+\end_inset
+
+ which treats the case of a single two-level atom interacting with a single-mode
+ radiation field, using the dipole and rotating wave approximations.
+ When the photon energy matches the energy difference between the excited
+ and ground states of the atom, the lowest excited states of the system
+ are no longer degenerate.
+ The new eigenstates of the system are thus superpositions of the uncoupled
+ system states with an energy difference given by the Rabi frequency.
+ 
+\end_layout
+
+\begin_layout Standard
+The solid state analog was first discussed by Hopfield 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Hopfield1958"
+
+\end_inset
+
+, who showed that momentum conservation in bulk semiconductors constrains
+ an exciton to couple only to a photon with the same wavevector.
+ If the damping is weak enough, the new eigenstates are mixed photon-exciton
+ modes, named exciton-polaritons.
+ In contrast to the two-level atom case, the exciton-photon coupling strength
+ is constant, for a given semiconductor, and does not depend on the exciton
+ density.
+ The use of MCs with embedded QW enables to easily control and enlarge the
+ exciton-photon coupling strength.
+ The polaritonic splitting, determined by the exciton oscillator strength,
+ is about two-times larger for the 2D system compared the bulk semiconductor
+ case, which facilitates the easy attainment of the strong coupling regime
+ in such a system.
+ The spectroscopic and dynamic properties of polaritons resulting from the
+ basic resonances of the QW have been extensively studied.
+ For planar MCs with embedded QWs, the photon-exciton interactions lead
+ to crystal momentum conservation, resulting in a well defined polariton
+ dispersion in this plane.
+ 
+\end_layout
+
+\begin_layout Standard
+Thin dielectric structure growth technology has undergone a rapid development
+ thougout the last two-decades, facilitating the creation of ever more elaborate
+ structures for the investigation of light-matter interactions, in which
+ the coupling strength is easily amplified and controlled.
+ Such systems are typically comprised of commonly used alloy semiconductors
+ such as 
+\begin_inset Formula $GaAs$
+\end_inset
+
+, 
+\begin_inset Formula $AlAs$
+\end_inset
+
+ and 
+\begin_inset Formula $Al_{x}Ga_{1-x}As$
+\end_inset
+
+.
+ The first experiments that examined the spontaneous emission amplification
+ in QW via light trapping were conducted by Yamamoto, where a change in
+ the emission has been detected for high finesse semiconductor MCs.
+ The strong coupling of QW excitons with the MC trapped photons was first
+ shown experimentally by Weisbuch 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Weisbuch1992"
+
+\end_inset
+
+, which is in fact the first demonstration of a MC polariton.
+ In this system the Rabi splitting is proportional to the excitonic oscillator
+ strength.
+ As the lowest energy excitons in the QW (the heavy and light hole excitons)
+ are those with the strongest oscillator strength, the strong coupling regime
+ can be easily reached.
+ Thus the spectroscopic and dynamic properties of such MC polaritons have
+ been extensively investigated.
+ 
+\end_layout
+
+\begin_layout Standard
+In quantum structures comprised of 
+\begin_inset Formula $GaAs/Al_{x}Ga_{1-x}As$
+\end_inset
+
+ QWs, the ground state of the electronic system is determined by the carriers
+ populating the conduction band resulting from the structure modulation
+ doping.
+ This doping can be attained through several growth techniques, of which
+ we concentrate in the 
+\begin_inset Formula $\delta$
+\end_inset
+
+-doping scheme where a monoatomic layer of dopants is placed during the
+ structure growth in the cladding regions of the QW.
+ In such a structure, the QW conduction band electrons can be described
+ as a two-dimensional electron gas (2DEG).
+ The properties of such a gas can be probed through various experimental
+ techniques, such as optical spectra measurements and transform measurements
+ based on the quantum Hall effect.
+ The first approach enables the investigation of the entire spectrum of
+ the gas, in contrast with the transport measurements which provide a glimpse
+ only to the Fermi energy edge states of the electronic system.
+ The spectroscopic measurements, conducted at low temperatures and under
+ applied magnetic field, exhibit multi-particle phenomena stemming from
+ electron-electron and electron-hole interactions in the presence of the
+ 2DEG.
+ 
+\end_layout
+
+\begin_layout Standard
+In order to investigate the interactions between the electronic resonances
+ of the QW and the MC photonic mode as a function of the their energetic
+ difference, a quantum structure has to constructed where the energy of
+ one of the two can be altered in a controllable and constant fashion.
+ To this end, the MC structure is constructed of layers with variable width
+ along the diameter of the sample wafer.
+ The end result of this approach is that the exciton energy can be treated
+ as constant compared to that of the MC photon mode.
+ Through illumination of a specific location along the sample the system
+ can be brought to a interaction state where the photon mode energy equals
+ that of the electronic resonance.
+ The achieved coupling is typically described by two models.
+ The first is the coupled oscillator model, in which each one of the interacting
+ resonances is described by a simple quantum oscillator.
+ Here, the coupling Hamiltonian of the exciton and photon with a specific
+ coupling strength can be diagonalized in order to obtain the polariton
+ energy spectum.
+ A convenient form for the representation of the polaritonic excitation
+ mode are the anti-crossing diagrams, which plot the polariron energy as
+ a function of the energetic difference between the excitons and the photon,
+ 
+\begin_inset Formula $\delta$
+\end_inset
+
+.
+ Away from the resonance region of the system (
+\begin_inset Formula $|\delta|\gg0$
+\end_inset
+
+), the polariton energies equal the energies of the uncoupled exciton and
+ photon, while close to the resonance (
+\begin_inset Formula $\delta\approx0$
+\end_inset
+
+) these energies deviate from those of the exciton and amount to the Rabi
+ splitting of the system.
+ An alternative method for the description of this coupled system is the
+ linear dispersion model (LDM), where the transfer matrix formalism is employed.
+ Here, the refractive index of the QW is described by an effective refractive
+ index where the exciton is modeled by an Lorentzian oscillator.
+ 
+\end_layout
+
+\begin_layout Standard
+Recently, several experimental studies have been conducted 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Gabbay2007,Gabbay2007a,Gabbay2008"
+
+\end_inset
+
+ that examine the interaction of a 2DEG, introduced inside the QW through
+ various doping mechanisms, with the MC photon.
+ These studies have shown that in a doped QW placed inside a MC with high
+ 2DEG concentrations (
+\begin_inset Formula $n_{e}\geq0.9\times10^{11}\, cm^{-2}$
+\end_inset
+
+), where the system is devoid of excitons, there are still traces of strong
+ interaction between the trapped photonic mode and various electronic resonances
+ of the QW.
+ This finding confronts the accepted view that the disappearance of well
+ excitons leads to the destruction of the polaritonic modes.
+ As an explanation for this phenomenon, it was conjectured that the source
+ of the observed polaritonic lines are unbound electron-hole pairs with
+ Fermi wavevector.
+ The coherence between these pairs, dictated by the observed strong interaction,
+ was assumed to originate from the strong interaction itself.
+ For the verification of this proposition, a thorough experimental study
+ was conducted including the measurement of the reflection and photoluminescence
+ spectra such structures in the presence of 2DEG, with and without the applicati
+on of external magnetic field.
+ The introduction of the magnetic field facilitates in the separation of
+ the interaction of the photonic mode with the 2DEG electrons and with the
+ well excitations.
+ The obtained experimental results were backed by theoretical calculations
+ including the the dispersion relations of the studied QWs, the optical
+ susceptibility of these wells and finally the phenomenological dipole moments.
+ In order to calculate the reflection spectra the transfer matrix method
+ was employed.
+ The obtained experimental results were then fitted using the proposed experimen
+tal models in order to extract various experimental parameters.
+ 
+\end_layout
+
+\begin_layout Standard
+In this thesis we present a theoretical study of the electronic and optical
+ properties of MCs with a single embedded QW in the cavity region and introduced
+ 2DEG.
+ Here we propose a new modeling approach of such structures based on basic
+ physical considerations, which stands in contrast to the accepted convention
+ of fitting phenomenological models to experimental measurement results.
+\end_layout
+
+\begin_layout Standard
+We start the analysis in chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Electronic_Properties_Semiconductors"
+
+\end_inset
+
+ by discussing the electronic properties of bulk semiconductors and quantum
+ structures based on them.
+ We start by presenting the most general formulation of the crystal Hamiltonian
+ which is then simplified using the the Bloch formalism.
+ In order to solve the appropriate 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Schr
+\backslash
+"{o}dinger
+\end_layout
+
+\end_inset
+
+ equation, we resort to the semi-empirical 
+\begin_inset Formula $\mathbf{k}\cdot\mathbf{p}$
+\end_inset
+
+ approach where only part of the conduction and valence subbands of the
+ crystal are contributing, while all others are introduced as perturbations
+ to the Hamiltonian.
+ In order to describe the subband behavior of inhomogeneous quantum structures,
+ we use the envelope function approximation for the description of the crystal
+ Bloch function, and employ the Zinc-Blende model for the description of
+ the bulk semiconductor.
+ For the computational complexity simplification, we reformulate the problem
+ using the two-band approximation, described by a 
+\begin_inset Formula $4\times4$
+\end_inset
+
+ Hamiltonian matrix and the semi-empirical Luttinger parameters, which is
+ further simplified by a diagonalization scheme which bring the problem
+ down to a 
+\begin_inset Formula $2\times2$
+\end_inset
+
+ Hamiltonian formulation.
+ In this model, the conduction subbands are obtained using the effective
+ mass approximation, where a parabolic dispersion relation is assumed.
+ The solution the of the resulting coupled equations system for each value
+ of the wave vector is obtained through the use of a transfer matrix formulation
+ of the finite difference method computational scheme.
+ The end result of this approach is a set of envelope functions and eigenenergie
+s for each of the conduction and valence subbands, calculated for a wide
+ diapason of wavevector values.
+ These envelope functions are are subsequently used to calculate the matrix
+ elements of the momentum in the dipole approximation, thereby providing
+ the selection rules for the energetic intersubband transitions of the structure.
+ In order to consider the influence of external electrons on the electronic
+ properties of the QW, we add the proposed calculation scheme an electrostatic
+ calculation in the form of an iterative Poisson problem solution together
+ with the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Schr
+\backslash
+"{o}dinger
+\end_layout
+
+\end_inset
+
+ problem at hand.
+ This iterative approach introduces the influence of the presence of the
+ additional carriers through the subsequent alteration of the conduction
+ and valence bands energetic profiles.
+ In addition, through this quantitative presentation we introduce quantitatively
+ the concept of the 2DEG, which plays a major role in all considered quantum
+ structures throughout this thesis.
+\end_layout
+
+\begin_layout Standard
+With the consolidation of the model for the calculation of the electronic
+ properties of the considered structures, we turn in chapters 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Free_Carriers_Optical_Transitions"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Coulomb_Correlated_Optical_Transitions"
+
+\end_inset
+
+ to deal with their various optical properties.
+ To this end, we present in these chapters approximate models for the calculatio
+n of various optical parameters, including the optical susceptibility, absorptio
+n and the spontaneous emission of these structures.
+ For the sake of simplicity, we confine ourselves to a semi-classical discussion
+ of the semiconductor, where the charge carriers are described quantum mechanica
+lly while the electromagnetic (EM) field description is classical in nature.
+ We start by performing a second quantization of the full system Hamiltonian
+ without the presence of the EM field, thereby introducing the concept of
+ the hole.
+ The EM field is subsequently added to the Hamiltonian under the dipole
+ approximation.
+ For the attainment of the macroscopic optical parameters of the system
+ such as the optical susceptibility, we are required to first obtain the
+ microscopic polarization.
+ To this end, we turn to the solution of the Heisenberg equation for the
+ suitable quantum operator, with the use of the full Hamiltonian of the
+ system containing the light-matter interaction terms.
+ The microscopic polarization equation is coupled with similar equations
+ for the charge carrier densities quantum operators, which leads to the
+ creation of system of three coupled equations typically termed the Bloch
+ semiconductor equations.
+ The solutions of this system of equations is the main focus of theoretical
+ discussion presented in these chapter, which is performed in several stages.
+ In chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Free_Carriers_Optical_Transitions"
+
+\end_inset
+
+ we ignore to Coulombic interaction present between the various charge carriers
+ in the system, together with assumed equilibrium conditions between them
+ and simple phenomenological description of the carrier scattering process
+ in the crystal.
+ In chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Coulomb_Correlated_Optical_Transitions"
+
+\end_inset
+
+ we reincorporate the Coulombic interaction, which leads to a self dependent
+ series of equations treated in a approximate fashion using the Hartree-Fock
+ approach with the Hamiltonian first order deduction.
+ As in chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Free_Carriers_Optical_Transitions"
+
+\end_inset
+
+, an equilibrium conditions are assumed for the charge carriers and a naive
+ phenomenological model for the carrier scattering is employed.
+ In addition to these considerations, in this chapter we introduce the the
+ carrier screening effect through the classical Lindhard model of the crystal
+ dielectric function.
+ The addition of the Coulombic interaction to the model leads to the appearance
+ of the bandgap renormalization effect, the magnitude of which is strongly
+ dependent on the concentration of the introduced charge carriers in the
+ system.
+ Both approaches presented in these chapters, provide us with the spectra
+ of the electrical susceptibility, absorption, refractive index and the
+ spontaneous emission for a single bare QW.
+ 
+\end_layout
+
+\begin_layout Standard
+Using the introduced models, we next perform full calculation of the optical
+ properties of quantum structures considered in this thesis, in particular
+ of two variations of single bare 
+\begin_inset Formula $GaAs/Al_{x}Ga_{1-x}As$
+\end_inset
+
+ QWs, the first devoid of external charge carriers in the well area and
+ the latter with a 2DEG introduced through a 
+\begin_inset Formula $\delta$
+\end_inset
+
+-doping in the cladding area.
+ For these two structures we compare the absorption and spontaneous emission
+ spectra calculated using the two theoretical models elaborated above and
+ to the classical Elliot model.
+ For the doped structures, we also consider the influence of the 2DEG concentrat
+ion on the spectral properties of the structure, performing the calculations
+ for various ambient temperatures, namely 
+\begin_inset Formula $T=2K$
+\end_inset
+
+ and 
+\begin_inset Formula $T=77K$
+\end_inset
+
+.
+ From the calculation results for the two structures, we easily observe
+ the clear influence of the Coulombic interaction on the absorption and
+ spontaneous emission spectra, through the appearance of clear characteristic
+ resonative lines suitable to excitonic coupling observed in such structures.
+ Identification of the observed interactions becomes possible by performing
+ calculations of the electronic subbands of the considered structures using
+ the results of chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Electronic_Properties_Semiconductors"
+
+\end_inset
+
+.
+ These line, which clearly appear in the first structures and also for low
+ concentrations of the 2DEG in the second one, gradually dissipate with
+ the rise of the carrier concentration as a direct consequence of the electronic
+ screening effect.
+ In addition, the excitonic lines undergo an energetic shift towards high
+ energies as a result of the effective bandgap renormalization and the filling
+ of the state space by the additional free charge carriers.
+ Another classical effect, exhibited in the comparison of the emission spectra,
+ is the Burstein-Moss splitting which leads to the separation of the maxima
+ of the absorption and spontaneous emission spectra with the rise of the
+ 2DEG concentration inside the QW.
+ The experimentally observed asymmetric spontaneous emission spectral lineshape
+ is observed for high gas concentrations, typical for such structures measured
+ at low temperatures.
+ 
+\end_layout
+
+\begin_layout Standard
+In chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Microcavity"
+
+\end_inset
+
+ we turn to the discussion of the main topic of this thesis, namely the
+ microcavity structure.
+ We first present the basic concepts of a classical optical resonator and
+ discuss the implementation of such resonators through the growth of thin
+ epitaxial layers composed of two or more types of semiconductor materials
+ resulting in a creation of a couple of distributed Bragg reflector (DBR)
+ mirrors with a cavity region of a target wavelength whole multiple width
+ between the two.
+ We present numerical methods for the calculation of transmition and reflection
+ spectra of such structures, and in particular the classical transfer matrix
+ method (TMM).
+ After discussing the optical properties of these microcavities, we elaborate
+ on the quantum interaction theory of the optical and electronic excitation
+ in microcavities, and develop the concept of microcavity polariton.
+ To this end, we first discuss the Jaynes-Cummings model of a two-level
+ absorber developed in the framework of atomic physics and utilize it for
+ the demonstration of the Rabi splitting of such a system when coupled with
+ a single EM field mode.
+ This simple model can be generalized to a system with multiple such absorbers,
+ describing the interaction between the electronic resonances created inside
+ the QW placed in the cavity region and the EM field modes of this cavity.
+ Equivalently to the atomic theory, we show formulation of the coupled oscillato
+r model for such a system, and thereby introduce the concept of the polariton
+ as a coupling between the electron-hole resonance and the mode of the EM
+ field.
+\end_layout
+
+\begin_layout Standard
+In order to investigate the optical properties of a microcavity with an
+ embedded QW in the cavity region, a way must be found to incorporate the
+ two in a unified computational framework.
+ To this end, we present a new approach based in the classical linear dispersion
+ model (LDM), where the phenomenological description of the refractive index
+ of the QW is replaced by the results of the models presented in earlier
+ chapter.
+ This differs from the common approach of fitting the theoretical models
+ to experimentally extracted data, and enables us to extract the optical
+ properties of the entire structure from the optical properties of a bare
+ QW obtained from basic physical principles.
+ After the introduction of the computational procedure, we apply it to a
+ particular MC structure, which has also been previously investigated experiment
+ally.
+ We first present the calculated reflection spectra for of bare MC structure,
+ and find that a linear change in the width of the epitaxially grown dielectric
+ layers comprising the structure leads a proportional linear shift in the
+ spectral position of the cavity mode of the trapped light.
+ Next, we introduce the two types of QWs, discussed in chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Coulomb_Correlated_Optical_Transitions"
+
+\end_inset
+
+, inside the cavity region of this MC.
+ For the two resulting structures, we present the calculation results of
+ the reflection spectra obtained for various values of the broadening coefficien
+t 
+\begin_inset Formula $\delta$
+\end_inset
+
+.
+ From these spectra we extract the energetic locations of the reflection
+ for all values of 
+\begin_inset Formula $\delta$
+\end_inset
+
+ and thereby attain the anti-crossing curves for each structure.
+ Along these curves a typical splitting can be seen near the interaction
+ region between the EM field mode of the MC and the electron-hole resonances
+ of the QW.
+ By fitting these curves to a coupled oscillator mode a set of parameters
+ can be extracted, which enable us to evaluate the properties of these light-mat
+ter interaction and their strength.
+ For the structure with devoid of 2DEG in the well region, this analysis
+ affirms these interaction to be well in the strong coupling regime.
+ 
+\end_layout
+
+\begin_layout Standard
+For the second structure, with the introduced 2DEG inside the well region,
+ we also examine the influence of the carrier concentration on the properties
+ of these interactions.
+ Through the comparison of the anti-crossing curves attained for each of
+ the concentrations we observe the existence of a strong coupling between
+ the EM field mode and the electron-hole resonances up 
+\begin_inset Formula $n_{e}\approx1\times10^{11}\, cm^{-2}$
+\end_inset
+
+.
+ This differs from the results obtained in chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Coulomb_Correlated_Optical_Transitions"
+
+\end_inset
+
+ for the bare QW, where the excitonic resonances disappear at gas concentrations
+ above 
+\begin_inset Formula $\approx6\times10^{10}\, cm^{-2}$
+\end_inset
+
+.
+ By comparing the observed resonance energies of this MC reflection spectra
+ to the calculation results of the intersubband transition energies of a
+ bare single QW, we show that they match the allowed transitions near the
+ Fermi edge of the structure and not the Brillouin zone center.
+ This observation is compatible to the experimental observations presented
+ earlier, and attests to the fact that the strong coupling between the EM
+ field mode and the Fermi edge electron-hole resonance is cause to the appearanc
+e of the observed lines in the reflection spectra.
+ 
+\end_layout
+
+\begin_layout Standard
+By fitting these anti-crossing curves to the coupled oscillator model and
+ manual extraction of various parameters, we examine the coupling strength
+ and the linewidths of discussed resonances.
+ We see that while the coupling strength diminishes with the 2DEG concentration,
+ the linewidth rises considerably, but the coupling stays well within the
+ bounds of the strong coupling regime.
+ Finally, by extracting the admixing parameters of various resonances from
+ the coupled oscillator fitting results, we examine the contents of the
+ various anti-crossing branches in the attained curves.
+ Again, we observe the crucial part of the EM field mode of the MC in maintainin
+g the strong coupling with the electron-hole resonance even at high 2DEG
+ concentrations.
+ 
+\end_layout
+
+\end_body
+\end_document

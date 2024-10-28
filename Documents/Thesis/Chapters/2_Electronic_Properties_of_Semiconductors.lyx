@@ -1,0 +1,6583 @@
+#LyX 1.6.8 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass report
+\begin_preamble
+\makenomenclature
+\end_preamble
+\options a4paper,titlepage
+\use_default_options false
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry true
+\use_amsmath 1
+\use_esint 0
+\cite_engine natbib_numerical
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Electronic Properties of Semiconductors
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "cha:Electronic_Properties_Semiconductors"
+
+\end_inset
+
+The optical properties of nanostructures are intimately connected to the
+ electronic states, the response of electrons within the atomic lattice
+ to external perturbations.
+ As such, a precise knowledge of the electronic properties is required for
+ a proper device analysis.
+ In bulk semiconductors, the lattice periodicity and its symmetry leads
+ to the formation of electronic bands, continuously (within the band) relating
+ the crystal momentum 
+\begin_inset Formula $\mathbf{k}$
+\end_inset
+
+  of an electron to its energy 
+\begin_inset Formula $E_{n}\left(\mathbf{k}\right)$
+\end_inset
+
+.
+ The combination of different materials within a nanostructure breaks the
+ symmetry of the semiconductor crystal, leading to 
+\emph on
+quantization effects
+\emph default
+, i.e.
+ modifications of the electronic properties from their bulk properties.
+ These modifications have a pronounced impact on the electronic and optical
+ properties of nanostructures.
+ The present chapter covers the theory of the calculation of the electronic
+ states in nanostructures using the 
+\emph on
+envelope function method
+\emph default
+ (EFM
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "EFM"
+description "Envelope function method"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+The chapter is organized as follows.
+ We first present an extensive introduction to the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Schr
+\backslash
+"{o}dinger 
+\end_layout
+
+\end_inset
+
+ equation within a semiconductor crystal, which will later also serve as
+ the basis for the analysis of optical effects covered in Chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Free_Carriers_Optical_Transitions"
+
+\end_inset
+
+ and the many body effects in optical spectra in Chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Coulomb_Correlated_Optical_Transitions"
+
+\end_inset
+
+.
+ After introducing certain approximations to the crystal 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Schr
+\backslash
+"{o}dinger 
+\end_layout
+
+\end_inset
+
+ equation, the concept of solving the resulting single-particle 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Schr
+\backslash
+"{o}dinger 
+\end_layout
+
+\end_inset
+
+ equation using the bulk 
+\begin_inset Formula $\mathbf{k\cdot p}$
+\end_inset
+
+ method is presented.
+ The subsequent section derives the equations of the 
+\begin_inset Formula $\mathbf{k\cdot p}$
+\end_inset
+
+ envelope function method used in nanostructures and simultaneously introduces
+ the 
+\begin_inset Formula $\mathbf{k\cdot p}$
+\end_inset
+
+ model for zinc-blende crystals, with an emphasis on the two-band model
+ .
+ Note that the presented discusion doesn't include the influence of strain
+ effects on the electronic properties.
+ Finally, we present the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Schr
+\backslash
+"{o}dinger
+\end_layout
+
+\end_inset
+
+-Poisson model of the electronic bands structure where the electrostatics
+ of the system are of relevance.
+ This model is then used to analyze the influence of a two-dimensional electron
+ gas (2DEG), introduced by various methods into the quantum well region,
+ on the electronic properties of the system.
+\end_layout
+
+\begin_layout Section
+Crystal 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Schr
+\backslash
+"{o}dinger
+\end_layout
+
+\end_inset
+
+ Equation
+\end_layout
+
+\begin_layout Subsection
+Introduction
+\end_layout
+
+\begin_layout Standard
+The total Hamiltonian of all electrons, atoms and the electro-magnetic field
+ of a solid state crystal is given by
+\begin_inset Formula \begin{equation}
+H=\sum_{i}\frac{1}{2m_{i}}\left(\mathbf{p}_{i}-ez_{i}\mathbf{A}\left(\mathbf{r}_{i}\right)\right)^{2}+\frac{\epsilon_{0}}{2}\int\left(\mathbf{E}^{2}+c_{0}^{2}\mathbf{B}^{2}\right)d\mathbf{r}\label{eq:full_crystal_H}\end{equation}
+
+\end_inset
+
+In the second term 
+\begin_inset Formula $\mathbf{E}$
+\end_inset
+
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$\\mathbf{E}$"
+description "Electrical field"
+
+\end_inset
+
+ denotes the electric- and 
+\begin_inset Formula $\mathbf{B}$
+\end_inset
+
+ 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$\\mathbf{B}$"
+description "Magnetic field"
+
+\end_inset
+
+the magnetic field.
+ These fields are related to the vector potential 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ and the scalar potential 
+\begin_inset Formula $\phi$
+\end_inset
+
+ via 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Jackson1998"
+
+\end_inset
+
+
+\begin_inset Formula \begin{align}
+\mathbf{E} & =-\frac{\partial\mathbf{A}}{\mathbf{\partial}t}-\nabla\phi\label{eq:E_potentials}\\
+\mathbf{B} & =\nabla\times\mathbf{A}.\label{eq:B_vector_potential}\end{align}
+
+\end_inset
+
+In the first term of 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:full_crystal_H"
+
+\end_inset
+
+, 
+\begin_inset Formula $e$
+\end_inset
+
+ is the elementary charge, 
+\begin_inset Formula $z_{i}$
+\end_inset
+
+ is the charge of particle 
+\begin_inset Formula $i$
+\end_inset
+
+ in units of 
+\begin_inset Formula $e$
+\end_inset
+
+ (-1 for electrons) and 
+\begin_inset Formula $m_{i}$
+\end_inset
+
+ denotes the particle mass.
+ The term 
+\begin_inset Formula $\mathbf{p}_{i}-ez_{i}\mathbf{A}\left(\mathbf{r}_{i}\right)$
+\end_inset
+
+ is the mechanical momentum of particle 
+\begin_inset Formula $i$
+\end_inset
+
+, which is invariant to our gauge choise (see below) for 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ and 
+\begin_inset Formula $\phi$
+\end_inset
+
+.
+ The electrical field term 
+\begin_inset Formula $\mathbf{A}^{2}$
+\end_inset
+
+ holds both transverse and longitudinal contributions.
+ In the following discussion we assume a Coulomb gauge for the vector potential,
+ i.e.
+ 
+\begin_inset Formula $\nabla\cdot\mathbf{A}=0$
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Jackson1998"
+
+\end_inset
+
+.
+ In this gauge the term 
+\begin_inset Formula $\frac{\partial\mathbf{A}}{\partial t}\nabla\phi$
+\end_inset
+
+ in 
+\begin_inset Formula $\mathbf{E}^{2}$
+\end_inset
+
+ vanishes, and so we can split this term to the transverse and longitudinal
+ contributions 
+\begin_inset Formula $\mathbf{E}^{2}=\mathbf{E}_{l}^{2}+\mathbf{E}_{t}^{2}$
+\end_inset
+
+.
+ Using Poisson's equation, the longitudinal contribution can be written
+ in terms of the charge density 
+\begin_inset Formula \begin{equation}
+\int\mathbf{E}_{l}^{2}d\mathbf{r}=\int\left(\nabla\phi\right)^{2}d\mathbf{r}=\langle\phi\nabla\phi\rangle-\int\phi\nabla^{2}\phi d\mathbf{r}=\int\phi\frac{\rho}{\epsilon_{0}}d\mathbf{r}.\end{equation}
+
+\end_inset
+
+Next, the contributions to 
+\begin_inset Formula $\phi$
+\end_inset
+
+ are distinguished between internal 
+\begin_inset Formula $\phi_{int}$
+\end_inset
+
+ and external 
+\begin_inset Formula $\phi_{ext}$
+\end_inset
+
+, where the internal contributions are created by the crystal electrons
+ and atomic cores.
+ The internal contributions are given by the longitudinal Coulomb interaction
+ between the charged particles 
+\begin_inset Formula $i$
+\end_inset
+
+ and 
+\begin_inset Formula $j$
+\end_inset
+
+
+\begin_inset Formula \begin{equation}
+V_{i,j}=\frac{e^{2}z_{i}z_{j}}{4\pi\epsilon_{0}|\mathbf{r}_{i}-\mathbf{r}_{j}|},\end{equation}
+
+\end_inset
+
+with unit charges 
+\begin_inset Formula $z_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $z_{j}$
+\end_inset
+
+.
+ The external contribution are 
+\begin_inset Formula \begin{equation}
+V_{ext}=\sum_{i}z_{i}e\phi_{ext}(\mathbf{r}_{i}).\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The crystal 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$H$"
+description "Hamiltonian operator"
+
+\end_inset
+
+Hamiltonian for electrons 
+\begin_inset Formula $i,j$
+\end_inset
+
+ and atoms 
+\begin_inset Formula $I,J$
+\end_inset
+
+ then reads
+\begin_inset Formula \begin{eqnarray}
+H & = & \underbrace{\sum_{i}\frac{\left(\mathbf{p}_{i}+e\mathbf{A}\right)^{2}}{2m_{0}}}_{T_{e}}+\underbrace{\sum_{I}\frac{\left(\mathbf{p}_{I}+ez_{I}\mathbf{A}\right)^{2}}{2m_{I}}}_{T_{a}}+\underbrace{\frac{1}{2}\sum_{i,j}\frac{e^{2}}{4\pi\epsilon_{0}|\mathbf{r}_{i}-\mathbf{r}_{j}|}}_{V_{ee}}\nonumber \\
+ &  & +\underbrace{\frac{1}{2}\sum_{I,J}\frac{e^{2}z_{I}z_{J}}{4\pi\epsilon_{0}|\mathbf{r}_{I}-\mathbf{r}_{J}|}}_{V_{aa}}-\underbrace{\frac{1}{2}\sum_{i,J}\frac{e^{2}z_{J}}{4\pi\epsilon_{0}|\mathbf{r}_{i}-\mathbf{r}_{J}|}}_{V_{ea}}+V_{ext}\nonumber \\
+ &  & +\underbrace{\frac{\epsilon_{0}}{2}\int\left(\mathbf{E}_{t}^{2}+c_{0}\mathbf{B}^{2}\right)d\mathbf{r}}_{H_{EM}},\end{eqnarray}
+
+\end_inset
+
+where 
+\begin_inset Formula $T$
+\end_inset
+
+ is the kinetic energy part of the Hamiltonian, and 
+\begin_inset Formula $V$
+\end_inset
+
+ the potential energy one.
+ As the atoms have a much higher mass than the electrons, the Born-Oppenheimer
+ approximation 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Yu2005"
+
+\end_inset
+
+ can be used to separate the motion of electrons and atoms.
+ The electrons will react on movements of the atoms instantaneously.
+ Therefore, the interaction between ion cores and between electrons and
+ ion cores can be concentrated into a potential 
+\begin_inset Formula $U(\mathbf{x})$
+\end_inset
+
+, leading to the final crystal electron Hamiltonian
+\begin_inset Formula \begin{eqnarray}
+H & = & \sum_{i}\left(\frac{\left(\mathbf{p}_{i}+e\mathbf{A}(\mathbf{r}_{i})\right)^{2}}{2m_{0}}+U(\mathbf{r}_{i})\right)\nonumber \\
+ &  & +\frac{1}{2}\sum_{i,j}\frac{e^{2}}{4\pi\epsilon_{0}|\mathbf{r}_{i}-\mathbf{r}_{j}|}+V_{ext}+H_{EM}.\label{eq:crystal_H_final}\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The next step is to perform the 
+\emph on
+single electron approximation
+\emph default
+ or 
+\emph on
+mean field approximation
+\emph default
+ by assuming that the electron-electron interaction 
+\begin_inset Formula $V_{ee}$
+\end_inset
+
+ with the core- and valence electrons can also be concentrated into the
+ potential 
+\begin_inset Formula $U(\mathbf{r})$
+\end_inset
+
+.
+ This step is necessary as solving the equation for 
+\begin_inset Formula $10^{23}$
+\end_inset
+
+ explicitly considered electrons is an impossible task.
+ The equation reduces to a single electron equation, where an electron experienc
+es the mean-field potential 
+\begin_inset Formula $U(\mathbf{r})$
+\end_inset
+
+.
+ Within this step, the vector potential 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ is restricted to external excitations, where the local oscillations within
+ the crystal lattice are averaged out.
+ Overall, the effect of the external electro-magnetic field on the atoms
+ has been excluded.
+ This approximation is usually justified in the case of weak fields and
+ heavy atomic masses.
+ The interaction between electrons and atoms is restricted to a frozen lattice.
+ The interaction between the movement of the atoms and the electrons can
+ be reintroduced using 
+\emph on
+phonons
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Yu2005"
+
+\end_inset
+
+, but this will be omitted throughout the thesis.
+\end_layout
+
+\begin_layout Subsection
+Bloch's Theorem
+\end_layout
+
+\begin_layout Standard
+Assuming no external field, the time independent single electron 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Schr
+\backslash
+"{o}dinger 
+\end_layout
+
+\end_inset
+
+ equation to solve is given by
+\begin_inset Formula \begin{equation}
+\left(-\frac{\hbar^{2}}{2m_{0}}\nabla^{2}+U(\mathbf{r})\right)\psi=E\psi.\end{equation}
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/2_Bloch_Theorem_Sch.eps
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Bloch_Theorem_Sch"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+Schematic representation of electronic functions in a crystal.
+\end_layout
+
+\end_inset
+
+Schematic representation of electronic functions in a crystal (a) potential
+ plotted along a row of atoms, (b) free electron wave function, (c) amplitude
+ factor of Bloch function having the periodicity of the lattice, and (d)
+ Bloch function 
+\begin_inset Formula $\psi$
+\end_inset
+
+ (after 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Piprek2003"
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For the moment, the crystal is assumed to be homogeneous and perfect.
+ The potential 
+\begin_inset Formula $U(\mathbf{r})$
+\end_inset
+
+ is periodic within the lattice (see Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Bloch_Theorem_Sch"
+
+\end_inset
+
+).
+ For any translation vector 
+\begin_inset Formula $\mathbf{R}$
+\end_inset
+
+ mapping the infinite crystal lattice to itself, the potential obeys
+\begin_inset Formula \begin{equation}
+U(\mathbf{r})=U(\mathbf{r}+\mathbf{R})\end{equation}
+
+\end_inset
+
+and the wavefunction
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$\\psi_{n\\mathbf{k}}$"
+description "Particle wavefunction in a solid"
+
+\end_inset
+
+ can be expressed in the form known as 
+\emph on
+Bloch function
+\begin_inset Formula \begin{equation}
+\psi_{n\mathbf{k}}=u_{n\mathbf{k}}(\mathbf{r})e^{i\mathbf{k}\cdot\mathbf{r}},\end{equation}
+
+\end_inset
+
+
+\emph default
+where 
+\begin_inset Formula $u_{n\mathbf{k}}(\mathbf{r})$
+\end_inset
+
+ 
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+symbol "$u_{n\\mathbf{k}}(\\mathbf{r})$"
+description "Bloch's basis function"
+
+\end_inset
+
+ denotes the lattice periodic path with 
+\begin_inset Formula \begin{equation}
+u_{n\mathbf{k}}(\mathbf{r})=u_{n\mathbf{k}}(\mathbf{r}+\mathbf{R})\end{equation}
+
+\end_inset
+
+and the plane wave is the slowly modulating envelope.
+ The 
+\begin_inset Formula $n\mathbf{k}$
+\end_inset
+
+ are the quantum numbers indexing the solutions.
+ Applying the differential operators to the plane wave and multiplying the
+ equation on both sides from the left with 
+\begin_inset Formula $e^{−i\mathbf{k}·\mathbf{r}}$
+\end_inset
+
+ gives the equation for the lattice periodic functions as
+\begin_inset Formula \begin{eqnarray}
+H_{\mathbf{k}\cdot\mathbf{p}}(\mathbf{k})u_{n\mathbf{k}}(\mathbf{r}) & = & \left(-\frac{\hbar^{2}}{2m_{0}}\nabla^{2}+\frac{\hbar}{m_{0}}\mathbf{k}\cdot\mathbf{p}+\frac{\hbar^{2}k^{2}}{2m_{0}}+U(\mathbf{r})\right)u_{n\mathbf{k}}(\mathbf{r})\nonumber \\
+ & = & E_{n}(\mathbf{k})u_{n\mathbf{k}}(\mathbf{r}).\label{eq:Bloch_Hamiltonian}\end{eqnarray}
+
+\end_inset
+
+An important consequence of the Bloch theorem is the fact that wavefunctions
+ with different 
+\begin_inset Formula $\mathbf{k}$
+\end_inset
+
+ values are not coupled together (due to the slowly varying plane wave)
+ and therefore 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Bloch_Hamiltonian"
+
+\end_inset
+
+ has a parametric dependence on the crystal momentum 
+\begin_inset Formula $\mathbf{k}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+The 
+\begin_inset Formula $\mathbf{k}\cdot\mathbf{p}$
+\end_inset
+
+ Method
+\end_layout
+
+\begin_layout Subsubsection
+Introduction
+\end_layout
+
+\begin_layout Standard
+There is a vast number of methods to obtain solutions to 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Bloch_Hamiltonian"
+
+\end_inset
+
+.
+ One of the most frequently used is the semi-empirical 
+\begin_inset Formula $\mathbf{k}·\mathbf{p}$
+\end_inset
+
+ method that serves to derive analytical expressions for the band structure,
+ using symmetry arguments and experimental observations.
+ The method was initially introduced by Bardeen and Seitz (see references
+ in 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Chuang1995"
+
+\end_inset
+
+) and applied by many researchers.
+ It is particularly useful to describe the band structure for direct semiconduct
+ors used in optoelectronic devices at the 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ point of the Brillouin zone with a high precision.
+ 
+\end_layout
+
+\begin_layout Standard
+Hereafter a short introduction of the general concepts will be given.
+ These concepts will later reappear within the Envelope Function Methods
+ (EFM).
+ This introduction is mainly based on 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Yu2005"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The basic idea within the 
+\begin_inset Formula $\mathbf{k}·\mathbf{p}$
+\end_inset
+
+ theory 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "kane_handbooksemiconductors_1982"
+
+\end_inset
+
+ is to solve 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Bloch_Hamiltonian"
+
+\end_inset
+
+ for an extremal point with high symmetry of the band structure, usually
+ the 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ point at 
+\begin_inset Formula $\mathbf{k}=0$
+\end_inset
+
+.
+ There, 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Bloch_Hamiltonian"
+
+\end_inset
+
+ reduces to
+\begin_inset Formula \begin{equation}
+\left(-\frac{\hbar^{2}}{2m_{0}}\nabla^{2}+U(\mathbf{r})\right)u_{n0}(\mathbf{r})=E_{n}(0)u_{n0}(\mathbf{r}).\label{eq:zero_center_Bloch_Equation}\end{equation}
+
+\end_inset
+
+The solutions 
+\begin_inset Formula $u_{n0}(\mathbf{r})$
+\end_inset
+
+ are denoted as 
+\emph on
+zone-center
+\emph default
+ functions and span the complete Hilbert space of all solutions to 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Bloch_Hamiltonian"
+
+\end_inset
+
+.
+ Therefore, one may express the lattice periodic functions 
+\begin_inset Formula $u_{n\mathbf{k}}(\mathbf{r})$
+\end_inset
+
+ away from the 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ point in terms of the zone-center functions
+\begin_inset Formula \begin{equation}
+u_{m\mathbf{k}}(\mathbf{r})=\sum_{n'}a_{m\mathbf{k},n'}u_{n'0}(\mathbf{r}).\label{eq:Bloch_Function_k_Expansion}\end{equation}
+
+\end_inset
+
+To obtain the coefficients 
+\begin_inset Formula $a_{m\mathbf{k},n'}$
+\end_inset
+
+, the expansion 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Bloch_Function_k_Expansion"
+
+\end_inset
+
+ is inserted into 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Bloch_Hamiltonian"
+
+\end_inset
+
+, multiplied from the left by 
+\begin_inset Formula $u_{n0}(\mathbf{r})$
+\end_inset
+
+ and integrated over the crystal unit-cell to obtain
+\begin_inset Formula \begin{equation}
+\sum_{n'}\left(\left(E_{n'}(0)+\frac{\hbar^{2}k^{2}}{2m_{0}}\right)\delta_{nn'}+\frac{\hbar}{m_{0}}\mathbf{k}\cdot\mathbf{p}_{nn'}\right)a_{m\mathbf{k},n'}=E_{m}(\mathbf{k})a_{m\mathbf{k},n'},\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula \begin{equation}
+\mathbf{p}_{nn'}=\int u_{n0}^{*}(\mathbf{r})\mathbf{p}u_{n'0}(\mathbf{r})d\mathbf{r}\label{eq:momentum_matrix_element}\end{equation}
+
+\end_inset
+
+is used to express the momentum matrix element between two zone-center Bloch
+ functions.
+ The above equation can obviously be written in matrix form, where a matrix
+ entry is given by
+\begin_inset Formula \begin{equation}
+h_{ij}=\left(E_{j}(0)+\frac{\hbar^{2}k^{2}}{2m_{0}}\right)\delta_{ij}+\frac{\hbar}{m_{0}}\mathbf{k}\cdot\mathbf{p}_{ij}\label{eq:k_dot_p_H_matrix}\end{equation}
+
+\end_inset
+
+and a diagonalization of the
+\series bold
+
+\begin_inset Formula $\mathbf{k}$
+\end_inset
+
+
+\series default
+ dependent, infinite matrix would lead to the exact coefficients and energies
+ 
+\begin_inset Formula $E_{m}(\mathbf{k})$
+\end_inset
+
+.
+ As the matrix is continuous in 
+\series bold
+
+\begin_inset Formula $\mathbf{k}$
+\end_inset
+
+
+\series default
+, is is clear that the dispersion 
+\begin_inset Formula $E_{m}(\mathbf{k})$
+\end_inset
+
+ will also be continuous.
+\end_layout
+
+\begin_layout Standard
+As a remark, we can point out that 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:zero_center_Bloch_Equation"
+
+\end_inset
+
+ is not solved explicitly and no closed expression for 
+\begin_inset Formula $u_{n0}(\mathbf{r})$
+\end_inset
+
+ is needed.
+ Instead, the matrix 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:k_dot_p_H_matrix"
+
+\end_inset
+
+ is constructed by using group theory to derive symmetry properties of the
+ zone-center functions 
+\begin_inset Formula $u_{n0}(\mathbf{r})$
+\end_inset
+
+.
+ Using these symmetry properties, similarities and equivalences for the
+ momentum matrix elements 
+\begin_inset Formula $\mathbf{p}_{ij}$
+\end_inset
+
+ can be deduced.
+ A profound introduction into the group theory for semiconductors is beyond
+ the current scope.
+ A rough guideline illustrating the essence required by the 
+\begin_inset Formula $\mathbf{k}·\mathbf{p}$
+\end_inset
+
+ theory is presented in Appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Appendix_Schrodinger_Poisson"
+
+\end_inset
+
+.
+ An extensive presentation can be found in 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Yu2005"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Bir1974"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+L
+\backslash
+"{o}wdin
+\end_layout
+
+\end_inset
+
+-Renormalization
+\end_layout
+
+\begin_layout Standard
+While the matrix 
+\begin_inset Formula $h_{ij}$
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:k_dot_p_H_matrix"
+
+\end_inset
+
+ is infinite, leading to an infinite number of bands, the assessment of
+ light emission in optoelectronic devices usually requires only the knowledge
+ of the lowest conduction and highest valence bands.
+ For the relevant III-V semiconductors, the conduction and the valence bands
+ lie at the 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ point energetically close together.
+ Other bands can be regarded as being remote, so the interaction in-between
+ these bands can be considered to dominate for the band structure of interest.
+ In the model developed by Kane 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "kane_band_1957"
+
+\end_inset
+
+, therefore a submatrix 
+\begin_inset Formula $h_{ij}$
+\end_inset
+
+ of the conduction- and valence band at the 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ point is extracted out of 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:k_dot_p_H_matrix"
+
+\end_inset
+
+ and diagonalized.
+ Although the primary interest of Kane’s model was to include spinorbit
+ interaction, the missing interaction with remote bands resulted in a heavy-hole
+ band structure, given by the free-electron dispersion, bending for a hole
+ into the wrong direction.
+ Luttinger and Kohn 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Kohn1955a"
+
+\end_inset
+
+ included the interaction of remote states onto the selected set of bands,
+ using 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+L
+\backslash
+"{o}wdin
+\end_layout
+
+\end_inset
+
+’s perturbation theory 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Lowdin1951a"
+
+\end_inset
+
+.
+ The idea of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+L
+\backslash
+"{o}wdin
+\end_layout
+
+\end_inset
+
+ perturbation theory is to divide the bands in two classes 
+\begin_inset Formula $S$
+\end_inset
+
+ and 
+\begin_inset Formula $R$
+\end_inset
+
+ (see Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Schematic-band-structure"
+
+\end_inset
+
+).
+ Bands in class 
+\begin_inset Formula $S$
+\end_inset
+
+ are considered explicitly, i.e.
+ the respective rows and columns of the matrix 
+\begin_inset Formula $h_{ij}$
+\end_inset
+
+ are kept.
+ The bands 
+\begin_inset Formula $R$
+\end_inset
+
+ are considered being remote and their effect on the bands in class 
+\begin_inset Formula $S$
+\end_inset
+
+ are included in the submatrix of 
+\begin_inset Formula $h_{ij}$
+\end_inset
+
+ using perturbation theory.
+ Hereby, the renormalized matrix elements are given by
+\begin_inset Formula \begin{equation}
+h_{ij}^{\prime}=h_{ij}+\sum_{\nu}^{R}\frac{h_{i\nu}h_{\nu j}}{E_{i}-h_{\nu\nu}},\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $i$
+\end_inset
+
+ and 
+\begin_inset Formula $j$
+\end_inset
+
+ are in class 
+\begin_inset Formula $S$
+\end_inset
+
+ and 
+\begin_inset Formula $\nu$
+\end_inset
+
+ is in 
+\begin_inset Formula $R$
+\end_inset
+
+.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/2_Luttinger_Kohn_Sch.eps
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Schematic-band-structure"
+
+\end_inset
+
+Schematic band structure classification in the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+L
+\backslash
+"{o}wdin
+\end_layout
+
+\end_inset
+
+ perturbation theory.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+ Group theory and symmetry arguments are then used to derive similarities
+ and vanishing terms and reduce the perturbation expressions to a few constants.
+ By analytically diagonalizing the remaining matrix, the few remaining constants
+ can be determined by comparing analytical dispersion expressions to experimenta
+lly determined effective masses.
+ An important note here is that 
+\begin_inset Formula $E_{i}$
+\end_inset
+
+ denotes the energy of band 
+\begin_inset Formula $i$
+\end_inset
+
+ such that the renormalization of the matrix element depends on the result
+ of the eigenvalue calculation, actually requiring self-consistency.
+ In practice, the energies 
+\begin_inset Formula $E_{i}$
+\end_inset
+
+ are approximated by the zone-center energy 
+\begin_inset Formula $E_{i}(0)$
+\end_inset
+
+, given by the matrix element 
+\begin_inset Formula $h_{ii}$
+\end_inset
+
+, which is fine close the zone-center.
+ By keeping only one single band in class 
+\begin_inset Formula $S$
+\end_inset
+
+, one obtains the single band effective mass dispersion for band 
+\begin_inset Formula $i$
+\end_inset
+
+ as
+\begin_inset Formula \begin{equation}
+E_{i}(0)+\left(\frac{\hbar^{2}k^{2}}{2m_{0}}+\frac{\hbar}{m_{0}}\sum_{\nu}^{R}\frac{\mathbf{k}\cdot\mathbf{p}_{s\nu}\mathbf{p}_{\nu s}\cdot\mathbf{k}}{E_{i}-h_{\nu\nu}}\right)=E_{i}(0)+\frac{\hbar^{2}}{2}\mathbf{k}^{T}\frac{1}{\mathbf{m}^{*}}\mathbf{k}.\end{equation}
+
+\end_inset
+
+In the case of several bands within the class S, the resulting matrix can
+ be written, ordered by the dependence on the wavenumber 
+\begin_inset Formula $\mathbf{k}$
+\end_inset
+
+, as
+\begin_inset Formula \begin{equation}
+\sum_{i,j=x,y,z}\mathbf{H}_{i,j}^{(2)}k_{i}k_{j}+\sum_{i=x,y,z}\mathbf{H}_{i,j}^{(1)}k_{i}+\mathbf{H}^{(0)}.\end{equation}
+
+\end_inset
+
+To summarize, the second order terms 
+\begin_inset Formula $\mathbf{H}_{i,j}^{(2)}$
+\end_inset
+
+ are a result of the combination of the free carrier dispersion and the
+ perturbation treatment of remote states in class 
+\begin_inset Formula $R$
+\end_inset
+
+, while first order terms 
+\begin_inset Formula $\mathbf{H}_{i,j}^{(1)}$
+\end_inset
+
+ stem from the direct treatment of the 
+\begin_inset Formula $\mathbf{k}·\mathbf{p}$
+\end_inset
+
+ interaction (and later from linear spin-orbit terms), while zero order
+ terms 
+\begin_inset Formula $\mathbf{H}^{(0)}$
+\end_inset
+
+, contain zone-center energies (and possible terms if the zone-center basis
+ is not orthogonal).
+\end_layout
+
+\begin_layout Section
+The 
+\begin_inset Formula $\mathbf{k}·\mathbf{p}$
+\end_inset
+
+ Envelope Function Method
+\end_layout
+
+\begin_layout Subsection
+Introduction
+\end_layout
+
+\begin_layout Standard
+In previous sections, the crystal was assumed to be homogeneous and infinitely
+ extended.
+ In nanostructures, this assumption is no longer valid and the translational
+ symmetry is broken in certain directions.
+ As a consequence, a carrier might be energetically confined within a lower-band
+gap material, but still free to propagate within the translational invariant
+ direction.
+ In the case of a quantum well, the symmetry is broken by the atoms of the
+ other species in one direction, for a quantum wire, it is broken in two
+ directions and for a quantum dot in all three directions.
+ Consequently, the number of translational invariant directions is reduced
+ from two for a quantum well to zero for a quantum dot.
+ As a result, the Bloch function employing the plane wave ansatz has to
+ be modified
+\begin_inset Formula \begin{equation}
+\varphi_{m\mathbf{k}_{t}}(\mathbf{r},z)=\sum_{n}u_{n}(\mathbf{r},z)e^{i\mathbf{k}_{t}\cdot\mathbf{r}}F_{n\mathbf{k},m}(z).\label{eq:Envelope_Function_Bloch_Function}\end{equation}
+
+\end_inset
+
+Here, 
+\begin_inset Formula $\mathbf{r}$
+\end_inset
+
+ denotes the coordinate of translational invariant direction(s), 
+\begin_inset Formula $z$
+\end_inset
+
+ is the coordinate of the direction(s) where the crystal symmetry is broken
+ and 
+\begin_inset Formula $u_{n}(\mathbf{r},z)$
+\end_inset
+
+ is a lattice-periodic function.
+ The crystal momentum 
+\series bold
+
+\begin_inset Formula $\mathbf{k}$
+\end_inset
+
+
+\series default
+ is only defined within the translational invariant direction.
+ The expression 
+\begin_inset Formula $F_{n\mathbf{k},m}(z)$
+\end_inset
+
+ is referred to as slowly-varying envelope and denotes at every position
+ in the symmetry broken direction 
+\begin_inset Formula $z$
+\end_inset
+
+, how the lattice-periodic functions are mixed together.
+ In the bulk crystal, the plane wave term decouples the wavefunctions with
+ different crystal momenta 
+\begin_inset Formula $\mathbf{k}$
+\end_inset
+
+.
+ In a nanostructure, this decoupling is only true for the translational
+ invariant direction, while in the symmetry broken direction, the states
+ are now mixed together.
+ 
+\end_layout
+
+\begin_layout Standard
+As a result of the symmetry breaking, the bands are split into 
+\emph on
+subbands
+\emph default
+, depending on the transverse crystal momentum 
+\begin_inset Formula $\mathbf{k}_{t}$
+\end_inset
+
+.
+ The task of the envelope function method is now to select a suitable set
+ of lattice periodic functions 
+\begin_inset Formula $u_{n}(\mathbf{r},z)$
+\end_inset
+
+ for 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Envelope_Function_Bloch_Function"
+
+\end_inset
+
+ and derive a proper equation to determine the envelopes 
+\begin_inset Formula $F_{n\mathbf{k},m}(z)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $\mathbf{k}·\mathbf{p}$
+\end_inset
+
+ Envelope Function Ansatz
+\end_layout
+
+\begin_layout Standard
+The traditional ansatz is to use the zone-center 
+\begin_inset Formula $\mathbf{k}·\mathbf{p}$
+\end_inset
+
+ lattice periodic functions 
+\begin_inset Formula $u_{n0}(\mathbf{r})$
+\end_inset
+
+ for the expansion 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Envelope_Function_Bloch_Function"
+
+\end_inset
+
+, together with a set of matching conditions.
+ The equation for the envelopes is obtained by replacing the wave number
+ 
+\begin_inset Formula $k_{i}$
+\end_inset
+
+ by the corresponding operator 
+\begin_inset Formula $−i∂_{i}$
+\end_inset
+
+.
+ As in the nanostructure, different materials are involved, the wavefunction
+ is in each material expanded into the materials zone-center functions.
+ The result is that the effective mass like parameters from the perturbation
+ interaction with remote states and the zone-center energies are position
+ dependent.
+ For the single-band effective mass approximation for e.g.
+ the conduction band in a quantum well for 
+\begin_inset Formula $\mathbf{k}_{t}=0$
+\end_inset
+
+, the envelope equation is given by
+\begin_inset Formula \begin{equation}
+\left(-\frac{\hbar^{2}}{2m^{*}(z)}\frac{\partial^{2}}{\partial z^{2}}+E_{c}(z)\right)F_{s}(z)=E(0)F_{s}(z).\label{eq:QW_Conduction_Band_Envelope_Schr_Eq}\end{equation}
+
+\end_inset
+
+
+\begin_inset Formula $E_{c}(z)$
+\end_inset
+
+ denotes the position dependent bulk band edge, corresponding in the direct
+ band gap semiconductors to the conduction band energy at 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+.
+ Once the eigenvalues 
+\begin_inset Formula $E_{m}(0)$
+\end_inset
+
+ and normalized eigenfunctions 
+\begin_inset Formula $F_{s,m}(z)$
+\end_inset
+
+ (indexed by the subband quantum number 
+\begin_inset Formula $m$
+\end_inset
+
+) of 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:QW_Conduction_Band_Envelope_Schr_Eq"
+
+\end_inset
+
+ are obtained, the in-plane dispersion is usually approximated using the
+ dominant effective mass of the quantum well material
+\begin_inset Formula \begin{equation}
+E_{m}(\mathbf{k})=E_{m}(0)+\frac{\hbar^{2}k^{2}}{2m_{c}^{*}}.\end{equation}
+
+\end_inset
+
+The way the equation is written, it is in the presence of a material interface
+ not Hermitian and therefore unexpected imaginary eigenvalues for the energy
+ would result.
+ The usual ad-hoc fix, justified by the requirement of a continuous probability
+ flow, is to rewrite the second order differential operator 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Chuang1995"
+
+\end_inset
+
+
+\begin_inset Formula \begin{equation}
+-\frac{\hbar^{2}}{2m^{*}(z)}\nabla^{2}\rightarrow-\nabla\frac{\hbar^{2}}{2m^{*}(z)}\nabla.\label{eq:Second_Order_Diff_Operator}\end{equation}
+
+\end_inset
+
+The particular order of the coefficient and the differential operators is
+ commonly referred to as operator ordering.
+ The form of 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Second_Order_Diff_Operator"
+
+\end_inset
+
+ is denoted as Ben-Daniel and Duke ordering 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "BenDaniel1966"
+
+\end_inset
+
+, but within the single-band effective mass theory, other orderings are
+ suggested too (see 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Morrow1984"
+
+\end_inset
+
+ and references therein).
+ The ordering is irrelevant within bulk materials, but plays a substantial
+ role at a material interface: it is equivalent to the matching conditions
+ for the bulk Bloch functions.
+ In the case of a multi-band equation, where not only one, but several lattice
+ periodic functions are included, one obtains in analogy to 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Second_Order_Diff_Operator"
+
+\end_inset
+
+ for all envelopes involved 
+\begin_inset Formula $\mathbf{F}(z)=(F_{1}(z),F_{2}(z),...,F_{M}(z))^{T}$
+\end_inset
+
+ a system of coupled partial differential equations
+\begin_inset Formula \begin{equation}
+\mathbf{H}_{\mathbf{k}\cdot\mathbf{p}}(z)\mathbf{F}(z)=E\mathbf{F}(z),\label{eq:General_Envelope_Function_Schr_Eq}\end{equation}
+
+\end_inset
+
+where the 
+\begin_inset Formula $\mathbf{k}\cdot\mathbf{p}$
+\end_inset
+
+ differential operator is given by
+\begin_inset Formula \begin{eqnarray}
+\mathbf{H}_{\mathbf{k}\cdot\mathbf{p}}(z) & = & -\sum_{i,j}\partial_{i}\mathbf{H}_{i,j}^{(2)}(\mathbf{r};\mathbf{k}_{t})\partial_{j}\nonumber \\
+ &  & +\sum_{i}\left(\mathbf{H}_{i;L}^{(1)}(\mathbf{r};\mathbf{k}_{t})\partial_{i}+\partial_{i}\mathbf{H}_{i;R}^{(1)}(\mathbf{r};\mathbf{k}_{t})\right)\nonumber \\
+ &  & +\mathbf{H}^{(0)}(\mathbf{r};\mathbf{k}_{t}).\end{eqnarray}
+
+\end_inset
+
+Here the Hermitian operator ordering has already been introduced.
+ The problem is that within the bulk 
+\begin_inset Formula $\mathbf{k}·\mathbf{p}$
+\end_inset
+
+ Hamiltonian, terms of the type 
+\begin_inset Formula $Nk_{i}k_{j}$
+\end_inset
+
+ with 
+\begin_inset Formula $i\neq j$
+\end_inset
+
+ can appear, for which the operator ordering is not clear.
+ The usual fix is to split the contribution symmetrically
+\begin_inset Formula \begin{equation}
+Nk_{i}k_{j}\rightarrow\partial_{i}\frac{N}{2}\partial_{j}-\partial_{j}\frac{N}{2}\partial_{i}.\label{eq:Symmetrized_Operator_Ordering}\end{equation}
+
+\end_inset
+
+It can be shown that this particular choice, which is called 
+\emph on
+symmetrized operator ordering
+\emph default
+, may lead to erroneous results.
+ The traditional envelope equations for one and several bands are widely
+ applied and used in a variety of numerical calculations of quantum wells
+ (and superlattices) 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Altarelli1983,Bastard1981,Bastard1982,Eppenga1987,Chuang1991"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Beside its successful application to some material systems, the traditional
+ way of deriving the envelope equations contains several ad hoc fixes, which
+ are required within the presence of material interfaces.
+ The operator ordering is crucial at a material interface, where the material
+ parameters change and therefore the ad-hoc operator ordering involves unknown
+ approximations made to the effect of the interface.
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+In order to analyze the involved approximations, Burt 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Burt1994,Burt1999,Burt1992,Burt1988"
+
+\end_inset
+
+ derived the operator ordering 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Second_Order_Diff_Operator"
+
+\end_inset
+
+ from the nanostructure’s 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Schr
+\backslash
+"{o}dinger 
+\end_layout
+
+\end_inset
+
+ equation and demonstrated that the symmetrization approach for the terms
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Symmetrized_Operator_Ordering"
+
+\end_inset
+
+ in the multi-band envelope equation is incorrect.
+ The derived multi-band Hamiltonian is Hermitian, but not necessarily symmetric.
+ The derivation focusing on operator ordering is not summarized here, but
+ the reader is reffered to reviews 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Burt1992,Burt1999"
+
+\end_inset
+
+ and for the numerical estimates of the introduced errors to 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Burt1994"
+
+\end_inset
+
+.
+ In essence, Burt’s theory clearly demonstrated the existence and omission
+ of interface terms and showed that exact envelope equations could be derived
+ from the original 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Schr
+\backslash
+"{o}dinger 
+\end_layout
+
+\end_inset
+
+ equation.
+ But Burt’s theory is not widely applied.
+ The issue of operator ordering attracts growing interest and it is crucial
+ for the mathematical stability of the envelope equations 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Veprek2008"
+
+\end_inset
+
+.
+ Foreman 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Foreman1993"
+
+\end_inset
+
+ derived the correct operator ordering for zinc-blende crystals and therefore
+ the derived operator ordering is commonly referred to as Burt-Foreman operator
+ ordering.
+ Beside the operator ordering, the theory regarding the omitted interface
+ terms in the traditional model is only used rarely 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Foreman1998a,Foreman1995b"
+
+\end_inset
+
+.
+ The effect of the interface terms is to perturb the system and create an
+ additional mixing of the bands.
+ In the traditional envelope equations, the effect of the interface was
+ introduced using phenomenological models (see e.g.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Krebs1999b"
+
+\end_inset
+
+ and references therein) or by a variational least action principle 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Rodina2006"
+
+\end_inset
+
+.
+ The reason of the fundamental popularity of the traditional envelope function
+ method over Burt’s method is given by its simple form, which allows to
+ write quantum well solvers within days, and the fact that mostly known,
+ bulk input parameters can be used, which is not the case for the interface
+ terms within the exact envelope function theory.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+The Zinc-Blende Models
+\end_layout
+
+\begin_layout Subsubsection
+Direct Interaction
+\end_layout
+
+\begin_layout Standard
+To apply the envelope equations 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:General_Envelope_Function_Schr_Eq"
+
+\end_inset
+
+ to direct-bandgap semiconductor nanostructures, the exact form of the 
+\begin_inset Formula $\mathbf{k}·\mathbf{p}$
+\end_inset
+
+ Hamiltonian at the 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ point is required.
+ Ignoring spin, the top of the valence band at 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ is triply degenerate, corresponding to the 
+\begin_inset Formula $\Gamma_{15}$
+\end_inset
+
+ representation with 
+\begin_inset Formula $p$
+\end_inset
+
+-type basis functions 
+\begin_inset Formula $x,y$
+\end_inset
+
+ and 
+\begin_inset Formula $z$
+\end_inset
+
+, while the lowest-lying conduction band is of 
+\begin_inset Formula $s$
+\end_inset
+
+-type symmetry, corresponding to 
+\begin_inset Formula $\Gamma_{1}$
+\end_inset
+
+.
+ The direct interaction terms 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:k_dot_p_H_matrix"
+
+\end_inset
+
+ of the 
+\begin_inset Formula $\mathbf{k}·\mathbf{p}$
+\end_inset
+
+ matrix for 
+\begin_inset Formula $s,x,y$
+\end_inset
+
+ and 
+\begin_inset Formula $z$
+\end_inset
+
+ are given by 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "kane_handbooksemiconductors_1982"
+
+\end_inset
+
+
+\begin_inset Formula \begin{equation}
+\mathbf{H}_{d}^{4\times4}=\left(\begin{array}{r|lccc}
+ & |s\rangle & |x\rangle & |y\rangle & |z\rangle\\
+\hline |s\rangle & E_{c}+\frac{\hbar^{2}}{2m_{0}} & iPk_{x} & iPk_{y} & iPk_{z}\\
+|x\rangle & -ik_{x}P & E_{v}+\frac{\hbar^{2}}{2m_{0}} & 0 & 0\\
+|y\rangle & -ik_{y}P & 0 & E_{v}+\frac{\hbar^{2}}{2m_{0}} & 0\\
+|z\rangle & -ik_{z}P & 0 & 0 & E_{v}+\frac{\hbar^{2}}{2m_{0}}\end{array}\right).\label{eq:Direct_Int_Matrix}\end{equation}
+
+\end_inset
+
+Here, 
+\begin_inset Formula $E_{c}$
+\end_inset
+
+ and 
+\begin_inset Formula $E_{v}$
+\end_inset
+
+ correspond to the zone-center energies
+\begin_inset Formula \begin{eqnarray}
+E_{c} & = & \langle s|H|s\rangle\\
+E_{v} & = & \langle x|H|x\rangle\label{eq:Valence_Band_Edge_Energy}\\
+P & = & -\frac{i\hbar}{m_{0}}\langle s|p_{x}|s\rangle\end{eqnarray}
+
+\end_inset
+
+and 
+\begin_inset Formula $P$
+\end_inset
+
+ the nonzero interband momentum matrix element from the direct 
+\begin_inset Formula $\mathbf{k}·\mathbf{p}$
+\end_inset
+
+ interaction between the conduction- and the valence band.
+ The momentum matrix element is often given as an energy parameter 
+\begin_inset Formula $E_{p}$
+\end_inset
+
+ , the 
+\emph on
+optical matrix parameter
+\emph default
+, related to 
+\begin_inset Formula $P$
+\end_inset
+
+ by
+\begin_inset Formula \begin{equation}
+E_{p}=\frac{2m_{0}}{\hbar^{2}}P^{2}.\end{equation}
+
+\end_inset
+
+For the 
+\begin_inset Formula $\Gamma_{15}$
+\end_inset
+
+ states, the nonzero momentum matrix element is of the type 
+\begin_inset Formula $\langle x|p_{y}|z\rangle$
+\end_inset
+
+, where no coordinate appears twice 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Yu2005"
+
+\end_inset
+
+ (the crystal is invariant under a rotation of 180° around one of the axes).
+ Therefore, one would expect the direct interaction within the valence band
+ 
+\begin_inset Formula $\mathbf{k}\cdot\langle x|\mathbf{p}|y\rangle$
+\end_inset
+
+ resulting into a linear term in 
+\begin_inset Formula $\mathbf{k}$
+\end_inset
+
+ given explicitly by 
+\begin_inset Formula $k_{z}\langle x|p_{z}|y\rangle$
+\end_inset
+
+.
+ In fact, the first order matrix elements within 
+\begin_inset Formula $\Gamma_{15}$
+\end_inset
+
+ vanish due to time reversal symmetry of the Hamiltonian 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Dresselhaus1955a"
+
+\end_inset
+
+.
+ For example, a reflection in the (110) plane for 
+\begin_inset Formula $\langle x^{a}|p_{z}|y^{b}\rangle$
+\end_inset
+
+ results in 
+\begin_inset Formula $\langle y^{a}|p_{z}|x^{b}\rangle$
+\end_inset
+
+, while integration by parts gives 
+\begin_inset Formula $\langle x^{a}|p_{z}|y^{b}\rangle=-\langle y^{b}|p_{z}|x^{a}\rangle$
+\end_inset
+
+.
+ Here 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+ index the degenerate level.
+ If the states are from the same degenerate level, then 
+\begin_inset Formula $a=b$
+\end_inset
+
+ and the matrix elements vanish.
+ If the states are not from the same degenerate level, the interaction is
+ nonzero.
+\end_layout
+
+\begin_layout Standard
+The operator ordering in the first order terms, e.g.
+ 
+\begin_inset Formula $H_{sx}=iPk_{x}$
+\end_inset
+
+ and 
+\begin_inset Formula $H_{xs}=-ik_{x}P$
+\end_inset
+
+ is an ad hoc fix.
+ If 
+\begin_inset Formula $P$
+\end_inset
+
+ is allowed to vary, the here chosen ordering is required to ensure the
+ Hamiltonians Hermiticity.
+\end_layout
+
+\begin_layout Subsubsection
+Remote Contributions
+\end_layout
+
+\begin_layout Standard
+The next step is to include the interaction between the remote states and
+ keep track of the correct operator ordering.
+ It is clear from table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Symmetry_operations_Td"
+
+\end_inset
+
+ that the remote contributions to the conduction band stem from remote 
+\begin_inset Formula $\Gamma_{15}$
+\end_inset
+
+ states, while the valence band states have contributions from all except
+ the 
+\begin_inset Formula $\Gamma_{2}$
+\end_inset
+
+ states.
+ The corresponding terms are given by the matrix 
+\begin_inset Formula $\mathbf{H}_{r}^{4\times4}$
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Remote_Contributions_Hamiltonian"
+
+\end_inset
+
+ and the coefficients 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Hr4_Coefficients"
+
+\end_inset
+
+.
+ In deriving these terms, the energy for the energy-dependent renormalization
+ has been replaced by the according band edge energies 
+\begin_inset Formula $E_{v}$
+\end_inset
+
+ and 
+\begin_inset Formula $E_{c}$
+\end_inset
+
+.
+ Although the approximation might be reasonable for very remote bands 
+\begin_inset Formula $\nu$
+\end_inset
+
+, it remains crude.
+ The derivation of the terms tese terms involves only symmetry arguments
+ similar to the already used arguments within this chapter.
+ The bar in 
+\begin_inset Formula $\bar{A_{c}}$
+\end_inset
+
+, 
+\begin_inset Formula $\bar{L}$
+\end_inset
+
+ and 
+\begin_inset Formula $\bar{M}$
+\end_inset
+
+ indicates the close relationship to the parameters 
+\begin_inset Formula $\tilde{A_{c},}\tilde{L}'$
+\end_inset
+
+ and 
+\begin_inset Formula $\tilde{M}$
+\end_inset
+
+ , which include the free-electron dispersion
+\begin_inset Formula \begin{equation}
+\tilde{A_{c}}=\bar{A_{c}}+\frac{\hbar^{2}}{2m_{0}},\,\,\tilde{L}'=\bar{L}+\frac{\hbar^{2}}{2m_{0}},\,\,\tilde{M}=\bar{M}+\frac{\hbar^{2}}{2m_{0}},\end{equation}
+
+\end_inset
+
+whereas in this case the free electron dispersion is still contained in
+ the direct interaction matrix 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Direct_Int_Matrix"
+
+\end_inset
+
+.
+ The operator ordering in the offdiagonal terms 
+\begin_inset Formula $k_{y}\tilde{N}_{+}k_{x}+k_{x}\tilde{N}_{-}k_{y}$
+\end_inset
+
+ has been derived by Foreman 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Foreman1995b"
+
+\end_inset
+
+.
+ The term 
+\begin_inset Formula $\tilde{N}_{+}$
+\end_inset
+
+ contains the contribution from 
+\begin_inset Formula $\Gamma_{1}\,(F)$
+\end_inset
+
+ and 
+\begin_inset Formula $\Gamma_{12}\,(G)$
+\end_inset
+
+ bands, while 
+\begin_inset Formula $\tilde{N}_{-}$
+\end_inset
+
+ contains the contributions from 
+\begin_inset Formula $\Gamma_{15}\,(H_{1})$
+\end_inset
+
+ and 
+\begin_inset Formula $\Gamma_{25}\,(H_{2})$
+\end_inset
+
+ bands.
+ In the bulk 
+\begin_inset Formula $\mathbf{k}·\mathbf{p}$
+\end_inset
+
+ theory, the ordering is irrelevant and the terms are summed together into
+ the Kane's parameter 
+\begin_inset Formula $\tilde{N}'$
+\end_inset
+
+
+\begin_inset Formula \begin{equation}
+\tilde{N}'=\tilde{N}_{+}+\tilde{N}_{-}.\label{eq:Kane_Parameter}\end{equation}
+
+\end_inset
+
+Within the traditional 
+\begin_inset Formula $\mathbf{k}·\mathbf{p}$
+\end_inset
+
+ envelope function method applied to heterostructure, the symmetrized operator
+ ordering 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Symmetrized_Operator_Ordering"
+
+\end_inset
+
+ simply uses
+\begin_inset Formula \begin{equation}
+\tilde{N}_{+}=\tilde{N}_{-}=\frac{\tilde{N'}}{2}.\end{equation}
+
+\end_inset
+
+The parameters 
+\begin_inset Formula $\tilde{L}'$
+\end_inset
+
+, 
+\begin_inset Formula $\tilde{M}$
+\end_inset
+
+ and 
+\begin_inset Formula $\tilde{N}$
+\end_inset
+
+ are usually determined by calculating analytical expressions for the dispersion
+ and relating them to measured effective masses.
+ The detailed splitting of 
+\begin_inset Formula $\tilde{N}'$
+\end_inset
+
+ into 
+\begin_inset Formula $\tilde{N}_{+}$
+\end_inset
+
+ and 
+\begin_inset Formula $\tilde{N}_{-}$
+\end_inset
+
+ is not directly accessible from experiment, but can be estimated 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Foreman1993"
+
+\end_inset
+
+ using the following arguments: The term 
+\begin_inset Formula $\tilde{N}_{-}$
+\end_inset
+
+ contains contributions of 
+\begin_inset Formula $\Gamma_{15}$
+\end_inset
+
+ and 
+\begin_inset Formula $\Gamma_{25}$
+\end_inset
+
+ bands.
+ The 
+\begin_inset Formula $\Gamma_{25}$
+\end_inset
+
+ bands can only be formed by 
+\begin_inset Formula $f$
+\end_inset
+
+-type and higher atomic orbitals, while 
+\begin_inset Formula $\Gamma_{15}$
+\end_inset
+
+ bands can be formed by 
+\begin_inset Formula $p$
+\end_inset
+
+-,
+\begin_inset Formula $d$
+\end_inset
+
+-,
+\begin_inset Formula $f$
+\end_inset
+
+- and higher type orbitals 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Foreman1995b"
+
+\end_inset
+
+.
+ Within the usual semiconductors, the influence of 
+\begin_inset Formula $f$
+\end_inset
+
+ orbitals is insignificant.
+ Therefore, neglecting the influence of the 
+\begin_inset Formula $\Gamma_{25}$
+\end_inset
+
+ bands (
+\begin_inset Formula $H_{2}=0$
+\end_inset
+
+) and using 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Hr4_Coefficients"
+
+\end_inset
+
+, the value for 
+\begin_inset Formula $\tilde{N}_{-}$
+\end_inset
+
+ is given by 
+\begin_inset Formula \begin{equation}
+\tilde{N}_{-}=\bar{M}=\tilde{M}-\frac{\hbar^{2}}{2m_{o}}.\end{equation}
+
+\end_inset
+
+
+\begin_inset Formula $\tilde{N}_{+}$
+\end_inset
+
+ can be deduced using 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Kane_Parameter"
+
+\end_inset
+
+ and the experimentally determined value for 
+\begin_inset Formula $\tilde{N}'$
+\end_inset
+
+.
+ In a usual zinc-blende semiconductor such as 
+\begin_inset Formula $GaAs$
+\end_inset
+
+, 
+\begin_inset Formula $\tilde{M}$
+\end_inset
+
+ = −2.65 and 
+\begin_inset Formula $\tilde{N}'$
+\end_inset
+
+ = −17.4 (in units of 
+\begin_inset Formula $\frac{\hbar^{2}}{2m_{0}}$
+\end_inset
+
+).
+ The symmetric operator ordering would therefore use 
+\begin_inset Formula $\tilde{N}_{+/-}$
+\end_inset
+
+ = −8.7, while the Burt-Foreman ordering gives strongly asymmetric values
+ 
+\begin_inset Formula $\tilde{N}_{+}$
+\end_inset
+
+= −13.75 and 
+\begin_inset Formula $\tilde{N}_{-}$
+\end_inset
+
+ = −3.65.
+ In contrast to the operator ordering within the valence band, the ordering
+ in the off-diagonal terms between the conduction and valence bands, given
+ by the terms 
+\begin_inset Formula $k_{y}Ck_{z}+k_{z}Ck_{y}$
+\end_inset
+
+, is required to be symmetric.
+ Only remote 
+\begin_inset Formula $\Gamma_{15}$
+\end_inset
+
+ type bands mix into the 
+\begin_inset Formula $s$
+\end_inset
+
+-type conduction band, and therefore, the non-vanishing elements from the
+ perturbation are
+\begin_inset Formula \begin{equation}
+k_{y}\left\langle s\mid p_{y}\mid y^{r}\right\rangle \left\langle y^{r}\mid p_{z}\mid x\right\rangle k_{z}+k_{z}\left\langle s\mid p_{z}\mid y^{r}\right\rangle \left\langle z^{r}\mid p_{y}\mid x\right\rangle k_{y}.\end{equation}
+
+\end_inset
+
+By crystal symmetry, these terms are equal.
+ The term 
+\begin_inset Formula $C$
+\end_inset
+
+ is related to the common Kane parameter 
+\begin_inset Formula $B=2C$
+\end_inset
+
+.
+ As 
+\begin_inset Formula $B$
+\end_inset
+
+ is usually small, it is commonly neglected, i.e.
+ 
+\begin_inset Formula $C=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{landscape}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+\mathbf{H}_{r}^{4\times4}=\left(\begin{array}{r|lccc}
+ & |s\rangle & |x\rangle & |y\rangle & |z\rangle\\
+\hline |s\rangle & k\bar{A}_{c}k & k_{y}Ck_{z}+k_{z}Ck_{y} & k_{x}Ck_{z}+k_{z}Ck_{x} & k_{y}Ck_{x}+k_{x}Ck_{y}\\
+|x\rangle & k_{z}Ck_{y}+k_{y}Ck_{z} & k_{x}\bar{L}k_{x}+k_{y}\bar{M}k_{y}+k_{z}\bar{M}k_{z} & k_{x}\tilde{N}_{+}k_{y}+k_{y}\tilde{N}_{-}k_{x} & k_{x}\tilde{N}_{+}k_{z}+k_{z}\tilde{N}_{-}k_{x}\\
+|y\rangle & k_{z}Ck_{x}+k_{x}Ck_{z} & k_{y}\tilde{N}_{+}k_{x}+k_{x}\tilde{N}_{-}k_{y} & k_{y}\bar{L}k_{y}+k_{x}\bar{M}k_{x}+k_{z}\bar{M}k_{z} & k_{y}\tilde{N}_{+}k_{z}+k_{z}\tilde{N}_{-}k_{y}\\
+|z\rangle & k_{x}Ck_{y}+k_{y}Ck_{x} & k_{z}\tilde{N}_{+}k_{x}+k_{x}\tilde{N}_{-}k_{z} & k_{z}\tilde{N}_{+}k_{y}+k_{y}\tilde{N}_{-}k_{z} & k_{z}\bar{L}k_{z}+k_{x}\bar{M}k_{x}+k_{y}\bar{M}k_{y}\end{array}\right),\label{eq:Remote_Contributions_Hamiltonian}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{gather}
+\bar{L}=F+2G,\,\,\,\,\,\,\,\,\,\,\bar{M}=H_{1}+H_{2},\nonumber \\
+\tilde{N}_{+}=F-G,\,\,\,\,\,\,\,\,\,\,\tilde{N}_{-}=H_{1}-H_{2},\nonumber \\
+F=\frac{\hbar^{2}}{m_{0}^{2}}\sum_{\nu}^{\Gamma_{1}}\frac{\left|\left\langle x\mid p_{x}\mid u_{\nu}\right\rangle \right|^{2}}{\left(E_{v}-E_{\nu}\right)},\,\,\,\,\, G=\frac{\hbar^{2}}{m_{0}^{2}}\sum_{\nu}^{\Gamma_{12}}\frac{\left|\left\langle x\mid p_{x}\mid u_{\nu}\right\rangle \right|^{2}}{\left(E_{v}-E_{\nu}\right)},\label{eq:Hr4_Coefficients}\\
+H_{1}=\frac{\hbar^{2}}{m_{0}^{2}}\sum_{\nu}^{\Gamma_{15}}\frac{\left|\left\langle s\mid p_{x}\mid u_{\nu}\right\rangle \right|^{2}}{\left(E_{c}-E_{\nu}\right)},\,\,\,\,\, H_{2}=\frac{\hbar^{2}}{m_{0}^{2}}\sum_{\nu}^{\Gamma_{25}}\frac{\left|\left\langle x\mid p_{x}\mid u_{\nu}\right\rangle \right|^{2}}{\left(E_{v}-E_{\nu}\right)},\nonumber \\
+\bar{A}_{c}=\frac{\hbar^{2}}{m_{0}^{2}}\sum_{\nu}^{\Gamma_{15}}\frac{\left|\left\langle s\mid p_{x}\mid u_{\nu}\right\rangle \right|^{2}}{\left(E_{c}-E_{\nu}\right)},\,\,\,\,\, C=\frac{\hbar^{2}}{m_{0}^{2}}\sum_{\nu}^{\Gamma_{15}}\frac{\left\langle s\mid p_{x}\mid u_{\nu}\right\rangle \left\langle u_{\nu}\mid p_{x}\mid z\right\rangle }{\left(\frac{1}{2}\left(E_{c}+E_{v}\right)-E_{\nu}\right)}.\nonumber \end{gather}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{landscape}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Spin-Orbit Interaction
+\end_layout
+
+\begin_layout Standard
+Up to this point, the electron spin has been omitted.
+ Within the semiconductors involving heavier atoms, the spin-orbit interaction
+ has a large impact on the electron dispersions.
+ The spin-orbit energy leads to additional terms in the equation 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:QW_Conduction_Band_Envelope_Schr_Eq"
+
+\end_inset
+
+ for the zone-center functions, namely
+\begin_inset Formula \begin{eqnarray}
+H_{SO,\mathbf{p}} & = & \frac{\hbar}{4m_{0}^{2}c^{2}}\left(\nabla V\times\mathbf{p}\right)\cdot\boldsymbol{\sigma},\label{eq:spin_orbit_int_p}\\
+H_{SO,\mathbf{k}} & = & \frac{\hbar}{4m_{0}^{2}c^{2}}\left(\nabla V\times\mathbf{k}\right)\cdot\mathbf{\boldsymbol{\sigma}},\label{eq:spin_orbit_int_k}\end{eqnarray}
+
+\end_inset
+
+where 
+\begin_inset Formula $c$
+\end_inset
+
+ is the vacuum speed of light and 
+\begin_inset Formula $\boldsymbol{\sigma}$
+\end_inset
+
+ are the 
+\emph on
+Pauli operators
+\emph default
+ acting on the electron-spin variable
+\begin_inset Formula \[
+\sigma_{x}=\left(\begin{array}{cc}
+0 & 1\\
+1 & 0\end{array}\right),\,\,\sigma_{y}=\left(\begin{array}{cc}
+0 & -i\\
+i & 0\end{array}\right),\,\,\sigma_{z}=\left(\begin{array}{cc}
+1 & 0\\
+0 & -1\end{array}\right).\]
+
+\end_inset
+
+The Bloch basis functions have to be extended to include the spin degree
+ of freedom, which is done by giving the spin 
+\begin_inset Formula $z$
+\end_inset
+
+-component, which can be either up 
+\begin_inset Formula $\left|\uparrow\right\rangle $
+\end_inset
+
+ or down 
+\begin_inset Formula $\left|\downarrow\right\rangle $
+\end_inset
+
+.
+ The spin variable is diagonal, meaning that 
+\begin_inset Formula $\left\langle \uparrow\mid\uparrow\right\rangle =\left\langle \downarrow\mid\downarrow\right\rangle =1$
+\end_inset
+
+ and 
+\begin_inset Formula $\left\langle \uparrow\mid\downarrow\right\rangle =0$
+\end_inset
+
+.
+ Using the spin, the initial basis of four states describing the lowest
+ conduction band and the top valence bands is doubled to eight states
+\begin_inset Formula \begin{equation}
+\left|s\uparrow\right\rangle ,\,\left|x\uparrow\right\rangle ,\,\left|y\uparrow\right\rangle ,\,\left|z\uparrow\right\rangle ,\,\left|s\downarrow\right\rangle ,\,\left|x\downarrow\right\rangle ,\,\left|y\downarrow\right\rangle ,\,\left|z\downarrow\right\rangle .\label{eq:levels_basis_with_spin}\end{equation}
+
+\end_inset
+
+All operators in the zone-center Hamiltonian 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:zero_center_Bloch_Equation"
+
+\end_inset
+
+ do not act on the spin variable.
+ Therefore, the Hamiltonian is diagonal in the spin variable.
+ Within the basis 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:levels_basis_with_spin"
+
+\end_inset
+
+, the Hamiltonian is given by
+\begin_inset Formula \begin{equation}
+\mathbf{H}_{rd}^{8\times8}=\left(\begin{array}{cc}
+\mathbf{H}_{d}^{4\times4}+\mathbf{H}_{r}^{4\times4} & 0\\
+0 & \mathbf{H}_{d}^{4\times4}+\mathbf{H}_{r}^{4\times4}\end{array}\right).\end{equation}
+
+\end_inset
+
+In contrast to this Hamiltonian, the spin-orbit interaction 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:spin_orbit_int_p"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:spin_orbit_int_k"
+
+\end_inset
+
+ is not diagonal in the basis 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:levels_basis_with_spin"
+
+\end_inset
+
+.
+ The reason to this lies in the symmetry of the spin.
+ The crystal potential 
+\begin_inset Formula $V(\mathbf{r})$
+\end_inset
+
+ without spin terms is invariant under any rotation around an angle of 
+\begin_inset Formula $2π$
+\end_inset
+
+, denoted here as 
+\begin_inset Formula $\hat{E}$
+\end_inset
+
+.
+ Under such a rotation, the wavefunction including the spin switches sign
+ and is only invariant under the rotation of 
+\begin_inset Formula $4π$
+\end_inset
+
+.
+ Therefore, if the point group of the crystal neglecting spin is given by
+ 
+\begin_inset Formula $\mathcal{G}$
+\end_inset
+
+, then the point group including spin will be given by the elements of 
+\begin_inset Formula $\mathcal{G}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{E}\mathcal{G}$
+\end_inset
+
+, leading to the definition of the 
+\emph on
+double-group
+\emph default
+ 
+\begin_inset Formula $\mathcal{\tilde{G}}$
+\end_inset
+
+ of 
+\begin_inset Formula $\mathcal{G}$
+\end_inset
+
+ defined as
+\begin_inset Formula \begin{equation}
+\mathcal{\tilde{G}}=\left\{ g,\,\tilde{g}=-g\right\} \,\,\,\forall g\in\mathcal{G}.\end{equation}
+
+\end_inset
+
+The spin-orbit interaction for 
+\begin_inset Formula $H_{SO,\mathbf{p}}$
+\end_inset
+
+of 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:spin_orbit_int_p"
+
+\end_inset
+
+ leads, for the basis in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:levels_basis_with_spin"
+
+\end_inset
+
+, to 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "enders_kp_1995"
+
+\end_inset
+
+
+\begin_inset Formula \begin{equation}
+\mathbf{H}_{SO,\mathbf{p}}=\frac{\Delta}{3}\left(\begin{array}{cccccccc}
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & -i & 0 & 0 & 0 & 0 & 1\\
+0 & i & 0 & 0 & 0 & 0 & 0 & -i\\
+0 & 0 & 0 & 0 & 0 & -1 & i & 0\\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & -1 & 0 & 0 & i & 0\\
+0 & 0 & 0 & -i & 0 & -i & 0 & 0\\
+0 & 1 & i & 0 & 0 & 0 & 0 & 0\end{array}\right).\end{equation}
+
+\end_inset
+
+Here, the spin-orbit energy 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ is defined as 
+\begin_inset Formula \begin{equation}
+\Delta=-3i\frac{\hbar}{4m_{0}^{2}c^{2}}\left\langle x\mid\left(\nabla V\times\mathbf{p}\right)_{y}\mid z\right\rangle .\end{equation}
+
+\end_inset
+
+The 
+\begin_inset Formula $k$
+\end_inset
+
+-dependent spin-orbit interaction 
+\begin_inset Formula $H_{SO,\mathbf{k}}$
+\end_inset
+
+ of 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:spin_orbit_int_k"
+
+\end_inset
+
+ is small and therefore commonly neglected 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "kane_handbooksemiconductors_1982"
+
+\end_inset
+
+.
+ The result of 
+\begin_inset Formula $H_{SO,\mathbf{k}}$
+\end_inset
+
+ are terms linear in 
+\begin_inset Formula $k$
+\end_inset
+
+, leading to an off-diagonal coupling between the conduction and the valence
+ band.
+ Further, the spin-orbit interaction 
+\begin_inset Formula $H_{SO,\mathbf{p}}$
+\end_inset
+
+ is usually only included in the direct interaction, while perturbative
+ contributions from remote bands are in general neglected.
+ The effect of the spin-orbit interaction is to split the six-fold (threefold
+ without spin) degeneracy of the valence band at 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ into a fourfold degeneracy with eigenvalue 
+\begin_inset Formula $\frac{\Delta}{3}$
+\end_inset
+
+ and a two-fold degeneracy with an eigenvalue of 
+\begin_inset Formula $-\frac{2\Delta}{3}$
+\end_inset
+
+ .
+ In other words, the states are separated by 
+\begin_inset Formula $\Delta$
+\end_inset
+
+.
+ The four-fold degenerate states corresponds to the irreducible representation
+ 
+\begin_inset Formula $\Gamma_{8}$
+\end_inset
+
+ of the double group of 
+\begin_inset Formula $T_{d}$
+\end_inset
+
+.
+ Away from 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+, these states create the 
+\emph on
+heavy-hole
+\emph default
+ (HH) and the
+\emph on
+ light-hole
+\emph default
+ (LH) bands.
+ The two-fold degenerate states correspond to the 
+\begin_inset Formula $\Gamma_{7}$
+\end_inset
+
+ representation and lie below the 
+\begin_inset Formula $\Gamma_{8}$
+\end_inset
+
+ states by 
+\begin_inset Formula $-\Delta$
+\end_inset
+
+.
+ The 
+\begin_inset Formula $\Gamma_{7}$
+\end_inset
+
+ band is referred to as 
+\emph on
+spin-orbit split off band
+\emph default
+ (SO).
+ The lowest conduction band (CB) states finally correspond to 
+\begin_inset Formula $\Gamma_{6}$
+\end_inset
+
+ states.
+ The situation is illustrated in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:GaAs_Bulk_Bands"
+
+\end_inset
+
+, where the band structure of 
+\begin_inset Formula $GaAs$
+\end_inset
+
+ calculated using the here presented 
+\begin_inset Formula $\mathbf{k}·\mathbf{p}$
+\end_inset
+
+ model is plotted around 
+\begin_inset Formula $\mathbf{k}=0$
+\end_inset
+
+.
+ The experimental accessible bandgap is given by the difference between
+ the 
+\begin_inset Formula $\Gamma_{6}$
+\end_inset
+
+ and the 
+\begin_inset Formula $\Gamma_{8}$
+\end_inset
+
+ states.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/2_GaAs_Bulk_k_p.eps
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:GaAs_Bulk_Bands"
+
+\end_inset
+
+Band structure of bulk 
+\begin_inset Formula $GaAs$
+\end_inset
+
+ around the 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ point at room temperature, calculated using the 
+\begin_inset Formula $8\times8$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{k}\cdot\mathbf{p}$
+\end_inset
+
+ for two crystal directions.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+Therefore, the valence band edge 
+\begin_inset Formula $E_{v}$
+\end_inset
+
+ in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Valence_Band_Edge_Energy"
+
+\end_inset
+
+, needs to be shifted by 
+\begin_inset Formula $-\frac{\Delta}{3}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+The here elaborated model, including the CB, HH, LH and SO band, is commonly
+ referred to as the 
+\begin_inset Formula $8\times8$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{k}\cdot\mathbf{p}$
+\end_inset
+
+ model.
+ For large band gap materials, the coupling between the conduction and valence
+ bands is weak and therefore the 
+\begin_inset Formula $8\times8$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{k}\cdot\mathbf{p}$
+\end_inset
+
+ model can be divided into to a 
+\begin_inset Formula $6\times6$
+\end_inset
+
+ model, including only the valence bands and a single band model for the
+ spin degenerate conduction band.
+ This division is achieved by perturbatively folding the conduction band
+ onto the valence bands and vice versa.
+ The 
+\begin_inset Formula $6\times6$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{k}\cdot\mathbf{p}$
+\end_inset
+
+ is therefore obtained by using only the valence band part of 
+\begin_inset Formula $\mathbf{H}_{rd}^{8\times8}+\mathbf{H}_{SO,\mathbf{p}}$
+\end_inset
+
+ with modified parameters 
+\begin_inset Formula $L′$
+\end_inset
+
+ and 
+\begin_inset Formula $N′$
+\end_inset
+
+ given by
+\begin_inset Formula \begin{equation}
+L'=\tilde{L}'+\frac{P^{2}}{E_{g}},\,\,\,\, N_{+}=\tilde{N}_{+}+\frac{P^{2}}{E_{g}}\label{eq:Kanes_params_renormalization}\end{equation}
+
+\end_inset
+
+instead of 
+\begin_inset Formula $\tilde{L}'$
+\end_inset
+
+ and 
+\begin_inset Formula $\tilde{N}_{+}$
+\end_inset
+
+.
+ The parameter 
+\begin_inset Formula $\tilde{M}$
+\end_inset
+
+, and consequently 
+\begin_inset Formula $\tilde{N}_{-}$
+\end_inset
+
+, remain unchanged.
+ Thereby, the correct operator ordering is conserved.
+ The conduction band parameter is obtained using
+\begin_inset Formula \begin{equation}
+A_{c}=\tilde{A}_{c}+\frac{P^{2}}{E_{g}},\end{equation}
+
+\end_inset
+
+which is then equal to the common conduction band effective mass.
+ For some semiconductors, the spin-orbit splitting is large and the SO band
+ has only little influence on the top of the valence band.
+ Then, the 
+\begin_inset Formula $6\times6$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{k}\cdot\mathbf{p}$
+\end_inset
+
+ model can be further reduced to only include the HH and LH bands.
+ The reduction is performed by choosing a combination of basis functions
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:levels_basis_with_spin"
+
+\end_inset
+
+ effectively diagonalizing the spin-orbit interaction 
+\begin_inset Formula $\mathbf{H}_{SO,\mathbf{p}}$
+\end_inset
+
+.
+ The new basis is labelled according to its total angular momentum 
+\begin_inset Formula $J$
+\end_inset
+
+ and the angular momentum around the 
+\begin_inset Formula $z$
+\end_inset
+
+-axis, 
+\begin_inset Formula $J_{z}$
+\end_inset
+
+.
+ A possible choice, using 
+\begin_inset Formula $\left|J,J_{z}\right\rangle $
+\end_inset
+
+ as notation, is given by
+\begin_inset Formula \begin{eqnarray}
+u_{hh}=\left|\frac{3}{2},\frac{3}{2}\right\rangle  & = & -\frac{1}{\sqrt{2}}\left(\left|x\uparrow\right\rangle +i\left|y\uparrow\right\rangle \right),\nonumber \\
+u_{lh}=\left|\frac{3}{2},\frac{1}{2}\right\rangle  & = & -\frac{1}{\sqrt{6}}\left(\left|x\downarrow\right\rangle +i\left|y\uparrow\right\rangle \right)+\sqrt{\frac{2}{3}}\left|z\uparrow\right\rangle ,\nonumber \\
+\bar{u}_{lh}=\left|\frac{3}{2},-\frac{1}{2}\right\rangle  & = & \frac{1}{\sqrt{6}}\left(\left|x\uparrow\right\rangle -i\left|y\uparrow\right\rangle \right)+\sqrt{\frac{2}{3}}\left|z\downarrow\right\rangle ,\label{eq:Angular_Momentum_Basis}\\
+\bar{u}_{hh}=\left|\frac{3}{2},-\frac{3}{2}\right\rangle  & = & \frac{1}{\sqrt{2}}\left(\left|x\downarrow\right\rangle -i\left|y\downarrow\right\rangle \right),\nonumber \\
+u_{SO}=\left|\frac{1}{2},\frac{1}{2}\right\rangle  & = & \frac{1}{\sqrt{3}}\left(\left|x\downarrow\right\rangle +i\left|y\downarrow\right\rangle +\left|z\uparrow\right\rangle \right),\nonumber \\
+\bar{u}_{SO}=\left|\frac{1}{2},-\frac{1}{2}\right\rangle  & = & \frac{1}{\sqrt{3}}\left(\left|x\uparrow\right\rangle -i\left|y\uparrow\right\rangle -\left|z\downarrow\right\rangle \right).\nonumber \end{eqnarray}
+
+\end_inset
+
+The four states with total angular momentum of 
+\begin_inset Formula $\frac{3}{2}$
+\end_inset
+
+ belong to 
+\begin_inset Formula $\Gamma_{8}$
+\end_inset
+
+ and the two states with an angular momentum of 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+ form the 
+\begin_inset Formula $\Gamma_{7}$
+\end_inset
+
+ (or SO) bands.
+ Transforming the Hamiltonian into the basis 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Angular_Momentum_Basis"
+
+\end_inset
+
+ and neglecting the 
+\begin_inset Formula $\Gamma_{7}$
+\end_inset
+
+ rows and columns finally results in the 
+\begin_inset Formula $4\times4$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{k}\cdot\mathbf{p}$
+\end_inset
+
+ model.
+ Within the 
+\begin_inset Formula $4\times4$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{k}\cdot\mathbf{p}$
+\end_inset
+
+ model, it is common to use the Luttinger parameters 
+\begin_inset Formula $\gamma_{1},\gamma_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $\gamma_{3}$
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+The full listing of these parameters is given in 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Chuang1995"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Luttinger1956"
+
+\end_inset
+
+ instead of the Kane's parameters of the 
+\begin_inset Formula $6\times6$
+\end_inset
+
+ model 
+\begin_inset Formula $L′,\, M$
+\end_inset
+
+ and 
+\begin_inset Formula $N′$
+\end_inset
+
+.
+ The Luttinger parameters are usually those given in literature.
+ The parameters are related to each other via
+\begin_inset Formula \begin{eqnarray}
+L' & = & -\frac{\hbar^{2}}{2m_{0}}\left(\gamma_{1}+4\gamma_{2}\right)\nonumber \\
+M & = & -\frac{\hbar^{2}}{2m_{0}}\left(\gamma_{1}-2\gamma_{2}\right)\label{eq:Luttinger_Kane_parameters_relation}\\
+N' & = & -\frac{\hbar^{2}}{2m_{0}}6\gamma_{3}.\nonumber \end{eqnarray}
+
+\end_inset
+
+From 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Luttinger_Kane_parameters_relation"
+
+\end_inset
+
+, the parameters for 
+\begin_inset Formula $8\times8$
+\end_inset
+
+ model can be calculated using the renormalization 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Kanes_params_renormalization"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In terms of the Luttinger parameters the full 
+\begin_inset Formula $8\times8$
+\end_inset
+
+ Hamiltonian can be written explicitly as in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:8X8_Matrix"
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Chuang1995,Luttinger1956,Kohn1955a"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{landscape}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{equation}
+\mathbf{H}^{8\times8}=\left(\begin{array}{cccccccc}
+E_{c} & P_{z} & \sqrt{2}P_{z} & -\sqrt{3}P_{+} & 0 & \sqrt{2}P_{-} & P_{-} & 0\\
+P_{z}^{\dagger} & P+\Delta & \sqrt{2}Q^{\dagger} & -S^{\dagger}/\sqrt{2} & -\sqrt{2}P_{+}^{\dagger} & 0 & -\sqrt{3/2}S & -\sqrt{2}R\\
+\sqrt{2}P_{z}^{\dagger} & \sqrt{2}Q & P-Q & -S^{\dagger} & -P_{+}^{\dagger} & \sqrt{3/2}S & 0 & R\\
+-\sqrt{3}P_{+}^{\dagger} & -S/\sqrt{2} & -S & P+Q & 0 & \sqrt{2}R & R & 0\\
+0 & -\sqrt{2}P_{+} & -P_{+} & 0 & E_{c} & P_{z} & -\sqrt{2}P_{z} & -\sqrt{3}P_{-}\\
+\sqrt{2}P_{-}^{\dagger} & 0 & \sqrt{3/2}S^{\dagger} & \sqrt{2}R^{\dagger} & P_{z}^{\dagger} & P+\Delta & \sqrt{2}Q^{\dagger} & -S/\sqrt{2}\\
+P_{-}^{\dagger} & -\sqrt{3/2}S^{\dagger} & 0 & R^{\dagger} & -\sqrt{2}P_{z}^{\dagger} & \sqrt{2}Q & P-Q & S\\
+0 & -\sqrt{2}R^{\dagger} & R^{\dagger} & 0 & -\sqrt{3}P_{-}^{\dagger} & -S^{\dagger}/\sqrt{2} & S^{\dagger} & P+Q\end{array}\right)\label{eq:8X8_Matrix}\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula \begin{eqnarray}
+E_{c} & = & E_{g}+\frac{\hbar^{2}}{2m_{0}}\left(k_{x}^{2}+k_{y}^{2}+k_{z}^{2}\right),\\
+P & = & \frac{\hbar^{2}}{2m_{0}}\gamma_{1}\left(k_{x}^{2}+k_{y}^{2}+k_{z}^{2}\right),\\
+P_{\pm} & = & \sqrt{\frac{1}{6}}\left[i\mathcal{P}\left(k_{x}\pm ik_{y}\right)+\mathcal{B}k_{z}\left(k_{y}\pm ik_{x}\right)\right]\\
+P_{z} & = & \sqrt{\frac{1}{3}}\left(i\mathcal{P}k_{z}+\mathcal{B}k_{x}k_{y}\right),\\
+Q & = & \frac{\hbar^{2}}{2m_{0}}\gamma_{2}\left(k_{x}^{2}+k_{y}^{2}-2k_{z}^{2}\right),\\
+R & = & \frac{\hbar^{2}}{2m_{0}}\left[-\sqrt{3}\gamma_{2}\left(k_{x}^{2}-k_{y}^{2}\right)+i2\sqrt{3}\gamma_{3}k_{x}k_{y}\right],\\
+S & = & \frac{\hbar^{2}}{2m_{0}}\gamma_{3}\left(k_{x}-ik_{y}\right)k_{z}.\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{landscape}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The parameter 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ is, as before, the spin-orbit splitting energy.
+ The coupling between the 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ conduction band edge state 
+\begin_inset Formula $\left|s\right\rangle $
+\end_inset
+
+ and the 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ valence band edge state 
+\begin_inset Formula $\left|z\right\rangle $
+\end_inset
+
+ is given by
+\begin_inset Formula \begin{equation}
+\mathcal{P}=-\frac{\hbar^{2}}{m_{0}}\int_{V_{c}}\varphi_{s}\frac{\partial}{\partial z}\varphi_{z}.\end{equation}
+
+\end_inset
+
+The Kane parameter 
+\begin_inset Formula $\mathcal{B}$
+\end_inset
+
+ describes the inversion asymmetry.
+ In most practical calculations, this parameter is neglected.
+ The parameters 
+\begin_inset Formula $\gamma_{1},\gamma_{2},\gamma_{3}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathcal{P}$
+\end_inset
+
+ can ne determined from effective masses at the 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ point of the bulk semiconductor 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Chuang1995"
+
+\end_inset
+
+
+\begin_inset Formula \begin{eqnarray}
+\frac{m_{0}}{m_{hh}(001)} & = & \gamma_{1}-2\gamma_{2},\\
+\frac{m_{0}}{m_{lh}(001)} & = & \gamma_{1}+2\gamma_{2}+\lambda,\\
+\frac{m_{0}}{m_{SO}(001)} & = & \gamma_{1}+\frac{1}{2}\lambda r,\\
+\frac{m_{0}}{m_{hh}(111)} & = & \gamma_{1}-2\gamma_{3},\end{eqnarray}
+
+\end_inset
+
+where the dimensionless parameters 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ and 
+\begin_inset Formula $r$
+\end_inset
+
+ are given by
+\begin_inset Formula \begin{eqnarray}
+\lambda & = & \frac{4m_{0}\mathcal{P}^{2}}{3\hbar^{2}E_{g}},\\
+r & = & \frac{E_{g}}{E_{g}+\Delta}.\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Put here the 6X6 and 4X4 Hamiltonians
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Two-Band-Model"
+
+\end_inset
+
+Two Band Model
+\end_layout
+
+\begin_layout Standard
+The conduction band can be modeled quite easily if we assume that the interactio
+n with the other bands is weak enough for it to be treated perturbatively,
+ i.e.
+ use a simple effective mass model.
+ In the case of the valence band, however, the strong interaction between
+ the degenerate light and heavy hole bands (near the band edge) requires
+ that these bands are taken into account explicitly.
+ Only when we consider energy levels deep into the valence bands (close
+ to the SO splitting energy, about 
+\begin_inset Formula $300\, meV$
+\end_inset
+
+ in 
+\begin_inset Formula $GaAs)$
+\end_inset
+
+ do the coupling terms to the SO and conduction bands (
+\begin_inset Formula $1.5\, eV$
+\end_inset
+
+ splitting) can be introduced through the effective mass.
+ 
+\end_layout
+
+\begin_layout Standard
+The degeneracy of the light and heavy hole bands near the band edge generates
+ a coupling term (as in the Luttinger Hamiltonian).
+ Including spin degeneracy, this yields a set of four coupled effective
+ mass equations 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Andreani1987,Chuang1995,broido_effective_1985"
+
+\end_inset
+
+.
+ Fortunately, this set of coupled equations can be greatly simplified by
+ a method described in 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "broido_effective_1985"
+
+\end_inset
+
+.
+ Here a unitary transformation of the four basis Bloch functions in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Angular_Momentum_Basis"
+
+\end_inset
+
+ into a new set 
+\begin_inset Formula $u_{A},u_{B},u_{C,}u_{D}$
+\end_inset
+
+ to decouple the set of four coupled equations into two coupled ones.
+ The Bloch functions 
+\begin_inset Formula $u_{i}$
+\end_inset
+
+ are given by
+\begin_inset Formula \begin{eqnarray}
+u_{A} & = & \frac{1}{\sqrt{2}}\left(u_{hh}-\bar{u}_{hh}\right),\\
+u_{B} & = & \frac{1}{\sqrt{2}}\left(-u_{lh}-\bar{u}_{lh}\right),\\
+u_{C} & = & \frac{1}{\sqrt{2}}\left(u_{lh}+\bar{u}_{lh}\right),\\
+u_{D} & = & \frac{1}{\sqrt{2}}\left(u_{hh}+\bar{u}_{hh}\right).\end{eqnarray}
+
+\end_inset
+
+Consequently, the 
+\begin_inset Formula $4\times4$
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{k}\cdot\mathbf{p}$
+\end_inset
+
+ Hamiltonian 
+\begin_inset Formula \begin{equation}
+\mathbf{H}^{4\times4}=\left(\begin{array}{cccc}
+P-Q & -S^{\dagger} & 0 & R\\
+-S & P+Q & R & 0\\
+0 & R^{\dagger} & P-Q & S\\
+R^{\dagger} & 0 & S^{\dagger} & P+Q\end{array}\right).\end{equation}
+
+\end_inset
+
+In terms of the the new base proposed above, it can be diagonalized into
+ two 
+\begin_inset Formula $2\times2$
+\end_inset
+
+ block matrices, upper 
+\begin_inset Formula $H^{U}$
+\end_inset
+
+ and lower 
+\begin_inset Formula $H^{L}$
+\end_inset
+
+, given by
+\begin_inset Formula \begin{equation}
+H^{\sigma}=\left(\begin{array}{cc}
+P\pm Q & W\\
+W^{\dagger} & P\mp Q\end{array}\right),\label{eq:Block_2_2_H}\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $W=\left|R\right|-i\left|S\right|$
+\end_inset
+
+.
+ The index 
+\begin_inset Formula $\sigma=U(L)$
+\end_inset
+
+ refers to the upper (lower) 
+\begin_inset Formula $\pm$
+\end_inset
+
+ signs.
+ The upper and lower blocks are equivalent, showing the double degeneracy
+ of the heavy and light hole bands.
+ It is therefore sufficient to solve the upper block and obtain its solutions.
+ The solutions of the lower block can easily be determined from the latter.
+\end_layout
+
+\begin_layout Standard
+We can identify 
+\begin_inset Formula $P-Q$
+\end_inset
+
+ and 
+\begin_inset Formula $P+Q$
+\end_inset
+
+ with the light hole energy (operator) 
+\begin_inset Formula $\hat{H}_{lh}$
+\end_inset
+
+ and the heavy hole energy 
+\begin_inset Formula $\hat{H}_{hh}$
+\end_inset
+
+, respectively.
+ Similarly to the conduction band case, the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Schr
+\backslash
+"{o}dinger 
+\end_layout
+
+\end_inset
+
+ equation with the Hamiltonian 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Block_2_2_H"
+
+\end_inset
+
+ can be simplified into an effective-mass formalism with 
+\begin_inset Formula \begin{eqnarray}
+\hat{H}_{lh} & = & -\left(\gamma_{1}+2\gamma_{2}\right)\frac{\partial^{2}}{\partial z^{2}}+\left(\gamma_{1}-\gamma_{2}\right)k_{t}^{2},\\
+\hat{H}_{hh} & = & -\left(\gamma_{1}-2\gamma_{2}\right)\frac{\partial^{2}}{\partial z^{2}}+\left(\gamma_{1}+\gamma_{2}\right)k_{t}^{2},\\
+\hat{W} & = & \left\{ \begin{array}{c}
+\begin{array}{c}
+\sqrt{3}k_{t}\left(\gamma_{2}k_{t}-2\gamma_{3}\frac{\partial}{\partial z}\right)\,\,\,\textrm{for}\,[100]\end{array}\\
+\begin{array}{c}
+\sqrt{3}k_{t}\left(\gamma_{3}k_{t}-2\gamma_{3}\frac{\partial}{\partial z}\right)\,\,\,\textrm{for}\,[110]\end{array}\end{array}\right.\end{eqnarray}
+
+\end_inset
+
+Finally, we take into account the potential 
+\begin_inset Formula $V(z)$
+\end_inset
+
+, which represents the (bulk) valence-band-edge offset with respect to an
+ arbitrary reference energy.
+ This allows us write the effective mass equation as 
+\begin_inset Formula \begin{equation}
+\left(\begin{array}{cc}
+\hat{H}_{hh}+V & \hat{W}\\
+\hat{W}^{\dagger} & \hat{H}_{lh}+V\end{array}\right)\left(\begin{array}{c}
+F_{hh}\\
+F_{lh}\end{array}\right)=E(\mathbf{k})\left(\begin{array}{c}
+F_{hh}\\
+F_{lh}\end{array}\right),\label{eq:Effective_Mass_Equation}\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $F_{hh}$
+\end_inset
+
+ and 
+\begin_inset Formula $F_{lh}$
+\end_inset
+
+ are the envelope functions corresponding to 
+\begin_inset Formula $u_{A}$
+\end_inset
+
+ and 
+\begin_inset Formula $u_{B}$
+\end_inset
+
+, respectively.
+ Note that in this formalism, hole energies are taken to be positive.
+\end_layout
+
+\begin_layout Standard
+The first step in solving the quantum well problem, is finding the solution
+ in bulk material, where we take 
+\begin_inset Formula $V$
+\end_inset
+
+ to be a constant 
+\begin_inset Formula $V_{0}$
+\end_inset
+
+.
+ The value of 
+\begin_inset Formula $V_{0}$
+\end_inset
+
+ will be different in well material and barriers reflecting the different
+ valence band edge offsets.
+ We can now easily solve for the eigenenergies 
+\begin_inset Formula $E(\mathbf{k})$
+\end_inset
+
+, yielding the bulk energy dispersion relations for the heavy and light
+ hole subbands.
+ We consider the case of a 
+\begin_inset Formula $\left[100\right]$
+\end_inset
+
+ plane, writing the in-plane 
+\begin_inset Formula $\mathbf{k}$
+\end_inset
+
+ component as 
+\begin_inset Formula $k_{t}$
+\end_inset
+
+
+\begin_inset Formula \begin{equation}
+E(\mathbf{k})-V_{0}=\gamma_{1}\left(k_{z}^{2}+k_{t}^{2}\right)\pm\sqrt{4\gamma_{2}^{2}\left(k_{z}^{2}+k_{t}^{2}\right)+12\left(\gamma_{3}^{2}-\gamma_{2}^{2}\right)k_{z}^{2}k_{t}^{2}},\label{eq:Bulk_Dispersion_Relation_HH_LH}\end{equation}
+
+\end_inset
+
+where the plus sign refers to the light hole solution, and the minus to
+ the heavy hole one.
+ This expression can be rewritten to 
+\begin_inset Formula \begin{equation}
+E(\mathbf{k})=V_{0}+\left[\gamma_{1}\pm\gamma_{2}\sqrt{1+3\frac{\gamma_{3}^{2}-\gamma_{2}^{2}}{\gamma_{2}^{2}}\frac{k_{z}^{2}k_{t}^{2}}{\left(k_{z}^{2}+k_{t}^{2}\right)^{2}}}\right]\left(k_{z}^{2}+k_{t}^{2}\right).\end{equation}
+
+\end_inset
+
+A similar derivation can be formulated for the [110] crystal planes.
+\end_layout
+
+\begin_layout Standard
+Constant energy contours are shown in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:HH_LH_Contours_Of_Constant_Energy"
+
+\end_inset
+
+, illustrating that 
+\begin_inset Formula $\gamma_{3}$
+\end_inset
+
+can be related to the mass anisotropy along the 
+\begin_inset Formula $\left[100\right]$
+\end_inset
+
+ and 
+\begin_inset Formula $\left[110\right]$
+\end_inset
+
+ directions.
+ If 
+\begin_inset Formula $k_{t}$
+\end_inset
+
+ small compared to 
+\begin_inset Formula $k_{z}$
+\end_inset
+
+, we can expand the square root in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Bulk_Dispersion_Relation_HH_LH"
+
+\end_inset
+
+
+\begin_inset Formula \begin{equation}
+E(\mathbf{k})=V_{0}+\left(\gamma_{1}\pm\gamma_{2}\right)\left(k_{z}^{2}+k_{t}^{2}\right)\pm3\frac{\gamma_{3}^{2}-\gamma_{2}^{2}}{\gamma_{2}}k_{t}^{2}.\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/2_HH_LH.eps
+	lyxscale 10
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:HH_LH_Contours_Of_Constant_Energy"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+Contours of constant energy within any 
+\begin_inset Formula $[100]$
+\end_inset
+
+ plane of 
+\begin_inset Formula $k$
+\end_inset
+
+-space for the heavy and light hole subbands in bulk 
+\begin_inset Formula $GaAs$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+Contours of constant energy within any 
+\begin_inset Formula $[100]$
+\end_inset
+
+ plane of 
+\begin_inset Formula $k$
+\end_inset
+
+-space for the heavy (right) and light (left) hole subbands in bulk 
+\begin_inset Formula $GaAs$
+\end_inset
+
+.
+ The energy spacing between each contour level is 
+\begin_inset Formula $0.5\, meV$
+\end_inset
+
+ for the HH band and 
+\begin_inset Formula $3\, meV$
+\end_inset
+
+ for the LH band.
+ The effective HH mass is much larger along the 
+\begin_inset Formula $\left[110\right]$
+\end_inset
+
+ direction than along the 
+\begin_inset Formula $\left[100\right]$
+\end_inset
+
+ direction, as indicated by the larger contour spacing.
+ The effective LH mass is seen to be much more isotropic (after 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Zory1993"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Energy term accounting for anisotropy for a given 
+\begin_inset Formula $k_{t}$
+\end_inset
+
+ and 
+\begin_inset Formula $k_{z}$
+\end_inset
+
+ is equal for the HH and LH subbands.
+ However, due to the lower energy of the HH bands the anisotropy term is
+ relatively more important for HH than for LH, resulting in a clearly anisotropi
+c HH band and a quasi isotropic LH band.
+\end_layout
+
+\begin_layout Standard
+Still, we see that in bulk material, the effective masses along the 
+\begin_inset Formula $z$
+\end_inset
+
+-axis 
+\begin_inset Formula $\left[001\right]$
+\end_inset
+
+ and 
+\begin_inset Formula $x$
+\end_inset
+
+- and 
+\begin_inset Formula $y$
+\end_inset
+
+- axes 
+\begin_inset Formula $\left[100\right]$
+\end_inset
+
+ and 
+\begin_inset Formula $\left[010\right]$
+\end_inset
+
+ are identical (as expected), as the dispersion relation is given by 
+\begin_inset Formula $E(\mathbf{k})=V_{0}+\left(\gamma_{1}\pm2\gamma_{2}\right)k^{2}.$
+\end_inset
+
+We can easily find this from 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Bulk_Dispersion_Relation_HH_LH"
+
+\end_inset
+
+ with 
+\begin_inset Formula $k_{t}=0$
+\end_inset
+
+ for 
+\begin_inset Formula $\left[001\right]$
+\end_inset
+
+, and 
+\begin_inset Formula $k_{z}=0$
+\end_inset
+
+ for the 
+\begin_inset Formula $x$
+\end_inset
+
+- and 
+\begin_inset Formula $y$
+\end_inset
+
+- directions.
+\end_layout
+
+\begin_layout Standard
+The eigenvectors of 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Effective_Mass_Equation"
+
+\end_inset
+
+ are found to be, apart from a normalization constant 
+\begin_inset Formula \begin{eqnarray}
+\varphi_{1}(\mathbf{k},\mathbf{r}) & = & \left(\begin{array}{c}
+F_{hh,1}\\
+F_{lh,1}\end{array}\right)=e^{i\mathbf{k}\cdot\mathbf{r}}\left(\begin{array}{c}
+H_{lh}+V_{0}-E_{hh}\\
+-W^{\dagger}\end{array}\right),\label{eq:Phi_1}\\
+\varphi_{2}(\mathbf{k},\mathbf{r}) & = & \left(\begin{array}{c}
+F_{hh,2}\\
+F_{lh,2}\end{array}\right)=e^{i\mathbf{k}\cdot\mathbf{r}}\left(\begin{array}{c}
+H_{lh}+V_{0}-E_{lh}\\
+-W^{\dagger}\end{array}\right),\label{eq:Phi_2}\end{eqnarray}
+
+\end_inset
+
+where the matrix notation implies
+\begin_inset Formula \begin{equation}
+\varphi=F_{hh}u_{A}+F_{lh}u_{B}.\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To solve the quantum well problem, we choose the well growth direction (directio
+n of confinement) along the 
+\begin_inset Formula $z$
+\end_inset
+
+-axis.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/2_QW_Schematic_Transverse_Dispersion.eps
+	lyxscale 50
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:QW_In_Plane_Dispersion"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The "in-plane" subband structure of the quantum well in the conduction band.
+\end_layout
+
+\end_inset
+
+The "in-plane" subband structure of the quantum well in the conduction band.
+ Within the plane of the well, the electron still behaves like a "free"
+ electron.
+ Thus, for each quantized level, a parabolic energy subband exist (after
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Zory1993"
+
+\end_inset
+
+).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+ The 
+\begin_inset Formula $xy$
+\end_inset
+
+-plane is the plane of the well, as in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:QW_In_Plane_Dispersion"
+
+\end_inset
+
+.
+ We can construct a confined solution from the bulk plane wave solutions
+ by imposing boundary conditions along the confinement axis.
+ In the plane of the well, there is no confinement and hence we retain the
+ bulk plane wave solution.
+ By taking a linear combination of the bulk solutions in each material,
+ a general solution can be constructed.
+ As illustrated in 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/2_Four_Plane_Wave_States_kt_0.eps
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Bulk_Dispersion_Coefficients"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The valence subband dispersion relations and boundary conditions at the
+ interfaces of the well.
+\end_layout
+
+\end_inset
+
+At any one energy on a bulk material, we can find four wavevectors corresponding
+ to the heavy and light hole bands.
+ An eigenstate of the Hamiltonian in a quantum well is then made of a linear
+ combination of the bulk plane waves corresponding to those wave vectors.
+ The amplitudes 
+\begin_inset Formula $A_{\pm}$
+\end_inset
+
+ and 
+\begin_inset Formula $B_{\pm}$
+\end_inset
+
+ in (a) correspond, respectively, to 
+\begin_inset Formula $\pm k_{z1}$
+\end_inset
+
+(light hole) and 
+\begin_inset Formula $\pm k_{z2}$
+\end_inset
+
+ in (b) for the well layer of the quantum well (
+\begin_inset Formula $GaAs$
+\end_inset
+
+ throughout this thesis).
+ In the barriers (
+\begin_inset Formula $AlGaAs)$
+\end_inset
+
+ a similar mechanism is employed.
+ The boundary conditions at the interfaces then determine the energy eigenvalues
+ and the coefficients.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Bulk_Dispersion_Coefficients"
+
+\end_inset
+
+, four plane wave solutions exist at a given energy, yielding a general
+ solution 
+\begin_inset Formula $\Phi$
+\end_inset
+
+ of the form
+\begin_inset Formula \begin{equation}
+\Phi=\sum A_{\pm}\varphi_{1}(\pm k_{z1},k_{t},\mathbf{r})+\sum B_{\pm}\varphi_{2}(\pm k_{z2},k_{t},\mathbf{r}).\end{equation}
+
+\end_inset
+
+The four coefficients 
+\begin_inset Formula $A_{\pm}$
+\end_inset
+
+ and 
+\begin_inset Formula $B_{\pm}$
+\end_inset
+
+ are unknown constants.
+ Both 
+\begin_inset Formula $\varphi_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\varphi_{2}$
+\end_inset
+
+ are two-component vectors as seen in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Phi_1"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Phi_2"
+
+\end_inset
+
+.
+ We can write the components of 
+\begin_inset Formula $\Phi$
+\end_inset
+
+, 
+\begin_inset Formula $F_{hh}$
+\end_inset
+
+ and 
+\begin_inset Formula $F_{lh}$
+\end_inset
+
+, as 
+\begin_inset Formula \begin{eqnarray}
+F_{hh} & = & e^{i\mathbf{k}_{t}\cdot\mathbf{r}_{t}}\left[\sum A_{\pm}F_{hh,1}(\pm k_{z1},k_{t})e^{\pm ik_{hh}z}+\sum B_{\pm}F_{hh,2}(\pm k_{z2},k_{t})e^{\pm ik_{hh}z}\right],\\
+F_{lh} & = & e^{i\mathbf{k}_{t}\cdot\mathbf{r}_{t}}\left[\sum A_{\pm}F_{lh,1}(\pm k_{z1},k_{t})e^{\pm ik_{lh}z}+\sum B_{\pm}F_{lh,2}(\pm k_{z2},k_{t})e^{\pm ik_{lh}z}\right].\end{eqnarray}
+
+\end_inset
+
+Thus we have four unknown constants in each region, making a total of 12
+ unknowns over the three regions.
+ The boundary conditions at the interfaces between the regions and the demand
+ that the solutions be confined in the quantum well provide the necessary
+ relations to solve the problem.
+ In order to symmetrize the problem the following quantities have to be
+ matched across the interfaces
+\begin_inset Formula \begin{eqnarray}
+F_{hh}\,\,\textrm{and}\,\,\left(\gamma_{1}-2\gamma_{2}\right)\frac{dF_{hh}}{dz}+\sqrt{3}\gamma_{3}k_{t}F_{lh},\\
+F_{lh}\,\,\textrm{and}\,\,\left(\gamma_{1}-2\gamma_{2}\right)\frac{dF_{lh}}{dz}-\sqrt{3}\gamma_{3}k_{t}F_{hh}.\end{eqnarray}
+
+\end_inset
+
+These boundary conditions were obtained by symmetrizing the Hamiltonian
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Block_2_2_H"
+
+\end_inset
+
+.
+ Caution should be issued however that the above boundary conditions only
+ apply when the Bloch functions in both well materials and are similar,
+ as is the case for the 
+\begin_inset Formula $GaAs-AlGaAs$
+\end_inset
+
+ system used throughout this thesis.
+ The boundary conditions boil down to the continuity of the wave function
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+generalized
+\begin_inset Quotes erd
+\end_inset
+
+ continuity of its derivative, corresponding to current across the interface.
+ The numerical implementation details of the two bands model are given in
+ Appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Appendix_Two_Band_Numerics"
+
+\end_inset
+
+.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/2_200A_GaAs_AlGaAs_QW_Valence_Dispersion_DOS.eps
+	lyxscale 50
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:QW_Valence_Subbands_DOS"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+Example to a 
+\begin_inset Formula $200\,\textrm{Å}$
+\end_inset
+
+ wide 
+\begin_inset Formula $GaAs/Al_{0.1}Ga_{0.9}As$
+\end_inset
+
+ undoped quantum well valence subbands dispersion relation calculation and
+ the appropriate density of states.
+\end_layout
+
+\end_inset
+
+(a) Valence subbands dispersion relations calculated for a 
+\begin_inset Formula $200\,\textrm{Å}$
+\end_inset
+
+ wide 
+\begin_inset Formula $GaAs/Al_{0.1}Ga_{0.9}As$
+\end_inset
+
+ quantum well, for [100] (blue) and [110] (red) crystallographic directions
+ at 
+\begin_inset Formula $T=2\, K$
+\end_inset
+
+.
+ The subbands are named after their dominant character at the zone center
+ (
+\begin_inset Formula $k_{t}=0$
+\end_inset
+
+).
+ (b) The ratio between the density of states of the valence subbands and
+ the first conduction subband, calculated for the same structure for both
+ crystal directions.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As an illustration of the numerical method formulated in this section, we
+ present in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:QW_Valence_Subbands_DOS"
+
+\end_inset
+
+(a) the valence subband structure of a 
+\begin_inset Formula $200\,\textrm{Å}$
+\end_inset
+
+ 
+\begin_inset Formula $GaAs/Al_{0.1}Ga_{0.9}As$
+\end_inset
+
+ quantum well.
+ The light and heavy holes are very heavily coupled, giving rise to highly
+ non-parabolic subbands.
+ The difference between the two crystallographic directions becomes clearly
+ observable away from the zone center.
+ 
+\end_layout
+
+\begin_layout Standard
+Particularly important is the 
+\emph on
+density of states
+\emph default
+ (DOS), which can be found from 
+\begin_inset Formula \begin{equation}
+\rho(E)=\frac{1}{\pi}\frac{dk}{dE},\end{equation}
+
+\end_inset
+
+assuming the dispersion relationship is isotropic (using the axial approximation
+, see Appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Appendix_Two_Band_Numerics"
+
+\end_inset
+
+).
+ As an illustration, we plot in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:QW_Valence_Subbands_DOS"
+
+\end_inset
+
+(b) the calculated ratio between the DOS of the valence subbands from 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:QW_Valence_Subbands_DOS"
+
+\end_inset
+
+(a) and the DOS of the first conduction subband.
+ The spikes in the DOS are due to the band extrema away from the zone center.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/2_200A_GaAs_AlGaAs_QW_Cond_Dispersion_DOS.eps
+	lyxscale 50
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:QW_Cond_Subbands_DOS"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+Example to a 
+\begin_inset Formula $200\,\textrm{Å}$
+\end_inset
+
+ wide 
+\begin_inset Formula $GaAs/Al_{0.1}Ga_{0.9}As$
+\end_inset
+
+ quantum well conduction subbands dispersion relation calculation and the
+ appropriate density of states.
+\end_layout
+
+\end_inset
+
+(a) Conduction subbands dispersion relations calculated for a 
+\begin_inset Formula $200\,\textrm{Å}$
+\end_inset
+
+ wide 
+\begin_inset Formula $GaAs/Al_{0.1}Ga_{0.9}As$
+\end_inset
+
+ quantum well at 
+\begin_inset Formula $T=2\, K$
+\end_inset
+
+.
+ (b) The ratio between the density of states of the conduction subbands
+ and the first conduction subband, calculated for the same structure.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+As stated at the beginning of the section, the conduction subbands are calculate
+d using the effective mass approximation, where the bands are assumed to
+ be parabolic and the problem reduces to a one-dimensional 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Schr
+\backslash
+"{o}dinger
+\end_layout
+
+\end_inset
+
+ equation of the form
+\begin_inset Formula \begin{equation}
+\left(-\frac{\hbar^{2}}{2}\frac{d}{dz}\frac{1}{m^{*}(z)}\frac{d}{dz}+V(z)\right)\varphi_{n}(z)=E_{n}\varphi_{n}(z).\label{eq:37}\end{equation}
+
+\end_inset
+
+We can write down the conduction band wave function as 
+\begin_inset Formula \begin{equation}
+\Psi_{n}(\mathbf{r})=\frac{1}{\sqrt{A}}e^{i\mathbf{k}_{\bot}\cdot\mathbf{r}}\varphi_{n}(z)\left(\left|S,\uparrow\right\rangle +\left|S,\downarrow\right\rangle \right),\label{eq:38}\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\left|S,\uparrow\right\rangle $
+\end_inset
+
+ and 
+\begin_inset Formula $\left|S,\downarrow\right\rangle $
+\end_inset
+
+ are the conduction band wave functions for the bulk case.
+ As an illustration, we plot in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:QW_Cond_Subbands_DOS"
+
+\end_inset
+
+(a) the dispersion relation for the first two conduction subbands calculated
+ for the same structure as in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:QW_Valence_Subbands_DOS"
+
+\end_inset
+
+ above.
+ Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:QW_Cond_Subbands_DOS"
+
+\end_inset
+
+(b) also presents the two-dimensional density of states for these subbands.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/200A_2K_Cond_Valence_Wavefuncs.eps
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Cond_Valence_WF"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+Wavefunctions of the conduction and valence subbands, calculated for an
+ undoped 
+\begin_inset Formula $200\,\textrm{Å}$
+\end_inset
+
+ wide 
+\begin_inset Formula $GaAs/Al_{0.1}Ga_{0.9}As$
+\end_inset
+
+ quantum well.
+\end_layout
+
+\end_inset
+
+Wave functions for the (a) conduction, (b) valence heavy and (c) light hole
+ subbands, calculated at the Brillouin zone center (
+\begin_inset Formula $k_{t}=0$
+\end_inset
+
+) for a 
+\begin_inset Formula $200\,\textrm{Å}$
+\end_inset
+
+ wide 
+\begin_inset Formula $GaAs/Al_{0.1}Ga_{0.9}As$
+\end_inset
+
+ quantum well at 
+\begin_inset Formula $T=2\, K$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+For the sake of completeness, we present in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Cond_Valence_WF"
+
+\end_inset
+
+ the wavefunctions for first two conduction and first four valence subbands
+ calculated at the the Brillouin zone center, for the 
+\begin_inset Formula $200\,\textrm{Å}$
+\end_inset
+
+ wide 
+\begin_inset Formula $GaAs/Al_{0.1}Ga_{0.9}As$
+\end_inset
+
+ quantum wells considered in the examples above.
+ Here we separate the heavy and light hole subband wavefunctions into figures
+ (b) and (c) for the sake of clarity.
+ The dotted lines mark the energetic locations of these wavefucntions and
+ the quantum well energetic profile is outlined by solid black curves.
+ 
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Schrodinger_Poisson_Model"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Schr
+\backslash
+"{o}dinger
+\end_layout
+
+\end_inset
+
+-Poisson Model
+\end_layout
+
+\begin_layout Standard
+In the discussion so far have concentrated solely on solving systems for
+ a single charge carrier.
+ In many devices such models would be inadequate as large numbers of charge
+ carriers, e.g.
+ electrons, can be present in the conduction band.
+ In order to decide whether or not typical carrier densities would give
+ rise to a significant additional potential on top of the usual band-edge
+ potential terms (which will be labelled specifically as 
+\begin_inset Formula $V_{CB}$
+\end_inset
+
+ or 
+\begin_inset Formula $V_{VB}$
+\end_inset
+
+), it then becomes necessary to solve the electrostatics describing the
+ system.
+ 
+\end_layout
+
+\begin_layout Subsection
+Model Formulation
+\end_layout
+
+\begin_layout Standard
+When considering the case of an n-type material, then (although obvious)
+ it is worth stating that the number of free electrons in the conduction
+ band is equal to the number of positively charged ionized donors in the
+ heterostructure.
+ As an example, we can point out the modulation doped system, where the
+ doping is located in a position where the free carriers it produces will
+ become spatially separated from the ion.
+ The additional potential term 
+\begin_inset Formula $V_{\rho}(z)$
+\end_inset
+
+ arising from this, or any other charge distribution 
+\begin_inset Formula $\rho$
+\end_inset
+
+, can be expressed by using Poisson's equation
+\begin_inset Formula \begin{equation}
+\nabla^{2}V_{\rho}=-\frac{\rho}{\epsilon}\label{eq:Poissons_Eq}\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\epsilon$
+\end_inset
+
+ is the permittivity of the material, i.e.
+ 
+\begin_inset Formula $\epsilon=\epsilon_{r}\epsilon_{0}$
+\end_inset
+
+.
+ The solution is generally obtained via the electric field strength 
+\begin_inset Formula $\mathbf{E}$
+\end_inset
+
+.
+ Recalling that 
+\begin_inset Formula \begin{equation}
+\mathbf{E}=-\nabla V\end{equation}
+
+\end_inset
+
+the potential then follow in the usual way 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Jackson1998"
+
+\end_inset
+
+ 
+\begin_inset Formula \begin{equation}
+V_{\rho}(z)=-\int_{-\infty}^{\mathbf{r}}\mathbf{E}\cdot d\mathbf{r}.\label{eq:Poisson_Potential}\end{equation}
+
+\end_inset
+
+Given that the potential profiles, 
+\begin_inset Formula $V_{CB}(Z)$
+\end_inset
+
+ for example, are one-dimensional, then they will also produce a one-dimensional
+ charge distribution.
+ In addition, remembering that the quantum wells are assumed infinite in
+ the 
+\begin_inset Formula $x-y$
+\end_inset
+
+ plane then any charge density 
+\begin_inset Formula $\rho(z)$
+\end_inset
+
+ can be thought of as an infinite plane, i.e.
+ a sheet, with areal charge density 
+\begin_inset Formula $\sigma(z)$
+\end_inset
+
+ and thickness 
+\begin_inset Formula $\delta z$
+\end_inset
+
+, as shown in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Electric_Field_Enfinite_Plane"
+
+\end_inset
+
+(a).
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/2_Infinite_Plane_E_Field.eps
+	lyxscale 50
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Electric_Field_Enfinite_Plane"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+Electric field strength from an infinite plane of charge of volume density
+ 
+\begin_inset Formula $d(z)$
+\end_inset
+
+ and thickness 
+\begin_inset Formula $\delta z$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+Electric field strength from an infinite plane of charge of volume density
+ 
+\begin_inset Formula $d(z)$
+\end_inset
+
+ and thickness 
+\begin_inset Formula $\delta z$
+\end_inset
+
+ (after 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Harrison2005"
+
+\end_inset
+
+).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+Such an infinite plane of charge produces an electric field perpendicular
+ to it, and with a strength
+\begin_inset Formula \begin{equation}
+\mathbf{E}=\frac{\sigma}{2\epsilon}.\end{equation}
+
+\end_inset
+
+Note that as the sheet is infinite in the plane, then the field strength
+ is constant for all distances from the plane.
+ The total electric field strength due to many of these planes of charge,
+ as shown in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Electric_Field_Enfinite_Plane"
+
+\end_inset
+
+(b), is then the sum of the individual contributions as follows
+\begin_inset Formula \begin{equation}
+\mathbf{E}(z)=\sum_{z'=-\infty}^{\infty}\frac{\sigma(z')}{2\epsilon}\textrm{sign}\left(z-z'\right)\label{eq:Electrical_Field_Poisson}\end{equation}
+
+\end_inset
+
+where the function sign is defined as 
+\begin_inset Formula \begin{equation}
+\textrm{sign}\left(z\right)=\left\{ \begin{array}{c}
+1,\,\,\,\, z\geq0\\
+-1,\,\,\,\, z\leq0\end{array}\right.\end{equation}
+
+\end_inset
+
+and has been introduced to account for the vector nature of 
+\begin_inset Formula $\mathbf{E}$
+\end_inset
+
+, i.e.
+ if a single sheet of charge is at a position 
+\begin_inset Formula $z'$
+\end_inset
+
+, then for 
+\begin_inset Formula $z>z'$
+\end_inset
+
+, 
+\begin_inset Formula $\mathbf{E}(z)=+\nicefrac{\sigma}{2\epsilon}$
+\end_inset
+
+, whereas for 
+\begin_inset Formula $z<z'$
+\end_inset
+
+, 
+\begin_inset Formula $\mathbf{E}(z)=-\nicefrac{\sigma}{2\epsilon}$
+\end_inset
+
+.
+ Note further that it is only the charge neutrality, there are as many ionized
+ donors (or acceptors) in the system as there are electrons (or holes),
+ or expressed mathematically
+\begin_inset Formula \begin{equation}
+\sum_{z=-\infty}^{\infty}\sigma(z)=0,\end{equation}
+
+\end_inset
+
+which ensures that the electric field, and hence the potential, go to zero
+ at large distances from the charge distribution.
+ For the case of a doped semiconductor, there would be two contributions
+ to the charge density 
+\begin_inset Formula $\sigma(z)$
+\end_inset
+
+, where the first would be the ionized impurities and the second the free
+ charge carriers themselves.
+ While the former would be known from the doping density in each semiconductor
+ layer, as defined at growth time, the latter would be calculated from the
+ probability distributions of the carriers in the heterostructure.
+ Thus if 
+\begin_inset Formula $d(z)$
+\end_inset
+
+ defines the volume density of the dopants at position 
+\begin_inset Formula $z$
+\end_inset
+
+, where the planes are separated by the usual step length 
+\begin_inset Formula $\delta z$
+\end_inset
+
+, then the total number of carriers, per unit cross-sectional area, introduced
+ into the heterostructure is given by
+\begin_inset Formula \begin{equation}
+N=\int_{-\infty}^{\infty}d(z)dz.\end{equation}
+
+\end_inset
+
+The net charge density in any of the planes follows as
+\begin_inset Formula \begin{equation}
+\sigma(z)=q\left[N\psi^{*}(z)\psi(z)-d(z)\right]\delta z\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $q$
+\end_inset
+
+ us the charge on the extrinsic carriers.
+ The step length 
+\begin_inset Formula $\delta z$
+\end_inset
+
+ selects the proportion of the carriers that are within that slab and converts
+ the volume density of dopant, 
+\begin_inset Formula $d(z)$
+\end_inset
+
+, into an areal density.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/2_Poisson_Ex_Sigma.eps
+	lyxscale 40
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Areal_charge_density_Ex"
+
+\end_inset
+
+Areal charge density a for a 
+\begin_inset Formula $100\,\textrm{Å}$
+\end_inset
+
+ 
+\begin_inset Formula $GaAs$
+\end_inset
+
+ well, 
+\begin_inset Formula $n$
+\end_inset
+
+-type doped to 
+\begin_inset Formula $2\times10^{18}cm^{-3}$
+\end_inset
+
+, surrounded by undoped 
+\begin_inset Formula $Al_{0.2}Ga_{0.8}As$
+\end_inset
+
+ 
+\begin_inset Formula $4\, meV$
+\end_inset
+
+ barriers.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If the charge carriers are distributed over more than one subband, then
+ the contribution to the charge density 
+\begin_inset Formula $\sigma(z)$
+\end_inset
+
+ would have to be summed over the relevant subbands
+\begin_inset Formula \begin{equation}
+\sigma(z)=q\left[\sum_{i=1}^{n}N_{i}\psi_{i}^{*}(z)\psi_{i}(z)-d(z)\right]\delta z,\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\sum_{i=1}^{n}N_{i}=N$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Areal_charge_density_Ex"
+
+\end_inset
+
+ shows the areal charge density along the growth axis for a 
+\begin_inset Formula $100\,\textrm{Å}$
+\end_inset
+
+ 
+\begin_inset Formula $GaAs$
+\end_inset
+
+ well, 
+\begin_inset Formula $n$
+\end_inset
+
+-type doped to 
+\begin_inset Formula $2\times10^{18}cm^{-3}$
+\end_inset
+
+, surrounded by undoped 
+\begin_inset Formula $Ga_{0.8}Al_{0.2}As$
+\end_inset
+
+ barriers.
+ The ionized donors yield a constant contributions to 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ within the well of 
+\begin_inset Formula $d(z)\delta z=2\times10^{24}m^{-3}\times1\textrm{Å}=2\times10^{14}m^{-2}$
+\end_inset
+
+, in each of the 
+\begin_inset Formula $1\,\textrm{Å}$
+\end_inset
+
+ thick slabs.
+ Hence, the total number 
+\begin_inset Formula $N$
+\end_inset
+
+ of electrons in the quantum well is 
+\begin_inset Formula $100\times2\times10^{14}m^{-2}=2\times10^{12}cm^{-2}.$
+\end_inset
+
+ By assuming that the electrons introduced by such doping all occupy the
+ ground state of the quantum well, then the curve on top of the ionized
+ impurity background clearly resembles 
+\begin_inset Formula $-\psi^{*}\psi$
+\end_inset
+
+, as expected from the mathematics.
+ The discontinuities in a occur at the edges of the doping profiles and
+ are of magnitude 
+\begin_inset Formula $2\times10^{14}m^{-2}$
+\end_inset
+
+, again as expected.
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/2_Poisson_Ex_E.eps
+	lyxscale 40
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Poisson_Ex_E"
+
+\end_inset
+
+The electric field strength 
+\begin_inset Formula $\mathbf{E}$
+\end_inset
+
+ due to the charge distribution shown in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Areal_charge_density_Ex"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There are a number of points to note about Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Poisson_Ex_E"
+
+\end_inset
+
+, which plots the electric field strength 
+\begin_inset Formula $\mathbf{E}$
+\end_inset
+
+ due to the charge distribution (as defined in equation 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Electrical_Field_Poisson"
+
+\end_inset
+
+) along the growth axis of the heterostructure.
+ First, the field does reach zero at either end of the structure, which
+ implies charge neutrality.
+ In addition, the zero field point at the center of the structure reflects
+ the symmetry of the charge distribution.
+ The electric field strength itself is not an observable, merely an intermediate
+ quantity which can be useful to plot from time to time; the quantity which
+ is significant is the potential due to this charge distribution.
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/2_Poisson_Ex_V.eps
+	lyxscale 40
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Poisson_Ex_V"
+
+\end_inset
+
+The potential due to the ionized donor/electron charge distribution shown
+ in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Areal_charge_density_Ex"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Poisson_Ex_V"
+
+\end_inset
+
+ plots the potential as calculated from equation 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Poisson_Potential"
+
+\end_inset
+
+, defining the origin, in this case for the potential, at the effective
+ infinity at the left-hand edge of the barrier-well-barrier structure.
+ Again, the symmetry of the original heterostructure and doping profiles
+ are reflected in the symmetric potential.
+ The potential is positive at the center of the well since the system under
+ consideration consists of electrons in the conduction band, so any test
+ charge used to probe the potential is also an electron which would be repelled
+ by the existing charge.
+ The carrier density in this single quantum well is reasonably high at 
+\begin_inset Formula $2\times10^{12}cm^{-2}$
+\end_inset
+
+, and this produces a potential of up to 
+\begin_inset Formula $4\, meV$
+\end_inset
+
+.
+ While this is small compared to the conduction band offset, which is usually
+ of the order of one or two hundred 
+\begin_inset Formula $meV$
+\end_inset
+
+ or more, it could still have a measurable effect on the energy eigenvalues
+ of the quantum well.
+\end_layout
+
+\begin_layout Standard
+The energy eigenvalues are calculated by considering the introduction of
+ a further test electron into the system and incorporating the potential
+ due to the carrier density already present into the standard 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Schr
+\backslash
+"{o}dinger
+\end_layout
+
+\end_inset
+
+ equation, i.e.
+ the potential term 
+\begin_inset Formula $V(z)$
+\end_inset
+
+ in equations 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Effective_Mass_Equation"
+
+\end_inset
+
+ becomes
+\begin_inset Formula \begin{equation}
+V(z)\rightarrow V(z)+V_{\rho}(z),\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $V$
+\end_inset
+
+ represents the band edge potential at zero doping and the potential due
+ to the non-zero number of carriers, the charge density 
+\begin_inset Formula $\rho$
+\end_inset
+
+, represented by the function 
+\begin_inset Formula $V_{\rho}$
+\end_inset
+
+.
+ The numerical shooting method, described in detail in appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Appendix_Two_Band_Numerics"
+
+\end_inset
+
+, can be used without alteration to solve for this new potential, which
+ will thus yield new energies and wave functions.
+ The latter is an important point since the potential due to the charge
+ distribution is itself dependent on the wave functions.
+ Therefore, it is necessary to form a closed loop solving Schrodinger's
+ equation, calculating the potential due to the resulting charge distribution,
+ adding it to the original bandedge potential, solving 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Schr
+\backslash
+"{o}dinger
+\end_layout
+
+\end_inset
+
+'s equation again, and so on - a process illustrated schematically in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Schrodinger_Poisson_Schematic"
+
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/2_Schrodinger_Poisson_Schematic.eps
+	lyxscale 50
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Schrodinger_Poisson_Schematic"
+
+\end_inset
+
+Block diagram illustrating the process of self-consistent iteration.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ The process is repeated until the energy eigenvalues converge; at this
+ point the wave functions are simultaneously solutions to both Schrodinger's
+ and Poisson's equations—the solutions are described as 
+\emph on
+self-consistent.
+ 
+\emph default
+The numerical implementation details of the self-consistent 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Schr
+\backslash
+"{o}dinger
+\end_layout
+
+\end_inset
+
+-Poisson model is presented in Appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Appendix_Schrodinger_Poisson"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/2_Poisson_Ex_V_int.eps
+	lyxscale 50
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Poisson_Ex_V_int"
+
+\end_inset
+
+The sum of the band-edge potential 
+\begin_inset Formula $V_{CB}$
+\end_inset
+
+ and Poisson's potential 
+\begin_inset Formula $V_{\rho}$
+\end_inset
+
+ for single quantum well for the charge distribution shown in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Areal_charge_density_Ex"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Poisson_Ex_V_int"
+
+\end_inset
+
+ shows the result of adding the potential due to the charge distribution
+ 
+\begin_inset Formula $V_{\rho}$
+\end_inset
+
+, as displayed in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Poisson_Ex_V"
+
+\end_inset
+
+, to the original band-edge potential  for the single quantum well.
+ The perturbation, even at this relatively high carrier density of 
+\begin_inset Formula $2\times10^{12}cm^{-2}$
+\end_inset
+
+, is rather small compared to the barrier height, for instance.
+ Nonetheless it is important to calculate the effect of this perturbation
+ on the electron energy levels by continuing with the iterative process
+ and looking for convergence of the resulting energy solutions.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Two-Dimensional-Electron-Gas"
+
+\end_inset
+
+Two-Dimensional Electron Gas
+\end_layout
+
+\begin_layout Standard
+Although mention has been made of quantum well systems in which doping in
+ the barriers leads to a spatial separations of the ions and charge carriers,
+ which collect in a quantum well, quantitative calculations presented thus
+ far have not considered these modulation-doped systems.
+ Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Poisson_Modulation_Doped_V"
+
+\end_inset
+
+ shows the band-edge potential, 
+\begin_inset Formula $V_{CB}$
+\end_inset
+
+, and the self-consistent potential, 
+\begin_inset Formula $V_{CB}+V_{\rho}$
+\end_inset
+
+, for a system with an undoped single quantum well surrounded by doped barriers
+ with the full layer definition being: 
+\begin_inset Formula $100\,\textrm{Å}$
+\end_inset
+
+ 
+\begin_inset Formula $Ga_{0.8}Al_{0.2}As$
+\end_inset
+
+ doped 
+\begin_inset Formula $n$
+\end_inset
+
+-type to 
+\begin_inset Formula $2\times10^{17}cm^{-3}$
+\end_inset
+
+; 
+\begin_inset Formula $100\,\textrm{Å}$
+\end_inset
+
+ 
+\begin_inset Formula $GaAs$
+\end_inset
+
+ undoped; 
+\begin_inset Formula $100\,\textrm{Å}$
+\end_inset
+
+ 
+\begin_inset Formula $Ga_{0.8}Al_{0.2}As$
+\end_inset
+
+ doped 
+\begin_inset Formula $n$
+\end_inset
+
+-type to 
+\begin_inset Formula $2\times10^{17}cm^{-3}$
+\end_inset
+
+.
+ As the Fermi level in the doped 
+\begin_inset Formula $AlGaAs$
+\end_inset
+
+ layer shifts from the middle of bandgap towards the donor levels, the electrons
+ flow from the 
+\begin_inset Formula $AlGaAs$
+\end_inset
+
+ layer to 
+\begin_inset Formula $GaAs$
+\end_inset
+
+ in order to maintain a constant chemical potential throughout the two materials
+ (see Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Schematic_2DEG_Heterostructure"
+
+\end_inset
+
+).
+ The electrons introduced into the system are physically separated from
+ the ionized donors, so therefore instead of an ion/charge carrier plasma,
+ the mobile charge in this case is often referred to as a
+\emph on
+ two-dimensional electron gas
+\emph default
+ (2DEG).
+ The physical separation leads to a reduction in the ionized impurity scattering
+ and hence increased electron mobilities for in-plane (
+\begin_inset Formula $x-y$
+\end_inset
+
+) transport.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/2_Poisson_Modulation_Doping_V_int.eps
+	lyxscale 50
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Poisson_Modulation_Doped_V"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The band-edge potential and the self-consistent potential of a modulation-doped
+ single quantum well.
+\end_layout
+
+\end_inset
+
+The band-edge potential (solid blue) and the self-consistent potential (dotted
+ red) of a modulation-doped single quantum well.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/2_2DEG_Heterostructure.eps
+	lyxscale 30
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Schematic_2DEG_Heterostructure"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The structure and band diagram of a modulation-doped heterojunction between
+ 
+\begin_inset Formula $GaAs$
+\end_inset
+
+ and 
+\begin_inset Formula $n-AlGaAs$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+The structure and band diagram of a modulation-doped heterojunction between
+ 
+\begin_inset Formula $GaAs$
+\end_inset
+
+ and 
+\begin_inset Formula $n-AlGaAs$
+\end_inset
+
+.
+ 
+\begin_inset Formula $E_{c}$
+\end_inset
+
+ and 
+\begin_inset Formula $E_{F}$
+\end_inset
+
+ represent, respectively, the conduction band edge and the Fermi level energy.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A similar method for introducing carrier plasma 2DEG at the material interface
+ is to introduce dopings with high peak concentrations and narrow concentration
+ width, which are effectively one-dimensional (1D) 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Schubert1996"
+
+\end_inset
+
+.
+ This can be achieved by confining the doping atoms to a single atomic layer
+ of the host semiconductor (see Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Delta_Doping_Epitaxial"
+
+\end_inset
+
+).
+ This doping is termed the 
+\begin_inset Formula $\delta$
+\end_inset
+
+-doping and its concentration profile can be written to be 
+\begin_inset Formula \begin{equation}
+N(z)=N_{2D}\delta(z-z_{d}),\end{equation}
+
+\end_inset
+
+where the 2D density, 
+\begin_inset Formula $N_{2D}$
+\end_inset
+
+, us the number of doping atoms in the doping plane and 
+\begin_inset Formula $z$
+\end_inset
+
+ is the location of the dopand layer.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/2_Delta_Doping.eps
+	display false
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Delta_Doping_Epitaxial"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+Schematic illustration of a semiconductor substrate and an epitaxial film
+ containing a 
+\begin_inset Formula $\delta$
+\end_inset
+
+-doping layer.
+\end_layout
+
+\end_inset
+
+Schematic illustration of a semiconductor substrate and an epitaxial film
+ containing a 
+\begin_inset Formula $\delta$
+\end_inset
+
+-doping layer.
+ Also shown is a schematic lattice with the impurity atoms being confined
+ to a single atomic plane (after 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Schubert1996"
+
+\end_inset
+
+).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Similarly to the modulation doped quantum well case considered earlier,
+ we can introduce two symmetrical 
+\begin_inset Formula $\delta$
+\end_inset
+
+-doping layers into the two 
+\begin_inset Formula $AlGaAs$
+\end_inset
+
+ barrier layers and compute the influence of this doping on the potential
+ profile.
+ We consider a 
+\begin_inset Formula $200\,\textrm{Å}$
+\end_inset
+
+ 
+\begin_inset Formula $GaAs$
+\end_inset
+
+ quantum well with wide 
+\begin_inset Formula $AlGaAs$
+\end_inset
+
+ barriers.
+ The 
+\begin_inset Formula $\delta$
+\end_inset
+
+-doping layers are introduced symmetrically in the barriers at a distance
+ of 
+\begin_inset Formula $1000\,\textrm{Å}$
+\end_inset
+
+ from the well-barrier interfaces.
+ The charge distribution profile obtained from the self-consistent calculation
+ is presented in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Delta_Doping_Charge_Dist"
+
+\end_inset
+
+.
+ The doping level narrow contributions are clearly observable.
+ The total electron-gas concentration inside the well area is computed to
+ be 
+\begin_inset Formula $9\times10^{10}\, cm^{-2}$
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/2_Delta_Doping_Charge_Dist.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Delta_Doping_Charge_Dist"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+Volume charge density a for a 
+\begin_inset Formula $200\,\textrm{Å}$
+\end_inset
+
+ 
+\begin_inset Formula $GaAs$
+\end_inset
+
+ well, surrounded by 
+\begin_inset Formula $Al_{0.1}Ga_{0.9}As$
+\end_inset
+
+ barriers, doped with two symmetrical 
+\begin_inset Formula $\delta$
+\end_inset
+
+-doping layers located 
+\begin_inset Formula $1000$
+\end_inset
+
+
+\begin_inset Formula $\textrm{Å}$
+\end_inset
+
+ from the well.
+\end_layout
+
+\end_inset
+
+Volume charge density a for a 
+\begin_inset Formula $200\,\textrm{Å}$
+\end_inset
+
+ 
+\begin_inset Formula $GaAs$
+\end_inset
+
+ well, surrounded by 
+\begin_inset Formula $Ga_{0.9}Al_{0.1}As$
+\end_inset
+
+ barriers, doped with two symmetrical 
+\begin_inset Formula $\delta$
+\end_inset
+
+-doping layers located 1000
+\begin_inset Formula $\textrm{Å}$
+\end_inset
+
+ from the well.
+ The achieved 
+\begin_inset Formula $2DEG$
+\end_inset
+
+ inside the well is 
+\begin_inset Formula $9\times10^{10}\, cm^{-2}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+The appropriate band-edge potential profiles for the conduction and valence
+ bands are presented in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Delta_Doping_V_Profile"
+
+\end_inset
+
+.
+ The substantial band-bending introduced by the doping levels is clearly
+ seen at the well-barrier interfaces, and the 2DEG accumulation at these
+ areas is evident from the location of the Fermi level energy, indicated
+ by the dotted horizontal line in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Delta_Doping_V_Profile"
+
+\end_inset
+
+).
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+as in the modulation doped case in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Schematic_2DEG_Heterostructure"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/2_Delta_Doping_Potential_.eps
+	lyxscale 50
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Delta_Doping_V_Profile"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The band-edge potential and the self-consistent potential of a 
+\begin_inset Formula $\delta$
+\end_inset
+
+-doped single quantum well described in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Delta_Doping_Charge_Dist"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+The band-edge potential (solid blue) and the self-consistent potential (dotted
+ red) of a 
+\begin_inset Formula $\delta$
+\end_inset
+
+-doped single quantum well described in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Delta_Doping_Charge_Dist"
+
+\end_inset
+
+.
+ The locations of the 
+\begin_inset Formula $\delta$
+\end_inset
+
+-doping layers are indicated by the vertical dashed lines.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+An alternative method for creating the 2DEG is photoexcitation by utilizing
+ a mixed type I - type II quantum well (MTQW) structure, which consists
+ of a wide QW cladded on both sides by narrow wells.
+ In this structure, illustrated in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Mixed_Type_2DEG"
+
+\end_inset
+
+,
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/TypeI_TypeII_System.png
+	display false
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Mixed_Type_2DEG"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+A schematic diagram of a 
+\begin_inset Formula $GaAs/AlAs$
+\end_inset
+
+ mixed type I - type II QWs structure.
+\end_layout
+
+\end_inset
+
+A schematic diagram of a 
+\begin_inset Formula $GaAs/AlAs$
+\end_inset
+
+ mixed type I - type II QWs structure.
+ Photoexcitation with 
+\begin_inset Formula $E_{L_{1}}$
+\end_inset
+
+creates electron-hole pairs in the wide QW, while photoexcitation with 
+\begin_inset Formula $E_{L_{2}}$
+\end_inset
+
+ creates a 2DEG in the wide QW and a 2DHG in the narrow QWs.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ under laser photoexcitation with energy below the narrow QW bandgap, one
+ generates electron-hole pairs only in the wide QW.
+ Photoexcitation with energy above the bandgap of the narrow well creates
+ electron-hole pairs in both narrow and wide wells.
+ Because of the large confinement energy in the narrow well its conduction
+ band 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ minimum lies above the X-valley of the barrier, thus electrons created
+ in the narrow well can relax rapidly into the wide well.
+ In contrast, the holes have to tunnel through a 
+\begin_inset Formula $\approx0.5\, eV$
+\end_inset
+
+ barrier and transfer very slowly.
+ As a result, a spatial separation between electrons and holes is achieved
+ and a stable 2DEG is formed in the wide QW while a two-dimensional hole
+ gas (2DHG) remains in the narrow well.
+ The photoexcitation created electron-hole bound pairs (excitons) in the
+ wide QW have very short lifetimes (
+\begin_inset Formula $\approx ns$
+\end_inset
+
+) and thus their density is much smaller than the 2DEG concentration 
+\begin_inset Formula $n_{e}$
+\end_inset
+
+.
+ Selective excitation of the wide well can be used to create additional
+ excitons in the wide wells.
+ The 2DEG density 
+\begin_inset Formula $n_{e}$
+\end_inset
+
+ obtained in this structure is controlled starting at very low values, by
+ changing the photoexcitation intensity.
+ In contrast to the modulation doping, the 2DHG in the narrow wells is free,
+ thus the electrons in the wide well are not subjected to random static
+ Coulomb fields and remain free even at low densities.
+\end_layout
+
+\begin_layout Standard
+Introducing electrons into a QW results in profound changes in the optical
+ spectrum.
+ As lower electron densities the effects of the electrons on the spectrum
+ are related to their scattering with bound electron-hole pair (excitons)
+ formed in the structure, and free-carrier screening 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Sanders1987"
+
+\end_inset
+
+.
+ At higher densities many-body effects such as bandgap renormalization and
+ phase-space filling become important.
+ The former effect appears as a decrease in the bandgap energy with increasing
+ electron concentration (
+\begin_inset Formula $n_{e}$
+\end_inset
+
+) 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Schmitt-Rink1989"
+
+\end_inset
+
+ while the latter results in a reduction of the exciton oscillator strength
+ and binding energy 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Huang1990"
+
+\end_inset
+
+.
+ We further discuss these effects in chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Coulomb_Correlated_Optical_Transitions"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We formulate the statistical distribution of 2DEG electrons.
+ The free electrons occupy the energy levels in the quantum well according
+ to the Fermi-Dirac distribution 
+\begin_inset Formula \begin{equation}
+f(E)=\frac{1}{1+e^{\frac{E-E_{F}}{k_{B}T}}},\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $E_{F}$
+\end_inset
+
+ is the chemical potential of the electrons, 
+\begin_inset Formula $k_{B}$
+\end_inset
+
+ is the Boltzman constant and 
+\begin_inset Formula $T$
+\end_inset
+
+ the temperature.
+ In order to calculate the Fermi energy, the 2D density of states should
+ be multiplied by this statistical distribution and integrated over all
+ possible states.
+ We concentrate on the low temperature regime (
+\begin_inset Formula $T\rightarrow0$
+\end_inset
+
+), and assuming that all available states are occupied in the first conduction
+ subband, the Fermi energy of the system equals the electron chemical potential
+ 
+\begin_inset Formula \begin{equation}
+E_{F}=E_{E_{1}}(0)+\frac{\pi\hbar^{2}}{m_{e}^{*}}n_{e},\label{eq:Fermi_Energy_2DEG}\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $E_{E_{1}}(0)$
+\end_inset
+
+ denotes the bottom of the first conduction subband, 
+\begin_inset Formula $k_{B}$
+\end_inset
+
+ is the Boltzman constant and 
+\begin_inset Formula $T$
+\end_inset
+
+ the temperature.
+ The wavevector of the top most occupied state thus becomes (assuming a
+ parabolic dispersion) 
+\begin_inset Formula \begin{equation}
+k_{F}=\sqrt{\frac{2m_{e}^{*}}{\hbar^{2}}E_{F}}=\sqrt{2\pi n_{e}}.\label{eq:Fermi_Wavevector_2DEG}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To complete the discussion, we calculate using the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Schr
+\backslash
+"{o}dinger
+\end_layout
+
+\end_inset
+
+-Poisson model the electronic properties of a 
+\begin_inset Formula $200\,\AA$
+\end_inset
+
+ wide 
+\begin_inset Formula $GaAs/Al_{0.1}Ga_{0.9}As$
+\end_inset
+
+ quantum well with 
+\begin_inset Formula $\delta$
+\end_inset
+
+-doped cladding layers presented in figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Delta_Doping_Charge_Dist"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Delta_Doping_V_Profile"
+
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/200A_2K_N_1e6_1e10_1e11_Cond_Valence_Disersion.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Dispersion_2DEG"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The calculated dispersion relations for the conduction and valence subbands,
+ for a 
+\begin_inset Formula $200\,\textrm{Å}$
+\end_inset
+
+ wide 
+\begin_inset Formula $GaAs/Al_{0.1}Ga_{0.9}As$
+\end_inset
+
+ quantum well at 
+\begin_inset Formula $T=2\, K$
+\end_inset
+
+, with various 2DEG concentrations in the well region.
+\end_layout
+
+\end_inset
+
+The calculated dispersion relations for the (a) conduction and (b) valence
+ subbands, for a 
+\begin_inset Formula $200\,\textrm{Å}$
+\end_inset
+
+ wide 
+\begin_inset Formula $GaAs/Al_{0.1}Ga_{0.9}As$
+\end_inset
+
+ quantum well at 
+\begin_inset Formula $T=2\, K$
+\end_inset
+
+, with 2DEG concentrations of 
+\begin_inset Formula $1\times10^{6}\, cm^{-2}$
+\end_inset
+
+ (blue), 
+\begin_inset Formula $1\times10^{10}\, cm^{-2}$
+\end_inset
+
+ (red) and 
+\begin_inset Formula $1\times10^{11}\, cm^{-2}$
+\end_inset
+
+ (green).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/200A_2K_N_1e10_Cond_Valence_Wavefuncs.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2DEG_WFs_1e10"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The calculated wavefunction for the conduction, valence heavy and light
+ hole subbands for 
+\begin_inset Formula $200\,\textrm{Å}$
+\end_inset
+
+ wide 
+\begin_inset Formula $GaAs/Al_{0.1}Ga_{0.9}As$
+\end_inset
+
+ quantum well at 
+\begin_inset Formula $T=2\, K$
+\end_inset
+
+ with 
+\begin_inset Formula $1\times10^{10}\, cm^{-2}$
+\end_inset
+
+ 2DEG concentration.
+\end_layout
+
+\end_inset
+
+The calculated wavefunction for the (a) conduction, (b) valence heavy and
+ (c) light hole subbands for 
+\begin_inset Formula $200\,\textrm{Å}$
+\end_inset
+
+ wide 
+\begin_inset Formula $GaAs/Al_{0.1}Ga_{0.9}As$
+\end_inset
+
+ quantum well at 
+\begin_inset Formula $T=2\, K$
+\end_inset
+
+ with 
+\begin_inset Formula $1\times10^{10}\, cm^{-2}$
+\end_inset
+
+ 2DEG concentration.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/200A_2K_N_1e11_Cond_Valence_Wavefuncs.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2DEG_WFs_1e11"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The calculated wavefunction for the conduction, valence heavy and light
+ hole subbands for 
+\begin_inset Formula $200\,\textrm{Å}$
+\end_inset
+
+ wide 
+\begin_inset Formula $GaAs/Al_{0.1}Ga_{0.9}As$
+\end_inset
+
+ quantum well at 
+\begin_inset Formula $T=2\, K$
+\end_inset
+
+ with 
+\begin_inset Formula $1\times10^{11}\, cm^{-2}$
+\end_inset
+
+ 2DEG concentration.
+\end_layout
+
+\end_inset
+
+The calculated wavefunction for the (a) conduction, (b) valence heavy and
+ (c) light hole subbands for 
+\begin_inset Formula $200\,\textrm{Å}$
+\end_inset
+
+ wide 
+\begin_inset Formula $GaAs/Al_{0.1}Ga_{0.9}As$
+\end_inset
+
+ quantum well at 
+\begin_inset Formula $T=2\, K$
+\end_inset
+
+ with 
+\begin_inset Formula $1\times10^{11}\, cm^{-2}$
+\end_inset
+
+ 2DEG concentration.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+In Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Dispersion_2DEG"
+
+\end_inset
+
+ we plot the dispersion relations obtained for the first conduction and
+ first four valence subbands of this structure for various 2DEG concentrations.
+ It is obvious from these curves that the change in the gas concentration
+ influences the location of the subbands energies but not the functional
+ dependence.
+ With the rise of the concentration the subbands shift to lower energies
+ due to the induced bending of the band-edge potential profiles, as seen
+ in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Delta_Doping_V_Profile"
+
+\end_inset
+
+.
+ Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:2DEG_WFs_1e10"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:2DEG_WFs_1e11"
+
+\end_inset
+
+ present, respectively, the calculated wavefunctions for 2DEG concentrations
+ of 
+\begin_inset Formula $1\times10^{10}\, cm^{-2}$
+\end_inset
+
+ and 
+\begin_inset Formula $1\times10^{11}\, cm^{-2}$
+\end_inset
+
+.
+ The band-edge profile change can be clearly seen, but no noticeable change
+ in the functional form of the function themselves can be seen compared
+ to the undoped structure presented in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Cond_Valence_WF"
+
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document

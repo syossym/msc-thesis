@@ -1,0 +1,586 @@
+\chapter{Arachnoid mechanisms}
+\label{chap1}
+
+\textsf{A paper published in \textsl{Forum Mathematica} Vol 17/6
+(Nov '05),
+1033-1042.}\\
+\textsf{Co-authors: David Blanc and Moshe Shoham.}\\
+
+The \cspace s of arachnoid mechanisms are analyzed in this paper.
+These mechanisms consist of $k$\ branches each of which has an
+arbitrary number of links and a fixed initial point, while all
+branches end at one common end-point. It is shown that
+generically, the \cspace s of such mechanisms are manifolds, and
+the conditions for the exceptional cases are determined. The
+\cspace\  of planar arachnoid mechanisms having $k$ branches, each
+with two links is analyzed for both the non-singular and the
+singular cases.
+
+
+\sect{Introduction}
+
+Mechanisms and robots consist of links and joints, the actuation
+of which causes them to move. The type of a mechanism is described
+by an abstract graph which corresponds to its links and joints,
+and a specific embedding of this graph in the plane or in
+$3$-space is called a \emph{configuration} of the mechanism. The
+collection of all such embeddings forms a topological space,
+called the \emph{\cspace} of the mechanism. For example, the
+\cspace\ of a planar mechanism with revolute joints consisting of
+$n$ rods arranged serially is the $n$-torus.
+
+In recent years, there has been interest among mathematicians in
+the study of such spaces, which are of importance in motion
+planning \ -- \ that is, moving a mechanism from one given
+position to another, taking into account various constraints (see
+for example \cite{MT2}). The topological properties of the
+\cspace\ provide insight into practical questions in planning such
+motions (see \cite{F}) and analysis of some mechanical
+singularities (see \cite{NM}, and \cite{ZFB}).
+
+The main focus had been set on the \cspace s of a type of
+mechanism called \emph{polygonal linkage}, which is simply a
+concatenation of links and hinged joints forming a closed chain. A
+substantial amount of mathematical literature on polygonal
+linkage's \cspace\ has accumulated: Kamiyama , Tezuka and Toma
+studied Euler characteristics in \cite{K}, and homology groups in
+\cite {KT,KTT}; Trinkle and Milgram constructed a handle-body
+surgery in \cite{MT1}; and in \cite{Ho}, Holcomb studied a special
+parallel graph mechanism called multi-polygonal linkages, which
+are three free branches identified at their initial and terminal
+vertices.
+
+In this paper we analyze a type of mechanism called
+\emph{arachnoid} which, to the best of our knowledge, has never
+been dealt with in the literature. This kind of mechanism consists
+of multiple branches each of which has an arbitrary number of
+links and a fixed initial point, while all branches end at a
+common end-point (this type of mechanism resembles some parallel
+robots which are in practical use). It is shown that generically,
+the \cspace s of such mechanisms are manifolds, and the conditions
+for the exceptional cases are then determined. The \cspace\  of
+planar arachnoid mechanisms having $k$ branches, each with two
+links is fully analyzed, while for the non-manifold cases we
+analyze the singular configurations.
+
+We now introduce some notation and terminology to describe such
+mechanism types, and in particular the \smech s which are the
+subject of this note:
+
+\begin{defn}
+%
+For a mechanism $M$ in \ $\Re^{d}$, \ a \emph{branch} \ $(L,\bx)$
+\ of multiplicity $n$ is a sequence \
+$L=(\ell_{1},\dotsc,\ell_{n})$ \ of $n$ positive numbers, together
+with a point \ $\bx\in\Re^{d}$. \ We think of $L$ as the lengths
+of $n$ concatenated rods, having revolute (i.e., rotational)
+joints at the meeting point of every two consecutive rods, and at
+the fixed initial point $\bx$, called the \emph{base point} of the
+branch.
+
+A \emph{branch configuration} \ $V=(\bv_{1},\dotsc,\bv_{n})$ \ for
+a branch \ $(L,\bx)$ \ then consists of $n$ vectors in \ $\Re^{d}$
+\ with the given norms \ $\|\bv_{i}\|=\ell_{i}$ \ ($i=1,\dotsc
+n$).
+\end{defn}
+\newnot{1-3}
+
+
+Since the \cspace\ of a branch \ $(L,\bx)$ \ \newnot{1-1} is
+independent of the order of the set \ $\ell_1,..,\ell_n$ \ (up to
+homeomorphism), we can (and shall) assume \ $\ell_1,..,\ell_n$ \
+to be in descending order.
+
+\begin{defn}
+%
+An \emph{\smech} consists of $k$ branches \ $$
+(\Lc,\Xc)=((\Lj{1},\xj{1}),\dotsc (\Lj{k},\xj{k})) $$
+\newnot{1-2} with multiplicities \ $\nj{1},...,\nj{k}$. \ We think
+of this as a linkage of branches connected by a single revolute
+joint at their common end point (whose location is not fixed).
+\newnot{1-4}
+
+An \smech\ configuration for \ $(\Lc,\Xc)$ \ thus consists of a
+set $$ \Vc=(\Vj{1},..,\Vj{k}) $$ of branch confiurations for $\Lc$
+having a common \emph{end point}  \
+$\by=\xj{i}+\sum_{j=1}^{\nj{i}}~\vj{i}_{j}$ \ $(i=1,..,k)$. \
+  \end{defn}
+
+\begin{figure}[h]
+\begin{center}
+\epsfysize=5cm %\epsfxsize=4.4cm
+\leavevmode \epsffile{fig_1/mechanism.eps} \caption{An \smech\
+with $k=3$, \ multiplicities $2$.} \label{fig:mechanism}
+\end{center}
+\end{figure}
+
+\begin{defn}
+\label{def:aligned}
+
+ For an \smech \ $(\Lc,\Xc)$:
+
+\begin{enumerate}
+\item A branch configuration $\V=(\bv_1,\dotsc,\bv_n)$ \ is
+\emph{aligned} (with direction $\bw$) if each vector \
+$\bv_1,\dotsc,\bv_n$ \ is a scalar multiple of $\bw$. \item A
+configuration \ $\Vc=(\Vj{1},..,\Vj{k})$ \ of \ $(\Lc,\Xc)$ \ is
+called  a $t$-\emph{node} if it has $t$ aligned  branch
+configurations with directions \ $\bw_{i_{1}},\dots,\bw_{i_{t}}$ \
+respectively, which are linearly dependent; otherwise $\Vc$ is
+called \emph{generic}.
+\end{enumerate}
+\end{defn}
+
+\newnot{1-6}
+
+\begin{defn}
+The collection \ $\C=\C(\Lc,\Xc)$ \ of all configurations \ $\Vc$
+\ for \ $(\Lc,\Xc)$ \ is called its \emph{\cspace}. It is
+topologized as a subspace of the appropriate Euclidean space. The
+space of all such common endpoints $\by$ will be called the
+\emph{work space} \ $\Wc=\Wc(\Lc,\Xc)$ \  for \ $(\Lc,\Xc)$. \ The
+\emph{work map} \ $\Phi:\C\to\W$ \ assigns to each configuration
+$\Vc$ its common endpoint $\by$.
+\end{defn}
+
+\newnot{1-5}
+
+\begin{org} \label{sorg} In section \ref{cmain} we show that the \cspace\ of a generic
+ \smech\ \ $(\Lc,\Xc)$ \ is a manifold. In section \ref{cplan} we study planar
+  \smech s for which each branch has $2$ joints, and give an explicit formula
+  for the toplogical type of \ $\C=\C(\Lc,Xc)$ \ in the generic case. Finally,
+   in section \ref{csingc}, we analyze the singularities of $\C$ for such planar
+    \smech s in the non-manifold case.
+\end{org}
+%
+%c2   Generic \smech s in $\Re^{d}$}
+%
+\sect{Generic \smech s in $\Re^{d}$} \label{cmain}
+
+First, we show that, generically, the \cspace\ of an \smech\ is a
+manifold:
+
+\begin{thm}\label{thm:main}\stepcounter{subsection}
+%
+Let \ $(\Lc,\Xc)$ \ be an \smech\ in \ $\Re^{d}$ \ with $k$
+branches of multiplicities \ $\nj{1},...,\nj{k}$, \ respectively.
+If all configurations of \ $(\Lc,\Xc)$ \ are generic, then its
+\cspace\ $\C$ is a smooth closed orientable manifold of dimension
+\ $d(N-k+1)-N$, \ where \ $N=\sum_{i=1}^{k}\nj{i}$.
+%
+\end{thm}
+
+\begin{proof}
+%
+We can identify \ $\C=\C(\Lc,\Xc)$ \ as the pre-image of a certain
+function \ $G:\Re^{d(N-k+1)}\to\Re^{N}$, \ where $G$ is defined as
+follows:
+
+For each \ $n\geq 1$ \ let \ $g_{n}:(\Re^{d})^{n}\to\Re^{n-1}$ \
+be defined \ $$ g_{n}(\bv_{1},\dotsc,\bv_{n}):=
+(|\bv_{2}-\bv_{1}|^{2},\dotsc,|\bv_{n}-\bv_{n-1}|^{2}),
+$$
+where \ $|\bu|:=(\sum_{i=1}^{d}t_{i}^{2})^{1/2}$ \ is the length
+of a vector \ $\bu=(t_{1},\dotsc,t_{d})\in\Re^{d}$. \ Now for each
+branch \ $\Lj{i}=(\lj{i}_1,..,\lj{i}_{\nj{i}})$ \ of $\Lc$, \ let
+\ $(\vj{i}_{1},\dotsc,\vj{i}_{\nj{i}})$ \ be position vectors of
+the ends of the \ $\nj{i}$ \ links of a branch configuration,
+where \ $\vj{i}_{0}=\xj{i}$ \ (the given base point for this
+branch). Since in an \smech\ all branches end at the same point \
+$\bu\in\Re^{d}$, \ we have \ $\vj{i}_{\nj{i}}=\bu$ \ for all \
+$1\leq i\leq k$. \ Thus we have \ $N-k+1$ \ different vectors \
+$\{\vj{i}_{1},\dotsc,\vj{i}_{\nj{i}}\}_{i=1}^{k}$, \ and we define
+$$ G(\vj{1}_{1},\dotsc,\vj{k}_{\nj{k}}):=
+(g_{n_{1}}(\vj{1}_{0},\dotsc,\vj{1}_{n_{1}}),
+g_{n_{2}}(\vj{2}_{0},\dotsc,\vj{2}_{n_{2}}),\dotsc
+g_{n_{k}}(\vj{k}_{0},\dotsc,\vj{k}_{n_{k}})),
+$$
+so that \ $\C=G^{-1}(\vec{\ell})$ \ for \
+$\vec{\ell}:=(\lj{1}_{1})^{2},..,(\lj{1}_{\nj{1}})^{2},\dotsc
+(\lj{k}_{1})^{2},..,(\lj{k}_{\nj{k}})^{2})$. \ By the Regular
+Value Theorem (see \cite[I, Thm.~3.2]{Hi}), \ $\C$ will be a
+smooth manifold if \ $\vec{\ell}$ \ is a regular value of $G$ \ --
+\ that is, \ $dG$ \ has maximal rank.
+
+Note that (after applying elementary row and column operations), \
+$dG$ \ has the following \ $N \times dN$ \ Jacobian matrix:
+
+$$
+dG=2\left(
+\begin{array}{ccccc}
+    A^{(1)} &B^{(1)}& & 0&\\
+    A^{(2)} & &B^{(2)}& &\\
+     \vdots &  & & \ddots & \\
+      A^{(k)} &0 &  & & B^{(k)} \vspace{2mm}\\ \end{array}
+\right)
+$$
+
+\noindent where each \ $(\nj{i}\times d)$-block \ $A^{(i)}$ \ is:
+
+$$
+A^{(i)}=\left(
+\begin{array}{c}
+      \vj{i}_{\nj{i}}-\vj{i}_{\nj{i}-1}\\
+       0    \\
+     \vdots \\
+        0   \\
+\end{array}
+\right)
+$$
+
+\noindent and \ $B^{(i)}$ \ is:
+
+$$
+\left(
+\begin{array}{cccccc}
+\vj{i}_{\nj{i}-1}-\vj{i}_{\nj{i}} &  0 & 0 &\dotsc & 0 & 0 \\
+\vj{i}_{\nj{i}-1}-\vj{i}_{\nj{i}-2} &
+\vj{i}_{\nj{i}-2}-\vj{i}_{\nj{i}-1} &
+0 &\dotsc & 0 & 0 \\ 0 &
+\vj{i}_{\nj{i}-2}-\vj{i}_{\nj{i}-3} &
+\vj{i}_{\nj{i}-3}-\vj{i}_{\nj{i}-2}
+  & \dotsc & 0 & 0 \\
+0  & 0 & 0 & \dotsc & 0 & 0  \\
+\vdots  & \vdots & \vdots & \ddots & \vdots & \vdots  \\ 0  & 0 &
+0 & \dotsc & \vj{i}_{2}-\vj{i}_{1}  & \vj{i}_{1}-\vj{i}_{2} \\ 0
+& 0 & 0 & \dotsc & 0 & \vj{i}_{1}-\vj{i}_{0} \end{array} \right)
+$$
+
+\noindent an \ $\nj{i}\times d(\nj{i}-1)$ matrix which can be
+thought of as the Jacobian matrix for a corresponding closed
+$\nj{i}$-branch. Note that \ $\rank(B^{(i)})\leq\nj{i}$, \ and \
+$B^{(i)}$ \ has less than full rank only when all vectors \
+$\vj{i}_{\nj{j}-1}-\vj{i}_{\nj{j}}$ \ are collinear for \ $1\leq
+j\leq \nj{i}$ \ -- \ so that the $i$-th branch is aligned. In this
+case \ $\rank(B^{(i)})=\nj{i}-1$, \ and the non-zero row \
+$\bw^{(i)}:=\vj{i}_{\nj{i}}-\vj{i}_{\nj{i}-1}$ \ of \ $A^{(i)}$ \
+is precisely the direction of the branch.
+
+We can thus divide the matrix \ $dG$ \ horizontally into two
+blocks: \ $(A,B)$, where $$  A:=\left( \begin{array}{c}
+  A^{(1)} \\
+  \vdots \\
+  A^{(k)} \\
+\end{array}\right)
+ \ \ \ \ \text{and} \ \ \ \ B:=\left(
+\begin{array}{cccc}
+    B^{(1)}& & 0&\\
+     &B^{(2)}& &\\
+      & & \ddots & \\
+      0 &  & & B^{(k)} \\
+\end{array}
+\right),
+$$
+and the rank of \ $dG$ \ is then given by:
+\begin{equation}\label{eone} \rank(A,B)=\rank(A)
++\rank(B)-\dim(\col(A) \cap\col(B) ). \end{equation}
+
+Denote by $I$ the set of all indices $i$ for which the $i^{(th)}$
+branch is aligned, so that \ $\rank(B)=N-|I|$. \ Thus if \
+$I=\emptyset$, \ then \ $dG$ \ has maximal rank. If \ $|I|\neq0$,
+\ let \ $A_I$ \ be the sub-matrix of $A$ consisting of the blocks
+\ $A^{(i)}$ \ with \ $i \in I$. \ Its rows are therefore spanned
+by the directions \ $\{\bw^{(i)}\}_{i\in I}$ \ of the aligned
+branches. Observe that \ $\rank(A)-\rank(A_I)$ \ is the dimension
+of the subspace of \ $\col(A)$ \ consisting of columns whose
+entries vanish in the rows indexed by \ $i\in I$. \ Since the
+blocks of $B$ indexed by \ $i\not\in I$ \ have full rank, we see
+that $$ \dim(\col(A)\cap\col(B))~\leq~\rank(A)-\rank(A_I)
+$$
+\noindent (in fact, equality holds). By \eqref{eone}:
+$$
+\rank(dG)\geq\rank(A_I)+\rank(B)=N-|I|+\rank(A_I),
+$$
+which means that \ $dG$ \ has full rank unless \ $|I|>\rank(A_I)$.
+\ The latter implies that the directions of the aligned branches
+are linearly dependent \ -- \ that is, we have a $k$-node
+configuration.
+
+Note that \ $\C=G^{-1}(\vec{\ell})$ \ is in fact orientable when \
+$dG$ \ has maximal rank, since in that case it induces an
+isomorphism between the normal bundle $\nu$ to $\C$ in \
+$\Re^{d(N-k+1)}$ \ at any point and the ``normal bundle'' to \
+$\{\ell\}\hookrightarrow\Re^{N}$. \ Thus $\nu$ (the complement to
+the tangent bundle \ $T\C$ \ in \ $\Re^{d(N-k+1)}$) \ is
+orientable, so  \ $T\C$ \  is, too. Finally, $\C$ is compact since
+it is a closed subset of the free configuration space, which is a
+$N$-torus. \end{proof}
+\newnot{1-8}
+\begin{remark}
+%
+For an \smech \ in $\Re^{3}$, \ the matrix \ $dG$ \ will be
+singular for a $2$-node configuration (two aligned branches along
+one line); a $3$-node configuration (three aligned branches
+contained in one plane); or a $4$-node configuration (four aligned
+branches).
+%
+\end{remark}
+
+%
+%c3   Planar mechanisms
+%
+\sect{Planar mechanisms} \label{cplan}
+
+>From now on we restrict attention to \smech s \ $(\Lc,\Xc)$ \ in the
+>plane
+(that is, \ $d=2$).
+
+\subsection{The work space}
+\label{sws}\stepcounter{thm}
+
+In this case, each vector \ $v_j$ \ in a branch configuration $V$
+(of multiplicity $n$) is determined by its argument $\theta_j$ \
+(since \ $\|v_j\|=\ell_j$), \  and $V$ can thus be identified with
+a point \ ($\theta_1,..,\theta_n$) in the $n$-torus \ $$
+\T{n}=\underbrace{\Sb{1}\times \dotsc\times\Sb{1}}_{n}. $$
+\newnot{1-9} Thus if \ $\nu=\nj{1}+\dotsc+\nj{k}$, \ then \
+$\C(\Lc,\Xc)\subseteq\T{\nu}=\prod_{i=1}^{k}\T{\nj{i}}$.
+
+
+Given such an \smech, we can describe the work space $\Wc$ as
+follows: for any branch \ \ $L=(\ell_{1},\dotsc,\ell_{n})$, \ let
+\ $\beta(L)_{\min}$ \ denote the minimal value of \
+$|\sum_{j=1}^{n}\varepsilon_{j}\ell_{j}|$, \ where \
+$\varepsilon_{j}=\pm 1$ \ for each \ $1\leq j\leq n$; \ and let \
+$\beta(L)_{\max}:=\sum_{j=1}^{n}\ell_{j}$ \ (the maximal value). \
+The work space \ $W=\Wc(L,\bx)$ \ for the branch $L$ with base
+point $\bx$ \ (without any constraint on the end point) \ is then
+an annulus bounded by circles of radius \ $\beta(L)_{\min}$ \ and
+\ $\beta(L)_{\max}$, \ respectively.
+
+If  \ $\Lc=(\Lj{1},...,\Lj{k})$, \ with multiplicities \
+$\nj{1},...,\nj{k}$, \ and \ $\Xc=(\xj{1},...,\xj{k})$, \ the work
+space for \ $(\Lc,\Xc)$ \ is \ $\Wc=\bigcap_{i=1}^k\Wi{i}$, \
+where \ $\Wi{i}=W(\Lj{i},\xj{i})$. \ Each component of $\Wc$ is a
+curvilinear polygon $P$ (not necessarily convex), whose edges \
+$\Edge(P)$ \ are arcs of the annuli boundary circles \
+$\partial\Wi{i}$, \ and whose vertices \ $\Vertex(P)$ \ are
+intersection points of such arcs.
+
+\subsection{The \cspace}
+\label{scs}\stepcounter{thm}
+\newnot{1-7}
+The \cspace\ for any branch \ \ $L=(\ell_{1},\dotsc,\ell_{n})$ and
+base-point $\bx$ \ is an $n$-torus \ $\T{n}$, \ with work map \
+$\phi:\T{n}\to W$.
+
+Note that the fiber \ $\phi^{-1}(z)$ \ over any point \ $z\in\Int
+W$ \ is the \cspace\ for the \emph{closed} chain with links \
+$\ell_{0},\ell_{1},\dotsc,\ell_{n}$, \ where \ $\ell_{0}:=z-\bx$.
+\ This \cspace\ has been analyzed in \cite{HR}. On the other hand,
+if $z$ is on the boundary of the annulus $W$, then \
+$\phi^{-1}(z)$ \ is evidently discrete, and in fact consists of a
+single point (unless it is on the inner circle, and \
+$\beta(L)_{\min}$ \ can be written as \
+$|\sum_{j=1}^{n}\varepsilon_{j}\ell_{j}|$ \ in more than one way).
+
+If \ $\Lc=(\Lj{1},...,\Lj{k})$, \ with multiplicities \
+$\nj{1},...,\nj{k}$, \ and \ $\Xc=(\xj{1},...,\xj{k})$, \ its
+\cspace\ is the pullback $$
+\C(\Lc,\Xc)~=~\{(\tau_{1},\dotsc,\tau_{k})\in\prod_{i=1}^{k}~\T{\nj{i}}~
+|\ \phi_{1}(\tau_{1})=\dotsc=\phi_{k}(\tau_{k})\in\Wc\}.
+$$
+
+\subsection{Example}\label{exa:lens}\stepcounter{thm}
+Consider an \smech\ consisting of three branches, each of
+multiplicity $2$, as in Figure \ref{fig:mechanism}.
+
+The workspace for each free branch is an annulus; let us assume
+that the three annuli intersect in the shaded lens-shaped
+component $P$ in Figure \ref{fig:annulus intersection}.
+
+\begin{figure}[h]
+\begin{center}
+\epsfysize=5cm \leavevmode \epsffile{fig_1/annuli.eps}
+\caption{Polygonal intersection} \label{fig:annulus intersection}
+\end{center}
+\end{figure}
+
+Now consider an interior point \ $y\in\Int(P)$: \ in the
+corresponding configurations in the fiber \ $\Phi^{-1}(y)$, \ each
+of the three branches can be in one of two positions (branch
+configurations), usually termed ``elbow up'' (\textbf{u}) and
+``elbow down '' (\textbf{d}), so for each branch we have a copy of
+\ $\Sb{0}=\{\mathbf{u},\mathbf{d}\}$. \ Thus the fiber consists of
+eight points \ $\mathbf{uuu},\mathbf{uud},\dotsc,\mathbf{ddd}$, \
+thought of as the product \ $\Sb{0}\times\Sb{0}\times\Sb{0}$. \
+Thus \ $\Phi^{-1}(\Int(P)$ \ is simply an eight-fold cover of the
+interior of the lens.
+
+On the other hand, if $y$ is on the edge $\alpha$ of $P$, which is
+in the outer boundary of the first annulus, the first branch is
+completely extended, identifying its \textbf{u} and \textbf{d}
+positions, thus collapsing the first \ $\Sb{0}$ \ to a single
+point, and generally identifying the copy of $\alpha$ in $\C$
+indexed by \ $\mathbf{u\ast\ast}$ \ with the copy indexed by
+$\mathbf{d\ast\ast}$, \ for \
+$\mathbf{\ast\ast}\in\{\mathbf{uu},\mathbf{ud},\mathbf{du},\mathbf{dd}\}$.
+
+Similarly, the copy of $\beta$ in $\C$ indexed by \
+$\mathbf{\ast\ast u}$ \ is identified with that indexed by
+$\mathbf{\ast\ast d}$. \ Therefore, the fiber of \
+$y\in\alpha\cap\beta$ \ consists of two points. Note that the
+second \ $\Sb{0}$-factor never collapses, so $\C$ is of the form \
+$\Sb{0}\times\M$ \ -- \ i.e., $\C$ has two components, each
+isomorphic to $\M$.
+
+To evaluate the Euler characteristic of $\M$, note that it is
+obtained from four $2$-gons (the lens-shaped intersection in $\W$)
+by identifying their $8$ edges pairwise (as explained above),
+identifying the ``top'' vertex in all the $2$-gons to a single
+point, and similarly for the ``bottom'' vertex. Thus \
+$\chi(\M):=V-E+F=4-4+2=2$, \ so $\M$ is a $2$-sphere, and \
+$\C\cong\Sb{2}\sqcup\Sb{2}$.
+
+\subsection{Invariants of annulus arrangements} \label{sica}\stepcounter{thm}
+
+An annulus (i.e., pair of concentric circles) in the plane is
+determined by \ $(\bx,\beta_{\min},\beta_{\max})$, \ where \
+$\bx\in\Re^{2}$ \ is the center and \
+$0<\beta_{\min}<\beta_{\max}$ \ are the radii. Consider a system
+$$ \langle(\xj{1},\beta(1)_{\min},\beta(1)_{\max});
+\dotsc;(\xj{k},\beta(k)_{\min},\beta(k)_{\max})\rangle
+$$
+of $k$ such pairs (with distinct centers), and let $\W$ denote the
+intersection of all the corresponding anulli; this may have
+several connected components \ $V_{1},\dotsc,V_{t}$. \ What we
+have in mind, of course, is the collection of boundary circles for
+the work space of branches of an \smech.
+
+The boundary \ $\partial V$ \ of each component $V$ of $\W$ is a
+curvilinear planar polygon, not necessarily connected; \ let \
+$\alpha:=\alpha(V)$ \ denote the number of components of \
+$\partial V$ \ contained in the interior of its convex hull \
+$\conv(V)$. \ We set \ $$ \gamma:=\gamma(V)=\begin{cases}
+1 & \text{if \ $\conv(V)$ \ is a disc}\\ 0 & \text{otherwise.}\end{cases} $$ % $V$ may
+be wholely contained in the interior of some of the annuli; denote the number
+of such annuli by \ $\beta:=\beta(V)$ \ ($0\leq \beta(V)\leq k$), \ and let the
+\emph{$c$-invariant} of $V$ be \ $c(V):=2^{\beta}$. \ Finally, the \emph{$g$-invariant} of $V$ is:
+$$
+g(V):=1-2^{k-\beta-3}(|\Vertex(V)|-2|\Edge(V)|+4+2\gamma-4\alpha).
+$$
+
+\begin{thm}
+\label{thm:sss}\stepcounter{subsection}
+%
+Let \ $(\Lc,\Xc)$  \ be a planar \smech\ with $k$ branches, each
+of multiplicity $2$,  and assume that the \cspace\ \
+$\C=\C(\Lc,\Xc)$ \ has no node configrations;  then $\C$
+decomposes as the disjoint union of the pre-image under $\Phi$ of
+the components of the workspace $\W$, and for each such component
+$V$, \ $\Phi^{-1}(V)$ \ consists of \ $c(V)$ closed orientable
+surfaces of genus \ $g(V)$.
+%
+\end{thm}
+
+A special case of this Theorem appears in \cite{E}.
+
+\begin{proof}
+%
+As in example \ref{exa:lens} above, \ $\Phi^{-1}(V)$ \ is obtained
+from the \ $2^{k}$ \ curvilinear polygonal ``tiles'' (i.e., copies
+of $V$, corresponding to the ``elbow up/elbow down'' position of
+each branch), by identifications of those edges which correspond
+to the \ $k-\beta$ \ ``relevant'' branches. Since we know from
+Theorem \ref{thm:main} that (each component of) $\C$ is a closed
+orientable $2$-manifold, its type (genus) is determined by the
+Euler characteristic, which may be computed by calculating how
+many identifications we have for each vertex or edge of  \
+$\Phi^{-1}(V)$.
+
+To orient \ $\Phi^{-1}(V)$, \ choose an orientation for some
+(fixed) tile \ $H_{0}$. \ Every other tile $H$ of \ $\Phi^{-1}(V)$
+\ differs from \ $H_{0}$ \ in exactly $\tau$ of the $k$ possible
+``elbow up/elbow down'' positions, and we reverse its orientation
+(relative to that of $H_{0}$) \ if and only if $\tau$ is odd.
+%
+\end{proof}
+
+\begin{figure}[htbp]
+\begin{center}
+\epsfysize=3cm %\epsfxsize=4.4cm
+\leavevmode \epsffile{fig_1/embeddings.eps}  \caption{Work and
+configuration space intersections of two
+branches}\label{fig:embeddings}
+\end{center}
+\end{figure}
+
+\begin{remark}
+\label{rem:conntor}
+
+As noted in \S \ref{sws}, the workspace $\W$ was obtained by
+repeatedly intersecting annuli, which are the workspaces of the
+individual branches. If we concentrate on the annulus $A$ of the
+first branch, say, then generically the annuli for each of the
+remaining branches will interesect with $A$ in one of the six
+shaded patterns $V$ in the first row of Figure
+\ref{fig:embeddings}. In each case we obtain a certain subset \
+$\phi^{-1}(V)$ \ of the $2$-torus \ $\T{2}$ \ which is the
+\cspace\ for the first branch, where \ $\phi:\T{2}\to A$ \ is the
+work map for the first branch.
+
+Note that when we further intersect $V$ with a third annulus, the
+pattern may be more complicated; in particular, three-fold
+intersections need not be connected, as illustrated by Figure
+\ref{fig:punctured_torus}, which shows the subset of the $2$-torus
+associated with the workspace of Figure~\ref{fig:mechanism}
+(without indicating the identifications).
+
+\begin{figure}[h] \epsfysize=3cm%\epsfxsize=4.4cm
+\begin{center}
+\leavevmode \epsffile{fig_1/punctured_torus.eps}   \caption{Subset
+of $\T{2}$}\label{fig:punctured_torus}
+\end{center}
+\end{figure}
+\end{remark}
+
+%c4   Singular \cspaces
+\sect{Singular \cspace s} \label{csingc}
+
+While the analysis of the \cspace \ $\C=\C(\Lc,\Xc)$ \ of a
+mechanism in the non-manifold case is in general difficult, for a
+planar \smech\ with branch multiplicity $2$ the description of
+Theorem \ref{thm:sss} can actually be extended to singular points,
+corresponding to the node configurations.
+
+\begin{prop}\label{prop:2node}\stepcounter{subsection}
+%
+Let \ $(\Lc,\Xc)$  \ be a planar \smech\ with $k$ branches, each
+of multiplicity $2$,  and let $\Vc$ be a node configuration in \
+$\C=\C(\Lc,\Xc)$. \ Then $\Vc$ has an open neighborhood in $\C$
+which is a wedge of  \ $2^{q-\varepsilon}$ \ $2$-dimensional discs
+with common center $\Vc$, where $q$ is the number of aligned
+branches, \ $\varepsilon=1$ \ if the aligned branches have a
+common direction, and \ $\varepsilon=2$ \ otherwise.
+
+\end{prop}
+
+\noindent\emph{Proof.} \ Let \ $v:=\Phi(\Vc)$ \ be the common
+end-point of the $k$-branches in $\Vc$, and let $U$ be an small
+disc containing $v$ in the workspace $\Wc$. Since $v$ is
+necessarily in the boundary of a curvilnear polygonal component of
+$\Wc$, then $P$, the boundary of $U$ near $v$, consists of arcs of
+the boundary circles of the annuli.
+
+\begin{enumerate}
+\item When all of the $q$ aligned branches have a common
+direction, the centers of the corresponding annuli must be
+collinear, and $P$ is an arc $e$ of a single boundary circle of
+such an annulus. Note that \ $\Phi^{-1}(\Int(U))$ \ intersects the
+component of $\Vc$ in \ $2^{q}$ \ disjoint discs, which are
+identified pairwise along \ $\Phi^{-1}(e)$ \ so as to yield \
+$2^{q-1}$ \ discs whose only common point is \
+$\Vc\in\Phi^{-1}(v)$.
+
+\item Otherwise, $P$ must consist of two arcs \ $e_{1}$, \ $e_{2}$
+\ of distinct boundary circles (whose centers are not collinear
+with $v$). Again \ $\Phi^{-1}(\Int(U))$ \ intersects the component
+of $\Vc$ in \ $2^{q}$ \ disjoint discs, but now every four of them
+(corresponding to the four ``elbow up/elbow down'' positions of
+the two branches associated to \ $e_{1}$ \ and \ $e_{2}$, \
+respectively) are identified in \ $\Phi^{-1}(U)\subset\C$ \ along
+\ $\Phi^{-1}(e_{1})$ \ and \ $\Phi^{-1}(e_{2})$, \ forming the
+four quadrants of a new disc \ -- \ where again $\Vc$ is the only
+point in common. This yields a total of \ $2^{q-1}$ \ discs.\eee
+
+\end{enumerate}

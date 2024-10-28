@@ -1,0 +1,1909 @@
+#LyX 1.6.4 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass report
+\options a4paper,titlepage
+\use_default_options false
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 0
+\cite_engine natbib_authoryear
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Electronic Properties of Semiconductors
+\end_layout
+
+\begin_layout Standard
+The optical properties of nanostructures are intimately connected to the
+ electronic states, the response of electrons within the atomic lattice
+ to external perturbations.
+ As such, a precise knowledge of the electronic properties is required for
+ a proper device analysis.
+ In bulk semiconductors, the lattice periodicity and its symmetry leads
+ to the formation of electronic bands, continuously (within the band) relating
+ the crystal momentum
+\begin_inset Formula $\mathbf{k}$
+\end_inset
+
+ of an electron to its energy 
+\begin_inset Formula $E_{n}\left(\mathbf{k}\right)$
+\end_inset
+
+.
+ The combination of different materials within a nanostructure breaks the
+ symmetry of the semiconductor crystal, leading to 
+\emph on
+quantization effects
+\emph default
+, i.e.
+ modifications of the electronic properties from their bulk properties.
+ These modifications have a pronounced impact on the electronic and optical
+ properties of nanostructures.
+ The present chapter covers the theory of the calculation of the electronic
+ states in nanostructures using the 
+\emph on
+envelope function method
+\emph default
+ (EFM).
+ 
+\end_layout
+
+\begin_layout Standard
+The first section contains an extensive introduction to the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Schr
+\backslash
+"{o}dinger 
+\end_layout
+
+\end_inset
+
+ equation within a semiconductor crystal, which will later also serve as
+ the basis for the analysis of optical effects covered in Chapter 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+chapter number for the optical effects
+\end_layout
+
+\end_inset
+
+ and the many body effects in optical spectra in Chapter 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+chapter number for the many body effects
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+After introducing certain approximations to the crystal 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Schr
+\backslash
+"{o}dinger 
+\end_layout
+
+\end_inset
+
+ equation, the concept of solving the resulting single-particle 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Schr
+\backslash
+"{o}dinger 
+\end_layout
+
+\end_inset
+
+ equation using the bulk 
+\begin_inset Formula $\mathbf{k\text{·}p}$
+\end_inset
+
+ method is presented.
+ The subsequent section derives the equations of the 
+\begin_inset Formula $\mathbf{k\text{·}p}$
+\end_inset
+
+ envelope function method used in nanostructures and simultaneously introduces
+ the 
+\begin_inset Formula $\mathbf{k\text{·}p}$
+\end_inset
+
+ model for zinc-blende crystals.
+ Note that the presented discusion doesn't include the influance of strain
+ effects on the electronic properties.
+ 
+\end_layout
+
+\begin_layout Section
+Crystal 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Schr
+\backslash
+"{o}dinger
+\end_layout
+
+\end_inset
+
+ Equation
+\end_layout
+
+\begin_layout Subsection
+Introduction
+\end_layout
+
+\begin_layout Standard
+The total Hamiltonian of all electrons, atoms and the electro-magnetic field
+ of a solid state crystal is given by
+\begin_inset Formula \begin{equation}
+H=\sum_{i}\frac{1}{2m_{i}}\left(\mathbf{p}_{i}-ez_{i}\mathbf{A}\left(\mathbf{r}_{i}\right)\right)^{2}+\frac{\epsilon_{0}}{2}\int\left(\mathbf{E}^{2}+c_{0}^{2}\mathbf{B}^{2}\right)d\mathbf{r}\label{eq:full_crystal_H}\end{equation}
+
+\end_inset
+
+In the second term 
+\begin_inset Formula $\mathbf{E}$
+\end_inset
+
+ denotes the electric- and 
+\begin_inset Formula $\mathbf{B}$
+\end_inset
+
+ the magnetic field.
+ These fields are related to the vector potential 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ and the scalar potential 
+\begin_inset Formula $\phi$
+\end_inset
+
+ via 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Jackson1999"
+
+\end_inset
+
+
+\begin_inset Formula \begin{align}
+\mathbf{E} & =-\frac{\partial\mathbf{A}}{\mathbf{\partial}t}-\nabla\phi\label{eq:E_potentials}\\
+\mathbf{B} & =\nabla\times\mathbf{A}.\label{eq:B_vector_potential}\end{align}
+
+\end_inset
+
+In the first term of 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:full_crystal_H"
+
+\end_inset
+
+, 
+\begin_inset Formula $e$
+\end_inset
+
+ is the elementrary charge, 
+\begin_inset Formula $z_{i}$
+\end_inset
+
+ is the charge of particle 
+\begin_inset Formula $i$
+\end_inset
+
+ in units of 
+\begin_inset Formula $e$
+\end_inset
+
+ (-1 for electrons) and 
+\begin_inset Formula $m_{i}$
+\end_inset
+
+ denotes the particle mass.
+ The term 
+\begin_inset Formula $\mathbf{p}_{i}-ez_{i}\mathbf{A}\left(\mathbf{r}_{i}\right)$
+\end_inset
+
+ is the mechanical momentum of particle 
+\begin_inset Formula $i$
+\end_inset
+
+, which is invariant to our gauge choise (see below) for 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ and 
+\begin_inset Formula $\phi$
+\end_inset
+
+.
+ The electrical field term 
+\begin_inset Formula $\mathbf{A}^{2}$
+\end_inset
+
+ holds both transverse and longitudinal contributions.
+ In the following discussion we assume a Coulomb gauge for the vector potential,
+ i.e.
+ 
+\begin_inset Formula $\nabla\cdot\mathbf{A}=0$
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Jackson1999"
+
+\end_inset
+
+.
+ In this gauge the term 
+\begin_inset Formula $\frac{\partial\mathbf{A}}{\partial t}\nabla\phi$
+\end_inset
+
+ in 
+\begin_inset Formula $\mathbf{E}^{2}$
+\end_inset
+
+ vanishes, and so we can split this term to the transverse and longitudinal
+ contributions 
+\begin_inset Formula $\mathbf{E}^{2}=\mathbf{E}_{l}^{2}+\mathbf{E}_{t}^{2}$
+\end_inset
+
+.
+ Using Poisson's equation, the longitudinal contribution can be written
+ in terms of the charge density 
+\begin_inset Formula \begin{equation}
+\int\mathbf{E}_{l}^{2}d\mathbf{r}=\int\left(\nabla\phi\right)^{2}d\mathbf{r}=\langle\phi\nabla\phi\rangle-\int\phi\nabla^{2}\phi d\mathbf{r}=\int\phi\frac{\rho}{\epsilon_{0}}d\mathbf{r}.\end{equation}
+
+\end_inset
+
+Next, the contributions to 
+\begin_inset Formula $\phi$
+\end_inset
+
+ are distinguished between internal 
+\begin_inset Formula $\phi_{int}$
+\end_inset
+
+ and external 
+\begin_inset Formula $\phi_{ext}$
+\end_inset
+
+, where the internal contributions are created by the crystal electrons
+ and atomic cores.
+ The internal contributions are given by the longitudinal Coulomb interaction
+ between the charged particles 
+\begin_inset Formula $i$
+\end_inset
+
+ and 
+\begin_inset Formula $j$
+\end_inset
+
+
+\begin_inset Formula \begin{equation}
+V_{i,j}=\frac{e^{2}z_{i}z_{j}}{4\pi\epsilon_{0}|\mathbf{r}_{i}-\mathbf{r}_{j}|},\end{equation}
+
+\end_inset
+
+with unit charges 
+\begin_inset Formula $z_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $z_{j}$
+\end_inset
+
+.
+ The external contribution are 
+\begin_inset Formula \begin{equation}
+V_{ext}=\sum_{i}z_{i}e\phi_{ext}(\mathbf{r}_{i}).\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The crystal Hamiltonian for electrons 
+\begin_inset Formula $i,j$
+\end_inset
+
+ and atoms 
+\begin_inset Formula $I,J$
+\end_inset
+
+ then reads
+\begin_inset Formula \begin{eqnarray}
+H & = & \underbrace{\sum_{i}\frac{\left(\mathbf{p}_{i}+e\mathbf{A}\right)^{2}}{2m_{0}}}_{T_{e}}+\underbrace{\sum_{I}\frac{\left(\mathbf{p}_{I}+ez_{I}\mathbf{A}\right)^{2}}{2m_{I}}}_{T_{a}}+\underbrace{\frac{1}{2}\sum_{i,j}\frac{e^{2}}{4\pi\epsilon_{0}|\mathbf{r}_{i}-\mathbf{r}_{j}|}}_{V_{ee}}\nonumber \\
+ &  & +\underbrace{\frac{1}{2}\sum_{I,J}\frac{e^{2}z_{I}z_{J}}{4\pi\epsilon_{0}|\mathbf{r}_{I}-\mathbf{r}_{J}|}}_{V_{aa}}-\underbrace{\frac{1}{2}\sum_{i,J}\frac{e^{2}z_{J}}{4\pi\epsilon_{0}|\mathbf{r}_{i}-\mathbf{r}_{J}|}}_{V_{ea}}+V_{ext}\\
+ &  & +\underbrace{\frac{\epsilon_{0}}{2}\int\left(\mathbf{E}_{t}^{2}+c_{0}\mathbf{B}^{2}\right)d\mathbf{r}}_{H_{EM}},\nonumber \end{eqnarray}
+
+\end_inset
+
+where 
+\begin_inset Formula $T$
+\end_inset
+
+ is the kinetic energy part of the Hamiltonian, and 
+\begin_inset Formula $V$
+\end_inset
+
+ the potential energy one.
+ As the atoms have a much higher mass than the electrons, the Born-Oppenheimer
+ approximation 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "yu_fundamentals_1999"
+
+\end_inset
+
+ can be used to separate the motion of electrons and atoms.
+ The electrons will react on movements of the atoms instantaneously.
+ Therefore, the interaction between ion cores and between electrons and
+ ion cores can be concentrated into a potential 
+\begin_inset Formula $U(\mathbf{x})$
+\end_inset
+
+, leading to the final crystal electron Hamiltonian
+\begin_inset Formula \begin{eqnarray}
+H & = & \sum_{i}\left(\frac{\left(\mathbf{p}_{i}+e\mathbf{A}(\mathbf{r}_{i})\right)^{2}}{2m_{0}}+U(\mathbf{r}_{i})\right)\nonumber \\
+ &  & +\frac{1}{2}\sum_{i,j}\frac{e^{2}}{4\pi\epsilon_{0}|\mathbf{r}_{i}-\mathbf{r}_{j}|}+V_{ext}+H_{EM}.\label{eq:crystal_H_final}\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The next step is to perform the 
+\emph on
+single electron approximation
+\emph default
+ or 
+\emph on
+mean field approximation
+\emph default
+ by assuming that the electron-electron interaction 
+\begin_inset Formula $V_{ee}$
+\end_inset
+
+ with the core- and valence electrons can also be concentrated into the
+ potential 
+\begin_inset Formula $U(\mathbf{r})$
+\end_inset
+
+.
+ This step is necessary as solving the equation for 
+\begin_inset Formula $10^{23}$
+\end_inset
+
+ explicitly considered electrons is an impossible task.
+ The equation reduces to a single electron equation, where an electron experienc
+es the mean-field potential 
+\begin_inset Formula $U(\mathbf{r})$
+\end_inset
+
+.
+ Within this step, the vector potential 
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ is restricted to external excitations, where the local oscillations within
+ the crystal lattice are averaged out.
+ Overall, the effect of the external electro-magnetic field on the atoms
+ has been excluded.
+ This approximation is usually justified in the case of weak fields and
+ heavy atomic masses.
+ The interaction between electrons and atoms is restricted to a frozen lattice.
+ The interaction between the movement of the atoms and the electrons can
+ be reintroduced using 
+\emph on
+phonons
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "yu_fundamentals_1999"
+
+\end_inset
+
+, but this will be omitted throughout the thesis.
+\end_layout
+
+\begin_layout Subsection
+Bloch's Theorem
+\end_layout
+
+\begin_layout Standard
+Assuming no external field, the time independent single electron 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Schr
+\backslash
+"{o}dinger 
+\end_layout
+
+\end_inset
+
+ equation to solve is given by
+\begin_inset Formula \begin{equation}
+\left(-\frac{\hbar^{2}}{2m_{0}}\nabla^{2}+U(\mathbf{r})\right)\psi=E\psi.\end{equation}
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Mchaeli/Documents/Work/Physics/Thesis/Figures/2_Bloch_Theorem_Sch.eps
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Bloch_Theorem_Sch"
+
+\end_inset
+
+Schematic representation of electronic functions in a crystal (a) potential
+ plotted along a row of atoms, (b) free electron wave function, (c) amplitude
+ factor of Bloch function having the periodicity of the lattice, and (d)
+ Bloch function 
+\begin_inset Formula $\psi$
+\end_inset
+
+ (after 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "piprek_semiconductor_2003"
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For the moment, the crystal is assumed to be homogeneous and perfect.
+ The potential 
+\begin_inset Formula $U(\mathbf{r})$
+\end_inset
+
+ is periodic within the lattice (see Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Bloch_Theorem_Sch"
+
+\end_inset
+
+).
+ For any translation vector 
+\begin_inset Formula $\mathbf{R}$
+\end_inset
+
+ mapping the infinite crystal lattice to itself, the potential obeys
+\begin_inset Formula \begin{equation}
+U(\mathbf{r})=U(\mathbf{r}+\mathbf{R})\end{equation}
+
+\end_inset
+
+and the wavefunction 
+\begin_inset Formula $\psi_{n\mathbf{k}}$
+\end_inset
+
+ can be expressed in the form known as 
+\emph on
+Bloch function
+\begin_inset Formula \begin{equation}
+\psi_{n\mathbf{k}}=u_{n\mathbf{k}}(\mathbf{r})e^{i\mathbf{k}\cdot\mathbf{r}},\end{equation}
+
+\end_inset
+
+
+\emph default
+where 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $u_{n\mathbf{k}}(\mathbf{r})$
+\end_inset
+
+ denotes the lattice periodic path with 
+\begin_inset Formula \begin{equation}
+u_{n\mathbf{k}}(\mathbf{r})=u_{n\mathbf{k}}(\mathbf{r}+\mathbf{R})\end{equation}
+
+\end_inset
+
+and the plane wave is the slowly modulating envelope.
+ The 
+\begin_inset Formula $n\mathbf{k}$
+\end_inset
+
+ are the quantum numbers indexing the solutions.
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+ Applying the differential operators to the plane wave and multiplying the
+ equation on both sides from the left with 
+\begin_inset Formula $e^{−i\mathbf{k}·\mathbf{r}}$
+\end_inset
+
+ gives the equation for the lattice periodic functions as
+\begin_inset Formula \begin{eqnarray}
+H_{\mathbf{k}\cdot\mathbf{p}}(\mathbf{k})u_{n\mathbf{k}}(\mathbf{r}) & = & \left(-\frac{\hbar^{2}}{2m_{0}}\nabla^{2}+\frac{\hbar}{m_{0}}\mathbf{k}\cdot\mathbf{p}+\frac{\hbar^{2}k^{2}}{2m_{0}}+U(\mathbf{r})\right)u_{n\mathbf{k}}(\mathbf{r})\nonumber \\
+ & = & E_{n}(\mathbf{k})u_{n\mathbf{k}}(\mathbf{r}).\label{eq:Bloch_Hamiltonian}\end{eqnarray}
+
+\end_inset
+
+An important consequence of the Bloch theorem is the fact that wavefunctions
+ with different 
+\begin_inset Formula $\mathbf{k}$
+\end_inset
+
+ values are not coupled together (due to the slowly varying plane wave)
+ and therefore 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Bloch_Hamiltonian"
+
+\end_inset
+
+ has a parametric dependence on the crystal momentum 
+\begin_inset Formula $\mathbf{k}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+The 
+\begin_inset Formula $\mathbf{k}\cdot\mathbf{p}$
+\end_inset
+
+ Method
+\end_layout
+
+\begin_layout Subsubsection
+Introduction
+\end_layout
+
+\begin_layout Standard
+There is a vast number of methods to obtain solutions to Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Bloch_Hamiltonian"
+
+\end_inset
+
+.
+ One of the most frequently used is the semi-empirical 
+\begin_inset Formula $\mathbf{k}·\mathbf{p}$
+\end_inset
+
+ method that serves to derive analytical expressions for the band structure,
+ using symmetry arguments and experimental observations.
+ The method was initially introduced by Bardeen and Seitz (see references
+ in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "chuang_physics_1995"
+
+\end_inset
+
+) and applied by many researchers.
+ It is particularly useful to describe the band structure for direct semiconduct
+ors used in optoelectronic devices at the 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ point of the Brillouin zone with a high precision.
+ 
+\end_layout
+
+\begin_layout Standard
+Hereafter a short introduction of the general concepts will be given.
+ These concepts will later reappear within the Envelope Fucntion Methods
+ (EFM).
+ This introduction is mainly based on 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "yu_fundamentals_1999"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The basic idea within the 
+\begin_inset Formula $\mathbf{k}·\mathbf{p}$
+\end_inset
+
+ theory 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "kane_handbooksemiconductors_1982"
+
+\end_inset
+
+ is to solve 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Bloch_Hamiltonian"
+
+\end_inset
+
+ for an extremal point with high symmetry of the band structure, usually
+ the 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ point at 
+\begin_inset Formula $\mathbf{k}=0$
+\end_inset
+
+.
+ There, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Bloch_Hamiltonian"
+
+\end_inset
+
+ reduces to
+\begin_inset Formula \begin{equation}
+\left(-\frac{\hbar^{2}}{2m_{0}}\nabla^{2}+U(\mathbf{r})\right)u_{n0}(\mathbf{r})=E_{n}(0)u_{n0}(\mathbf{r}).\label{eq:zero_center_Bloch_Equation}\end{equation}
+
+\end_inset
+
+The solutions 
+\begin_inset Formula $u_{n0}(\mathbf{r})$
+\end_inset
+
+ are denoted as 
+\emph on
+zone-center
+\emph default
+ functions and span the complete Hilbert space of all solutions to 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Bloch_Hamiltonian"
+
+\end_inset
+
+.
+ Therefore, one may express the lattice periodic functions 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $u_{n\mathbf{k}}(\mathbf{r})$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+ away from the 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ point in terms of the zone-center functions
+\begin_inset Formula \begin{equation}
+u_{m\mathbf{k}}(\mathbf{r})=\sum_{n'}a_{m\mathbf{k},n'}u_{n'0}(\mathbf{r}).\label{eq:Bloch_Function_k_Expansion}\end{equation}
+
+\end_inset
+
+To obtain the coefficients 
+\begin_inset Formula $a_{m\mathbf{k},n'}$
+\end_inset
+
+, the expansion 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Bloch_Function_k_Expansion"
+
+\end_inset
+
+ is inserted into 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Bloch_Hamiltonian"
+
+\end_inset
+
+, multiplied from the left by 
+\begin_inset Formula $u_{n0}(\mathbf{r})$
+\end_inset
+
+ and integrated over the crystal unit-cell to obtain
+\begin_inset Formula \begin{equation}
+\sum_{n'}\left(\left(E_{n'}(0)+\frac{\hbar^{2}k^{2}}{2m_{0}}\right)\delta_{nn'}+\frac{\hbar}{m_{0}}\mathbf{k}\cdot\mathbf{p}_{nn'}\right)a_{m\mathbf{k},n'}=E_{m}(\mathbf{k})a_{m\mathbf{k},n'},\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula \begin{equation}
+\mathbf{p}_{nn'}=\int u_{n0}^{*}(\mathbf{r})\mathbf{p}u_{n'0}(\mathbf{r})d\mathbf{r}\end{equation}
+
+\end_inset
+
+is used to express the momentum matrix element between two zone-center Bloch
+ functions.
+ The above equation can obviously be written in matrix form, where a matrix
+ entry is given by
+\begin_inset Formula \begin{equation}
+h_{ij}=\left(E_{j}(0)+\frac{\hbar^{2}k^{2}}{2m_{0}}\right)\delta_{ij}+\frac{\hbar}{m_{0}}\mathbf{k}\cdot\mathbf{p}_{ij}\label{eq:k_dot_p_H_matrix}\end{equation}
+
+\end_inset
+
+and a diagonalization of the
+\series bold
+
+\begin_inset Formula $\mathbf{k}$
+\end_inset
+
+
+\series default
+ dependent, infinite matrix would lead to the exact coefficients and energies
+ 
+\begin_inset Formula $E_{m}(\mathbf{k})$
+\end_inset
+
+.
+ As the matrix is continuous in 
+\series bold
+
+\begin_inset Formula $\mathbf{k}$
+\end_inset
+
+
+\series default
+, is is clear that the dispersion 
+\begin_inset Formula $E_{m}(\mathbf{k})$
+\end_inset
+
+ will also be continuous.
+\end_layout
+
+\begin_layout Standard
+As a remark, we can point out that 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:zero_center_Bloch_Equation"
+
+\end_inset
+
+ is not solved explicitly and no closed expression for 
+\begin_inset Formula $u_{n0}(\mathbf{r})$
+\end_inset
+
+ is needed.
+ Instead, the matrix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:k_dot_p_H_matrix"
+
+\end_inset
+
+ is constructed by using group theory to derive symmetry properties of the
+ zone-center functions 
+\begin_inset Formula $u_{n0}(\mathbf{r})$
+\end_inset
+
+.
+ Using these symmetry properties, similarities and equivalences for the
+ momentum matrix elements 
+\begin_inset Formula $\mathbf{p}_{ij}$
+\end_inset
+
+ can be deduced.
+ A profound introduction into the group theory for semiconductors is beyond
+ the current scope.
+ .
+ A rough guideline illustrating the essence required by the 
+\begin_inset Formula $\mathbf{k}·\mathbf{p}$
+\end_inset
+
+ theory is presented in Appendix 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+XXX - put cross reference to the appendix
+\end_layout
+
+\end_inset
+
+ and an extensive presentation can be found in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "yu_fundamentals_1999"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "bir_symmetry_1976"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+L
+\backslash
+"{o}wdin
+\end_layout
+
+\end_inset
+
+-Renormalization
+\end_layout
+
+\begin_layout Standard
+While the matrix 
+\begin_inset Formula $h_{ij}$
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:k_dot_p_H_matrix"
+
+\end_inset
+
+ is infinite, leading to an infinite number of bands, the assessment of
+ light emission in optoelectronic devices usually requires only the knowledge
+ of the lowest conduction and highest valence bands.
+ For the relevant III-V semiconductors, the conduction and the valence bands
+ lie at the 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ point energetically close together.
+ Other bands can be regarded as being remote, so the interaction in-between
+ these bands can be considered to dominate for the band structure of interest.
+ In the model developed by Kane 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "kane_band_1957"
+
+\end_inset
+
+, therefore a submatrix 
+\begin_inset Formula $h_{ij}$
+\end_inset
+
+ of the conduction- and valence band at the 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ point is extracted out of 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:k_dot_p_H_matrix"
+
+\end_inset
+
+ and diagonalized.
+ Although the primary interest of Kane’s model was to include spinorbit
+ interaction, the missing interaction with remote bands resulted in a heavy-hole
+ band structure, given by the free-electron dispersion, bending for a hole
+ into the wrong direction.
+ Luttinger and Kohn 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "luttinger_motion_1955"
+
+\end_inset
+
+ included the interaction of remote states onto the selected set of bands,
+ using 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+L
+\backslash
+"{o}wdin
+\end_layout
+
+\end_inset
+
+’s perturbation theory 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "lowdin_notequantum-mechanical_1951"
+
+\end_inset
+
+.
+ The idea of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+L
+\backslash
+"{o}wdin
+\end_layout
+
+\end_inset
+
+ perturbation theory is to divide the bands in two classes 
+\begin_inset Formula $S$
+\end_inset
+
+ and 
+\begin_inset Formula $R$
+\end_inset
+
+ (see Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Schematic-band-structure"
+
+\end_inset
+
+).
+ Bands in class 
+\begin_inset Formula $S$
+\end_inset
+
+ are considered explicitly, i.e.
+ the respective rows and columns of the matrix 
+\begin_inset Formula $h_{ij}$
+\end_inset
+
+ are kept.
+ The bands 
+\begin_inset Formula $R$
+\end_inset
+
+ are considered being remote and their effect on the bands in class 
+\begin_inset Formula $S$
+\end_inset
+
+ are included in the submatrix of 
+\begin_inset Formula $h_{ij}$
+\end_inset
+
+ using perturbation theory.
+ Hereby, the renormalized matrix elements are given by
+\begin_inset Formula \begin{equation}
+h_{ij}^{\prime}=h_{ij}+\sum_{\nu}^{R}\frac{h_{i\nu}h_{\nu j}}{E_{i}-h_{\nu\nu}},\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $i$
+\end_inset
+
+ and 
+\begin_inset Formula $j$
+\end_inset
+
+ are in class 
+\begin_inset Formula $S$
+\end_inset
+
+ and 
+\begin_inset Formula $\nu$
+\end_inset
+
+ is in 
+\begin_inset Formula $R$
+\end_inset
+
+.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Mchaeli/Documents/Work/Physics/Thesis/Figures/2_Luttinger_Kohn_Sch.eps
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Schematic-band-structure"
+
+\end_inset
+
+Schematic band structure classification in the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+L
+\backslash
+"{o}wdin
+\end_layout
+
+\end_inset
+
+ perturbation theory.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+ Group theory and symmetry arguments are then used to derive similarities
+ and vanishing terms and reduce the perturbation expressions to a few constants.
+ By analytically diagonalizing the remaining matrix, the few remaining constants
+ can be determined by comparing analytical dispersion expressions to experimenta
+lly determined effective masses.
+ An important note here is that 
+\begin_inset Formula $E_{i}$
+\end_inset
+
+ denotes the energy of band 
+\begin_inset Formula $i$
+\end_inset
+
+ such that the renormalization of the matrix element depends on the result
+ of the eigenvalue calculation, actually requiring self-consistency.
+ In practice, the energies 
+\begin_inset Formula $E_{i}$
+\end_inset
+
+ are approximated by the zone-center energy 
+\begin_inset Formula $E_{i}(0)$
+\end_inset
+
+, given by the matrix element 
+\begin_inset Formula $h_{ii}$
+\end_inset
+
+, which is fine close the zone-center.
+ By keeping only one single band in class 
+\begin_inset Formula $S$
+\end_inset
+
+, one obtains the single band effective mass dispersion for band 
+\begin_inset Formula $i$
+\end_inset
+
+ as
+\begin_inset Formula \begin{equation}
+E_{i}(0)+\left(\frac{\hbar^{2}k^{2}}{2m_{0}}+\frac{\hbar}{m_{0}}\sum_{\nu}^{R}\frac{\mathbf{k}\cdot\mathbf{p}_{s\nu}\mathbf{p}_{\nu s}\cdot\mathbf{k}}{E_{i}-h_{\nu\nu}}\right)=E_{i}(0)+\frac{\hbar^{2}}{2}\mathbf{k}^{T}\frac{1}{\mathbf{m}^{*}}\mathbf{k}.\end{equation}
+
+\end_inset
+
+In the case of several bands within the class S, the resulting matrix can
+ be written, ordered by the dependence on the wavenumber 
+\begin_inset Formula $\mathbf{k}$
+\end_inset
+
+, as
+\begin_inset Formula \begin{equation}
+\sum_{i,j=x,y,z}\mathbf{H}_{i,j}^{(2)}k_{i}k_{j}+\sum_{i=x,y,z}\mathbf{H}_{i,j}^{(1)}k_{i}+\mathbf{H}^{(0)}.\end{equation}
+
+\end_inset
+
+To summarize, the second order terms 
+\begin_inset Formula $\mathbf{H}_{i,j}^{(2)}$
+\end_inset
+
+ are a result of the combination of the free carrier dispersion and the
+ perturbation treatment of remote states in class 
+\begin_inset Formula $R$
+\end_inset
+
+, while first order terms 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $\mathbf{H}_{i,j}^{(1)}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+ stem from the direct treatment of the 
+\begin_inset Formula $\mathbf{k}·\mathbf{p}$
+\end_inset
+
+ interaction (and later from linear spin-orbit terms), while zero order
+ terms 
+\begin_inset Formula $\mathbf{H}^{(0)}$
+\end_inset
+
+, contain zone-center energies (and possible terms if the zone-center basis
+ is not orthogonal).
+\end_layout
+
+\begin_layout Section
+The 
+\begin_inset Formula $\mathbf{k}·\mathbf{p}$
+\end_inset
+
+ Envelope Function Method
+\end_layout
+
+\begin_layout Subsection
+Introduction
+\end_layout
+
+\begin_layout Standard
+In previous sections, the crystal was assumed to be homogeneous and infinitely
+ extended.
+ In nanostructures, this assumption is no longer valid and the translational
+ symmetry is broken in certain directions.
+ As a consequence, a carrier might be energetically confined within a lower-band
+gap material, but still free to propagate within the translational invariant
+ direction.
+ In the case of a quantum well, the symmetry is broken by the atoms of the
+ other species in one direction, for a quantum wire, it is broken in two
+ directions and for a quantum dot in all three directions.
+ Consequently, the number of translational invariant directions is reduced
+ from two for a quantum well to zero for a quantum dot.
+ As a result, the Bloch function employing the plane wave ansatz has to
+ be modified
+\begin_inset Formula \begin{equation}
+\varphi_{m\mathbf{k}_{t}}(\mathbf{r},z)=\sum_{n}u_{n}(\mathbf{r},z)e^{i\mathbf{k}_{t}\cdot\mathbf{r}}F_{n\mathbf{k},m}(z).\label{eq:Envelope_Function_Bloch_Function}\end{equation}
+
+\end_inset
+
+Here, 
+\begin_inset Formula $\mathbf{r}$
+\end_inset
+
+ denotes the coordinate of translational invariant direction(s), 
+\begin_inset Formula $z$
+\end_inset
+
+ is the coordinate of the direction(s) where the crystal symmetry is broken
+ and 
+\begin_inset Formula $u_{n}(\mathbf{r},z)$
+\end_inset
+
+ is a lattice-periodic function.
+ The crystal momentum 
+\series bold
+
+\begin_inset Formula $\mathbf{k}$
+\end_inset
+
+
+\series default
+ is only defined within the translational invariant direction.
+ The expression 
+\begin_inset Formula $F_{n\mathbf{k},m}(z)$
+\end_inset
+
+ is referred to as slowly-varying envelope and denotes at every position
+ in the symmetry broken direction 
+\begin_inset Formula $z$
+\end_inset
+
+, how the lattice-periodic functions are mixed together.
+ In the bulk crystal, the plane wave term decouples the wavefunctions with
+ different crystal momenta 
+\begin_inset Formula $\mathbf{k}$
+\end_inset
+
+.
+ In a nanostructure, this decoupling is only true for the translational
+ invariant direction, while in the symmetry broken direction, the states
+ are now mixed together.
+ 
+\end_layout
+
+\begin_layout Standard
+As a result of the symmetry breaking, the bands are split into 
+\emph on
+subbands
+\emph default
+, depending on the transversal crystal momentum 
+\begin_inset Formula $\mathbf{k}_{t}$
+\end_inset
+
+.
+ The task of the envelope function method is now to select a suitable set
+ of lattice periodic functions 
+\begin_inset Formula $u_{n}(\mathbf{r},z)$
+\end_inset
+
+ for 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Envelope_Function_Bloch_Function"
+
+\end_inset
+
+ and derive a proper equation to determine the envelopes 
+\begin_inset Formula $F_{n\mathbf{k},m}(z)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset Formula $\mathbf{k}·\mathbf{p}$
+\end_inset
+
+ Envelope Function Ansatz
+\end_layout
+
+\begin_layout Standard
+The traditional ansatz is to use the zone-center 
+\begin_inset Formula $\mathbf{k}·\mathbf{p}$
+\end_inset
+
+ lattice periodic functions 
+\begin_inset Formula $u_{n0}(\mathbf{r})$
+\end_inset
+
+ for the expansion 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Envelope_Function_Bloch_Function"
+
+\end_inset
+
+, together with a set of matching conditions.
+ The equation for the envelopes is obtained by replacing the wave number
+ 
+\begin_inset Formula $k_{i}$
+\end_inset
+
+ by the corresponding operator 
+\begin_inset Formula $−i∂_{i}$
+\end_inset
+
+.
+ As in the nanostructure, different materials are involved, the wavefunction
+ is in each material expanded into the materials zone-center functions.
+ The result is that the effective mass like parameters from the perturbation
+ interaction with remote states and the zone-center energies are position
+ dependent.
+ For the single-band effective mass approximation for e.g.
+ the conduction band in a quantum well for 
+\begin_inset Formula $\mathbf{k}_{t}=0$
+\end_inset
+
+, the envelope equation is given by
+\begin_inset Formula \begin{equation}
+\left(-\frac{\hbar^{2}}{2m^{*}(z)}\frac{\partial^{2}}{\partial z^{2}}+E_{c}(z)\right)F_{s}(z)=E(0)F_{s}(z).\label{eq:QW_Conduction_Band_Envelope_Schr_Eq}\end{equation}
+
+\end_inset
+
+
+\begin_inset Formula $E_{c}(z)$
+\end_inset
+
+ denotes the position dependent bulk band edge, corresponding in the direct
+ band gap semiconductors to the conduction band energy at 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+.
+ Once the eigenvalues 
+\begin_inset Formula $E_{m}(0)$
+\end_inset
+
+ and normalized eigenfunctions 
+\begin_inset Formula $F_{s,m}(z)$
+\end_inset
+
+ (indexed by the subband quantum number 
+\begin_inset Formula $m$
+\end_inset
+
+) of 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:QW_Conduction_Band_Envelope_Schr_Eq"
+
+\end_inset
+
+ are obtained, the in-plane dispersion is usually approximated using the
+ dominant effective mass of the quantum well material
+\begin_inset Formula \begin{equation}
+E_{m}(\mathbf{k})=E_{m}(0)+\frac{\hbar^{2}k^{2}}{2m_{c}^{*}}.\end{equation}
+
+\end_inset
+
+The way the equation is written, it is in the presence of a material interface
+ not Hermitian and therefore unexpected imaginary eigenvalues for the energy
+ would result.
+ The usual ad-hoc fix, justified by the requirement of a continuous probability
+ flow, is to rewrite the second order differential operator 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "chuang_physics_1995"
+
+\end_inset
+
+
+\begin_inset Formula \begin{equation}
+-\frac{\hbar^{2}}{2m^{*}(z)}\nabla^{2}\rightarrow-\nabla\frac{\hbar^{2}}{2m^{*}(z)}\nabla.\label{eq:Second_Order_Diff_Operator}\end{equation}
+
+\end_inset
+
+The particular order of the coefficient and the differential operators is
+ commonly referred to as operator ordering.
+ The form of 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Second_Order_Diff_Operator"
+
+\end_inset
+
+ is denoted as Ben-Daniel and Duke ordering 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "bendaniel_space-charge_1966"
+
+\end_inset
+
+, but within the single-band effective mass theory, other orderings are
+ suggested too (see 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "morrow_model_1984"
+
+\end_inset
+
+ and references therein).
+ The ordering is irrelevant within bulk materials, but plays a substantial
+ role at a material interface: it is equivalent to the matching conditions
+ for the bulk Bloch functions.
+ In the case of a multi-band equation, where not only one, but several lattice
+ periodic functions are included, one obtains in analogy to 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Second_Order_Diff_Operator"
+
+\end_inset
+
+ for all envelopes involved 
+\begin_inset Formula $\mathbf{F}(z)=(F_{1}(z),F_{2}(z),...,F_{M}(z))^{T}$
+\end_inset
+
+ a system of coupled partial differential equations
+\begin_inset Formula \begin{equation}
+\mathbf{H}_{\mathbf{k}\cdot\mathbf{p}}(z)\mathbf{F}(z)=E\mathbf{F}(z),\label{eq:General_Envelope_Function_Schr_Eq}\end{equation}
+
+\end_inset
+
+where the 
+\begin_inset Formula $\mathbf{k}\cdot\mathbf{p}$
+\end_inset
+
+ differential operator is given by
+\begin_inset Formula \begin{eqnarray}
+\mathbf{H}_{\mathbf{k}\cdot\mathbf{p}}(z) & = & -\sum_{i,j}\partial_{i}\mathbf{H}_{i,j}^{(2)}(\mathbf{r};\mathbf{k}_{t})\partial_{j}\nonumber \\
+ &  & +\sum_{i}\left(\mathbf{H}_{i;L}^{(1)}(\mathbf{r};\mathbf{k}_{t})\partial_{i}+\partial_{i}\mathbf{H}_{i;R}^{(1)}(\mathbf{r};\mathbf{k}_{t})\right)\\
+ &  & +\mathbf{H}^{(0)}(\mathbf{r};\mathbf{k}_{t}).\nonumber \end{eqnarray}
+
+\end_inset
+
+Here the Hermitian operator ordering has already been introduced.
+ The problem is that within the bulk 
+\begin_inset Formula $\mathbf{k}·\mathbf{p}$
+\end_inset
+
+ Hamiltonian, terms of the type 
+\begin_inset Formula $Nk_{i}k_{j}$
+\end_inset
+
+ with 
+\begin_inset Formula $i\neq j$
+\end_inset
+
+ can appear, for which the operator ordering is not clear.
+ The usual fix is to split the contribution symmetrically
+\begin_inset Formula \begin{equation}
+Nk_{i}k_{j}\rightarrow\partial_{i}\frac{N}{2}\partial_{j}-\partial_{j}\frac{N}{2}\partial_{i}.\label{eq:Symmetrized_Operator_Ordering}\end{equation}
+
+\end_inset
+
+It can be shown that this particular choice, which is called 
+\emph on
+symmetrized operator ordering
+\emph default
+, may lead to erroneous results.
+ The traditional envelope equations for one and several bands are widely
+ applied and used in a variety of numerical calculations of quantum wells
+ (and superlattices) 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "altarelli_electronic_1983,bastard_superlattice_1981,bastard_theoretical_1982,eppenga_new_1987-1,chuang_efficient_1991-1"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Beside its successful application to some material systems, the traditional
+ way of deriving the envelope equations contains several ad hoc fixes, which
+ are required within the presence of material interfaces.
+ The operator ordering is crucial at a material interface, where the material
+ parameters change and therefore the ad-hoc operator ordering involves unknown
+ approximations made to the effect of the interface.
+ In order to analyze the involved approximations, Burt 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "burt_direct_1994,burt_fundamentals_1999,burt_justification_1992,burt_new_1988"
+
+\end_inset
+
+ derived the operator ordering 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Second_Order_Diff_Operator"
+
+\end_inset
+
+ from the nanostructure’s 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Schr
+\backslash
+"{o}dinger 
+\end_layout
+
+\end_inset
+
+ equation and demonstrated that the symmetrization approach for the terms
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Symmetrized_Operator_Ordering"
+
+\end_inset
+
+ in the multi-band envelope equation is incorrect.
+ The derived multi-band Hamiltonian is Hermitian, but not necessarily symmetric.
+ The derivation focusing on operator ordering is not summarized here, but
+ the reader is reffered to reviews 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "burt_justification_1992,burt_fundamentals_1999"
+
+\end_inset
+
+ and for the numerical estimates of the introduced errors to 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "burt_direct_1994"
+
+\end_inset
+
+.
+ In essence, Burt’s theory clearly demonstrated the existence and omission
+ of interface terms and showed that exact envelope equations could be derived
+ from the original 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Schr
+\backslash
+"{o}dinger 
+\end_layout
+
+\end_inset
+
+ equation.
+ But Burt’s theory is not widely applied.
+ The issue of operator ordering attracts growing interest and it is crucial
+ for the mathematical stability of the envelope equations 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "veprek_ellipticity_2007,veprek_operator_????"
+
+\end_inset
+
+.
+ Foreman 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "foreman_effective-mass_1993"
+
+\end_inset
+
+ derived the correct operator ordering for zinc-blende crystals and therefore
+ the derived operator ordering is commonly referred to as Burt-Foreman operator
+ ordering.
+ Beside the operator ordering, the theory regarding the omitted interface
+ terms in the traditional model is only used rarely 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "foreman_analytical_1998,foreman_exact_1995"
+
+\end_inset
+
+.
+ The effect of the interface terms is to perturb the system and create an
+ additional mixing of the bands.
+ In the traditional envelope equations, the effect of the interface was
+ introduced using phenomenological models (see e.g.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "krebs_krebs_1999"
+
+\end_inset
+
+ and references therein) or by a variational least action principle 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "rodina_least-action_2006"
+
+\end_inset
+
+.
+ The reason of the fundamental popularity of the traditional envelope function
+ method over Burt’s method is given by its simple form, which allows to
+ write quantum well solvers within days, and the fact that mostly known,
+ bulk input parameters can be used, which is not the case for the interface
+ terms within the exact envelope function theory.
+ 
+\end_layout
+
+\begin_layout Subsection
+Quantum Wells (The Zinc-blende Models)
+\end_layout
+
+\begin_layout Subsubsection
+Direct Interaction
+\end_layout
+
+\begin_layout Standard
+To apply the envelope equations 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:General_Envelope_Function_Schr_Eq"
+
+\end_inset
+
+ to direct-bandgap semiconductor nanostructures, the exact form of the 
+\begin_inset Formula $\mathbf{k}·\mathbf{p}$
+\end_inset
+
+ Hamiltonian at the 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ point is required.
+ Ignoring spin, the top of the valence band at 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ is triply degenerate, corresponding to the 
+\begin_inset Formula $\Gamma_{15}$
+\end_inset
+
+ representation (see Appendix 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+appendix about the group theory
+\end_layout
+
+\end_inset
+
+) with 
+\begin_inset Formula $p$
+\end_inset
+
+-type basis functions 
+\begin_inset Formula $x,y$
+\end_inset
+
+ and 
+\begin_inset Formula $z$
+\end_inset
+
+, while the lowest-lying conduction band is of s-type symmetry, corresponding
+ to 
+\begin_inset Formula $\Gamma_{1}$
+\end_inset
+
+.
+ The direct interaction terms 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:k_dot_p_H_matrix"
+
+\end_inset
+
+ of the 
+\begin_inset Formula $\mathbf{k}·\mathbf{p}$
+\end_inset
+
+ matrix for 
+\begin_inset Formula $s,x,y$
+\end_inset
+
+ and 
+\begin_inset Formula $z$
+\end_inset
+
+ are given by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "kane_handbooksemiconductors_1982"
+
+\end_inset
+
+
+\begin_inset Formula \begin{equation}
+\mathbf{H}_{d}^{4\times4}=\left(\begin{array}{r|lccc}
+ & |s\rangle & |x\rangle & |y\rangle & |z\rangle\\
+\hline |s\rangle & E_{c}+\frac{\hbar^{2}}{2m_{0}} & iPk_{x} & iPk_{y} & iPk_{z}\\
+|x\rangle & -ik_{x}P & E_{v}+\frac{\hbar^{2}}{2m_{0}} & 0 & 0\\
+|y\rangle & -ik_{y}P & 0 & E_{v}+\frac{\hbar^{2}}{2m_{0}} & 0\\
+|z\rangle & -ik_{z}P & 0 & 0 & E_{v}+\frac{\hbar^{2}}{2m_{0}}\end{array}\right).\end{equation}
+
+\end_inset
+
+Here, 
+\begin_inset Formula $E_{c}$
+\end_inset
+
+ and 
+\begin_inset Formula $E_{v}$
+\end_inset
+
+ correspond to the zone-center energies
+\begin_inset Formula \begin{eqnarray}
+E_{c} & = & \langle s|H|s\rangle\\
+E_{v} & = & \langle x|H|x\rangle\\
+P & = & -\frac{i\hbar}{m_{0}}\langle s|p_{x}|s\rangle\end{eqnarray}
+
+\end_inset
+
+and 
+\begin_inset Formula $P$
+\end_inset
+
+ the nonzero interband momentum matrix element from the direct 
+\begin_inset Formula $\mathbf{k}·\mathbf{p}$
+\end_inset
+
+ interaction between the conduction- and the valence band.
+ The momentum matrix element is often given as an energy parameter 
+\begin_inset Formula $E_{p}$
+\end_inset
+
+ , the 
+\emph on
+optical matrix parameter
+\emph default
+, related to 
+\begin_inset Formula $P$
+\end_inset
+
+ by
+\begin_inset Formula \begin{equation}
+E_{p}=\frac{2m_{0}}{\hbar^{2}}P^{2}.\end{equation}
+
+\end_inset
+
+For the 
+\begin_inset Formula $\Gamma_{15}$
+\end_inset
+
+ states states, the nonzero momentum matrix element is of the type 
+\begin_inset Formula $\langle x|p_{y}|z\rangle$
+\end_inset
+
+, where no coordinate appears twice 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "yu_fundamentals_1999"
+
+\end_inset
+
+ (the crystal is invariant under a rotation of 180° around one of the axes
+ like 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "ren_valence-band_1999"
+
+\end_inset
+
+).
+ Therefore, one would expect the direct interaction within the valence band
+ 
+\begin_inset Formula $\mathbf{k}\cdot\langle s|\mathbf{p}|s\rangle$
+\end_inset
+
+ resulting into a linear term in k given explicitly by kzhx|pz|yi.
+ In fact, the first order matrix elements within 
+\begin_inset Formula $\Gamma_{15}$
+\end_inset
+
+ vanish due to time reversal symmetry of the Hamiltonian 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "dresselhaus_spin-orbit_1955"
+
+\end_inset
+
+.
+ For example, a reflection in the (110) plane for hxa|pz|ybi results in
+ hya|pz|xbi, while integration by parts gives hxa|pz|ybi = −hyb|pz|xai.
+ Here a and b index the degenerate level.
+ If the states are from the same degenerate level, then a = b and the matrix
+ elements vanish.
+ If the states are not from the same degenerate level, the interaction is
+\end_layout
+
+\end_body
+\end_document

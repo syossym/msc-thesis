@@ -1,0 +1,299 @@
+#LyX 1.6.0rc3 created this file. For more info see http://www.lyx.org/
+\lyxformat 340
+\begin_document
+\begin_header
+\textclass report
+\options a4paper,titlepage
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_amsmath 1
+\use_esint 0
+\cite_engine natbib_authoryear
+\use_bibtopic false
+\paperorientation portrait
+\leftmargin 3cm
+\topmargin 4cm
+\rightmargin 3cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip bigskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Section*
+Parametric Cooling via an Opto-Acoustic Parametric Amplifier
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+Daniel C.
+ Price
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+08 March 2008
+\end_layout
+
+\begin_layout Subsection*
+1 Keywords
+\end_layout
+
+\begin_layout Standard
+Parametric interaction, Opto-Acoustic Parametric Amplifier (OAPA), optical
+ modes, acoustic modes, 3-mode interaction 
+\end_layout
+
+\begin_layout Subsection*
+2 Supervisors
+\end_layout
+
+\begin_layout Standard
+Professor David Blair, Dr.
+ Chunnong Zhao, Dr.
+ Li Ju, School of Physics University of Western Australia 35 Stirling Highway,
+ Nedlands, WA 6009 
+\end_layout
+
+\begin_layout Subsection*
+3 Research Plan
+\end_layout
+
+\begin_layout Subsubsection*
+3.1 Aims
+\end_layout
+
+\begin_layout Standard
+The aim of this project is to ‘cool’ an acoustic mode of a mechanical resonator
+ to the quantum ground state via parametric interaction with an Opto-Acoustic
+ Parametric Amplifier (OAPA).
+ The OAPA is a University of Western Australia (UWA) designed coupled laser
+ cavity that overcomes a major limitation of conventional parametric cooling.
+ If the mechanical mode can be cooled to the quantum ground state then it
+ should be possible to observe the transition from classical to quantum
+ behaviour.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+3.2 Significance
+\end_layout
+
+\begin_layout Standard
+There are a number of groups who have demonstrated significant parametric
+ cooling by coupling a mechanical resonator to a specially tuned laser cavity.
+ None of these groups have as yet reached the quantum ground state however,
+ as there are major limitations that arise with the 2mode interaction techniques
+ currently used.
+ The OAPA represents a much better method of parametric cooling -it utilises
+ 3-mode parametric interactions, which affords lower laser intensity noise
+ and phase noise requirements which limit parametric cooling experiments
+ [1].
+ The OAPA technique gives the UWA group a very good chance of being the
+ first in the race to the ground state.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+3.3 Methods
+\end_layout
+
+\begin_layout Standard
+The OAPA utilises a resonant interaction between two optical resonators
+ (a coupled laser cavity) and an acoustic resonator (mechanical oscillator).
+ This creates an opto-acoustic coupling, so by ‘tuning’ the optical resonance
+ conditions one can produce positive or negative acoustic gain [1].
+ 
+\end_layout
+
+\begin_layout Standard
+In the proposed tabletop experiment, a laser source enters an optical train
+ (ie the OAPA); by tuning the OAPA using Mirror and Lens, the acoustic mode
+ of the mechanical resonator can be parametrically cooled [1].
+ To keep the OAPA locked on resonance, electronic feedback locking should
+ be used, such as the Pound-Drever-Hall method used by Sascha W.
+ Schediwy in his 2007 thesis on opto-mechanical resonators [2].
+\end_layout
+
+\begin_layout Subsubsection*
+3.4 Status
+\end_layout
+
+\begin_layout Standard
+Parametric cooling projects have been undertaken before, notably by Antoine
+ Heidmann’s group at the Universitaire Pierre et Marie Curie.
+ Significant parametric cooling has been attained, however the 2-mode technique
+ they have used is inferior to the 3-mode method invented by the UWA group,
+ which is headed by my Honours supervisor, David G.
+ Blair.
+ 
+\end_layout
+
+\begin_layout Standard
+No experiments have as yet been conducted into parametric cooling using
+ an OAPA.
+ The UWA group has however shown parametric interactions with weak negative
+ gain, between sound and light by using the 80m suspended optical cavity
+ at the Gingin High Optical Power Facility (GHPOF).
+ 
+\end_layout
+
+\begin_layout Standard
+The project is a spin-off from the investigations of the UWA Australian
+ International Gravitational Research Centre (AIGRC) into parametric instabiliti
+es in future interferomic gravitational wave detectors such as Advanced
+ LIGO.
+ It is predicted that parametric interactions between the test mass and
+ the radiation circulating in the detector’s arms could cause acoustic modes
+ to ‘ring up’ and increase in amplitude, rendering the detector useless.
+ While the proposed parametric cooling experiment does not directly relate
+ to controlling this instability, further investigation into parametric
+ instabilities will act to increase both awareness of the issue and our
+ knowledge of parametric interactions.
+ 
+\end_layout
+
+\begin_layout Standard
+Currently, there is a clean optical laboratory set up at UWA for testing
+ the optical configuration of an OAPA.
+ The room consists of a 1064nm NdYAG laser, a Melles Griot workbench, all
+ optical and electronic components required for mode locking and a vacuum
+ chamber.
+ While we do not have access to the mirrors required to create a functional
+ OAPA, we should be able to attain parametric interactions with a niobium
+ resonator (originally designed as a test-mass for the GHPOF), which will
+ give hands-on experience with the apparatus used in conjunction with an
+ OAPA.
+ 
+\end_layout
+
+\begin_layout Standard
+UWA's Chunnong Zhao has recently visited Universitaire Pierre et Marie Curie
+ in Paris to organise a collaboration with Antoine Heidmann's group, who
+ have access to the components required for an OAPA.
+ These components and one of their laboratories have been set aside for
+ July for Haixing Miao and myself to conduct parametric cooling experiments.
+\end_layout
+
+\begin_layout Subsubsection*
+3.5 Problems
+\end_layout
+
+\begin_layout Standard
+As the main experimental part of this project must be conducted in Paris,
+ there is a time constraint within which to do the experiment.
+ As such, I will be gaining hands on experience with similar apparatus in
+ a clean laboratory at UWA before leaving for France.
+ There are a number of obstacles to overcome before the UWA setup is 'useful':
+ the test mass needs further vibrational isolation and the optical layout
+ needs a slight rework to ensure the beam doesn't become non-linearly polarised.
+ Steps are already underway to ensure these problems are rectified with
+ time spare for the hands-on experience needed to ensure that I can spend
+ all my time in Paris constructively.
+\end_layout
+
+\begin_layout Subsection*
+4 Benefits
+\end_layout
+
+\begin_layout Standard
+Success with this project would make the UWA team the first in the race
+ to achieving quantum physics behaviour in a macroscopic system.
+ As well as being a feat of great scientific dexterity, it would be a direct
+ test of quantum theory.
+ Furthermore, it would be a significant accomplishment that would generate
+ a great deal of prestige and thus funding for the University .
+ 
+\end_layout
+
+\begin_layout Subsection*
+5 Publications
+\end_layout
+
+\begin_layout Standard
+As the OAPA is a recent UWA innovation, many of the leading writers of the
+ field are from UWA team, notably: David G.
+ Blair, Haixing Miao, Slawomir Gras, Chunnong Zhao, Li Ju and Sascha W.
+ Schediwy.
+ V.B.
+ Braginsky et al, from Moscow State University, were the first to document
+ the parametric instabilities leading to the development of the OAPA.
+ 
+\end_layout
+
+\begin_layout Standard
+The publications listed below have been integral to my study of parametric
+ interactions; they also provide the references used in this Research Proposal.
+ 
+\end_layout
+
+\begin_layout Standard
+[1] Direct Amplification of Sound by Light, Chunnong Zhao, Li Ju, Haixing
+ Miao, Slawomir Gras, Yaohui Fan & David G.
+ Blair (2007) 
+\end_layout
+
+\begin_layout Standard
+[2] Optical Spring Parametric Interactions in a Macroscopic Opto-Mechanical
+ Resonator, Sascha W.
+ Schediwy B.Sc.
+ (Hons), (2007) 
+\end_layout
+
+\begin_layout Standard
+[3] Three-Mode Opto-Acoustic Parametric Interactions with Coupled Cavity,
+ H.X.
+ Miao, C.N.
+ Zhao, L.
+ Ju, S.
+ Gras, P.
+ Barriga and D.G.
+ Blair (2008) 
+\end_layout
+
+\begin_layout Subsection*
+6 Costs
+\end_layout
+
+\begin_layout Standard
+While the experiment can be conducted as a table-top experiment, many of
+ the mirrors need to be specifically designed, as does the mechanical resonator.
+ To circumvent these production costs, it is proposed that UWA PhD student
+ Haixing Miao and myself conduct the experiment in collaboration with a
+ prominent group from the Univeristaire Pierre et Marie Curie, who are one
+ of the leaders in parametric cooling.
+ Their apparatus and experience will not only cut costs but also give our
+ collaboration a strong chance of being the first in the race to the ground
+ state.
+\end_layout
+
+\end_body
+\end_document

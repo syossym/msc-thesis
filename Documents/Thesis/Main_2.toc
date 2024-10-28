@@ -1,0 +1,106 @@
+\select@language {english}
+\select@language {english}
+\vspace {-\cftbeforepartskip }
+\select@language {american}
+\select@language {english}
+\select@language {english}
+\select@language {english}
+\select@language {english}
+\select@language {english}
+\select@language {english}
+\select@language {american}
+\select@language {english}
+\select@language {english}
+\select@language {english}
+\select@language {american}
+\select@language {english}
+\select@language {english}
+\select@language {american}
+\select@language {english}
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\select@language {english}
+\select@language {english}
+\contentsline {part}{i\hspace {1em}\spacedlowsmallcaps {Theory Review}}{3}{part.1}
+\select@language {english}
+\contentsline {chapter}{\numberline {2}Electronic Properties of Semiconductors}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}Crystal Schr\"{o}dinger Equation}{5}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Introduction}{5}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Bloch's Theorem}{7}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}The $\mathbf {k}\cdot \mathbf {p}$ Method}{8}{subsection.2.1.3}
+\contentsline {subsubsection}{\numberline {2.1.3.1}Introduction}{8}{subsubsection.2.1.3.1}
+\contentsline {subsubsection}{\numberline {2.1.3.2}L\"{o}wdin-Renormalization}{9}{subsubsection.2.1.3.2}
+\contentsline {section}{\numberline {2.2}The $\mathbf {k}\cdot \mathbf {p}$ Envelope Function Method}{10}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Introduction}{10}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}$\mathbf {k}\cdot \mathbf {p}$ Envelope Function Ansatz}{11}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}The Zinc-blende Models}{13}{subsection.2.2.3}
+\contentsline {subsubsection}{\numberline {2.2.3.1}Direct Interaction}{13}{subsubsection.2.2.3.1}
+\contentsline {subsubsection}{\numberline {2.2.3.2}Remote Contributions}{13}{subsubsection.2.2.3.2}
+\contentsline {subsubsection}{\numberline {2.2.3.3}Spin-Orbit Interaction}{17}{subsubsection.2.2.3.3}
+\contentsline {subsection}{\numberline {2.2.4}Two Band Model}{21}{subsection.2.2.4}
+\contentsline {section}{\numberline {2.3}Schr\"{o}dinger-Poisson Model}{25}{section.2.3}
+\select@language {english}
+\select@language {american}
+\select@language {english}
+\contentsline {chapter}{\numberline {3}Free Carriers Optical Transitions}{29}{chapter.3}
+\contentsline {section}{\numberline {3.1}Second Quantization}{29}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Introduction}{29}{subsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.1.1}Single Particle Hamiltonian}{31}{subsubsection.3.1.1.1}
+\contentsline {subsubsection}{\numberline {3.1.1.2}Two Particle Hamiltonian: Coulomb Interaction}{31}{subsubsection.3.1.1.2}
+\contentsline {subsubsection}{\numberline {3.1.1.3}Particle \textendash {} Electromagnetic Field Interaction Hamiltonian}{31}{subsubsection.3.1.1.3}
+\contentsline {subsection}{\numberline {3.1.2}Bloch States Formulation}{32}{subsection.3.1.2}
+\contentsline {subsubsection}{\numberline {3.1.2.1}Normalization}{33}{subsubsection.3.1.2.1}
+\contentsline {subsubsection}{\numberline {3.1.2.2}Lattice-Cell Average}{33}{subsubsection.3.1.2.2}
+\contentsline {subsubsection}{\numberline {3.1.2.3}The Kinetic Term}{34}{subsubsection.3.1.2.3}
+\contentsline {subsubsection}{\numberline {3.1.2.4}The Interaction Term}{34}{subsubsection.3.1.2.4}
+\contentsline {subsection}{\numberline {3.1.3}Holes}{35}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Carrier Statistics}{36}{subsection.3.1.4}
+\contentsline {section}{\numberline {3.2}Transitions Calculation}{37}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Introduction}{37}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Quantum Microscopic Polarization}{39}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Heisenberg's Equation of Motion}{39}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Solving the Free Carrier Equation}{42}{subsection.3.2.4}
+\contentsline {section}{\numberline {3.3}Spontaneous Emission}{43}{section.3.3}
+\contentsline {section}{\numberline {3.4}Dipole Matrix Element}{44}{section.3.4}
+\select@language {english}
+\select@language {english}
+\contentsline {chapter}{\numberline {4}Coulomb Correlated Optical Transitions}{47}{chapter.4}
+\contentsline {section}{\numberline {4.1}Second Quantization}{47}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Introduction}{47}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Diagonal Approximation}{49}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Holes}{50}{subsection.4.1.3}
+\contentsline {section}{\numberline {4.2}Transitions Calculation}{51}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Equations of Motion}{51}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Hartree-Fock Approximation}{52}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Many-Body Effects}{54}{subsection.4.2.3}
+\contentsline {subsubsection}{\numberline {4.2.3.1}Background Screening}{54}{subsubsection.4.2.3.1}
+\contentsline {subsubsection}{\numberline {4.2.3.2}Plasma Screening}{54}{subsubsection.4.2.3.2}
+\contentsline {subsubsection}{\numberline {4.2.3.3}Coulomb Hole Self Energy}{55}{subsubsection.4.2.3.3}
+\contentsline {subsubsection}{\numberline {4.2.3.4}Screened Exchange Energy}{56}{subsubsection.4.2.3.4}
+\contentsline {subsection}{\numberline {4.2.4}Solving the Correlated Equation}{56}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.5}Numerical Implementation}{57}{subsection.4.2.5}
+\contentsline {section}{\numberline {4.3}Beyond the Hartree-Fock Approximation}{60}{section.4.3}
+\select@language {english}
+\select@language {english}
+\contentsline {chapter}{\numberline {5}Semiconductor Microcavity}{61}{chapter.5}
+\contentsline {section}{\numberline {5.1}Optical Resonator}{61}{section.5.1}
+\contentsline {section}{\numberline {5.2}Distributed Bragg Reflector}{62}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Transfer Matrix Method (TMM)}{63}{subsection.5.2.1}
+\contentsline {section}{\numberline {5.3}Microvity Optical Characteristics }{65}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Microcavity Reflection Spectrum }{65}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Microcavity Confined Photon}{67}{subsection.5.3.2}
+\select@language {english}
+\select@language {english}
+\contentsline {part}{ii\hspace {1em}\spacedlowsmallcaps {Appendices}}{69}{part.2}
+\contentsline {chapter}{\numberline {A}Symmetry Properties of Wavefunctions}{71}{appendix.A}
+\contentsline {chapter}{\numberline {B}Two Band Model Numerical Implementation}{75}{appendix.B}
+\select@language {american}
+\select@language {english}
+\contentsline {chapter}{\numberline {C}Self-Consistent Solution of Schr\"{o}dinger -Poisson Model}{81}{appendix.C}
+\select@language {american}
+\select@language {english}
+\select@language {english}
+\contentsline {chapter}{\numberline {D}Lindhard Screening Model}{83}{appendix.D}
+\select@language {english}
+\select@language {american}
+\select@language {english}

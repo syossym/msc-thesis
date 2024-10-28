@@ -1,0 +1,370 @@
+\pagestyle{empty} % No headers or page numbers
+% ---------------------  Title page --------------------------------
+\begin{center}
+\vspace*{2.0cm} \Huge {\bf \Huge The Configuration Space of
+Parallel Mechanisms}
+
+
+\vspace*{6.0cm} \Large
+Nir Shvalb\\
+\end{center}
+\newpage
+% ---------------------  inner title page --------------------------------
+\begin{center}
+\Huge {\bf \Huge The Configuration Space of Parallel Mechanisms}
+
+\vspace*{1.5cm} \Large
+ Research thesis
+
+\vspace*{1.5cm} \Large
+Submitted in Partial Fulfilment of the \\
+Requirement for the degree of \\
+Doctor of Philosophy \\
+\vspace*{3.0cm} \Large
+Nir Shvalb\\
+
+
+
+\vspace*{2.0cm} \Large
+Submitted to Senate of\\
+the Technion - Israel Institute of Technology\\
+
+\end{center}
+\begin{center} \vspace*{.5cm} Haifa, Israel, Nov 2006, Kislev 5776
+\end{center}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PRELIMINARY PAGES
+
+\pagestyle{plain} % No headers, just page numbers
+\pagenumbering{roman} % Roman numerals
+
+%
+\prefacesection{Acknowledgments}
+The Research Thesis Was Done Under The Supervision of Prof. Moshe
+Shoham in the Department of mechanical Engineering - The Technion
+and Dr. David Blanc from the Department of mathematics - Haifa
+University.
+
+%\setcounter{page}{1}
+\tableofcontents
+%\listoftables
+% --------------- list of notations ---------------
+\prefacesection{List of Notations}
+\listofnotations
+% -------------------list of figures --------------
+\listoffigures
+\addcontentsline{toc}{chapter}{List of figures}
+\newpage
+
+
+\prefacesection{Acknowledgments}
+is the longest word in this dissertation. Well, Under such a
+formal title. I would like to express my love and gratitude to
+some of the people that convinced me that torturing myself is good , so here goes\\
+\textbf{Mom and Dad} without your love (and evidently a lucky day
+for me 34 years ago) I wouldn't be at all, which is not a good
+start, thanks for that and for your endless love and care. I love you both very much.\\
+\textbf{Prof. David Blanc} - My advisor and my math teacher thank
+you, without your advices and ruthless dedication I would probably
+be still wondering with a dumb smile somewhere between Homotopy and Morse Theory .\\
+\textbf{Oded Salomon} thanks for your friendship, thanks for
+hearing my mathematic nonsense for three years, and for all the
+wonderfull advices you gave me.\\ \textbf{Micha, Rani} thanks for
+making me laugh.\\ \textbf{Naama, Gabriela, Meital, Pnina, Noga,
+Tzahi, Daniel,Yonatan} for being real friends. Lastly I would like
+to thank \textbf{Prof. Moshe Shoham} - My advisor, thanks for your
+guidance, support and encouragement throughout the research.
+thanks for the freedom you gave me and for your faith in me.\\
+$\heartsuit$ you all\\
+Nir.
+
+
+\prefacesection{Abstract}
+
+We study the \cspace \ of some parallel mechanism that are in use.
+starting with the \cspace s of arachnoid mechanisms which consist
+of $k$\ branches each of which has an arbitrary number of links
+and a fixed initial point, while all branches end at one common
+end-point. We show that generically, the \cspace s of such
+mechanisms are manifolds, and determine the conditions for the
+exceptional cases. The \cspace\  of planar arachnoid mechanisms
+having $k$ branches, each with two links is fully characterized
+for both the non-singular and the singular cases.
+
+Applying these results we study the motion planning problem for
+such planar manipulators. A topological analysis is used to
+understand the global structure of the configuration space so that
+motion planning problem can be solved exactly. The worst-case
+complexity of our algorithm is $O(k^3N^3)$, where $N$ is the
+maximum number of links in a leg. Examples illustrating our method
+are given.
+
+Next we study the  \cspace\ $\C$ of a parallel polygonal
+mechanism, having a moving polygonal platform, and a flexible leg
+(consisting of concatenated rods) attached to each vertex, with
+the other end fixed in  \ $\RR{d}$. \ We give necessary conditions
+for the existence of uncertainty singularities; and show that
+generically $\C$ is a smooth manifold. In the planar case, we
+construct an explicit Morse function on $\C$, and show how
+geometric information about the mechanism can be used to identify
+the critical points. Finally we describe how topological
+singularities give rise to instantaneous kinematic and explicit
+example is provided.
+
+
+
+
+%===================================================
+\prefacesection{Methods and preliminaries}
+We now introduce some definitions, theorems and methods which are
+in extensive use in this dissertation.\\
+\emph{\textbf{Smooth Manifolds:}} An $n$-dimensional
+\emph{manifold} is a \emph{topological space} which "near" each of
+its points is locally like $\Re^n$ i.e. there is a neighborhood
+which is topologically "the same" as an open unit ball in $\Re^n$.
+Formally, two additional properties are needed to form a manifold,
+being \emph{Hausdorff}
+and \emph{Second Countable} (see for example \cite{C}).\\
+A differential manifold $\M$ \ is a manifold for which overlapping
+\emph{charts} "relate smoothly" to each other, where a chart
+$\alpha:U\to\Re^n$ is a continuous injection from an open subset
+$U$\ of $\M$\ to $\Re^n$.\\
+A manifold is \emph{connected} if, roughly speaking, it is all in one piece.\\
+A \emph{submanifold} is a subset of a manifold which is itself a
+manifold, but has smaller dimension. For example, the equator of a sphere is a submanifold.\\
+If $\M$\ is an orientable surface, its genus $g(\M)$ is the number
+of ``handles'' it possesses. Furthermore, any orientable surface
+is a sphere, or the \emph{connected sum} of $n$\ tori. We say the
+sphere has genus $0$, and that the connected sum of $n$\ tori has
+genus $n$. Also, $g(\M)=1-\chi(\M)/2$\ where $\chi(\M)$\ is the
+Euler characteristic of $\M$.
+
+\emph{\textbf{Smooth Mappings and Singularity}}: The following
+enabled us to prove smoothness of generic \smech , and used also
+in finding necessary conditions for uncertainty singularities in
+polygonal mechanisms:\\
+Let $f:\N^n\to\M^m$\ be a smooth map on smooth manifolds. A
+critical point of $f$\ is a point $x\in\N$\ such that the
+differential $df$\ considered as a linear transformation of real
+vector spaces has rank $<m$. A critical value of $f$\ is the image
+$f(x)$\ of a critical point. A regular value of $f$\ is a point
+which is not the image of any critical point.
+\begin{thm}(Regular value theorem) Let $f:\N^n\to\M^m$\ be a smooth mapping. if $y$\ is a regular
+value of $f$\ then $f^{-1}(y)$\ is a smooth $n-m$ manifold.
+\end{thm}
+
+
+The notion of objects \emph{intersecting transversally} is
+fundamental to singularity theory. The simplest situation to look
+at is two subspaces of a vector space $V$: We say that they
+intersect transversally when their vector sum is $V$, formally:
+
+\begin{defn}
+Let $f: \N \to \M$\ be a smooth mapping, and let $Q$ be a smooth
+submanifold of $\M$. $f$\ and $Q$\ are said to intersect
+transversally (denoted $f\pitchfork Q$) iff for all $x\in\N$\ with
+$y=f(x)\in Q$\ we have $d_xf(T_x\N)+T_yQ=T_y\M$.
+\end{defn}
+
+where $T_x\M$\ is the space spanned by the set of all vectors
+tangent to $\M$\ at point $x\in\M$, and $d_xf$\ the jacobian of
+the map $f$\ calculated at point $x$. The next proposition (see
+also \cite[pp31]{AGV}) provides us a tool for examining
+uncertainty singularities in the special case where the regular
+value theorem fail.
+\begin{prop}
+Let $f:\N\to \M$\ be a smooth mapping, and let $Q$\ be a smooth
+submanifold of $\M$ with $f\pitchfork Q$: then $f^{-1}(Q)$\ is a
+smooth submanifold of $\N$, having the same codimension as $Q$ or
+is empty.
+\end{prop}
+
+
+
+%===================================================
+
+\prefacesection{Introduction}
+Generally speaking a \emph{configuration} is a set of independent
+parameters uniquely specifying the position of each of its
+mechanical components relative to a fixed frame of reference. A
+\emph{\cspace} of a given mechanism is therefore the totality of
+all its admissible positions in the Euclidean space. For example,
+a simple $n$-linked branch mechanism with revolute joints have the
+$n$-torus \ $\TT^n$ \ as its configuration space.
+
+Obviously knowing the configuration space is a powerful tool for
+motion planning problems, singularities characterization and
+global understanding of a system. Main research have been set on
+the \cspace s of a type of mechanism called \emph{polygonal
+linkage}, which is simply a concatenation of links and hinged
+joints forming a closed chain in \ $\RR{2}$ and \ $\RR{3}$. A
+substantial amount of mathematical literature on polygonal
+linkage's \cspace\ has has been written using various methods like
+computation of Euler characteristics, homology groups and
+handle-body surgery;
+
+Worth special note is the work of J. C. Hausmann, and A. Knutson
+\cite{HK} who determine the cohomology rings for these spaces and
+the co-work of R.J. Milgram and J. Trinkle \cite{MT1} who
+presented full surgery analysis for the same kind of mechanism.
+The results of \cite{KM}, provide a good review of previous work
+and some interesting results on the structure of these \cspace s.
+
+However, to the best of the author's knowledge \cspace s of more
+common parallel mechanisms, i.e. mechanisms with multiple branches
+having a \emph{tree} topology or a spider like mechanisms where
+all branches are attached in one rigid platform (\emph{polygonal
+mechanism}) or one point (\emph{Arachnoid mechanism}), have never
+been dealt with before. Such mechanisms are of great importance in
+the "real life" due to their accuracy and stiffness properties.
+
+In this dissertation we deal with mechanisms which are constructed
+by rigid rods and spherical (rotational)  joints, called
+\emph{graph mechanisms}, which mathematically speaking are simply
+graphs \ $(G(v,e),\mathcal{L})$ \ having s ets of vertices and
+edges such that \ $e(G)=v(g)\times v(g)$ \ and a set of fixed
+lengths $\mathcal{L}$.
+
+The \cspace \ is sometimes non-accurately defined in literature.
+Here we define the \cspace \ as the quotient \
+$\mathcal{C}=\mathcal{R}(G)/\Lambda$ \ where
+%
+$$
+\R(G)=\{\textbf{x}_i \in \RR{v(G)}|i\in v(G),
+\|\textbf{x}_i-\textbf{x}_j\|=\L(i,j) \}
+$$
+%
+and $\Lambda$ \ is the group of isometries of translations and
+rotations in \ $\RR{2}$, or in \ $\RR{3}$. Thus \ $\Lambda$ \
+"fixes" the the mechanism to a fixed frame. The difference between
+these two definitions for the \cspace \ can be realized in the
+following: A subgraph $H$ \ of graph \ $G$ \ is a graph such that
+\ $v(H) \ \subset \ v(G)$ \ and \ $e(H) \ \subset e(G)$, which
+leads to the definition:
+\begin{defn}
+A \emph{sub-mechanism} \ $(H,\mathcal{L}|_{H})\subset (G,\L)$ \ is
+a subgraph \ $H$ \ of \ $G$\ together with the restricted length
+subset \ $\L|_{H}$, and we denote such a sub-mechanism simply by \
+$H$. \ A \emph{branch} is a sub-mechanism such that all vertices
+in $H$\ have valence $1$\ or $2$.
+\end{defn}
+In light of these definitions one can define a feasible
+configuration of a parallel mechanism on condition that all of its
+branches "agree" upon one (or more) branch configuration. One
+could claim that for  arachnoid mechanisms the \cspace \ is simply
+the fibered product of the \cspace \ of its branches, but then he
+would be wrong. Alternatively we know that:
+\begin{thm}
+Given a mechanism \ $(G,\L)$ \ with a set \ $H_{1},H_{2},H \subset
+G$ \ of its sub-mechanisms such that \ $H_{1}\cap H_{2}=H$ \ then
+\ $\R(\L)$ \ is the pullback of the the natural projections:
+%
+$$
+\R(H_{1}) \xrightarrow{\pi_{H_{1}}} \R(H) \xleftarrow{\pi_{H_{2}}}
+\R(H_{2}).
+$$
+\end{thm}
+Note that this does not extend to the \cspace \ $\C$ \ since the
+induced projections \ $\{\R(H_{i})/\Lambda \rightarrow
+\R(H)/\Lambda\}$ \ are determined up to isometry \ $\Lambda$ \ and
+thus do not determine a unique point (A proof for this theorem and
+a detailed discussion can be found in the Appendix \ref{appendix}).\\
+
+We first analyze a simple class of mechanism called
+\emph{arachnoid} which consists of multiple branches each having
+arbitrary number of links a fixed initial point, and all end at a
+common point (this type of mechanism resembles some parallel
+robots which are in practical use \cite{LLL}: parallel
+manipulators, walking robots, and dexterous manipulation). It is
+shown (see Chapter \ref{chap1}) that generically, the \cspace s of
+such mechanisms are manifolds, and the conditions for the
+exceptional cases are then determined. We analyze the \cspace\ of
+planar arachnoid mechanisms having $k$ branches, each with two
+links. Such mechanisms have a $2$ dimensional \cspace \ which
+enables a full classification. The non-manifold cases where
+singularities emerges are calculated.
+
+As mentioned above, knowing the \cspace \ often enables problems
+solving, like the existence of continuous motion planners (Farber
+cf. \cite{F}) or the motion planning problem (Note that this kind
+of approach completely discards the nature of the mechanism in
+issue). Due to the computational complexity and difficulty of
+implementing general exact motion planning algorithms, such as
+Canny's \cite{Can88}, today sample-base algorithms, such as
+Kavraki's \cite{KSLO96} dominate motion planning research.
+However, there are important classes of problems for which these
+algorithms do not perform well. These arise in systems whose
+\cspace \ cannot effectively be represented as a set of parameters
+with simple bounds, but rather is most naturally represented as a
+variety of co-dimension one or greater embedded in a
+higher-dimensional ambient space \cite{YLK01}. Examples of these
+systems include manipulators with one or multiple closed loops,
+whose configuration space is defined by loop closure constraints.
+The \emph{Random Loop Generator} method \cite{Cortes02,CS03}
+improves the sampling techniques through estimating the regions of
+sampling parameters. However, its efficiency relies on the
+accuracy of the estimation, which is often case-variant. Moreover,
+it ignores the global structure of \cspace \, and may fail to
+sample globally important regions. For which specialized exact
+methods have not been developed. This provides motivation to try
+to develop effective exact algorithms. For most mechanisms \cspace
+\ is of dimension greater than two which makes them impossible to
+be fully characterized. Yet, global properties like connectivity
+and smoothness are attainable. Recent advances (especially
+connectivity analysis methods) in the understanding of the global
+structure of \cspace \ of single-loop closed chains
+\cite{MT2,SSB05} allow us (Chapter \ref{chap2} here) to develop a
+polynomial-time exact algorithm for arachnoid manipulators (which
+actually can be extended to any planar mechanism with an arbitrary
+tree topology).
+
+Next we focus attention on parallel robots (in any dimension)
+comprised of arbitrary number of branches each having arbitrary
+number of links concatenated by rotational joints and attached to
+a moving platform, which we shall refer to as \emph{polygonal
+mechanisms}, these are the mathematical parallel of most parallel
+mechanisms which are increasingly in use. Still their \cspace \
+had never been analyzed. We examine closely the case of parallel
+robots singularity called uncertainty singularity which is simply
+a topological singularity of the configuration space:
+
+Kinematic singularities of parallel mechanisms have been studied
+extensively in the literature (cf.\ \cite{Hu2}, and the example of
+open kinematic chains in \cite{Hu1,WW}). On the other hand, the
+\cspace\ of such a mechanism may have topological singularities.
+Our goal here is to try to relate these two kinds of singularity,
+for that certain class of mechanisms.
+
+Choosing appropriate local coordinates for a given mechanism, we
+try to endow its \cspace \ with the structure of a differentiable
+manifold. The points where this cannot be done constitute the
+\emph{topological singularities} of the mechanism. We shall be
+concerned only with \emph{uncertainty singularities} (where  the
+\emph{instantaneous mobility} is greater than the \emph{full cycle
+mobility} \ -- \ cf.\ \cite{Hu2}); In such a position the
+mechanism as a whole gains an additional degree of freedom. Such
+points may sometimes separate \cspace \ into distinct regions,
+allowing transition between different operating modes. (An
+extensive examination of such remarkable transitions in a special
+case (a \emph{constraint} singularity for $3$-URU parallel
+mechanism with three degrees of freedom) is given in \cite{ZBC}).
+In Chapter \ref{chap3} we give a necessary geometric condition for
+uncertainty singularities in said mechanisms, and explain how such
+topological singularities give rise to instantaneous kinematic
+singularities in Chapter \ref{chap4}. Finally, the occurrence of
+an uncertainty singularity is illustrated visually in an explicit
+example.
+
+% Change page numbering back to Arabic numerals
+%\pagenumbering{arabic}
+
+%\setcounter{page}{1}
+
+% Pages which are generated automatically
+%\setcounter{page}{6} % Set this counter to get correct page numbers
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

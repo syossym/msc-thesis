@@ -1,0 +1,755 @@
+#LyX 1.6.0rc3 created this file. For more info see http://www.lyx.org/
+\lyxformat 340
+\begin_document
+\begin_header
+\textclass report
+\options a4paper,titlepage
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_amsmath 1
+\use_esint 0
+\cite_engine natbib_authoryear
+\use_bibtopic false
+\paperorientation portrait
+\leftmargin 3cm
+\topmargin 4cm
+\rightmargin 3cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip bigskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Overview
+\end_layout
+
+\begin_layout Standard
+This appendix provides supplementary material on the quantum mechancial
+ picture of opto-acoustic interactions.
+ An important concept in quantum mechanics the harmonic oscillator.
+ A harmonic oscillator is a system which moves back and forth about an equilibri
+um position, under a potential 
+\begin_inset Formula $V(x)=\frac{1}{2}kx^{2}$
+\end_inset
+
+, where 
+\begin_inset Formula $k$
+\end_inset
+
+ is a constant .
+ One of the simplest examples is a mass suspended by a spring: if we give
+ a spring-mass system energy by extending the spring and letting go, the
+ mass will move back and forth due to the restoring force of the spring.
+ This force is governed by Hooke's Law
+\begin_inset Formula \begin{eqnarray}
+F & \equiv & -\frac{dV}{dx}\\
+ & = & -kx\end{eqnarray}
+
+\end_inset
+
+In this example, 
+\begin_inset Formula $k$
+\end_inset
+
+ is the spring constant, which is a measure of the stiffness of the spring.
+ It is important to note that the force exerted by the spring is always
+ opposite to the motion of the spring.
+ If there are no losses, the energy of the system will be conserved, being
+ forever converted from kinetic to potential energy.
+ This motion is well expressed as a differential equation
+\begin_inset Formula \begin{equation}
+m\ddot{x}=-kx.\label{eq:HO DE}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This concept of harmonic motion can be easily abstracted to other systems,
+ both classical and quantum.
+ To show this, let us consider an arbitrary 1D potential 
+\begin_inset Formula $V(x)$
+\end_inset
+
+ about an equilibrium point (i.e.
+ 
+\begin_inset Formula $V'=0$
+\end_inset
+
+), choosing coordinates such that this point is located about the origin
+ 
+\begin_inset Formula $x=0$
+\end_inset
+
+, with 
+\begin_inset Formula $V(0)=0$
+\end_inset
+
+.
+ For small values of 
+\begin_inset Formula $x$
+\end_inset
+
+ we can approximate 
+\begin_inset Formula $V(x)$
+\end_inset
+
+ using a Maclaurin-Taylor series expansion 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "BkClassical"
+
+\end_inset
+
+: 
+\begin_inset Formula \begin{eqnarray}
+V(x) & = & V(0)+xV'(0)+\frac{1}{2}x^{2}V''(0)+...\\
+ & \approx & \frac{1}{2}x^{2}V''(0)\end{eqnarray}
+
+\end_inset
+
+Where 
+\begin_inset Formula $V''(0)\equiv k$
+\end_inset
+
+.
+ The interpretation of this result is that the motion of any particle about
+ an equilibrium point can be approximated to that of a harmonic oscillator.
+ In this chapter, we will use this simple model to derive a quantum mechanical
+ picture for parametric interactions, by quantising both photons and phonons
+ in terms of a sum of discrete harmonic oscillators.
+ This will in turn give us a quantum description for the opto-acoustic cavity.
+ To do so, some basic knowledge of both classical and quantum mechanics
+ is required; see appendix !! for a brief summary.
+\end_layout
+
+\begin_layout Section
+Formulation of Hamiltonian
+\end_layout
+
+\begin_layout Standard
+We wish to derive a general Hamiltonian for a harmonic oscillator so we
+ can solve the Schrodinger equation
+\begin_inset Formula \begin{equation}
+\hat{H}\left|\psi\right\rangle =E\left|\psi\right\rangle .\end{equation}
+
+\end_inset
+
+As stated above, the potential for a 1 dimensional harmonic oscillator is
+\begin_inset Formula \begin{equation}
+V(x)=\frac{1}{2}kx^{2},\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $k$
+\end_inset
+
+ is related to the mass and angular frequency of the oscillator by 
+\begin_inset Formula $k=m\omega^{2}$
+\end_inset
+
+.
+ The Lagrangian for this potential is
+\begin_inset Formula \begin{equation}
+L(x,\dot{x})=\frac{1}{2}m\dot{x}^{2}-\frac{1}{2}kx^{2}.\end{equation}
+
+\end_inset
+
+From this Lagrangian we construct the Hamiltonian 
+\begin_inset Formula \begin{equation}
+H(p,x)=\frac{p^{2}}{2m}+\frac{kx^{2}}{2}.\end{equation}
+
+\end_inset
+
+To form a quantum mechanical operator 
+\begin_inset Formula $\hat{H}$
+\end_inset
+
+, we insist on the commutation relation 
+\begin_inset Formula $[\hat{x},\hat{p}]=i\hbar$
+\end_inset
+
+.
+ We can then write
+\begin_inset Formula \begin{equation}
+\hat{H}=\frac{\hat{p}^{2}}{2m}+\frac{k\hat{x}^{2}}{2}.\end{equation}
+
+\end_inset
+
+Thus the time-independent Schrodinger equation is
+\begin_inset Formula \begin{eqnarray}
+E\left|\psi\right\rangle  & = & \frac{\hat{p}^{2}}{2m}\left|\psi\right\rangle +\frac{k\hat{x}^{2}}{2}\left|\psi\right\rangle \\
+ & = & -\frac{\hbar^{2}}{2m}\frac{\partial^{2}}{\partial x^{2}}\left|\psi\right\rangle +\frac{m\omega^{2}}{2}x^{2}\left|\psi\right\rangle ,\end{eqnarray}
+
+\end_inset
+
+which has Hermite-Gaussian solutions of the form
+\begin_inset Formula \begin{equation}
+\psi_{n}(x)=\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\frac{1}{\sqrt{2^{n}n!}}H_{n}\left(\sqrt{\frac{m\omega x^{2}}{h}}\right)e^{-x^{2}m\omega/2\hbar},\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $H_{n}$
+\end_inset
+
+ are the Hermite polynomials of order 
+\begin_inset Formula $n$
+\end_inset
+
+.
+ We then find the eigenvalues for the harmonic oscillator 
+\begin_inset Formula $E_{n}$
+\end_inset
+
+, 
+\begin_inset Formula $n=0,\,1,\,2,\,...$
+\end_inset
+
+ are
+\begin_inset Formula \begin{equation}
+E_{n}=\hbar\omega\left(n+\frac{1}{2}\right).\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Creation and annihilation operators 
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Creation-and-annihilation"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+An alternative way of solving the Schrodinger equation materialises if we
+ rewrite equation in terms of raising and lowering operators, 
+\begin_inset Formula $\hat{a}^{\dagger}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{a}$
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "BkSchaum"
+
+\end_inset
+
+
+\begin_inset Formula \begin{equation}
+\hat{H}=\hbar\omega(\hat{a}^{\dagger}\hat{a}+\frac{1}{2}),\end{equation}
+
+\end_inset
+
+which are defined by:
+\begin_inset Formula \begin{eqnarray}
+\hat{a} & = & \sqrt{\frac{m\omega}{2\hbar}}\left(\hat{x}+\frac{i\hat{p}}{m\omega}\right)\label{eq:lowering}\\
+\hat{a}^{\dagger} & = & \sqrt{\frac{m\omega}{2\hbar}}\left(\hat{x}-\frac{i\hat{p}}{m\omega}\right).\label{eq:raising}\end{eqnarray}
+
+\end_inset
+
+These satisfy the commutation relations
+\begin_inset Formula \begin{eqnarray}
+[\hat{a},\,\,\hat{a}^{\dagger}] & = & 1\label{eq:bosonic}\\
+{}[\hat{H},\,\,\hat{a}] & = & -\hbar\omega\hat{a}\\
+{}[\hat{H},\,\hat{a}^{\dagger}] & = & \hbar\omega\hat{a}^{\dagger}.\end{eqnarray}
+
+\end_inset
+
+Defining 
+\begin_inset Formula $\left|\psi_{n}\right\rangle \triangleq\left|n\right\rangle $
+\end_inset
+
+ (again, 
+\begin_inset Formula $n=0,1,2,...)$
+\end_inset
+
+ and the number operator 
+\begin_inset Formula $\hat{n}\triangleq\hat{a}\hat{a}^{\dagger}$
+\end_inset
+
+, we have the following eigenfunction equalities: 
+\begin_inset Formula \begin{eqnarray}
+\hat{a}\left|n\right\rangle  & = & \sqrt{n}\left|n-1\right\rangle \\
+\hat{a}^{\dagger}\left|n\right\rangle  & = & \sqrt{n+1}\left|n+1\right\rangle \\
+\hat{n}\left|n\right\rangle  & = & n\left|n\right\rangle .\end{eqnarray}
+
+\end_inset
+
+It is now clear why 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $\hat{a}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{a}^{\dagger}$
+\end_inset
+
+ are referred to as lowering and raising operators: by acting upon a state
+ 
+\begin_inset Formula $\left|n\right\rangle $
+\end_inset
+
+, they reduce or augment the state by a quanta, to 
+\begin_inset Formula $\left|n\pm1\right\rangle $
+\end_inset
+
+.
+ Whilst there is no upper limit on this process, the lower limit 
+\begin_inset Formula $\left|0\right\rangle $
+\end_inset
+
+, is known as the quantum ground state and has the property
+\begin_inset Formula \begin{eqnarray}
+\hat{n}\left|0\right\rangle  & = & \left|0\right\rangle \\
+\hat{a}\left|0\right\rangle  & = & \left|0\right\rangle .\end{eqnarray}
+
+\end_inset
+
+From this ground (or 
+\begin_inset Quotes eld
+\end_inset
+
+vacuum
+\begin_inset Quotes erd
+\end_inset
+
+), state, we can build the state 
+\begin_inset Formula $\left|n\right\rangle $
+\end_inset
+
+ by multiple use of the creation operator
+\begin_inset Formula \begin{equation}
+\left|n\right\rangle =\frac{1}{\sqrt{n!}}\left(\hat{a}^{\dagger}\right)^{n}\left|0\right\rangle .\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Laser Modes
+\end_layout
+
+\begin_layout Standard
+A quantum picture for the TEM modes of a laser can be formed by defining
+ quantised versions of the electromagnetic field
+\begin_inset Formula \begin{eqnarray}
+\boldsymbol{E}(\vec{x},t) & \rightarrow & \hat{\boldsymbol{E}}(\vec{x},t)\\
+\boldsymbol{B}(\vec{x},t) & \rightarrow & \hat{\boldsymbol{B}}(\vec{x},t).\end{eqnarray}
+
+\end_inset
+
+If we express 
+\series bold
+
+\begin_inset Formula $\boldsymbol{E}$
+\end_inset
+
+
+\series default
+ and 
+\begin_inset Formula $\boldsymbol{B}$
+\end_inset
+
+ in terms of a vector and scalar potential, 
+\begin_inset Formula $\boldsymbol{E}=-\nabla\phi-\boldsymbol{\dot{A}}$
+\end_inset
+
+ and 
+\begin_inset Formula $\boldsymbol{B}=\nabla\times\boldsymbol{A}$
+\end_inset
+
+, then from Maxwell's equations we find the constraint on the vector field
+ 
+\begin_inset Formula $\boldsymbol{A}$
+\end_inset
+
+ to be
+\begin_inset Formula \begin{equation}
+\nabla^{2}\boldsymbol{A}=\varepsilon_{0}\mu_{0}\boldsymbol{\ddot{A}}.\end{equation}
+
+\end_inset
+
+Supposing this field is restricted to a box (or optical cavity), we will
+ have a discrete set of modes, characterised by the wave vector 
+\series bold
+
+\begin_inset Formula $\vec{k}$
+\end_inset
+
+
+\series default
+ and polarisation 
+\begin_inset Formula $\vec{\sigma}$
+\end_inset
+
+ Taking the Fourier transform of this we find that
+\begin_inset Formula \begin{equation}
+-\frac{\left|\vec{k}\right|^{2}}{\mu_{0}}\boldsymbol{A}_{\vec{k},\vec{\sigma}}(t)=\varepsilon_{0}\mu_{0}\boldsymbol{\ddot{A}}_{\vec{k},\vec{\sigma}}.\end{equation}
+
+\end_inset
+
+This should be compared with equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:HO DE"
+
+\end_inset
+
+.
+ This field is equivalent to a set of harmonic oscillators.
+ To form the Hamiltonian, we need to define an equivalent to conjugate momentum
+ 
+\begin_inset Formula \begin{equation}
+\Pi_{\vec{k},\vec{\sigma}}=\varepsilon_{0}\dot{\boldsymbol{A}}_{\vec{k},\vec{\sigma}}.\end{equation}
+
+\end_inset
+
+From this point it can be shown that the Hamiltonian for an electromagnetic
+ field in an optical cavity is 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Stace2008"
+
+\end_inset
+
+
+\begin_inset Formula \[
+\hat{H}_{EM}=\frac{\varepsilon_{0}}{2}\sum_{\vec{k},\vec{\sigma}}\left(\left|\boldsymbol{E}_{\vec{k},\vec{\sigma}}\right|^{2}+\varepsilon_{0}\mu_{0}\left|\boldsymbol{B}_{\vec{k},\vec{\sigma}}\right|^{2}\right).\]
+
+\end_inset
+
+In terms of raising and lowering operators, this becomes
+\begin_inset Formula \[
+\hat{H}_{EM}=\sum_{\vec{k},\vec{\sigma}}\hbar\omega_{\vec{k}}\left(\hat{a}_{\vec{k},\vec{\sigma}}^{\dagger}\hat{a}_{\vec{k'},\vec{\sigma'}}+\frac{1}{2}\right),\]
+
+\end_inset
+
+where we have the commutation relations:
+\begin_inset Formula \begin{eqnarray*}
+[\hat{\boldsymbol{A}}_{\vec{k},\vec{\sigma}},\hat{\Pi}_{\vec{k},\vec{\sigma}}] & = & i\hbar\delta_{\vec{k},\vec{k'}}\delta_{\vec{\sigma},\vec{\sigma}'}\\
+{}[\hat{a}_{\vec{k},\vec{\sigma},}^{\dagger}\hat{a}_{\vec{k'},\vec{\sigma'}}] & = & i\delta_{\vec{k},\vec{k'}}\delta_{\vec{\sigma},\vec{\sigma}'}.\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Phonon Number
+\end_layout
+
+\begin_layout Standard
+A phonon is a quantised mode of vibration, that occurs within the atomic
+ lattice of a solid.
+ If a solid is not at absolute zero, then the random motion of particles
+ will give rise to thermal phonons, all of which can be expressed as a superposi
+tion of normal mode phonons.
+ The Hamiltonian describing the harmonic oscillator associated with a phonon
+ mode of wavevector 
+\begin_inset Formula $q$
+\end_inset
+
+ is 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "BkPhonons"
+
+\end_inset
+
+
+\begin_inset Formula \begin{equation}
+\hat{H}_{q}=\frac{\hat{p}_{q}^{2}}{2m}+\frac{1}{2}m\omega_{q}^{2}\hat{u}_{q}^{2},\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $m$
+\end_inset
+
+ is the mass of the oscillator, 
+\begin_inset Formula $\omega_{q}$
+\end_inset
+
+ is the frequency of the phonon, 
+\begin_inset Formula $\hat{u}_{q}$
+\end_inset
+
+ is the displacement associated with it and 
+\begin_inset Formula $\hat{p}_{q}$
+\end_inset
+
+ is its momentum.
+ If we introduce lowering and raising operators 
+\begin_inset Formula $\hat{a}_{q}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{a}_{q}^{\dagger}$
+\end_inset
+
+, then the Hamiltonian for a system of phonons such as a solid, becomes
+\begin_inset Formula \begin{eqnarray}
+\hat{H} & = & \sum_{q}\hbar\omega_{q}(\hat{a}_{q}^{\dagger}\hat{a}_{q}+\frac{1}{2}).\end{eqnarray}
+
+\end_inset
+
+The phonon number 
+\begin_inset Formula $n_{q}$
+\end_inset
+
+ may be determined at a temperature 
+\begin_inset Formula $T$
+\end_inset
+
+ from the average energy of the system
+\begin_inset Formula \begin{equation}
+\left\langle \epsilon\right\rangle =\frac{\sum E_{n}f(E_{n})}{\sum f(E_{n})},\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $f(E_{n})=e^{-E_{n}/k_{B}T}$
+\end_inset
+
+ is the Boltzmann weighting factor.
+ It follows that
+\begin_inset Formula \begin{equation}
+n_{q}=\frac{1}{e^{\hbar\omega_{q}/k_{B}T}-1}.\end{equation}
+
+\end_inset
+
+This is known as the Bose-Einstein distribution.
+ 
+\end_layout
+
+\begin_layout Section
+Parametric processes
+\end_layout
+
+\begin_layout Standard
+By expressing photons and phonons of a system in terms of a quantum Hamiltonian,
+ we can now express the Stokes and Anti-Stokes processes from a quantum
+ mechanical perspective.
+ In the Stokes process, a phonon is created - resulting in the phonon number
+ increasing.
+ We can view the Stokes process as a system being acted upon by creation
+ and annihilation operators:
+\begin_inset Formula \begin{equation}
+\hat{a}_{k}\hat{b}_{q}^{\dagger}\hat{a}_{k'}^{\dagger}\left|n_{k},n_{k'},n_{q}\right\rangle =\sqrt{n_{k'}\left(n_{q}+1\right)\left(n_{k}+1\right)}\left|n_{k}-1,n_{k'}+1,n_{q}+1\right\rangle ,\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\hat{a}_{k'}^{\dagger}$
+\end_inset
+
+ represents creation of a new photon with energy 
+\begin_inset Formula $\hbar\omega_{k'}=\hbar\omega_{k}-\hbar\omega_{q}$
+\end_inset
+
+, 
+\begin_inset Formula $\hat{b}_{q}^{\dagger}$
+\end_inset
+
+ represents the creation of a phonon with energy 
+\begin_inset Formula $\hbar\omega_{q}$
+\end_inset
+
+, and 
+\begin_inset Formula $\hat{a}_{k}$
+\end_inset
+
+ represents the destruction of the original photon with energy 
+\begin_inset Formula $\hbar\omega_{k}.$
+\end_inset
+
+ Consequently the number of photons 
+\begin_inset Formula $n_{k'}$
+\end_inset
+
+ in state 
+\begin_inset Formula $k'$
+\end_inset
+
+ increases by 1, the number 
+\begin_inset Formula $n_{k}$
+\end_inset
+
+ in state 
+\begin_inset Formula $k$
+\end_inset
+
+ decreases by 1 and the number of phonons 
+\begin_inset Formula $n_{q}$
+\end_inset
+
+ in with wavevector 
+\begin_inset Formula $q$
+\end_inset
+
+ also increases by 1.
+ Similarly for destruction:
+\begin_inset Formula \begin{equation}
+\hat{a}_{k}\hat{b}_{q}\hat{a}_{k''}^{\dagger}\left|n_{k},n_{k'},n_{q}\right\rangle =\sqrt{n_{k'}n_{q}\left(n_{k}+1\right)}\left|n_{k}-1,n_{k''}+1,n_{q}-1\right\rangle ,\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\hat{a}_{k'}^{\dagger}$
+\end_inset
+
+ represents creation of a new photon with energy 
+\begin_inset Formula $\hbar\omega_{k''}=\hbar\omega_{k}+\hbar\omega_{q}$
+\end_inset
+
+.
+ This underpins the idea of the parametric cooling experiments by 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Arcizet2006,Arcizet2006a,Cohadon1999,Schleisser2007,Schliesser2006"
+
+\end_inset
+
+: create conditions whereby the annihilation process occurs more frequently
+ than the creation process.
+ 
+\end_layout
+
+\begin_layout Section
+Interaction Hamiltonian
+\end_layout
+
+\begin_layout Standard
+For a non-interacting system of (linearly polarised) photons and phonons,
+ we can combine their Hamiltonians into one expression which represents
+ the system as a whole
+\begin_inset Formula \begin{eqnarray}
+\hat{H}_{non-interacting} & = & \hat{H}_{photons}+\hat{H}_{phonons}\\
+ & = & \sum_{k}\hbar\omega_{k}\left(\hat{a}_{k}^{\dagger}\hat{a}_{k'}+\frac{1}{2}\right)+\sum_{q}\hbar\omega_{q}(\hat{b}_{q}^{\dagger}\hat{b}_{q}+\frac{1}{2}).\end{eqnarray}
+
+\end_inset
+
+If we want to describe an interaction such as the Stokes process at the
+ surface of a micromirror, we need to formulate an interaction Hamiltonian,
+ which can be added as a perturbation, so that 
+\begin_inset Formula $\hat{H}_{total}=\hat{H}_{photons}+\hat{H}_{phonons}+\hat{H}_{interaction}$
+\end_inset
+
+.
+ In a two-mode cavity, the interaction part arises due to the radiation
+ pressure force 
+\begin_inset Formula $F_{rad}$
+\end_inset
+
+ acting on the mirror such that 
+\begin_inset Formula \begin{eqnarray}
+\hat{H}_{interaction} & \propto & \hat{F}_{rad}\hat{x}.\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If some approximations are made (such as the rotating wave approximation,
+ and that phonon modes are far detuned), this can be shown to be
+\begin_inset Formula \begin{equation}
+\hat{H}_{interaction}\propto\frac{-\hbar\omega_{k}}{2\varepsilon_{0}L^{3}}\sqrt{\frac{\hbar}{2m\omega_{m}}}\left(\bar{a}^{\dagger}\bar{a}+\bar{a}\bar{a}^{\dagger}\right)\left(\hat{b}^{\dagger}+\hat{b}\right),\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\hat{a}=\bar{a}e^{i\omega t}$
+\end_inset
+
+.
+ So, the total Hamiltonian can be shown to be
+\begin_inset Formula \begin{eqnarray}
+\hat{H}_{total} & = & \hat{H}_{photons}+\hat{H}_{phonons}+\hat{H}_{interaction}\\
+ & = & \hbar\omega_{k}\left(\hat{a}^{\dagger}\hat{a}+\frac{1}{2}\right)+\hbar\omega(\hat{b}^{\dagger}\hat{b}+\frac{1}{2})-\alpha\left(\bar{a}^{\dagger}\bar{a}+\bar{a}\bar{a}^{\dagger}\right)\left(\hat{b}^{\dagger}+\hat{b}\right).\end{eqnarray}
+
+\end_inset
+
+Here, 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $\alpha=\frac{\beta\hbar\omega_{k}}{2\varepsilon_{0}L^{3}}\sqrt{\frac{\hbar}{2m\omega_{m}}}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+, 
+\begin_inset Formula $\\$
+\end_inset
+
+.
+ From here, one could derive a Master equation to describe the rate of change
+ of states of the system, however this is beyond the scope of this thesis.
+ The reader should simply take away the notion that an opto-acoustic system
+ can be well described from a quantum mechanical viewpoint, via the creation
+ and annihilation operators acting upon states of the system.
+\end_layout
+
+\end_body
+\end_document

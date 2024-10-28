@@ -1,0 +1,130 @@
+%% LyX 1.6.5 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[10pt,a4paper,twoside,american,english,twoside,openright,titlepage,fleqn,pointlessnumbers,headinclude,10pt,a4paper,BCOR5mm,footinclude,cleardoubleempty]{scrreprt}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+\usepackage{color}
+\usepackage{babel}
+
+\usepackage{verbatim}
+\usepackage{booktabs}
+\usepackage{units}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{amssymb}
+\usepackage[numbers]{natbib}
+\usepackage[unicode=true, pdfusetitle,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\providecommand*{\perispomeni}{\char126}
+\AtBeginDocument{\DeclareRobustCommand{\greektext}{%
+  \fontencoding{LGR}\selectfont\def\encodingdefault{LGR}%
+  \renewcommand{\~}{\perispomeni}%
+}}
+\DeclareRobustCommand{\textgreek}[1]{\leavevmode{\greektext #1}}
+\DeclareFontEncoding{LGR}{}{}
+
+\newcommand{\lyxmathsym}[1]{\ifmmode\begingroup\def\b@ld{bold}
+  \text{\ifx\math@version\b@ld\bfseries\fi#1}\endgroup\else#1\fi}
+
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+%% The greyedout annotation environment
+\newenvironment{lyxgreyedout}{\textcolor[gray]{0.8}\bgroup}{\egroup}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usepackage{preamble}
+
+\makeatother
+
+\begin{document}
+\frenchspacing
+
+\raggedbottom
+
+\selectlanguage{american}%
+\pagenumbering{roman}
+
+\pagestyle{plain}
+
+\include{Frontmatter/TitlePage}
+
+\include{Frontmatter/Titleback}
+
+\selectlanguage{english}%
+\newpage{}
+
+\selectlanguage{american}%
+\include{Frontmatter/Abstract}
+
+\selectlanguage{english}%
+\newpage{}
+
+\selectlanguage{american}%
+\include{Frontmatter/Acknowledgment}
+
+\pagestyle{scrheadings}
+
+\selectlanguage{english}%
+\newpage{}
+
+\selectlanguage{american}%
+\include{Frontmatter/Contents}\pagenumbering{arabic}
+
+\newpage{}
+
+\include{Chapters/1_Introduction}
+
+\selectlanguage{english}%
+
+
+\cleardoublepage\myPart{Theory Review}
+
+\selectlanguage{american}%
+\noindent \include{Chapters/2_Electronic_Properties_of_Semiconductors}
+
+\newpage{}
+
+\noindent \include{Chapters/3_Classical_Optical_Transitions_Free_Carriers}
+
+\newpage{}
+
+\noindent \include{Chapters/4_Classical_Optical_Transitions_Coulomb_Correlated}
+
+\newpage{}
+
+\noindent \include{Chapters/5_Semiconductor_Microcavity}
+
+\selectlanguage{english}%
+\appendix
+\cleardoublepage\myPart{Appendices}
+
+\include{Appendicies/Appendix_Symmetry_Properties}
+
+\selectlanguage{american}%
+\newpage{}
+
+\selectlanguage{english}%
+\include{Appendicies/Appendix_k_dot_p_Numerics}
+
+\selectlanguage{american}%
+\newpage{}
+
+\selectlanguage{english}%
+\include{Appendicies/Appendix_Schrodinger_Poisson}\foreignlanguage{american}{\newpage{}}
+
+\selectlanguage{american}%
+\noindent \include{Appendicies/Appendix_Screening}
+
+\selectlanguage{english}%
+\cleardoublepage{}\include{References/Bibliography}
+\end{document}

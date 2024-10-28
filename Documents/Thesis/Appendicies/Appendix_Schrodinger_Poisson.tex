@@ -1,0 +1,82 @@
+
+\chapter{Self-Consistent Solution of Schr\"{o}dinger -Poisson Model}
+
+\label{cha:Appendix_Schrodinger_Poisson}For a quantitative discussion
+of carriers that are strongly confined to a small area, it is necessary
+to consider not only the band-edge and external potential, but also
+the carrier-carrier electrostatic potential. We start by considering
+the Schr\"{o}dinger  equation in the slowly varying envelope approximation
+in one dimension\begin{equation}
+\frac{\hbar^{2}}{2}\frac{d}{dz}\left(\frac{1}{m^{*}(z)}\frac{d}{dz}\right)\varphi(z)+V(z)\varphi(z)=E\varphi(z)\label{eq:Slowly_Varying_Envelope_Approximation_Sch_Eq}\end{equation}
+where $V(z)$ is the overall potential and $\varphi(z)$ is the slowly
+varying envelope. The Poisson equation \ref{eq:Poissons_Eq} can be
+formulated as\begin{equation}
+\frac{d}{dz}\left(\epsilon(z)\frac{d}{dz}\right)V_{\rho}(z)=-e[N_{D}^{+}(z)-n(z)-N_{A}^{-}(z)+p(z)],\label{eq:Poisson_Equation_CB}\end{equation}
+where $\epsilon(z)$ is the position dependent dielectric constant,
+$V_{\rho}(z)$ is the electrostatic potential and $e$ denotes the
+elementary charge. N. $N_{D}^{+}(z)$ represents the ionized donor
+distribution and $n(z)$ is the electron distribution. For now, we
+only consider the conduction-band, so we set $N_{A}^{-}(z)=p(z)=0$.
+
+The first coupling term between these two equations is the overall
+potential\begin{equation}
+V(z)=V_{CB}(z)-eV_{\rho}(z)\end{equation}
+where $V_{CB}(z)$ represents the conduction-band profile given by
+the material composition. The second coupling term is the electron
+concentration $n(z)$, which is calculated from the envelope fucntion
+$\varphi$and the Fermi level $E_{F}$\begin{equation}
+n(z)=\frac{m^{*}(z)k_{B}T}{\pi\mathcal{L}\hbar^{2}}\sum_{\mathbf{k}}\left|\varphi_{\mathbf{k}}(z)\right|^{2}\ln\left(1+e^{\frac{E_{F}-E_{\mathbf{k}}}{k_{B}T}}\right),\label{eq:Fermi_Level_Eq}\end{equation}
+where $k_{B}$ is the Boltzmann constant, $T$ is the temperature,
+$\mathcal{L}$ is the length of the heterostructure and $E$ is the
+eigenenergy. The summation over $\mathbf{k}$ represents the summation
+over all eigenstates (including spin). As a consequence, we have to
+solve for a given heterostructure with given donor concentration \ref{eq:Slowly_Varying_Envelope_Approximation_Sch_Eq}
+and \ref{eq:Poisson_Equation_CB} self-consistently. We restrict ourselves
+to model only the mesoscopic part and not the whole device, so we
+have to define appropriate boundary conditions for the envelope function
+and the electrostatic potential. The boundary conditions for the envelope
+function are given by \ref{eq:Shooting_Method_Boundary_Conditions},
+whereas we set the electrostatic potential $V_{\rho}$ to zero at
+the boundaries \citet{Chuang1995}, which is equivalent to assume
+the device in equilibrium.
+
+To solve \ref{eq:Slowly_Varying_Envelope_Approximation_Sch_Eq} and
+\ref{eq:Poisson_Equation_CB} numerically, we apply the shooting method
+from Appendix \ref{cha:Appendix_Two_Band_Numerics} to the Schr\"{o}dinger 
+equation and to the Poisson equation a finite-difference scheme, which
+reads\begin{eqnarray}
+0 & = & \frac{1}{2\left(\delta z\right)^{2}}\left((\epsilon_{i}+\epsilon_{i-1})V_{\rho,i-1}-(\epsilon_{i-1}+2\epsilon_{i}+\epsilon_{i+1})V_{\rho,i}+(\epsilon_{i}+\epsilon_{i+1})V_{\rho,i+1}\right)\nonumber \\
+ &  & +e(N_{D,i}^{+}-n_{i}),\end{eqnarray}
+where $\delta z$ is the spatial discretization. Equilibrium conditions
+require us to choose the Fermi level appropriate to allow that\begin{equation}
+\int_{-\infty}^{\infty}N_{D}^{+}(z)dz=\int_{-\infty}^{\infty}n(z)dz.\label{eq:Equalibrium_Condition}\end{equation}
+To ensure this equilibrium condition, we solve \ref{eq:Fermi_Level_Eq}
+with the constraint \ref{eq:Equalibrium_Condition} to obtain the
+Fermi level $E_{F}$ .
+
+%
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.6]{\string"C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/Appendix_Schr_Poisson_Schematic\string".eps}
+\par\end{centering}
+
+\caption{\label{fig:Program_Flow_Schr_Poisson}Program flow for self-consistent
+solution of Schr\"{o}dinger -Poisson under equilibrium condition
+with given donator concentration.}
+
+
+
+\end{figure}
+Figure \ref{fig:Program_Flow_Schr_Poisson} shows the program flow
+to obtain the self-consistent solution of the Schr\"{o}dinger -Poisson
+system under equilibrium condition. First, Schr\"{o}dinger \textquoteright{}s
+equation is solved assuming an initial potential $V(z)=V_{CB}(z),\, V_{\rho}(z)=0$.
+Next, the Fermi level $E_{F}$ and the carrier distribution $n(z)$
+are obtained by solving \ref{eq:Fermi_Level_Eq} with respect to \ref{eq:Equalibrium_Condition}.
+Then, the Poisson equation is solved resulting in a new electrostatic
+potential $V_{\rho,\textrm{new}}(z)$. If $|V_{\rho,\textrm{new}}(z)-V_{\rho}(z)|$
+is smaller than a pre-defined value $\lyxmathsym{\textgreek{d}}$,
+we obtain the converged solution. Otherwise, the electrostatic potential
+is updated $V_{\rho}(z)(z)=V_{\rho}(z)+\lyxmathsym{\textgreek{G}}(V_{\rho,\textrm{new}}(z)-V_{\rho}(z))$,
+where 0 < $\lyxmathsym{\textgreek{G}}$ < 1 is a damping parameter
+used to improve convergence.

@@ -1,0 +1,269 @@
+\chapter{Discussion}
+\label{Disc}
+
+Recently a growing interest has arise applying toplogy theory to
+Robotics in general and to parallel robots configuration spaces in
+particular. To this end, main focus had been set on the \cspace s
+of a type of robot called \emph{polygonal linkage}, which is
+simply a concatenation of links and hinged joints forming a closed
+chain, obviously these are of limited practical use. Generally
+speaking for a given robot the \cspace \ dimension equals its
+mobility, thus for most robots in use the \cspace \ is of
+dimension three or more. Furthermore since investigation focuses
+usually on global properties of the \cspace,
+common mathematical tools are useless. \\
+
+In what follows we discuss our investigation generally without
+getting into detailed mathematics and formal defintions.  In order
+to keep things simple we have started our investigation studying a
+robot we named \emph{arachnoid mechanism} which admits a two
+dimensional \cspace \ if as depicted in Figure
+\ref{fig:mechanism}. The robot is constructed of $k$ branches
+fixed at their one end and a common other end for all
+branches,(the figure depicts a planar robot with branches having
+only two links while our discussion holds also for the spatial
+case where each branch may have an arbitrary number of links).
+Note that this type of mechanism resembles some parallel robots
+which are in practical use. Our first task was to examine if its
+\cspace\ is a manifold, this could be easily done by applying the
+regular value theorem (see \cite[I, Thm.~3.2]{Hi}): By identifying
+the \cspace\ as the pre-image of a certain map $G :\Re^{d(N-k+1)}
+\to R^N$, that sends each two successive joint loci to their
+distance and finding the conditions for the jacobian $dG$ to have
+full rank amounts to Theorem \ref{thm:main}. Thus \cspace\ of an
+arachnoid mechanism is generically a closed orientable manifold of
+dimension $d(N - k + 1)-N$, where $N$ is the total number of links
+in the given mechanism and $d=2,3$ for the planar and spatial
+cases respectively. Furthermore the cases in which this is not
+true (i.e. the \cspace \ possess at least one topological
+singularity) are when two branches (or more) are co-aligned (see
+Definition
+\ref{def:aligned},1) or when $d+1$ branches are aligned (Definition \ref{def:aligned},2).\\
+
+We continue our investigation by explicitly characterizing the
+topology of a certain kind of arachnoid mechanism: The \cspace \
+for any branch and base-point $x$ is an $n$-torus $T^n$, with
+$\phi : T^n \to W$ which maps into the associated work space. Note
+that the fiber $\phi^{-1}(z)$ over any point $z \in \Int W$ is the
+\cspace\ for the closed chain with links lengths
+$\ell_{0},\ell_{1},\cdots,\ell_{n}$, where $\ell_{0} := z - x$. If
+$z$ is on the boundary of the work space, then $\phi^{-1}(z)$ is
+evidently discrete. Thus the \cspace \ is the pullback:
+\begin{equation}
+\label{eq:cspace}
+\C~=~\{(\tau_{1},\dotsc,\tau_{k})\in\prod_{i=1}^{k}~\T{\nj{i}}~ |\
+\phi_{1}(\tau_{1})=\dotsc=\phi_{k}(\tau_{k})\in\Wc\}.
+\end{equation}
+
+For the special planar case where all branches have exactly two
+links each point within the work space $\textrm{Int}(W)$
+corresponds (within the \cspace) to a discrete number of copies
+(see Figure \ref{fig:annulus intersection}), thus
+$$\textrm{Int}(W)\times \{0,1,2,\cdots,k\} \in \C$$ while a point
+within the work space boundary $\partial W$ corresponds to certain
+suitable gluing of the $\textrm{Int}(W)$ replicas, this way we can
+explicitly calculate the Euler characteristics from the work space
+as stated in Theorem \ref{thm:sss}. In the non-generic case we can
+carefully follow the singularities emerging by "traveling" through
+the \emph{moduli space}: the latter is the space of geometric
+characterization of the mechanism in hand, i.e. lengths of rods
+and platforms geometry. This space is divided by \emph{walls} into
+\emph{cells} where all points (mechanisms) within a given cell are
+associated to the same \cspace. Hence in order to understand the
+topological singularities within a wall (non-generic mechanisms)
+we simply travel from cell to cell and track changes. We have
+found that the singularities emerging are \emph{pinch points} of a
+discrete number of $2$-discs which is given as a theorem in
+\ref{prop:2node}. \\
+
+In order to take advantage of the results discussed above we
+continued our study with the problem of motion planning for a
+\emph{star-shaped mechanisms} (see Figure \ref{X-shape})which are
+simply planar arachnoid mechanisms. Since we consider only a point
+end-effector, the direct kinematics is straightforward while the
+inverse kinematics is more complex. Thus, while for most parallel
+mechanisms using \cspace as a mean for path planning should be
+carefully considered, here our approach is natural. Actually (a
+slightly modified) motion planing strategy taken below can be
+applied to any planar robot with a simple graph topology, though
+we will not consider such here. In view of equation
+\ref{eq:cspace} and the question of motion planning physibility we
+would like to inquire if a fiber contains a given configuration
+\--\ which later on we think of as the goal configuration:\\
+We first follow some topological properties of the \cspace s (the
+number of components and the structures of the components) of
+single-loop closed chains with spherical joints (see Figure
+\ref{fig:single-leg}). These properties drove (see Theorem~2 in
+\cite{MT2}) the design of a complete, polynomial-time motion
+planning algorithm, which we shall use here. "Adding up" more
+branches (see Figure \ref{fig:double-leg}) we can define the work
+space \emph{critical} parts $\Sigma=\left(\bigcup_{i=1}^k \Sigma_i
+\right)\bigcap W_A$ as the regions where at least one of the
+branches is aligned (see Figure \ref{fig:chambers}). \\
+We proceed by introducing the conditions (Theorem \ref{prop-2} and
+Corollary \ref{cor-1}) in which two given configurations are in
+the same connected component of the \cspace \ which simply put is
+true iff each branch \textbf{that cannot be aligned in any way}
+need not change its \emph{Elbow UP/Down}
+signs (of a set of links called \emph{large links}) in order to move from
+initial configuration to goal (see Figure \ref{fibre}).\\
+
+Our strategy is to solve the path existence based on the set of
+critical regions in the workspace, and then construct the path
+combining our knowledge of the workspace and the structure of the
+\cspace \ of single-loop closed chains. Note that the problem is
+not just moving the junction point between an initial and a goal
+position, but moving the manipulator along with all its legs from
+an initial configuration to a goal configuration. So, the
+workspace information will be insufficient for path construction.
+We employ a move that changes the shape of a leg with its endpoint
+fixed in the workspace. This move, called the \emph{sign-adjust
+move}, uses the knowledge of the \cspace \ of a single-loop closed
+chain. We then showed that the overall complexity of the motion
+planning algorithm is $O(k^3N^3)$, where $N$ is the maximum number
+of links in a leg and $k$ is the number of branches. The
+polynomial complexity is key to the applications like folding of
+macro- molecules, which can be modeled as a closed chain with
+large $k$
+and N. \\
+
+Our next goal was to study the \cspace\ of mechanism we call a
+\emph{polygonal mechanism} which consists of a moving polygonal
+platform, having branches attached to each vertex, with the other
+end fixed in $\Re^d$, while each branch is a concatenation of rods
+with revolute (i.e., rotational) joints at the consecutive meeting
+points.(see Figure \ref{fig:kgon}). As done before, we use the
+regular value theorem to find the conditions in which a polygonal
+mechanism \cspace\ is a manifold. Proving the above involves a
+careful examination of the geometry that uniquely determines the
+mechanism (see Remark \ref{rpolygon}). Furthermore by
+\emph{generic} we mean that there is a zero-measure of non-generic
+cases, formally we define generic in Definition \ref{fsingular}.
+
+The map we consider $F:\RR{dN}\to\RR{N+|\Ic|}$, \ (see proof of
+Theorem \ref{tone}) is defined as:
+%
+\begin{equation}\label{econstr}
+%
+F(\Vc)~=~F(\Vj{1},\dotsc,\Vj{i})~:=~
+(f_{\nj{1}}(\Vj{1}),\dotsc,f_{\nj{k}}(\Vj{k}),
+\|\aj{1,2}\|^{2},\dotsc,\|\aj{k-1,k}\|^{2})~,
+%
+\end{equation}
+%
+Which admits a full ranked jacobian iff all participant branches
+are aligned and  $\sum^{k}_{i=1}\vj{i} $, on the moving platform.
+Concluding these results:
+\begin{enumerate}
+\item Two participants vectors is not a generic case (Figure
+\ref{fig:sing1}).
+\item Four or more participants vectors is not a generic case and we disallow
+it.
+\item Three participants vectors is a generic case - (coupler curve
+intersection with a circle)
+\end{enumerate}
+So we need the “finer” \emph{Transversality theorem} handling the
+three aligned legs case to find that for a generic polygonal
+mechanism, any configuration having at most three aligned branches
+is smooth (Proposition \ref{pzero}). Finally by redefining the
+"three aligned branches case" as one where the three branches are
+aligned, with direction lines in the same plane meeting in a
+single point as depicted in Figure \ref{fig:sing3} (which is
+referred to in literature as a flat pencil) we complete Theorem
+\ref{tone} proof.\\
+
+Thus we gave a necessary condition for an uncertainty singularity
+to occur in a polygonal spatial/planar mechanism with arbitrary
+number of branches and arbitrary number of links in each branch.
+Naturally one can inquired about the corresponding instantaneous
+kinematic singularities:\\
+First (Section \ref{sarch}) we numerate all edundant/non-redundant
+architecture possibilities for statically defining the moving
+platform, then we use screw theory to describe (Proposition
+\ref{pkinsing}) the kinematic singularities emerging due to the
+topological ones. Finally we give a visual presentation (Figure
+\ref{fig:box_kiss}) of an
+uncertainty singularity in an explicit 3-URU 3-DOF mechanism.\\
+
+We Conclude our study by constructing a morse function for the
+simplest type of polygonal mechanism \ -- \ namely, planar
+mechanisms \ ($d=2$) \ having triangular platforms \ ($k=3$) \ and
+exactly two links per branch \ ($\nj{1}=\nj{2}=\nj{3}=2$). We
+propose a morse function \ref{ttwo}, prove it is Morse and find
+its critical points (Figures
+\ref{fcaseI},\ref{fcaseII},\ref{fcaseIII}), and give a computation
+for a mechanism having $S^3$ \cspace (Figure \ref{fmechanism}).
+
+\section{conclusions}
+
+Configuration space is hard thing to follow. Nevertheless for the
+two dimensional case (see chapter \ref{chap2} - the
+\emph{Arachnoid mechanism}) were actual visualization is possible
+one can "find his way". Configuration space had been found
+explicitly: we devised an easy way to "build up" this space as a
+handle body, which if followed can be used as a guide for further
+bigger dimensioned \cspace \ investigations. Singularities results
+in this regard can be easily applicable either in design stage or
+for motion planning and control in cases were the robot \cspace \
+is intentionally designed to contain topology singularities. Thus
+a further investigation of topological singularities may naturally
+begin with these results. We have found that said singularities in
+the two dimensional case, are simply a wedge of discs. Clearly,
+generally this is not the case, and apart of presentations of
+$3$-dimensional \cspace \ singularities for given mechanisms, we
+haven't found any characterization, but it seems like a good
+subject to deal with in the future.
+
+The question of the manifold character of \cspace \ which arose at
+the beginning of our research had popped again once we had begun
+thinking of the \emph{polygonal mechanisms}, except in this case,
+solution was not an easy task. We had found that polygonal
+mechanisms have generically a manifold \cspace. Moreover we
+introduced three necessary conditions for a polygonal mechanism to
+have a topological singularity. We underline here that these are
+not sufficient, for example consider a triangular mechanism having
+$2,1,1$ links in its associated first, second and third branches.
+If we (virtually) disconnect the first branch from the rest of the
+mechanism we end with an open $2$-chain and a coupler mechanism.
+Consequently the work space of the $2$-open chain is an annulus,
+while the coupler's work space is a coupler curve. Note that for
+the situation depicted below where the coupler curve is tangent to
+the annulus, while the annulus intersects the coupler curve into
+two segments, all branches are aligned and their lines of
+alignment intersect in one point (the tangency point). Still the
+configuration where both curves are tangent does not induces a
+topological singular configuration. Thus there is a need to
+continue the research, and come up with a sufficient condition for
+topological singularities.
+%
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=3in]{fig-conclusion/non-singular.eps}
+  \caption{A counter example for singular criterion presented in last chapter.}
+  \label{non-singular}
+\end{figure}
+%
+The manifold character of the generic star-shaped mechanism,
+generic arachnoid mechanism, generic polygonal mechanisms is
+herein proved, while the manifold character for simple closed
+chain mechanism (link loops) had been proven in literature.
+
+On the other hand Kempe \cite{Kem} proved in 1876 that given an
+arbitrary real algebraic curve there exist a linkage such that one
+of its vertices will trace the curve. Jordan and Steiner \cite{JS}
+construct an homeomorphism between any given algebraic variety and
+some components of a mechanical linkage \cspace.\\
+
+The above may indicate a more general truth. Thus we conclude this
+dissertation with the conjecture:\\
+
+\begin{conj}
+All planar (spatial) graph mechanisms comprised of rigid rods and
+rotational (spherical) joints have a smooth orientable manifold
+\cspace s for a generic set of lengths
+\end{conj}
+
+By the term \emph{generic} we mean "almost every set of lengths".
+
+
+\begin{center}Thats all folks...\end{center}

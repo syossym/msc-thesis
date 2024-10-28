@@ -1,0 +1,962 @@
+#LyX 1.6.0rc3 created this file. For more info see http://www.lyx.org/
+\lyxformat 340
+\begin_document
+\begin_header
+\textclass report
+\options a4paper,titlepage
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_amsmath 1
+\use_esint 0
+\cite_engine natbib_authoryear
+\use_bibtopic false
+\paperorientation portrait
+\leftmargin 3cm
+\topmargin 4cm
+\rightmargin 3cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip bigskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Background
+\end_layout
+
+\begin_layout Standard
+The field of opto-acoustics shot into prominence in 2006, when three independent
+ research groups achieved significant damping (i.e.
+ suppression) of acoustic modes of a mechanical resonator placed within
+ an optical cavity 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Arcizet2006,Gigan2006,Kleckner2006"
+
+\end_inset
+
+.
+ This was achieved by exploiting the small radiation pressure force that
+ electromagnetic radiation exerts upon matter.
+ There is promise that such “opto-acoustic” cavities could achieve damping
+ so strong that one or more acoustic modes could be “cooled” to the quantum
+ ground state.
+ To do this would require an energy reduction factor of 
+\begin_inset Formula $\sim10^{5}$
+\end_inset
+
+ from the thermal equilibrium value.
+ If this feat is achieved, a cornucopia of related quantum mechanical experiment
+s could be realised: the generation of quantum superpositions of a macroscopic
+ object 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Marshall2003"
+
+\end_inset
+
+; opto-acoustic entanglement 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Vitali2007"
+
+\end_inset
+
+; and experiments exploring the transition from the quantum regime to the
+ classical world 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Bose1999"
+
+\end_inset
+
+.
+ These possibilities provide significant motivation to overcome the limits
+ of current opto-acoustic cavities.
+\end_layout
+
+\begin_layout Standard
+Whilst current designs could theoretically reach the quantum ground state
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Marquardt2007"
+
+\end_inset
+
+, they face a host of technical challenges which are not easily overcome.
+ Current designs can already damp a mode to within a factor of 30 away from
+ the quantum ground state, but they are already pushing the limits of the
+ technique, so realising further damping is very difficult.
+ All opto-acoustic cavities built to date can be considered to rely upon
+ a two-mode interaction, between the fundamental optical mode of the cavity
+ and an acoustic mode of a mechanical resonator.
+ The damping does not arrive from radiation pressure alone, but rather from
+ time dependence of the radiation pressure force and corresponding back-action
+ effects.
+ This force can be characterised as that of an 
+\begin_inset Quotes eld
+\end_inset
+
+optical spring
+\begin_inset Quotes erd
+\end_inset
+
+ with spring constant 
+\begin_inset Formula $k(I,\,\Delta\omega)$
+\end_inset
+
+, which has a real and an imaginary component.
+ The optical spring depends mainly upon the intracavity power 
+\begin_inset Formula $I$
+\end_inset
+
+ and the detuning of the cavity away from resonance, 
+\begin_inset Formula $\Delta\omega$
+\end_inset
+
+.
+ The real part of this quantity is known as the optical rigidity and is
+ analogous to the spring constant 
+\begin_inset Formula $k$
+\end_inset
+
+ of a physical spring.
+ It is the imaginary part of 
+\begin_inset Formula $k(I,\,\Delta\omega)$
+\end_inset
+
+ which gives rise to the viscous damping force which is used to damp the
+ acoustic mode.
+ 
+\end_layout
+
+\begin_layout Standard
+If the cavity is at resonance, then both the real and imaginary components
+ of 
+\begin_inset Formula $k(I,\,\Delta\omega)$
+\end_inset
+
+ are zero, so there is no net damping or rigidity.
+ Only when the cavity is detuned can one achieve radiation pressure damping.
+ Detuning has the side effect that the intracavity power drops significantly.
+ To compensate, the cavity must be pumped by higher laser power and as a
+ result laser phase noise is increased.
+ This noise acts to amplify the acoustic mode and this forms the main limiting
+ factor associated with these simple opto-acoustic cavities.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../../photos/micromirror.png
+	lyxscale 25
+	width 38col%
+
+\end_inset
+
+
+\begin_inset space \quad{}
+\end_inset
+
+
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename ../../photos/membrane.png
+	lyxscale 25
+	width 38col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption[Silicon micromirror and silicon nitride membrane]{
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:microtechno"
+
+\end_inset
+
+Left: A silicon micromirror and a concave mirror for use in an OAPA at LKB.
+ The micromirror of interest is the bridge-like structure on the right hand
+ side of the wafer.
+ Right: A Norcada NX10300A silicon nitride membrane, placed next to a 5c
+ coin to illustrate its size.
+ This is a commercially available membrane with dimensions 
+\begin_inset Formula $3mm\times3mm\times50nm$
+\end_inset
+
+.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+On the other hand, if the imaginary part of 
+\begin_inset Formula $k$
+\end_inset
+
+ is negative, the acoustic mode is amplified and the opto-acoustic system
+ can become unstable.
+ This can be described as a type of 
+\begin_inset Quotes eld
+\end_inset
+
+parametric instability
+\begin_inset Quotes erd
+\end_inset
+
+.
+ For several years, physicists at the University of Western Australia (UWA)
+ have been working on a related phenonemon - parametric instabilities in
+ gravitational wave interferometers.
+ This was first predicted in 2001 by Braginsky, who posited that opto-acoustic
+ coupling could cause exponential amplification of acoustic modes in the
+ test masses of gravitational interferometers, jeopardising their operation
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Braginsky2001"
+
+\end_inset
+
+.
+ This parametric instability arises not from a two-mode interaction like
+ those discussed above, but a three-mode interaction between two optical
+ modes and one acoustic mode.
+ This was initially dismissed as a cause for concern by most, as it requires
+ specific conditions to be met.
+ Further research and simulations conducted by the UWA group however, show
+ that parametric instability is indeed probable in gravitational wave detectors
+ such as AdvLIGO 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Zhao2005"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+The UWA group has much experience in the control of parametric interactions
+ and forced oscillations: they have investigated parametric back-action
+ effects in sapphire transducers 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Cuthbertson1997"
+
+\end_inset
+
+; achieved mode damping in a resonant niobium bar gravitational wave detector
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Blair1995"
+
+\end_inset
+
+; and characterised the oscillations in sapphire test masses used within
+ gravitational interferometers 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Tobar1993"
+
+\end_inset
+
+.
+ More recently, the UWA group has demonstrated a three-mode interaction
+ in a 77m long Fabry-Perot cavity, between two optical modes and one acoustic
+ mode 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Zhao2007,Zhao2008"
+
+\end_inset
+
+.
+ Whilst this experiment was initially designed to show the existence of
+ parametric instabilities in large scale interferometers, a new configuration
+ was found that could theoretically be used to achieve damping of the acoustic
+ mode.
+ It was also found that this three-mode configuration could be achieved
+ in a simple tabletop experiment.
+ This led to the invention of what has been dubbed an 
+\emph on
+Opto-Acoustic Parametric Amplifier
+\emph default
+ (OAPA), which is discussed in detail in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:OAPAs"
+
+\end_inset
+
+ and also in the article by Miao et al., which is an introduction to the
+ concept 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Miao2008"
+
+\end_inset
+
+.
+ Essentially, OAPAs are opto-acoustic cavities which utilise a three-mode
+ interaction.
+ Theoretical calculations, even if conservative, show that OAPAs promise
+ to enable stronger damping than is possible with a two-mode approach, as
+ well as the possibility of realising three-mode parametric instability.
+ 
+\end_layout
+
+\begin_layout Standard
+The OAPA requires systems with pairs of optical modes, and an acoustic mode
+ that matches the shape of the optical modes.
+ Thus a necessary precursor to the construction of an OAPA is characterising
+ the acoustic modes of the resonator to be used.
+ Specifically, one must know its resonant frequencies, their corresponding
+ mode shapes and their intrinsic quality factors.
+ After this is known, an opto-acoustic cavity can be constructed to couple
+ the acoustic mode to the optical modes of the cavity.
+ In this report, two candidate resonators are characterised, which are shown
+ in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:microtechno"
+
+\end_inset
+
+.
+ The first characterisation scheme was realised experimentally at the Laboratoir
+e Kastler Brossel (LKB) in Paris; the second at UWA in Perth.
+ These are discussed in Chapters 3 and 4, respectively.
+\end_layout
+
+\begin_layout Standard
+The LKB group has significant experience in two-mode damping experiments
+ and were the first to show that radiation pressure force could be used
+ to damp the movement of a mirror 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Cohadon1999"
+
+\end_inset
+
+.
+ In 2006, they published an article in Nature describing an experimental
+ setup that achieved strong damping with a two-mode interaction 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Arcizet2006"
+
+\end_inset
+
+.
+ Two other research groups, who had achieved similar results independently,
+ published articles in the same issue of Nature 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Gigan2006,Kleckner2006"
+
+\end_inset
+
+.
+ As mentioned earlier, the simultaneous publication of these articles acted
+ to illuminate the new frontier of opto-acoustics.
+ Currently, the LKB group are collaborating with UWA to construct an OAPA
+ with which to achieve mode damping.
+ There is much promise that an OAPA constructed by these two groups could
+ achieve damping down to the quantum ground state, which would be a momentous
+ achievement and usher in a new regime of experiments to investigate transitions
+ between the classical and quantum worlds.
+\end_layout
+
+\begin_layout Section
+Opto-Acoustic Parametric Amplifiers
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:OAPAs"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The motivation for this report is to examine whether the two resonators
+ discussed are suitable candidates for use in OAPAs.
+ To elucidate which characteristics of the resonators are important, this
+ section provides a brief overview of the OAPA.
+ The OAPA is simply an opto-acoustic cavity which utilises the coupling
+ of two different optical modes to the acoustic mode of a resonator, in
+ a three-mode interaction.
+ The OAPA achieves this coupling by radiation pressure that arrives from
+ the beating between two or more optical modes resonant within the cavity.
+ If the beat frequency between these two modes is resonant with the frequency
+ of an acoustic mode, a strong radiation pressure force will arise.
+ Depending on the sign of this force, it can either damp or amplify the
+ vibrational amplitude of the acoustic mode.
+ This can be seen as a simple scattering process in which energy is transferred
+ from a photon (optical mode), to a phonon (acoustic mode), or vice versa.
+ When a phonon of frequency 
+\begin_inset Formula $\Omega_{1}$
+\end_inset
+
+ annihilates with a photon of frequency 
+\begin_inset Formula $\omega_{1}$
+\end_inset
+
+, it imparts its energy to the photon, which increases the photon's frequency
+ to 
+\begin_inset Formula $\omega_{2}=\omega_{1}+\Omega_{1}$
+\end_inset
+
+.
+ Alternatively, a photon of frequency 
+\begin_inset Formula $\omega_{1}$
+\end_inset
+
+ can scatter into a photon of frequency 
+\begin_inset Formula $\omega_{2}$
+\end_inset
+
+ and phonon of frequency 
+\begin_inset Formula $\Omega_{2}$
+\end_inset
+
+, where 
+\begin_inset Formula $\omega_{1}=\Omega_{2}+\omega_{2}$
+\end_inset
+
+.
+ These are commonly known as the 
+\emph on
+Anti-Stokes process
+\emph default
+ and 
+\emph on
+Stokes process 
+\emph default
+respectively and are shown diagramatically in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Para Interaction-2"
+
+\end_inset
+
+
+\emph on
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../../figures/paraint.eps
+	width 70col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption[
+\end_layout
+
+\end_inset
+
+The Stokes and Anti-Stokes processes.
+ An incoming photon either imparts or receives energy from an incident phonon
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]{
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Para Interaction-2"
+
+\end_inset
+
+The Stokes (L) and Anti-Stokes (R) processes.
+ An incoming photon either imparts or receives energy from an incident phonon.
+ Note that the quantum picture above is the same for both two and three
+ mode interactions - the crucial difference is that a three-mode interaction
+ involves photons of different optical modes.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It is informative to view the Stokes and Anti-Stokes from a formal quantum
+ mechanical perspective; which is studied in more detail in appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:QO description"
+
+\end_inset
+
+.
+ We can view the Stokes process as being equivalent to a system of photons
+ and phonons acted on by creation and annihilation operators
+\begin_inset Formula \begin{equation}
+\hat{a}_{k}\hat{b}_{q}^{\dagger}\hat{a}_{k'}^{\dagger}\left|n_{k},n_{k'},n_{q}\right\rangle =\sqrt{n_{k'}\left(n_{q}+1\right)\left(n_{k}+1\right)}\left|n_{k}-1,n_{k'}+1,n_{q}+1\right\rangle .\end{equation}
+
+\end_inset
+
+Here, 
+\begin_inset Formula $\hat{a}_{k'}^{\dagger}$
+\end_inset
+
+ represents creation of a new photon with energy 
+\begin_inset Formula $\hbar\omega_{k'}=\hbar\omega_{k}-\hbar\omega_{q}$
+\end_inset
+
+; 
+\begin_inset Formula $\hat{b}_{q}^{\dagger}$
+\end_inset
+
+ represents the creation of a phonon with energy 
+\begin_inset Formula $\hbar\omega_{q}$
+\end_inset
+
+; and 
+\begin_inset Formula $\hat{a}_{k}$
+\end_inset
+
+ represents the destruction of the original photon with energy 
+\begin_inset Formula $\hbar\omega_{k}.$
+\end_inset
+
+ Consequently the number of photons 
+\begin_inset Formula $n_{k'}$
+\end_inset
+
+ in state 
+\begin_inset Formula $k'$
+\end_inset
+
+ increases by 1, the number 
+\begin_inset Formula $n_{k}$
+\end_inset
+
+ in state 
+\begin_inset Formula $k$
+\end_inset
+
+ decreases by 1 and the number of phonons 
+\begin_inset Formula $n_{q}$
+\end_inset
+
+ in with wavevector 
+\begin_inset Formula $q$
+\end_inset
+
+ also increases by 1.
+ Similarly, for the Anti-Stokes process
+\begin_inset Formula \begin{equation}
+\hat{a}_{k}\hat{b}_{q}\hat{a}_{k''}^{\dagger}\left|n_{k},n_{k'},n_{q}\right\rangle =\sqrt{n_{k'}n_{q}\left(n_{k}+1\right)}\left|n_{k}-1,n_{k''}+1,n_{q}-1\right\rangle ,\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\hat{a}_{k'}^{\dagger}$
+\end_inset
+
+ represents creation of a new photon with energy 
+\begin_inset Formula $\hbar\omega_{k''}=\hbar\omega_{k}+\hbar\omega_{q}$
+\end_inset
+
+.
+ These two processes represent the quantum picture for the opto-acoustic
+ parametric interactions discussed in this thesis.
+ 
+\end_layout
+
+\begin_layout Standard
+Quantum physics asserts that there is a minimum possible energy associated
+ with each acoustic mode, known as the quantum ground state.
+ At this energy, the phonon number 
+\begin_inset Formula $n_{q}=0$
+\end_inset
+
+, which corresponds to a state 
+\begin_inset Formula $\left|0\right\rangle $
+\end_inset
+
+.
+ As stated previously, this state has never been attained in a macroscopic
+ system, and there is promise that it may be possible via parametric mode
+ damping in an OAPA 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Marshall2003,Miao2008"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The OAPA can be seen as a device with which to control these interactions,
+ to either damp or amplify the acoustic mode of a resonator by altering
+ its phonon number.
+ The OAPA differs from previously constructed opto-acoustic cavities as
+ the created photons are of a different optical mode to those annihilated.
+ As a result, it has some unique properties that set it apart from two-mode
+ based schemes.
+ In an OAPA detuning is not required, so the laser light injected into the
+ cavity is resonant.
+ This means much higher intracavity power is achieved, so far lower laser
+ pumping powers are required.
+ They are also more immune to laser phase noise, which is enhanced in the
+ offset pumping required for two mode systems.
+\end_layout
+
+\begin_layout Standard
+The overall effects of parametric interactions upon the acoustic vibrations
+ of the mechanical component of an OAPA can be described by a quantity known
+ as 
+\emph on
+parametric gain
+\emph default
+ 
+\begin_inset Formula $\mathcal{R}$
+\end_inset
+
+, which is defined as
+\begin_inset Formula \begin{equation}
+\mathcal{R}=\pm\frac{4I_{pump}Q_{0}Q_{1}Q_{m}\Lambda}{mcL\omega_{m}^{2}}.\label{eq:parametric gain}\end{equation}
+
+\end_inset
+
+This quantity is explained in detail by Miao et al.
+ and was first introduced by Braginsky in 2001 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Miao2008,Braginsky2001"
+
+\end_inset
+
+.
+ Briefly, its magnitude depends upon the quality factors of the acoustic
+ and optical modes, 
+\begin_inset Formula $Q_{0}$
+\end_inset
+
+, 
+\begin_inset Formula $Q_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $Q_{m}$
+\end_inset
+
+; the resonator mass, 
+\begin_inset Formula $m$
+\end_inset
+
+; the acoustic mode frequency, 
+\begin_inset Formula $\omega_{m}$
+\end_inset
+
+; the laser pumping power, 
+\begin_inset Formula $I_{pump}$
+\end_inset
+
+; and, how well the these modes overlap spatially, 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $\Lambda$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+.
+ The sign of the gain depends upon whether the Stokes (+) or Anti-Stokes
+ (-) mode is resonant within the optical cavity.
+ It is thus highly important to have knowledge of the resonant frequencies,
+ 
+\begin_inset Formula $Q$
+\end_inset
+
+-factors and mode shapes of the acoustic modes of the resonator to be used
+ in an OAPA, to ensure large values of 
+\begin_inset Formula $\mathcal{R}$
+\end_inset
+
+ can be reached.
+ Thus, resonator characterisation is essential.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename ../../figures/PI.eps
+	width 85col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption[
+\end_layout
+
+\end_inset
+
+Amplitude of an OAPA's acoustic mode with respect to time, for three different
+ parametric gain values.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+]{
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:PI plots"
+
+\end_inset
+
+Amplitude of an OAPA's acoustic mode with respect to time, for three different
+ values of 
+\begin_inset Formula $\mathcal{R}$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $\mathcal{R}>1$
+\end_inset
+
+, then the acoustic mode will grow exponentially and parametric instability
+ will result.
+ If 
+\begin_inset Formula $\mathcal{R}<0$
+\end_inset
+
+, then the acoustic mode will be damped faster than that due to resonator's
+ intrinsic damping.
+ If 
+\begin_inset Formula $0\le\mathcal{R}<1$
+\end_inset
+
+, then the resonator is stable, but the amplitude decreases slower than
+ that due to intrinsic damping.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The overall effects of an OAPA upon the acoustic mode depend upon the sign
+ and magnitude of the parametric gain.
+ If 
+\begin_inset Formula $\mathcal{R}>1$
+\end_inset
+
+, then the energy imparted by the parametric amplification is greater than
+ the decay rate of the acoustic mode.
+ If this happens, then the amplitude of the acoustic mode will 
+\begin_inset Quotes eld
+\end_inset
+
+ring-up
+\begin_inset Quotes erd
+\end_inset
+
+ exponentially, in which case parametric instability occurs.
+ On the other hand, if 
+\begin_inset Formula $\mathcal{R}<0$
+\end_inset
+
+, the acoustic mode will be suppressed in what is commonly known as 
+\emph on
+cooling
+\emph default
+.
+ As temperature is related to the acoustic vibrations of a system by the
+ fluctuation-dissipation theorem (see section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Fluctuation-dissipation-theorem"
+
+\end_inset
+
+), this mode damping is analogous to changing the mode's effective temperature.
+ In reality, this process does little to drop the actual temperature of
+ a microresonator, so the term 
+\begin_inset Quotes eld
+\end_inset
+
+cooling
+\begin_inset Quotes erd
+\end_inset
+
+ bears misleading semantic connotations.
+ As such, the use of this term has been avoided throughout this report.
+ Three time traces for the acoustic mode of an OAPA are show in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:PI plots"
+
+\end_inset
+
+, for three different values of gain 
+\begin_inset Formula $\mathcal{R}$
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,801 @@
+% This file was created with JabRef 2.4.
+% Encoding: Cp1252
+
+@BOOK{Comsol,
+  title = {COMSOL Multiphysics, Version 3.4},
+  publisher = {COMSOL AB},
+  year = {2007},
+  author = {COMSOL AB},
+  address = {Stockholm, Sweden},
+  owner = {Dan},
+  timestamp = {2008.10.23}
+}
+
+@ARTICLE{Arcizet2006a,
+  author = {Arcizet, O. and Briant, T. and Heidmann, A. and Pinard, M.},
+  title = {Beating quantum limits in an optomechanical sensor by cavity detuning},
+  journal = {Phys. Rev. A},
+  year = {2006},
+  volume = {73},
+  pages = {033819--8},
+  number = {3},
+  month = mar,
+  keywords = {quantum optics, optical sensors, optical resonators, mirrors, radiation
+	pressure},
+  owner = {Dan},
+  publisher = {APS},
+  timestamp = {2008.07.23},
+  url = {http://link.aps.org/abstract/PRA/v73/e033819}
+}
+
+@ARTICLE{Arcizet2006,
+  author = {Arcizet, O. and Cohadon, P.-F. and Briant, T. and Pinard, M. and
+	Heidmann, A.},
+  title = {Radiation-pressure cooling and optomechanical instability of a micromirror},
+  journal = {Nature},
+  year = {2006},
+  volume = {444},
+  pages = {71--74},
+  number = {7115},
+  month = nov,
+  comment = {10.1038/nature05244},
+  issn = {0028-0836},
+  owner = {Dan},
+  timestamp = {2008.06.30},
+  url = {http://dx.doi.org/10.1038/nature05244}
+}
+
+@MISC{Black2000,
+  author = {Eric D Black},
+  title = {An Introduction to Pound-Drever-Hall laser frequency stabilization},
+  howpublished = {Online},
+  year = {2000},
+  owner = {Dan},
+  timestamp = {2008.10.19}
+}
+
+@ARTICLE{Blair1995,
+  author = {Blair, D. G. and Ivanov, E. N. and Tobar, M. E. and Turner, P. J.
+	and van Kann, F. and Heng, I. S.},
+  title = {High Sensitivity Gravitational Wave Antenna with Parametric Transducer
+	Readout},
+  journal = {Phys. Rev. Lett.},
+  year = {1995},
+  volume = {74},
+  pages = {1908--1911},
+  number = {11},
+  month = {Mar},
+  doi = {10.1103/PhysRevLett.74.1908},
+  numpages = {3},
+  publisher = {American Physical Society}
+}
+
+@ARTICLE{Physics.1.3,
+  author = {Miles Blencowe},
+  title = {How to silence a one-ton bell},
+  journal = {Physics},
+  year = {2008},
+  volume = {1},
+  pages = {3},
+  month = {Jul},
+  eid = {3},
+  publisher = {The American Physical Society}
+}
+
+@ARTICLE{Bose1999,
+  author = {Bose, S. and Jacobs, K. and Knight, P. L.},
+  title = {Scheme to probe the decoherence of a macroscopic object},
+  journal = {Phys. Rev. A},
+  year = {1999},
+  volume = {59},
+  pages = {3204--},
+  number = {5},
+  month = may,
+  owner = {Dan},
+  publisher = {American Physical Society},
+  refid = {10.1103/PhysRevA.59.3204},
+  timestamp = {2008.10.02},
+  url = {http://link.aps.org/abstract/PRA/v59/p3204}
+}
+
+@ARTICLE{Braginsky2001,
+  author = {Braginsky, V. B. and Strigin, S. E. and Vyatchanin, S. P.},
+  title = {Parametric oscillatory instability in Fabry-Perot interferometer},
+  journal = {Physics Letters A},
+  year = {2001},
+  volume = {287},
+  pages = {331--338},
+  number = {5-6},
+  month = sep,
+  owner = {Dan},
+  timestamp = {2008.06.30}
+}
+
+@ARTICLE{Braginsky2002,
+  author = {Braginsky, V. B. and Vyatchanin, S. P.},
+  title = {Low quantum noise tranquilizer for Fabry-Perot interferometer},
+  journal = {Physics Letters A},
+  year = {2002},
+  volume = {293},
+  pages = {228--234},
+  number = {5-6},
+  month = feb,
+  abstract = {We discuss the possibility to introduce low noise damping produced
+	by light into mechanical oscillator (one of the Fabry-Perot (FP)
+	resonator mirrors is the mechanical resonator). Pumping FP resonator,
+	by light detuned from resonance one can create the positive or negative
+	rigidity in mechanical oscillator. Such a rigidity being introduced
+	with delay (of the order of relaxation time of FP resonator) is equivalent
+	to additional low noise damping. We propose to introduce this damping
+	to tranquilize (to depress) parametric oscillatory instability in
+	FP interferometer (Phys. Lett. A 287 (2001) 331) which is undesirable
+	in laser gravitational wave antennae.},
+  owner = {Dan},
+  timestamp = {2008.07.23}
+}
+
+@ARTICLE{Chen2003,
+  author = {Buonanno, Alessandra and Chen, Yanbei},
+  title = {Scaling law in signal recycled laser-interferometer gravitational-wave
+	detectors},
+  journal = {Phys. Rev. D},
+  year = {2003},
+  volume = {67},
+  pages = {062002--},
+  number = {6},
+  month = mar,
+  owner = {Dan},
+  publisher = {American Physical Society},
+  refid = {10.1103/PhysRevD.67.062002},
+  timestamp = {2008.07.21},
+  url = {http://link.aps.org/abstract/PRD/v67/e062002}
+}
+
+@ARTICLE{Callen1952,
+  author = {Callen, Herbert B. and Greene, Richard F.},
+  title = {On a Theorem of Irreversible Thermodynamics},
+  journal = {Phys. Rev.},
+  year = {1952},
+  volume = {86},
+  pages = {702--710},
+  number = {5},
+  month = {Jun},
+  doi = {10.1103/PhysRev.86.702},
+  numpages = {8},
+  publisher = {American Physical Society}
+}
+
+@ARTICLE{Cohadon1999,
+  author = {Cohadon, P. F. and Heidmann, A. and Pinard, M. },
+  title = {Cooling of a Mirror by Radiation Pressure},
+  journal = {Phys. Rev. Lett.},
+  year = {1999},
+  volume = {83},
+  pages = {3174-3177},
+  number = {16},
+  month = {Oct},
+  doi = {10.1103/PhysRevLett.83.3174},
+  numpages = {3},
+  owner = {Dan},
+  publisher = {American Physical Society}
+}
+
+@ARTICLE{Corbitt2007,
+  author = {Corbitt, Thomas and Chen, Yanbei and Innerhofer, Edith and Muller-Ebhardt,
+	Helge and Ottaway, David and Rehbein, Henning and Sigg, Daniel and
+	Whitcomb, Stanley and Wipf, Christopher and Mavalvala, Nergis},
+  title = {An All-Optical Trap for a Gram-Scale Mirror},
+  journal = {Phys. Rev. Lett.},
+  year = {2007},
+  volume = {98},
+  pages = {150802--4},
+  number = {15},
+  month = apr,
+  owner = {Dan},
+  publisher = {APS},
+  timestamp = {2008.07.16},
+  url = {http://link.aps.org/abstract/PRL/v98/e150802}
+}
+
+@ARTICLE{Cuthbertson1997,
+  author = {Cuthbertson, B.D., Tobar, M.E., Ivanov, E.N. and Blair, D.G.},
+  title = {Parametric back-action effects in a high-Q cryogenic sapphire transducer},
+  journal = {Review of Scientific Instruments},
+  year = {1996},
+  volume = {67},
+  pages = {2435-2442},
+  owner = {Dan},
+  timestamp = {2008.10.20}
+}
+
+@PHDTHESIS{Delaubert2007,
+  author = {Vincent Delaubert},
+  title = {Imagerie quantique a petit nombre de modes tranvserses},
+  school = {University of Pierre and Marie Curie},
+  year = {2007},
+  owner = {Dan},
+  timestamp = {2008.07.08}
+}
+
+@ARTICLE{Schrodinger1935,
+  author = {Erwin Schrödinger, John D. Trimmer (trans)},
+  title = {The present situation of quantum mechanics: A translation of Schroedinger's
+	"cat paradox paper"},
+  journal = {Proceedings of the American Philosophical Society},
+  year = {1935},
+  volume = {124},
+  pages = {323-38},
+  note = {Translator: John D. Trimmer},
+  owner = {Dan},
+  timestamp = {2008.10.02}
+}
+
+@ARTICLE{Genes2008,
+  author = {Genes, C. and Vitali, D. and Tombesi, P. and Gigan, S. and Aspelmeyer,
+	M.},
+  title = {Ground-state cooling of a micromechanical oscillator: Comparing cold
+	damping and cavity-assisted cooling schemes},
+  journal = {Phys. Rev. A},
+  year = {2008},
+  volume = {77},
+  pages = {033804--9},
+  number = {3},
+  month = mar,
+  keywords = {damping, ground states, laser cooling, microcavities, micromechanical
+	resonators, micro-optomechanical devices, quantum optics, radiation
+	pressure},
+  owner = {Dan},
+  publisher = {APS},
+  timestamp = {2008.07.23},
+  url = {http://link.aps.org/abstract/PRA/v77/e033804}
+}
+
+@ARTICLE{Gigan2006,
+  author = {Gigan, S. and Bohm, H. R. and Paternostro, M. and Blaser, F. and
+	Langer, G. and Hertzberg, J. B. and Schwab, K. C. and Bauerle, D.
+	and Aspelmeyer, M. and Zeilinger, A.},
+  title = {Self-cooling of a micromirror by radiation pressure},
+  journal = {Nature},
+  year = {2006},
+  volume = {444},
+  pages = {67--70},
+  number = {7115},
+  month = nov,
+  comment = {10.1038/nature05273},
+  issn = {0028-0836},
+  owner = {Dan},
+  timestamp = {2008.10.03},
+  url = {http://dx.doi.org/10.1038/nature05273}
+}
+
+@ARTICLE{Glauber1963,
+  author = {Glauber, Roy J.},
+  title = {Coherent and Incoherent States of the Radiation Field},
+  journal = {Phys. Rev.},
+  year = {1963},
+  volume = {131},
+  pages = {2766--},
+  number = {6},
+  month = sep,
+  owner = {Dan},
+  publisher = {American Physical Society},
+  refid = {10.1103/PhysRev.131.2766},
+  timestamp = {2008.10.02},
+  url = {http://link.aps.org/abstract/PR/v131/p2766}
+}
+
+@ARTICLE{Holmes1979,
+  author = {Holmes, P.},
+  title = {A Nonlinear Oscillator with a Strange Attractor},
+  journal = {Philosophical Transactions of the Royal Society of London. Series
+	A, Mathematical and Physical Sciences},
+  year = {1979},
+  volume = {292},
+  pages = {419--448},
+  number = {1394},
+  copyright = {Copyright © 1979 The Royal Society},
+  issn = {00804614},
+  jstor_articletype = {primary_article},
+  jstor_formatteddate = {Oct. 23, 1979},
+  publisher = {The Royal Society},
+  url = {http://www.jstor.org/stable/75173}
+}
+
+@BOOK{Mathematica,
+  title = {Mathematica, Version 6.0},
+  publisher = {Wolfram Research, Inc.},
+  year = {2007},
+  author = {Wolfram Research Inc},
+  address = {Champaign, Illinois},
+  owner = {Dan},
+  timestamp = {2008.10.23}
+}
+
+@BOOK{Origin,
+  title = {Origin, Version 6},
+  publisher = {Microcal Software, Inc.},
+  year = {2005},
+  author = {Microcal Software Inc.},
+  address = {Northampton, Massachusetts},
+  owner = {Dan},
+  timestamp = {2008.10.23}
+}
+
+@BOOK{BkClassical,
+  title = {Classical mechanics},
+  publisher = {Imperial College Press},
+  year = {2006},
+  author = {Kibble, Tom and Berkshire, Frank},
+  pages = {62-67, 277-282},
+  edition = {5},
+  owner = {Dan},
+  timestamp = {2008.09.17}
+}
+
+@ARTICLE{Kimble1977,
+  author = {Kimble, H. J. and Mandel, L.},
+  title = {Resonance fluorescence with excitation of finite bandwidth},
+  journal = {Phys. Rev. A},
+  year = {1977},
+  volume = {15},
+  pages = {689--},
+  number = {2},
+  month = feb,
+  owner = {Dan},
+  publisher = {American Physical Society},
+  refid = {10.1103/PhysRevA.15.689},
+  timestamp = {2008.10.02},
+  url = {http://link.aps.org/abstract/PRA/v15/p689}
+}
+
+@ARTICLE{Kleckner2006,
+  author = {Kleckner, Dustin and Bouwmeester, Dirk},
+  title = {Sub-kelvin optical cooling of a micromechanical resonator},
+  journal = {Nature},
+  year = {2006},
+  volume = {444},
+  pages = {75--78},
+  number = {7115},
+  month = nov,
+  comment = {10.1038/nature05231},
+  issn = {0028-0836},
+  owner = {Dan},
+  timestamp = {2008.10.03},
+  url = {http://dx.doi.org/10.1038/nature05231}
+}
+
+@ARTICLE{Levin1998,
+  author = {Levin, Yu.},
+  title = {Internal thermal noise in the LIGO test masses: A direct approach},
+  journal = {Phys. Rev. D},
+  year = {1998},
+  volume = {57},
+  pages = {659--},
+  number = {2},
+  month = jan,
+  owner = {Dan},
+  publisher = {American Physical Society},
+  refid = {10.1103/PhysRevD.57.659},
+  timestamp = {2008.09.04},
+  url = {http://link.aps.org/abstract/PRD/v57/p659}
+}
+
+@MISC{Lutien2008,
+  author = {Andre Luiten},
+  title = {Modern Optics - Text Handouts},
+  howpublished = {Online},
+  month = {October},
+  year = {2008},
+  owner = {Dan},
+  timestamp = {2008.10.22},
+  url = {http://www.physics.uwa.edu.au/information_for/current/third_year/modern_optics}
+}
+
+@ARTICLE{Hsu2004,
+  author = {Magnus T L Hsu, Vincent Delaubert, Ping Koy Lam and Warwick P Bowen},
+  title = {Optimal optical measurement of small displacements},
+  journal = {Journal of Optics B: Quantum and Semiclassical Optics},
+  year = {2004},
+  volume = {6},
+  pages = {495--501},
+  number = {12},
+  abstract = {We derive the quantum noise limit for the optical beam displacement
+	of a TEM00 mode. Using a multimodal analysis, we show that the conventional
+	split detection scheme for measuring beam displacement is non-optimal
+	with [?]80% efficiency. We propose a new displacement measurement
+	scheme that is optimal for small beam displacement. This scheme utilizes
+	a homodyne detection set-up that has a TEM10 mode local oscillator.
+	We show that although the quantum noise limit to displacement measurement
+	can be surpassed using squeezed light in appropriate spatial modes
+	for both schemes, the TEM10 homodyning scheme outperforms split detection
+	for all values of squeezing.},
+  issn = {1464-4266},
+  owner = {Dan},
+  refid = {1464-4266-6-12-003},
+  timestamp = {2008.10.04}
+}
+
+@ARTICLE{Manley1956,
+  author = {J. M. Manley and H. E. Row},
+  title = {Unknown Article},
+  journal = {Proc. IRE},
+  year = {1956},
+  volume = {44},
+  pages = {904-914},
+  owner = {Dan},
+  timestamp = {2008.07.04}
+}
+
+@ARTICLE{Marquardt2007,
+  author = {Marquardt, Florian and Chen, Joe P. and Clerk, A. A. and Girvin,
+	S. M.},
+  title = {Quantum Theory of Cavity-Assisted Sideband Cooling of Mechanical
+	Motion},
+  journal = {Phys. Rev. Lett.},
+  year = {2007},
+  volume = {99},
+  pages = {093902--4},
+  number = {9},
+  month = aug,
+  keywords = {laser cooling, quantum optics, quantum theory, radiation pressure},
+  owner = {Dan},
+  publisher = {APS},
+  timestamp = {2008.07.23},
+  url = {http://link.aps.org/abstract/PRL/v99/e093902}
+}
+
+@ARTICLE{Marshall2003,
+  author = {Marshall, William and Simon, Christoph and Penrose, Roger and Bouwmeester,
+	Dik},
+  title = {Towards Quantum Superpositions of a Mirror},
+  journal = {Phys. Rev. Lett.},
+  year = {2003},
+  volume = {91},
+  pages = {130401},
+  number = {13},
+  month = {Sep},
+  doi = {10.1103/PhysRevLett.91.130401},
+  numpages = {4},
+  owner = {Dan},
+  publisher = {American Physical Society}
+}
+
+@MISC{miao2008B,
+  author = {Miao, H.X.},
+  title = {Personal Communication},
+  year = {2008},
+  owner = {Dan},
+  timestamp = {2008.09.21}
+}
+
+@ARTICLE{Miao2008,
+  author = {H.X. Miao and C. Zhao and L. Ju and S. Gras and P. Barriga and Z.
+	Zhang and D.G. Blair},
+  title = {Three-mode opto-acoustic parametric interactions with coupled cavity},
+  journal = {arXiv},
+  year = {2008},
+  volume = {0802.3534v2},
+  owner = {Dan},
+  timestamp = {2008.06.30}
+}
+
+@ELECTRONIC{Azom2008,
+  author = {N.D.},
+  month = {October},
+  year = {2008},
+  title = {Silicon Nitride - An overview},
+  language = {English},
+  howpublished = {Online},
+  organization = {Ceram Research Ltd},
+  url = {http://www.azom.com/details.asp?ArticleID=53},
+  owner = {Dan},
+  timestamp = {2008.10.10}
+}
+
+@MISC{Norcada2008,
+  author = {Yuebin Ning},
+  title = {Re: website contact form},
+  howpublished = {email},
+  month = {October},
+  year = {2008},
+  owner = {Dan},
+  timestamp = {2008.10.10}
+}
+
+@ARTICLE{Molinelli2008,
+  author = {O. Arcizet, C. Molinelli, T. Briant, P.-F. Cohadon, A. Heidmann,
+	J.-M. Mackowski, C. Michel, L. Pinard, O. Francais, L. Rousseau},
+  title = {Experimental optomechanics with silicon micromirrors},
+  volume = {Unpublished manuscript},
+  abstract = {We experimentally demonstrate the high-sensitivity optical monitoring
+	of moving micromirrors, made of low-loss dielectric coatings upon
+	silicon resonators of various shapes and sizes. The record optical
+	finesses obtained (F = 30 000) has allowed us to measure the thermal
+	noise of the micromirrors at room temperature with a quantum-limited
+	sensitivity at the 10-19 m=pHz level and to completely characterize
+	their mechanical behaviour, in excellent agreement with the results
+	of a finite-element computation. Applications of such optomechanical
+	systems range from quantum optics experiments to the experimental
+	demonstration of the quantum ground state of a macroscopic mechanical
+	resonator.},
+  owner = {Dan},
+  timestamp = {2008.08.04}
+}
+
+@BOOK{BkSchaum,
+  title = {Theory and Problems of Quantum Mechanics},
+  publisher = {McGraw-Hill},
+  year = {1998},
+  editor = {Barbara Gilson},
+  author = {Peleg, Yoav and Pnini, Reuven and Zaarur, Elyahu},
+  pages = {80-97},
+  owner = {Dan},
+  timestamp = {2008.09.17}
+}
+
+@ARTICLE{Planck1901,
+  author = {Maxwell Planck},
+  title = {On the Law of Distribution of Energy in the Normal Spectrum},
+  journal = {Annalen der Physik},
+  year = {1901},
+  volume = {4},
+  pages = {553 ff},
+  owner = {Dan},
+  timestamp = {2008.10.02}
+}
+
+@ARTICLE{Drever1983,
+  author = {R.W.P. Drever, and J.L. Hall and F.V. Kowalski, and J. Hough and
+	G.M. Ford and A.J. Munley and H. Ward},
+  title = {Laser phase and frequency stabilization using an optical resonator},
+  journal = {Appl. Phys. B},
+  year = {1983},
+  volume = {31},
+  pages = {97},
+  owner = {Dan},
+  timestamp = {2008.07.08}
+}
+
+@ARTICLE{Saulson1990,
+  author = {Saulson, Peter R.},
+  title = {Thermal noise in mechanical experiments},
+  journal = {Phys. Rev. D},
+  year = {1990},
+  volume = {42},
+  pages = {2437--2445},
+  number = {8},
+  month = {Oct},
+  doi = {10.1103/PhysRevD.42.2437},
+  numpages = {8},
+  publisher = {American Physical Society}
+}
+
+@PHDTHESIS{Schediwy2007,
+  author = {S. Schediwy},
+  title = {Optical spring parametric interactions in a macroscopic three-mode
+	resonator.},
+  school = {University of Western Australia},
+  year = {2007},
+  owner = {Dan},
+  timestamp = {2008.07.04}
+}
+
+@ARTICLE{Schliesser2006,
+  author = {Schliesser, A. and Del'Haye, P. and Nooshi, N. and Vahala, K. J.
+	and Kippenberg, T. J.},
+  title = {Radiation Pressure Cooling of a Micromechanical Oscillator Using
+	Dynamical Backaction},
+  journal = {Phys. Rev. Lett.},
+  year = {2006},
+  volume = {97},
+  pages = {243905--4},
+  number = {24},
+  month = dec,
+  owner = {Dan},
+  publisher = {APS},
+  timestamp = {2008.07.16},
+  url = {http://link.aps.org/abstract/PRL/v97/e243905}
+}
+
+@ARTICLE{Schleisser2007,
+  author = {A. Schliesser and R. Riviere and G. Anetsberger and O. Arcizet and
+	T.~J. Kippenberg},
+  title = {Resolved Sideband Cooling of a Micromechanical Oscillator},
+  journal = {arXiv},
+  year = {2007},
+  volume = {0709.4036},
+  owner = {Dan},
+  url = {http://www.citebase.org/abstract?id=oai:arXiv.org:0709.4036}
+}
+
+@BOOK{Siegman1986,
+  title = {Lasers},
+  publisher = {University Science Books},
+  year = {1986},
+  editor = {Aidan Kelly},
+  author = {Anthony E. Siegman},
+  pages = {756-758},
+  keywords = {Hemispherical cavity},
+  owner = {Dan},
+  timestamp = {2008.08.11}
+}
+
+@BOOK{Siegman1986A,
+  title = {Lasers},
+  publisher = {University Science Books},
+  year = {1986},
+  editor = {Aidan Kelly},
+  author = {Anthony E. Siegman},
+  pages = {626-697},
+  note = {Gaussian beams section},
+  keywords = {Hemispherical cavity},
+  owner = {Dan},
+  timestamp = {2008.08.11}
+}
+
+@MISC{Stace2008,
+  author = {Tom Stace},
+  title = {Quantum Optics lecture notes},
+  year = {2008},
+  owner = {Dan},
+  timestamp = {2008.09.17},
+  url = {http://physics.uwa.edu.au/page/115450}
+}
+
+@MISC{Stace2008B,
+  author = {Stace, Tom},
+  title = {Personal Communication},
+  year = {2008},
+  owner = {Dan},
+  timestamp = {2008.09.21}
+}
+
+@BOOK{BkPhonons,
+  title = {Phonons in nanostructures},
+  publisher = {Cambridge University Press},
+  year = {2001},
+  author = {Michael A. Stroscio and Mitra Dutta},
+  pages = {35-40},
+  owner = {Dan},
+  timestamp = {2008.09.17}
+}
+
+@ARTICLE{Thompson2008,
+  author = {Thompson, J. D. and Zwickl, B. M. and Jayich, A. M. and Marquardt,
+	Florian and Girvin, S. M. and Harris, J. G. E.},
+  title = {Strong dispersive coupling of a high-finesse cavity to a micromechanical
+	membrane},
+  journal = {Nature},
+  year = {2008},
+  volume = {452},
+  pages = {72--75},
+  number = {7183},
+  month = mar,
+  comment = {10.1038/nature06715},
+  issn = {0028-0836},
+  owner = {Dan},
+  publisher = {Nature Publishing Group},
+  timestamp = {2008.10.02},
+  url = {http://dx.doi.org/10.1038/nature06715}
+}
+
+@PHDTHESIS{Tobar1993,
+  author = {Mike E. Tobar},
+  title = {Gravitational wave detection and low noise sapphire oscillators},
+  school = {University of Western Australia},
+  year = {1993},
+  owner = {Dan},
+  timestamp = {2008.10.20}
+}
+
+@ARTICLE{vinante2008,
+  author = {A. Vinante and M. Bignotto and M. Bonaldi and M. Cerdonio and L.
+	Conti and P. Falferi and N. Liguori and S. Longo and R. Mezzena and
+	A. Ortolan and G. A. Prodi and F. Salemi and L. Taffarello and G.
+	Vedovato and S. Vitale and J.-P. Zendri},
+  title = {Feedback Cooling of the Normal Modes of a Massive Electromechanical
+	System to Submillikelvin Temperature},
+  journal = {Physical Review Letters},
+  year = {2008},
+  volume = {101},
+  pages = {033601},
+  number = {3},
+  eid = {033601},
+  doi = {10.1103/PhysRevLett.101.033601},
+  numpages = {4},
+  publisher = {APS},
+  url = {http://link.aps.org/abstract/PRL/v101/e033601}
+}
+
+@ARTICLE{Vitali2007,
+  author = {Vitali, D. and Gigan, S. and Ferreira, A. and Bohm, H.R. and Tombesi,
+	P. and Guerreiro, A. and Vedral, V. and Zeilinger, A. and Aspelmeyer,
+	M.},
+  title = {Optomechanical entanglement between a movable mirror and a cavity
+	field},
+  journal = {Lasers and Electro-Optics, 2007 and the International Quantum Electronics
+	Conference. CLEOE-IQEC 2007. European Conference on},
+  year = {2007},
+  pages = {1-1},
+  month = {June},
+  doi = {10.1109/CLEOE-IQEC.2007.4386788},
+  keywords = {mirrors, quantum entanglementbright laser field, cavity field, light
+	field, mechanical oscillator, movable mirror, optomechanical entanglement}
+}
+
+@BOOK{bkQOptics,
+  title = {Quantum Optics},
+  publisher = {Springer-Verlag},
+  year = {2006},
+  author = {D.F. Walls and G.F. Milburn},
+  owner = {Dan},
+  timestamp = {2008.10.02}
+}
+
+@ARTICLE{Zhao2005,
+  author = {Zhao, C. and Ju, L. and Degallaix, J. and Gras, S. and Blair, D.
+	G.},
+  title = {Parametric Instabilities and Their Control in Advanced Interferometer
+	Gravitational-Wave Detectors},
+  journal = {Phys. Rev. Lett.},
+  year = {2005},
+  volume = {94},
+  pages = {121102--4},
+  number = {12},
+  month = apr,
+  owner = {Dan},
+  publisher = {APS},
+  timestamp = {2008.07.16},
+  url = {http://link.aps.org/abstract/PRL/v94/e121102}
+}
+
+@ARTICLE{Zhao2008,
+  author = {Zhao, C. and Ju, L. and Fan, Y. and Gras, S. and Slagmolen, B. J.
+	J. and Miao, H. and Barriga, P. and Blair, D. G. and Hosken, D. J.
+	and Brooks, A. F. and Veitch, P. J. and Mudge, D. and Munch, J.},
+  title = {Observation of three-mode parametric interactions in long optical
+	cavities},
+  journal = {Phys. Rev. A},
+  year = {2008},
+  volume = {78},
+  pages = {023807--6},
+  number = {2},
+  month = aug,
+  keywords = {acousto-optical effects, mirrors},
+  owner = {Dan},
+  publisher = {APS},
+  timestamp = {2008.10.05},
+  url = {http://link.aps.org/abstract/PRA/v78/e023807}
+}
+
+@ARTICLE{Zhao2007,
+  author = {C. Zhao and L. Ju and H.X. Miao and S. Gras and Y.Fan and D. Blair},
+  title = {Direct Amplification of Sound By Light},
+  journal = {arXiv},
+  year = {2007},
+  volume = {0802.3534v2},
+  archiveprefix = {arXiv},
+  eprint = {0710.2383},
+  owner = {Dan},
+  primaryclass = {gr-qc},
+  slaccitation = {%%CITATION = 0710.2383;%%}
+}
+
+@ARTICLE{Zwickl2008,
+  author = {Zwickl, B. M. and Shanks, W. E. and Jayich, A. M. and Yang, C. and
+	Jayich, A. C. Bleszynski and Thompson, J. D. and Harris, J. G. E.},
+  title = {High quality mechanical and optical properties of commercial silicon
+	nitride membranes},
+  journal = {Appl. Phys. Lett.},
+  year = {2008},
+  volume = {92},
+  pages = {103125--3},
+  number = {10},
+  month = mar,
+  keywords = {optical losses, silicon compounds},
+  owner = {Dan},
+  publisher = {AIP},
+  timestamp = {2008.10.02},
+  url = {http://link.aip.org/link/?APL/92/103125/1}
+}
+

@@ -1,0 +1,3297 @@
+#LyX 1.6.8 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass report
+\begin_preamble
+\usepackage{longtable}
+\end_preamble
+\use_default_options true
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Chapter*
+List of Symbols
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{List of Symbols}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\mathbf{k}$
+\end_inset
+
+ & crystal momentum
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $E_{n}\left(\mathbf{k}\right)$
+\end_inset
+
+ & electron dispersion relation
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+EFM & envelope function method
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\mathbf{E}$
+\end_inset
+
+ & electrical field
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\mathbf{B}$
+\end_inset
+
+ & magnetic field
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ & vector potential
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\phi$
+\end_inset
+
+ & scalar potential
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $H$
+\end_inset
+
+ & Hamiltonian operator
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $E_{v}$
+\end_inset
+
+ & valence band&edge energy
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $E_{c}$
+\end_inset
+
+ & conduction band&edge energy
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\Delta$
+\end_inset
+
+ & spin&orbit splitting ener
+\begin_inset Formula $\mathbf{k}$
+\end_inset
+
+ & crystal momentum
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\phi$
+\end_inset
+
+ & scalar potential
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $e$
+\end_inset
+
+ & elementary charge
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $k_{t},\, k_{\parallel}$
+\end_inset
+
+ & transverse/in&plane wavevector
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $k_{z}$
+\end_inset
+
+& wavevector parallel to the growth direction
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\psi_{n\mathbf{k}}$
+\end_inset
+
+ & particle wavefunction in a solid
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $u_{n\mathbf{k}}(\mathbf{r})$
+\end_inset
+
+ & Bloch's basis function
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\mathbf{p}_{nn'}$
+\end_inset
+
+ & momentum matrix elements
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $h_{ij}$
+\end_inset
+
+ & Hamiltonian matrix entries
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $F_{n\mathbf{k},m}(z)$
+\end_inset
+
+ & slowly&varying wavefunction envelope
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $E_{p}$
+\end_inset
+
+ & optical matrix parameter
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $P$
+\end_inset
+
+ & nonzero interband momentum matrix element
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $E_{v}$
+\end_inset
+
+ & valence band&edge energy
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $E_{c}$
+\end_inset
+
+ & conduction band&edge energy
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\boldsymbol{\sigma}$
+\end_inset
+
+ (
+\begin_inset Formula $\sigma_{x}$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma_{y}$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma_{z}$
+\end_inset
+
+) & Pauli operators
+\emph on
+ 
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\gamma_{1},\gamma_{2},\gamma_{3}$
+\end_inset
+
+ & Luttinger's parameters
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\Delta$
+\end_inset
+
+ & spin&orbit splitting energy
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $F_{hh}$
+\end_inset
+
+ & heavy&hole subband envelope function 
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $F_{lh}$
+\end_inset
+
+ & light&hole subband envelope function 
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\rho(E)$
+\end_inset
+
+ & density of states
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+DOS & density of states
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\epsilon$
+\end_inset
+
+ & permittivity of the material
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\rho(z)$
+\end_inset
+
+ & volume charge density
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\sigma(z)$
+\end_inset
+
+ & areal charge density
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+2DEG & two&dimensional electron gas
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $N(z),\, n_{e}$
+\end_inset
+
+ & electron carrier concentration
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $n_{h}$
+\end_inset
+
+ & hole carrier concentration 
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $f(E)$
+\end_inset
+
+ & 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+Fermi&Dirac distribution function
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $E_{F}$
+\end_inset
+
+ & chemical potential
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $k_{B}$
+\end_inset
+
+ & Boltzman's constant 
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $T$
+\end_inset
+
+ & ambient temperature
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $k_{F}$
+\end_inset
+
+ & Fermi wavevector
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\hat{a}_{n}^{\dagger}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{a}_{n}$
+\end_inset
+
+ & electron creation and annihilation operators
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\left|0\right\rangle $
+\end_inset
+
+ & vacuum ground state
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+FCT & free&carrier theory
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\mathcal{A}$
+\end_inset
+
+ & volume of the translational invariant direction
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\mathcal{L}$
+\end_inset
+
+ & volume of the quantized direction
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\hat{b}_{n}^{\dagger}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{b}_{n}$
+\end_inset
+
+ & hole creation and annihilation operators
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\hat{n}_{c\mathbf{k}}$
+\end_inset
+
+ & electron number operator in the conduction band
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $\hat{n}_{v\mathbf{k}}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+& hole number operator in the valence band
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\hat{p}_{vc,\mathbf{k}}$
+\end_inset
+
+ & microscopic polarization
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\boldsymbol{\mu}_{cv,\mathbf{k}}$
+\end_inset
+
+ & dipole matrix element
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\mathbf{P}$
+\end_inset
+
+ & macroscopic polarization
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\chi$
+\end_inset
+
+ & optical susceptibility
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $\mathbf{D}$
+\end_inset
+
+ & 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+electric displacement
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $k_{0}$
+\end_inset
+
+ & photo wavenumber
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\hat{e}_{i}$
+\end_inset
+
+ & unit vector
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $\chi^{\prime}$
+\end_inset
+
+ and 
+\begin_inset Formula $\chi^{\prime\prime}$
+\end_inset
+
+ & the real and imaginary parts of the optical 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+susceptibility
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $G$
+\end_inset
+
+ & medium intensity gain
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\alpha$
+\end_inset
+
+ & medium optical absorption 
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+RPA & random phase approximation
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\Re$
+\end_inset
+
+ & real part
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\Im$
+\end_inset
+
+ & imaginary part
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\gamma$
+\end_inset
+
+ & phenomenological decay rate
+\begin_inset Formula $\mathbf{k}$
+\end_inset
+
+ & crystal momentum
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $E_{n}\left(\mathbf{k}\right)$
+\end_inset
+
+ & electron dispersion relation
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+EFM & envelope function method
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\mathbf{E}$
+\end_inset
+
+ & electrical field
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\mathbf{B}$
+\end_inset
+
+ & magnetic field
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\mathbf{A}$
+\end_inset
+
+ & vector potential
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\phi$
+\end_inset
+
+ & scalar potential
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $H$
+\end_inset
+
+ & Hamiltonian operator
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $E_{v}$
+\end_inset
+
+ & valence band&edge energy
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $E_{c}$
+\end_inset
+
+ & conduction band&edge energy
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\Delta$
+\end_inset
+
+ & spin&orbit splitting ener
+\begin_inset Formula $\mathbf{k}$
+\end_inset
+
+ & crystal momentum
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\phi$
+\end_inset
+
+ & scalar potential
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $e$
+\end_inset
+
+ & elementary charge
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $k_{t}\,(k_{\parallel})$
+\end_inset
+
+ & transverse/in&plane wavevector
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $k_{z}$
+\end_inset
+
+& wavevector parallel to the growth direction
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\psi_{n\mathbf{k}}$
+\end_inset
+
+ & particle wavefunction in a solid
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $u_{n\mathbf{k}}(\mathbf{r})$
+\end_inset
+
+ & Bloch's basis function
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\mathbf{p}_{nn'}$
+\end_inset
+
+ & momentum matrix elements
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $h_{ij}$
+\end_inset
+
+ & Hamiltonian matrix entries
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $F_{n\mathbf{k},m}(z)$
+\end_inset
+
+ & slowly&varying wavefunction envelope
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $E_{p}$
+\end_inset
+
+ & optical matrix parameter
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $P$
+\end_inset
+
+ & nonzero interband momentum matrix element
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $E_{v}$
+\end_inset
+
+ & valence band&edge energy
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $E_{c}$
+\end_inset
+
+ & conduction band&edge energy
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\boldsymbol{\sigma}$
+\end_inset
+
+ (
+\begin_inset Formula $\sigma_{x}$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma_{y}$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma_{z}$
+\end_inset
+
+) & Pauli operators
+\emph on
+ 
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\gamma_{1},\gamma_{2},\gamma_{3}$
+\end_inset
+
+ & Luttinger's parameters
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\Delta$
+\end_inset
+
+ & spin&orbit splitting energy
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $F_{hh}$
+\end_inset
+
+ & heavy&hole subband envelope function 
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $F_{lh}$
+\end_inset
+
+ & light&hole subband envelope function 
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\rho(E)$
+\end_inset
+
+ & density of states
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+DOS & density of states
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\epsilon$
+\end_inset
+
+ & permittivity of the material
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\rho(z)$
+\end_inset
+
+ & volume charge density
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\sigma(z)$
+\end_inset
+
+ & areal charge density
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+2DEG & two&dimensional electron gas
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $N(z),\, n_{e}$
+\end_inset
+
+ & electron carrier concentration
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $n_{h}$
+\end_inset
+
+ & hole carrier concentration 
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $f(E)$
+\end_inset
+
+ & 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+Fermi&Dirac distribution function
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $E_{F}$
+\end_inset
+
+ & chemical potential
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $k_{B}$
+\end_inset
+
+ & Boltzman's constant 
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $T$
+\end_inset
+
+ & ambient temperature
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $k_{F}$
+\end_inset
+
+ & Fermi wavevector
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\hat{a}_{n}^{\dagger}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{a}_{n}$
+\end_inset
+
+ & electron creation and annihilation operators
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\left|0\right\rangle $
+\end_inset
+
+ & vacuum ground state
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+FCT & free&carrier theory
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\mathcal{A}$
+\end_inset
+
+ & volume of the translational invariant direction
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\mathcal{L}$
+\end_inset
+
+ & volume of the quantized direction
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\hat{b}_{n}^{\dagger}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{b}_{n}$
+\end_inset
+
+ & hole creation and annihilation operators
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\hat{n}_{c\mathbf{k}}$
+\end_inset
+
+ & electron number operator in the conduction band
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $\hat{n}_{v\mathbf{k}}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+& hole number operator in the valence band
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\hat{p}_{vc,\mathbf{k}}$
+\end_inset
+
+ & microscopic polarization
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\boldsymbol{\mu}_{cv,\mathbf{k}}$
+\end_inset
+
+ & dipole matrix element
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\mathbf{P}$
+\end_inset
+
+ & macroscopic polarization
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\chi$
+\end_inset
+
+ & optical susceptibility
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $\mathbf{D}$
+\end_inset
+
+ & 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+electric displacement
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $k_{0}$
+\end_inset
+
+ & photo wavenumber
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\hat{e}_{i}$
+\end_inset
+
+ & unit vector
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $\chi^{\prime}$
+\end_inset
+
+ and 
+\begin_inset Formula $\chi^{\prime\prime}$
+\end_inset
+
+ & the real and imaginary parts of the optical 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+susceptibility
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $G$
+\end_inset
+
+ & medium intensity gain
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\alpha$
+\end_inset
+
+ & medium optical absorption 
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+RPA & random phase approximation
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\omega_{n,m}(\mathbf{k})$
+\end_inset
+
+ & intersubband transition energy
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $N(\hbar\omega)$
+\end_inset
+
+ & photon density of states
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $r_{sp}(\hbar\omega)$
+\end_inset
+
+ & spontaneous emission rate per unit volume per unit energy
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $I_{sp}\left(\hbar\omega\right)$
+\end_inset
+
+& spontaneous emission intensity
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+KMS & Kubo&Martin&Schwinger relation
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $R_{sp}$
+\end_inset
+
+ & spontaneous emission rate per unit volume
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+HF & Hartree&Fock theory
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $\vartheta_{\mathbf{q}}$
+\end_inset
+
+ & 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+Fourier transform of the Coulomb potential
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $G_{\mathbf{q},\mathbf{k},\mathbf{k}'}^{n_{1},n_{2},n_{3},n_{4}}$
+\end_inset
+
+ & form factor
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\Omega_{\mathbf{k}}(z,t)$
+\end_inset
+
+ & Rabi frequency
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\epsilon(\mathbf{q},\omega)$
+\end_inset
+
+ & screening dielectric function
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+BGR & bandgap renormalization
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $\Delta E_{CH,n}$
+\end_inset
+
+& 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+Coulomb&hole self energy shift
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\Delta E_{SX,mn}(\mathbf{k})$
+\end_inset
+
+ & screened exchange energy shift
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\hbar\tilde{\omega}_{mn}(\mathbf{k})$
+\end_inset
+
+ & renormalized intersubband transition energy
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\Gamma_{\mathbf{k}}^{n,m}(\nu)$
+\end_inset
+
+ & Coulomb enhancement factor
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $R$
+\end_inset
+
+ & etalon reflectance
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $T$
+\end_inset
+
+ & etalon transmittance
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $F$
+\end_inset
+
+ & etalon finesse coefficient
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $n_{L},n_{H}$
+\end_inset
+
+ & the low and high refractive index of the DBR dielectric layers
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $n_{l},n_{r}$
+\end_inset
+
+ & the left& and right&hand cladding material refractive indices
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\lambda_{c}$
+\end_inset
+
+ & the center wavelength of the high reflectevity region
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $E^{+},E^{-}$
+\end_inset
+
+ & forward and backward propagating waves complex amplitudes
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $M_{i}$
+\end_inset
+
+ & the transfer matrix of the interface
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $M_{p}$
+\end_inset
+
+ & the transfer matrix of propagation in the same material
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $M_{DBR}$
+\end_inset
+
+ & the transfer matrix of a DBR structure
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $r_{DBR}$
+\end_inset
+
+ & reflection coefficient of the DBR structure
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $t_{DBR}$
+\end_inset
+
+ & transmission coefficient 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+of the DBR structure
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $R_{DBR}$
+\end_inset
+
+ & reflectance of the DBR structure
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $T_{DBR}$
+\end_inset
+
+ & transmittance of the DBR structure
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+MC & microcavity
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $M_{MC}$
+\end_inset
+
+ & the transfer matrix of the microcavity structure
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $R_{MC}$
+\end_inset
+
+& reflectance of the MC structure
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $T_{MC}$
+\end_inset
+
+& transmittance of the MC structure
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\gamma_{c}$
+\end_inset
+
+ & cavity mode linewidth
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $l_{eff}$
+\end_inset
+
+ & the effective length of the caity spacer
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $E_{ph}\left(k_{t}\right)$
+\end_inset
+
+ & MC&mode dispersion relation
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $m_{ph}$
+\end_inset
+
+ & the cavity photon in&plane effective mass
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $H_{F}$
+\end_inset
+
+ & 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+Fock Hamiltonian
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $f\left(\mathbf{r}\right)$
+\end_inset
+
+ & complex vector function of the polarization and relative amplitude of
+ the cavity mode
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $H_{A}$
+\end_inset
+
+ & the Hamiltonian of a two&level absorber system
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $H_{I}$
+\end_inset
+
+ & the interaction Hamiltonian in the dipole approximation
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\Omega$
+\end_inset
+
+ & the atom&field coupling constant
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\gamma_{cav},\,\gamma_{abs}$
+\end_inset
+
+ & cavity and absorber damping factors
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $Q$
+\end_inset
+
+ & the cavity quality factor
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Formula $\gamma_{X}$
+\end_inset
+
+ & exciton linewidth
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Formula $E_{X}\left(\mathbf{k}_{t}\right)$
+\end_inset
+
+ & exciton energy
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align left
+LDM & linear dispersion model
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+FWHM & full width at half maximum
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{flushleft}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{longtable}{ l l }   
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+mathbf{k}$ & crystal momentum 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$E_{n}
+\backslash
+left(
+\backslash
+mathbf{k}
+\backslash
+right)$ & electron dispersion relation 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+EFM & envelope function method 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+mathbf{E}$ & electrical field 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+mathbf{B}$ & magnetic field 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+mathbf{A}$ & vector potential 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+phi$ & scalar potential 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$H$ & Hamiltonian operator 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$E_{v}$ & valence band-edge energy
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$E_{c}$ & conduction band-edge energy
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+Delta$ & spin-orbit splitting energy
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+mathbf{k}$ & crystal momentum
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+phi$ & scalar potential
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$e$ & elementary charge
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$k_{t}
+\backslash
+ (k_{
+\backslash
+parallel})$ & transverse/in-plane wavevector 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$k_{z}$ & wavevector parallel to the growth direction
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+psi_{n
+\backslash
+mathbf{k}}$ & particle wavefunction in a solid
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$u_{n
+\backslash
+mathbf{k}}(
+\backslash
+mathbf{r})$ & Bloch's basis function
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+mathbf{p}_{nn'}$ & momentum matrix elements
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$h_{ij}$ & Hamiltonian matrix entries
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$F_{n
+\backslash
+mathbf{k},m}(z)$ & slowly-varying wavefunction envelope
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$E_{p}$ & optical matrix parameter
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$P$ & nonzero interband momentum matrix element
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$E_{v}$ & valence band-edge energy
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$E_{c}$ & conduction band-edge energy
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+boldsymbol{
+\backslash
+sigma} (
+\backslash
+sigma_{x}, 
+\backslash
+sigma_{y}, 
+\backslash
+sigma_{z})$ & Pauli operators 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+gamma_{1},
+\backslash
+gamma_{2},
+\backslash
+gamma_{3}$ & Luttinger's parameters
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+Delta$ & spin-orbit splitting energy
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$F_{hh}$ & heavy-hole subband envelope function 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$F_{lh}$ & light-hole subband envelope function 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+rho(E)$ & density of states
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+DOS & density of states
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+epsilon$ & permitivity of the material
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+rho(z)$ & volume charge density
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+sigma(z)$ & areal charge density
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+2DEG & two-dimensional electron gas
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$N(z),
+\backslash
+, n_{e}$ & electron carrier concentration
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$n_{h}$ & hole carrier concentration 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$N_{2DEG},
+\backslash
+, n_{e}$ & 2DEG concentration
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$f(E)$ & Fermi-Dirac distribution function
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$E_{F}$ & the Fermi level energy or the chemical potential
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$k_{B}$ & Boltzman's constant 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$T$ & ambient temperature
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$k_{F}$ & Fermi wavevector
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+hat{a}_{n}^{
+\backslash
+dagger}$ and $
+\backslash
+hat{a}_{n}$ & electron creation and annihilation operators
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+left|0
+\backslash
+right
+\backslash
+rangle$  & vacuum ground state
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+FCT & free-carrier theory
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+mathcal{A}$ & volume of the translational invariant direction
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+mathcal{L}$ & volume of the quantized direction
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+hat{b}_{n}^{
+\backslash
+dagger}$ and $
+\backslash
+hat{b}_{n}$ & hole creation and annihilation operators
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+hat{n}_{c
+\backslash
+mathbf{k}}$ & electron number operator in the conduction band
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+hat{n}_{v
+\backslash
+mathbf{k}}$ & hole number operator in the valence band
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+hat{p}_{vc,
+\backslash
+mathbf{k}}$ & microscopic polarization
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+boldsymbol{
+\backslash
+mu}_{cv,
+\backslash
+mathbf{k}}$ & dipole matrix element
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+mathbf{P}$ & macroscopic polarization
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+chi$ & optical susceptibility
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+mathbf{D}$ & electric displacement
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$k_{0}$ & photo wavenumber
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+hat{e}_{i}$ & unit vector
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+chi^{
+\backslash
+prime}$ and $
+\backslash
+chi^{
+\backslash
+prime
+\backslash
+prime}$ & the real and imaginary parts of the optical susceptibility
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$G$ & medium intensity gain
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+alpha$ & medium optical absorption 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+Re$ & real part
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+Im$ & imaginary part
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+gamma$ & phenomenological decay rate
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+RPA & random phase approximation
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+omega_{n,m}(
+\backslash
+mathbf{k})$ & intersubband transition energy
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$N(
+\backslash
+hbar
+\backslash
+omega)$ & photon density of states
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$r_{sp}(
+\backslash
+hbar
+\backslash
+omega)$ & spontaneous emission rate per unit volume per unit energy
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$I_{sp}
+\backslash
+left(
+\backslash
+hbar
+\backslash
+omega
+\backslash
+right)$ & spontaneous emission intensity
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+KMS & Kubo-Martin-Schwinger relation
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$R_{sp}$ & spontaneous emission rate per unit volume
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+HF & Hartree-Fock theory
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+vartheta_{
+\backslash
+mathbf{q}}$ & Fourier transform of the Coulomb potential
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$G_{
+\backslash
+mathbf{q},
+\backslash
+mathbf{k},
+\backslash
+mathbf{k}'}^{n_{1},n_{2},n_{3},n_{4}}$ & form factor
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+Omega_{
+\backslash
+mathbf{k}}(z,t)$ & Rabi frequency
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+epsilon(
+\backslash
+mathbf{q},
+\backslash
+omega)$ & screening dielectric function
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+BGR & bandgap renormalization
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+Delta E_{CH,n}$ & Coulomb-hole self energy shift
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+Delta E_{SX,mn}(
+\backslash
+mathbf{k})$ & screened exchange energy shift
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+hbar
+\backslash
+tilde{
+\backslash
+omega}_{mn}(
+\backslash
+mathbf{k})$ & renormalized intersubband transition energy
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+Gamma_{
+\backslash
+mathbf{k}}^{n,m}(
+\backslash
+nu)$ & Coulomb enhancement factor
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$R$ & etalon reflectance
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$T$ & etalon transmittance
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$F$ & etalon finesse coefficient
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$n_{L},n_{H}$ & the low and high refractive index of the DBR dielectric
+ layers
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$n_{l},n_{r}$ & the left- and right-hand cladding material refractive indices
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+lambda_{c}$ & the center wavelength of the high reflectevity region
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$E^{+},E^{-}$ & forward and backward propagating waves complex amplitudes
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$M_{i}$ & the transfer matrix of the interface
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$M_{p}$ & the transfer matrix of propagation in the same material
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$M_{DBR}$ & the transfer matrix of a DBR structure
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$r_{DBR}$ & reflection coefficient of the DBR structure
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$t_{DBR}$ & transmission coefficient of the DBR structure
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$R_{DBR}$ & reflectance of the DBR structure
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$T_{DBR}$ & transmittance of the DBR structure
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+MC & microcavity
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$M_{MC}$ & the transfer matrix of the microcavity structure
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$R_{MC}$ & reflectance of the MC structure
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$T_{MC}$ & transmittance of the MC structure
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+gamma_{c}$ & cavity mode linewidth
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$l_{eff}$ & the effective length of the caity spacer
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$E_{ph}
+\backslash
+left(k_{t}
+\backslash
+right)$ & MC mode dispersion relation
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$m_{ph}$ & the cavity photon in-plane effective mass
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$H_{F}$ & Fock Hamiltonian
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$f
+\backslash
+left(
+\backslash
+mathbf{r}
+\backslash
+right)$ & complex vector function of the polarization and relative amplitude
+ of the cavity mode
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$H_{A}$ & the Hamiltonian of a two-level absorber system
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$H_{I}$ & the interaction Hamiltonian in the dipole approximation
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+Omega$ & the atom-field coupling constant
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+gamma_{cav},
+\backslash
+,
+\backslash
+gamma_{abs}$ & cavity and absorber damping factors
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$Q$ & the cavity quality factor
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$
+\backslash
+gamma_{X}$ & exciton linewidth
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+$E_{X}
+\backslash
+left(
+\backslash
+mathbf{k}_{t}
+\backslash
+right)$ & exciton energy
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+LDM & linear dispersion model
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+FWHM & full width at half maximum
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{longtable}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{flushleft}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

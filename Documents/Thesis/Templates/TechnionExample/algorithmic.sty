@@ -1,0 +1,155 @@
+%%%  ALGORITHMIC  REVISITED
+
+%  ALGORITHMIC  STYLE  --  Released  8  APRIL  1996
+%        for  LaTeX  version  2e
+%  Copyright  --  1994  Peter  Williams
+%  E-mail  PeterWilliams@dsto.defence.gov.au
+\NeedsTeXFormat{LaTeX2e} \ProvidesPackage{algorithmic}
+\typeout{Document  Style  `algorithmic'  -  environment}
+%
+\RequirePackage{ifthen} \RequirePackage{calc}
+\newboolean{ALC@noend}
+\setboolean{ALC@noend}{false}
+\newcounter{AlgLnoNum}
+\newcounter{AlgLnoRem}
+\newlength{\ALC@tlm}
+%
+\DeclareOption{noend}{\setboolean{ALC@noend}{true}}
+%
+\ProcessOptions
+%
+%%%  ALGORITHMIC  REVISITED
+
+%  ALGORITHMIC
+\newcommand{\AlgTxtRequire}{\textbf{Require:}}
+\newcommand{\AlgTxtEnsure}{\textbf{Ensure:}}
+\newcommand{\AlgTxtComment}[1]{\{#1\}}
+\newcommand{\AlgTxtEnd}{\textbf{end}}
+\newcommand{\AlgTxtIf}{\textbf{if}}
+\newcommand{\AlgTxtThen}{\textbf{then}}
+\newcommand{\AlgTxtElse}{\textbf{else}}
+\newcommand{\AlgTxtElsif}{\AlgTxtElse\  \AlgTxtIf}
+\newcommand{\AlgTxtEndif}{\AlgTxtEnd\  \AlgTxtIf}
+\newcommand{\AlgTxtFor}{\textbf{for}}
+\newcommand{\AlgTxtForall}{\textbf{for  all}}
+\newcommand{\AlgTxtDo}{\textbf{do}}
+\newcommand{\AlgTxtEndfor}{\AlgTxtEnd\  \AlgTxtFor}
+\newcommand{\AlgTxtWhile}{\textbf{while}}
+\newcommand{\AlgTxtEndwhile}{\AlgTxtEnd\  \AlgTxtWhile}
+\newcommand{\AlgTxtLoop}{\textbf{loop}}
+\newcommand{\AlgTxtEndloop}{\AlgTxtEnd\  \AlgTxtLoop}
+\newcommand{\AlgTxtRepeat}{\textbf{repeat}}
+\newcommand{\AlgTxtUntil}{\textbf{until}}
+
+%%%  le  coeur  de  la  chose
+\def\AlgItem[#1]{%
+\if@noparitem  \@donoparitem
+    \else  \if@inlabel  \indent  \par  \fi
+                  \ifhmode  \unskip\unskip  \par  \fi
+                  \if@newlist  \if@nobreak  \@nbitem  \else
+                                                \addpenalty\@beginparpenalty
+                                                \addvspace\@topsep  \addvspace{-\parskip}\fi
+                      \else  \addpenalty\@itempenalty  \addvspace\itemsep
+                    \fi
+        \global\@inlabeltrue
+\fi \everypar{\global\@minipagefalse\global\@newlistfalse
+                    \if@inlabel\global\@inlabelfalse  \hskip  -\parindent  \box\@labels
+                          \penalty\z@  \fi
+                    \everypar{}}\global\@nobreakfalse
+\if@noitemarg  \@noitemargfalse  \if@nmbrlist
+\refstepcounter{\@listctr}\fi  \fi
+\sbox\@tempboxa{\makelabel{#1}}%
+\global\setbox\@labels
+  \hbox{\unhbox\@labels  \hskip  \itemindent
+              \hskip  -\labelwidth  \hskip  -\ALC@tlm
+              \ifdim  \wd\@tempboxa  >\labelwidth
+                                \box\@tempboxa
+                    \else  \hbox  to\labelwidth  {\unhbox\@tempboxa}\fi
+              \hskip  \ALC@tlm}\ignorespaces}
+%
+
+%%%  nouvel  environnement  :  {avant}{apres}
+\newenvironment{algorithmic}[1][0]{
+
+\let\@item\AlgItem
+
+\newcommand{\AlgLnoSay}{\ifthenelse{\equal{\arabic{AlgLnoRem}}{0}}{{\footnotesize  \arabic{AlgLnoNum}:}}{}}
+
+\let\@listii\@listi
+\let\@listiii\@listi
+\let\@listiv\@listi
+\let\@listv\@listi
+\let\@listvi\@listi
+\let\@listvii\@listi
+
+    \newenvironment{AlgEnvBlock}{
+  \begin{list}{\AlgLnoSay}{  \itemsep\z@  \itemindent\z@  \listparindent\z@  \rightmargin\z@
+        \topsep\z@  \partopsep\z@  \parskip\z@\parsep\z@
+        \leftmargin  1em
+        \addtolength{\ALC@tlm}{\leftmargin}
+        }
+    }
+    {\end{list}}
+
+    \newcommand{\ALC@it}{\addtocounter{AlgLnoNum}{1}\addtocounter{AlgLnoRem}{1}\ifthenelse{\equal{\arabic{AlgLnoRem}}{#1}}{\setcounter{AlgLnoRem}{0}}{}\item}
+    \newcommand{\AlgCommentIfAny}[1]{\ifthenelse{\equal{##1}{default}}{}{\  \AlgTxtComment{##1}}}
+    \newcommand{\REQUIRE}{\item[\AlgTxtRequire]}
+    \newcommand{\ENSURE}{\item[\AlgTxtEnsure]}
+    \newcommand{\STATE}{\ALC@it}
+    \newcommand{\COMMENT}[1]{\AlgTxtComment{##1}}
+    \newenvironment{AlgEnvIf}{\begin{AlgEnvBlock}}{\end{AlgEnvBlock}}
+    \newenvironment{AlgEnvFor}{\begin{AlgEnvBlock}}{\end{AlgEnvBlock}}
+    \newenvironment{AlgEnvWhile}{\begin{AlgEnvBlock}}{\end{AlgEnvBlock}}
+    \newenvironment{AlgEnvLoop}{\begin{AlgEnvBlock}}{\end{AlgEnvBlock}}
+    \newenvironment{AlgEnvRepeat}{\begin{AlgEnvBlock}}{\end{AlgEnvBlock}}
+    \renewcommand{\\}{\@centercr}
+
+%    \newcommand{\DEF}[1]{\item[{\bfseries  \scshape  \ignorespaces  ##1}  :=  {\bfseries  }]  }
+%    \newcommand{\DEF}[2]  {\ALC@it  {\bfseries  \scshape  \ignorespaces  ##1}  :=  \ignorespaces  ##2  }
+    \newcommand{\DEF}[2]  {\item[{\bfseries  \scshape  \ignorespaces  ##1}  :=  {\bfseries  proc\,}{\ignorespaces  ##2}]}
+    \newcommand{\LOCAL}    {\item[  ~  \textbf{local}  \ignorespaces  ]  }
+    \newcommand{\LOCALS}  {;  \textbf{local}  \ignorespaces  }
+    \newcommand{\GLOBAL}  {;  \textbf{global}  \ignorespaces  }
+    \newcommand{\RETURN}      {\textbf{return}  \ignorespaces  }
+    \newcommand{\ERROR}      {\textbf{error}  \ignorespaces  }
+    \newcommand{\BREAK}      {\textbf{break}  \ignorespaces  }
+    \newcommand{\FROM}      {\textbf{from}  \ignorespaces  }
+    \newcommand{\TO}      {\textbf{to}  \ignorespaces  }
+
+    \newcommand{\IF}[2][default]{\ALC@it\AlgTxtIf\  ##2\  \AlgTxtThen\AlgCommentIfAny{##1}\begin{AlgEnvIf}}
+    \newcommand{\ELSE}[1][default]{\end{AlgEnvIf}\ALC@it\AlgTxtElse\AlgCommentIfAny{##1}\begin{AlgEnvIf}}
+    \newcommand{\ELSIF}[2][default]{\end{AlgEnvIf}\ALC@it\AlgTxtElsif\  ##2\  \AlgTxtThen\AlgCommentIfAny{##1}\begin{AlgEnvIf}}
+    \newcommand{\FOR}[2][default]{\ALC@it\AlgTxtFor\  ##2\  \AlgTxtDo\AlgCommentIfAny{##1}\begin{AlgEnvFor}}
+    \newcommand{\FORALL}[2][default]{\ALC@it\AlgTxtForall\  ##2\  \AlgTxtDo\AlgCommentIfAny{##1}\begin{AlgEnvFor}}
+    \newcommand{\WHILE}[2][default]{\ALC@it\AlgTxtWhile\  ##2\  \AlgTxtDo\AlgCommentIfAny{##1}\begin{AlgEnvWhile}}
+    \newcommand{\LOOP}[1][default]{\ALC@it\AlgTxtLoop\AlgCommentIfAny{##1}\begin{AlgEnvLoop}}
+    \newcommand{\REPEAT}[1][default]{\ALC@it\AlgTxtRepeat\AlgCommentIfAny{##1}\begin{AlgEnvRepeat}}
+    \newcommand{\UNTIL}[1]{\end{AlgEnvRepeat}\ALC@it\AlgTxtUntil\  ##1}
+
+    \newcommand{\IFS}[1]        {\ALC@it\AlgTxtIf\  ##1\  \AlgTxtThen  }
+    \newcommand{\ELSES}          {\ALC@it\AlgTxtElse\  }
+    \newcommand{\ELSIFS}[1]  {\ALC@it\AlgTxtElsif\  ##1\  \AlgTxtThen  }
+    \newcommand{\ENDIFS}        {\AlgTxtEndif}
+    \newcommand{\FORS}[1]      {\ALC@it\AlgTxtFor  ##1\  \AlgTxtDo  }
+    \newcommand{\ENDFORS}      {\AlgTxtEndfor}
+
+    \ifthenelse{\boolean{ALC@noend}}{
+        \newcommand{\ENDIF}{\end{AlgEnvIf}}
+        \newcommand{\ENDFOR}{\end{AlgEnvFor}}
+        \newcommand{\ENDWHILE}{\end{AlgEnvWhile}}
+        \newcommand{\ENDLOOP}{\end{AlgEnvLoop}}
+    }{
+        \newcommand{\ENDIF}{\end{AlgEnvIf}\ALC@it\AlgTxtEndif}
+        \newcommand{\ENDFOR}{\end{AlgEnvFor}\ALC@it\AlgTxtEndfor}
+        \newcommand{\ENDWHILE}{\end{AlgEnvWhile}\ALC@it\AlgTxtEndwhile}
+        \newcommand{\ENDLOOP}{\end{AlgEnvLoop}\ALC@it\AlgTxtEndloop}
+    }
+    \renewcommand{\@toodeep}{}
+
+    \begin{list}{\AlgLnoSay}{\setcounter{AlgLnoNum}{0}\setcounter{AlgLnoRem}{0}%
+    \itemsep\z@  \itemindent\z@  \listparindent\z@  \partopsep\z@  \parskip\z@  \parsep\z@
+    \labelsep  0.5em  \topsep  0.2em  \ifthenelse{\equal{#1}{0}}  {\labelwidth  0.5em  }  {\labelwidth  1.2em  }
+\leftmargin\labelwidth  \addtolength{\leftmargin}{\labelsep}
+        \ALC@tlm\labelsep
+    }
+} {\end{list}}

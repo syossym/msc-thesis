@@ -1,0 +1,143 @@
+#LyX 1.6.0rc3 created this file. For more info see http://www.lyx.org/
+\lyxformat 340
+\begin_document
+\begin_header
+\textclass report
+\options a4paper,titlepage
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 0
+\cite_engine natbib_authoryear
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Chapter*
+Acknowledgments
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In my life, whenever two roads have diverged in a yellow wood, I have always
+ had someone there to guide me.
+ And so unlike Robert Frost in his 1920 poem 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+The Road Not Taken
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+, I have never been required to make a decision upon which path to travel.
+ This may explain my quasi-phobia of decision making, although my Mother
+ attributes this to my starsign: Librans are epitomised by scales, so require
+ balance and consequently have trouble weighing up decisions.
+ In any case, I have ended up where I am because of the support I have received,
+ and I have received much.
+ I have not so much needed to choose 
+\emph on
+The Road Not Taken
+\emph default
+, as have had it chosen for me.
+ And it 
+\emph on
+has
+\emph default
+ made all the difference.
+ 
+\end_layout
+
+\begin_layout Standard
+I would like to thank all the people who have guided me in my life.
+ Thank you to my family (Chris, Tim and Jen), whose emotional support and
+ love has made my life a joy.
+ Thank you to Lindall, for being the light at the end.
+ And thank you to those lecturers and academic staff who have spurred me
+ on toward something great and my fellow honours students for making the
+ journey enjoyable.
+ I owe much to these people, who have helped me to sculpt my life into something
+ beautiful.
+\end_layout
+
+\begin_layout Standard
+I owe special thanks to all those who have made the completion of my honours
+ and my thesis a reality.
+ Thank you Zhao, for imparting so much of your time and knowledge; I've
+ learnt so much from you.
+ Thank you David, the conductor of 
+\begin_inset Quotes eld
+\end_inset
+
+the whispers of the universe
+\begin_inset Quotes erd
+\end_inset
+
+ group, and of course Ju Li, for all your support throughout the concerto.
+ A special thanks also to Haixing, for his company in Paris and mathematical
+ prowess, as well as the other dwellers of room 2-52.
+ I would also like to thank those at LKB in France: my time there was rewarding,
+ enjoyable and in short, amazing.
+ Thanks to Pierre-Francois for getting out of bed to pick me up early on
+ a Sunday morning; to Antione for his positivity and wisdom; and an especially
+ warm thanks to Chiara, for all of her help in the 
+\emph on
+manip
+\emph default
+ and for making sure Haixing and I wore our safety glasses and didn't electrocut
+e ourselves.
+ This thesis is but a weighted sum of fragments of knowledge you've all
+ imparted to me.
+ I am in your debt.
+\end_layout
+
+\end_body
+\end_document

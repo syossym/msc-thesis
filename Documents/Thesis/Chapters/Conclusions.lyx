@@ -1,0 +1,299 @@
+#LyX 1.6.8 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass report
+\use_default_options true
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Chapter*
+Summary and Outlook
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{Summary and Outlook}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this work we presented a theoretical study of the various aspects of
+ light-matter interactions taking place in variety of quantum structures,
+ such as bare quantum wells and semiconductor microcavities, and the influence
+ of the introduced 2DEG on their optical properties.
+ 
+\end_layout
+
+\begin_layout Standard
+We start our discussion in chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Electronic_Properties_Semiconductors"
+
+\end_inset
+
+ by presenting the electronic properties of quantum well structures.
+ After a general introduction of the approximate 
+\begin_inset Formula $\mathbf{k\cdot p}$
+\end_inset
+
+ approach, we concern ourselves with the two-band variation of this method,
+ mainly due to its implementation simplicity.
+ Using this approach we calculate the dispersion relations of the conduction
+ and valence subbands in a bulk semiconductor and single bare quantum well.
+ The influence of the crystallographic orientation on the results is examined
+ and found to be minor in the relevant portion of the 
+\begin_inset Formula $k$
+\end_inset
+
+-space.
+ This observation allows us to simplify our calculations by assuming full
+ angular symmetry of the QW in the 
+\begin_inset Formula $k$
+\end_inset
+
+-space without a substantial loss to the generality.
+ Next, we consider the introduction of doping inside the quantum well and
+ explore its influence on the electronic properties.
+ To this end, we add to our quantum mechanical approach a complementary
+ electrostatic part in the form of Poisson equation solution for the specific
+ charge distribution.
+ Through this approach we attain doping dependent corrections to the band
+ edges of the considered QW, which introduce minor corrections to the conduction
+ and valence subband energies in the middle of the first Brillouin region.
+ 
+\end_layout
+
+\begin_layout Standard
+Once we have obtained the electronic properties of bare QWs with introduced
+ 2DEG of various concentrations, we turn to the investigation of the optical
+ properties of these structures.
+ Our approach to this task is semi-classical in its core, where only the
+ matter, i.e.
+ the semiconductor, is treated quantum mechanically.
+ In chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Free_Carriers_Optical_Transitions"
+
+\end_inset
+
+, we first assume that the carriers present in the semiconductor are free
+ and noninteracting, and only simple dephasing mechanism is used.
+ We complicate this simple picture in chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Coulomb_Correlated_Optical_Transitions"
+
+\end_inset
+
+ by the introduction of Coulombic interaction between the electrons and
+ holes in the structure, together with a simple screening scheme to model
+ the influence of the introduced high concentration 2DEG.
+ Although these models are both approximate in nature, they enable us to
+ compute various optical parameters of the bare QWs under the assumption
+ of dipole interaction of the electronic system with the optical field.
+ Using this approach we compute the electrical susceptibility and spontaneous
+ emission spectra of the structure, through which the absorption and refractive
+ indices can be easily computed.
+ This computation is then performed for QWs with and without the presence
+ of 2DEG carriers inside the well region, and for a wide diapason of these
+ carriers' concentrations, all these for various ambient temperatures.
+ By comparing the computation results of these two models, we reach the
+ expected conclusion that the introduction of the Coulombic interaction
+ changes dramatically the obtained results.
+ The introduced Coulomb enhancement of reproduces strong bellow-bandgap
+ resonance lines for the undoped QW absorption and spontaneous emission
+ spectra, which are in good agreement with other theoretical models discussed
+ in literature.
+ The observed bandgap renormalization for the Coulomb correlated model results
+ also match the classical theoretical dependence of the 2DEG carriers concentrat
+ion.
+ The results of the doped QW spectra computation lead to several noticeable
+ effects.
+ First, the introduction of additional 2DEG carriers leads to a significant
+ reduction in the strength of the observed absorption resonance lines, causing
+ their effective disappearance for concentrations above 
+\begin_inset Formula $\approx6\times10^{10}\, cm^{-2}$
+\end_inset
+
+.
+ Second, the added 2DEG carriers lead to the appearance of a characteristic
+ inhomogeneous broadened line in the spontaneous emission at low ambient
+ temperature of 
+\begin_inset Formula $2\, K$
+\end_inset
+
+.
+ Finally, through the dynamics of the spontaneous emission and the absorption
+ spectra with the 2DEG carriers concentration, we observe a Burstein-Moss
+ shift causing a split between the two types of spectra for high concentrations.
+ As a consequence of the attained results for the bare QW, we chose the
+ Coulomb correlated model to be used for the modeling of such structures
+ in the subsequent calculations.
+ 
+\end_layout
+
+\begin_layout Standard
+Being in a position to model the electronic and optical properties of a
+ bare QW, we next consider microcavities and their optical properties in
+ chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Microcavity"
+
+\end_inset
+
+.
+ First we consider the reflectivity properties of such structures and the
+ numerical method for their calculation, followed by a short discussion
+ of the coupling of a quantum mechanical absorber with the light field mode
+ inside the cavity region.
+ The results of the bare QW optical properties calculations are incorporated
+ into the full MC reflectivity computation through an altered form of the
+ linear dispersion model, effectively introducing a QW inside the cavity
+ region of the MC.
+ This procedure enables us to perform an investigation of the reflection
+ spectra of the entire MC structure, and thereby investigate the coupling
+ of the cavity mode with the various bare QW resonances.
+ The reflection spectra of the MC with undoped QW inside the cavity region
+ revealed a strong coupling of the cavity mode with the various QW resonances,
+ seen through the characteristic splittings of the anti-crossing curves
+ in the regions of interaction.
+ This observation is backed by the the parameters of a fit of the anti-crossing
+ curves with the coupled oscillator model.
+ Moreover, the polariton admixing coefficients, extracted through the fitting
+ procedure, reaffirm this observation.
+ As the next logical step, a doped bare QW is introduced inside the cavity
+ region of the MC and the reflection spectra are calculated for various
+ values of 2DEG concentration.
+ The most striking feature of the obtained reflection anti-crossing curves
+ is the appearance of strong coupling between the cavity mode photon and
+ certain QW resonances at relatively high 2DEG concentrations, in contrast
+ to the observed disappearance of all such resonances for the bare QW.
+ By comparing the energetic locations of these resonances to the bare QW
+ allowed energetic transitions, we identify them to be unbound electron-hole
+ resonances at the Fermi edge energy.
+ This finding coincides with earlier experimental results 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gabbay2007"
+
+\end_inset
+
+ for similar structures, and stands as the central finding of this work.
+ When we compare the coupling strength parametes, extracted using the coupled
+ oscillator fit of the reflection anti-crossing curves for various 2DEG
+ concentrations, we find them to be generally larger from those obtained
+ for the undoped QW case.
+ This indicates to a higher coupling of the found electron-hole resonances
+ with the cavity mode than the bare QW case.
+ We conclude by stating that the main mechanism for the coherence between
+ all the electron-hole pair excitations interacting with the confined cavity
+ mode is the strong interaction itself, despite the existence of Coulomb
+ attraction between the electron and hole.
+ 
+\end_layout
+
+\begin_layout Standard
+Although this work presents a complete theoretical framework for the calculation
+ of the optical properties of MC with embedded QWs, further research should
+ be performed to gain better understanding of the origin of the strong interacti
+on between the confined cavity mode and the electron-hole pair resonances
+ at the Fermi edge.
+ Here we present several possible pathways that may taken to address this
+ issues:
+\end_layout
+
+\begin_layout Itemize
+As we have stated above, both the free carrier and Coulomb correlated models,
+ used to calculate the bare QW electrical susceptibility, do not take into
+ account higher order correlation effects and relaxation mechanisms.
+ Such extensions are farely easy to introduce into the current framework,
+ probably at the expense of computational complexity.
+\end_layout
+
+\begin_layout Itemize
+In addition to the improved modelling of the bare QW, a cavity dampling
+ mechanism can be introduced to the MC modeling in order to approximate
+ the cavity mode behavior to the physical reality.
+\end_layout
+
+\begin_layout Itemize
+An angular calculation of the reflection spectra of the MC with embedded
+ QW can be performed, in order to obtain the dispersion relation of the
+ various polaritonic branches and thereby attain a better insight into their
+ electronic nature.
+\end_layout
+
+\begin_layout Itemize
+In addition to the calculation of the reflection spectra of the entire MC,
+ the spontaneous emission spectra should also be calculated and compared.
+\end_layout
+
+\begin_layout Itemize
+Since excitons and unbound electrons and holes exhibit very different dependence
+ on magnetic field (respectively diamagnetic and linear), the electronic
+ model of the bare QW should be extended to include the influence of external
+ magnetic field.
+ Dispersion calculations in weak magnetic fields should provide a clue as
+ to the nature of the various polaritonic branches.
+ 
+\end_layout
+
+\begin_layout Itemize
+The temperature analysis performed in this work for the bare QW should be
+ extended to the full MC calculations, especially when the linewidths of
+ the various polaritonic branches are considered, as it may facilitate in
+ differentiating between excitons and unbound electron-hole pair resonances.
+ 
+\end_layout
+
+\end_body
+\end_document

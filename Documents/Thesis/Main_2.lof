@@ -1,0 +1,74 @@
+\select@language {english}
+\select@language {english}
+\deactivateaddvspace 
+\select@language {american}
+\select@language {english}
+\select@language {english}
+\select@language {english}
+\select@language {english}
+\select@language {english}
+\select@language {english}
+\select@language {american}
+\select@language {english}
+\select@language {english}
+\select@language {english}
+\select@language {american}
+\select@language {english}
+\select@language {english}
+\select@language {american}
+\select@language {english}
+\select@language {english}
+\addvspace {10\p@ }
+\select@language {english}
+\select@language {english}
+\select@language {english}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1}{\ignorespaces Schematic representation of electronic functions in a crystal (a) potential plotted along a row of atoms, (b) free electron wave function, (c) amplitude factor of Bloch function having the periodicity of the lattice, and (d) Bloch function $\psi $ (after \citet {Piprek2003})\relax }}{7}{figure.caption.6}
+\contentsline {figure}{\numberline {2}{\ignorespaces Schematic band structure classification in the L\"{o}wdin perturbation theory.\relax }}{9}{figure.caption.7}
+\contentsline {figure}{\numberline {3}{\ignorespaces Band structure of bulk $GaAs$ around the $\Gamma $ point at room temperature, calculated using the $8\times 8$ $\mathbf {k}\cdot \mathbf {p}$ for two crystal directions.\relax }}{18}{figure.caption.8}
+\contentsline {figure}{\numberline {4}{\ignorespaces Contours of constant energy within any $[100]$ plane of $k$-space for the heavy (right) and light (left) hole subbands in bulk $GaAs$. The energy spacing between each contour level is $0.5\tmspace +\thinmuskip {.1667em} meV$ for the HH band and $3\tmspace +\thinmuskip {.1667em} meV$ for the LH band. The effective HH mass is much larger along the$\left [110\right ]$ direction than along the $\left [100\right ]$ direction, as indicated by the larger contour spacing. The effective LH mass is seen to be much more isotropic (after \citet {Zory1993}). \relax }}{23}{figure.caption.9}
+\contentsline {figure}{\numberline {5}{\ignorespaces The \textquotedbl {}in-plane\textquotedbl {} subband structure of the quantum well in the conduction band. Within the plane of the well, the electron still behaves like a \textquotedbl {}free\textquotedbl {} electron. Thus, for each quantized level, a parabolic energy subband exist (after \citet {Zory1993}).\relax }}{23}{figure.caption.10}
+\contentsline {figure}{\numberline {6}{\ignorespaces At any one enrgy on a bulk material, we can find four wavevectors corresponding to the heavy and light hole bands. An eigenstate of the Hamiltonian in a quantum well is then madde of a linear combination of the bulk plane waves corresponding to those wave vectors. The amplitudes $A_{\pm }$ and $B_{\pm }$ in (a) correspond, respectively, to $\pm k_{z1}$(light hole) and $\pm k_{z2}$ in (b) for the well layer of the quantum well ($GaAs$ throughout this thesis). In the barriers ($AlGaAs)$ a similar mechanism is employed. The boundary conditions at the interfaces then determine the energy eigenvalues and the coefficients.\relax }}{23}{figure.caption.11}
+\contentsline {figure}{\numberline {7}{\ignorespaces (a) Valence subbands dispersion relations calculated for a $100\r A$ wide $GaAs/Al_{0.3}Ga_{0.7}As$ quantum well, for {[}100{]} crystal plane. The subbands are named after their dominant character at the zone center ($k_{t}=0$). (b) The ratio between the density of states of the valence subbands and the first conduction subband, calculated for the same structure. \relax }}{24}{figure.caption.12}
+\contentsline {figure}{\numberline {8}{\ignorespaces Electric field strength from an infinite plane of charge of volume density $d(z)$ and thickness $\delta z$ (after \citet {harrison_quantum_2000}).\relax }}{25}{figure.caption.13}
+\contentsline {figure}{\numberline {9}{\ignorespaces Areal charge density a for a $100\tmspace +\thinmuskip {.1667em}\r A$ $GaAs$ well, $n$-type doped to $2\times 10^{18}cm^{-3}$, surrounded by undoped $Ga_{0.8}Al_{0.2}As$ 4 meVbarriers.\relax }}{26}{figure.caption.14}
+\contentsline {figure}{\numberline {10}{\ignorespaces The electric field strength $\mathbf {E}$ due to the charge distribution shown in Fig. \ref {fig:Areal_charge_density_Ex}.\relax }}{27}{figure.caption.15}
+\contentsline {figure}{\numberline {11}{\ignorespaces The potential due to the ionised donor/electron charge distribution.\relax }}{27}{figure.caption.16}
+\contentsline {figure}{\numberline {12}{\ignorespaces Block diagram illustrating the process of self-consistent iteration.\relax }}{28}{figure.caption.17}
+\contentsline {figure}{\numberline {13}{\ignorespaces The sum of the band-edge potential $V_{CB}$ and Poisson's potential $V_{\rho }$ for single quantum well.\relax }}{28}{figure.caption.18}
+\select@language {english}
+\contentsline {figure}{\numberline {14}{\ignorespaces The band-edge potential (solid blue) and the self-consistent potential (dotted red) of a modulation-doped single quantum well.\relax }}{28}{figure.caption.19}
+\select@language {american}
+\select@language {english}
+\addvspace {10\p@ }
+\select@language {english}
+\select@language {english}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {15}{\ignorespaces Infinite hierarchy of operator products for the equtions of motion.\relax }}{52}{figure.caption.20}
+\contentsline {figure}{\numberline {16}{\ignorespaces Schematic representation of the Hartree-Fock approximation operator product in the equation of motion.\relax }}{52}{figure.caption.21}
+\contentsline {figure}{\numberline {17}{\ignorespaces Outline of an approach that takes advantage of a phenomenological derivation of plasma screening, which is incorporated directly into the many-body Hamiltonian to give the screened Hartree-Fock equations (after \citet {Chow}). \relax }}{55}{figure.caption.22}
+\select@language {english}
+\select@language {english}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {18}{\ignorespaces Fabri-Perot etalon multiple reflections.\relax }}{61}{figure.caption.23}
+\contentsline {figure}{\numberline {19}{\ignorespaces Resonator transmittance function for various values of mirror reflectrance $R$. $\delta \lambda $ is the full-width half-maximum of the transmission band.\relax }}{62}{figure.caption.24}
+\contentsline {figure}{\numberline {20}{\ignorespaces Schematic illustration of a Distributed Bragg Reflector (DBR). $z$ represents the growth direction of the layered structure.\relax }}{62}{figure.caption.25}
+\contentsline {figure}{\numberline {21}{\ignorespaces Simulation of a DBR structure with 35 alternating high and low layers, where (a) is the refreactive index profile as a function of the growth axis, (b) the amplitude and phase of the normal incidence reflection function this structure as a fucntion of normalized wavelength, $\lambda /\lambda _{c}$, and (c) the same amplitude as a function of the phase acquired by the EM field at each layer, $\phi =\frac {2\pi l_{i}n_{i}}{\lambda }$.\relax }}{65}{figure.caption.26}
+\contentsline {figure}{\numberline {22}{\ignorespaces Microcavity schematic structure.\relax }}{66}{figure.caption.27}
+\contentsline {figure}{\numberline {23}{\ignorespaces Simulation of a microcavity with two DBR's with 35 alternating high and low refractive index layers each, where (a) is the refreactive index profile as a function of the growth axis, (b) the amplitude and phase of the normal incidence reflection function this structure as a fucntion of normalized wavelength, $\lambda /\lambda _{c}$, and (c) the same amplitude as a function of the phase acquired by the EM field at each layer, $\phi =\frac {2\pi l_{i}n_{i}}{\lambda }$. The inset in (c) shows the reflection profile in the vicinity of $\phi =\frac {\pi }{2}$.\relax }}{67}{figure.caption.28}
+\select@language {english}
+\select@language {english}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\select@language {american}
+\select@language {english}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {24}{\ignorespaces Program flow for self-consistent solution of Schr\"{o}dinger -Poisson under equilibrium condition with given donator concentration.\relax }}{82}{figure.caption.33}
+\select@language {american}
+\select@language {english}
+\select@language {english}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {25}{\ignorespaces Change in the carrier distribution due to an electron at the origin (after \citet {Chow1994}).\relax }}{83}{figure.caption.34}
+\select@language {english}
+\select@language {american}
+\select@language {english}

@@ -1,0 +1,102 @@
+\selectlanguage{english}%
+
+\chapter{Lindhard Screening Model}
+
+\label{cha:Appendix_Screening}To implement the screened Hartree-Fock
+approximation in chapter \ref{cha:Coulomb_Correlated_Optical_Transitions},
+we need a screening model. One approach is to use a self-consistent
+quantum theory of plasma screening involving arguments from classical
+electrodynamics and quantum mechanics \citet{Chow1994}. Given an
+electron at the origin of our coordinate system, we wish to know what
+effect this electron has on its surroundings. To find out, we introduce
+a test charge, i.e., a charge sufficiently small as to cause negligible
+perturbation. In vacuum, the electrostatic potential due to the electron
+is $\phi(r)=e/r$. However, in a semiconductor there is a background
+dielectric constant $\epsilon_{b}$ which is due to everything in
+the semiconductor in the absence of the carriers themselves. Furthermore,
+there is the carrier distribution that is changed by the presence
+of the test electron at the origin %
+\begin{figure}
+\begin{centering}
+\includegraphics{\string"C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/4_Lindhard_Screening\string".eps}
+\par\end{centering}
+
+\caption{\label{fig:Lindhards_Formula_Schematic}Change in the carrier distribution
+due to an electron at the origin (after \citet{Chow1994}).}
+
+\end{figure}
+ (see Fig. \ref{fig:Lindhards_Formula_Schematic}). The new carrier
+distribution, $\left\langle n_{s}(\mathbf{r})\right\rangle $, in
+turn changes the electrostatic potential. We denote the carrier density
+distribution as an expectation value since we plan to calculate it
+quantum mechanically. To derive the induced carrier distribution,
+we first simplify the problem by assuming that the screening effects
+of an electron-hole plasma equal the sum of the effects resulting
+from the separate electron and hole plasmas. As such we neglect excitonic
+screening, which is not a bad approximation for the elevated carrier
+densities present in conventional semiconductor heterostructures.
+The density distribution operator can be defined as \begin{eqnarray}
+\hat{n}(\mathbf{r}) & = & \psi^{\dagger}(\mathbf{r})\psi(\mathbf{r})\nonumber \\
+ & = & \frac{1}{V}\sum_{\mathbf{k},\mathbf{k}'}e^{i\left(\mathbf{k}-\mathbf{k}'\right)\cdot\mathbf{r}}\hat{a}_{\mathbf{k}'}^{\dagger}\hat{a}_{\mathbf{k}}\nonumber \\
+ & = & \sum_{\mathbf{q}}n_{\mathbf{q}}e^{i\mathbf{q}\cdot\mathbf{r}},\label{eq:Density_Distribution_Operator}\end{eqnarray}
+where \begin{equation}
+n_{\mathbf{q}}=\frac{1}{V}\sum_{\mathbf{k}}\hat{a}_{\mathbf{k}-\mathbf{q}}^{\dagger}\hat{a}_{\mathbf{k}}\end{equation}
+is the Fourier amplitude of the density distribution operator. Starting
+with the electron plasma, we can note from \ref{eq:Density_Distribution_Operator}
+that the corresponding quantum-mechanical operator for the screened
+electron charge distribution is $e\hat{n}_{s}(\mathbf{r})$ with\begin{eqnarray}
+\hat{n}_{s}(\mathbf{r}) & = & \frac{1}{V}\sum_{\mathbf{k},\mathbf{k}'}e^{i\left(\mathbf{k}-\mathbf{k}'\right)\cdot\mathbf{r}}\hat{a}_{\mathbf{k}-\mathbf{q}}^{\dagger}\hat{a}_{\mathbf{k}}\\
+ & = & \sum_{\mathbf{q}}n_{s\mathbf{q}}e^{i\mathbf{q}\cdot\mathbf{r}}.\end{eqnarray}
+Here, the Fourier transform of the density operator is given by $n_{s\mathbf{q}}=\frac{1}{V}\sum_{\mathbf{k}}\hat{a}_{\mathbf{k}-\mathbf{q}}^{\dagger}\hat{a}_{\mathbf{k}}$,
+and $V$ is the volume of the semiconductor medium. In a rigorous
+treatment we would use the electronic part of the many-body Hamiltonian
+to obtain an equation of motion for $n_{s\mathbf{q}}$. At the level
+of a self-consistent Hartree-Fock approach, we can treat screening
+effects on the basis of an effective single-particle Hamiltonian \begin{equation}
+\hat{H}_{eff}=\sum_{\mathbf{k}}E_{e}(\mathbf{k})\hat{a}_{\mathbf{k}}^{\dagger}\hat{a}_{\mathbf{k}}\mathbf{-}V\sum_{\mathbf{q}}V_{s\mathbf{q}}n_{s,-\mathbf{q}},\label{eq:Effective_Single_Particle_Hamiltonian}\end{equation}
+where \begin{equation}
+V_{s\mathbf{q}}=\frac{1}{V}\int d^{3}rV_{s}(r)e^{-i\mathbf{q}\cdot\mathbf{r}},\end{equation}
+with $V_{s}(r)=e\phi_{s}(r)$, and $\phi_{s}(r)$ is the screened
+electrostatic potential.
+
+With the effective Hamiltonian \ref{eq:Effective_Single_Particle_Hamiltonian},
+we get the equation of motion \begin{eqnarray}
+i\hbar\frac{d}{dt}\hat{a}_{\mathbf{k}-\mathbf{q}}^{\dagger}\hat{a}_{\mathbf{k}} & = & \left[\hat{a}_{\mathbf{k}-\mathbf{q}}^{\dagger}\hat{a}_{\mathbf{k}},\hat{H}_{eff}\right]\nonumber \\
+ & = & \left(E_{e}(\mathbf{k})-E_{e}(\mathbf{k}-\mathbf{q})\right)\hat{a}_{\mathbf{k}-\mathbf{q}}^{\dagger}\hat{a}_{\mathbf{k}}\nonumber \\
+ &  & +\sum_{\mathbf{p}}V_{s\mathbf{p}}\left(\hat{a}_{\mathbf{k}-\mathbf{q}}^{\dagger}\hat{a}_{\mathbf{k}+\mathbf{p}}-\hat{a}_{\mathbf{k}-\mathbf{q}-\mathbf{p}}^{\dagger}\hat{a}_{\mathbf{k}}\right).\end{eqnarray}
+Taking the expectation value and keeping only slowly varying terms,
+namely those with $\mathbf{p}=-\mathbf{q}$, we get \begin{eqnarray}
+i\hbar\frac{d}{dt}\left\langle \hat{a}_{\mathbf{k}-\mathbf{q}}^{\dagger}\hat{a}_{\mathbf{k}}\right\rangle  & = & \left(E_{e}(\mathbf{k})-E_{e}(\mathbf{k}-\mathbf{q})\right)\left\langle \hat{a}_{\mathbf{k}-\mathbf{q}}^{\dagger}\hat{a}_{\mathbf{k}}\right\rangle \nonumber \\
+ &  & +V_{s\mathbf{q}}\left(n_{\mathbf{k}-\mathbf{q}}-n_{\mathbf{q}}\right).\label{eq:Distribution_Function_Eq_Motion}\end{eqnarray}
+We suppose that $\left\langle \hat{a}_{\mathbf{k}-\mathbf{q}}^{\dagger}\hat{a}_{\mathbf{k}}\right\rangle $
+has solution of the form $e^{\left(\delta-i\omega\right)t}$, where
+the infinitesimal $\delta$ indicates that the perturbation has been
+switched on adiabatically, i.e., that we had a homogeneous plasma
+at $t=-\infty$. We further suppose that the induced charge distribution
+follows this response. This transforms \ref{eq:Distribution_Function_Eq_Motion}
+to \begin{equation}
+\left\langle \hat{a}_{\mathbf{k}-\mathbf{q}}^{\dagger}\hat{a}_{\mathbf{k}}\right\rangle =V_{s\mathbf{q}}\frac{n_{\mathbf{k}-\mathbf{q}}-n_{\mathbf{q}}}{\hbar\left(\omega+i\delta\right)-E_{e}(\mathbf{k})+E_{e}(\mathbf{k}-\mathbf{q})}\end{equation}
+and \begin{equation}
+\left\langle n_{s\mathbf{q}}\right\rangle =\frac{V_{s\mathbf{q}}}{V}\sum_{\mathbf{k}}\frac{n_{\mathbf{k}-\mathbf{q}}-n_{\mathbf{q}}}{\hbar\left(\omega+i\delta\right)-E_{e}(\mathbf{k})+E_{e}(\mathbf{k}-\mathbf{q})}.\label{eq:Distribution_Expectation_Value}\end{equation}
+The induced charge distribution is a source in Poisson's equation
+\begin{equation}
+\nabla^{2}\phi_{s}(r)=-\frac{4\pi e}{\epsilon_{b}}\left[n_{e}(\mathbf{r})+\left\langle n_{s\mathbf{q}}\right\rangle \right].\end{equation}
+The Fourier transform of this equation is \begin{equation}
+\phi_{s\mathbf{q}}=\frac{4\pi e}{\epsilon_{b}q^{2}}\left(\frac{1}{V}+\left\langle n_{s\mathbf{q}}\right\rangle \right),\label{eq:Potential_Fourier_Transform}\end{equation}
+where for a point charge at the origin \begin{equation}
+n_{e\mathbf{q}}=\frac{1}{V}\int d^{3}r\delta^{3}\left(\mathbf{r}\right)e^{-i\mathbf{q}\cdot\mathbf{r}}=\frac{1}{V}.\end{equation}
+Using $V_{s\mathbf{q}}\equiv e\phi_{s\mathbf{q}}$, substitute \ref{eq:Distribution_Expectation_Value}
+into \ref{eq:Potential_Fourier_Transform} and sove for $V_{s\mathbf{q}}$
+to find \begin{equation}
+V_{s\mathbf{q}}=V_{\mathbf{q}}\left(1-V_{q}\sum_{\mathbf{k}}\frac{n_{\mathbf{k}-\mathbf{q}}-n_{\mathbf{q}}}{\hbar\left(\omega+i\delta\right)-E_{e}(\mathbf{k})+E_{e}(\mathbf{k}-\mathbf{q})}\right)^{-1},\end{equation}
+where $V_{q}$ is the unscreened Coulomb potential. Repeating the
+derivation for the hole plasma, and adding the electron and hole contributions,
+we find the screened Coulomb potential energy between carriers \ \begin{equation}
+V_{s\mathbf{q}}=\frac{V_{\mathbf{q}}}{\epsilon_{\mathbf{q}}(\omega)},\end{equation}
+where the longitudinal dielectric function is given by \begin{equation}
+\epsilon_{\mathbf{q}}(\omega)=1-V_{\mathbf{q}}\sum_{n\mathbf{k}}\frac{n_{n,\mathbf{k}-\mathbf{q}}-n_{n,\mathbf{q}}}{\hbar\left(\omega+i\delta\right)-E_{n}(\mathbf{k})+E_{n}(\mathbf{k}-\mathbf{q})}\end{equation}
+This equation is the Lindhard formula. It describes a complex retarded
+dielectric function, i.e., the poles are in the lower complex frequency
+plane, and it includes spatial dispersion ($\mathbf{q}$ dependence)
+and spectral dispersion ($\omega$ dependence). \selectlanguage{english}
+

@@ -1,0 +1,235 @@
+
+\chapter{Two Band Model Numerical Implementation}
+
+\label{cha:Appendix_Two_Band_Numerics}The method used to solve the
+Hamiltonian equations in the two-band model is based on the shooting
+method formulated in \citealp{harrison_quantum_2000} for the simple
+case of the conduction band.
+
+As a starting point, we consider the general one-dimensional form
+of the Hamiltonian equation \ref{eq:Effective_Mass_Equation}. In
+order to allow for a location dependent effective mass, we rewrite
+this equation as\begin{equation}
+\left(\begin{array}{cc}
+\hat{H}_{hh}+V(z) & \hat{W}\\
+\hat{W}^{\dagger} & \hat{H}_{lh}+V(z)\end{array}\right)\left(\begin{array}{c}
+F_{hh}\\
+F_{lh}\end{array}\right)=E(\mathbf{k})\left(\begin{array}{c}
+F_{hh}\\
+F_{lh}\end{array}\right),\end{equation}
+with \begin{eqnarray}
+\hat{H}_{lh} & = & -\frac{\partial}{\partial z}\left(\gamma_{1}(z)+2\gamma_{2}(z)\right)\frac{\partial}{\partial z}+\left(\gamma_{1}(z)-\gamma_{2}(z)\right)k_{t}^{2},\\
+\hat{H}_{hh} & = & -\frac{\partial}{\partial z}\left(\gamma_{1}(z)-2\gamma_{2}(z)\right)\frac{\partial}{\partial z}+\left(\gamma_{1}(z)+\gamma_{2}(z)\right)k_{t}^{2},\\
+\hat{W} & = & \left\{ \begin{array}{c}
+\begin{array}{c}
+\sqrt{3}k_{t}\left(\gamma_{2}(z)k_{t}-2\gamma_{3}(z)\frac{\partial}{\partial z}\right)\,\,\,\textrm{for}\,[100]\end{array}\\
+\begin{array}{c}
+\sqrt{3}k_{t}\left(\gamma_{3}(z)k_{t}-2\gamma_{3}(z)\frac{\partial}{\partial z}\right)\,\,\,\textrm{for}\,[110]\end{array}\end{array}\right.\end{eqnarray}
+The potential $V(z)$ describes the valence band edge of the quantum
+well structure (in terms of hole energy), and $F_{hh}$ and $F_{lh}$
+represent the hole wavefunction while under the effective mass and
+envelope function approximations.
+
+We can rewrite the effective mass equations as \begin{equation}
+\left(\begin{array}{cc}
+\hat{H}_{hh}+V(z)-E & \hat{W}\\
+\hat{W}^{\dagger} & \hat{H}_{lh}+V(z)-E\end{array}\right)\left(\begin{array}{c}
+F_{hh}\\
+F_{lh}\end{array}\right)=0.\end{equation}
+The problem now is to find a numerical method for the the solution
+of both the energy eigenvalues $E$ and the eigenfunctions $F$ for
+any $V(z)$. For this purpose, we can expand the first and second
+derivatives in terms of finite differences. The first derivative of
+a function $f(z)$ can be approximated to \begin{equation}
+\frac{df}{dz}\approx\frac{\Delta f}{\Delta z}=\frac{f(z+\delta z)-f(z-\delta z)}{2\delta z}.\label{eq:Finite_Dif_1_Der}\end{equation}
+The second derivative follows as \begin{eqnarray}
+\frac{d^{2}f}{dz^{2}} & \approx & \frac{\left.\frac{df}{dz}\right|_{z+\delta z}-\left.\frac{df}{dz}\right|_{z-\delta z}}{2\delta z}\nonumber \\
+ & = & \frac{f(z+2\delta z)-2f(z)+f(z-2\delta z)}{(2\delta z)^{2}}.\label{eq:Finite_Diff_2_Der}\end{eqnarray}
+As $\delta z$ is an, as yet, undefined small step along the $z$-axis,
+and as it only appears in equation \ref{eq:Finite_Diff_2_Der}with
+the factor 2, then we can simplify this expression by substituting
+$\delta z$ for $2\delta z$\begin{equation}
+\frac{d^{2}f}{dz^{2}}\approx\frac{f(z+\delta z)-2f(z)+f(z-\delta z)}{(\delta z)^{2}}.\end{equation}
+
+
+Let us focus on the term $\hat{H}_{lh}^{0}=-\frac{\partial}{\partial z}\left(\gamma_{1}+2\gamma_{2}\right)\frac{\partial}{\partial z}$
+in the light hole Hamiltonian, and express it in terms of finite differences.
+We can rewrite this term as\begin{equation}
+\hat{H}_{lh}^{0}=-\frac{\partial}{\partial z}\left(\gamma_{1}(z)+\gamma_{2}(z)\right)\frac{\partial F_{lh}}{\partial z}+\left(\gamma_{1}(z)+\gamma_{2}(z)\right)\frac{\partial^{2}F_{lh}}{\partial z^{2}}.\end{equation}
+However, the shooting equations derived from this point by expanding
+the derivatives in terms of finite differences have led to significat
+computational inaccuracies in systems with a large discountinuous
+change in the effective mass (the Luttinger parameters), as occurs
+in the $GaAs/AlGaAs$ system. The source of the inaccuracies is thought
+to arise from the $\delta$-function nature of the effective mass
+derivative.
+
+A more robust shceme can be derived by expanding $\hat{H}_{lh}^{0}$
+starting from the left-hand derivative \begin{equation}
+\hat{H}_{lh}^{0}\approx\frac{\left.\left(\gamma_{1}+\gamma_{2}\right)\frac{\partial F_{lh}}{\partial z}\right|_{z+\delta z}-\left.\left(\gamma_{1}+\gamma_{2}\right)\frac{\partial F_{lh}}{\partial z}\right|_{z-\delta z}}{2\delta z}.\end{equation}
+Recalling the centered finite difference expansion for the first derivative
+\ref{eq:Finite_Dif_1_Der}, we can write the numenator of the above
+expression as \begin{eqnarray}
+2\delta z\hat{H}_{lh}^{0} & = & \left.\left(\gamma_{1}+2\gamma_{2}\right)\right|_{z+\delta z}\frac{F_{lh}(z+2\delta z)-F_{lh}(z)}{2\delta z}\nonumber \\
+ &  & \left.\left(\gamma_{1}+2\gamma_{2}\right)\right|_{z-\delta z}\frac{F_{lh}(z)-F_{lh}(z-2\delta z)}{2\delta z},\end{eqnarray}
+or \begin{eqnarray}
+(2\delta z)^{2}\hat{H}_{lh}^{0} & = & \left.\left(\gamma_{1}+2\gamma_{2}\right)\right|_{z+\delta z}\left[F_{lh}(z+2\delta z)-F_{lh}(z)\right]\nonumber \\
+ &  & \left.\left(\gamma_{1}+2\gamma_{2}\right)\right|_{z-\delta z}\left[F_{lh}(z)-F_{lh}(z-2\delta z)\right].\end{eqnarray}
+Making the transformation $2\delta z\rightarrow\delta z$ then yields
+\begin{eqnarray}
+\hat{H}_{lh}^{0} & = & \frac{1}{(\delta z)^{2}}\left[\left(\gamma_{1}-2\gamma_{2}\right)^{+}F_{lh}(z+\delta z)\right.\nonumber \\
+ &  & -\left(\left(\gamma_{1}-2\gamma_{2}\right)^{+}+\left(\gamma_{1}-2\gamma_{2}\right)^{-}\right)F_{lh}(z)\nonumber \\
+ &  & \left.+\left(\gamma_{1}-2\gamma_{2}\right)^{-}F_{lh}(z-\delta z)\right],\end{eqnarray}
+with \begin{eqnarray}
+\left(\gamma_{1}+2\gamma_{2}\right)^{+} & = & \left.\left(\gamma_{1}+2\gamma_{2}\right)\right|_{z+\delta z/2},\\
+\left(\gamma_{1}+2\gamma_{2}\right)^{-} & = & \left.\left(\gamma_{1}+2\gamma_{2}\right)\right|_{z-\delta z/2},\\
+\left(\gamma_{1}-2\gamma_{2}\right)^{+} & = & \left.\left(\gamma_{1}-2\gamma_{2}\right)\right|_{z+\delta z/2},\\
+\left(\gamma_{1}-2\gamma_{2}\right)^{-} & = & \left.\left(\gamma_{1}-2\gamma_{2}\right)\right|_{z-\delta z/2}.\end{eqnarray}
+We now substitute the finite difference expressions for $\partial/\partial z$,
+$\hat{H}_{lh}^{0}$ and a similar expression for the heavy-hole counterpart
+into the effective mass equations, and obtain\begin{eqnarray}
+0 & = & -\frac{\left(\gamma_{1}-2\gamma_{2}\right)^{+}}{(\delta z)^{2}}F_{hh}(z+\delta z)+\frac{\left(\gamma_{1}-2\gamma_{2}\right)^{+}+\left(\gamma_{1}-2\gamma_{2}\right)^{-}}{(\delta z)^{2}}F_{hh}(z)\nonumber \\
+ &  & -\frac{\left(\gamma_{1}-2\gamma_{2}\right)^{-}}{(\delta z)^{2}}F_{hh}(z-\delta z)+(\gamma_{1}+\gamma_{2})k_{t}^{2}F_{hh}(z)\nonumber \\
+ &  & +\left(V(z)-E\right)F_{hh}(z)+\sqrt{3}\gamma_{2}k_{t}^{2}F_{lh}(z)-2\sqrt{3}\gamma_{3}k_{t}\frac{F_{lh}(z+\delta z)-F_{lh}(z-\delta z)}{2\delta z},\\
+0 & = & \sqrt{3}\gamma_{2}k_{t}^{2}F_{hh}(z)+2\sqrt{3}\gamma_{3}k_{t}k_{t}\frac{F_{hh}(z+\delta z)-F_{hh}(z-\delta z)}{2\delta z}\nonumber \\
+ &  & -\frac{\left(\gamma_{1}+2\gamma_{2}\right)^{+}}{(\delta z)^{2}}F_{lh}(z+\delta z)+\frac{\left(\gamma_{1}+2\gamma_{2}\right)^{+}+\left(\gamma_{1}+2\gamma_{2}\right)^{-}}{(\delta z)^{2}}F_{lh}(z)\nonumber \\
+ &  & -\frac{\left(\gamma_{1}+2\gamma_{2}\right)^{-}}{(\delta z)^{2}}F_{lh}(z-\delta z)+(\gamma_{1}-\gamma_{2})k_{t}^{2}F_{lh}(z)+\left(V(z)-E\right)F_{lh}(z).\end{eqnarray}
+The Luttinger parameters $\gamma_{i}$ can be found at the intermediary
+points $z\pm\delta z/2$ by taking the mean of the two neighboring
+points $z$ and $z\pm\delta z$.
+
+It can be seen that we draw up a set of finite difference equations
+if we map the potential $V(z)$ and the Luttinger parameters $\gamma_{i}$
+to a grid along the $z$-axis. To solve these coupled equations and
+find the energies $E$ and functions $F$ we assume a equidistant
+grid $z_{i}$, with a grid step $\delta z$, we can substitute $z\rightarrow z_{i}$,
+$z-\delta z\rightarrow z_{i-1}$ and $z+\delta z\rightarrow z_{i+1}$.
+If we assume a given energy $E$, we are still left with 6 unknown
+parameters in the finite difference equations. However, we can rewrite
+these equations so that we are able to find $F_{lh}(z_{i+1})$ and
+$F_{hh}(z_{i+1})$ from their values at the two previous nodes, $z_{i-1}$
+and $z_{i}$\begin{multline}
+F_{hh}(z_{i+1})\left[1+3\frac{\gamma_{3}^{2}}{\left(\gamma_{1}+2\gamma_{2}\right)^{+}\left(\gamma_{1}-2\gamma_{2}\right)^{-}}k_{t}^{2}(\delta z)^{2}\right]=\\
+F_{hh}(z_{i-1})\left[-\frac{\left(\gamma_{1}-2\gamma_{2}\right)^{-}}{\left(\gamma_{1}-2\gamma_{2}\right)^{+}}+3\frac{\gamma_{3}^{2}}{\left(\gamma_{1}+2\gamma_{2}\right)^{+}\left(\gamma_{1}-2\gamma_{2}\right)^{+}}k_{t}^{2}(\delta z)^{2}\right]\\
++F_{lh}(z_{i-1})\left[\sqrt{3}\frac{\gamma_{3}}{\left(\gamma_{1}-2\gamma_{2}\right)^{+}}k_{t}\delta z\left(1+\frac{\left(\gamma_{1}+2\gamma_{2}\right)^{-}}{\left(\gamma_{1}+2\gamma_{2}\right)^{+}}\right)\right]\\
+F_{hh}(z_{i})\left[\frac{\left(\gamma_{1}-2\gamma_{2}\right)^{+}+\left(\gamma_{1}-2\gamma_{2}\right)^{-}}{\left(\gamma_{1}-2\gamma_{2}\right)^{+}}+\frac{\gamma_{1}+\gamma_{2}}{\left(\gamma_{1}-2\gamma_{2}\right)^{+}}k_{t}^{2}(\delta z)^{2}\right.\\
++\left.\frac{V(z_{i})-E}{\left(\gamma_{1}-2\gamma_{2}\right)^{+}}(\delta z)^{2}-3\frac{\gamma_{3}\gamma_{2}}{\left(\gamma_{1}+2\gamma_{2}\right)^{+}\left(\gamma_{1}-2\gamma_{2}\right)^{+}}k_{t}^{3}(\delta z)^{3}\right]\\
++F_{lh}(z_{i})\left[\sqrt{3}\frac{\gamma_{2}}{\left(\gamma_{1}-2\gamma_{2}\right)^{+}}k_{t}^{2}(\delta z)^{2}\right.\\
+-\sqrt{3}\frac{\gamma_{3}}{\left(\gamma_{1}-2\gamma_{2}\right)^{+}}\frac{\left(\gamma_{1}+2\gamma_{2}\right)^{+}+\left(\gamma_{1}+2\gamma_{2}\right)^{-}}{\left(\gamma_{1}+2\gamma_{2}\right)^{+}}k_{t}\delta z\\
+-\sqrt{3}\frac{\gamma_{3}\left(\gamma_{1}-\gamma_{2}\right)}{\left(\gamma_{1}+2\gamma_{2}\right)^{+}\left(\gamma_{1}-2\gamma_{2}\right)^{+}}k_{t}^{3}(\delta z)^{3}\\
+\left.-\sqrt{3}\frac{\gamma_{3}}{\left(\gamma_{1}+2\gamma_{2}\right)^{+}\left(\gamma_{1}-2\gamma_{2}\right)^{+}}\left(V(z_{i})-E\right)k_{t}(\delta z)^{3}\right],\end{multline}
+\begin{multline}
+F_{lh}(z_{i+1})\left[1+3\frac{\gamma_{3}^{2}}{\left(\gamma_{1}+2\gamma_{2}\right)^{+}\left(\gamma_{1}-2\gamma_{2}\right)^{+}}k_{t}^{2}(\delta z)^{2}\right]=\\
+F_{lh}(z_{i-1})\left[-\frac{\left(\gamma_{1}+2\gamma_{2}\right)^{-}}{\left(\gamma_{1}+2\gamma_{2}\right)^{+}}+3\frac{\gamma_{3}^{2}}{\left(\gamma_{1}+2\gamma_{2}\right)^{+}\left(\gamma_{1}-2\gamma_{2}\right)^{+}}k_{t}^{2}(\delta z)^{2}\right]\\
++F_{hh}(z_{i-1})\left[\sqrt{3}\frac{\gamma_{3}}{\left(\gamma_{1}+2\gamma_{2}\right)^{+}}k_{t}\delta z\left(1+\frac{\left(\gamma_{1}-2\gamma_{2}\right)^{-}}{\left(\gamma_{1}-2\gamma_{2}\right)^{+}}\right)\right]\\
+F_{lh}(z_{i})\left[\frac{\left(\gamma_{1}+2\gamma_{2}\right)^{+}+\left(\gamma_{1}+2\gamma_{2}\right)^{-}}{\left(\gamma_{1}+2\gamma_{2}\right)^{+}}+\frac{\gamma_{1}-\gamma_{2}}{\left(\gamma_{1}+2\gamma_{2}\right)^{+}}k_{t}^{2}(\delta z)^{2}\right.\\
++\left.\frac{V(z_{i})-E}{\left(\gamma_{1}+2\gamma_{2}\right)^{+}}(\delta z)^{2}+3\frac{\gamma_{3}\gamma_{2}}{\left(\gamma_{1}+2\gamma_{2}\right)^{+}\left(\gamma_{1}-2\gamma_{2}\right)^{+}}k_{t}^{3}(\delta z)^{3}\right]\\
++F_{hh}(z_{i})\left[\sqrt{3}\frac{\gamma_{2}}{\left(\gamma_{1}+2\gamma_{2}\right)^{+}}k_{t}^{2}(\delta z)^{2}\right.\\
++\sqrt{3}\frac{\gamma_{3}}{\left(\gamma_{1}+2\gamma_{2}\right)^{+}}\frac{\left(\gamma_{1}-2\gamma_{2}\right)^{+}+\left(\gamma_{1}-2\gamma_{2}\right)^{-}}{\left(\gamma_{1}-2\gamma_{2}\right)^{+}}k_{t}\delta z\\
++\sqrt{3}\frac{\gamma_{3}\left(\gamma_{1}+\gamma_{2}\right)}{\left(\gamma_{1}+2\gamma_{2}\right)^{+}\left(\gamma_{1}-2\gamma_{2}\right)^{+}}k_{t}^{3}(\delta z)^{3}\\
+\left.+\sqrt{3}\frac{\gamma_{3}}{\left(\gamma_{1}+2\gamma_{2}\right)^{+}\left(\gamma_{1}-2\gamma_{2}\right)^{+}}\left(V(z_{i})-E\right)k_{t}(\delta z)^{3}\right].\end{multline}
+These equations imply that, if the wavefunctions are known at the
+two points $z-\delta z$ and $z$, then the value at $z+\delta z$
+can be determined for any energy $E$. This iterative equation forms
+the bais of a standard method of solving equations numerically, and
+is known as the \emph{shooting method}.
+
+The equations can be rewritten in a matrix notation, which allows
+easy programical implementation. Using a coefficient notation for
+these two equations of the form\begin{eqnarray}
+F_{hh}(z_{i+1}) & = & a_{1}F_{hh}(z_{i-1})+a_{2}F_{lh}(z_{i-1})+a_{3}F_{lh}(z_{i})+a_{4}F_{hh}(z_{i}),\\
+F_{lh}(z_{i+1}) & = & b_{1}F_{hh}(z_{i-1})+b_{2}F_{lh}(z_{i-1})+b_{3}F_{hh}(z_{i})+b_{4}F_{lh}(z_{i}),\end{eqnarray}
+the effective mass equations can be written in a recursive transfer
+matrix expression\begin{equation}
+\left(\begin{array}{cccc}
+0 & 0 & 1 & 0\\
+0 & 0 & 0 & 1\\
+a_{1} & a_{2} & a_{3} & a_{4}\\
+b_{1} & b_{2} & b_{3} & b_{4}\end{array}\right)\left(\begin{array}{c}
+F_{hh}(z_{i-1})\\
+F_{lh}(z_{i-1})\\
+F_{hh}(z_{i})\\
+F_{lh}(z_{i})\end{array}\right)=\left(\begin{array}{c}
+F_{hh}(z_{i})\\
+F_{lh}(z_{i})\\
+F_{hh}(z_{i+1})\\
+F_{lh}(z_{i+1})\end{array}\right).\end{equation}
+
+
+Provided that we have intial values for the wave functions at the
+first and second nodes, we can determine the wavefunction values at
+any node by an iterative procedure. By multiplying matrices, it is
+possible to obtain an expression for the wavefunction values at any
+node (as a function of the intial values)\begin{equation}
+\left(\begin{array}{c}
+F_{hh}(z_{n})\\
+F_{lh}(z_{n})\\
+F_{hh}(z_{n+1})\\
+F_{lh}(z_{n+1})\end{array}\right)=\mathbf{M}_{n+1}\mathbf{M}_{n}\mathbf{M}_{n-1}\cdots\mathbf{M}_{3}\mathbf{M}_{2}\left(\begin{array}{c}
+F_{hh}(z_{0})\\
+F_{lh}(z_{0})\\
+F_{hh}(z_{1})\\
+F_{lh}(z_{1})\end{array}\right).\label{eq:Transfer_Matrix_Formalism}\end{equation}
+The questions that remain are what is the suitable choise for these
+initial values, and how to determine whether an energy is an eigenenergy
+of the system.
+
+Using four known values of the wavefunction components at $z$ and
+$z+\delta z$, a fifth and sixth values can be predicted. Using the
+new point togather with the known wavefunction components at $z$,
+we can subsequently find the wavefunctions at $z+2\delta z$, and
+so on. Hence the complete wave function solution can be found for
+any particular energy. The solutions for steady states have wavefunctions
+that satisfy the standard boundary conditions \begin{equation}
+F\rightarrow0\,\,\,\textrm{and}\,\,\,\frac{\partial}{\partial z}F\rightarrow0,\,\,\,\textrm{as}\, z\rightarrow\pm\infty.\label{eq:Shooting_Method_Boundary_Conditions}\end{equation}
+As argued in \citet{harrison_quantum_2000}, in the one-band case
+of the conduction band only two initial values are required, and the
+suitable choise is 0 for the first node, and 1 for the second. The
+1 can be any arbitrary number, as changing it will only scale the
+wavefunction (the finite difference equations are linear) and this
+does not affect the eigenenergy. The valence band case is a bit more
+complicated, as now there are two coupled wavefunction components,
+and one cannot be scaled independently from the other. Therefore,
+we choose the initial values to be 0 and 1 for one subband, and 0
+and $c$ for the other. Here $c$ is a parameter, which is to be determined
+when the equations are solved. 
+
+The energy is varied systematically until both wavefunction components
+switch from diverging to $\pm\infty$ to $\mp\infty$, satisfying
+the boundary conditions. However, an additional problem araises from
+the parameter $c$ defined above. On top of that, in many cases one
+of the wavefunction components exhibit a very sharp sign switching,
+often twice within a single energy search step. In order to work around
+these problems, we minimize the amplitude of the wavefunction at the
+end of the grid. The function to be minimized can be found by generating
+the transfer matrix which propagates the wavefunction from the first
+two nodes to the last two nodes\begin{equation}
+\left(\begin{array}{c}
+F_{hh}(z_{N-1})\\
+F_{lh}(z_{N-1})\\
+F_{hh}(z_{N})\\
+F_{lh}(z_{N})\end{array}\right)=\left(\begin{array}{cccc}
+m_{11} & m_{12} & m_{13} & m_{14}\\
+m_{21} & m_{22} & m_{23} & m_{24}\\
+m_{31} & m_{32} & m_{33} & m_{34}\\
+m_{41} & m_{42} & m_{43} & m_{44}\end{array}\right)\left(\begin{array}{c}
+0\\
+0\\
+1\\
+c\end{array}\right).\end{equation}
+Minimizing the wavefunction amplitude at the final node leads to\begin{equation}
+\left(m_{33}+m_{34}c\right)^{2}+\left(m_{43}+m_{44}c\right)^{2}\rightarrow c_{min},\end{equation}
+and then the minimum of $c_{min}(E)$ is searched to obtain the energy.
+A solution of the Hamiltonian equations is found when this minimum
+wavefunction amlitude is smaller than a certain threshold value. This
+guarantees a converging wavefunction, which can be found by substituting
+$c_{min}$ into \ref{eq:Transfer_Matrix_Formalism}. 
+
+Note that the wavefunctions obtained in this procedure are not properly
+normalized and should be transformed into \begin{equation}
+\left(\begin{array}{c}
+F_{hh}(z)\\
+F_{lh}(z)\end{array}\right)\rightarrow\left(\begin{array}{c}
+F_{hh}(z)\\
+F_{lh}(z)\end{array}\right)\frac{1}{\sqrt{\int\left(F_{hh}^{2}(z)+F_{lh}^{2}(z)\right)dz}}\end{equation}
+

@@ -1,0 +1,25 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdftex 2010.3.27)  27 MAR 2010 23:50
+entering extended mode
+**C:/Users/Yossi*Michaeli/Documents/Thesis/Documents/Thesis/References/Thesis2.
+bib
+
+("C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/References/Thesis2.
+bib"
+! Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.2 @article{andreani_
+                      hole_1987,
+? 
+! Emergency stop.
+<inserted text> 
+                $
+<to be read again> 
+                   _
+l.2 @article{andreani_
+                      hole_1987,
+End of file on the terminal!
+
+!  ==> Fatal error occurred, no output PDF file produced!

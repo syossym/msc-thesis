@@ -1,0 +1,123 @@
+\chapter{Appendix - The \cspace \ as a fibred product.}
+\label{appendix}
+
+Configuration space can be defined as \emph{the set of all
+possible embeddings of a mechanism into the ambient space}. While
+this is sufficient for most discussions one should distinguish
+between two possible definitions, one in which transformation of
+the mechanism as a hole is "permitted" and one where those are
+"forbidden". This two does not always endow equivalent results:
+
+Let a \emph{graph mechanism}, be a graph \ $(G(v,e),\mathcal{L})$
+\ having edge and vertex sets such that \ $e(G) \subseteq
+v(g)\times v(g)$ \ and a set of fixed lengths
+$\mathcal{L}=\{\ell_{(i,j)}|(i,j)\in e(G)\}$. Also denote by
+$\textbf{x}_i$ the location of the $i$-th vertex. Under these
+notations the \cspace \ we describe in this dissertation is the
+quotient \ $\mathcal{C}=\mathcal{R}(G)/\Lambda$ \ where
+%
+$$
+\R(G)=\{\textbf{x}_i \in \RR{v(G)}|i\in v(G),
+\|\textbf{x}_i-\textbf{x}_j\|=\ell_{(i,j)} \}
+$$
+%
+and $\Lambda$ \ the group of isometries of translations and
+rotations in \ $\RR{2}$, or in \ $\RR{3}$. Thus \ $\Lambda$ \
+"fixes" the the mechanism to a fixed frame. The difference between
+these two definitions for the \cspace \ can be realized in the
+following. A subgraph $H$ \ of graph \ $G$ \ is a graph such that
+\ $v(H) \ \subset \ v(G)$ \ and \ $e(H) \ \subset e(G)$. Which
+leads to the definition:
+\begin{defn}
+A \emph{sub-mechanism} \ $(H,\mathcal{L}|_{H})\subset (G,\L)$ \ is
+a subgraph \ $H$ \ of \ $G$\ together with the restricted length
+subset \ $\L|_{H}$, and we denote such a sub-mechanism simply by \
+$H$. \ A \emph{leg} is a sub-mechanism such that all vertices in
+$H$\ has valence $1$\ or $2$.
+\end{defn}
+
+In light of these definitions one can define a feasible
+configuration of a parallel mechanism as such that all of its
+branches "agree" upon one (or more) leg configuration. One could
+naively claim that for a arachnoid mechanisms the \cspace \ is
+simply the fibered product of the \cspace of its legs, but this is
+not true. Alternatively we know that:
+\begin{thm}
+Given a mechanism \ $(G,\L)$ \ with a set \ $H_{1},H_{2},H \subset
+G$ \ of its sub-mechanisms such that \ $H_{1}\cap H_{2}=H$ \ then
+\ $\R(\L)$ \ is the pullback of the the natural projections:
+%
+$$
+\R(H_{1}) \xrightarrow{\pi_{H_{1}}} \R(H) \xleftarrow{\pi_{H_{2}}}
+\R(H_{2}).
+$$
+\end{thm}
+
+Note that this does not extend to a the \cspace \ $\C$ \ since the
+induced projections \ $\{\R(H_{i})/\Lambda \rightarrow
+\R(H)/\Lambda\}$ \ are determined up to isometry \ $\Lambda$ \ and
+thus do not determine a unique point. \\
+%\textbf{Example 1:} take the spider mechanism build of 3 legs each
+%having 2 links, $H_1,H_2,H_3$ \ then $\C(H_i)=S^1$ \ (for we
+%should fix one link) for $i=1,2,3$ \ and $\C(H_1\cap H_2\cap
+%H_3)=pt.$ while $\C$ of the entire spider mechanism should be a
+%surface (of dimension two).\\
+for example take the mechanism depicted in figure \ref{mech} and
+denote the two rods $H_1,H_2$ \ then $\C(H_i)=pt$ (for we should
+fix one link) and
+$\C(H_1\cap H_2)=pt.$ $\C$ of the entire mechanism is obviously $S^1$.\\
+\begin{figure}[h]
+\label{mech} \centering
+\epsfysize=6cm %\epsfxsize=6.4cm
+\leavevmode \epsffile{fig_appendix/mech.eps} \caption{Example
+mechanism}
+\end{figure}
+For convenience we restrict the proof to the case where there are
+only $2$ sub-mechanisms, but this can be trivially extended to any
+number of sub-mechanisms:
+\begin{proof}
+
+
+Let $H:=H_1 \cap H_2$ \ as before. in order to show that
+$$\R(G)=\R(H_1)\times_{H} \R(H_2)$$
+we should show that for every space $\R$ \ and maps
+$\tilde{P}_{H_i}:\R \rightarrow \R(H_i)$  \ $(i=1,2)$ \ such that
+$\tilde{P}_{H_1}\circ \pi_{H_1}=\tilde{P}_{H_2}\circ \pi_{H_2}$ \
+then there exist a unique map $\mu:\R \rightarrow \R(G)$, such
+that the following diagram commutes (that is for $i=1,2$ \ the
+identity $P_{H_i}\circ\mu=\tilde{P}_{H_i}$ holds)
+$$
+\xymatrix@R=25pt{ \hspace*{3.5mm} & \ar[dl]_{\tilde{P}_{H_1}} \R \ar[dr]^{\tilde{P}_{H_2}}\ar[d]^\mu &  \\
+\R(H_1)\ar[dr]_{\pi_{H_1}} & \ar[l]_{P_{H_1}}\R(G)\ar[r]^{P_{H_2}} & \R(H_2)\ar[dl]^{\pi_{H_2}}\\
+&\R(H)&}
+$$
+So we assume the existence of such $\R$ \ and maps
+$\tilde{P}_{H_i}$ such that the diagram commutes and use the known
+fact that \emph{the \cspace\ of a cloud of points is a direct
+product} to prove the uniqueness of $\mu$.\\ Denote the \cspace \
+of $v(K)$ \ \emph{free} points in $\RR{2}$ by \ $\C_{f}(K)$ \ for
+some submechanism $K$. (here "free" means that we require no
+distance constraints).
+
+The \cspace \ of the cloud of points $v(G)$ \ is a direct product
+of  $\C_f(H_1)$ \ and $\C_f(H_2)$:
+%
+$$
+\C_f(H_{1})\xleftarrow{P_1} \C_f(G) \xrightarrow{P_2} \C_f(H_{2})
+$$
+where $P_i$ \ are projections. If there is an $\R$ \ with the
+corresponding maps $$ \C(H_{1})\xleftarrow{\tilde{P}_1} \R
+\xrightarrow{\tilde{P}_2} \C(H_{2})$$ such that its pullback
+diagram commutes, then there is a unique map $\mu:\R \rightarrow
+\C_f(G)$. Note there are inclusion maps $j_K:\R(K) \hookrightarrow \C_f(K)$ for all submechanisms $K$.\\
+
+Now, if we set $\tilde{P}_i=j_{H_i} \circ \tilde{P}_{H_i}$\ then
+there is a unique map $\mu$\ such that $P_i \circ \mu = j_{H_i}
+\circ \tilde{P}_i$ (and keeps the diagram commutative). But since
+$j_{H_i} \circ \tilde{P}_i$ \ ''keeps distances'' so is $P_i \circ
+\mu$ \ lastly since $P_i$ \ is just a projection we have proven
+that $\mu$ ''keeps'' distances so we can deduce that $\mu(\R)
+\subset \R(G)$ which completes the proof (and wonderful 3.5 years)
+(since in the $\C_f$-diagram $\mu$ is unique).
+%
+\end{proof}

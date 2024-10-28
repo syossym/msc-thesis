@@ -1,0 +1,8217 @@
+#LyX 1.6.8 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass report
+\options a4paper,titlepage
+\use_default_options false
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine natbib_numerical
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Coulomb Correlated Optical Transitions
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "cha:Coulomb_Correlated_Optical_Transitions"
+
+\end_inset
+
+The preceding chapter only considered free carriers and omitted their Coulomb
+ interaction.
+ The Coulomb interaction leads to the formation of electron-hole pairs,
+ also known as 
+\emph on
+excitons
+\emph default
+.
+ Due to their bound nature, the transition energy is lowered, leading to
+ absorption below the fundamental band gap, while the correlated movement
+ of the electron-hole pair increases the transition probability and consequently
+ the transitions strengths.
+ As in the previous chapter, the theory review is based mainly on 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Chuang1995,Jackson1998,Chow,Haug2009,Schafer2002"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The present chapter therefore focuses on the inclusion of such many body
+ effects in the evaluation of optical properties.
+ A large part of the theory presented in the preceding chapter can be recycled.
+ In general, only the omitted two-particle interaction Hamiltonian 
+\begin_inset Formula $H_{2}$
+\end_inset
+
+ in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Two_Particle_Hamiltonian"
+
+\end_inset
+
+ needs to be added to the equation of motion for the microscopic polarization
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:SC_Bloch_Eq_1"
+
+\end_inset
+
+.
+ The chapter is therefore structured as follows: first, the Coulomb Hamiltonian
+ is derived for Bloch functions and transformed into the electron-hole picture.
+ Then the Coulomb Hamiltonian is included into the equation of motion, and
+ the so called Hartree-Fock (HF) approximation is performed along with the
+ introduction of screening.
+ This leads to the formulation of the Coulomb enhancement of the absorption
+ spectrum of the system.
+ In order to utilize these observations, a numerical formulation of the
+ HF model is outlined in detail facilitating a numerical calculation of
+ the relevant optical characteristics.
+ Finally, this formulation is applied to an actual quantum well structure,
+ with and without the presence of 2DEG in the well region, and the results
+ and discussed in detail.
+\end_layout
+
+\begin_layout Section
+Second Quantization
+\end_layout
+
+\begin_layout Subsection
+Introduction
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $n_{i},\mathbf{k}_{i}$
+\end_inset
+
+ denote the quantum number of a Bloch state, then the Coulomb Hamiltonian
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Two_Particle_Hamiltonian"
+
+\end_inset
+
+ can be written as
+\begin_inset Formula \begin{equation}
+\hat{H}_{2}=\frac{1}{2}\sum_{\begin{array}{c}
+n_{1}\mathbf{k}_{1},n_{2}\mathbf{k}_{2},\\
+n_{3}\mathbf{k}_{3},n_{4}\mathbf{k}_{4}\end{array}}\left\langle n_{1}\mathbf{k}_{1}n_{2}\mathbf{k}_{2}\mid v\mid n_{3}\mathbf{k}_{3}n_{4}\mathbf{k}_{4}\right\rangle \hat{a}_{n_{1}\mathbf{k}_{1}}^{\dagger}\hat{a}_{n_{2}\mathbf{k}_{2}}^{\dagger}\hat{a}_{n_{3}\mathbf{k}_{3}}\hat{a}_{n_{4}\mathbf{k}_{4}}\label{eq:Coulomb_Hamiltonian_1}\end{equation}
+
+\end_inset
+
+and the matrix element of the Coulomb operator reads
+\begin_inset Formula \begin{eqnarray}
+\left\langle n_{1}\mathbf{k}_{1}n_{2}\mathbf{k}_{2}\mid v\mid n_{3}\mathbf{k}_{3}n_{4}\mathbf{k}_{4}\right\rangle  & = & \frac{e^{2}}{4\pi\epsilon_{0}}\int_{\Omega}\int_{\Omega}d\mathbf{r}dzd\mathbf{r}'dz'\varphi_{n_{1}\mathbf{k}_{1}}^{*}(\mathbf{r},z)\varphi_{n_{2}\mathbf{k}_{2}}^{*}(\mathbf{r}',z')\nonumber \\
+ &  & \cdot\frac{1}{\left|(\mathbf{r},z)-(\mathbf{r}',z')\right|}\varphi_{n_{4}\mathbf{k}_{4}}(\mathbf{r},z)\varphi_{n_{3}\mathbf{k}_{3}}(\mathbf{r}',z').\label{eq:Coulomb_Operator_Matrix_Element}\end{eqnarray}
+
+\end_inset
+
+The Coulomb-potential is mainly long-range and therefore more or less constant
+ within a lattice cell.
+ Consequently, the lattice periodic part can be averaged over a single crystal
+ cell.
+ The integration is then performed over lattice averaged quantities, as
+ suggested in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Matrix_Element_Lattice_Cell_Average"
+
+\end_inset
+
+.
+ Therefore, rewriting 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Coulomb_Operator_Matrix_Element"
+
+\end_inset
+
+ into a more suitable form including lattice cell averages, yields
+\begin_inset Formula \begin{eqnarray}
+\left\langle n_{1}\mathbf{k}_{1}n_{2}\mathbf{k}_{2}\mid v\mid n_{3}\mathbf{k}_{3}n_{4}\mathbf{k}_{4}\right\rangle  & = & \frac{e^{2}}{4\pi\epsilon_{0}}\int_{\Omega}\int_{\Omega}d\mathbf{r}dzd\mathbf{r}'dz'\frac{1}{\mathcal{A}^{2}}e^{i\left(\mathbf{k}_{4}-\mathbf{k}_{1}\right)\cdot\mathbf{r}}e^{i\left(\mathbf{k}_{3}-\mathbf{k}_{2}\right)\cdot\mathbf{r}'}\nonumber \\
+ &  & \cdot g_{n_{1}\mathbf{k}_{1},n_{4}\mathbf{k}_{4}}(z)g_{n_{2}\mathbf{k}_{2},n_{3}\mathbf{k}_{3}}(z')\frac{1}{\left|(\mathbf{r},z)-(\mathbf{r}',z')\right|},\end{eqnarray}
+
+\end_inset
+
+where 
+\begin_inset Formula $g_{n_{1}\mathbf{k}_{1},n_{4}\mathbf{k}_{4}}(z)\approx\sum_{i}F_{n_{1}\mathbf{k}_{1},i}^{*}(z)F_{n_{4}\mathbf{k}_{4},i}(z)$
+\end_inset
+
+ and 
+\begin_inset Formula $g_{n_{2}\mathbf{k}_{2},n_{3}\mathbf{k}_{3}}(z')$
+\end_inset
+
+ is defined accordingly.
+ The next step is to get rid of the free directions 
+\begin_inset Formula $\mathbf{r}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{r}'$
+\end_inset
+
+, where the slowly varying part of the Bloch-function is given by the plane
+ wave.
+ The first step is to rewrite the term 
+\begin_inset Formula $\frac{1}{\left|(\mathbf{r},z)-(\mathbf{r}',z')\right|}$
+\end_inset
+
+ as 
+\begin_inset Formula $\frac{1}{\sqrt{\left(\mathbf{r}-\mathbf{r}'\right)^{2}+\left(z-z'\right)^{2}}}$
+\end_inset
+
+.
+ Then, the integration over 
+\begin_inset Formula $\mathbf{r}'$
+\end_inset
+
+ is transformed into the integration over the distance between 
+\begin_inset Formula $\mathbf{r}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{r}'$
+\end_inset
+
+, 
+\begin_inset Formula $\mathbf{s}=\mathbf{r}-\mathbf{r}'$
+\end_inset
+
+.
+ So, instead of performing for every point r the integration over 
+\begin_inset Formula $\mathbf{r}'$
+\end_inset
+
+, one integrates for every point 
+\begin_inset Formula $\mathbf{r}$
+\end_inset
+
+ over all possible distances 
+\begin_inset Formula $\mathbf{s}$
+\end_inset
+
+.
+ This approach leads to several simplifications
+\begin_inset Formula \begin{eqnarray}
+\left\langle n_{1}\mathbf{k}_{1}n_{2}\mathbf{k}_{2}\mid v\mid n_{3}\mathbf{k}_{3}n_{4}\mathbf{k}_{4}\right\rangle  & = & \frac{e^{2}}{4\pi\epsilon_{0}}\int_{\mathcal{L}}\int_{\mathcal{L}}dzdz'\frac{1}{\mathcal{A}^{2}}g_{n_{1}\mathbf{k}_{1},n_{4}\mathbf{k}_{4}}(z)g_{n_{2}\mathbf{k}_{2},n_{3}\mathbf{k}_{3}}(z')\nonumber \\
+ &  & \cdot\int_{\mathcal{A}}\int_{\mathcal{A}}d\mathbf{r}d\mathbf{s}\left[\frac{1}{\sqrt{\mathbf{\left|s\right|}^{2}+\left(z-z'\right)^{2}}}\right.\nonumber \\
+ &  & \left.\cdot e^{i\left(\mathbf{k}_{4}+\mathbf{k}_{3}-\mathbf{k}_{1}-\mathbf{k}_{2}\right)\cdot\mathbf{r}}e^{i\left(\mathbf{k}_{2}-\mathbf{k}_{3}\right)\cdot\mathbf{r}'}\right].\end{eqnarray}
+
+\end_inset
+
+The integration over 
+\begin_inset Formula $\mathbf{r}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{s}$
+\end_inset
+
+ is decoupled and therefore the plane-wave leads to a delta function
+\begin_inset Formula \begin{equation}
+\int_{\mathcal{A}}d\mathbf{r}e^{i\left(\mathbf{k}_{4}+\mathbf{k}_{3}-\mathbf{k}_{1}-\mathbf{k}_{2}\right)\cdot\mathbf{r}}=\mathcal{A}\delta_{\mathbf{k}_{4}+\mathbf{k}_{3},\mathbf{k}_{1}+\mathbf{k}_{2}}.\label{eq:Delta_1}\end{equation}
+
+\end_inset
+
+The remaining integration over 
+\begin_inset Formula $z,z'$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{s}$
+\end_inset
+
+ depends on the dimensionality of the system.
+ 
+\end_layout
+
+\begin_layout Standard
+The Fourier transformation along the free direction 
+\begin_inset Formula $\mathcal{A}$
+\end_inset
+
+ defined in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Fourier_Transform"
+
+\end_inset
+
+ is used to expand 
+\begin_inset Formula $\frac{1}{\mathbf{r}}$
+\end_inset
+
+
+\begin_inset Formula \begin{equation}
+\vartheta(\mathbf{s},z,z')=\frac{1}{\sqrt{\mathbf{\left|s\right|}^{2}+\left(z-z'\right)^{2}}}=\sum_{\mathbf{q}}\vartheta_{\mathbf{q}}(z,z')e^{i\mathbf{q}\cdot\mathbf{s}}\label{eq:Inverse_Distance_Fourier_Expansion}\end{equation}
+
+\end_inset
+
+in terms of its Fourier representation.
+ Taking the integral over 
+\begin_inset Formula $\mathbf{s}$
+\end_inset
+
+
+\series bold
+
+\begin_inset Formula \begin{equation}
+\int_{\mathcal{A}}d\mathbf{s}\sum_{\mathbf{q}}\vartheta_{\mathbf{q}}(z,z')e^{i\mathbf{q}\cdot\mathbf{s}}e^{i\left(\mathbf{k}_{2}-\mathbf{k}_{3}\right)\cdot\mathbf{s}}=\mathcal{A}\sum_{\mathbf{q}}\vartheta_{\mathbf{q}}(z,z')\delta_{\mathbf{k}_{3}-\mathbf{k}_{2},\mathbf{q}}\end{equation}
+
+\end_inset
+
+
+\series default
+leads to another delta function, which can together with 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Delta_1"
+
+\end_inset
+
+ be used to simplify 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Coulomb_Hamiltonian_1"
+
+\end_inset
+
+ into
+\begin_inset Formula \begin{equation}
+\hat{H}_{2}=\frac{1}{2}\sum_{\begin{array}{c}
+n_{1},n_{2}\\
+n_{3},n_{4}\end{array}}\sum_{\mathbf{k}\mathbf{k}'\mathbf{q}}\Theta_{\mathbf{q},\mathbf{k},\mathbf{k}'}^{n_{1},n_{2},n_{3},n_{4}}\hat{a}_{n_{1}\mathbf{k}+\mathbf{q}}^{\dagger}\hat{a}_{n_{2}\mathbf{k}'-\mathbf{q}}^{\dagger}\hat{a}_{n_{3}\mathbf{k}'}\hat{a}_{n_{4}\mathbf{k}}.\label{eq:Coulomb_Hamiltonian_2}\end{equation}
+
+\end_inset
+
+Here, 
+\begin_inset Formula $\mathbf{k}_{4}$
+\end_inset
+
+ has been relabeled to 
+\begin_inset Formula $\mathbf{k}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{k}_{3}$
+\end_inset
+
+ to 
+\begin_inset Formula $\mathbf{k}'$
+\end_inset
+
+.
+ The term 
+\begin_inset Formula $\Theta_{\mathbf{q},\mathbf{k},\mathbf{k}'}^{n_{1},n_{2},n_{3},n_{4}}$
+\end_inset
+
+ contains all parts of 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Coulomb_Operator_Matrix_Element"
+
+\end_inset
+
+ depending on actual wavefunctions and on the dimensionality of the nanostructur
+e.
+ It is given by
+\begin_inset Formula \begin{equation}
+\Theta_{\mathbf{q},\mathbf{k},\mathbf{k}'}^{n_{1},n_{2},n_{3},n_{4}}=\frac{e^{2}}{4\pi\epsilon_{0}}\int_{\mathcal{L}}\int_{\mathcal{L}}dzdz'g_{n_{1}\mathbf{k}+\mathbf{q},n_{4}\mathbf{k}}(z)g_{n_{2}\mathbf{k}'-\mathbf{q},n_{3}\mathbf{k}'}(z')\vartheta_{\mathbf{q}}(z,z').\label{eq:Coulomb_Interaction}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In the case of a bulk crystal, there is no integration over 
+\begin_inset Formula $z,z'$
+\end_inset
+
+.
+ Then, 
+\begin_inset Formula $\vartheta_{\mathbf{q}}^{3D}$
+\end_inset
+
+ is given by the 3D Fourier transform of the Coulomb potential 
+\begin_inset Formula \begin{equation}
+\vartheta_{\mathbf{q}}^{3D}=\frac{4\pi}{\Omega q^{2}}.\label{eq:3D_Form_Factor}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The quantum well case has a 2D plane as the translational invariant directions
+ and a 1D axis where symmetry is broken.
+ The 2D Fourier transformation of 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Inverse_Distance_Fourier_Expansion"
+
+\end_inset
+
+ gives
+\begin_inset Formula \begin{equation}
+\vartheta_{\mathbf{q}}^{2D}(z,z')=\frac{2\pi}{\mathcal{A}q}e^{-q\left|z-z'\right|}.\label{eq:2D_Form_Factor}\end{equation}
+
+\end_inset
+
+Hereby, the factor 
+\begin_inset Formula $\frac{2\pi}{\mathcal{A}q}$
+\end_inset
+
+ denotes the Fourier transform of an ideal quantum well with no extension
+ in the symmetry broken direction, while the exponential factor comprises
+ of the finite extension of the quantum well wavefunctions.
+ 
+\end_layout
+
+\begin_layout Standard
+For the sake of convenience, we define the form factor term to be 
+\begin_inset Formula \begin{equation}
+G_{\mathbf{q},\mathbf{k},\mathbf{k}'}^{n_{1},n_{2},n_{3},n_{4}}=\int_{\mathcal{L}}\int_{\mathcal{L}}dzdz'g_{n_{1}\mathbf{k}+\mathbf{q},n_{4}\mathbf{k}}(z)g_{n_{2}\mathbf{k}'-\mathbf{q},n_{3}\mathbf{k}'}(z')e^{-q\left|z-z'\right|},\end{equation}
+
+\end_inset
+
+in terms of which 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $\Theta_{\mathbf{q},\mathbf{k},\mathbf{k}'}^{n_{1},n_{2},n_{3},n_{4}}$
+\end_inset
+
+ can be written as
+\begin_inset Formula \begin{equation}
+\Theta_{\mathbf{q},\mathbf{k},\mathbf{k}'}^{n_{1},n_{2},n_{3},n_{4}}=G_{\mathbf{q},\mathbf{k},\mathbf{k}'}^{n_{1},n_{2},n_{3},n_{4}}V_{\mathbf{q}}.\label{eq:Coulomb_Interaction_Alternative}\end{equation}
+
+\end_inset
+
+For the 2D case we can write 
+\begin_inset Formula \begin{equation}
+\Theta_{\mathbf{q},\mathbf{k},\mathbf{k}'}^{n_{1},n_{2},n_{3},n_{4}}=G_{\mathbf{q},\mathbf{k},\mathbf{k}'}^{n_{1},n_{2},n_{3},n_{4}}\frac{e^{2}}{2\epsilon_{r}q\mathcal{A}}.\label{eq:Coulomb_Interaction_Alternative_2D}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Inspecting the Coulomb terms, it is clear that these terms diverge in the
+ limit of 
+\begin_inset Formula $\mathbf{q}=0$
+\end_inset
+
+.
+ The divergence can be resolved within the 
+\emph on
+Jellium model
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Haug2009"
+
+\end_inset
+
+, where the semiconductor is assumed to be intrinsically charge free.
+ As a result, the diverging term of the electron-electron interaction at
+ 
+\begin_inset Formula $\mathbf{q}=0$
+\end_inset
+
+ is canceled by the diverging term of the interaction of electrons with
+ the homogeneous positive charge background.
+ Hence, terms 
+\begin_inset Formula $\mathbf{q}=0$
+\end_inset
+
+ within the summation over 
+\begin_inset Formula $\mathbf{q}$
+\end_inset
+
+ are discarded.
+\end_layout
+
+\begin_layout Subsection
+Diagonal Approximation
+\end_layout
+
+\begin_layout Standard
+The next approximation performed aims to remove two of the four subband
+ indices in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Coulomb_Hamiltonian_2"
+
+\end_inset
+
+ by assuming that Coulomb interactions will not cause interband transitions.
+ Then, 
+\begin_inset Formula $n_{1}=n_{4}$
+\end_inset
+
+ and 
+\begin_inset Formula $n_{2}=n_{3}$
+\end_inset
+
+, which is called here diagonal Coulomb approximation.
+ This assumption is for example justified at an approximate level in symmetrical
+ quantum wells, as the diagonal Coulomb matrix elements are due to the symmetry
+ of the wavefunctions, two orders of magnitude larger than the off-diagonal
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Hader2003"
+
+\end_inset
+
+.
+ Also, for single-band effective mass wavefunctions, only the diagonal terms
+ remain, while others vanish due to the orthogonality of the zone-center
+ functions.
+ Using this approximations, the Coulomb Hamiltonian reads
+\begin_inset Formula \begin{equation}
+\hat{H}_{2}=\frac{1}{2}\sum_{m,n}\sum_{\mathbf{k}\mathbf{k}'\mathbf{q}}\Theta_{\mathbf{q},\mathbf{k},\mathbf{k}'}^{m,n,n,m}\hat{a}_{m\mathbf{k}+\mathbf{q}}^{\dagger}\hat{a}_{n\mathbf{k}'-\mathbf{q}}^{\dagger}\hat{a}_{n\mathbf{k}'}\hat{a}_{m\mathbf{k}}.\label{eq:Coulomb_Hamiltonian_3}\end{equation}
+
+\end_inset
+
+Consequently, the notation 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $\Theta_{\mathbf{q},\mathbf{k},\mathbf{k}'}^{m,n,n,m}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+ can be reduced to 
+\begin_inset Formula $\Theta_{\mathbf{q},\mathbf{k},\mathbf{k}'}^{m,n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Introduction of Holes
+\end_layout
+
+\begin_layout Standard
+The next step is to transform the Coulomb Hamiltonian into the electron-hole
+ picture.
+ In the diagonal approximation 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Coulomb_Hamiltonian_3"
+
+\end_inset
+
+, one distinguishes between electron states in the conduction bands 
+\begin_inset Formula $c,d$
+\end_inset
+
+ and hole states in the valence bands 
+\begin_inset Formula $v,w$
+\end_inset
+
+.
+ Therefore, the following four combinations are possible
+\begin_inset Formula \begin{equation}
+n=c,\, m=d\,\,\,\, n=c,\, m=v\,\,\,\, n=v,\, m=c\,\,\,\, n=v,\, m=w.\end{equation}
+
+\end_inset
+
+As next, hole operators are inserted for electrons in the valence band.
+ Further, a natural ordering is reestablished by propagating the creation
+ operators to the left and the annihilation operators to the right and setting
+ the hole creation operator before, the hole annihilation operator after
+ the one of the electron.
+ The terms involving the sum 
+\begin_inset Formula $\sum_{n=c,m=d}$
+\end_inset
+
+ are already in that ordering.
+ Permuting the hole terms in the sum 
+\begin_inset Formula $\sum_{n=v,m=w}$
+\end_inset
+
+ introduces a new two-operator term while the sums 
+\begin_inset Formula $\sum_{n=c,m=v}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sum_{n=v,m=c}$
+\end_inset
+
+ can be summed together.
+ Hence, the final Hamiltonian which will be used to calculate the microscopic
+ equation of motion is obtained as
+\begin_inset Formula \begin{eqnarray}
+\hat{H} & = & \sum_{c,\mathbf{k}}E_{c}(\mathbf{k})\hat{a}_{c\mathbf{k}}^{\dagger}\hat{a}_{c\mathbf{k}}-\sum_{v,\mathbf{k}}E_{v}(\mathbf{k})\hat{b}_{v\mathbf{k}}^{\dagger}\hat{b}_{v\mathbf{k}}\label{eq:Full_H_1-1}\\
+ &  & -\mathbf{E}(\mathbf{r},t)\cdot\sum_{c,v,\mathbf{k}}\boldsymbol{\mu}_{cv,\mathbf{k}}\hat{a}_{c\mathbf{k}}^{\dagger}\hat{b}_{v\mathbf{-k}}^{\dagger}+\boldsymbol{\mu}_{cv,\mathbf{k}}^{*}\hat{b}_{v-\mathbf{k}}\hat{a}_{c\mathbf{k}}\label{eq:Full_H_2}\\
+ &  & +\frac{1}{2}\sum_{c,d}\sum_{\mathbf{k}\mathbf{k}'\mathbf{q}}\Theta_{\mathbf{q},\mathbf{k},\mathbf{k}'}^{c,d}\hat{a}_{c\mathbf{k}+\mathbf{q}}^{\dagger}\hat{a}_{d\mathbf{k}'-\mathbf{q}}^{\dagger}\hat{a}_{d\mathbf{k}'}\hat{a}_{c\mathbf{k}}\label{eq:Full_H_3}\\
+ &  & +\frac{1}{2}\sum_{v,w}\sum_{\mathbf{k}\mathbf{k}'\mathbf{q}}\Theta_{-\mathbf{q},-\mathbf{k}'+\mathbf{q},-\mathbf{k}-\mathbf{q}}^{w,v}\hat{b}_{v\mathbf{k}+\mathbf{q}}^{\dagger}\hat{b}_{vk'-\mathbf{q}}^{\dagger}\hat{b}_{w\mathbf{k}'}\hat{b}_{v\mathbf{k}}\label{eq:Full_H_4}\\
+ &  & \sum_{v,\mathbf{k}',\mathbf{q}}\Theta_{-\mathbf{q},-\mathbf{k}'+\mathbf{q},-\mathbf{k}}^{v,v}\hat{b}_{v\mathbf{k}'}^{\dagger}\hat{b}_{v\mathbf{k}'}\label{eq:Full_H_5}\\
+ &  & -\frac{1}{2}\sum_{\mathbf{k}\mathbf{k}'\mathbf{q}}\left\{ \left(\Theta_{-\mathbf{q},-\mathbf{k}'+\mathbf{q},\mathbf{k}}^{v,c}+\Theta_{\mathbf{q},\mathbf{k},\mathbf{q}-\mathbf{k}'}^{c,v}\right)\hat{a}_{c\mathbf{k}+\mathbf{q}}^{\dagger}\hat{b}_{v\mathbf{k}'-\mathbf{q}}^{\dagger}\hat{b}_{v\mathbf{k}'}\hat{a}_{c\mathbf{k}}\right\} .\label{eq:Full_H_6}\end{eqnarray}
+
+\end_inset
+
+The indices 
+\begin_inset Formula $\mathbf{k}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{k}'$
+\end_inset
+
+ have in some cases been swapped, shifted by 
+\begin_inset Formula $\mathbf{q}$
+\end_inset
+
+ and occasionally changed sign.
+\end_layout
+
+\begin_layout Section
+Transitions Calculation
+\end_layout
+
+\begin_layout Subsection
+Equations of Motion
+\end_layout
+
+\begin_layout Standard
+The next task is to evaluate the equation of motion 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Heisenberg_Eq_Motion"
+
+\end_inset
+
+ for 
+\begin_inset Formula $\hat{p}_{nm,\mathbf{k}}$
+\end_inset
+
+, as it has already been done in previous chapter, excluding the Coulomb
+ interaction.
+ Therefore, the remaining task is to evaluate the commutator of the microscopic
+ polarization and the Coulomb Hamiltonian,
+\begin_inset Formula \begin{equation}
+\frac{d}{dt}\hat{p}_{nm,\mathbf{k}}=\frac{i}{\hbar}\left[\hat{H}_{2}\hat{p}_{nm,\mathbf{k}}\right]+rest\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\hat{H}_{2}$
+\end_inset
+
+ are the Coulomb terms in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Full_H_1-1"
+
+\end_inset
+
+.
+ The evaluation is straight forward but lengthy: For each four-operator
+ term, one writes 
+\begin_inset Formula $\hat{H}_{2}\hat{p}_{nm,\mathbf{k}}-\hat{p}_{nm,\mathbf{k}}\hat{H}_{2}$
+\end_inset
+
+ and then permutes 
+\begin_inset Formula $\hat{p}_{nm,\mathbf{k}}$
+\end_inset
+
+ in the first term to the left to obtain the remaining terms which do not
+ cancel finally.
+ The remaining terms are resorted at the end into the natural ordering.
+ The resulting equation of motion is given by
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula \begin{eqnarray}
+\frac{d}{dt}\hat{p}_{nm,\mathbf{k}} & = & -\frac{i}{\hbar}\left\{ E_{m}(\mathbf{k})-\left(E_{n}(\mathbf{k})-\sum_{\mathbf{q}}\Theta_{-\mathbf{q},-\mathbf{k}+\mathbf{q},\mathbf{k}}^{n,n}\right)\right\} \hat{p}_{nm,\mathbf{k}}\label{eq:Coulomb_Inter_Polarization_Eq_1}\\
+ &  & -\frac{i}{\hbar}\mathbf{E}(z,t)\cdot\boldsymbol{\mu}_{mn,\mathbf{k}}\left(\sum_{c}\hat{a}_{c\mathbf{k}}^{\dagger}\hat{a}_{m\mathbf{k}}+\sum_{v}\hat{b}_{v-\mathbf{k}}^{\dagger}\hat{b}_{n-\mathbf{k}}-1\right)\label{eq:Coulomb_Inter_Polarization_Eq_2}\\
+ &  & +\frac{i}{2\hbar}\sum_{c,\mathbf{k}',\mathbf{q}}\left(\Theta_{-\mathbf{q},\mathbf{k}+\mathbf{q},\mathbf{k}'}^{m,c}+\Theta_{\mathbf{q},\mathbf{k}',\mathbf{k}+\mathbf{q}}^{c,m}\right)\hat{a}_{c\mathbf{k}'+\mathbf{q}}^{\dagger}\hat{b}_{n-\mathbf{k}}\hat{a}_{c\mathbf{k}'}\hat{a}_{m\mathbf{k}+\mathbf{q}}\label{eq:Coulomb_Inter_Polarization_Eq_3}\\
+ &  & +\frac{i}{2\hbar}\sum_{v,\mathbf{k}',\mathbf{q}}\left(\Theta_{-\mathbf{q},-\mathbf{k}'+\mathbf{q},\mathbf{k}}^{v,n}+\Theta_{\mathbf{q},\mathbf{k},-\mathbf{k}'+\mathbf{q}}^{n,v}\right)\hat{b}_{v\mathbf{k}'-\mathbf{q}}^{\dagger}\hat{b}_{v\mathbf{k}'}\hat{a}_{m\mathbf{k}}\hat{b}_{n-\mathbf{k}-\mathbf{q}}\label{eq:Coulomb_Inter_Polarization_Eq_4}\\
+ &  & -\frac{i}{2\hbar}\sum_{c,\mathbf{k}',\mathbf{q}}\left(\Theta_{-\mathbf{q},\mathbf{k},\mathbf{k}'}^{n,c}+\Theta_{\mathbf{q},\mathbf{k}',\mathbf{k}}^{c,n}\right)\hat{a}_{c\mathbf{k}'+\mathbf{q}}^{\dagger}\hat{b}_{n-\mathbf{k}+\mathbf{q}}\hat{a}_{c\mathbf{k}'}\hat{a}_{m\mathbf{k}}\label{eq:Coulomb_Inter_Polarization_Eq_5}\\
+ &  & -\frac{i}{2\hbar}\sum_{v,\mathbf{k}',\mathbf{q}}\left(\Theta_{-\mathbf{q},-\mathbf{k}'+\mathbf{q},\mathbf{k}-\mathbf{q}}^{v,m}+\Theta_{\mathbf{q},\mathbf{k}-\mathbf{q},-\mathbf{k}'+\mathbf{q}}^{m,v}\right)\hat{b}_{v\mathbf{k}'-\mathbf{q}}^{\dagger}\hat{b}_{n-\mathbf{k}}\hat{b}_{v\mathbf{k}'}\hat{a}_{m\mathbf{k}-\mathbf{q}}\label{eq:Coulomb_Inter_Polarization_Eq_6}\\
+ &  & +\frac{i}{2\hbar}\sum_{\mathbf{q}}\left(\Theta_{-\mathbf{q},\mathbf{k},\mathbf{k}-\mathbf{q}}^{n,m}+\Theta_{\mathbf{q},\mathbf{k}-\mathbf{q},\mathbf{k}}^{m,n}\right)\hat{b}_{n-\mathbf{k}+\mathbf{q}}\hat{a}_{m\mathbf{k}-\mathbf{q}}.\label{eq:Coulomb_Inter_Polarization_Eq_7}\end{eqnarray}
+
+\end_inset
+
+Taking the two-band approximation of this particular equation and ignoring
+ the 
+\begin_inset Formula $\mathbf{k}$
+\end_inset
+
+ dependence of the Coulomb matrix element results in Eq.
+ (3.9) of ref.
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Chow"
+
+\end_inset
+
+.
+ Comparing this equation with the free-carrier result 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:SC_Bloch_Eq_1"
+
+\end_inset
+
+ reveals that in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Coulomb_Inter_Polarization_Eq_1"
+
+\end_inset
+
+, the valence band energy is shifted to
+\begin_inset Formula \begin{equation}
+E_{n}(\mathbf{k})\rightarrow E_{n}(\mathbf{k})-\sum_{\mathbf{q}}\Theta_{-\mathbf{q},-\mathbf{k}+\mathbf{q},\mathbf{k}}^{n,n}.\end{equation}
+
+\end_inset
+
+The values usually inserted into 
+\begin_inset Formula $E_{v}(\mathbf{k})$
+\end_inset
+
+ are results of a preceding band structure calculation, where parameters
+ are obtained from low excitation experiments, where the valence band is
+ full 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Chow"
+
+\end_inset
+
+.
+ Therefore, the 
+\begin_inset Formula $E_{v}(\mathbf{k})$
+\end_inset
+
+ actually already holds the Coulomb energy of the full valence band.
+ The free-carrier calculation implicitly included this energy within the
+ band structure result, while it appears here explicitly.
+\end_layout
+
+\begin_layout Standard
+Similar equations of motion can be obtained for the carrier population operators
+ 
+\end_layout
+
+\begin_layout Standard
+The terms 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Coulomb_Inter_Polarization_Eq_3"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Coulomb_Inter_Polarization_Eq_4"
+
+\end_inset
+
+ are the result of the equation of motion of the conduction-conduction and
+ valence-valence terms 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Full_H_3"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Full_H_4"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Full_H_5"
+
+\end_inset
+
+.
+ The terms 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Coulomb_Inter_Polarization_Eq_5"
+
+\end_inset
+
+-
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Coulomb_Inter_Polarization_Eq_7"
+
+\end_inset
+
+ are the results of the commutator with the conduction-valence terms 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Full_H_6"
+
+\end_inset
+
+.
+ The term 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Coulomb_Inter_Polarization_Eq_7"
+
+\end_inset
+
+ is obtained at the end when 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Coulomb_Inter_Polarization_Eq_6"
+
+\end_inset
+
+ is brought into proper order.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/4_Infinite_Operator_Hirarchy.eps
+	lyxscale 30
+	display false
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Infinite_Hierarchy_Operators"
+
+\end_inset
+
+Infinite hierarchy of operator products for the equations of motion.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The obtained equation of motion for the two-particle operator term 
+\begin_inset Formula $\hat{p}_{nm,\mathbf{k}}$
+\end_inset
+
+ obviously depends on the four-particle operator terms.
+ Therefore, it would be necessary to calculate the equation of motion of
+ the four-particle operator term which would couple to a six-particle operator
+ term: one obtains an infinite hierarchy of equations, as demonstrated in
+ Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Infinite_Hierarchy_Operators"
+
+\end_inset
+
+.
+ For this reason, one usually truncates the hierarchy at a certain order
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Chow"
+
+\end_inset
+
+.
+ Factorizing the four-particle operator into two two-particle operators
+ yields the
+\emph on
+ Hartree-Fock approximation
+\emph default
+, which is considered in the next section.
+\end_layout
+
+\begin_layout Subsection
+Hartree-Fock Approximation
+\end_layout
+
+\begin_layout Standard
+In the next step, all four-particle operators are factorized into all possible
+ products of two-particle operators, of which the expectation values are
+ taken.
+ While permuting these operators, the correct sign due to the anti-commutation
+ relations has to be tracked.
+ Due to the random-phase approximation 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Random_Phase_Apprx"
+
+\end_inset
+
+, all expectation values of two-particle operators reduce either to microscopic
+ polarizations 
+\begin_inset Formula $p_{nm,\mathbf{k}}$
+\end_inset
+
+, particle densities 
+\begin_inset Formula $n_{n,\mathbf{k}}$
+\end_inset
+
+ or to zero.
+ We summarize this approach for a two-operator expectation value
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/4_HF_Operator_Approximation.eps
+	lyxscale 20
+	display false
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Schematic_HF_Operator_Approximation"
+
+\end_inset
+
+Schematic representation of the Hartree-Fock approximation operator product
+ in the equation of motion.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula \begin{eqnarray}
+\frac{d}{dt}\left\langle AB\right\rangle  & = & \frac{d}{dt}\left\langle AB\right\rangle _{HF}+\left(\frac{d}{dt}\left\langle AB\right\rangle -\frac{d}{dt}\left\langle AB\right\rangle _{HF}\right)\nonumber \\
+ & = & \frac{d}{dt}\left\langle AB\right\rangle _{HF}+\frac{d}{dt}\left\langle AB\right\rangle _{col.}\end{eqnarray}
+
+\end_inset
+
+where 
+\begin_inset Formula $\left\langle AB\right\rangle _{HF}$
+\end_inset
+
+ is the Hartree-Fock contribution to the equation if motion which will be
+ treated in this chapter (see Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Schematic_HF_Operator_Approximation"
+
+\end_inset
+
+).
+ The term 
+\begin_inset Formula $\left\langle AB\right\rangle _{col.}$
+\end_inset
+
+ us a higher-order contribution containing four-operator expectation values
+ and they will be discussed briefly later in this chapter.
+ Here, we only mention that with the full many-body Hamiltonian 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Separated_Hamiltonian-1"
+
+\end_inset
+
+, the Heisenberg equation of motion gives the equation of motion for 
+\begin_inset Formula $\left\langle ABCD\right\rangle $
+\end_inset
+
+ as 
+\begin_inset Formula \begin{equation}
+\frac{d}{dt}\left\langle ABCD\right\rangle =\frac{d}{dt}\left\langle ABCD\right\rangle _{F}+\left(\frac{d}{dt}\left\langle ABCD\right\rangle -\frac{d}{dt}\left\langle ABCD\right\rangle _{F}\right),\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\frac{d}{dt}\left\langle ABCD\right\rangle $
+\end_inset
+
+ contains expectation values of products of up to six operators.
+ The label 
+\begin_inset Formula $F$
+\end_inset
+
+ is used to indicate the result from a Hartree-Fock factorization of the
+ four and six operator expectation values.
+ We can continue by deriving the equation of motion for 
+\begin_inset Formula \begin{equation}
+\left\langle ABCDEF\right\rangle \equiv\left(\frac{d}{dt}\left\langle ABCD\right\rangle -\frac{d}{dt}\left\langle ABCD\right\rangle _{F}\right)\end{equation}
+
+\end_inset
+
+and so on.
+ The result is a hierarchy of equations, where each succeeding equation
+ describes a correlation contribution that is of higher order than the one
+ before.
+ In practice, we truncate the hierarchy at some point.
+ 
+\end_layout
+
+\begin_layout Standard
+As an example, the factorization of 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Coulomb_Inter_Polarization_Eq_3"
+
+\end_inset
+
+ leads to
+\begin_inset Formula \begin{eqnarray*}
+\left\langle \hat{a}_{c\mathbf{k}'+\mathbf{q}}^{\dagger}\hat{b}_{n-\mathbf{k}}\hat{a}_{c\mathbf{k}'}\hat{a}_{m\mathbf{k}+\mathbf{q}}\right\rangle _{HF} & = & \left\langle \hat{a}_{c\mathbf{k}'+\mathbf{q}}^{\dagger}\hat{b}_{n-\mathbf{k}}\right\rangle \left\langle \hat{a}_{c\mathbf{k}'}\hat{a}_{m\mathbf{k}+\mathbf{q}}\right\rangle \\
+ &  & -\left\langle \hat{a}_{c\mathbf{k}'+\mathbf{q}}^{\dagger}\hat{a}_{c\mathbf{k}'}\right\rangle \left\langle \hat{b}_{n-\mathbf{k}}\hat{a}_{m\mathbf{k}+\mathbf{q}}\right\rangle \\
+ &  & +\left\langle \hat{a}_{c\mathbf{k}'+\mathbf{q}}^{\dagger}\hat{a}_{m\mathbf{k}+\mathbf{q}}\right\rangle \left\langle \hat{b}_{n-\mathbf{k}}\hat{a}_{c\mathbf{k}'}\right\rangle \\
+ & = & 0-\delta_{\mathbf{q}0}+\delta_{\mathbf{k}'\mathbf{k}}\delta_{cm}n_{m,\mathbf{k}+\mathbf{q}}p_{nm,\mathbf{k}}.\end{eqnarray*}
+
+\end_inset
+
+Other terms are factorized accordingly.
+ The factorized terms of 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Coulomb_Inter_Polarization_Eq_3"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Coulomb_Inter_Polarization_Eq_4"
+
+\end_inset
+
+ can be added to the transition energy, while the remaining terms are proportion
+al to the inversion factor.
+ Finally, the equation for the microscopic polarization in the Hartree-Fock
+ approximation is obtained as
+\begin_inset Formula \begin{eqnarray}
+\frac{d}{dt}p_{nm,\mathbf{k}} & = & -\frac{i}{\hbar}\hbar\tilde{\omega}_{mn}(\mathbf{k})p_{nm,\mathbf{k}}\nonumber \\
+ &  & -\frac{i}{\hbar}\left\{ \mathbf{E}(z,t)\cdot\boldsymbol{\mu}_{mn,\mathbf{k}}+\sum_{\mathbf{q}}\Theta_{-\mathbf{q},\mathbf{k},\mathbf{k}-\mathbf{q}}^{n,m}p_{nm,\mathbf{k}-\mathbf{q}}\right\} \left(n_{m\mathbf{k}}+n_{n\mathbf{k}}-1\right)\nonumber \\
+ &  & +\frac{\partial}{\partial t}\left.p_{nm,\mathbf{k}}\right|_{col.},\label{eq:HF_Polarization_Eq_Motion}\end{eqnarray}
+
+\end_inset
+
+and the renormalized transition energy is given as
+\begin_inset Formula \begin{eqnarray}
+\hbar\tilde{\omega}_{mn}(\mathbf{k}) & = & E_{m}(\mathbf{k})-\left(E_{n}(\mathbf{k})-\sum_{\mathbf{q}}\Theta_{-\mathbf{q},-\mathbf{k}+\mathbf{q},\mathbf{k}}^{n,n}\right)\nonumber \\
+ &  & -\sum_{\mathbf{q}}\left(\Theta_{\mathbf{q},\mathbf{k},\mathbf{k}+\mathbf{q}}^{m,m}n_{m,\mathbf{k}+\mathbf{q}}+\Theta_{\mathbf{q},\mathbf{k},\mathbf{k}+\mathbf{q}}^{n,n}n_{n,\mathbf{k}+\mathbf{q}}\right).\label{eq:Transition_Energy}\end{eqnarray}
+
+\end_inset
+
+The sum term in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Transition_Energy"
+
+\end_inset
+
+ is called the 
+\emph on
+exchange shift
+\emph default
+ term.
+ Inspecting 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:HF_Polarization_Eq_Motion"
+
+\end_inset
+
+ reveals that the microscopic polarization 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $p_{nm,\mathbf{k}}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+ at 
+\begin_inset Formula $\mathbf{k}$
+\end_inset
+
+ is now coupled to the one at 
+\begin_inset Formula $\mathbf{k}'$
+\end_inset
+
+ by the Coulomb interaction, while in the free-carrier expression, the microscop
+ic polarization was entirely determined by the momentum matrix element and
+ the inversion.
+ This coupling introduces the excitonic effects such as enhancing gain or
+ absorption.
+ The higher-order correlation (collisions) contributions are denoted similarly
+ to previous chapter with the subscript col.
+ The expressions for the carrier distribution operators 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $\hat{n}_{n\mathbf{k}}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{n}_{m\mathbf{k}}$
+\end_inset
+
+ can be obtained similarly.
+ By introducing 
+\family default
+\series default
+\shape default
+\size default
+\emph on
+\bar default
+\noun default
+\color inherit
+renormalized Rabi frequency
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+ 
+\begin_inset Formula \begin{equation}
+\Omega_{\mathbf{k}}(z,t)=\mathbf{E}(z,t)\cdot\boldsymbol{\mu}_{mn,\mathbf{k}}+\sum_{\mathbf{q}}\Theta_{-\mathbf{q},\mathbf{k},\mathbf{k}-\mathbf{q}}^{n,m}p_{nm,\mathbf{k}-\mathbf{q}},\label{eq:Renormalized_Rabi_Freq}\end{equation}
+
+\end_inset
+
+we can rewrite the semiconductor Bloch equations as
+\begin_inset Formula \begin{eqnarray}
+\frac{d}{dt}p_{nm,\mathbf{k}} & = & -i\tilde{\omega}_{mn}(\mathbf{k})p_{nm,\mathbf{k}}-i\Omega_{\mathbf{k}}(z,t)\left(n_{m\mathbf{k}}+n_{n\mathbf{k}}-1\right)+\frac{\partial}{\partial t}\left.p_{nm,\mathbf{k}}\right|_{col.},\label{eq:HF_Semicondictor_Bloch_Eq_1}\\
+\frac{d}{dt}n_{n\mathbf{k}} & = & i\left[\Omega_{\mathbf{k}}(z,t)p_{nm,\mathbf{k}}^{*}-\Omega_{\mathbf{k}}^{*}(z,t)p_{nm,\mathbf{k}}\right]+\frac{\partial}{\partial t}\left.n_{n\mathbf{k}}\right|_{col.},\label{eq::HF_Semicondictor_Bloch_Eq_2}\\
+\frac{d}{dt}n_{m\mathbf{k}} & = & i\left[\Omega_{\mathbf{k}}(z,t)p_{nm,\mathbf{k}}^{*}-\Omega_{\mathbf{k}}^{*}(z,t)p_{nm,\mathbf{k}}\right]+\frac{\partial}{\partial t}\left.n_{m\mathbf{k}}\right|_{col.}.\label{eq::HF_Semicondictor_Bloch_Eq_3}\end{eqnarray}
+
+\end_inset
+
+The second term in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Renormalized_Rabi_Freq"
+
+\end_inset
+
+ is called the 
+\family default
+\series default
+\shape default
+\size default
+\emph on
+\bar default
+\noun default
+\color inherit
+Coulomb field renormalization
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+.
+\end_layout
+
+\begin_layout Standard
+The semiconductor Bloch equations look like the two-level Bloch equations,
+ with the exceptions that the transition energy and the electric-dipole
+ interaction are renormalized, and the carrier probabilities 
+\begin_inset Formula $n_{n\mathbf{k}}$
+\end_inset
+
+ enter instead of the probability difference between upper and lower levels.
+ The renormalizations are due to the many-body Coulomb interactions, and
+ they couple equations for different 
+\begin_inset Formula $\mathbf{k}$
+\end_inset
+
+ states.
+ This coupling leads to significant complications in the evaluation of 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:HF_Semicondictor_Bloch_Eq_1"
+
+\end_inset
+
+-
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq::HF_Semicondictor_Bloch_Eq_3"
+
+\end_inset
+
+ in comparison to the corresponding free-carrier equations, 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:SC_Bloch_Eq_1"
+
+\end_inset
+
+-
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:SC_Bloch_Eq_3"
+
+\end_inset
+
+.
+ If all Coulomb-potential contributions are dropped, the semiconductor Bloch
+ equations reduce to the undamped inhomogeneously broadened two-level Bloch
+ equations 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Chow"
+
+\end_inset
+
+.
+ Of course, this limit is unacceptable for semiconductors.
+ 
+\end_layout
+
+\begin_layout Subsection
+Many-Body Effects
+\end_layout
+
+\begin_layout Standard
+There are two important many-body effects that do not appear in the Hartree-Fock
+ limit of the equation of motion, the collisions between particles and the
+ plasma screening.
+ They occur at high carrier densities.
+ The main consequences of the collisions between particles are: 
+\end_layout
+
+\begin_layout Itemize
+A decay of the microscopic polarization 
+\begin_inset Formula $p_{nm,\mathbf{k}}$
+\end_inset
+
+ that we can model with a relaxation time 
+\begin_inset Formula $\gamma$
+\end_inset
+
+.
+ This implies 
+\begin_inset Formula $\frac{\partial}{\partial t}\left.p_{nm,\mathbf{k}}\right|_{col.}=-\gamma p_{nm,\mathbf{k}}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+A rapid equilibration of electrons and holes into Fermi-Dirac distributions.
+ We can model this, assuming that the conduction band and the valence band
+ are two carrier reservoirs, which are Fermi-distributed, i.e.
+ 
+\begin_inset Formula $n_{e\mathbf{k}}=f_{e\mathbf{k}}$
+\end_inset
+
+ and 
+\begin_inset Formula $n_{h\mathbf{k}}=f_{h\mathbf{k}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+It is more difficult to include the plasma screening effect into 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:HF_Semicondictor_Bloch_Eq_1"
+
+\end_inset
+
+-
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq::HF_Semicondictor_Bloch_Eq_3"
+
+\end_inset
+
+.
+ The procedure is outlined in this subsection.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Background Screening
+\end_layout
+
+\begin_layout Standard
+In the crystal electron Hamiltonian 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:crystal_H_final"
+
+\end_inset
+
+, the interaction between ion cores and the interaction between electrons
+ and ion cores is merged into the potential 
+\begin_inset Formula $U(\mathbf{r})$
+\end_inset
+
+, while the Coulomb energy between electrons has been retained and later
+ transformed into the Bloch states.
+ With the introduction of 
+\begin_inset Formula $\mathbf{k}·\mathbf{p}$
+\end_inset
+
+ states, only a restricted number of valence electrons are considered, while
+ core electrons are included implicitly.
+ These implicitly included core electrons and ion cores screen the Coulomb
+ interaction between explicitly included electrons.
+ The effect can be considered by replacing the dielectric permittivity of
+ the vacuum 
+\begin_inset Formula $\epsilon_{0}$
+\end_inset
+
+ with the static semiconductor crystal background permittivity 
+\begin_inset Formula $\epsilon_{b}$
+\end_inset
+
+ in the Coulomb matrix element 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Coulomb_Operator_Matrix_Element"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Plasma Screening
+\end_layout
+
+\begin_layout Standard
+A profound weakness of the Hartree-Fock approximation is the lack of screening
+ of Coulomb interactions at elevated carrier densities.
+ The presence of unbound carriers of the electron-hole plasma leads to an
+ adjustment of the carriers to a charge, effectively screening it and thereby
+ reducing the Coulomb interaction energy.
+ The lack of screening in the Hartree-Fock equations is caused by the early
+ truncation of the infinite hierarchy of equations of motion.
+ One therefore introduces the screening effect phenomenologically using
+ a dynamic dielectric function 
+\begin_inset Formula $\epsilon(\mathbf{q},\omega)$
+\end_inset
+
+
+\begin_inset Formula \begin{equation}
+V_{s\mathbf{q}}=\frac{V_{\mathbf{q}}}{\epsilon(\mathbf{q},\omega)},\end{equation}
+
+\end_inset
+
+where 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $V_{s\mathbf{q}}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+ denotes the screened potential and 
+\begin_inset Formula $V_{\mathbf{q}}$
+\end_inset
+
+ the unscreened one
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Note that the Coulomb interaction Hamiltonian with the bare Coulomb potential
+ already contains the mechanism for plasma screening.
+ Therefore, one should be concerned that an 
+\emph on
+ad hoc
+\emph default
+ replacement of 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $V_{\mathbf{q}}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+ with 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $V_{s\mathbf{q}}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+ might count some screening effects twice.
+ Such problems can only be avoided within a systematic many-body approach.
+ 
+\end_layout
+
+\end_inset
+
+.
+ There are several model dielectric functions, where all have their strengths,
+ limitations and weaknesses.
+ One standard approach is the 
+\emph on
+Lindhard's formula
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Chow,Haug2009"
+
+\end_inset
+
+,
+\begin_inset Formula \begin{equation}
+\epsilon(\mathbf{q},\omega)=1-V_{\mathbf{q}}\sum_{n\mathbf{k}}\frac{n_{n,\mathbf{k}-\mathbf{q}}-n_{n,\mathbf{k}}}{E_{n}(\mathbf{k}-\mathbf{q})-E_{n}(\mathbf{k})+\hbar\omega+\hbar i\delta},\label{eq:Full_Lindhards_Eq}\end{equation}
+
+\end_inset
+
+also denoted as randomphase approximation.
+ The Lindhard formula can be derived using the self-consistent field (SCF)
+ approach 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Ehrenreich1959"
+
+\end_inset
+
+, or more profound, by neglecting vertex corrections in the equation of
+ motion for the Green’s function 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Binder1995"
+
+\end_inset
+
+ of the designated system and using the Kadanoff-Baym formalism 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Binder1995"
+
+\end_inset
+
+.
+ The derivation using the SCF approach involves the reaction of a homogeneous
+ electron gas to a test charge (see detailed derivation in Appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Appendix_Screening"
+
+\end_inset
+
+).
+ To use Lindhard's formula in optical calculations, the test charge potential
+ 
+\begin_inset Formula $V_{\mathbf{q}}$
+\end_inset
+
+ is replaced with the Coulomb potential 
+\begin_inset Formula $\Theta_{\mathbf{q},\mathbf{k},\mathbf{k}'}^{n_{1},n_{2},n_{3},n_{4}}$
+\end_inset
+
+ defined in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Coulomb_Interaction_Alternative"
+
+\end_inset
+
+, including the factor due to the finite extend of the wavefunctions.
+\end_layout
+
+\begin_layout Standard
+There are several far better models 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Mahan2000"
+
+\end_inset
+
+ for the dielectric screening but the Lindhard formula is still popular
+ and commonly used in optoelectronic modeling 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Chow"
+
+\end_inset
+
+ due to its simple structure.
+ For many practical applications, the damped response of the screening is
+ ignored, therefore setting 
+\begin_inset Formula $(ω+iδ)$
+\end_inset
+
+ to zero.
+ Once 
+\begin_inset Formula $\epsilon(\mathbf{q},0)$
+\end_inset
+
+ is obtained, one replaces the Coulomb potential within all equations with
+ 
+\begin_inset Formula \begin{equation}
+\Theta_{s,\mathbf{q},\mathbf{k},\mathbf{k}'}^{n_{1},n_{2},n_{3},n_{4}}=\frac{1}{\epsilon(\mathbf{q},0)}\Theta_{\mathbf{q},\mathbf{k},\mathbf{k}'}^{n_{1},n_{2},n_{3},n_{4}}.\end{equation}
+
+\end_inset
+
+Beside its physical importance, the screening introduces the desired effect
+ of removing the divergence of the Coulomb potential with 
+\begin_inset Formula $\mathbf{q}\rightarrow0$
+\end_inset
+
+, thereby facilitating the numerical evaluation.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/4_Screened_HF_Procedurel.eps
+	lyxscale 60
+	display false
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Screened_HF_Outline"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+Outline of an approach that takes advantage of a phenomenological derivation
+ of plasma screening, which is incorporated directly into the many-body
+ Hamiltonian to give the screened Hartree-Fock equations.
+\end_layout
+
+\end_inset
+
+Outline of an approach that takes advantage of a phenomenological derivation
+ of plasma screening, which is incorporated directly into the many-body
+ Hamiltonian to give the screened Hartree-Fock equations (after 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Chow"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The outline of the screened Hatree-Fock approach is presented in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "fig:Screened_HF_Outline"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Coulomb Hole Self Energy
+\end_layout
+
+\begin_layout Standard
+By replacing the electron operators with hole operators in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Coulomb_Inter_Polarization_Eq_1"
+
+\end_inset
+
+, the valence band energy was shifted by a constant value,
+\begin_inset Formula \begin{equation}
+E_{n}(\mathbf{k})\rightarrow E_{n}(\mathbf{k})-\sum_{\mathbf{q}}\Theta_{-\mathbf{q},-\mathbf{k}+\mathbf{q},\mathbf{k}}^{n,n}.\end{equation}
+
+\end_inset
+
+This shift is already implicitly included in the band structure.
+ In the high density limit, the Coulomb interaction is screened
+\begin_inset Formula \begin{equation}
+\Theta_{s,-\mathbf{q},-\mathbf{k}+\mathbf{q},\mathbf{k}}^{n,n}=\frac{\Theta_{-\mathbf{q},-\mathbf{k}+\mathbf{q},\mathbf{k}}^{n,n}}{\epsilon(\mathbf{q},0)}\end{equation}
+
+\end_inset
+
+and the difference between the unscreened and the screened Coulomb interaction
+ leads to a density dependent shift
+\begin_inset Formula \begin{equation}
+\Delta E_{CH,n}=\sum_{\mathbf{q}}\Theta_{-\mathbf{q},-\mathbf{k}+\mathbf{q},\mathbf{k}}^{n,n}\left(\frac{1}{\epsilon(\mathbf{q})}-1\right).\label{eq:Coulomb_Hole_Self_Energy}\end{equation}
+
+\end_inset
+
+The shift is denoted as 
+\emph on
+Debye shift
+\emph default
+ or 
+\emph on
+Coulomb-hole self energy
+\emph default
+.
+\end_layout
+
+\begin_layout Subsubsection
+Screened Exchange Energy
+\end_layout
+
+\begin_layout Standard
+Beside the Coulomb-hole self energy, the transition energy 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Transition_Energy"
+
+\end_inset
+
+ is, compared to the free carrier result, reduced by the density dependent
+ 
+\emph on
+screened exchange shift
+\emph default
+,
+\begin_inset Formula \begin{equation}
+\Delta E_{SX,mn}(\mathbf{k})=\sum_{\mathbf{q}}\left(\Theta_{\mathbf{q},\mathbf{k},\mathbf{k}+\mathbf{q}}^{m,m}n_{m,\mathbf{k}+\mathbf{q}}+\Theta_{\mathbf{q},\mathbf{k},\mathbf{k}+\mathbf{q}}^{n,n}n_{n,\mathbf{k}+\mathbf{q}}\right).\label{eq:Screened_Exchange_Shift}\end{equation}
+
+\end_inset
+
+where the screened Coulomb potentials are used.
+ 
+\end_layout
+
+\begin_layout Standard
+In conclusion, within the screened Hartree-Fock limit, the transition energy
+ is therefore renormalized
+\begin_inset Formula \begin{equation}
+\hbar\tilde{\omega}_{mn}(\mathbf{k})=\Delta E_{mn}(\mathbf{k})+\Delta E_{CH,n}-\Delta E_{SX,mn}(\mathbf{k}).\label{eq:Band_Gap_Renormalization}\end{equation}
+
+\end_inset
+
+Note that both contributions 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Coulomb_Hole_Self_Energy"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Screened_Exchange_Shift"
+
+\end_inset
+
+ reduce the transition energy and can lead to a significant red shift.
+\end_layout
+
+\begin_layout Subsection
+Solving the Correlated Equation
+\end_layout
+
+\begin_layout Standard
+In order to solve the equation of motion 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:HF_Polarization_Eq_Motion"
+
+\end_inset
+
+, the collision term is approximated using a decay rate 
+\begin_inset Formula $-\gamma p_{mn,\mathbf{k}}$
+\end_inset
+
+.
+ As equation 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:HF_Polarization_Eq_Motion"
+
+\end_inset
+
+ couples microscopic polarizations 
+\begin_inset Formula $p_{mn,\mathbf{k}}$
+\end_inset
+
+ of different 
+\begin_inset Formula $\mathbf{k}$
+\end_inset
+
+ values, the equation system has to be solved self-consistently.
+ Therefore, the equation is transformed using the same ansatz as in Chapter
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Free_Carriers_Optical_Transitions"
+
+\end_inset
+
+.
+ The fast oscillating 
+\begin_inset Formula $p_{mn,\mathbf{k}}$
+\end_inset
+
+ is replaced with its slowly-varying envelope
+\begin_inset Formula \begin{equation}
+s_{nm,\mathbf{k}}=p_{mn,\mathbf{k}}e^{-i\left(k_{0}z-\nu t-\phi(z)\right)}.\label{eq:Polarization_Slow_Envelope_Def}\end{equation}
+
+\end_inset
+
+Inserting 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Polarization_Slow_Envelope_Def"
+
+\end_inset
+
+ into 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:HF_Polarization_Eq_Motion"
+
+\end_inset
+
+, taking the time derivative, using the plane wave expression for the electrical
+ field 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Electrical_Field_Ansatz"
+
+\end_inset
+
+, skipping the fast oscillating parts (as they should average out to zero)
+ and solving for the steady state leads to 
+\begin_inset Formula \begin{eqnarray}
+s_{nm,\mathbf{k}} & = & -\frac{1}{i\left(\tilde{\omega}_{mn}(\mathbf{k})-\nu\right)+\gamma}\frac{i}{\hbar}\nonumber \\
+ &  & \cdot\left\{ \mu_{mn,\mathbf{k}}\frac{E(z)}{2}+\sum\Theta_{\mathbf{q},\mathbf{k},\mathbf{k}+\mathbf{q}}^{n,m}s_{nm,\mathbf{k}+\mathbf{q}}\right\} \label{eq:Polarization_Slow_Envelope_Eq}\\
+ &  & \cdot\left(n_{m\mathbf{k}}+n_{n\mathbf{k}}-1\right).\nonumber \end{eqnarray}
+
+\end_inset
+
+The polarization envelope still depends on the intensity of the considered
+ field.
+ Therefore, the field independent solution variable is introduced, given
+ by
+\begin_inset Formula \begin{equation}
+\lambda_{nm,\mathbf{k}}=\frac{2s_{nm,\mathbf{k}}}{E(z)}.\label{eq:Field_Independent_Sol_Var}\end{equation}
+
+\end_inset
+
+In order to obtain a practicable expression, the lineshape and the inversion
+ factor are combined into
+\begin_inset Formula \begin{equation}
+\Lambda_{nm,\mathbf{k}}=\frac{i}{\hbar}\frac{\left(n_{m\mathbf{k}}+n_{n\mathbf{k}}-1\right)}{i\left(\tilde{\omega}_{mn,\mathbf{k}}-\nu\right)+\gamma}.\label{eq:Lineshape_Inversion_Factor}\end{equation}
+
+\end_inset
+
+Inserting 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Field_Independent_Sol_Var"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Lineshape_Inversion_Factor"
+
+\end_inset
+
+ into 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Polarization_Slow_Envelope_Eq"
+
+\end_inset
+
+, yields
+\begin_inset Formula \begin{equation}
+\Lambda_{nm,\mathbf{k}}\sum\Theta_{\mathbf{q},\mathbf{k},\mathbf{k}+\mathbf{q}}^{n,m}\lambda_{nm,\mathbf{k}+\mathbf{q}}+\lambda_{nm,\mathbf{k}}=-\mu_{mn,\mathbf{k}}\Lambda_{nm,\mathbf{k}}.\end{equation}
+
+\end_inset
+
+This equation is the self-consistency equation for 
+\begin_inset Formula $\lambda_{nm,\mathbf{k}}$
+\end_inset
+
+.
+ Once solved, the elelctrical susceptibility is calculated using
+\begin_inset Formula \begin{equation}
+\chi(\nu)=\frac{1}{n_{b}^{2}\epsilon_{0}}\frac{P(z)}{E(z)}=\frac{1}{n_{b}^{2}\epsilon_{0}}\frac{1}{V}\sum_{n,m,\mathbf{k}}\mu_{mn,\mathbf{k}}^{*}\lambda_{nm,\mathbf{k}}.\label{eq:HF_Susceptability}\end{equation}
+
+\end_inset
+
+Absorption, refractive index change and spontaneous emission can therefrom
+ be calculated as already presented in the preceding Chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Free_Carriers_Optical_Transitions"
+
+\end_inset
+
+.
+ In the next section we present the numerical implementation details of
+ the solution.
+ 
+\end_layout
+
+\begin_layout Subsection
+Implementation Considerations
+\end_layout
+
+\begin_layout Standard
+As a consequence of the collisions between particles in the assumed equilibrium
+ state, we consider the conduction band and the valence band as two carriers
+ reservoirs with Fermi-Dirac distributions for the electrons and holes.
+ Thus, we only need to solve the equation of motion for the polarization
+ 
+\begin_inset Formula $\hat{p}_{nm,\mathbf{k}}$
+\end_inset
+
+.
+ Using the decay model for the microscopic polarization we obtain
+\begin_inset Formula \begin{equation}
+\frac{d}{dt}p_{nm,\mathbf{k}}=-i\tilde{\omega}_{mn}(\mathbf{k})p_{nm,\mathbf{k}}-i\Omega_{\mathbf{k}}(z,t)\left(f_{e\mathbf{k}}^{n}+f_{h\mathbf{k}}^{m}-1\right)-\gamma p_{nm,\mathbf{k}},\label{eq:HF_Polarization_Eq_Motion_Numerics}\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $n$
+\end_inset
+
+ and 
+\begin_inset Formula $m$
+\end_inset
+
+ denote the conduction and valence subbands, respectively, involved in the
+ transition.
+ As for the free carrier model, the electron and hole densities are given
+ as input parameters, and the chemical potentials, 
+\begin_inset Formula $E_{Fc}$
+\end_inset
+
+ and 
+\begin_inset Formula $E_{Fv}$
+\end_inset
+
+, are calculated as described in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Carrier_Statistics"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+As the first step for the calculation, the dielectric function 
+\begin_inset Formula $\epsilon(\mathbf{q})$
+\end_inset
+
+, the Coulomb-hole self energy 
+\begin_inset Formula $\Delta E_{CH,n}$
+\end_inset
+
+ and the screened exchange shift energy 
+\begin_inset Formula $\Delta E_{SX,mn}(\mathbf{k})$
+\end_inset
+
+ must be evaluated.
+ Here we elaborate on the practical numerics for the calculation of these
+ terms (and others), and illustrate the results for a 
+\begin_inset Formula $200\,\AA$
+\end_inset
+
+ wide 
+\begin_inset Formula $GaAs$
+\end_inset
+
+ well, surrounded by 
+\begin_inset Formula $Ga_{0.9}Al_{0.1}As$
+\end_inset
+
+ barriers with 
+\begin_inset Formula $\delta$
+\end_inset
+
+-doped layers introduced at 
+\begin_inset Formula $1000\,\AA$
+\end_inset
+
+ away from the barrier-well boundaries.
+ 
+\end_layout
+
+\begin_layout Itemize
+It is more convenient to evaluate 
+\begin_inset Formula $q\epsilon(\mathbf{q})$
+\end_inset
+
+ than only 
+\begin_inset Formula $\epsilon(\mathbf{q})$
+\end_inset
+
+.
+ With Fermi-Dirac electron and hole distributions, we have from 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Full_Lindhards_Eq"
+
+\end_inset
+
+ 
+\begin_inset Formula \begin{equation}
+q\epsilon(\mathbf{q})=q-\frac{e^{2}}{2\epsilon_{r}A}\sum_{n\mathbf{k}}\frac{f_{n,\mathbf{k}-\mathbf{q}}-f_{n,\mathbf{k}}}{E_{n}(\mathbf{k}-\mathbf{q})-E_{n}(\mathbf{k})}.\end{equation}
+
+\end_inset
+
+Converting the sum over the 
+\begin_inset Formula $\mathbf{k}$
+\end_inset
+
+-states into an integral, adding the sum over the spin, choosing 
+\begin_inset Formula $\theta$
+\end_inset
+
+ as the angle between 
+\begin_inset Formula $\mathbf{k}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{q}$
+\end_inset
+
+ and assuming no angular dependence for the subband structure, we obtain
+\begin_inset Formula \begin{equation}
+q\epsilon(q)=q-\frac{e^{2}}{4\pi^{2}\epsilon_{r}}\sum_{n}\int_{0}^{\infty}dk\, k\int_{0}^{2\pi}d\theta\frac{f_{n,\left|\mathbf{k}-\mathbf{q}\right|}-f_{n,\mathbf{\left|k\right|}}}{E_{n}\left(\left|\mathbf{k}-\mathbf{q}\right|\right)-E_{n}(\mathbf{\left|k\right|})}.\label{eq:Epsilon_q_Numeric}\end{equation}
+
+\end_inset
+
+with 
+\begin_inset Formula \begin{equation}
+\left|\mathbf{k}'\right|=\left|\mathbf{k}-\mathbf{q}\right|=\left(k^{2}+q^{2}-2kq\cos\theta\right)^{\frac{1}{2}}.\end{equation}
+
+\end_inset
+
+The integrals can be evaluated here, as before, using the trapezoidal method
+ for integration.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/Screening_Epsilon_q_N_2DEG.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Screening_Dielectric_Function"
+
+\end_inset
+
+The screening dielectric function 
+\begin_inset Formula $\epsilon(q)$
+\end_inset
+
+ calculated for the 
+\begin_inset Formula $200\,\textrm{Å}$
+\end_inset
+
+ wide 
+\begin_inset Formula $GaAs/Ga_{0.9}Al_{0.1}As$
+\end_inset
+
+ well with 
+\begin_inset Formula $n_{e}=1\times10^{9}\div1\times10^{11}\, cm^{-2}$
+\end_inset
+
+ at 
+\begin_inset Formula $T=2K$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+As an illustration, Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Screening_Dielectric_Function"
+
+\end_inset
+
+ presents result of the calculation for the toy structure presented above
+ with variable 2DEG concentration 
+\begin_inset Formula $n_{e}=1\times10^{9}\div1\times10^{11}\, cm^{-2}$
+\end_inset
+
+ .
+ As can be seen, the screening effect mainly influential at low wavevector
+ values, influence which extends with higher gas concentrations.
+\end_layout
+
+\begin_layout Itemize
+For the Coulomb-hole self energy with Fermi-Dirac distributions we can write
+ 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula \begin{eqnarray}
+\Delta E_{CH,n} & = & \sum_{\mathbf{q}\neq0}\Theta_{-\mathbf{q},-\mathbf{k}+\mathbf{q},\mathbf{k}}^{n,n}\left(\frac{1}{\epsilon(\mathbf{q})}-1\right)\nonumber \\
+ & = & \frac{e^{2}}{4\pi\epsilon_{r}}\int_{0^{+}}^{\infty}dq\, G_{\mathbf{q}}^{n,n}\left(\frac{1}{\epsilon(q)}-1\right),\end{eqnarray}
+
+\end_inset
+
+where the parameter 
+\begin_inset Formula $n$
+\end_inset
+
+ denotes the hole subband.
+\end_layout
+
+\begin_layout Itemize
+The screened-exchange shift energy becomes
+\begin_inset Formula \begin{equation}
+\Delta E_{SX,nm}(\mathbf{k})=\sum_{\mathbf{k}'\neq\mathbf{k}}\left(\Theta_{s,\mathbf{q}}^{n,n}f_{e,\mathbf{k}'}^{n}+\Theta_{s,\mathbf{q}}^{m,m}f_{h,\mathbf{k}'}^{m}\right).\end{equation}
+
+\end_inset
+
+The band indices 
+\begin_inset Formula $m$
+\end_inset
+
+ and 
+\begin_inset Formula $n$
+\end_inset
+
+ are defined as before for the interacting subbands.
+ If we convert the sum over 
+\begin_inset Formula $\mathbf{k}'$
+\end_inset
+
+ into an integral with 
+\begin_inset Formula $\theta'$
+\end_inset
+
+ defining the angle between 
+\begin_inset Formula $\mathbf{k}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{k}'$
+\end_inset
+
+ and we assume a rotationally symmetric band structure, we obtain
+\begin_inset Formula \begin{equation}
+\Delta E_{SX,nm}(\mathbf{k})=\frac{e^{2}}{8\pi^{2}\epsilon_{r}}\int_{0}^{\infty}dk'\int_{0}^{2\pi}d\theta'\,\frac{k'}{q\epsilon(q)}\left(G_{\mathbf{q}}^{n,n}f_{e,\mathbf{k}'}^{n}+G_{\mathbf{q}}^{m,m}f_{h,\mathbf{k}'}^{m}\right)\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula \begin{equation}
+\left|\mathbf{q}\right|=\left|\mathbf{k}-\mathbf{k}'\right|=\left(k^{2}+k'^{2}-2kk'\cos\theta'\right)^{\frac{1}{2}}.\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/Bandgap_Energy_Shifts.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Energy_Shifts"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+Calculated Coulomb-hole self energy and screened-exchange shift energy at
+ the Brillouin zone center, for the 
+\begin_inset Formula $200\,\textrm{Å}$
+\end_inset
+
+ wide 
+\begin_inset Formula $GaAs/Ga_{0.9}Al_{0.1}As$
+\end_inset
+
+ well with various 2DEG concentrations for various conduction and valence
+ subbands.
+\end_layout
+
+\end_inset
+
+Calculated (a) Coulomb-hole self energy and (b) screened-exchange shift
+ energy at the Brillouin zone center (
+\begin_inset Formula $k_{t}=0$
+\end_inset
+
+), for the 
+\begin_inset Formula $200\,\textrm{Å}$
+\end_inset
+
+ wide 
+\begin_inset Formula $GaAs/Ga_{0.9}Al_{0.1}As$
+\end_inset
+
+ well with various 2DEG concentrations for various conduction and valence
+ subbands.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Energy_Shifts"
+
+\end_inset
+
+ presents the calculated values of the Coulomb-hole self energy and screened-exc
+hange energy shifts for various 2DEG concentrations.
+ As predicted, both shifts are negative in nature and their values increase
+ (in an absolute value) with the rise in the gas concentration.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/Bandgap_Renormalization_Dipersion.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Bandgap_Renormalization_Dispersion"
+
+\end_inset
+
+The bandgap renormalization dispersion for the various subband transitions
+ calculated for the 
+\begin_inset Formula $200\,\textrm{Å}$
+\end_inset
+
+ wide 
+\begin_inset Formula $GaAs/Ga_{0.9}Al_{0.1}As$
+\end_inset
+
+ well with 
+\begin_inset Formula $n_{e}=1\times10^{11}\, cm^{-2}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Bandgap_Renormalization_Dispersion"
+
+\end_inset
+
+ presents the dispersion relation of the total bandgap renormalization (BGR)
+ energy, 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $\Delta E_{CH,m}-\Delta E_{SX,nm}(\mathbf{k})$
+\end_inset
+
+, calculated for the
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+ 
+\begin_inset Formula $200\,\textrm{Å}$
+\end_inset
+
+ wide 
+\begin_inset Formula $GaAs/Ga_{0.9}Al_{0.1}As$
+\end_inset
+
+ well with 2DEG concentration of 
+\begin_inset Formula $n_{e}=1\times10^{11}\, cm^{-2}$
+\end_inset
+
+.
+ In this calculation we consider the transitions between the first conduction
+ subband and first four valence subbands.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/Bandgap_Energy_Shift_Total_2K.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/Bandgap_Energy_Shift_Total_77K.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Total_Bandgap_Renormalization"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The total bandgap renormalization at the Brillouin zone center, for the
+ 
+\begin_inset Formula $200\,\textrm{Å}$
+\end_inset
+
+ wide 
+\begin_inset Formula $GaAs/Ga_{0.9}Al_{0.1}As$
+\end_inset
+
+ well with various 2DEG concentrations.
+\end_layout
+
+\end_inset
+
+The total bandgap renormalization at the Brillouin zone center (
+\begin_inset Formula $k_{t}=0$
+\end_inset
+
+), for the 
+\begin_inset Formula $200\,\textrm{Å}$
+\end_inset
+
+ wide 
+\begin_inset Formula $GaAs/Ga_{0.9}Al_{0.1}As$
+\end_inset
+
+ well with various 2DEG concentrations for the 
+\begin_inset Formula $E_{1}-HH_{1}$
+\end_inset
+
+ transition for (a) 
+\begin_inset Formula $T=2\, K$
+\end_inset
+
+ and (b) 
+\begin_inset Formula $T=77\, K$
+\end_inset
+
+ ambient temperatures.
+ The blue dots denote the calculated values while the red dashed curve in
+ (a) is the result of an exponential fit (were the fitted function is given
+ in the legend box).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Total_Bandgap_Renormalization"
+
+\end_inset
+
+ presents the total bandgap renormalization for the same structure for various
+ 2DEG concentrations for ambient temperatures 
+\begin_inset Formula $T=2\, K$
+\end_inset
+
+ and 
+\begin_inset Formula $T=77\, K$
+\end_inset
+
+ (respectively in (a) and (b)).
+ The renormalization value grown (in absolute value) with the concentration
+ because of the state filling in the conduction subband.
+ The exponential fit of the calculated values is also presented for 
+\begin_inset Formula $T=2\, K$
+\end_inset
+
+ (red dashed curve in (a)), where the expected 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Cingolani1991"
+
+\end_inset
+
+ 
+\begin_inset Formula $\sim1/3$
+\end_inset
+
+ exponential dependence is clearly seen.
+\end_layout
+
+\begin_layout Standard
+In all the expressions above we use 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Coulomb_Interaction_Alternative_2D"
+
+\end_inset
+
+ to describe the coulomb interaction for the 2D case.
+ The form factor is explicitly calculated using 
+\begin_inset Formula \begin{equation}
+G_{\mathbf{q}}^{n,m}=\int_{-\infty}^{\infty}dz\int_{-\infty}^{\infty}dz'\left|F_{n,\mathbf{k}}(z)\right|^{2}\left|F_{m,\mathbf{k}}(z')\right|^{2}e^{-q\left|z-z'\right|},\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $F_{n,\mathbf{k}}(z)$
+\end_inset
+
+ is the envelope function of the specific subband considered.
+ Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Form_Factors"
+
+\end_inset
+
+ presents the calculated form factors used throughout the examples presented
+ above.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/Form_Factors.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Form_Factors"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+Calculated form factors for the electron-hole, electron-electron and  hole-hole
+ combinations.
+\end_layout
+
+\end_inset
+
+Calculated form factors for the (a) electron-hole, (b) electron-electron
+ and (c) hole-hole combinations.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+With the knowledge of these terms, we can now concentrate on 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:HF_Polarization_Eq_Motion_Numerics"
+
+\end_inset
+
+.
+ The last difficulty resides in 
+\begin_inset Formula $\Omega_{\mathbf{k}}(z,t)$
+\end_inset
+
+.
+ The first step is to eliminate the rapidly varying phase factor from 
+\begin_inset Formula $p_{nm,\mathbf{k}}$
+\end_inset
+
+ and to work with 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $s_{nm,\mathbf{k}}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+ as in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Polarization_Slow_Envelope_Eq"
+
+\end_inset
+
+
+\begin_inset Formula \begin{eqnarray}
+\frac{d}{dt}s_{nm,\mathbf{k}} & = & -\left(i\left(\tilde{\omega}_{n,m}(\mathbf{k})-\nu\right)+\gamma\right)s_{nm,\mathbf{k}}-\frac{i}{\hbar}\mu_{\mathbf{k}}\frac{E(z)}{2}w_{\mathbf{k}}\nonumber \\
+ &  & -\frac{i}{\hbar}w_{\mathbf{k}}\sum_{\mathbf{k}\neq\mathbf{k}'}\Theta_{s,\mathbf{q}}^{n,m}s_{nm,\mathbf{k}'},\label{eq:HF_Slow_Polarization_Eq_Motion_Numerics}\end{eqnarray}
+
+\end_inset
+
+where we defined 
+\begin_inset Formula $w_{\mathbf{k}}=f_{e\mathbf{k}}^{n}+f_{h\mathbf{k}}^{m}-1$
+\end_inset
+
+.
+ To obtain susceptibility spectrum of a medium, 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:HF_Slow_Polarization_Eq_Motion_Numerics"
+
+\end_inset
+
+ is solved for the steady state (as in the previous section), which leads
+ to 
+\begin_inset Formula \begin{equation}
+s_{nm,\mathbf{k}}=-\frac{i}{\hbar}\frac{w_{\mathbf{k}}\mu_{\mathbf{k}}}{i\left(\tilde{\omega}_{n,m}(\mathbf{k})-\nu\right)+\gamma}\left(\frac{E(z)}{2}+\frac{1}{\mu_{\mathbf{k}}}\sum_{\mathbf{k}\neq\mathbf{k}'}\Theta_{s,\mathbf{q}}^{n,m}s_{nm,\mathbf{k}'}\right).\label{eq:Steady_State_Sol_Polarization}\end{equation}
+
+\end_inset
+
+We define two new variables, the 
+\begin_inset Formula $\mathbf{k}$
+\end_inset
+
+-dependent complex susceptibility function 
+\begin_inset Formula \begin{equation}
+\chi_{\mathbf{k}}^{0}=-\Lambda_{nm,\mathbf{k}}\mu_{\mathbf{k}},\end{equation}
+
+\end_inset
+
+and the Coulomb enhancement factor
+\begin_inset Formula \begin{equation}
+\Gamma_{\mathbf{k}}^{n,m}=\frac{\lambda_{nm,\mathbf{k}}}{\chi_{\mathbf{k}}^{0}},\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\Lambda_{nm,\mathbf{k}}$
+\end_inset
+
+ and 
+\begin_inset Formula $\lambda_{nm,\mathbf{k}}$
+\end_inset
+
+ where defined in the previous section.
+ Substituting these two expressions into 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Steady_State_Sol_Polarization"
+
+\end_inset
+
+ we obtain
+\begin_inset Formula \begin{equation}
+\Gamma_{\mathbf{k}}^{n,m}(\nu)=1+\frac{1}{\mu_{\mathbf{k}}}\sum_{\mathbf{k}\neq\mathbf{k}'}\Theta_{s,\mathbf{q}}^{n,m}\chi_{\mathbf{k}'}^{0}\Gamma_{\mathbf{k}'}^{n,m}(\nu).\label{eq:Coulomb_Enhancement_Factor_1}\end{equation}
+
+\end_inset
+
+We consider the last part of this equation and transfor the sum over 
+\begin_inset Formula $\mathbf{k}'$
+\end_inset
+
+ into an integral as before.
+ Furthermore, we assume that the microscopic polarization 
+\begin_inset Formula $p_{nm,\mathbf{k}}$
+\end_inset
+
+ has no angular dependence
+\begin_inset Formula \begin{equation}
+\frac{1}{\mu_{\mathbf{k}}}\sum_{\mathbf{k}\neq\mathbf{k}'}\Theta_{s,\mathbf{q}}^{n,m}\chi_{\mathbf{k}'}^{0}\Gamma_{\mathbf{k}'}^{n,m}(\nu)=\frac{1}{\mu_{\mathbf{k}}}\int_{0}^{\infty}dk'\,\varepsilon_{k,k'}\chi_{k'}^{0}\Gamma_{k'}^{n,m}(\nu),\label{eq:Coulomb_Enhancement_Part}\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula \begin{equation}
+\varepsilon_{k,k'}=\frac{e^{2}}{2\pi^{2}\epsilon_{r}}k'\int_{0}^{2\pi}d\theta'\frac{G_{\mathbf{q}}^{n,m}}{q\epsilon(q)}.\end{equation}
+
+\end_inset
+
+Inserting 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Coulomb_Enhancement_Part"
+
+\end_inset
+
+ into 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Coulomb_Enhancement_Factor_1"
+
+\end_inset
+
+, we obtain 
+\begin_inset Formula \begin{equation}
+\Gamma_{k}^{n,m}(\nu)=1+\frac{1}{\mu_{k}}\int_{0}^{\infty}dk'\,\varepsilon_{k,k'}\chi_{k'}^{0}\Gamma_{k'}^{n,m}(\nu).\label{eq:Coulomb_Enhancement_Factor_2}\end{equation}
+
+\end_inset
+
+Various approaches exist in the literature to solve this self-consistent
+ equation 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Haug2009,Chow1994"
+
+\end_inset
+
+.
+ We choose to use the most general matrix inversion method, in-spite of
+ its tendency to be rater resource consuming, as apposed to various approximate
+ methods (such as Pade and the dominant momentum methods).
+ To this end we approximate the integral over the 
+\begin_inset Formula $k$
+\end_inset
+
+ space by a sum of trapezoidal areas and discretize 
+\begin_inset Formula $k$
+\end_inset
+
+ and 
+\begin_inset Formula $k'$
+\end_inset
+
+ with 
+\begin_inset Formula $n$
+\end_inset
+
+ values and constant step size 
+\begin_inset Formula $\Delta k$
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+An alternative choice for 
+\begin_inset Formula $\Delta k$
+\end_inset
+
+ is to take the elements of the 
+\begin_inset Formula $k$
+\end_inset
+
+ vector as the support of a Gaussian quadrature 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Haug2009"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+.
+ Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Coulomb_Enhancement_Factor_2"
+
+\end_inset
+
+ can thus be written in a matrix form
+\begin_inset Formula \begin{equation}
+\mathbf{M}\cdot\mathbf{\boldsymbol{\Gamma}}_{\mathbf{k}}^{n,m}=\mathbf{1},\label{eq:Coulomb_Enhancement_Factor_3}\end{equation}
+
+\end_inset
+
+with 
+\begin_inset Formula \begin{equation}
+\mathbf{\boldsymbol{\Gamma}}_{\mathbf{k}}^{n,m}=\left(\Gamma_{k_{1}}^{n,m},\Gamma_{k_{2}}^{n,m},\cdots,\Gamma_{k_{n}}^{n,m}\right)^{T}\end{equation}
+
+\end_inset
+
+and 
+\begin_inset Formula \begin{equation}
+\mathbf{M}=\left(\begin{array}{cccc}
+1-\frac{\Delta_{k}}{\mu_{k_{1}}}\varepsilon_{k_{1},k_{1}'}\chi_{k_{1}'}^{0} & -\frac{\Delta_{k}}{\mu_{k_{1}}}\varepsilon_{k_{1},k_{2}'}\chi_{k_{2}'}^{0} & \cdots & -\frac{\Delta_{k}}{\mu_{k_{1}}}\varepsilon_{k_{1},k_{n}'}\chi_{k_{n}'}^{0}\\
+-\frac{\Delta_{k}}{\mu_{k_{1}}}\varepsilon_{k_{1},k_{1}'}\chi_{k_{1}'}^{0} & 1-\frac{\Delta_{k}}{\mu_{k_{2}}}\varepsilon_{k_{2},k_{2}'}\chi_{k_{2}'}^{0} & \cdots & -\frac{\Delta_{k}}{\mu_{k_{2}}}\varepsilon_{k_{2},k_{n}'}\chi_{k_{n}'}^{0}\\
+\vdots & \vdots & \ddots & \vdots\\
+-\frac{\Delta_{k}}{\mu_{k_{n}}}\varepsilon_{k_{n},k_{1}'}\chi_{k_{1}'}^{0} & -\frac{\Delta_{k}}{\mu_{k_{n}}}\varepsilon_{k_{n},k_{2}'}\chi_{k_{2}'}^{0} & \cdots & 1-\frac{\Delta_{k}}{\mu_{k_{n}}}\varepsilon_{k_{n},k_{n}'}\chi_{k_{n}'}^{0}\end{array}\right).\end{equation}
+
+\end_inset
+
+Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Coulomb_Enhancement_Factor_3"
+
+\end_inset
+
+ can now be solved using standard mathematical methods to obtain 
+\begin_inset Formula $\mathbf{\boldsymbol{\Gamma}}_{\mathbf{k}}^{n,m}$
+\end_inset
+
+.
+ The microscopic polarization can be obtain using 
+\begin_inset Formula \begin{equation}
+p_{nm,\mathbf{k}}=\frac{1}{2}e^{-i\left(k_{0}z-\nu t-\phi(z)\right)}E(z)\chi_{k}^{0}\Gamma_{k}^{n,m}.\label{eq:HF_Final_Polarization}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Inserting 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:HF_Final_Polarization"
+
+\end_inset
+
+ into 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:HF_Susceptability"
+
+\end_inset
+
+ and using the definitions in chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Free_Carriers_Optical_Transitions"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Intensity_Gain"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Sp_Emission_Definition"
+
+\end_inset
+
+, we can write the expressions for the absorption (or the gain amplitude)
+ and spontaneous emission spectra
+\begin_inset Formula \begin{eqnarray}
+\alpha_{HF}(\nu) & = & -\Im\left\{ \frac{i\nu}{\hbar c\epsilon_{0}n_{b}\pi\mathcal{L}}\sum_{n,m,\mathbf{k}}\left|\mu_{nm,\mathbf{k}}\right|^{2}\frac{w_{\mathbf{k}}}{i\left(\tilde{\omega}_{n,m}(\mathbf{k})-\nu\right)+\gamma}\Gamma_{\mathbf{k}}^{n,m}(\nu)\right\} \nonumber \\
+ & = & -\Im\left\{ \frac{i\nu}{\hbar c\epsilon_{0}n_{b}\pi\mathcal{L}}\sum_{n,m}\int_{0}^{\infty}dk\, k\left|\mu_{nm,\mathbf{k}}\right|^{2}\frac{w_{k}}{i\left(\tilde{\omega}_{n,m}(\mathbf{k})-\nu\right)+\gamma}\Gamma_{\mathbf{k}}^{n,m}(\nu)\right\} \label{eq:HF_Absorption}\end{eqnarray}
+
+\end_inset
+
+and 
+\begin_inset Formula \begin{equation}
+r_{sp,HF}(\nu)=-\frac{n_{b}^{2}(\hbar\nu)^{2}}{\pi^{2}\hbar^{3}c^{2}}\frac{1}{1-\exp\left(\left(\hbar\nu-\left(E_{Fc}-E_{Fv}\right)\right)/k_{B}T\right)}\alpha_{HF}(\nu),\label{eq:HF_Sp_Emission}\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\Gamma_{\mathbf{k}}^{n,m}(\nu)$
+\end_inset
+
+ are the solution of 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Coulomb_Enhancement_Factor_3"
+
+\end_inset
+
+, 
+\begin_inset Formula $\tilde{\omega}_{n,m}(\mathbf{k})$
+\end_inset
+
+ is the renormalized bandgap defined in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Band_Gap_Renormalization"
+
+\end_inset
+
+, and 
+\begin_inset Formula $\mathcal{L}$
+\end_inset
+
+ is the length if the 2D quantum structure.
+ 
+\end_layout
+
+\begin_layout Standard
+In this chapter we have discussed the screened Hartree-Fock approximation
+ and its consequences for the absorption spectra.
+ It represents a simple model which accounts for the plasma screening but
+ not for the particle collisions.
+ As a next level of complication, next higher level of approximations can
+ be computed referred to as Coulomb correlations.
+ The main advantage of this model is the elimination of the phenomenological
+ modeling of the microscopic polarization decay through the use of 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ parameter.
+ On the other hand, this model much more demanding computationally and thus
+ ineffective for our purposes.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Section
+Beyond the Hartree-Fock Approximation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Excitonic-Effects"
+
+\end_inset
+
+Excitonic States 
+\end_layout
+
+\begin_layout Plain Layout
+The bandstructure and optical properties of semiconductors we have discussed
+ in chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Electronic_Properties_Semiconductors"
+
+\end_inset
+
+ are based on the assumption that the valence band is filled with electrons
+ and the conduction band is empty.
+ The effect of the electrons in the conduction band and holes in the valence
+ band is only manifested through the occupation probabilities without altering
+ the bandstructure.
+ In reality, of course, there is a Coulombic interaction between an electron
+ and another electron or hole.
+ Earlier in this chapter we have outlined a simple but rigorous many-body
+ model for this interaction.
+ However, there is one important problem, that of excitonic effects in semicondu
+ctors, that can be addressed by simpler theoretical techniques.
+ In this section we explore the basic model for the excitonic states in
+ semiconductors.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+The electron-hole pair forms a bound state which is described by an envelope
+ function.
+ The form if the envelope function describing the bound state can be calculated
+ using the Coulombic interaction as a perturbation.
+ Two important classes of excitons exist depending upon the extent of the
+ periodic envelope function as shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Excitons_Schematic"
+
+\end_inset
+
+.
+ When the envelope function is confined to just a few unit cells, the excitons
+ are classified as Frenkel excitons.
+ Due to their restricted spatial extent, the Heisenberg uncertainty principle
+ indicates that their treatment necessitates dealing with the full bandstructure
+ of the semiconductor.
+ On the other hand, if the envelope function extends over several hundred
+ Angstroms, near bandedge electron and hole states can be used to describe
+ them.
+ Such excitons are called Mott or Wannier excitons and responsible for the
+ excitonic physics in semiconductors.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../../AdvancedLab/Figures/Exciton_Types_Schematic.tif
+	display false
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Excitons_Schematic"
+
+\end_inset
+
+A conceptual picture of the periodic function extent of the Frenkel and
+ Mott excitons (after 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Singh2003"
+
+\end_inset
+
+).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Now we consider the low-excitation regime of the semiconductor, where an
+ extremely small density of electrons and holes exist.
+ We therefore concentrate on the analysis of one-electron-hole pair effects.
+ The effective mass theory can be used to describe these excitons and accordingl
+y the problem is presented by the following equation
+\begin_inset Formula \begin{equation}
+-\left[\frac{\hbar^{2}\nabla_{\mathbf{r}}^{2}}{2m_{r}}+V(r)\right]\psi_{l}(\mathbf{r})=E_{l}\psi_{l}(\mathbf{r}),\label{eq:Wannier_Eq}\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $V(r)$
+\end_inset
+
+ is the Coulomb interaction potential, 
+\begin_inset Formula \begin{equation}
+\frac{1}{m_{r}}=\frac{1}{m_{e}^{*}}-\frac{1}{m_{h}^{*}}\end{equation}
+
+\end_inset
+
+is the inverse reduced mass and 
+\begin_inset Formula $\mathbf{r}=\mathbf{r}_{e}-\mathbf{r}_{h}$
+\end_inset
+
+ is the relative location of the two particles.
+ This equation has exactly the form of a two-particle 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Schr
+\backslash
+"{o}dinger 
+\end_layout
+
+\end_inset
+
+ equation for the relative motion of an electron and a hole interacting
+ via the attractive Coulomb potential 
+\begin_inset Formula $V(r)$
+\end_inset
+
+, and it is called the 
+\emph on
+Wannier equation
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Haug2009"
+
+\end_inset
+
+.
+ This equation have been derived under the assumption that the Coulomb potential
+ varies little within one unit cell.
+ This assumption is valid only if the resulting electron–hole–pair Bohr
+ radius 
+\begin_inset Formula $a_{0}$
+\end_inset
+
+ which determines the extension of the ground state wave function is considerabl
+y larger than a lattice constant.
+\end_layout
+
+\begin_layout Plain Layout
+We now discuss the bound-state solutions of 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Wannier_Eq"
+
+\end_inset
+
+.
+ For the sake of mathematical ease we transform the Wannier equation to
+ 
+\begin_inset Formula \begin{equation}
+\left(-\nabla_{\rho}^{2}-\frac{\lambda}{\rho}\right)\psi(\rho)=\frac{2m_{r}E_{l}}{\hbar^{2}\alpha^{2}}\psi(\rho),\end{equation}
+
+\end_inset
+
+where we introduced the scaled radius 
+\begin_inset Formula $\rho=r\alpha$
+\end_inset
+
+.
+ We also define the following two parameters 
+\begin_inset Formula \begin{equation}
+\lambda=\frac{e^{2}2m_{r}}{\epsilon_{0}\hbar^{2}\alpha}=2\frac{1}{\alpha a_{0}},\end{equation}
+
+\end_inset
+
+and 
+\begin_inset Formula \begin{equation}
+a_{0}=\frac{\hbar^{2}\epsilon_{0}}{e^{2}m_{r}}.\label{eq:Exciton_Rydberg_Radius}\end{equation}
+
+\end_inset
+
+As in the hydrogen-atom case, the energy 
+\begin_inset Formula $E_{l}$
+\end_inset
+
+ is negative for bound states (
+\begin_inset Formula $E_{bound}<E_{g}$
+\end_inset
+
+) and positive for the ionization continuum.
+ We define
+\begin_inset Formula \begin{equation}
+a_{0}^{2}\alpha^{2}=-\frac{8m_{r}E_{l}a_{0}^{2}}{\hbar^{2}}=-4\frac{E_{l}}{E_{0}},\end{equation}
+
+\end_inset
+
+with the energy unit 
+\begin_inset Formula \begin{equation}
+E_{0}=\frac{\hbar^{2}}{2m_{r}a_{0}^{2}}.\label{eq:Exciton_Rydberg_Energy}\end{equation}
+
+\end_inset
+
+to rewrite the Wannier equation as 
+\begin_inset Formula \begin{equation}
+\left(-\nabla_{\rho}^{2}-\frac{\lambda}{\rho}\right)\psi(\rho)=-\frac{1}{4}\psi(\rho),\label{eq:Reduced_Wannier_Eq}\end{equation}
+
+\end_inset
+
+and 
+\begin_inset Formula \begin{equation}
+\lambda=\frac{e^{2}}{\epsilon_{0}\hbar}\sqrt{-\frac{m_{r}}{2E_{l}}}.\end{equation}
+
+\end_inset
+
+With this choice of 
+\begin_inset Formula $\alpha^{2}$
+\end_inset
+
+ the parameter 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ will be real for bound states and imaginary for the ionization continuum.
+\end_layout
+
+\begin_layout Plain Layout
+Solving 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Reduced_Wannier_Eq"
+
+\end_inset
+
+ for the two-dimensional case, we use the following cylindrical ansatz 
+\begin_inset Formula \begin{equation}
+\psi(\rho)=f_{l}(\rho)\frac{1}{\sqrt{2\pi}}e^{il\phi},\end{equation}
+
+\end_inset
+
+where the Laplace equation for the radial part is 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Jackson1998"
+
+\end_inset
+
+ 
+\begin_inset Formula \begin{equation}
+\left(\frac{1}{\rho}\frac{\partial}{\partial\rho}\rho\frac{\partial}{\partial\rho}+\frac{\lambda}{\rho}-\frac{1}{4}-\frac{m^{2}}{\rho^{2}}\right)f_{l}(\rho)=0.\end{equation}
+
+\end_inset
+
+The eigenfunctions of this equation can we written as 
+\begin_inset Formula \begin{equation}
+f_{l}(\rho)=\rho^{\left|l\right|}e^{-\frac{\rho}{2}}R(\rho),\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula \begin{equation}
+R(\rho)=\sum_{\iota}\beta_{\iota}\rho^{\iota}.\end{equation}
+
+\end_inset
+
+Terminating the series for certain 
+\begin_inset Formula $\iota=\iota_{max}$
+\end_inset
+
+, so that all 
+\begin_inset Formula $\beta_{\iota\geq\iota_{max}}=0$
+\end_inset
+
+, we can define the main quantum number as 
+\begin_inset Formula $\iota_{max}+\left|l\right|+\frac{1}{2}=\lambda\equiv n+\frac{1}{2}$
+\end_inset
+
+, where 
+\begin_inset Formula $n=0,1,\ldots$
+\end_inset
+
+.
+ Using standard partial differential equations methods 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Haug2009"
+
+\end_inset
+
+, this eigenvalues of the problem can be obtained to be 
+\begin_inset Formula \begin{equation}
+E_{n}=-E_{0}\frac{1}{\left(n+1/2\right)^{2}}\,\,\,\mbox{with}\,\,\, n=0,1,\ldots,\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $E_{0}$
+\end_inset
+
+, defined in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Exciton_Rydberg_Energy"
+
+\end_inset
+
+, is the exciton Rydberg energy, and 
+\begin_inset Formula $a_{0}$
+\end_inset
+
+, defined in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Exciton_Rydberg_Radius"
+
+\end_inset
+
+, is the Rydberg radius.
+ Listing of several radial wavefunction and eigenenergies for the 2D Wannier
+ exciton are listed in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:2D_Wannier_Exciton_WF_Radial"
+
+\end_inset
+
+.
+ The full normalized exciton wave function can be written in the 2D case
+ as 
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="5">
+<features booktabs="true">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $l_{max}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $n$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $l$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f_{n,l}(\rho)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $E_{n}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{1}{a_{0}}4e^{-\frac{3r}{a_{0}}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-4E_{0}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{4}{a_{0}3\sqrt{3}}\left(1-\frac{4r}{3a_{0}}\right)e^{-\frac{2r}{3a_{0}}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-\frac{4E_{0}}{9}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\pm1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\frac{16}{a_{0}9\sqrt{6}}\frac{r}{a_{0}}e^{-\frac{2r}{3a_{0}}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $-\frac{4E_{0}}{9}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:2D_Wannier_Exciton_WF_Radial"
+
+\end_inset
+
+Radial solutions of the 2D Wannier equation (after 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Haug2009"
+
+\end_inset
+
+).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula \begin{equation}
+\psi_{n,l}(\mathbf{r})=\sqrt{\frac{1}{\pi a_{0}^{2}\left(n+\frac{1}{2}\right)^{3}}\frac{\left(n-\left|l\right|\right)!}{\left[\left(n+\left|l\right|\right)!\right]^{3}}}\rho^{\left|l\right|}e^{-\frac{\rho}{2}}L_{n+\left|l\right|}^{2\left|l\right|}(\rho)e^{im\phi},\label{eq:2D_Wannier_Exciton_Full_Wavefunction}\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $L_{q}^{p}$
+\end_inset
+
+ are the associated Laguerre polynomials 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Jackson1998"
+
+\end_inset
+
+ and 
+\begin_inset Formula $\rho=\frac{2r}{\left(n+1/2\right)a_{0}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+The excitonic wavefunction, derived thus far, can be formulated in the following
+ alternative form
+\begin_inset Formula \begin{equation}
+\psi\left(\mathbf{r}\right)=\varphi_{n}\left(\mathbf{r}\right)\frac{1}{\sqrt{\Omega}}e^{i\mathbf{K}\cdot\mathbf{R}},\label{eq:Excitonic_WF_COM}\end{equation}
+
+\end_inset
+
+where the center of mass coordinate is defined as 
+\begin_inset Formula $\mathbf{R}=\left(m_{e}\mathbf{r}_{e}+m_{h}\mathbf{r}_{h}\right)/M$
+\end_inset
+
+ and 
+\begin_inset Formula $M=m_{e}+m_{h}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\mathbf{K}$
+\end_inset
+
+ corresponds to the center-of-mass momentum.
+\end_layout
+
+\begin_layout Plain Layout
+Although an exciton has a similar internal structure to a hydrogen atom,
+ a Wannier exciton has much larger Bohr radius and much smaller binding
+ energy than a hydrogen atom, owing to the small effective mass of electrons
+ and the large dielectric constant in semiconductors.
+ For instance, in the ground (
+\begin_inset Formula $1s$
+\end_inset
+
+) state, the electron and hole in a Wannier exciton are much more loosely
+ bound than the electron and proton in a hydrogen atom.
+ On the other hand, since the exciton's wavefunction is extended over many
+ lattice sites of the crystal, the exciton collects the dipole oscillator
+ strength of many atoms.
+\end_layout
+
+\begin_layout Plain Layout
+More rigorously, the excitonic oscillator strength can be derived as 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Andreani1995"
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Add 2D formulas
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula \begin{eqnarray}
+f_{exc} & = & \frac{2}{m_{0}\hbar\omega}\left|\left\langle f\right|\mathbf{e}\cdot\sum_{i}\mathbf{p}_{i}\left|i\right\rangle \right|^{2}\nonumber \\
+ & = & \frac{2}{m_{0}\hbar\omega}\left|\left\langle u_{v}\right|\hat{\mathbf{e}}\cdot\mathbf{p}\left|u_{c}\right\rangle \right|^{2}\Omega\,2\left|\varphi_{n}\left(r=0\right)\right|^{2}\delta_{\mathbf{k},0},\end{eqnarray}
+
+\end_inset
+
+where 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+initial,
+\begin_inset Formula $\left|i\right\rangle $
+\end_inset
+
+,
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+ and final,
+\begin_inset Formula $\left|i\right\rangle $
+\end_inset
+
+, states refere to the crystal ground state, the exciton state 
+\begin_inset Formula $u_{v}$
+\end_inset
+
+ and 
+\begin_inset Formula $u_{c}$
+\end_inset
+
+ represent the Bloch wavefunctions of the valence and conduction band, 
+\begin_inset Formula $\Omega$
+\end_inset
+
+is the crystal volume, 
+\begin_inset Formula $\varphi_{n}(r)$
+\end_inset
+
+ us th exciton envelope function defined in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Excitonic_WF_COM"
+
+\end_inset
+
+ and 
+\begin_inset Formula $m_{0}$
+\end_inset
+
+ is the free-electron mass.
+\end_layout
+
+\begin_layout Plain Layout
+The physically meaningful quantity is the oscillator strength ver unit volume,
+ which is related to the absorption coefficient by 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Yamamoto2000"
+
+\end_inset
+
+
+\begin_inset Formula \begin{equation}
+\int\alpha(\omega)d\omega=\frac{2\pi^{2}e^{2}}{nm_{0}c}\frac{f}{\Omega}.\label{eq:Absorption_Oscillator_Strength}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Subsection
+Exciton Binding Energy
+\end_layout
+
+\begin_layout Plain Layout
+We can now present a simple model for the binding energy of the excitons
+ in heterostructures.
+ We can write the two-body exciton wavefunction as a product of three factors
+\begin_inset Formula \begin{equation}
+\psi=\psi_{e}(z_{e})\psi_{h}(z_{h})\psi_{r},\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\psi_{r}$
+\end_inset
+
+ represents the electron and hole relative motion.
+ This function is a variational wavefunction employed to minimize the total
+ energy 
+\begin_inset Formula $E$
+\end_inset
+
+ of the system 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Harrison2005"
+
+\end_inset
+
+.
+ The specific form of 
+\begin_inset Formula $\psi_{r}$
+\end_inset
+
+ will be discussed bellow.
+ The other two factors, 
+\begin_inset Formula $\psi_{e}(z_{e})$
+\end_inset
+
+ and 
+\begin_inset Formula $\psi_{h}(z_{h})$
+\end_inset
+
+, are simply the eigenfunctions of the one-particle Hamiltonians of the
+ heterostructure,
+\begin_inset Formula \begin{eqnarray}
+\hat{H}_{e}\psi_{e}(z_{e}) & = & E_{e}\psi_{e}(z_{e}),\\
+\hat{H}_{h}\psi_{h}(z_{h}) & = & E_{h}\psi_{h}(z_{h}).\end{eqnarray}
+
+\end_inset
+
+One of the main advantages of this formalism is that it is independent of
+ the form of the one-particle Hamiltonians 
+\begin_inset Formula $\hat{H}_{e}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{H}_{h}$
+\end_inset
+
+, and indeed calculations can be performed on any system in which the standard
+ electron and hole wave functions can be calculated.
+\end_layout
+
+\begin_layout Plain Layout
+From the exciton 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Schr
+\backslash
+"{o}dinger 
+\end_layout
+
+\end_inset
+
+ equation the total exciton energy follows simply as the expectation value
+\begin_inset Formula \begin{equation}
+E=\frac{\left\langle \psi\vert\hat{H}\vert\psi\right\rangle }{\left\langle \psi\vert\psi\right\rangle }=\frac{N}{D}.\label{eq:Total_Exciton_Energy_1}\end{equation}
+
+\end_inset
+
+Now, whatever the form of the relative motion term 
+\begin_inset Formula $\psi_{r}$
+\end_inset
+
+, it will be a function of the electron-hole separation, which is quantified
+ in terms of the three variables, 
+\begin_inset Formula $x=\left|x_{e}-x_{h}\right|,\, y=\left|y_{e}-y_{h}\right|$
+\end_inset
+
+ and 
+\begin_inset Formula $z=\left|z_{e}-z_{h}\right|$
+\end_inset
+
+.
+ The denominator 
+\begin_inset Formula $D$
+\end_inset
+
+ in equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Total_Exciton_Energy_1"
+
+\end_inset
+
+ can therefore be written as
+\begin_inset Formula \begin{equation}
+D=\left\langle \psi\vert\psi\right\rangle =\int_{\Omega}\left|\psi_{e}(z_{e})\right|^{2}\left|\psi_{h}(z_{h})\right|^{2}\left|\psi_{r}\right|^{2}dx\, dy\, dz_{e}\, dz_{h}.\end{equation}
+
+\end_inset
+
+Since 
+\begin_inset Formula $\psi_{e}$
+\end_inset
+
+ and 
+\begin_inset Formula $\psi_{h}$
+\end_inset
+
+ are functions of 
+\begin_inset Formula $z$
+\end_inset
+
+ only, then the integration over 
+\begin_inset Formula $x-y$
+\end_inset
+
+ plane will involve only the relative motion term 
+\begin_inset Formula $\psi_{r}$
+\end_inset
+
+.
+ Correspondingly, the integrations over the electron and hole coordinates,
+ 
+\begin_inset Formula $z_{e}$
+\end_inset
+
+ and 
+\begin_inset Formula $z_{h}$
+\end_inset
+
+ will yield a result which is a function of the electron and hole separation
+ (
+\begin_inset Formula $a_{0}$
+\end_inset
+
+) only, i.e.
+ it is possible to write 
+\begin_inset Formula \begin{equation}
+\int\left|\psi_{r}\right|^{2}dx\, dy=F(a_{0}).\end{equation}
+
+\end_inset
+
+Although the one-particle wave functions, 
+\begin_inset Formula $\psi_{e}$
+\end_inset
+
+ and 
+\begin_inset Formula $\psi_{h}$
+\end_inset
+
+, in principle, extend to 
+\begin_inset Formula $\pm\infty$
+\end_inset
+
+, in practice, from a computational viewpoint, it is necessary to define
+ them between 
+\begin_inset Quotes eld
+\end_inset
+
+effective infinities
+\begin_inset Quotes erd
+\end_inset
+
+.
+ These can be defined so that 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Harrison2005"
+
+\end_inset
+
+
+\begin_inset Formula \begin{equation}
+\int_{\mu}^{\nu}\psi_{e}(z_{e})dz_{e}\approx\int_{-\infty}^{+\infty}\psi_{e}(z_{e})dz_{e},\end{equation}
+
+\end_inset
+
+and similarly for 
+\begin_inset Formula $\psi_{h}$
+\end_inset
+
+.
+ Using these results, the denominator 
+\begin_inset Formula $D$
+\end_inset
+
+ can be re-written as
+\begin_inset Formula \begin{eqnarray}
+D & = & \int_{0}^{\nu-\mu}\int_{\mu}^{\nu}\int_{\mu}^{\nu}\left|\psi_{e}(z_{e})\right|^{2}\left|\psi_{h}(z_{h})\right|^{2}F(a)dz_{e}\, dz_{h}\nonumber \\
+ &  & \times\left[\delta\left(z_{e}-z_{h}-a\right)+\delta\left(z_{h}-z_{e}-a\right)\right]da,\end{eqnarray}
+
+\end_inset
+
+where the Dirac 
+\begin_inset Formula $\delta$
+\end_inset
+
+-functions have been introduced in order to ensure that contributions are
+ included from both 
+\begin_inset Formula $z_{e}-z_{h}=a$
+\end_inset
+
+ and 
+\begin_inset Formula $z_{h}-z_{e}=a$
+\end_inset
+
+ .
+ After performing the integration 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Harrison2005"
+
+\end_inset
+
+, the denominator 
+\begin_inset Formula $D$
+\end_inset
+
+ can be written as
+\begin_inset Formula \begin{equation}
+D=\int_{0}^{\nu-\mu}p(a)F(a)\, dz,\label{eq:D_term}\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $p(a)$
+\end_inset
+
+ represents the uncorrelated probability of finding the electron and hole
+ separated by 
+\begin_inset Formula $a$
+\end_inset
+
+ distance a, i.e.
+\begin_inset Formula \begin{equation}
+p(a)=\int_{\mu}^{\nu-a}\left|\psi_{e}(z+a)\right|^{2}\left|\psi_{h}(z)\right|^{2}+\left|\psi_{e}(z)\right|^{2}\left|\psi_{h}(z+a)\right|^{2}dz.\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Returning to the expression for the expectation value of the total exciton
+ energy in equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Total_Exciton_Energy_1"
+
+\end_inset
+
+ and using the three-term Hamiltonian 
+\begin_inset Formula $\hat{H}=\hat{H}_{e}+\hat{H}_{h}+\hat{H}_{e-h}$
+\end_inset
+
+, the numerator 
+\begin_inset Formula $N$
+\end_inset
+
+ can then be written as
+\begin_inset Formula \begin{equation}
+N=\left\langle \psi\vert\hat{H}\vert\psi\right\rangle =\left\langle \psi\vert\hat{H}_{e}\vert\psi\right\rangle +\left\langle \psi\vert\hat{H}_{h}\vert\psi\right\rangle +\left\langle \psi\vert\hat{H}_{e-h}\vert\psi\right\rangle .\end{equation}
+
+\end_inset
+
+Labelling these three terms as 
+\begin_inset Formula $A,\, B$
+\end_inset
+
+ and 
+\begin_inset Formula $C$
+\end_inset
+
+, respectively, i.e.
+ 
+\begin_inset Formula $N=A+B+C$
+\end_inset
+
+, then consider
+\begin_inset Formula \begin{equation}
+A=\left\langle \psi\vert T\vert\psi\right\rangle +\left\langle \psi\vert V\vert\psi\right\rangle =A_{T}+A_{V},\label{eq:A_term_1}\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $T$
+\end_inset
+
+ and 
+\begin_inset Formula $V$
+\end_inset
+
+ are the kinetic and potential energy operators, respectively, of the electron
+ one-particle Hamiltonian 
+\begin_inset Formula $\hat{H}_{e}$
+\end_inset
+
+.
+ Employing the standard constant-mass kinetic operator then (in an obvious
+ notation) we obtain 
+\begin_inset Formula \begin{equation}
+A_{T}=\int\psi_{e}^{*}(z_{e})\psi_{h}^{*}(z_{h})\psi_{r}^{*}\frac{-\hbar}{2m_{e}^{*}}\frac{\partial^{2}}{\partial z_{e}^{2}}\psi_{e}(z_{e})\psi_{h}(z_{h})\psi_{e}dz_{e}\, dx\, dy.\end{equation}
+
+\end_inset
+
+Noting that for the problems of interest, i.e.
+ stationary states within semiconductor microstructures, the wave functions
+ are real and that the chain rule gives
+\begin_inset Formula \begin{equation}
+\psi_{e}(z_{e})\psi'_{e}(z_{e})=\frac{1}{2}\frac{\partial\psi_{e}^{2}(z_{e})}{\partial z_{e}}.\end{equation}
+
+\end_inset
+
+Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:A_term_1"
+
+\end_inset
+
+ therefore becomes after integration
+\begin_inset Formula \begin{equation}
+A=E_{e}D+\frac{\hbar^{2}}{2m_{e}^{*}}\int_{\Omega}\left|\psi_{e}(z_{e})\right|^{2}\left|\psi_{h}(z_{h})\right|^{2}\psi{}_{e}^{'2}dz_{e}\, dz_{h}\, dx\, dy.\end{equation}
+
+\end_inset
+
+Adopting a similar argument as above, the integral over the plane can then
+ be written as
+\begin_inset Formula \begin{equation}
+G(a)=\int\left|\frac{\partial\psi_{r}}{\partial z_{e}}\right|^{2}dx\, dy\end{equation}
+
+\end_inset
+
+and hence gives the final expression for 
+\begin_inset Formula $A$
+\end_inset
+
+ as 
+\begin_inset Formula \begin{equation}
+A=E_{e}D+\frac{\hbar^{2}}{2m_{e}^{*}}\int_{0}^{\nu-\mu}p(a)G(a)\, da\label{eq:A_term_2}\end{equation}
+
+\end_inset
+
+An analogous expression exists for 
+\begin_inset Formula $B$
+\end_inset
+
+ with the subscripts 
+\begin_inset Formula $e$
+\end_inset
+
+ and 
+\begin_inset Formula $h$
+\end_inset
+
+, labelling electron and hole, respectively, being interchanged.
+\end_layout
+
+\begin_layout Plain Layout
+Now consider 
+\begin_inset Formula $C=\left\langle \psi\vert\hat{H}_{e-h}\vert\psi\right\rangle $
+\end_inset
+
+.
+ As mentioned earlier, 
+\begin_inset Formula $\hat{H}_{e-h}$
+\end_inset
+
+ is composed of two terms which represent the in-plane kinetic energy of
+ the relative motion and the Coulombic potential energy between the electron
+ and hole, i.e.
+ 
+\begin_inset Formula \begin{equation}
+C=C_{T}+C_{V}.\label{eq:C_term}\end{equation}
+
+\end_inset
+
+We can thus write the kinetic part as 
+\begin_inset Formula \begin{equation}
+C_{T}=\int\psi_{e}^{*}(z_{e})\psi_{h}^{*}(z_{h})\psi_{r}^{*}\frac{-\hbar}{2m_{r}}\left(\frac{\partial^{2}}{\partial x^{2}}+\frac{\partial^{2}}{\partial y^{2}}\right)\psi_{e}(z_{e})\psi_{h}(z_{h})\psi_{e}dz_{e}\, dx\, dy,\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $m_{r}$
+\end_inset
+
+ is the reduced mass of the exciton.
+ Again, whatever the functional form of the relative motion term 
+\begin_inset Formula $\psi_{e}$
+\end_inset
+
+, it is apparent that the kinetic energy operator in 
+\begin_inset Formula $C_{T}$
+\end_inset
+
+ will act only upon 
+\begin_inset Formula $\psi_{e}$
+\end_inset
+
+, as the one-particle electron and hole wave functions, 
+\begin_inset Formula $\psi_{e}$
+\end_inset
+
+ and 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $\psi_{h}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+, respectively, are not functions of 
+\begin_inset Formula $x$
+\end_inset
+
+ or 
+\begin_inset Formula $y$
+\end_inset
+
+.
+ Furthermore, the integration over the plane will result in an entity which
+ is a function of a only, i.e.
+ in the spirit of equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:A_term_2"
+
+\end_inset
+
+
+\begin_inset Formula \begin{equation}
+C_{T}=-\frac{\hbar^{2}}{2m_{r}}\int_{0}^{\nu-\mu}p(a)J(a)\, da,\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula \begin{equation}
+J(a)=\int\psi_{r}\left(\frac{\partial^{2}}{\partial x^{2}}+\frac{\partial^{2}}{\partial y^{2}}\right)\psi_{r}dx\, dy,\end{equation}
+
+\end_inset
+
+since 
+\begin_inset Formula $\psi_{r}$
+\end_inset
+
+ is real.
+ In a similar manner, the potential energy term 
+\begin_inset Formula $C_{V}$
+\end_inset
+
+ can be written as
+\begin_inset Formula \begin{equation}
+C_{V}=-\frac{e^{2}}{4\pi\epsilon}\int_{0}^{\nu-\mu}p(a)K(a)\, da,\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula \begin{equation}
+K(a)=\int\frac{1}{r}\psi_{r}^{2}dx\, dy\end{equation}
+
+\end_inset
+
+with 
+\begin_inset Formula $r^{2}=x^{2}+y^{2}+a^{2}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+To summarise then, the total exciton energy can be written as
+\begin_inset Formula \begin{equation}
+E=\frac{A+B+C}{D}\end{equation}
+
+\end_inset
+
+with 
+\begin_inset Formula $A$
+\end_inset
+
+ given in equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:A_term_2"
+
+\end_inset
+
+, 
+\begin_inset Formula $B$
+\end_inset
+
+ following analogously, 
+\begin_inset Formula $C$
+\end_inset
+
+ given by equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:C_term"
+
+\end_inset
+
+ and 
+\begin_inset Formula $D$
+\end_inset
+
+ by equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:D_term"
+
+\end_inset
+
+.
+ Evaluation of the entities, 
+\begin_inset Formula $F(a),\, G(a),\, J(a)$
+\end_inset
+
+ and 
+\begin_inset Formula $K(a)$
+\end_inset
+
+, necessitates the introduction of a specific form for the relative motion
+ term 
+\begin_inset Formula $\psi_{r}$
+\end_inset
+
+.
+ The exciton binding energy 
+\begin_inset Formula $E_{X^{0}}$
+\end_inset
+
+ follows simply from
+\begin_inset Formula \begin{equation}
+E=E_{e}+E_{h}+E_{X^{0}}.\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+We can now analyze a concrete example of the application of this model to
+ a specific choise of the wave function representing the first unexcited
+ state of the exciton, also labelled as 
+\begin_inset Formula $1s$
+\end_inset
+
+.
+ For this purpose we choose the wave function to be a hydrigenic type 
+\begin_inset Formula \begin{equation}
+\psi_{r}=\exp\left(-\frac{r'}{\lambda}\right)\end{equation}
+
+\end_inset
+
+where the Bohr radius 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ will be used as a parameter and systematically varied in order to minimize
+ the total energy 
+\begin_inset Formula $E$
+\end_inset
+
+ of the system (which is equivalent to maximizing the exciton binding energy
+ 
+\begin_inset Formula $E_{X^{0}}$
+\end_inset
+
+).
+ However, where this work differs is in the precise form of the choice of
+ the relative coordinate 
+\begin_inset Formula $r'$
+\end_inset
+
+.
+ A variable symmetry-type relative motion term is chosen
+\begin_inset Formula \begin{equation}
+r'^{2}=\left(x_{e}-x_{h}\right)^{2}+\left(y_{e}-y_{h}\right)^{2}+\zeta^{2}\left(z_{e}-z_{h}\right)^{2}\end{equation}
+
+\end_inset
+
+or by using 
+\begin_inset Formula $a=\left|z_{e}-z_{h}\right|$
+\end_inset
+
+ as above, 
+\begin_inset Formula \begin{equation}
+r'^{2}=\rho^{2}+\zeta^{2}a^{2}.\end{equation}
+
+\end_inset
+
+The second variational parameter, 
+\begin_inset Formula $\zeta$
+\end_inset
+
+, allows the exciton to assume any shape of wave function that is energetically
+ favorable.
+ Traditionally, the case with 
+\begin_inset Formula $\zeta=0$
+\end_inset
+
+ has become known as the two-dimensional exciton, and 
+\begin_inset Formula $\zeta=1$
+\end_inset
+
+, as the three-dimensional exciton 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Harrison2005"
+
+\end_inset
+
+.
+ Cases where 
+\begin_inset Formula $\zeta$
+\end_inset
+
+ is allowed to take values other than 0 and 1 are rarely found in the literature
+ because of the increased complexity in the resulting mathematics of the
+ problem.
+\end_layout
+
+\begin_layout Plain Layout
+In the present approach, 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ will be allowed to take all values from 0 upwards; however, due to complication
+s in the mathematics, in particular deriving the limits of integration for
+ the evaluation of 
+\begin_inset Formula $K(a)$
+\end_inset
+
+, it is necessary to introduce the following transformations
+\begin_inset Formula \begin{eqnarray}
+for\,\,0 & \leq & \zeta\leq1,\,\,\,\zeta=1-\beta^{2},\,\,\, where\,\,0\leq\beta\leq1,\\
+for\,\,0 & \leq & \zeta\leq\infty,\,\,\,\zeta=1+\eta{}^{2},\,\,\, where\,\,0\leq\eta\leq\infty.\end{eqnarray}
+
+\end_inset
+
+The detailed calculation of the terms 
+\begin_inset Formula $F,\, G,\, J$
+\end_inset
+
+ and 
+\begin_inset Formula $K$
+\end_inset
+
+ is presented in ref.
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Harrison2005"
+
+\end_inset
+
+.
+ Here we present the final results
+\begin_inset Formula \begin{eqnarray}
+F(a) & = & 2\pi\left(\frac{\lambda\sqrt{1-\beta^{2}}a}{2}+\frac{\lambda^{2}}{4}\right)\exp\left(-\frac{2\sqrt{1-\beta^{2}}a}{\lambda}\right),\\
+G(a) & = & 2\pi\int_{0}^{1}\frac{\left(1-\beta^{2}\right)^{2}a^{2}}{\lambda^{2}}\exp\left[-\frac{\sqrt{1-\beta^{2}}a}{\lambda}\left(\frac{1}{w}+w\right)\right]\left(\frac{1-w^{2}}{w\left(1+w^{2}\right)}\right)\, dw,\\
+J(a) & = & 2\pi\left(\frac{\sqrt{1-\beta^{2}}a}{2\lambda}-\frac{1}{4}\right)\exp\left(-\frac{2\sqrt{1-\beta^{2}}a}{\lambda}\right)\\
+ &  & +2\pi\int_{0}^{1}\left[-\frac{1}{\frac{\lambda}{4}\left(\frac{1}{w}+w\right)^{2}}-\frac{\sqrt{1-\beta^{2}}a}{\frac{\lambda^{2}}{2}\left(\frac{1}{w}+w\right)}\right]\exp\left[-\frac{\sqrt{1-\beta^{2}}a}{\lambda}\left(\frac{1}{w}+w\right)\right]\\
+ &  & \times\sqrt{1-\beta^{2}}\frac{a}{2}\left(\frac{1}{w^{2}}+1\right)\, dw,\\
+K(a) & = & 2\pi\frac{\eta a}{2}\int_{0}^{\frac{1}{\eta}\sqrt{1+\eta^{2}}-\frac{1}{\eta}}\exp\left[-\frac{\eta a}{\lambda}\left(\frac{1}{w}+w\right)\right]\left(\frac{1}{w^{2}}+1\right)\, dw.\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+As an illustration of this variational technique, we present in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:1s_Exciton_Binding_Energy_Variational"
+
+\end_inset
+
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/AdvancedLab/Figures/Infinite_Well_Binding_Energy_Parameter_Min.emf
+	display false
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:1s_Exciton_Binding_Energy_Variational"
+
+\end_inset
+
+The 
+\begin_inset Formula $1s$
+\end_inset
+
+ exciton binding energy 
+\begin_inset Formula $E_{X^{0}}$
+\end_inset
+
+ in the two-dimensional 
+\begin_inset Formula $\lambda-\beta$
+\end_inset
+
+ parameter space.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ the exciton binding energy as a function of both 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta$
+\end_inset
+
+ for the case of infinite 
+\begin_inset Formula $CdTe$
+\end_inset
+
+ quantum well 
+\begin_inset Formula $100\,\mbox{Å}$
+\end_inset
+
+ wide 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Harrison2005"
+
+\end_inset
+
+.
+ It can be seen that there is just one minimum in the exciton energy in
+ this two-dimensional parameter space.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+A similar calculation of the binding energy for various widths of an infinite
+ well is presented in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:1s_Exciton_Binding_Energy_W"
+
+\end_inset
+
+.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/AdvancedLab/Figures/Infinite_Well_1s_Exciton_Binding_Energy.emf
+	display false
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:1s_Exciton_Binding_Energy_W"
+
+\end_inset
+
+The 
+\begin_inset Formula $1s$
+\end_inset
+
+ exciton binding energy 
+\begin_inset Formula $E_{X^{0}}$
+\end_inset
+
+ for various width of an infinitely deep quantum well.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Although not as grand an example, there exist two limits which the analysis
+ above can be compared with.
+ In the limit of very wide quantum wells, the exciton should look like a
+ bulk exciton in its binding energy.
+ In addition in the limit of very narrow wells, the exciton should become
+ two-dimensional in nature.
+ The negative values on the graph illustrate that it is indeed a bound state.
+ The magnitude of the bulk exciton binding energy can be calculated from
+ the expressions in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Exciton_Rydberg_Energy"
+
+\end_inset
+
+ and the appropriate parameters for 
+\begin_inset Formula $CdTe$
+\end_inset
+
+ to be 
+\begin_inset Formula $10.1\, meV$
+\end_inset
+
+.
+ This value is indeed close to the value obtained for very high well width
+ (the right-hand side of the plot).
+ 
+\end_layout
+
+\begin_layout Plain Layout
+The two-dimensional limit of the 
+\begin_inset Formula $1s$
+\end_inset
+
+ exciton binding energy, according to 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:2D_Wannier_Exciton_WF_Radial"
+
+\end_inset
+
+, is 
+\begin_inset Formula $E^{2D}=4E^{3D}$
+\end_inset
+
+, which is clearly the limit of the curve in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:1s_Exciton_Binding_Energy_W"
+
+\end_inset
+
+ for small well widths for the present example.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+Only in a very few circumstances are the band offsets in both the conduction
+ and valence bands large enough that the system can be approximated with
+ an infinite quantum well model.
+ The vast majority of cases demand finite potentials.
+ Reiterating, the approach developed above depends only upon the one-particle
+ electron and hole wave functions, 
+\begin_inset Formula $\psi_{e}$
+\end_inset
+
+ and 
+\begin_inset Formula $\psi_{h}$
+\end_inset
+
+, respectively, and no further knowledge of the system is required (except
+ for the basic material parameters of electron and hole effective masses
+ and dielectric constants).
+ To illustrate this, figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Finite_Quantum_Well_Binding_Energy"
+
+\end_inset
+
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/AdvancedLab/Figures/s1_Exciton_Binding_Energy_vs_Well_Width.eps
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Finite_Quantum_Well_Binding_Energy"
+
+\end_inset
+
+The 
+\begin_inset Formula $1s$
+\end_inset
+
+ exciton binding energy as a function of a 
+\begin_inset Formula $GaAs$
+\end_inset
+
+ single quantum well surrounded by 
+\begin_inset Formula $Ga_{1–x}Al_{x}As$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+displays the results of calculations of exciton binding energies in finite
+ 
+\begin_inset Formula $GaAs$
+\end_inset
+
+ single quantum wells surrounded by 
+\begin_inset Formula $Ga_{1–x}Al_{x}As$
+\end_inset
+
+ barriers.
+ Unlike the infinite-well case, the exciton binding energy 
+\begin_inset Formula $E_{X^{0}}$
+\end_inset
+
+ is a non-monotonic function of well width.
+ This is due to the effect of the well width on the electron and hole confinemen
+t.
+ At very narrow well widths, the one-particle states are 'squeezed' up the
+ well to reside at energies just below the top of the barrier.
+ The wave function tends to 'spill' over the top, thus leading to a reduced
+ probability of the particle being within the region of the quantum well.
+ In addition, increasing 
+\begin_inset Formula $Al$
+\end_inset
+
+ concentration in the barrier (both the conduction and valence band offsets
+ are proportional to 
+\begin_inset Formula $x$
+\end_inset
+
+) leads to an increase in the magnitude of the exciton binding energy for
+ all well widths.
+ However, there are two points to note regarding this.
+ First, the effect of the barrier height is reduced at larger well widths.
+ This substantiates the fact that a particular choice of barrier height
+ (infinity) was chosen to illustrate the 3D limit in the previous section.
+ It is clear from figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Finite_Quantum_Well_Binding_Energy"
+
+\end_inset
+
+ that the exciton binding energy is tending towards its bulk value of 
+\begin_inset Formula $4.7\, meV$
+\end_inset
+
+ (for 
+\begin_inset Formula $GaAs$
+\end_inset
+
+) for all barrier heights.
+ Secondly, the effect of an increasing barrier height is largest at smaller
+ well widths, and for any given well width, further increases in the barrier
+ height lead to smaller increases in the binding energy.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Subsection
+Exciton Optical Spectra
+\end_layout
+
+\begin_layout Plain Layout
+With the knowledge of the exciton wavefunctions and energy eigenvalues,
+ the inhomogeneous equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Polarization_Eq_Motion_Unexcited_Crystal_2"
+
+\end_inset
+
+ can be solved, and the optical spectrum of the semiconductor can be obtained.
+ We limit our treatment to the discussion of optically allowed transitions
+ in direct-gap semiconductors, which are relevant for this thesis.
+\end_layout
+
+\begin_layout Plain Layout
+As a first step, we expand the microscopic polarization into the solutions
+ of the Wannier equation
+\begin_inset Formula \begin{equation}
+p_{eh}(\mathbf{r},\nu)=\sum_{l}b_{l}\psi_{l}(\mathbf{r}).\end{equation}
+
+\end_inset
+
+Inserting this expansion into 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Polarization_Eq_Motion_Unexcited_Crystal_2"
+
+\end_inset
+
+, multiplying by 
+\begin_inset Formula $\psi_{m}^{*}(\mathbf{r})$
+\end_inset
+
+ and integrating over 
+\begin_inset Formula $\mathbf{r}$
+\end_inset
+
+, we obtain
+\begin_inset Formula \begin{equation}
+\sum_{l}b_{l}\left[\hbar\left(\nu+i\delta\right)-E_{g}-E_{l}\right]\int_{\Omega}d^{3}\mathbf{r}\,\psi_{\mu}^{*}(\mathbf{r})\psi_{l}(\mathbf{r})=-\mu_{eh}E(\nu)\Omega\psi_{m}^{*}(\mathbf{r}=0),\end{equation}
+
+\end_inset
+
+or 
+\begin_inset Formula \begin{equation}
+b_{m}=-\frac{\mu_{eh}\Omega\psi_{m}^{*}(\mathbf{r}=0)}{\hbar\left(\nu+i\delta\right)-E_{g}-E_{l}}E(\nu).\end{equation}
+
+\end_inset
+
+Thus we can write the microscopic polarization in the Fourier space as 
+\begin_inset Formula \begin{equation}
+p_{eh,\mathbf{k}}(\nu)=-\sum_{\mathbf{k}}E(\nu)\frac{\mu_{eh}\psi_{m}^{*}(\mathbf{r}=0)}{\hbar\left(\nu+i\delta\right)-E_{g}-E_{l}}\int_{\Omega}d^{3}\mathbf{r}\,\psi_{l}(\mathbf{r})e^{i\mathbf{k}\cdot\mathbf{r}}.\end{equation}
+
+\end_inset
+
+The total polarization can be written as 
+\begin_inset Formula \begin{eqnarray}
+P(\nu) & = & -2\Omega\sum_{l}\left|\mu_{eh}\right|^{2}\left|\psi_{l}(\mathbf{r}=0)\right|^{2}E(\nu)\nonumber \\
+ &  & \cdot\left[\frac{1}{\hbar\left(\nu+i\delta\right)-E_{g}-E_{l}}-\frac{1}{\hbar\left(\nu+i\delta\right)+E_{g}+E_{l}}\right],\end{eqnarray}
+
+\end_inset
+
+where the factor 2 comes from the spin summation implicitly included the
+ 
+\series bold
+
+\begin_inset Formula $\mathbf{k}$
+\end_inset
+
+
+\series default
+-summation.
+ The susceptibility of the electron-hole-pair is obtained as before to be
+\begin_inset Formula \begin{eqnarray}
+\chi(\nu) & = & -2\left|\mu_{eh}\right|^{2}\sum_{m}\left|\psi_{m}(\mathbf{r}=0)\right|^{2}\nonumber \\
+ &  & \cdot\left[\frac{1}{\hbar\left(\nu+i\delta\right)-E_{g}-E_{m}}-\frac{1}{\hbar\left(\nu+i\delta\right)+E_{g}+E_{m}}\right].\label{eq:E_H_Pair_Susceptability}\end{eqnarray}
+
+\end_inset
+
+The first term in is the resonant contribution and the second term is the
+ nonresonant part, respectively.
+ One often leaves out the nonresonant part since it does not contribute
+ to the absorption.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+For the 2D case 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:E_H_Pair_Susceptability"
+
+\end_inset
+
+ can be simplified to 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Haug2009"
+
+\end_inset
+
+
+\begin_inset Formula \begin{eqnarray}
+\chi(\nu) & = & -\frac{\left|\mu_{eh}\right|^{2}}{\mathcal{L}\pi a_{0}^{2}E_{0}}\left[\sum_{n=0}^{\infty}\frac{2}{\left(n+1/2\right)^{3}}\frac{E_{0}}{\hbar\left(\nu+i\delta\right)-E_{g}-E_{n}}\right.\nonumber \\
+ &  & \left.+\int dx\,\frac{xe^{\pi/x}}{\cosh(\pi/x)}\frac{E_{0}}{\hbar\left(\nu+i\delta\right)-E_{g}-E_{0}x^{2}}\right],\end{eqnarray}
+
+\end_inset
+
+and the resulting absorption spectrum is given by the 
+\emph on
+Elliot formula
+\emph default
+
+\begin_inset Formula \begin{equation}
+\alpha(\nu)=\alpha_{0}^{2D}\frac{\hbar\nu}{E_{0}}\left[\sum_{n=0}^{\infty}\frac{4}{\left(n+1/2\right)^{3}}\delta\left(\Delta+\frac{1}{\left(n+1/2\right)^{2}}\right)+\Theta(\Delta)\frac{e^{\pi/\sqrt{\Delta}}}{\cosh\left(e^{\pi/\sqrt{\Delta}}\right)}\right].\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula \begin{equation}
+\alpha_{0}^{2D}=\frac{4\pi^{2}}{\hbar n_{b}c}\left|\mu_{eh}\right|^{2}\frac{1}{(2\pi a_{0})^{2}}\mathcal{A}.\end{equation}
+
+\end_inset
+
+The term 
+\begin_inset Formula \begin{equation}
+C(\nu)=\frac{e^{\pi/\sqrt{\Delta}}}{\cosh\left(e^{\pi/\sqrt{\Delta}}\right)}\end{equation}
+
+\end_inset
+
+is the Coulomb enhancement factor, which shows that the attractive Coulomb
+ interaction not only creates the bound states but has also a pronounced
+ influence on the ionization continuum compared to the free carrier case.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/4_Elliot_Formula_2D.eps
+	display false
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Elliot_Formula_2D"
+
+\end_inset
+
+Schematic (left) and calculated (right) band edge absorption spectrum for
+ a 2D semiconductor.
+ Shown are the results obtained with and without including the Coulomb interacti
+on.
+ The first exciton in the computed absorption spectra has been scaled by
+ a factor of 0.1 (after 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Haug2009"
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+A schematic and calculated absorption spectra obtained using the results
+ above are plotted in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Elliot_Formula_2D"
+
+\end_inset
+
+.
+ The influence of the Coulomb enhancement term is clearly seen in the calculated
+ plot, when comparing the dashed (free carrier) to the solid (elliot formula)
+ curves.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:HF_Numerical_Results"
+
+\end_inset
+
+Numerical Results
+\end_layout
+
+\begin_layout Standard
+In this section we present the results of the numerical modeling of sample
+ structures using the models presented in this and previous chapters.
+ As before, we investigate the optical properties of a 
+\begin_inset Formula $200\,\textrm{Å}$
+\end_inset
+
+ wide 
+\begin_inset Formula $GaAs$
+\end_inset
+
+ well, surrounded by 
+\begin_inset Formula $Al_{0.1}Ga_{0.9}As$
+\end_inset
+
+ barriers with 
+\begin_inset Formula $\delta$
+\end_inset
+
+-doped layers introduced at 
+\begin_inset Formula $1000\,\textrm{Å}$
+\end_inset
+
+ away from the barrier-well boundaries.
+ We investigate elelctrical susceptibility, refractive index, absorption
+ and spontaneous emission properties of this structure at various ambient
+ temperatures and doping conditions.
+ Along with the variation of the physical parameters of the discussed models,
+ we investigate the influence of the various phenomenological parameters
+ of the models on the optical properties.
+ 
+\end_layout
+
+\begin_layout Standard
+For all the considered calculations throughout this chapter and the entire
+ thesis, unless noted otherwise, the materials are assumed to have a circularly
+ symmetric crystallographic structure along the [100] orientation.
+ In addition, only the first conduction subband (
+\begin_inset Formula $E_{1}$
+\end_inset
+
+) and the first three valence subbands (
+\begin_inset Formula $HH_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $LH_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $HH_{2}$
+\end_inset
+
+) are used throughout the calculations.
+ Finally, unless noted otherwise, the phenomenological broadening factor
+ 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ is taken to be 
+\begin_inset Formula $1\times10^{11}\, sec^{-1}$
+\end_inset
+
+ for all calculations.
+ The chosen value was obtained from a comparison of the calculated spectra
+ to the experimental linewidths for similar structures.
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+We elaborate on this point in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:parameter_choise"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Bare Quantum Well
+\end_layout
+
+\begin_layout Standard
+We start by considering the optical properties of an undoped structure,
+ i.e.
+ without a 2DEG presence in the well region.
+ We model this situation by introducing holes and electrons of equal and
+ low concentrations (
+\begin_inset Formula $n_{e}=n_{h}=1\times10^{6}\, cm^{-2}$
+\end_inset
+
+) into the well region.
+ The schematic depiction of the structure is given in fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Undoped_QW_Structure"
+
+\end_inset
+
+.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/Undoped_QW_Structure.emf
+	display false
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Undoped_QW_Structure"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+Schematic structure of the undoped QW examined in the numerical calculations.
+\end_layout
+
+\end_inset
+
+Schematic structure of the undoped QW examined in the numerical calculations.
+ The legend for the coloring of the various layers is also given.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ We perform the susceptibility calculation for this structure for two ambient
+ temperatures, 
+\begin_inset Formula $T=2\, K$
+\end_inset
+
+ and 
+\begin_inset Formula $T=77\, K$
+\end_inset
+
+, using the free-carrier (FCT) model, presented in chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Free_Carriers_Optical_Transitions"
+
+\end_inset
+
+, and the screened Hartree-Fock (HF) model, presented earlier in this chapter.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_2K_N_1e6_gamma_1e11_FCT_Chi.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Chi_Undoped_FCT_2K"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The complex elelctrical susceptibility calculated using the FCT model for
+ the undoped well at 
+\begin_inset Formula $T=2K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+The complex elelctrical susceptibility, 
+\begin_inset Formula $\chi$
+\end_inset
+
+, real (blue) and imaginary (red) parts, calculated using the FCT model
+ for the undoped well at 
+\begin_inset Formula $T=2K$
+\end_inset
+
+.
+ The two plots are the (a) TE and (b) TM polarization calculations.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Chi_Undoped_FCT_2K"
+
+\end_inset
+
+ presents the calculation of the complex susceptibility 
+\begin_inset Formula $\chi$
+\end_inset
+
+, using equations 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Slow_Varying_Envelope_Imag"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Slow_Varying_Envelope_Real"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:FCT_Micro_Polarization"
+
+\end_inset
+
+ of the FCT model.
+ Calculation results for both TE and TM polarities are shown (figures (a)
+ and (b), respectively), and for each of these the real and imaginary parts
+ of the complex susceptibility are plotted on separate axis.
+ The dashed vertical line marks the energetic bottom of the first conduction
+ subband at this temperature.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_2K_N_1e6_gamma_1e11_HF_Chi.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Chi_Undoped_HF_2K"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The complex elelctrical susceptibility calculated using the HF model for
+ the undoped well at 
+\begin_inset Formula $T=2K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+The complex elelctrical susceptibility, 
+\begin_inset Formula $\chi$
+\end_inset
+
+, real (blue) and imaginary (red) parts, calculated using the HF model for
+ the undoped well at 
+\begin_inset Formula $T=2K$
+\end_inset
+
+.
+ The two plots are the (a) TE and (b) TM polarization calculations.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Chi_Undoped_HF_2K"
+
+\end_inset
+
+ present the same calculation of 
+\begin_inset Formula $\chi$
+\end_inset
+
+ performed using equations 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Slow_Varying_Envelope_Imag"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Slow_Varying_Envelope_Real"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:HF_Final_Polarization"
+
+\end_inset
+
+ of the HF model.
+ The most striking difference between the results of the two models is the
+ appearance of strong transition lines bellow and above the bandgap for
+ the HF case.
+ This transition lines are the direct consequence of the incorporation of
+ Coulombic interactions into the calculation.
+ Another prominent feature of the HF model results is the energetic shift
+ towards the lower energies brought by the renormalization effect discussed
+ earlier in this chapter.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_2K_N_1e6_gamma_1e11_FCT_HF_Alpha.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Alpha_Undoped_FCT_HF_2K"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The absorption spectra for both polarizations, calculated using the FCT
+ and HF models for the undoped well at 
+\begin_inset Formula $T=2K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+The absorption spectra for the (a) TE and (b) TM polarizations, calculated
+ using the FCT (blue) and HF (red) models for the undoped well at 
+\begin_inset Formula $T=2K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Alpha_Undoped_FCT_HF_2K"
+
+\end_inset
+
+ presents the calculated absorption spectra for the two polarizations.
+ Here, the results of both models are plotted in the same scale for comparison
+ (using equations 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Absorption_FCT"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:HF_Absorption"
+
+\end_inset
+
+ respectively for the FCT and HF models), while the insets are given to
+ show a zoomed-in view of the high energy region of the spectra.
+ As before, the dashed vertical lines mark the bottom of the first conduction
+ subband.
+ The interaction strength enhancement is clearly seen by comparing the absolute
+ value of the absorption spectra calculated using the two models.
+ The relative energetic shift can be also clearly seen.
+ We can compare these results to the simplified excitonic spectral theory
+ presented extensively in literature.
+ For the 2D case, the electrical susceptibility can be written as 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Haug2009"
+
+\end_inset
+
+
+\begin_inset Formula \begin{eqnarray}
+\chi(\nu) & = & -\frac{\left|\mu_{eh}\right|^{2}}{\mathcal{L}\pi a_{0}^{2}E_{0}}\left[\sum_{n=0}^{\infty}\frac{2}{\left(n+1/2\right)^{3}}\frac{E_{0}}{\hbar\left(\nu+i\delta\right)-E_{g}-E_{n}}\right.\nonumber \\
+ &  & \left.+\int dx\,\frac{xe^{\pi/x}}{\cosh(\pi/x)}\frac{E_{0}}{\hbar\left(\nu+i\delta\right)-E_{g}-E_{0}x^{2}}\right],\end{eqnarray}
+
+\end_inset
+
+and the resulting absorption spectrum is given by the 
+\emph on
+Elliot formula
+\emph default
+
+\begin_inset Formula \begin{equation}
+\alpha(\nu)=\alpha_{0}^{2D}\frac{\hbar\nu}{E_{0}}\left[\sum_{n=0}^{\infty}\frac{4}{\left(n+1/2\right)^{3}}\delta\left(\Delta+\frac{1}{\left(n+1/2\right)^{2}}\right)+\Theta(\Delta)\frac{e^{\pi/\sqrt{\Delta}}}{\cosh\left(e^{\pi/\sqrt{\Delta}}\right)}\right].\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula \begin{equation}
+\alpha_{0}^{2D}=\frac{4\pi^{2}}{\hbar n_{b}c}\left|\mu_{eh}\right|^{2}\frac{1}{(2\pi a_{0})^{2}}\mathcal{A}.\end{equation}
+
+\end_inset
+
+The term 
+\begin_inset Formula \begin{equation}
+C(\nu)=\frac{e^{\pi/\sqrt{\Delta}}}{\cosh\left(e^{\pi/\sqrt{\Delta}}\right)}\end{equation}
+
+\end_inset
+
+is the Coulomb enhancement factor, which shows that the attractive Coulomb
+ interaction not only creates the bound states but has also a pronounced
+ influence on the ionization continuum compared to the free carrier case.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/4_Elliot_Formula_2D.eps
+	display false
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Elliot_Formula_2D-1"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+Schematic band edge absorption spectrum for a 2D semiconductor according
+ to the Elliot formula.
+\end_layout
+
+\end_inset
+
+Schematic (left) and calculated (right) band edge absorption spectrum for
+ a 2D semiconductor.
+ Shown are the results obtained with and without including the Coulomb interacti
+on.
+ The first exciton in the computed absorption spectra has been scaled by
+ a factor of 0.1 (after 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Haug2009"
+
+\end_inset
+
+).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+A schematic and calculated absorption spectra obtained using the results
+ above are plotted in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Elliot_Formula_2D-1"
+
+\end_inset
+
+.
+ The influence of the Coulomb enhancement term is clearly seen in the calculated
+ plot, when comparing the dashed (free carrier) to the solid (elliot formula)
+ curves.
+ The similarity between this result to our results in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Alpha_Undoped_FCT_HF_2K"
+
+\end_inset
+
+(a) can be easily seen.
+\end_layout
+
+\begin_layout Standard
+The curves presented thus far are all given for both light polarizations,
+ TE and TM, and we can easily detect the differences between the two cases.
+ For the FC model case, the main difference is the appearance of low energy
+ (near 
+\begin_inset Formula $1.532\, eV$
+\end_inset
+
+) transition peak in the TE absorption spectrum (see figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Chi_Undoped_FCT_2K"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Alpha_Undoped_FCT_HF_2K"
+
+\end_inset
+
+) compared to the TM case.
+ This additional transition is a result of the difference between allowed
+ transitions for the two polarizations, as seen in figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Undoped_Dipole_Matrix_Element"
+
+\end_inset
+
+.
+ For the TE polarization both 
+\begin_inset Formula $E_{1}-HH_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $E_{1}-LH_{1}$
+\end_inset
+
+ are dominant for the low 
+\begin_inset Formula $k_{t}$
+\end_inset
+
+ values (which is region relevant for our calculations) compared to the
+ single 
+\begin_inset Formula $E_{1}-LH_{1}$
+\end_inset
+
+ transition dominant for the TM case.
+ In the HF model results the differences between the polarizations are mainly
+ exhibited in the transition strength of the various lines, where the most
+ noticeable example is the difference between the sub-bandgap transition
+ lines.
+ Here the energetically lowest lying line at 
+\begin_inset Formula $1.4811\, eV$
+\end_inset
+
+ (attributed to the 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $E_{1}-HH_{1}$
+\end_inset
+
+ transition) and the next line at 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+
+\begin_inset Formula $1.4843\, eV$
+\end_inset
+
+ (the 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $E_{1}-LH_{1}$
+\end_inset
+
+ transition) exchange their relative strength between the two polarities.
+ This effectcan be seen also in the higher energy lines, most vividly in
+ the insets of figure 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Alpha_Undoped_FCT_HF_2K"
+
+\end_inset
+
+.
+ The cause for these variations in the relative line strengths is, again,
+ the difference between the respective inter-subband transition probabilities
+ seen in figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Undoped_Dipole_Matrix_Element"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Doped_Dipole_Matrix_Element"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_2K_N_1e6_gamma_1e11_FCT_HF_Rsp_1.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Rsp_Undoped_FCT_HF_2K"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+Spontaneous emission spectra calculated using the FCT and HF models for
+ the considered undoped structure at 
+\begin_inset Formula $T=2K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+Spontaneous emission spectra calculated using the FCT (blue) and HF (red)
+ models for the considered undoped structure at 
+\begin_inset Formula $T=2K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Rsp_Undoped_FCT_HF_2K"
+
+\end_inset
+
+ presents the calculated spontaneous emission spectra using the two models
+ from the discussed structure.
+ As for the absorption spectra, the results of the two discussed models
+ are quite different.
+ Again, the energetic shift due to the large bandgap renormalization can
+ be seen for the HF model spectrum, together with the sharp transition peak.
+ The results of the HF model reveal the stronger transitions compared to
+ the FCT model results.
+ 
+\end_layout
+
+\begin_layout Standard
+We now present the results of a similar calculation, performed at higher
+ ambient temperature of 
+\begin_inset Formula $T=77\, K$
+\end_inset
+
+, which can be seen in figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Chi_Undoped_FCT_77K"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Chi_Undoped_HF_77K"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Alpha_Undoped_FCT_HF_77K"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Rsp_Undoped_FCT_HF_77K"
+
+\end_inset
+
+.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_77K_N_1e6_gamma_1e11_FCT_Chi.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Chi_Undoped_FCT_77K"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The complex elelctrical susceptibility calculated using the FCT model for
+ the undoped well at 
+\begin_inset Formula $T=77K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+The complex elelctrical susceptibility, 
+\begin_inset Formula $\chi$
+\end_inset
+
+, real (blue) and imaginary (red) parts, calculated using the FCT model
+ for the undoped well at 
+\begin_inset Formula $T=77K$
+\end_inset
+
+.
+ The two plots are the (a) TE and (b) TM polarization calculations.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_77K_N_1e6_gamma_1e11_HF_Chi.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Chi_Undoped_HF_77K"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The complex elelctrical susceptibility calculated for the undoped structure
+ using the HF model for the undoped well at 
+\begin_inset Formula $T=77K$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+The complex elelctrical susceptibility, 
+\begin_inset Formula $\chi$
+\end_inset
+
+, real (blue) and imaginary (red) parts, calculated for the undoped structure
+ using the HF mode for the undoped well at 
+\begin_inset Formula $T=77K$
+\end_inset
+
+.
+ The two plots are the (a) TE and (b) TM polarization calculations.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_77K_N_1e6_gamma_1e11_FCT_HF_Alpha.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Alpha_Undoped_FCT_HF_77K"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The absorption spectra for polarizations, calculated using the FCT and HF
+ models for the undoped well at 
+\begin_inset Formula $T=77K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+The absorption spectra for the (a) TE and (b) TM polarizations, calculated
+ using the FCT (blue) and HF (red) models for the undoped well at 
+\begin_inset Formula $T=77K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_77K_N_1e6_gamma_1e11_FCT_HF_Rsp_1.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Rsp_Undoped_FCT_HF_77K"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+Spontaneous emission spectra calculated using the FCT and HF models for
+ the considered undoped structure at 
+\begin_inset Formula $T=77K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+Spontaneous emission spectra calculated using the FCT (blue) and HF (red)
+ models for the considered undoped structure at 
+\begin_inset Formula $T=77K$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ It can be easily seen that the results are similar to the 
+\begin_inset Formula $T=2\, K$
+\end_inset
+
+ case, but for the considerable energetic shift due to the lowering of the
+ bandgap with temperature (see figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:AlGaAs_Eg_T"
+
+\end_inset
+
+ in appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Appendix_Bandgap-Energy"
+
+\end_inset
+
+).
+ We also observe here, as for the 
+\begin_inset Formula $T=2\, K$
+\end_inset
+
+ case, the bandgap renormalization and transition peak difference between
+ the two discussed models.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:HF_Doped_Structures_Results"
+
+\end_inset
+
+Doped Quantum Well
+\end_layout
+
+\begin_layout Standard
+In the previous section we have discussed in detail the calculated susceptibilit
+y and spontaneous emission spectra of a 
+\begin_inset Formula $200\,\textrm{Å}$
+\end_inset
+
+ wide quantum wells devoid of delta doping, i.e.
+ of two-dimensional gas.
+ In this section we introduce a delta-doping into the cladding layers of
+ the discussed bare quantum, which results in the introduction of 2DEG into
+ the well.
+ This structure is schematically described in fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Doped_QW_Structure"
+
+\end_inset
+
+.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/Doped_QW_Structure.emf
+	display false
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Doped_QW_Structure"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+Schematic structure of the doped QW examined in the numerical calculations.
+\end_layout
+
+\end_inset
+
+Schematic structure of the doped QW examined in the numerical calculations.
+ The 
+\begin_inset Formula $\delta$
+\end_inset
+
+-doping 
+\begin_inset Formula $Si$
+\end_inset
+
+ atom layers are marked with the red dashed lines on the cladding layers
+ of the structure.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+We investigate the influence of this gas on the optical characteristics
+ of the structure for several concentrations of the gas using the same two
+ theoretical models.
+ We perform the simulation for two ambient temperatures, 
+\begin_inset Formula $T=2K$
+\end_inset
+
+ and 
+\begin_inset Formula $T=77K$
+\end_inset
+
+, for 2DEG concentrations of 
+\begin_inset Formula $n_{e}=2\times10^{9}\div4\times10^{11}\, cm^{-2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Subsubsection
+Single Concentration
+\end_layout
+
+\begin_layout Plain Layout
+In this section we perform the calculation of the elelctrical susceptibility
+ and spontaneous emission of the discussed quantum well with a 
+\begin_inset Formula $\delta$
+\end_inset
+
+-doping with a concentration of 
+\begin_inset Formula $N_{2DEG}=1\times10^{11}\, cm^{-2}$
+\end_inset
+
+ introduced in the cladding layer.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_2K_N_1e11_gamma_1e11_FCT_Chi.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Chi_Doped_N_1e11_FCT_2K"
+
+\end_inset
+
+The complex elelctrical susceptibility, 
+\begin_inset Formula $\chi$
+\end_inset
+
+, real (blue) and imaginary (red) parts, calculated using the FCT model
+ for the doped well at 
+\begin_inset Formula $T=2K$
+\end_inset
+
+.
+ The two plots are the (a) TE and (b) TM polarization calculations.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_2K_N_1e11_gamma_1e11_HF_Chi.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Chi_Doped_N_1e11_HF_2K"
+
+\end_inset
+
+The complex elelctrical susceptibility, 
+\begin_inset Formula $\chi$
+\end_inset
+
+, real (blue) and imaginary (red) parts, calculated for the undoped structure
+ using the HF model for the doped well at 
+\begin_inset Formula $T=2K$
+\end_inset
+
+.
+ The two plots are the (a) TE and (b) TM polarization calculations.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_2K_N_1e11_gamma_1e11_FCT_HF_Alpha.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Alpha_Doped_N_1e11_FCT_HF_2K"
+
+\end_inset
+
+The absorption spectra for the (a) TE and (b) TM polarizations, calculated
+ using the FCT (blue) and HF (red) models for the doped well at 
+\begin_inset Formula $T=2K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_2K_N_1e11_gamma_1e11_FCT_HF_Rsp_1.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Rsp_Doped_N_1e11_FCT_HF_2K"
+
+\end_inset
+
+Spontaneous emission spectra calculated using the FCT (blue) and HF (red)
+ models for the considered doped structure at 
+\begin_inset Formula $T=2K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_77K_N_1e11_gamma_1e11_FCT_Chi.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Chi_Doped_N_1e11_FCT_77K"
+
+\end_inset
+
+The complex elelctrical susceptibility, 
+\begin_inset Formula $\chi$
+\end_inset
+
+, real (blue) and imaginary (red) parts, calculated using the FCT model
+ for the doped well at 
+\begin_inset Formula $T=77K$
+\end_inset
+
+.
+ The two plots are the (a) TE and (b) TM polarization calculations.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_77K_N_1e11_gamma_1e11_HF_Chi.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Chi_Doped_N_1e11_HF_77K"
+
+\end_inset
+
+The complex elelctrical susceptibility, 
+\begin_inset Formula $\chi$
+\end_inset
+
+, real (blue) and imaginary (red) parts, calculated for the undoped structure
+ using the HF model for the doped well at 
+\begin_inset Formula $T=77K$
+\end_inset
+
+.
+ The two plots are the (a) TE and (b) TM polarization calculations.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_77K_N_1e11_gamma_1e11_FCT_HF_Alpha.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Alpha_Doped_N_1e11_FCT_HF_77K"
+
+\end_inset
+
+The absorption spectra for the (a) TE and (b) TM polarizations, calculated
+ using the FCT (blue) and HF (red) models for the doped well at 
+\begin_inset Formula $T=77K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_77K_N_1e11_gamma_1e11_FCT_HF_Rsp.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Rsp_Doped_N_1e11_FCT_HF_77K"
+
+\end_inset
+
+Spontaneous emission spectra calculated using the FCT (blue) and HF (red)
+ models for the considered doped structure at 
+\begin_inset Formula $T=77K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Multiple Concentrations
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/Phase_Space_Filling_MB_Effect_Illustration.emf
+	lyxscale 90
+	display false
+	scale 70
+	rotateAngle 270
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Schematic_Phase_Space_Filling_BGR"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+A schematic depiction of the bandgap renormalization due to the introduction
+ of 2DEG into the well region of the structure.
+ 
+\end_layout
+
+\end_inset
+
+A schematic depiction of the bandgap renormalization due to the introduction
+ of 2DEG into the well region of the structure.
+ The band bending due to the internal electrical field is also shown.
+ 
+\begin_inset Formula $E_{F}$
+\end_inset
+
+ stands for the Fermi level energy, 
+\begin_inset Formula $E_{1}$
+\end_inset
+
+ is the first conduction subband of the undoped structure, 
+\begin_inset Formula $E_{1}^{'}(n_{e})$
+\end_inset
+
+ is the renormalized effective first conduction subband and 
+\begin_inset Formula $HH_{1}$
+\end_inset
+
+ is the first heavy-hole subband.
+ The shaded blue area marks the energetic region occupied by the 2DEG.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/Fermi_Level_Change_N_2DEG.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Fermi_Energy_2DEG_Dependence"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The energetic gap between the Fermi energy and the bottom of the conduction
+ band and the Fermi wavevector, both as a function of the 2DEG concentration.
+\end_layout
+
+\end_inset
+
+ (a) The energetic gap between the Fermi energy and the bottom of the conduction
+ band and (b) the Fermi wavevector, both as a function of the 2DEG concentration
+ obtained using numerical calculation and the simple theoretical model presented
+ in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Two-Dimensional-Electron-Gas"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Alpha_TE_DEG_FCT_HF_2K"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Alpha_TM_DEG_FCT_HF_2K"
+
+\end_inset
+
+ present the absorption spectra from the structure for the various 2DEG
+ concentrations, respectively, for the TE and TM polarizations, calculated
+ using the two discussed models, FCT (in blue) and HF (in red).
+ The spectra are presented in a waterfall chart style to effectively illustrate
+ the influence of the 2DEG.
+ To facilitate the comparison, the curves are scaled to unity, and the scaling
+ factor for each is indicated in the plots.
+ As can be seen, for both models in the introduction of electron gas into
+ the well leads to an energetic shift of towards higher energies.
+ This phenomenon can be attributed to the phase space filling due to the
+ introduced electrons, causing the Fermi level to shift toward higher energies.
+ This shift can be seen clearly from fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Fermi_Energy_2DEG_Dependence"
+
+\end_inset
+
+(a), where we present the calculated and theoretical Fermi level energy
+ as the function of the introduces electron concentration.
+ The absorption, occurring above the Fermi edge energy, thus moves according
+ to this shift.
+ Another major consequence of the rise the 2DEG concentration is the reduction
+ of the absorption intensity, revealed best for the HF model calculations,
+ for both polarizations.
+ The reason of for this reduction in the strength of the resonances present
+ in the structure is the enhanced screening effect of the 2DEG, reducing
+ the Coulombic interaction between the interacting conduction band electrons
+ and valence band holes.
+ Another contributing factor to the observed diminishing interaction are
+ the inter-carrier collisions, introduces in both models via the phenomenologica
+l factor 
+\begin_inset Formula $\gamma$
+\end_inset
+
+, though its influence is much weaker compared to the screening.
+ This can be best seen for the results of the FCT calculations for which
+ this effect is most dominant because of the absence Coulombic interaction
+ between carriers.
+ Here, we can clearly see a milder reduction of the interaction strength
+ compared to the HF results.
+ This reduction in the strength of the absorption resonance peaks, or the
+ disappearance of the exciton transition lines, is most noticeable for 2DEG
+ concentrations above 
+\begin_inset Formula $\sim6\times10^{10}\, cm^{-2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_2K_2DEG_gamma_1e11_HF_FCT_HF_Alpha_TE_2.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Alpha_TE_DEG_FCT_HF_2K"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The TE polarization absorption spectra calculated for the doped structure
+ for various gas concentrations using the FCT and HF  models at 
+\begin_inset Formula $T=2K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+The TE polarization absorption spectra calculated for the doped structure
+ for various gas concentrations 
+\begin_inset Formula $n_{e}$
+\end_inset
+
+ using the FCT (blue) and HF (red) models at 
+\begin_inset Formula $T=2K$
+\end_inset
+
+.
+ The scaling factor is indicated in the respective color.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_2K_2DEG_gamma_1e11_HF_FCT_HF_Alpha_TM_2.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Alpha_TM_DEG_FCT_HF_2K"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The TM polarization absorption spectra calculated for the doped structure
+ for various gas concentrations using the FCT and HF models at 
+\begin_inset Formula $T=2K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+The TM polarization absorption spectra calculated for the doped structure
+ for various gas concentrations 
+\begin_inset Formula $n_{e}$
+\end_inset
+
+ using the FCT (blue) and HF (red) models at 
+\begin_inset Formula $T=2K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_2K_2DEG_gamma_1e11_FCT_HF_delta_n_TE_3.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Delta_n_TE_DEG_FCT_HF_2K"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The TE refractive index change spectra calculated for the doped structure
+ for various gas concentrations using the FCT and HF models at 
+\begin_inset Formula $T=2K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+The TE refractive index change spectra calculated for the doped structure
+ for various gas concentrations 
+\begin_inset Formula $n_{e}$
+\end_inset
+
+ using the FCT (blue) and HF (red) models at 
+\begin_inset Formula $T=2K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_2K_2DEG_gamma_1e11_FCT_HF_delta_n_TM_3.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Delta_n_TM_DEG_FCT_HF_2K"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The TM refractive index change spectra calculated for the doped structure
+ for various gas concentrations using the FCT and HF  models at 
+\begin_inset Formula $T=2K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+The TM refractive index change spectra calculated for the doped structure
+ for various gas concentrations 
+\begin_inset Formula $n_{e}$
+\end_inset
+
+ using the FCT (blue) and HF (red) models at 
+\begin_inset Formula $T=2K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The differences between the absorption spectra for the two polarizations
+ are to the description in the previous section.
+ For the HF model results, the main differentiating feature is the relative
+ strength of the two dominant peaks between the two polarizations, while
+ for th FCT model the main difference is the presence of a single peak in
+ the TM spectrum (fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Alpha_TM_DEG_FCT_HF_2K"
+
+\end_inset
+
+) compared to the additional lower energy peak for the TE polarization (fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Alpha_TE_DEG_FCT_HF_2K"
+
+\end_inset
+
+).
+ Finally, we can note that as for the undoped case, the Coulomb enhancement
+ causes the spectra obtained from the HF model to be much stronger than
+ the FCT ones, an effect not seen in the presented plots because of the
+ relative scaling.
+ Similar analysis may be applied to the refractive index change spectra,
+ 
+\begin_inset Formula $\delta n$
+\end_inset
+
+, shown for the same structure in figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Delta_n_TE_DEG_FCT_HF_2K"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Delta_n_TM_DEG_FCT_HF_2K"
+
+\end_inset
+
+, respectively for both polarities.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_2K_2DEG_gamma_1e11_HF_Alpha_Rsp_TE_3.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Alpha_Rsp_TE_DEG_HF_2K"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The TE polarization absorption and spontaneous emission spectra calculated
+ for the doped structure for various gas concentrations  using the HF model
+ at 
+\begin_inset Formula $T=2K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+The TE polarization absorption (blue) and spontaneous emission (red) spectra
+ calculated for the doped structure for various gas concentrations 
+\begin_inset Formula $n_{e}$
+\end_inset
+
+ using the HF model at 
+\begin_inset Formula $T=2K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_2K_2DEG_gamma_1e11_HF_Alpha_Rsp_TM_3.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Alpha_Rsp_TM_DEG_HF_2K"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The TM polarization absorption and spontaneous emission spectra calculated
+ for the doped structure for various gas concentrations  using the HF model
+ at 
+\begin_inset Formula $T=2K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+The TM polarization absorption (blue) and spontaneous emission (red) spectra
+ calculated for the doped structure for various gas concentrations 
+\begin_inset Formula $n_{e}$
+\end_inset
+
+ using the HF model at 
+\begin_inset Formula $T=2K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Alpha_Rsp_TE_DEG_HF_2K"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Alpha_Rsp_TM_DEG_HF_2K"
+
+\end_inset
+
+ present a comparison between the absorption and spontaneous emission spectra,
+ both obtained using the HF model calculation, for both polarities.
+ We can investigate the influence of the 2DEG concentration on the spontaneous
+ emission and compare it to the absorption.
+ We can see that the spontaneous emission, as the absorption, changes its
+ energetic position with the rise of the doping concentration.
+ We have attributed the absorption peaks movement to the Fermi edge translation
+ due to the phase space filling in the conduction band.
+ For an undoped QW, the spontaneous emission peak location coincides with
+ the energetic location of the first conduction subband 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Cingolani1991"
+
+\end_inset
+
+.
+ As we can see in fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Schematic_Phase_Space_Filling_BGR"
+
+\end_inset
+
+, the bandgap renormalization, caused by the introduction of electrons inside
+ the well, shifts this subband towards lower energies, an effect proportional
+ to the carrier concentrations (
+\begin_inset Formula $n_{e}$
+\end_inset
+
+).
+ This causes the spontaneous emission and the absorption spectra to diverge
+ with the added carriers' concentration, an effect known as the Burstein-Moss
+ shift (BMS) 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Cingolani1991"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Along with the energetic shift in the peak location, there is a noticeable
+ alteration of the lineshape and the linewidth of the spontaneous emission
+ spectra.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+For low 2DEG concentrations of up to 
+\begin_inset Formula $4\times10^{9}\, cm^{-2}$
+\end_inset
+
+, the lines are symmetrical and narrow, with a typical width of 
+\begin_inset Formula $\sim1\, meV$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+The dominant emission line also coinsides with the lowest energy resonance
+ line of the emission spectra, for both polarizations.
+\end_layout
+
+\end_inset
+
+ In these figures two no ticable spontaneous emission peaks (marked 1 and
+ 2) are present and the change in their position and shape should be addressed.
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+For low 2DEG concentrations of up to 
+\begin_inset Formula $4\times10^{9}\, cm^{-2}$
+\end_inset
+
+, the lines are symmetrical and narrow, with a typical width of 
+\begin_inset Formula $\sim1\, meV$
+\end_inset
+
+, after which the shape of the higher energy line attains a clearly asymmetrical
+ shape.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Three main effect can be : a shift in the energetic position of both peaks
+ and gradual amplitude change with the rise of the 2DEG concentration.
+\end_layout
+
+\end_inset
+
+ The lineshape profile of the peak together with the energetic shift pattern
+ can be explained by considering two types of emission from the structure
+ using fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Schematic_Phase_Space_Filling_BGR"
+
+\end_inset
+
+.
+ It is a well known fact 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Gabbay2007"
+
+\end_inset
+
+ that the emission due to the introduced external electrons (the 2DEG) stretches
+ from the effective bandgap, denoted 
+\begin_inset Formula $E'_{1}(n_{e})$
+\end_inset
+
+, to the Fermi edge energy, 
+\begin_inset Formula $E_{F}$
+\end_inset
+
+.
+ In fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Fermi_Energy_2DEG_Dependence"
+
+\end_inset
+
+(a) we can see the shift of the Fermi edge towards high energies, while
+ fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Total_Bandgap_Renormalization"
+
+\end_inset
+
+(a) shows an opposite trend of the bandgap renormalization, leading to the
+ shift of the effective bandgap towards low energies.
+ The combined influence of these two trends leads to an asymmetric broadening
+ of the emission line, as is observed for peak 2 in our simulations.
+ Here the overall shift to the lower energies can be clearly seen, together
+ with the asymmetric broadening.
+ Along with the energetic shift, the relative intensity of this emission
+ peak intensified compared to peak 1, which eventually disappears for high
+ 2DEG concentrations.
+ Peak 1, for the entire diapason of the simulated gas concentrations, retains
+ its symmetric lineshape and also closely follows the lower most absorption
+ spectrum peak.
+ Thus, we may attribute this peak to the strong excitonic resonance present
+ for lower 2DEG concentrations, which losses its intensity because of the
+ screening effect of the introduced electrons.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_2K_2DEG_gamma_1e11_HF_Alpha_Rsp_TE_5.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Alpha_Rsp_TE_DEG_FCT_HF_2K-1"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+Detailed view of the transition region in the absorption and spontaneous
+ emission spectrum for the TE polarization using the HF model at 
+\begin_inset Formula $T=2K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+Detailed view of the transition region in the absorption (blue) and spontaneous
+ emission (red) spectrum for the TE polarization using the HF model at 
+\begin_inset Formula $T=2K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_2K_2DEG_gamma_1e11_HF_Alpha_Rsp_TM_5.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Alpha_Rsp_TM_DEG_FCT_HF_2K-1"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+Detailed view of the transition region in the absorption and spontaneous
+ emission spectrum for the TM polarization using the HF model at 
+\begin_inset Formula $T=2K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+Detailed view of the transition region in the absorption (blue) and spontaneous
+ emission (red) spectrum for the TM polarization using the HF model at 
+\begin_inset Formula $T=2K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+In figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Alpha_Rsp_TE_DEG_FCT_HF_2K-1"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Alpha_Rsp_TM_DEG_FCT_HF_2K-1"
+
+\end_inset
+
+ we give a detailed zoomed in view of the absorption and spontaneous emission
+ spectra for 2DEG concentrations in range of 
+\begin_inset Formula $n_{e}=3\times10^{10}\div8\times10^{10}\, cm^{-2}$
+\end_inset
+
+, respectively for the TE and TM polarizations.
+ These figures present a detailed view of the intercrossing region of the
+ broad 2DEG induced peak and the excitonic line of the spontaneous emission.
+ The relative intensity change can be clearly seen, where the strong excitonic
+ line attains its dominance up to 
+\begin_inset Formula $n_{e}=5.5\times10^{10}\, cm^{-2}$
+\end_inset
+
+, after which the 2DEG emission retains the lead.
+ These plots also give a clear picture of the 2DEG emission asymmetric broadenin
+g, becoming larger with the 2DEG concentration.
+ Along with the broadening, these spectra also attain a characteristic curve
+ close to the Fermi edge energy, marked by the dotted circle at the 
+\begin_inset Formula $n_{e}=6\times10^{10}\, cm^{-2}$
+\end_inset
+
+ curve in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Alpha_Rsp_TE_DEG_FCT_HF_2K-1"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_77K_2DEG_gamma_1e11_HF_FCT_HF_Alpha_TE_2.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Alpha_TE_DEG_FCT_HF_77K"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The TE polarization absorption spectra calculated for the doped structure
+ for various gas concentrations using the FCT and HF  models at 
+\begin_inset Formula $T=77K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+The TE polarization absorption spectra calculated for the doped structure
+ for various gas concentrations 
+\begin_inset Formula $n_{e}$
+\end_inset
+
+ using the FCT (blue) and HF (red) models at 
+\begin_inset Formula $T=77K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_77K_2DEG_gamma_1e11_HF_FCT_HF_Alpha_TM_2.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Alpha_TM_DEG_FCT_HF_77K"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The TM polarization absorption spectra calculated for the doped structure
+ for various gas concentrations using the FCT and HF  models at 
+\begin_inset Formula $T=77K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+The TM polarization absorption spectra calculated for the doped structure
+ for various gas concentrations 
+\begin_inset Formula $n_{e}$
+\end_inset
+
+ using the FCT (blue) and HF (red) models at 
+\begin_inset Formula $T=77K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Alpha_TE_DEG_FCT_HF_77K"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Alpha_TM_DEG_FCT_HF_77K"
+
+\end_inset
+
+ present the absorption spectra calculation using the FCT and HF models
+ at ambient temperature 
+\begin_inset Formula $T=77\, K$
+\end_inset
+
+, respectively for the TE and TM polarizations.
+ As for the 
+\begin_inset Formula $T=2\, K$
+\end_inset
+
+ case discussed earlier, the FCT and HF differ greatly in the lineshapes
+ and intensities of the resonances.
+ For both polarizations, the HF model calculation leads to the appearance
+ of two strong spectral lines, which can be attributed to excitonic transitions.
+ These lines maintain their form and amplitude for much of the considered
+ 2DEG concentration values, indicating on the minor influence of the screening
+ effect of the introduced electrons on the excitonic bonds in the well,
+ especially compared to the 
+\begin_inset Formula $T=2\, K$
+\end_inset
+
+ case discussed earlier.
+ Another striking difference of these curves from the 
+\begin_inset Formula $T=2\, K$
+\end_inset
+
+ case is the relative energetic immobility of the spectral lines with 2DEG
+ concentration, indicating to a milder effect of introduced electron on
+ the bandgap renormalization.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_77K_2DEG_gamma_1e11_HF_Alpha_Rsp_TE_2.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Alpha_Rsp_TE_DEG_HF_77K"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The TE polarization absorption and spontaneous emission spectra calculated
+ for the doped structure for various gas concentrations using the HF model
+ at 
+\begin_inset Formula $T=77K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+The TE polarization absorption (blue) and spontaneous emission (red) spectra
+ calculated for the doped structure for various gas concentrations 
+\begin_inset Formula $n_{e}$
+\end_inset
+
+ using the HF model at 
+\begin_inset Formula $T=77K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_77K_2DEG_gamma_1e11_HF_Alpha_Rsp_TM_2.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Alpha_Rsp_TM_DEG_HF_77K"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The TM polarization absorption and spontaneous emission spectra calculated
+ for the doped structure for various gas concentrations  using the HF model
+ at 
+\begin_inset Formula $T=77K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+The TM polarization absorption (blue) and spontaneous emission (red) spectra
+ calculated for the doped structure for various gas concentrations 
+\begin_inset Formula $N_{2DEG}$
+\end_inset
+
+ using the HF model at 
+\begin_inset Formula $T=77K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Alpha_Rsp_TE_DEG_HF_77K"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Alpha_Rsp_TM_DEG_HF_77K"
+
+\end_inset
+
+ present the absorption and spontaneous emission spectra calculated using
+ the HF model respectively for the TE and TM polarization at ambient temperature
+ of 
+\begin_inset Formula $T=77\, K$
+\end_inset
+
+.
+ The spontaneous emission spectra, like the absorption spectra, differ greatly
+ from the results for 
+\begin_inset Formula $T=2\, K$
+\end_inset
+
+ discussed earlier in this section.
+ Here, two strong emission peaks are noticeable, which follow closely the
+ excitonic absorption resonances.
+ These line amplitudes intensify considerably with 2DEG concentration, reaching
+ peak intensity for 
+\begin_inset Formula $n_{e}=1\times10^{11}\, cm^{-2}$
+\end_inset
+
+, maintaining approximately the same linewidth for this entire stretch of
+ 2DEG concentrations.
+ At 
+\begin_inset Formula $n_{e}=2\times10^{11}\, cm^{-2}$
+\end_inset
+
+ both the absorption and spontaneous emission spectra change in both linewidth
+ and lineshape, indicating to a drastic reduction of the excitonic interaction.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_77K_2DEG_gamma_1e11_FCT_HF_delta_n_TE_2.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Delta_n_TE_DEG_FCT_HF_77K"
+
+\end_inset
+
+The TE refractive index change spectra calculated for the doped structure
+ for various gas concentrations 
+\begin_inset Formula $N_{2DEG}$
+\end_inset
+
+ using the FCT (blue) and HF (red) models at 
+\begin_inset Formula $T=77K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_77K_2DEG_gamma_1e11_FCT_HF_delta_n_TM_2.eps
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Delta_n_TM_DEG_FCT_HF_77K"
+
+\end_inset
+
+The TM refractive index change spectra calculated for the doped structure
+ for various gas concentrations 
+\begin_inset Formula $N_{2DEG}$
+\end_inset
+
+ using the FCT (blue) and HF (red) models at 
+\begin_inset Formula $T=77K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:parameter_choise"
+
+\end_inset
+
+The Simulation Parameter Choice
+\end_layout
+
+\begin_layout Plain Layout
+In this section we examine the considerations that had led to the choice
+ of the particular parameters in our simu lation scenarios.
+ The most prominent of these is the phenomenological broadening factor 
+\begin_inset Formula $\gamma$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,109 @@
+% This file was created with JabRef 2.5.
+% Encoding: Cp1255
+
+@ARTICLE{andreani_exciton-polaritons_1994,
+  author = {Lucio Claudio Andreani},
+  title = {Exciton-polaritons in superlattices},
+  journal = {Physics Letters A},
+  year = {1994},
+  volume = {192},
+  pages = {99--109},
+  month = aug,
+  abstract = {The nonlocal semiclassical theory of the optical response of excitons
+	in multiple quantum wells is formulated in a transfer-matrix scheme.
+	The theory is applied to a derivation of the dispersion of exciton-polaritons
+	in superlattices. In the long-wavelenght limit the polariton dispersion
+	is shown to reduce to that of a light wave in a uniaxial material,
+	described by an effective (local) dielectric tensor: for {TE} polarization
+	the polariton dispersion is that of the ordinary wave, while for
+	{TM} polarization the dispersion is that of the extraordinary wave
+	and describes longitudinal-transverse mixed modes. Numerical examples
+	are given for polaritons in {GaAs/AlAs} superlattices.},
+  url = {http://adsabs.harvard.edu/abs/1994PhLA..192...99A}
+}
+
+@BOOK{shun_lien_chuang_physics_1995,
+  title = {Physics of Optoelectronic Devices},
+  publisher = {{Wiley-Interscience}},
+  year = {1995},
+  author = {Shun Lien Chuang},
+  month = sep,
+  isbn = {0471109398}
+}
+
+@BOOK{supriyo_datta_quantum_2005,
+  title = {Quantum transport},
+  publisher = {Cambridge University Press},
+  year = {2005},
+  author = {Supriyo Datta},
+  pages = {404},
+  isbn = {0521631459, 9780521631457}
+}
+
+@BOOK{stephan_glutsch_excitons_2004,
+  title = {Excitons in low-dimensional semiconductors},
+  publisher = {Springer},
+  year = {2004},
+  author = {Stephan Glutsch},
+  pages = {294},
+  isbn = {3540202404, 9783540202400}
+}
+
+@BOOK{paul_harrison_quantum_2000,
+  title = {Quantum Wells, Wires and Dots: Theoretical and Computational Physics},
+  publisher = {John Wiley \& Sons Canada, Ltd.},
+  year = {2000},
+  author = {Paul Harrison},
+  isbn = {0471984957},
+  shorttitle = {Quantum Wells, Wires and Dots}
+}
+
+@BOOK{hartmut_haug_quantum_2009,
+  title = {Quantum Theory of the Optical and Electronic Properties of Semiconductors},
+  publisher = {World Scientific Publishing Company},
+  year = {2009},
+  author = {Hartmut Haug and Stephan W Koch},
+  edition = {5},
+  month = apr,
+  isbn = {9812838848}
+}
+
+@BOOK{karlheinz_seeger_semiconductor_2004,
+  title = {Semiconductor physics},
+  publisher = {Springer},
+  year = {2004},
+  author = {Karlheinz Seeger},
+  pages = {537},
+  isbn = {3540219579, 9783540219576}
+}
+
+@BOOK{jasprit_singh_electronic_2003,
+  title = {Electronic and optoelectronic properties of semiconductor structures},
+  publisher = {Cambridge University Press},
+  year = {2003},
+  author = {Jasprit Singh},
+  pages = {532},
+  isbn = {{052182379X,} 9780521823791}
+}
+
+@BOOK{y._yamamoto_semiconductor_2000,
+  title = {Semiconductor Cavity Quantum Electrodynamics},
+  publisher = {Springer},
+  year = {2000},
+  author = {Y. Yamamoto and F. Tassone and H. Cao},
+  edition = {1},
+  month = nov,
+  isbn = {3540675205}
+}
+
+@BOOK{peter_y._yu_fundamentals_1999,
+  title = {Fundamentals of Semiconductors: Physics and Materials Properties},
+  publisher = {{Springer-Verlag} Telos},
+  year = {1999},
+  author = {Peter Y. Yu and M. Cardona and Manuel Cardona},
+  edition = {2nd},
+  month = may,
+  isbn = {{354065352X}},
+  shorttitle = {Fundamentals of Semiconductors}
+}
+

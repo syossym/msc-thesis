@@ -1,0 +1,1231 @@
+\chapter{The configuration space of a parallel polygonal mechanism}
+\label{chap3}
+
+\textsf{Submitted to \textsl{Homology Homotopy and Applications}, 2007.}\\
+\textsf{Co-authors: David Blanc and Moshe Shoham.}\\
+
+ We study the  \cspace\ $\C$ of a parallel polygonal
+mechanism, and give necessary conditions for the existence of
+singularities; this shows that generically $\C$ is a smooth
+manifold. In the planar case, we construct an explicit Morse
+function on $\C$, and show how geometric information about the
+mechanism can be used to identify the critical points.
+
+%
+%s1  Introduction}
+%
+\sect{Introduction} \label{cint}
+
+The mathematical theory of robotics is based on the notion of a
+mechanism, consisting of links, joints, and rigid parts known
+as platforms.  The \emph{type} of a mechanism is defined by a
+$q$-dimensional polyhedral complex, where the parts of dimension
+$\geq 2$ \ correspond to the platforms, and the complementary
+one-dimensional graph corresponds to the links and joints.
+Here we consider only the polygonal case  \ ($q=2$). \
+A specific embedding of this complex in the ambient Euclidean space  \
+$\RR{d}$ \ is called a \emph{configuration} of the mechanism. The
+collection of all such embeddings forms a topological space, called the
+\emph{\cspace} of the mechanism (see \cite{Ha}).
+
+\begin{figure}[htb]
+\begin{center}
+\epsfysize=4cm %\epsfxsize=6.4cm
+\leavevmode \epsffile{fig_3/k_gon_mechanism.eps} \caption{A
+pentagonal planar mechanism} \label{fig:kgon}
+\end{center}
+\end{figure}
+
+The goal of this note is to study the \cspace\ of a mechanism
+consisting of a moving polygonal platform, having a
+flexible leg (consisting of concatenated rods) attached to each
+vertex, with the other end fixed in  \ $\RR{d}$. \ We may think of the
+latter as forming the \emph{fixed polygon} of the mechanism, ``parallel''
+to the \emph{moving polygon} inside.
+The spatial version of such a mechanism, consisting of a
+two-dimensional platform free to move in three dimensions, has been
+studied extensively, but even the planar version, to which we
+later specialize, has practical applications \ -- \ for example, in
+micro-electro-mechanical systems (MEMS)\vs.
+
+Our main results are\vsm :
+
+\begin{enumerate}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+%
+\item The \cspace\ of a parallel polygonal mechanism is a smooth
+  manifold, except perhaps in some explicitly described  singular
+  cases (Theorem \ref{tone}).
+%
+\item The topology of this manifold can be described for a triangular
+  planar mechanism by means of an explicit Morse function (Theorem \ref{ttwo}),
+  whose critical points can be identified geometrically (\S \ref{scrit})\vs.
+%
+\end{enumerate}
+
+We start with some terminology and notation:
+
+\begin{defn}\label{dbranch}
+%
+A \emph{branch} (of \emph{multiplicity} $n$) is a sequence \
+$L=(\ell_{1},\dotsc,\ell_{n})$ \ of $n$ positive numbers, which we
+think of as the lengths of $n$ concatenated rods, having revolute
+(i.e., rotational) joints at the consecutive meeting points.
+%
+\end{defn}
+
+\begin{defn}\label{dbconfiguration}
+%
+A \emph{configuration} in \ $\RR{d}$ \ for a branch \
+$L=(\ell_{1},\dotsc,\ell_{n})$ \ consists of $n$ vectors \
+$V=(\bv_{1},\dotsc,\bv_{n})$ \ in \ $\RR{d}$ \ with lengths \
+$\|\bv_{i}\|=\ell_{i}$ \ ($i=1,\dotsc n$). \ We write \
+$\sigma_{V}:=\sum_{i=1}^{n}\,\bv_{i}$ \ for their vector sum.
+
+A branch configuration \ $V=(\bv_{1},\dotsc,\bv_{n})$ \ is
+\emph{aligned} with a vector \ $\bv\in\RR{d}$ \ if all the vectors
+\ $\bv_{i}$ \ are scalar multiples of $\bv$, which is called the
+\emph{direction vector} of $V$. \newnot{3-3}
+%
+\end{defn}
+
+The \emph{\cspace} \ $\C(L)$ \ of a branch $L$ is the product of $n$
+spheres in \ $\RR{d}$ \ of radii \ $(R_{i}=\ell_{i})_{i=1}^{n}$. \
+Up to homeomorphism, this is independent of the order on $L$, so we can (and
+shall) assume \ $\ell_{1},\dotsc,\ell_{n}$ \ to be in descending order.
+
+\begin{defn}\label{dkmechanism}
+%
+A \emph{polygonal mechanism} \ $(\Lc,\Xc,\Pc)$ \ in \ $\RR{d}$ \
+consists of: \newnot{3-2}
+
+\begin{enumerate}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+%
+\item $k$ branches \ $\Lc=\{\Lj{i}\}_{i=1}^{k}$ \ of multiplicity \
+$\{n^{(i)}\}_{i=1}^{k}$, \ respectively;
+%
+\item $k$ distinct \emph{base points} \ $\Xc=\{\xj{i}\}_{i=1}^{k}$ \ in \
+  $\RR{d}$, \ to which the initial points of the corresponding
+  branches are attached.
+%
+\item An abstract $k$-polygon $\Pc$ in \ $\RR{d}$.
+%
+\end{enumerate}
+
+Think of this mechanism as a linkage of $k$ branches, starting at
+the base points (which form a polygon (not necessarily planar) in \
+$\RR{d}$, \ called the  \emph{fixed platform}), and ending at the
+vertices of a rigid planar polygon congruent to $\Pc$, called the
+\emph{moving platform} of the mechanism. There are revolute joints
+at both ends of each branch, too.
+
+We use parenthesized superscripts to
+indicate the branch number, and plain subscripts to indicate the rod
+number \ -- \ e.g., \ $\ell_{j}^{(i)}$ \ denotes the length of the
+$j$-th rod of the $i$-th branch.
+%
+\end{defn}
+
+\begin{remark}\label{rpolygon}
+%
+Observe that a planar polygon $\Pc$ in \ $\RR{d}$ \ ($d>2$) \ with
+vertices \ $\ppj{1}$, $\dotsc$, $\ppj{k}$ \ is determined up to
+isometry by the sequence of triangles \
+$\triangle(\ppj{i},\ppj{i+1},\ppj{i+2})$ \ and \
+$\triangle(\ppj{i},\ppj{i+1},\ppj{i+3})$, \ which are determined
+in turn by the lengths of their sides \
+$\Gc~:=~(\gj{i,j})_{(i,j)\in\Ic}$. \ Here \
+$\gj{i,j}:=\|\ppj{i}-\ppj{j}\|$,  \ and the index set $\Ic$
+consists of the \ $3k-6$ \ ordered pairs: \newnot{3-4}
+$$
+(1,2),(1,3),(2,3),(1,4),(2,4),(3,4),\dotsc,(k-3,k),(k-2,k),(k-1,k)
+$$
+%
+(in this order). Note that these diagonals force $\Pc$ to be planar, since
+if we assume that the polygon is contained in the affine plane $\Ec$
+determined by the first three vertices in \ $\RR{d}$, \ then $\Pc$ is
+constructed inductively by adding one vertex at a time to an existing
+edge to form a new triangle.
+
+
+When \ $d=2$, \ the \ $2k-3$ \ pairs:
+$$
+\Ic=\{(1,2),(1,3),(2,3),(2,4),(3,4),\dotsc,(k-2,k-1),(k-1,k)\}
+$$
+%
+suffice to determine $\Pc$ completely, if it is convex; otherwise, the
+only additional data needed is the discrete information as to which
+half-plane the new vertex is to be placed in.
+%
+\end{remark}
+
+\begin{defn}\label{dconfiguration}
+%
+A \emph{configuration} for a polygonal mechanism \ $(\Lc,\Xc,\Pc)$
+\ in \ $\RR{d}$ \ consists of a set \ $\Vc=(\Vj{1},\dotsc,\Vj{k})$
+\ of $k$ branch configurations for $\Lc$ (Definition
+\ref{dbconfiguration}), satisfying the condition that the
+endpoints \ $\ppj{i}:=\xj{i}+\sigma_{\Vj{i}}$ \ ($i=1,\dotsc,k$) \
+of the corresponding branch configurations (attached to the given
+basepoints) form a planar polygon congruent to $\Pc$ in \
+$\RR{d}$. \ If the branch configuration \ $\Vj{i}$ \ is aligned,
+with direction vector \ $\vj{i}$ \ (Definition
+\ref{dbconfiguration}), then the line \
+$\Line\up{i}:=\{\xj{i}+t\vj{i}~|\ t\in\RR{}\}$ \ is called the
+\emph{direction line} for \ $\Vj{i}$ \ (with \
+$\ppj{i}\in\Line\up{i}$).\newnot{3-5}
+
+The set of all configurations for the given mechanism \
+$(\Lc,\Xc,\Pc)$ \ (as a subspace of the product of
+the appropriate branch \cspace s), is its \emph{\cspace} \
+$\C=\C(\Lc,\Xc,\Pc)$.
+%
+\end{defn}
+
+\begin{defn}\label{dwork}
+%
+Note that the moving platform $\Pc$ can be translated and rotated
+in \ $\RR{d}$ \ (subject to the constraints imposed by the branches
+and the locations of the fixed vertices). The space of all allowable
+positions for $\Pc$, denoted by \ $\Wc=\Wc(\Lc,\Xc,\Pc)$, \ is called
+the \emph{\wspace} for \ $(\Lc,\Xc,\Pc)$. \ The \emph{work map} \
+$\Phi:\C\to\Wc$ \ assigns to each configuration $\Vc$ the
+resulting position of $\Pc$.
+%
+\end{defn}
+
+\begin{mysubsection}[\label{sorg}]{Organization}
+%
+In section \ref{cmain} we show that the \cspace s $\C$ we consider here, in
+any ambient dimension, are manifolds (generically). In section
+\ref{cplan} we describe a Morse function for the \cspace\ of a generic planar
+mechanism, analyze its critical points geometrically, and give a
+simple example showing how this analysis may be used to recover $\C$.
+%
+\end{mysubsection}
+
+%
+%s2   Generic polygonal mechanisms in $\RR{d}$}
+%
+\sect{Generic polygonal mechanisms} \label{cmain}
+
+We now show that, generically, the \cspace\ of a polygonal
+mechanism is a manifold. Of course, it may be smooth even when  \
+$(\Lc,\Xc,\Pc)$ \ is not generic, but in such cases singularities
+can occur (cf.\ \cite{FSchuH} and \cite{KT}), and their analysis
+is of interest in relation to the kinematic singularities.
+
+\begin{defn}\label{dgeneric}
+%
+A configuration \ $\Vc=(\Vj{1},\dotsc,\Vj{k})$ \ of a polygonal
+mechanism \ $(\Lc,\Xc,\Pc)$ \ is called \emph{singular} if:
+%
+\begin{enumerate}
+\renewcommand{\labelenumi}{(\alph{enumi})~}
+%
+\item Two of its branch configurations \ $\Vj{i_{1}}$ \ and \
+ $\Vj{i_{2}}$ \ are aligned, with coinciding direction lines: \
+$\Line\up{i_{1}}=\Line\up{i_{2}}$ \ (see Figure \ref{fsingular}).
+
+\begin{figure}[htb]
+\begin{center}
+\epsfysize=6cm \leavevmode
+\epsffile{fig_3/critical_point_triangle.eps} \caption{Singular
+configuration of type (a)} \label{fsingular}
+\end{center}
+\end{figure}
+
+\item Three of its branch configurations are aligned, with direction lines
+in the same plane meeting in a single point.
+%
+\item Four of its branch configurations are aligned, with
+  direction lines in the same plane.
+%
+\end{enumerate}
+
+The mechanism \ $(\Lc,\Xc,\Pc)$ \ is
+called \emph{generic} if none of its configurations are singular
+(compare \cite{Hau}).
+%
+\end{defn}
+
+\begin{thm}\label{tone}
+%
+The \cspace\ \  \ $\C=\C(\Lc,\Xc,\Pc)$ \ of a generic polygonal mechanism
+in \ $\RR{d}$ is a smooth closed orientable manifold of dimension \
+$N(d-1)-|\Ic|$, \ where $k$ is the number of vertices of $\Pc$ \ and \
+$N:=\sum_{i=1}^{k}\,{\nj{i}}$.
+%
+\end{thm}
+\newnot{3-1}
+\noindent\textit{Proof.} \ For any $n$, define a map \
+$f_{n}:(\RR{d})^{n}\to\RR{n}$ \ by:
+$$
+f_{n}(\bv_{1},\dotsc,\bv_{n})~:=~(|\bv_{1}|^{2},\dotsc,|\bv_{n}|^{2})~.
+$$
+
+Consider the \emph{constraint map} \ $F:\RR{dN}\to\RR{N+|\Ic|}$, \ defined:
+%
+\begin{equation}\label{econstr}
+%
+F(\Vc)~=~F(\Vj{1},\dotsc,\Vj{i})~:=~
+(f_{\nj{1}}(\Vj{1}),\dotsc,f_{\nj{k}}(\Vj{k}),
+\|\aj{1,2}\|^{2},\dotsc,\|\aj{k-1,k}\|^{2})~,
+%
+\end{equation}
+%
+where \ $\ppj{i}:=\xj{i}+\sum_{t=1}^{\nj{i}}\,\vj{i}_{t}$ \ is the
+endpoint of the $i$-th branch for the configuration \
+$\Vj{i}=(\vj{i}_{1},\dotsc,\vj{i}_{\nj{i}})$ \ attached to the
+basepoint \ $\xj{i}\in\RR{d}$, \ and \ $\aj{i,j}:=\ppj{i}-\ppj{j}$ \
+is the \ $(i,j)$-diagonal of the polygon spanned by these endpoints.
+
+Recall from \S \ref{rpolygon} that $\Pc$ determines the set of
+diagonals \ $\Gc=(\gj{i,j})_{(i,j)\in\Ic}$, \ where \
+$$
+|\Ic|~=~\begin{cases} 3k-6 & \text{if~}d>2\\
+2k-3 & \text{if~}d=2
+\end{cases}
+$$
+%
+Let:
+%
+\begin{equation*}
+%
+Z_{(\Lc,\Gc)}~:=~((\lj{1}_{1})^{2},\dotsc,(\lj{1}_{\nj{1}})^{2},\dotsc
+((\lj{k}_{1})^{2},\dotsc,(\lj{k}_{\nj{k}})^{2},\
+(\gj{1,2})^{2},\dotsc,(\gj{k-1,k})^{2})
+%
+\end{equation*}
+
+The \cspace\ \ $\C=\C(\Lc,\Xc,\Pc)$ \ is the pre-image
+of \ $Z_{(\Lc,\Gc)}\in \RR{N+|\Ic|}$ \ under the function $F$; \
+if \ $d=2$, \ $\C$ is one connected component of this pre-image\vsm.
+
+$\C$ will be a smooth manifold if \ $Z_{(\Lc,\Gc)}$ \ is a regular
+value of $F$ \ -- \ i.e., if  \ $\dF_{\Vc}$ \ is of rank \ $N+|\Ic|$ \
+(see \cite[I, Theorem 3.2]{Hi}). \ We calculate:
+%
+\begin{equation}\label{edf}
+%
+\dF_{\Vc}~=~2
+\begin{pmatrix}
+%
+A\up{1}    & 0         &  0           &  0          & \dotsc  & 0  \\
+ 0         &A\up{2}    &  0           &  0          & \dotsc  & 0  \\
+ 0         & 0         & A\up{3}      &             & \dotsc  & 0  \\
+ 0         & 0         &  0           & A\up{4}     & \dotsc  & 0  \\
+ \vdots    & \vdots    &  \vdots      & \vdots      & \ddots  & \vdots \\
+ 0         & 0         &  0           & 0           & \dotsc  & A\up{k} \\
+& & & & & \\
+\bj{1}{2}  & \bj{2}{1} & 0            & 0 &  \ldots     & 0          \\
+\bj{1}{3}  & 0         & \bj{3}{1}    & 0 &  \ldots     & 0          \\
+ 0         &\bj{2}{3}  & \bj{3}{2}    & 0 &  \ldots     & 0          \\
+\vdots     & \vdots    &  \vdots      &  \vdots     & \ddots  & \vdots \\
+ 0         & \dotsc    & 0 & \bj{k-2}{k}  & 0           & \bj{k}{k-2}\\
+ 0         & 0    & \dotsc & 0             & \bj{k-1}{k} & \bj{k}{k-1}
+\end{pmatrix}\vspace{4mm},
+%
+\end{equation}
+%
+where \ $A\up{i}$ \ is the  \ $\nj{i}\times d\nj{i}$ \ matrix:
+%
+\begin{equation}\label{eai}
+\begin{pmatrix}
+%
+\vj{i}_{1} & \dotsc & 0     \\
+\vdots     & \ddots & \vdots \\
+0          & \dotsc & \vj{i}_{\nj{i}}
+\end{pmatrix}
+%
+\end{equation}
+%
+\noindent with rows denoted by: \ $\uj{i}{1},\dotsc,\uj{i}{\nj{i}}$.
+
+The \ $|\Ic|$ \ bottom rows \ $(\wj{i}{j})$ \ of \ $\frac{1}{2}\dF$ \
+are indexed by \ $(i,j)\in\Ic$, \ where \
+$$
+\wj{i}{j}:=
+(\underbrace{0,\dotsc,0}_{d(\nj{1}+\dotsc+\nj{i-1})},
+\bj{i}{j},\underbrace{0,\dotsc,0}_{d(\nj{i+1}+\dotsc+\nj{j-1})},
+\bj{j}{i},\underbrace{0,\dotsc,0}_{d(\nj{j+1}+\dotsc+\nj{k})})~,
+$$
+%
+each edge \ $\aj{i,j}\in\RR{d}$ \ appearing \ $\nj{i}$ \ times in
+\newnot{3-6}
+$$
+\bj{i}{j}~:=~\underbrace{(\aj{i,j},\aj{i,j},\dotsc,\aj{i,j})}_{\nj{i}}~.
+$$
+
+If we think of the bottom rows as forming $N$
+blocks of \ $|\Ic|\times d$ \ matrices \ $B_{1},\dotsc, B_{N}$, \
+then:
+%
+\begin{equation}\label{eblock}
+\sum_{r=1}^{N}\ B_{r} ~=~ 0\vsm.
+\end{equation}
+
+Let \ $\Vc\in\C=F^{-1}(Z_{(\Lc,\Gc)})$, \ and consider a vanishing
+linear combination of the rows of \ $\dF_{\Vc}$:
+$$
+\sum_{i=1}^{k}~\left(\sum_{j=1}^{\nj{i}}\,\lambda\up{i}_{j}\uj{i}{j}\right)~+~
+\sum_{(i,j)\in\Ic}\,\gamma\up{i,j}\wj{i}{j}~=~\vz~.
+$$
+
+For each \ $1\leq i\leq k$, \ let:
+$$
+\vj{i}~:=~\sum_{\substack{(s,i)\in\Ic\\ s<i}}\,\gamma\up{s,i}\cdot\aj{s,i}
+~-~\sum_{\substack{(i,t)\in\Ic\\ i<t}}\,\gamma\up{i,t}\cdot\aj{i,t}~,
+$$
+%
+and note that if \ $\lambda\up{i}_{j'}\neq 0$ \ for \emph{some} \
+$1\leq j'\leq\nj{i}$, \ then this holds for all \ $1\leq j\leq\nj{i}$, \
+so that \ $\vj{i}_{j}~=~\frac{1}{\lambda\up{i}_{j}}\cdot\vj{i}$ \
+(the $i$-th branch is aligned with direction vector \ $\vj{i}$).
+
+By \eqref{eblock}, \ $\sum_{i=1}^{k}\,\vj{i}=\vz$, \ so if \
+$\vj{i}=\vz$ \ for \ $i\neq i_{0},i_{1}$, \ then \
+$\vj{i_{0}}+\vj{i_{1}}=\vz$, \ and thus branches \ $i_{0}$ \ and \
+$i_{1}$ \ are co-aligned with direction vector \ $\aj{i_{0},i_{1}}$. \
+This cannot happen if \ $(\Lc,\Xc,\Pc)$ \ is generic
+(cf.\ \S \ref{dgeneric}(a)). \ Similarly, no more than three
+branches can be aligned (\S \ref{dgeneric}(c)).
+
+Unfortunately, even for generic mechanisms \ $\dF$ \ need not be of maximal
+rank. Thus, to complete the proof of the Theorem we need the
+following:
+%
+%\end{proof}
+
+\begin{prop}\label{pzero}
+%
+For a generic polygonal mechanism, any configuration $\Vc$ having
+at most three aligned branches is smooth.
+%
+\end{prop}
+
+\begin{proof}
+%
+Without loss of generality we may assume that the three aligned
+branches are \ $1,2$ \ and $k$, \ with direction vectors \
+$\oj{1}$,\ $\oj{2}$, \ and \ $\oj{k}$, \ respectively.
+
+Let $\hC$ denote the configuration space of the mechanism obtained
+from \ $(\Lc,\Xc,\Pc)$ \ by omitting the last branch, and \ $\Ck$
+\ the configuration space for this branch (attached to \
+$\xj{k}\in\RR{d}$). \newnot{3-2}
+
+The \emph{\wspace} of both mechanisms (i.e., the set of possible
+locations for the $k$-th vertex of $\Pc$) is contained in \ $\RR{d}$, \
+and we have \emph{work maps} \ $\psi:\hC\to\RR{d}$ \ and \
+$\phi:\Ck\to\RR{d}$ \ which associate to each configuration the
+location of this vertex.
+
+Note that the manifold \ $\Ck$ \ (an $n$-torus for \ $n=\nj{k}$) \
+is the preimage of \ $Z_{\lj{k}}$ \ under the map \
+$f=f_{n}:\RR{nd}\to\RR{n}$, \ and we write \ $i:\Ck\to\RR{nd}$ \ for
+the inclusion. Similarly, $\hC$ is determined by a smooth
+constraint map:
+$$
+\hF:\RR{M}\times\Sc\to\RR{N-n+|\hI|}
+$$
+%
+for \ $M=(N-n)d$, \ where $\Sc$ is a point if \ $k\geq 4$ \ and \
+$\Sc=S^{d-2}$ \ if \ $k=3$. \ Here
+%
+\begin{equation}\label{econstn}
+%
+\begin{split}
+%
+\hF(\hV)~=&~\hF(\Vj{1},\dotsc,\Vj{k-1},\bw)~\\
+:=&~(f_{\nj{1}}(\Vj{1}),\dotsc,f_{\nj{k-1}}(\Vj{k-1}),\,
+\|\aj{1,2}\|^{2},\,\dotsc,\|\aj{k-2,k-1}\|^{2})~
+%
+\end{split}
+%
+\end{equation}
+%
+(with the functions \ $\|\aj{i,j}\|^{2}$ \ indexed by \
+$(i,j)\in\hI$). \ The vector \ $\bw\in S^{\Delta}$ \ is needed for \
+$k=3$ \ and \ $d>2$, \ since in that case the location of the first \
+$k-1$ \ vertices of $\Pc$ determines the position of the moving
+platform only up to rotation of \ $\aj{1,3}$ \ around the given edge \
+$\aj{1,2}$ \ (relative to the plane \
+$\Ec=\Ec(\vj{1}_{\nj{1}},\aj{1,2})$ \ spanned by \
+$\vj{1}_{\nj{1}}$ \ and \ $\aj{1,2}$).
+
+Thus $\hC$ is \ $\hF^{-1}(Z_{(\hat{\Lc},\hat{\Gc})})$ \
+for the obvious \ $(\hat{\Lc},\hat{\Gc})$. \
+Moreover, \ $(\hat{\Lc},\hat{\Gc})$ \ is a regular value of $\hF$,
+as in the proof of Theorem \ref{tone}, because \ $(\Lc,\Xc,\Pc)$ \
+is generic, so no branches but \ $1,2,k$ \ are aligned.
+Thus $\hC$ is a smooth submanifold, and we write \
+$\hi:\hC\to\RR{M}$ \ for the inclusion.
+
+Let \ $X:=\Ck\times\RR{M}\times\Sc$, \
+$Y:=\RR{d}\times\RR{M}\times\Sc$, \ and define \
+$h:X\to Y$ \ to be the product map \
+$\phi\times\Id_{\RR{M}}\times\Id_{\Sc}$ \ and \
+$g:\hC\to Y$ \ to be \ $(\psi,\hi)$, \ so that $g$ is an embedding of
+$\hC$ as a submanifold in $Y$. Since \ $\C=\C(\Lc,\Xc,\Pc)$ \ is
+simply the pullback of:
+$$
+\Ck~\xrightarrow{\phi}~\RR{d}~\xleftarrow{\psi}~\hC~,
+$$
+%
+it may be identified with the preimage of the submanifold \
+$\hC\subseteq Y$ \ under $h$\vsm.
+
+Let \ $\hV\in\hC$ \ be a configuration where the first two branches
+are aligned (but not co-aligned), with direction vectors in the plane
+$\Ec$ determined by the polygon $\Pc$ \ -- \ and let \ $\Vj{k}\in\Ck$ \ be an
+aligned configuration  with direction vector \ $\vj{k}$. \ Assume
+that \ $\psi(\hV)=\phi(\Vj{k})$, \ and let \ $\bx\in X$ \ be the
+configuration \ $(\Vj{k},\hi(\hV))$, \ so that \ $h(\bx)=g(\hV)$. \
+We must therefore show that the point \ $\Vc\in\C$ \
+defined by \ $(\hV,\Vj{k})$ \ is smooth:
+
+$$
+\xymatrix@R=25pt{
+\hspace*{3.5mm}\bx\in X\ar@<2.7ex>[d]_{h} & = &
+\Ck\ar@<-2.8ex>[d]_{\phi}\ni\Vj{k} & \times &
+\RR{M}\times\Sc\ar@<-3.7ex>[d]_{\Id}\ni\hi(\hV)\\
+h(\bx)\in Y           & = & \hspace*{2mm}\RR{d}\ni\phi(\Vj{k})  & \times &
+\RR{M}\times\Sc\ni\hi(\hV) \\
+\hspace*{0.5mm}\hV\in\hC
+\ar@<-2.7ex>[u]^{g}\ar[urr]^{\psi}\ar[urrrr]_{\hi} & & & &
+}
+$$
+
+By \cite[I, Theorem 3.3]{Hi}), it suffices to show that \
+$h\pitchfork\hC$  \ -- \ i.e., $h$ is locally transverse
+to $\hC$ at the points \ $\bx\in X$ \ and \ $\hV\in\hC$. \
+In other words:
+%
+\begin{equation}\label{etransv}
+%
+\Image\dhh_{\bx}~+~T_{\hV}(\hC)~=~T_{\hV}(Y)~=~\RR{d}\times\RR{M+\Delta}~.
+%
+\end{equation}
+
+First note that since \ $\Ck=f^{-1}(Z_{\lj{k}})\subseteq\RR{nd}$, \
+the tangent space \ $T_{\Vj{k}}(\Ck)$ \ may be identified with the
+kernel of \ $\df_{\Vj{k}}:\RR{nd}\to\RR{n}$, \ which
+is the null space of the matrix \ $A\up{k}$ \ of \eqref{eai}. Since \
+$\Vj{k}$ \ is aligned, by assumption, with direction vector \
+$\oj{k}$, \ we see that:
+%
+\begin{equation*}
+%
+\begin{split}
+%
+T_{\Vj{k}}(\Ck)~\cong~&
+\{(\yj{k}_{1},\dotsc,\yj{k}_{n})\in\RR{nd}~|\
+\yj{k}_{1}\cdot\oj{k}=0,\ \dotsc,
+\yj{k}_{n}\cdot\oj{k}=0\}\\
+=&~\underbrace{\oj{k}^{\perp}\times\dotsc\times\oj{k}^{\perp}}_{n}
+%
+\end{split}
+%
+\end{equation*}
+
+Furthermore, \ $\phi:\Ck\to\RR{d}$ \ extends to \
+$\hat{\phi}:\RR{nd}\to\RR{d}$ \ (so that \ $\hat{\phi}\circ i=\phi$), \
+with
+$$
+\hat{\phi}(\bv_{1},\dotsc,\bv_{n})~=~\xj{k}+\bv_{1}+\dotsb+\bv_{n}~.
+$$
+
+Since \ $\hat{\phi}$ \ is linear, its differential \ $\dd\hat{\phi}$ \
+is represented by the \ $d\times nd$ \ matrix \
+$(I_{d},I_{d},\dotsc,I_{d})$ \ ($n$ blocks).
+
+Thus:
+%
+$$
+\Image\dhh_{\bx}~=~\oj{k}^{\perp}\times\RR{M+\Delta}~,
+$$
+%
+\noindent so that in order for \eqref{etransv} to hold it suffices to
+prove that:
+%
+\begin{equation}\label{eomega}
+%
+\oj{k}\in T_{\hV}(\hC) \vsm.
+%
+\end{equation}
+
+Now the tangent space \ $T_{\hV}(\hC)$ \ may be identified with the
+kernel of:
+$$
+\dd\hF_{\hV}:\RR{M+\Delta}\to\RR{N-n+2k-5}~,
+$$
+%
+where \ $\dd\hF_{\hV}$ \ is described as in \eqref{edf} by the matrix:
+
+\begin{equation}\label{edfn}
+%
+\dd\hF_{\hV}~=~
+2\begin{pmatrix}
+%
+A\up{1}   & 0         &  \dotsc  &      0      & 0 \dotsc 0 \\
+ \vdots   & \vdots    &  \ddots  &    \vdots   & \vdots     \\
+ 0        & 0         &  \dotsc  & A\up{k}     & 0 \dotsc 0 \\
+          &           &          &             &            \\
+\bj{1}{2} & \bj{2}{1} &  \dotsc  &       0     & 0 \dotsc 0 \\
+\vdots    & \vdots    &  \ddots  &  \vdots     & 0 \dotsc 0 \\
+ 0        & 0         & \dotsc   & \bj{k}{k-1} & 0 \dotsc 0
+\end{pmatrix}\vspace{4mm}\quad
+%
+\end{equation}
+
+Since the first two branches are aligned with
+direction vectors \ $\oj{1}$,\ $\oj{2}$, \ $T_{\hV}(\hC)$ \
+may be identified with the set of \ $N-n$ \ $d$-dimensional vectors \
+$$
+\yj{1}_{1},\dotsc,\yj{1}_{\nj{1}};
+\yj{2}_{1},\dotsc,\yj{2}_{\nj{2}};\dotsc;
+\yj{k-1}_{1},\dotsc,\yj{k-1}_{\nj{k-1}}~,
+$$
+%
+together with \ $\bz\in\RR{\Delta}$, \ where the first \ $\nj{1}$ \
+vectors are all in \ $\oj{1}^{\perp}$, \ the next \ $\nj{2}$ \ are all
+in \ $\oj{2}^{\perp}$, \ and the remainder are in individual orthogonal
+complements:
+$$
+(\vj{3}_{1})^{\perp}\times\dotsb\times(\vj{3}_{\nj{3}})^{\perp}\times
+(\vj{k-1}_{1})^{\perp}\times\dotsb\times(\vj{k-1}_{\nj{k-1}})^{\perp}~.
+$$
+
+If we let \ $\vy{i}:=\sum_{t=1}^{\nj{i}}\,\yj{i}_{t}$ \
+($i=1,\dotsc,k-1$), \ these must satisfy:
+$$
+\aj{i,j}\cdot(\vy{i}-\vy{j})~=~0
+$$
+%
+for each \ $(i,j)\in\hI$.
+
+Likewise, \ $\psi:\hC\to\RR{d}$ \ extends to \
+$\hat{\psi}:\RR{M}\times\Sc\to\RR{d}$, \  with
+$$
+\hat{\psi}(\Vj{1},\dotsc,\Vj{k-1},\bw)~=~
+\xj{1}+\vj{1}_{1}+\dotsb+\vj{1}_{\nj{1}}~+~R_{\bw}\cdot\aj{1,2}~,
+$$
+%
+where \ $R_{\bw}$ \ is \ $\lambda\cdot B_{\bw}\cdot A_{\theta}$, \
+for \ $\lambda:=\lj{1,k}/\lj{1,2}$, \ $B_{\bw}$ \ the rotation matrix
+about \ $\aj{1,2}$ \ determined by \ $\bw\in\Sc$ \ (if \ $\Sc=S^{\Delta}$), \
+and \ $A_{\theta}$ \ rotates \ $\aj{1,2}$ \ (in the plane $\Ec$ spanned by \
+$\vj{1}_{\nj{1}}$ \ and \ $\aj{1,2}$) \ by the angle $\theta$ to the
+side \ $\aj{1,3}$ \ in the given polygon $\Pc$.
+
+Thus \ $\dd\hat{\psi}_{(\Vj{1},\dotsc,\Vj{k-1},\bw)}$ \ is represented
+by the \ $(M+\Delta)\times d$ \ matrix:
+%
+\begin{equation}\label{epsi}
+%
+\left[~ \underbrace{I_{d}+R_{\bw} | \dotsc | I_{d} + R_{\bw}}_{\nj{1}}~|~
+\underbrace{-R_{\bw} | \dotsc | -R_{\bw}}_{\nj{2}}~|~
+\underbrace{ 0\dotsc 0 }_{d\nj{3}}~|~\dotsc~|~
+\underbrace{ 0\dotsc 0 }_{d\nj{k-1}}~|~
+\frac{\partial R_{\bw}}{\partial\bw}\right]~.
+%
+\end{equation}
+
+Therefore, the image of \ $\dd\psi$ \ is obtained by applying
+\eqref{epsi} to \ $T_{\hV}(\hC)\subseteq\RR{M+\Delta}$ \ described
+above, and we see that \ $\Image(\dd\psi_{\hV})$ \ is the sum of
+%
+\begin{equation}\label{edpsi}
+%
+\{\vy{1}+ R_{\bw}(\vy{1}-\vy{2})~|\
+\vy{1}\in\oj{1}^{\perp},\  \vy{2}\in\oj{2}^{\perp},\
+(\vy{1}-\vy{2})\in\ap{2}\}
+%
+\end{equation}
+%
+\noindent and \ $\Image\frac{\partial R_{\bw}}{\partial\bw}$\vsm.
+
+In the case we are interested in, the two direction vectors \ $\oj{1}$ \
+and \ $\oj{2}$ \ are in the plane $\Ec$ spanned by $\Pc$, so \
+$B_{\bw}$ \ is the identity matrix and thus \
+$R_{\bw}=\lambda\cdot A_{\theta}$ \ takes \ $\aj{1,2}$ \ to \
+$\aj{1,3}$ \ in $\Ec$. Clearly, \ $\Image(\dd\psi_{\hV})$ \ contains
+the orthogonal complement \ $\Ec^{\perp}$, \ so to prove
+\eqref{eomega} we may reduce to the case \ $d=2$ \ (all vectors
+in the plane $\Ec$), \ so that in fact \eqref{edpsi} is all of \
+$\Image(\dd\psi_{\hV})$.
+
+Now choose unit vectors \ $\cj{i}$ \ spanning \ $\oj{i}^{\perp}$ \
+($i=1,2$) \ in $\Ec$, let \ $\bd:=A_{\pi/2}(\aj{1,2})$ \ (so that it
+spans \ $(\aj{1,2})^{\perp}$), \ and let \ $\hd:=R_{\bw}\bd$. \
+Then \ $\Image(\dd\psi_{\hV})$ \  is the set of
+vectors \ $s\cj{1}+t\hd$ \ such that \ $s\cj{1}-t\bd$ \ is a
+multiple of \ $\cj{2}$.
+
+For any three vectors $\bx$, $\by$, and $\bz$ in \ $\RR{2}$ \ we have:
+%
+\begin{equation}\label{elie}
+%
+(\bx\cdot A_{\pi/2}\by)\,\bz~+~(\by\cdot A_{\pi/2}\bz)\,\bx~+~
+(\bz\cdot A_{\pi/2}\bx)\,\by~=~\vz~,
+%
+\end{equation}
+%
+\noindent so \ $\cj{2}$ \ is a multiple of \
+$(\aj{1,2}\cdot\cj{2})\,\cj{1}~+~(\oj{1}\cdot\cj{2})\,\bd$, \ and thus \
+$\Image(\dd\psi_{\hV})$ \ is spanned by:
+$$
+\be~:=(\aj{1,2}\cdot\cj{2})\,\cj{1}~-~(\oj{1}\cdot\cj{2})\,\hd~.
+$$
+%
+Therefore, \eqref{eomega} fails only if \ $\oj{k}$ \ is perpendicular to
+$\be$ \ -- \ in other words, if \ $\oj{k}$ \ is proportional to:
+$$
+(\aj{1,2}\cdot\cj{2})\,\oj{1}~-~(\oj{1}\cdot\cj{2})\,\aj{1,3}
+$$
+%
+or equivalently, to:
+$$
+\bw~:=~\frac{(\bd\cdot\oj{2})}{(\oj{1}\cdot\cj{2})}\,\oj{1}~-~\aj{1,3}~,
+$$
+%
+which by \eqref{elie} is precisely the vector connecting the meeting
+point \ $P:=\ppj{1}+\frac{(\bd\cdot\oj{2})}{(\oj{1}\cdot\cj{2})}\,\oj{1}$ \ of \
+$\Line\up{1}$ \ and \ $\Line\up{2}$ \ with the end point \
+$\ppj{3}=\ppj{1}+\aj{1,3}$ \ of \ $\Vj{k}$, \ so that \ $\oj{k}$ \ is
+proportional to $\bw$ if and only if the direction line \
+$\Line\up{3}$ \ passes through $P$ \ -- \ which cannot happen in a
+generic mechanism (see Figure \ref{fsingular} and
+Definition \ref{dgeneric}(b)).
+
+This completes the proof of Proposition \ref{pzero}, and thus of
+Theorem \ref{tone}.
+%
+\end{proof}
+
+%
+%s3      Morse functions for planar mechanisms
+%
+\sect{Morse functions for planar mechanisms} \label{cplan}
+%
+From now on we shall concentrate on the simplest type of polygonal
+mechanism \ -- \ namely, planar mechanisms \ ($d=2$) \ having
+triangular platforms \ ($k=3$) \ and exactly two links per branch \
+($\nj{1}=\nj{2}=\nj{3}=2$). \ These mechanism are known in the
+robotics literature as \emph{$3$-RRR} (rotational) mechanisms.
+
+Recall that a smooth real-valued function on a manifold is
+called a \emph{Morse function} if all its critical points are
+non-degenerate (cf.\ \cite[I, \S 2]{Mi}). Such functions may be used to
+deduce the cellular structure of the manifold, and thus recover its
+homotopy type  (see \cite[I, \S 3]{Mi}). Our goal is to describe a
+Morse function for the \cspace\ of a $3$-RRR mechanism\vsm.
+
+\begin{thm}\label{ttwo}
+%
+The function \ $f(\Vc)~:=~\sum_{j=1}^{3}\,\|\vj{j}\|^{2}$ \ is
+generically a Morse function on \ $C(\Lc,\Xc,\Pc)$, \
+where \ $\vj{j}:=\vj{j}_{1}+\vj{j}_{2}=\ppj{j}-\xj{j}$.
+%
+\end{thm}
+
+\begin{proof}
+%
+In order to show that the critical points of $f$ are non-degenerate,
+we must choose a local coordinate system near each such point.
+
+\begin{figure}[htbp]
+\begin{center}
+\epsfysize=6cm %\epsfxsize=6.4cm
+\leavevmode \epsffile{fig_3/mechanism.eps} \caption{Local
+coordinates} \label{floccoord}
+\end{center}
+\end{figure}
+
+
+Unfortunately, there is no uniform choice of such a system, so we must
+distinguish three cases\vsm:
+
+\noindent\textbf{Case I:} \ \
+Let \ $\Phi:=(\phi_{1},\phi_{2},\phi_{3})$, \ where \
+$\phi_{j}$ \ denotes the angle between the vectors \ $-\vj{j}_{1}$ \
+and \ $\vj{j}_{2}$ \ for \ $j=1,2,3$. \ Then:
+%
+\begin{equation}\label{eqh}
+%
+\hj{j}(\phi_{j})~:=~\|\vj{j}\|~=~\|\vj{j}_{1}+\vj{j}_{2}\|~=~
+\sqrt{(\lj{j}_{1})^{2}+(\lj{j}_{2})^{2}-2\lj{j}_{1}\,\lj{j}_{2}\cos\phi_{1}}
+%
+\end{equation}
+%
+and thus \ $f(\Phi)~=~\sum_{j=1}^{3}\ \hj{j}(\phi_{j})^{2}$, \ so that:
+%
+\begin{equation}\label{eqnabla}
+%
+\begin{split}
+%
+\nabla f~=~\nabla_{\Phi}\,f~=&~2\left(\lj{1}_{1}\lj{1}_{2}\,\sin(\phi_{1}),\
+\lj{2}_{1}\lj{2}_{2}\,\sin(\phi_{2}),\
+\lj{3}_{1}\lj{3}_{2}\,\sin(\phi_{3})\right)\\
+=&~2\,(\vpp{1},~\vpp{2},~\vpp{3})
+%
+\end{split}
+%
+\end{equation}
+%
+where \ $\vw^{\perp}:=(b,-a)$ \ for \ $\vw=(a,b)$.
+
+Thus $\Phi$ is a critical point if and only if:
+%
+\begin{equation}\label{eqsigma}
+%
+\Phi~=~\frac{\pi}{2}\,(1+\sigma_{1},\,1+\sigma_{2},\,1+\sigma_{3})
+\hspace*{10mm}\text{for \ } \sigma_{1},\sigma_{2},\sigma_{3}\in\{\pm 1\}~.
+%
+\end{equation}
+
+Computing the Hessian at a critical point $\Phi$ yields:
+$$
+H_{\Phi}~=~\begin{pmatrix}
+        \sigma_{1}\,\lj{1}_{1}\lj{1}_{2} & 0  & 0 \\
+0 &     \sigma_{2}\,\lj{2}_{1}\lj{2}_{2} & 0  \\
+0 & 0 & \sigma_{3}\,\lj{3}_{1}\lj{3}_{2}
+\end{pmatrix}~,
+$$
+%
+which is non-degenerate, with index \ $\Ind_{\Phi}$ \ equal to the
+number of negative values in \
+$\{\sigma_{1},\,\sigma_{2},\,\sigma_{3}\}$. \ Such critical points
+will be refered to as \emph{type I}.
+
+\begin{figure}[htbp]
+\begin{center}
+\epsfysize=5cm %\epsfxsize=6.4cm
+\leavevmode \epsffile{fig_3/convex_hull1.eps} \caption{Type I
+critical point}\label{fcaseI}
+\end{center}
+\end{figure}
+
+\noindent\textbf{Case II:} \ \ As we saw, critical points of $f$
+appear when all three branches are aligned. However, for some
+mechanisms this will never happen, because one or two
+branches can never fully stretch or fold \ -- \
+that is, \ $\phi_{3}$ \ (say) takes values in a proper subset \
+$[a_{1},a_{2}]\cup[-a_{2},-a_{1}]$ \ of \ $[-\pi,\pi]$ \ (see
+Example \ref{egcrit}). \ Clearly, \ $\phi_{3}$ \ cannot then serve as
+a local coordinate at a point \ $(\phi_{1},\phi_{2},\pm a_{k})$.
+
+However, if the first two branches can both be aligned, then in the vicinity
+of doubly aligned configurations we take \
+$\hP:=(\phi_{1},\phi_{2},\theta_{1})$, \ where \ $\phi_{j}$ \ ($j=1,2$)  \
+as in Case I, and \ $\theta_{j}$ \ is the angle between  \
+$\vj{j}:=\vj{j}_{1}+\vj{j}_{2}$ \ and the vector \
+$\xj{2}$ \ (we assume for simplicity that \ $\xj{1}$ \ is at the origin).
+
+Since
+%
+\begin{equation}\label{evj}
+%
+\vj{j}=\hj{j}(\cos\theta_{j},\sin\theta_{j})~,
+%
+\end{equation}
+%
+using \eqref{eqh} we have:
+%
+\begin{equation}\label{eeach}
+%
+(\dif{\vj{j}}{\phi_{j}},~\dif{\vj{j}}{\phi_{j'}},~\dif{\vj{j}}{\theta_{j}})~=~
+(\frac{\vpp{j}}{\hj{j}(\phi_{j})^{2}}\,\vj{j},\,
+0,\,-\vp{j}))~,
+%
+\end{equation}
+%
+for \ $\{j,j'\}=\{1,2\}$.
+
+However, since \ $\theta_{2}$ \ is a dependent variable, we may
+differentiate the norms in:
+%
+\begin{equation}\label{equad}
+%
+\vj{1}+\aj{1,2}-\vj{2}~=~\xj{2}
+%
+\end{equation}
+%
+implicitly and deduce that:
+%
+\begin{equation}\label{esecond}
+%
+\dif{\vj{2}}{\theta_{1}}~=~
+-\dif{\theta_{2}}{\theta_{1}}\,\vp{2}~=~
+-\frac{\aj{1,2}\cdot\vp{1}}{\aj{1,2}\cdot\vp{2}}\,\vp{2}~.
+%
+\end{equation}
+
+Differentiating \eqref{equad} itself and using
+\eqref{eeach}, \eqref{esecond} and \eqref{elie} yields:
+%
+\begin{equation}\label{ethird}
+%
+\nabla_{\hP}\aj{1,2}~=~
+(-\frac{\vpp{1}}{\hj{1}(\phi_{1})^{2}}\,\vj{1},~
+-\frac{\vpp{2}}{\hj{2}(\phi_{2})^{2}}\,\vj{2},~
+\frac{\vj{1}\cdot\vp{2}}{\aj{1,2}\cdot\vp{2}}\,(\aj{1,2})^{\perp}\,)
+%
+\end{equation}
+
+Since \ $\xj{1}=\vz$, \ we see \ $\vj{3}~=~\vj{1}+\aj{1,3}-\xj{3}$, \ so:
+%
+\begin{equation}\label{eqmorse}
+\begin{cases}
+\dif{f}{\phi_{1}}~=&~
+2\,\vpp{1}~\frac{2\hj{1}(\phi_{1})^{2}+\vj{1}\cdot(\aj{1,3}-\xj{3})+
+(\xj{3}-\vj{1})\cdot(B_{\alpha}\vj{1})}{\hj{1}(\phi_{1})^{2}}\\
+%
+\dif{f}{\phi_{2}}~=&~
+2\,\vpp{2}~
+\frac{\hj{2}(\phi_{2})^{2}~+(\xj{3}-\vj{1})\cdot(B_{\alpha}\vj{2})}
+{\hj{2}(\phi_{2})^{2}}\\
+%
+\dif{f}{\theta_{1}}~=&~
+2\,(\xj{3}-\aj{1,3})\cdot\vp{1}
+~+~2\,\frac{[\vj{1}\cdot\vp{2}]\,[(\vj{1}-\xj{3})\cdot(\aj{1,3})^{\perp}]}
+{\aj{1,2}\cdot\vp{2}}
+\end{cases}
+%
+\end{equation}
+%
+where \ $B_{\alpha}$ \ is the rotation-and-dilitation matrix taking \
+$\aj{1,2}$ \ to \ $\aj{1,3}$.
+
+Note that we use the coordinates $\hP$ only at points where the first
+two branches are aligned, so that \
+$\vj{j}_{2}\cdot(\vj{j}_{1})^{\perp}=0$ \ for \ $j=1,2$, \ and thus
+the first two entries of \ $\nabla_{\hP}(f)$ \ vanish at these
+points. The vanishing of \ $\frac{\partial f}{\partial\theta_{1}}$ \
+is equivalent to the condition:
+%
+\begin{equation}\label{elast}
+%
+\begin{split}
+%
+[&\xj{3}\cdot\vp{1}]\,[\aj{1,2}\cdot\vp{2}]
+~-~[\aj{1,3})\cdot\vp{1}]\,[\aj{1,2}\cdot\vp{2}]\\
++&~[\vj{1}\cdot\vp{2}]\,[\vj{1}\cdot(\aj{1,3})^{\perp}]~-~
+[\vj{1}\cdot\vp{2}]\,[\xj{3}\cdot(\aj{1,3})^{\perp}]~=~0
+%
+\end{split}
+%
+\end{equation}
+%
+
+Note that by \eqref{elie} again, the intersection of \ $\Line\up{1}$ \
+with \ $\Line\up{2}$ \ is at the point:
+$$
+P:=\xj{3}+\vj{1}+\frac{\aj{1,2}\cdot\vp{2}}{\vj{1}\cdot\vp{2}}\,\vj{1}~,
+$$
+%
+and \eqref{elast} is equivalent to the colinearity of \ $\xj{3}$, \
+$P$, and \ $\vj{1}+\aj{1,3}$. \ Such critical points
+will be refered to as \emph{type II}.
+
+\begin{figure}[htbp]
+\begin{center}
+\epsfysize=5cm %\epsfxsize=6.4cm
+\leavevmode \epsffile{fig_3/convex_hull.eps} \caption{Type II
+critical point}\label{fcaseII}
+\end{center}
+\end{figure}
+
+Calculating the Hessian matrix \ $H_{f}$ \ of $f$ at a critical point,
+we find that it is diagonal, with:
+%
+\begin{equation*}
+%
+\begin{split}
+%
+\diff{f}{\phi_{1}\phi_{1}}~=&~
+-2\,\vj{1}_{1}\cdot\vj{1}_{2}~
+\frac{2\hj{1}(\phi_{1})^{2}+\vj{1}\cdot(\aj{1,3}-\xj{3})+
+(\xj{3}-\vj{1})\cdot(B_{\alpha}\vj{1})}{\hj{1}(\phi_{1})^{2}}\\
+%
+\diff{f}{\phi_{2}\phi_{2}}~=&~
+-2\,\vj{2}_{1}\cdot\vj{2}_{2}~
+\frac{\hj{2}(\phi_{2})^{2}~+(\xj{3}-\vj{1})\cdot(B_{\alpha}\vj{2})}
+{\hj{2}(\phi_{2})^{2}}\\
+%
+\diff{f}{\theta_{1}\theta_{1}}~=&~
+~\frac{2}{[\aj{1,2}\cdot\vp{2}]^{2}}\
+\left(\right.
+-~2\,[\vj{1}\cdot\vp{2}]\,[\aj{1,3}\cdot\vj{1}]\,[\aj{1,2}\cdot\vp{2}]\\
+&+~[(\xj{3}-\aj{1,3})\cdot\vj{1}]\,[\aj{1,2}\cdot\vp{2}]^{2}\\
+&+~[\vj{1}\cdot\vj{2}]\,[\aj{1,2}\cdot(\vj{1}-\vj{2})^{\perp}]\,
+[(\vj{1}-\xj{3})\cdot(\aj{1,3})^{\perp}]\\
+&+~[\vj{1}\cdot\vp{2}]^{2}\,[(\vj{1}-\xj{3})\cdot(\aj{1,3})]\\
+&+~[\aj{1,2}\cdot\vj{2}]\,[(\vj{2}-\aj{1,2})\cdot\vp{1}]\,
+[(\xj{3}-\aj{1,3})\cdot\vp{1}]\left.\right)
+%
+\end{split}
+%
+\end{equation*}
+
+If we solve \eqref{eqmorse} to find
+explicitly the critical points of $f$ in the coordinates $\hP$, and
+then substitute into the expression we have found for  \
+$H_{f}$ \ at these points, we obtain a polynomial expression of
+degree $6$ in the parameters \ $(\Lc,\Xc,\Gc)$ \ for the
+mechanism. Thus the critical point we identified is degenerate only
+when this polynomial vanishes, so generically $f$ is indeed a Morse
+function\vsm.
+
+\noindent\textbf{Case III:} \ \
+Note that the \wspace\ $\Wc$ for each vertex of $\Pc$ is the intersection
+of three annuli (so it is compact), and thus the boundary of $\Wc$
+must intersect at least one of the bounding circles of the annuli.
+Therefore, at least one of the three branches (say, the first)
+\emph{can} be aligned.
+
+Thus, at critical points of $f$ where neither $\Phi$ nor $\hP$ can be
+used as local coordinates, the first branch is aligned, and we take \
+$\Psi:=(\theta_{1},\phi_{1},\psi)$ \ as our local coordinates,
+where \ $\theta_{1}$ \ and \ $\phi_{1}$ \ are as in Case II above, \ and
+$\psi$ denotes the angle between \ $\aj{1,2}$ \ and $\xj{2}$ \ (see
+Figure \ref{floccoord}). Note that this will not work when the second branch is
+also aligned, since these coordinates only determine the length of \
+$\vj{2}$, \ and not ``elbow up/down'' near \
+$\phi_{2}=\frac{\pi}{2}\,(1+\sigma_{2})$.
+
+Here:
+%
+$$
+f(\Psi)~=~\|\vj{1}_{1}+\vj{1}_{2}\|^{2}
+~+~\|\vj{1}+\aj{1,2}-\xj{2}\|^{2}~+~\|\vj{1}+\aj{1,3}-\xj{3}\|^{2}~.
+$$
+%
+and since \ $\aj{1,2}=\gj{1,2}(\cos\psi,\sin\psi)$, \ we have \
+$\nabla_{\Psi}(\vj{1})=
+(-\vp{1},~\frac{\vpp{1}}{\hj{1}(\phi_{1})^{2}}\,\vj{1},\,0)$ \ and \
+$\nabla_{\Psi}(\aj{1,j})=(0,\,0,\,-\ap{j}$ \ for \ $j=2,3$, \ so:
+%
+\begin{equation}
+%
+\begin{split}
+%
+\dif{f}{\theta_{1}}~=&~
+2\vp{1}\cdot((\xj{2}+\xj{3})-(\aj{1,2}+\aj{1,3}))\\
+%
+\dif{f}{\phi_{1}}~=&~
+-\vpp{1}\ \frac{\vj{1}\cdot(4\,\vj{1}+\aj{1,2}+\aj{1,3}-\xj{2}-\xj{3})}
+{\|\vj{1}\|^{2}}\\
+%
+\dif{f}{\psi}~
+=&~\ap{2}\cdot(\xj{2}-\vj{1})~+~\ap{3}\cdot(\xj{3}-\vj{1})
+%
+\end{split}
+%
+\end{equation}
+
+We are using the coordinates $\Psi$ because the first leg is aligned,
+so indeed \ $\dif{f}{\phi_{1}}=0$. \ In order for this to be a
+critical point, we have two additional geometric conditions: the vanishing of \
+$\dif{f}{\theta_{1}}$ \ implies that the vector
+connecting the midpoints of sides of the fixed and moving platforms
+opposite the first vertex \ -- \ that is, \
+$A:=(\xj{2}+\xj{3})/2$ \ and \ $B:=(\aj{2}+\aj{3})/2$ \ -- \ is aligned
+with \ $\vj{1}$ \ (see Figure \ref{fcaseIII}). \ On the other hand,
+the vanishing (in addition) of \ $\dif{f}{\psi}$ \ is equivalent to:
+%
+\begin{equation}\label{eqcaseiii}
+%
+\vp{2}\cdot\xj{2}~+~\vp{3}\cdot\xj{3}~=~0~,
+%
+\end{equation}
+%
+which means that the areas of the triangles spanned by \ $\vj{j}$ \
+and \ $\xj{j}$ \ ($j=2,3$) \ are equal. Such critical points
+will be refered to as \emph{type III}.
+
+\begin{figure}[htbp]
+\begin{center}
+\epsfysize=5cm %\epsfxsize=6.4cm
+\leavevmode \epsffile{fig_3/convex_hull2.eps} \caption{Type III
+critical point}\label{fcaseIII}
+\end{center}
+\end{figure}
+
+Now, calculating the Hessian of $f$ at the critical points we have:
+%
+\begin{equation*}
+%
+\begin{split}
+%
+\diff{f}{\theta_{1}\theta_{1}}~=&~
+-~2\vj{1}\cdot((\xj{2}+\xj{3})-(\aj{1,2}+\aj{1,3}))\\
+%
+\diff{f}{\phi_{1}\theta_{1}}~=&~\diff{f}{\phi_{1}\psi}~=~0\\
+%
+\diff{f}{\psi\theta_{1}}~=&~2\vj{1}\cdot(\aj{1,2}+\aj{1,3})\\
+%
+\diff{f}{\phi_{1}\phi_{1}}~=&~
+\vj{1}_{1}\cdot\vj{1}_{2}\
+\frac{\vj{1}\cdot(4\,\vj{1}+\aj{1,2}+\aj{1,3}-\xj{2}-\xj{3})}{\|\vj{1}\|^{2}}\\
+%
+\diff{f}{\psi\psi}~=&~\aj{1,2}\cdot(\xj{2}-\vj{1})~+~\aj{1,3}\cdot(\xj{3}-\vj{1})
+%
+\end{split}
+%
+\end{equation*}
+
+Again, generically the critical point is non-degenerate\vsm.
+%
+\end{proof}
+
+\begin{mysubsect}[\label{scrit}]{Identifying the critical points}
+
+Since we usually have no explicit description of the \cspace\ $\C$ as
+a manifold, it is hard to calculate the Morse function \ $f:\C\to\RR{}$ \
+directly. However, in the course of proving Theorem \ref{tone} we gave
+a geometric description of each of the possible critical points of
+$f$ \ -- \ which are the main ingredient needed for analyzing the
+topology of $\C$ \ -- \ in terms of the \wspace\ $\Wc$. We can use
+this geometric information in order to identify all possible
+candidates for critical points, and then we need only calculate \
+$\df$ \ in local coordinates at these points (also provided in the
+proof above) to check if they are indeed critical, and find their indices.
+
+Recall that $\Wc$ (Definition \ref{dwork}) is the space of all possible
+locations of the moving platform $\Pc$, whose vertices must be
+situated in the respective \wspace s \ $\Wc_{i}$ \ ($i=1,2,3$) \ of
+(the end points of) the three branches.  Each \ $\Wc_{i}$ \ is an
+annulus centered at the $i$-the vertex \ $\xj{i}$ \ of the fixed triangle.
+
+Also recall the concept of the \emph{coupler curve} $\gamma$ of a
+planar four-bar linkage \ - \ that is, a degenerate polygonal
+mechanism with \ $k=2$ \ linear branches \ ($\nj{1}=\nj{2}=1$), \
+but having a triangular platform $\Pc$: \ the coupler curve is the
+\wspace\ for the third (unattached) vertex of $\Pc$. See
+\cite[Ch.\ 4]{Ha}. We consider the coupler curves for two vertices \ $\xj{i}$ \
+(say \ $i=1,2$) \ of a triangular mechanism  \ $(\Lc,\Xc,\Pc)$ \ as
+above, in which the two corresponding branches are aligned, so that
+each can be replaced by a single linear branch of length \
+$\lj{i}:=\lj{i}_{1}+\lj{i}_{2}$ \ or \ $\lj{i}_{1}-\lj{i}_{2}$, \
+as the case may be.
+
+\begin{enumerate}
+\renewcommand{\labelenumi}{(\arabic{enumi})}
+%
+\item The critical points of type I (all three branches aligned)
+correspond to placements of $\Pc$ with all three vertices on the
+(inner or outer) boundary circles of these annuli. Determining these
+is a straightforward geometric problem, which can be described as
+intersecting the coupler curve for the first two vertices, say, with
+the two boundary circles of \ $\Wc_{3}$.
+%
+\item For critical points of type II, we need also a line field $V$
+along the coupler curve $\gamma$, where \ $V(\gamma(t))$ \ is the
+line from \ $\gamma(t)$ \ to the intersection point \ $P(t)$ \
+of  \ $\Line\up{1}$ \ with \ $\Line\up{2}$. \ This line field is
+readily calculated from $\gamma$. The critical points are
+then those configurations for which \ $V(\gamma(t))$ \ passes through \
+$\xj{3}$.
+%
+\item For critical points of type III, the first vertex \ $\vj{1}$ \
+of $\Pc$ must lie on one of the two boundary circles of \ $\Wc_{1}$. \
+Given \ $\vj{1}$, \ the possible positions of $\Pc$ are determined by
+its rotation angle $\theta$ around its first vertex, and at most two
+values \ $\theta'$, \ $\theta''$ \ of $\theta$ satisfy condition
+\eqref{eqcaseiii}. \ Thus we can define on \ $\partial \Wc_{1}$ \ two
+line fields \ $V'$, \ $V''$ \  which associate to \ $\vj{1}$ \ the
+line between the midpoints of the \ $(2,3)$-side of the fixed and
+moving triangles in the positions corresponding to  \ $\theta'$, \
+$\theta''$ \ respectively. The critical points are those for which the
+vector \ $\vj{1}$ \ lies on one of these two lines\vsm.
+%
+\end{enumerate}
+%
+\end{mysubsect}
+
+\begin{example}\label{egcrit}
+%
+In general, the critical points of a manifold do not determine its
+topology, though they impose certain restrictions on its
+homology, and thus on its homotopy type, via the Morse inequalities.
+However, in the simplest cases the geometric considerations described
+above limit the possible critical points so severely that the \cspace\
+$\C$ can be recovered in full. Note that there are two connected
+components in $\C$, determined by the orientation of the moving
+platform\vsm .
+
+For example, consider a triangular mechanism with one branch (say, \
+$k=3$) \ having one very large link, so that the
+\wspace\ for the vertex \ $\ppj{3}$ \ contains those for all points of
+the moving platform, and thus imposes no restriction on the allowed
+configurations.  We assume the moving platform is a small triangle,
+and that the \wspace\ for (the vertex of) the first branch is a small
+annulus, intersecting that of the second branch in a crescent-shaped
+lune, which is the approximate ``\wspace'' for the moving platform
+(i.e., for its barycenter). Finally,  assume that the fixed
+vertex \ $\xj{3}$ \ is far to the left (see Figure \ref{fmechanism}).
+
+\begin{figure}[htbp]
+\begin{center}
+\epsfysize=4cm %\epsfxsize=6.4cm
+\leavevmode \epsffile{fig_3/fullpicture.eps} \caption{Work spaces
+for the
+ three moving vertices}\label{fmechanism}
+\end{center}
+\end{figure}
+
+Now we may analyze the possible critical points as follows:
+
+\begin{enumerate}
+\renewcommand{\labelenumi}{(\arabic{enumi})}
+%
+\item Since the two small annuli above are wholly contained in the
+  large one, and the moving platform is small, there are no
+  critical points of type I.
+%
+\item Note that since the linkage is not Grashof (cf.\ \cite{KM}),
+there are exactly two cases where \ $\Line\up{1}$ \
+meets \ $\Line\up{2}$ \ on the inner boundary circle of the \wspace\ for
+vertex $2$. Since \ $\gj{23}$ \ is very small, any critical points
+of type II must occur nearby, so that the edges \ $\aj{12}$ \ and \
+$\aj{13}$ \ (which nearly coincide) are aligned with \ $\vj{1}$ \
+(see Figure \ref{fig4}).
+
+\begin{figure}[htbp]
+\begin{center}
+\epsfysize=4cm %\epsfxsize=6.4cm
+\leavevmode \epsffile{fig_3/crit2.eps} \caption{A critical point
+of type II}\label{fig4}
+\end{center}
+\end{figure}
+
+By choosing appropriate generic values for the parameters, we can
+ensure that there are exactly two critical of type II in each
+component of $\C$.
+
+%
+\item Consider the three dashed lines \ $\Lj{k}$ \ in Figure
+  \ref{fig5}, each connecting \ $\xj{k}$ \ with the midpoint of
+  opposite (fixed) edge (for \ $k=1,2,3$). \ Because the moving triangle
+  is so small, the vector \ $\vj{k}$ \ must approximate the direction
+  of \ $\Lj{k}$ \ in order to obtain a critical point of type III \ --
+  \ but since these lines do not pass near the approximate \wspace\
+  for the moving platform, no such critical points can occur.
+
+\begin{figure}[htbp]
+\begin{center}
+\epsfysize=5cm %\epsfxsize=6.4cm
+\leavevmode \epsffile{fig_3/twoannuli.eps} \caption{Potential
+critical points of type III}\label{fig5}
+\end{center}
+\end{figure}
+
+\end{enumerate}
+
+Thus each component of the \cspace\ \ $\C(\Lc,\Xc,\Pc)$ \ has exactly two critical
+points in this case (both of type II), so it is homeomorphic to \ $S^{3}$.
+%
+\end{example}

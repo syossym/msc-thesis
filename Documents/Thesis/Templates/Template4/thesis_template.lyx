@@ -1,0 +1,198 @@
+#LyX 1.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 221
+\textclass thesis
+\begin_preamble
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FRONTMATTER - In this section, specify information to be used to typeset the thesis frontmatter.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Specify the title. Set the capitalization how you want it.
+\title{This is the Title of My Thesis}
+
+% Your name goes here.
+\author{Author's Name}
+
+% Degree sought.  Use \MSc or \PhD here
+\degree{\MSc}         
+
+% Expected convocation date.  Should be month/year, e.g. July 2004
+\convocationdate{Month/Year}
+
+% Your University.
+\university{University of Saskatchewan}
+
+% Your College.
+\college{College of Graduate Studies and Research}
+
+% Your Department.
+\department{Department of Mechanical Engineering}
+
+% Your City.
+\city{Saskatoon}
+
+% Department address, including city.
+\address{Saskatoon, Saskatchewan S7N 5A9}
+
+% Thesis abstract.  
+\abstract{
+This is the abstract of my thesis.  
+}
+
+% Thesis acknowlegements -- This can be free-form.
+\acknowledgements{
+Acknowledgements go here.  Typically you would at least thank your supervisor.
+}
+
+% Thesis dedication -- Also free-form.  If you don't want a dedication, comment out the following
+% line.
+\dedication{This is the thesis dedication (optional)}
+
+% List of abbreviations - Sample  
+% If you don't want a list of abbreviations, uncomment the following 5 lines.
+\loa{\abbrev{SCUBA}{Self Contained Underwater Breathing Apparatus}
+\abbrev{LOF}{List of Figures}
+\abbrev{LOT}{List of Tables}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% END OF FRONTMATTER SECTION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end_preamble
+\language english
+\inputencoding auto
+\fontscheme pslatex
+\graphics default
+\float_placement !hbt
+\paperfontsize default
+\spacing single 
+\papersize Default
+\paperpackage a4
+\use_geometry 0
+\use_amsmath 0
+\use_natbib 0
+\use_numerical_citations 0
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\quotes_times 2
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+
+\layout Standard
+
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+maketitle
+\layout Standard
+
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+frontmatter
+\end_inset 
+
+
+\layout Chapter
+
+Introduction
+\layout Section
+
+Testing testing testing
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+a=b\label{eq:}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+b=c\label{eq:}\end{equation}
+
+\end_inset 
+
+
+\layout Section
+
+Test2
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+c=d\label{eq:}\end{equation}
+
+\end_inset 
+
+
+\layout Chapter
+
+Apparatus
+\layout Section
+
+Test3
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+d=e\label{eq:}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset Formula \begin{equation}
+e=f\label{eq:}\end{equation}
+
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset ERT
+status Collapsed
+
+\layout Standard
+
+\backslash 
+renewcommand{
+\backslash 
+baselinestretch}{1}
+\end_inset 
+
+
+\layout Standard
+
+
+\begin_inset LatexCommand \BibTeX[unsrt]{yourbibfile}
+
+\end_inset 
+
+ 
+\the_end

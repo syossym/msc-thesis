@@ -1,0 +1,519 @@
+#LyX 1.6.4 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass report
+\options a4paper,titlepage
+\use_default_options false
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 0
+\cite_engine natbib_authoryear
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Semiconductor Microcavity
+\end_layout
+
+\begin_layout Standard
+-- PUT INTRO TO CHAPTER HERE --
+\end_layout
+
+\begin_layout Section
+Optical Resonator
+\end_layout
+
+\begin_layout Standard
+An optical resonator is a device used for confining light at certain frequencies.
+ The classical resonator (such a the Fabri-Perot etalon seen in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:etalon-multiple_reflections"
+
+\end_inset
+
+) consists of two planar mirrors, separated by a distance 
+\begin_inset Formula $l$
+\end_inset
+
+.
+ For now we assume that the medium outside the structure is plain air.
+ The transmitions spectrum of this structure exhibits a pattern of repetative
+ peaks of large transmission corresponding to resonances of the etalon.
+ This varying transmission function is caused by an interference between
+ the multiple reflections of light between the two reflecting surfaces (see
+ Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:etalon-multiple_reflections"
+
+\end_inset
+
+).
+ Contructive interference iccurs if the transmitted beams are in phase,
+ which corresponds to a high-transmission peak.
+ for transmitted beams that are out-of-phase a destructive interference
+ occurs, which corresponds to a minimum in the transmission spectrum.
+ The multiple-reflected beams' phase matching depends in the wavelength
+ 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ of the light, the beam incidence angle 
+\begin_inset Formula $\theta$
+\end_inset
+
+, the etalon thickness 
+\begin_inset Formula $l$
+\end_inset
+
+ and the refractive index of the material between the reflecting surfaces
+ 
+\begin_inset Formula $n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Mchaeli/Documents/Work/Physics/Thesis/Figures/4_Fabri_Perot_Etalon.eps
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:etalon-multiple_reflections"
+
+\end_inset
+
+Fabri-Perot etalon multiple reflections.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The phase between each successive reflection is 
+\begin_inset Formula \begin{equation}
+\delta=\left(\frac{2\pi}{\lambda}\right)2nl\cos\left(\theta\right)\end{equation}
+
+\end_inset
+
+If both surfaces have reflectance 
+\begin_inset Formula $R$
+\end_inset
+
+, the transmittance function of the entire structure is given by 
+\begin_inset Formula \begin{equation}
+T=\frac{(1-R)^{2}}{1+R^{2}-2R\cos\left(\delta\right)}=\frac{1}{1+F\sin^{2}\left(\frac{\delta}{2}\right)},\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $F=\frac{4R}{(1-R)^{2}}$
+\end_inset
+
+ is the finesse coefficient.
+ Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:etalon-transmittance-function"
+
+\end_inset
+
+ shows the dependence of the trasmittence on the phase parameter 
+\begin_inset Formula $\delta$
+\end_inset
+
+, for various values of 
+\begin_inset Formula $R$
+\end_inset
+
+ (or equavalently of 
+\begin_inset Formula $F$
+\end_inset
+
+).
+ The maximum tranmission occurs when the optical path length difference
+ 
+\begin_inset Formula $2nl\cos(\theta)$
+\end_inset
+
+ between each transmitted beam is an interger multiple of the wavelength.
+ In the absence of absorption, the reflectance of the structure 
+\begin_inset Formula $R$
+\end_inset
+
+ is the complement of the transmittence, i.e.
+ 
+\begin_inset Formula $R+T=1$
+\end_inset
+
+.
+ The maximum reflectivity is given by 
+\begin_inset Formula \begin{equation}
+R_{max}=1-\frac{1}{1+F},\end{equation}
+
+\end_inset
+
+which occurs when the path-length difference is equal to half an odd multiple
+ of the wavelength.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Mchaeli/Documents/Work/Physics/Thesis/Figures/4_Fabri_Perot_Transmission.eps
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:etalon-transmittance-function"
+
+\end_inset
+
+Resonator transmittance function for various values of mirror reflectrance
+ 
+\begin_inset Formula $R$
+\end_inset
+
+.
+ 
+\begin_inset Formula $δλ$
+\end_inset
+
+ is the full-width half-maximum of the transmission band.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The wavelength separation between adjacent transmission peaks or free spectral
+ range (FSR) of the etalon, 
+\begin_inset Formula $Δλ$
+\end_inset
+
+, is given by 
+\begin_inset Formula \begin{equation}
+\Delta\lambda=\frac{\lambda_{0}^{2}}{2nl\cos(\theta)+\lambda_{0}},\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $λ_{0}$
+\end_inset
+
+ is the central wavelength of the nearest transmission peak.
+ The FSR is related to the full-width half-maximum (FWHM) 
+\begin_inset Formula $δλ$
+\end_inset
+
+ of any one transmission band by a quantity known as the 
+\emph on
+finesse
+\begin_inset Formula \begin{equation}
+\mathcal{F}=\frac{\Delta\lambda}{\delta\lambda}=\frac{\pi}{2\arcsin(1/\sqrt{F})}\end{equation}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+Distributed Bragg Reflector
+\end_layout
+
+\begin_layout Standard
+The reflecting surfaces (or mirrors) modeled in previous section by a reflectivi
+ty parameter 
+\begin_inset Formula $R$
+\end_inset
+
+ are realized in practive by a stack of multiple layers of alternating semicondi
+ctor materials with varying refractive indices called Distributed Bragg
+ Reflector (DBR) (see Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Schematic-DBR"
+
+\end_inset
+
+).
+ The alternating high and low indices, denoted respectively by 
+\begin_inset Formula $n_{H}$
+\end_inset
+
+ and 
+\begin_inset Formula $n_{L}$
+\end_inset
+
+, and the semiconductor layer thicknesses satisfy the following condiction
+\begin_inset Formula \begin{equation}
+n_{L}l_{L}=n_{H}l_{H}=\frac{\lambda_{c}}{4},\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\lambda_{c}$
+\end_inset
+
+ is the center wavelength of the high reflectevity region of the structure.
+\end_layout
+
+\begin_layout Standard
+he principle of operation can be understood as follows.
+ Each interface between the two materials contributes a Fresnel reflection.
+ For the design wavelength 
+\begin_inset Formula $\lambda_{c}$
+\end_inset
+
+, the optical path length difference between reflections from subsequent
+ interfaces is half the wavelength; in addition, the reflection coefficients
+ for the interfaces have alternating signs.
+ Therefore, all reflected components from the interfaces interfere constructivel
+y, which results in a strong reflection.
+ The reflectivity achieved is determined by the number of layer pairs and
+ by the refractive index contrast between the layer materials.
+ The reflection bandwidth is determined mainly by the index contrast, 
+\begin_inset Formula $n_{H}-n_{L}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Mchaeli/Documents/Work/Physics/Thesis/Figures/4_DBR_Schematic.eps
+	lyxscale 50
+	scale 50
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Schematic-DBR"
+
+\end_inset
+
+Schematic illustration of a Distributed Bragg Reflector (DBR).
+ 
+\begin_inset Formula $z$
+\end_inset
+
+ represents the growth direction of the layered structure.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In order to analyze the reflection and transmittance of the DBR, we use
+ the Transfer Matrix formalism 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Macleod2001"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Transfer Matrix Formalism
+\end_layout
+
+\begin_layout Standard
+A monochromatic electric field of frequency 
+\begin_inset Formula $\omega$
+\end_inset
+
+ propagating in a dielecric medium, assuming a frequency independent dielectric
+ function, can be shown to satisfy the following wave eqaution 
+\begin_inset Formula \begin{equation}
+\nabla^{2}\mathbf{E}(r)+\frac{\omega^{2}}{c^{2}(r)}\mathbf{E}(r)=0,\label{eq:E_wave_eqaution_r}\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $c(r)=c_{0}/n(r)$
+\end_inset
+
+, 
+\begin_inset Formula $c_{0}$
+\end_inset
+
+ being the speed on light in the vacuum and 
+\begin_inset Formula $n(r)$
+\end_inset
+
+ the location dependent refractive index.
+\end_layout
+
+\begin_layout Standard
+A medium consisting of pairs of two different dielectric materials with
+ different refraction indices has a growth axis, 
+\begin_inset Formula $\hat{z}$
+\end_inset
+
+, dependent refraction index, i.e.
+ 
+\begin_inset Formula $n(r)=n(z)$
+\end_inset
+
+.
+ Therefore equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:E_wave_eqaution_r"
+
+\end_inset
+
+ can be written as 
+\begin_inset Formula \begin{equation}
+\nabla^{2}\mathbf{E}(\rho,z)+\frac{\omega^{2}}{c^{2}(z)}\mathbf{E}(\rho,z)=0.\end{equation}
+
+\end_inset
+
+The translational invariance along the in-plane, this equation has solutions
+ that consist of plane waves along the in-plane direction.
+ For a given in-plane vector, 
+\begin_inset Formula $k_{\Vert}$
+\end_inset
+
+ (which is parallel to the dielectric layer), the solution is of the form
+ 
+\begin_inset Formula \begin{equation}
+\mathbf{E}_{\mathbf{k}_{\Vert}}=E_{\mathbf{k},\omega}^{0}(z)e^{i\mathbf{k}_{\vert}\cdot\mathbf{\rho}}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Microvity 
+\end_layout
+
+\end_body
+\end_document

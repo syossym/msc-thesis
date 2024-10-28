@@ -1,0 +1,139 @@
+#LyX 1.6.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass report
+\options a4paper,titlepage
+\use_default_options false
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_amsmath 1
+\use_esint 0
+\cite_engine natbib_authoryear
+\use_bibtopic false
+\paperorientation portrait
+\leftmargin 3cm
+\topmargin 4cm
+\rightmargin 3cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip bigskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Experimental method
+\end_layout
+
+\begin_layout Subsection
+Detection
+\end_layout
+
+\begin_layout Subsection
+Piezoelectric actuation
+\end_layout
+
+\begin_layout Subsection
+Vacuum
+\end_layout
+
+\begin_layout Section
+Results
+\end_layout
+
+\begin_layout Subsection
+Frequency response
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Resonant-frequencies"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Air damping effects
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Air-damping-effects"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Non-linear response
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Non-linear-response"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Analysis
+\end_layout
+
+\begin_layout Subsection
+Frequency response
+\end_layout
+
+\begin_layout Subsection
+Air damping effects
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Air-damping-effects-1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Thermal noise 
+\end_layout
+
+\begin_layout Subsection
+Error analysis
+\end_layout
+
+\begin_layout Subsection
+Viability for OAPA use
+\end_layout
+
+\begin_layout Section
+Summary
+\end_layout
+
+\end_body
+\end_document

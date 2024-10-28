@@ -1,0 +1,7 @@
+#% Do not delete the line below; configure depends on this
+#  \DeclareLaTeXClass{uofsthesis-cs}
+# CIT Thesis textclass definition file. Adapted from LyX report layout.
+# Author : Ling Li <ling@caltech.edu>
+
+# Input general definitions
+Input stdclass.inc

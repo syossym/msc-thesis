@@ -1,0 +1,1629 @@
+
+%% bare_conf.tex
+%% V1.2
+%% 2002/11/18
+%% by Michael Shell
+%% mshell@ece.gatech.edu
+%%
+%% NOTE: This text file uses UNIX line feed conventions. When (human)
+%% reading this file on other platforms, you may have to use a text
+%% editor that can handle lines terminated by the UNIX line feed
+%% character (0x0A).
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.6b or later) with an IEEE conference paper.
+%%
+%% Support sites:
+%% http://www.ieee.org
+%% and/or
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/supported/IEEEtran/
+%%
+%% This code is offered as-is - no warranty - user assumes all risk.
+%% Free to use, distribute and modify.
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices can trigger bugs that do  ***
+% *** not appear when using other class files.                            ***
+% Testflow can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/supported/IEEEtran/testflow
+
+
+% Note that the a4paper option is mainly intended so that authors in
+% countries using A4 can easily print to A4 and see how their papers will
+% look in print. Authors are encouraged to use U.S. letter paper when
+% submitting to IEEE. Use the testflow package mentioned above to verify
+% correct handling of both paper sizes by the author's LaTeX system.
+%
+% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
+% should be used if it is desired that the figures are to be displayed in
+% draft mode.
+%
+% This paper can be formatted using the peerreviewca
+% (instead of conference) mode.
+
+
+\documentclass[twocolumn]{IEEEtran}
+
+\usepackage{amsmath,amstext,amssymb,epsf,verbatim}%subfigure}
+%\usepackage{algorithm,algorithmic}
+\newtheorem{assumption}{{\bf Assumption.}}
+\newtheorem{Proposition}{{\bf Proposition.}}
+\newtheorem{Lemma}{{\bf Lemma}}
+\newtheorem{Theorem}{{\bf Theorem}}
+\newtheorem{Corollary}{{\bf Corollary}}
+\newtheorem{Remark}{{\bf Remark}}
+\newtheorem{Algorithm}{{\bf Algorithm}}
+\usepackage{graphicx}        % standard LaTeX graphics tool
+                             % when including figure files
+\usepackage{multicol}        % used for the two-column index
+\usepackage[bottom]{footmisc}% places footnotes at page bottom
+\newcommand{\reals}{{\Bbb R}}
+\newcommand{\bv}{\mathbf{v}}
+\def\V{\mathcal{V}}
+\newcommand{\bw}{\mathbf{w}}
+\newcommand{\Vj}[1]{V\up{#1}}
+\newcommand{\vj}[1]{\bv\up{#1}}
+\def\Vc{\mathcal{V}}
+\def\C{\mathcal{C}}
+
+
+% If the IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+% some very useful LaTeX packages include:
+
+%\usepackage{cite}      % Written by Donald Arseneau
+                        % V1.6 and later of IEEEtran pre-defines the format
+                        % of the cite.sty package \cite{} output to follow
+                        % that of IEEE. Loading the cite package will
+                        % result in citation numbers being automatically
+                        % sorted and properly "ranged". i.e.,
+                        % [1], [9], [2], [7], [5], [6]
+                        % (without using cite.sty)
+                        % will become:
+                        % [1], [2], [5]--[7], [9] (using cite.sty)
+                        % cite.sty's \cite will automatically add leading
+                        % space, if needed. Use cite.sty's noadjust option
+                        % (cite.sty V3.8 and later) if you want to turn this
+                        % off. cite.sty is already installed on most LaTeX
+                        % systems. The latest version can be obtained at:
+                        % http://www.ctan.org/tex-archive/macros/latex/contrib/supported/cite/
+
+%\usepackage{graphicx}  % Written by David Carlisle and Sebastian Rahtz
+                        % Required if you want graphics, photos, etc.
+                        % graphicx.sty is already installed on most LaTeX
+                        % systems. The latest version and documentation can
+                        % be obtained at:
+                        % http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+                        % Another good source of documentation is "Using
+                        % Imported Graphics in LaTeX2e" by Keith Reckdahl
+                        % which can be found as esplatex.ps and epslatex.pdf
+                        % at: http://www.ctan.org/tex-archive/info/
+% NOTE: for dual use with latex and pdflatex, instead load graphicx like:
+%\ifx\pdfoutput\undefined
+%\usepackage{graphicx}
+%\else
+%\usepackage[pdftex]{graphicx}
+%\fi
+
+% However, be warned that pdflatex will require graphics to be in PDF
+% (not EPS) format and will preclude the use of PostScript based LaTeX
+% packages such as psfrag.sty and pstricks.sty. IEEE conferences typically
+% allow PDF graphics (and hence pdfLaTeX). However, IEEE journals do not
+% (yet) allow image formats other than EPS or TIFF. Therefore, authors of
+% journal papers should use traditional LaTeX with EPS graphics.
+%
+% The path(s) to the graphics files can also be declared: e.g.,
+% \graphicspath{{../eps/}{../ps/}}
+% if the graphics files are not located in the same directory as the
+% .tex file. This can be done in each branch of the conditional above
+% (after graphicx is loaded) to handle the EPS and PDF cases separately.
+% In this way, full path information will not have to be specified in
+% each \includegraphics command.
+%
+% Note that, when switching from latex to pdflatex and vice-versa, the new
+% compiler will have to be run twice to clear some warnings.
+
+
+%\usepackage{psfrag}    % Written by Craig Barratt, Michael C. Grant,
+                        % and David Carlisle
+                        % This package allows you to substitute LaTeX
+                        % commands for text in imported EPS graphic files.
+                        % In this way, LaTeX symbols can be placed into
+                        % graphics that have been generated by other
+                        % applications. You must use latex->dvips->ps2pdf
+                        % workflow (not direct pdf output from pdflatex) if
+                        % you wish to use this capability because it works
+                        % via some PostScript tricks. Alternatively, the
+                        % graphics could be processed as separate files via
+                        % psfrag and dvips, then converted to PDF for
+                        % inclusion in the main file which uses pdflatex.
+                        % Docs are in "The PSfrag System" by Michael C. Grant
+                        % and David Carlisle. There is also some information
+                        % about using psfrag in "Using Imported Graphics in
+                        % LaTeX2e" by Keith Reckdahl which documents the
+                        % graphicx package (see above). The psfrag package
+                        % and documentation can be obtained at:
+                        % http://www.ctan.org/tex-archive/macros/latex/contrib/supported/psfrag/
+
+%\usepackage{subfigure} % Written by Steven Douglas Cochran
+                        % This package makes it easy to put subfigures
+                        % in your figures. i.e., "figure 1a and 1b"
+                        % Docs are in "Using Imported Graphics in LaTeX2e"
+                        % by Keith Reckdahl which also documents the graphicx
+                        % package (see above). subfigure.sty is already
+                        % installed on most LaTeX systems. The latest version
+                        % and documentation can be obtained at:
+                        % http://www.ctan.org/tex-archive/macros/latex/contrib/supported/subfigure/
+
+%\usepackage{url}       % Written by Donald Arseneau
+                        % Provides better support for handling and breaking
+                        % URLs. url.sty is already installed on most LaTeX
+                        % systems. The latest version can be obtained at:
+                        % http://www.ctan.org/tex-archive/macros/latex/contrib/other/misc/
+                        % Read the url.sty source comments for usage information.
+
+%\usepackage{stfloats}  % Written by Sigitas Tolusis
+                        % Gives LaTeX2e the ability to do double column
+                        % floats at the bottom of the page as well as the top.
+                        % (e.g., "\begin{figure*}[!b]" is not normally
+                        % possible in LaTeX2e). This is an invasive package
+                        % which rewrites many portions of the LaTeX2e output
+                        % routines. It may not work with other packages that
+                        % modify the LaTeX2e output routine and/or with other
+                        % versions of LaTeX. The latest version and
+                        % documentation can be obtained at:
+                        % http://www.ctan.org/tex-archive/macros/latex/contrib/supported/sttools/
+                        % Documentation is contained in the stfloats.sty
+                        % comments as well as in the presfull.pdf file.
+                        % Do not use the stfloats baselinefloat ability as
+                        % IEEE does not allow \baselineskip to stretch.
+                        % Authors submitting work to the IEEE should note
+                        % that IEEE rarely uses double column equations and
+                        % that authors should try to avoid such use.
+                        % Do not be tempted to use the cuted.sty or
+                        % midfloat.sty package (by the same author) as IEEE
+                        % does not format its papers in such ways.
+
+%\usepackage{amsmath}   % From the American Mathematical Society
+                        % A popular package that provides many helpful commands
+                        % for dealing with mathematics. Note that the AMSmath
+                        % package sets \interdisplaylinepenalty to 10000 thus
+                        % preventing page breaks from occurring within multiline
+                        % equations. Use:
+%\interdisplaylinepenalty=2500
+                        % after loading amsmath to restore such page breaks
+                        % as IEEEtran.cls normally does. amsmath.sty is already
+                        % installed on most LaTeX systems. The latest version
+                        % and documentation can be obtained at:
+                        % http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
+
+
+
+% Other popular packages for formatting tables and equations include:
+
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty which improves the
+% LaTeX2e array and tabular environments to provide better appearances and
+% additional user controls. array.sty is already installed on most systems.
+% The latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/tools/
+
+% Mark Wooding's extremely powerful MDW tools, especially mdwmath.sty and
+% mdwtab.sty which are used to format equations and tables, respectively.
+% The MDWtools set is already installed on most LaTeX systems. The lastest
+% version and documentation is available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/supported/mdwtools/
+
+
+% V1.6 of IEEEtran contains the IEEEeqnarray family of commands that can
+% be used to generate multiline equations as well as matrices, tables, etc.
+
+
+% Also of notable interest:
+
+% Scott Pakin's eqparbox package for creating (automatically sized) equal
+% width boxes. Available:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/supported/eqparbox/
+
+
+
+% Notes on hyperref:
+% IEEEtran.cls attempts to be compliant with the hyperref package, written
+% by Heiko Oberdiek and Sebastian Rahtz, which provides hyperlinks within
+% a document as well as an index for PDF files (produced via pdflatex).
+% However, it is a tad difficult to properly interface LaTeX classes and
+% packages with this (necessarily) complex and invasive package. It is
+% recommended that hyperref not be used for work that is to be submitted
+% to the IEEE. Users who wish to use hyperref *must* ensure that their
+% hyperref version is 6.72u or later *and* IEEEtran.cls is version 1.6b
+% or later. The latest version of hyperref can be obtained at:
+%
+% http://www.ctan.org/tex-archive/macros/latex/contrib/supported/hyperref/
+%
+% Also, be aware that cite.sty (as of version 3.9, 11/2001) and hyperref.sty
+% (as of version 6.72t, 2002/07/25) do not work optimally together.
+% To mediate the differences between these two packages, IEEEtran.cls, as
+% of v1.6b, predefines a command that fools hyperref into thinking that
+% the natbib package is being used - causing it not to modify the existing
+% citation commands, and allowing cite.sty to operate as normal. However,
+% as a result, citation numbers will not be hyperlinked. Another side effect
+% of this approach is that the natbib.sty package will not properly load
+% under IEEEtran.cls. However, current versions of natbib are not capable
+% of compressing and sorting citation numbers in IEEE's style - so this
+% should not be an issue. If, for some strange reason, the user wants to
+% load natbib.sty under IEEEtran.cls, the following code must be placed
+% before natbib.sty can be loaded:
+%
+% \makeatletter
+% \let\NAT@parse\undefined
+% \makeatother
+%
+% Hyperref should be loaded differently depending on whether pdflatex
+% or traditional latex is being used:
+%
+%\ifx\pdfoutput\undefined
+%\usepackage[hypertex]{hyperref}
+%\else
+%\usepackage[pdftex,hypertexnames=false]{hyperref}
+%\fi
+%
+% Pdflatex produces superior hyperref results and is the recommended
+% compiler for such use.
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor IEEEtran}
+
+
+\begin{document}
+
+% paper title
+\title{Motion Planning for a Class of Planar Closed-Chain
+Manipulators
+%\thanks{The work of Trinkle and Liu was supported in
+%part by the National Science Foundation under grants 0139701
+%(DMS-FRG), 0413227 (IIS-RCV), and 0420703 (MRI) and by Rensselaer
+%Polytechnic Institute.}
+}
+
+\author{Guanfeng Liu, J.C. Trinkle$^\dagger$, and N. Shvalb$^\ddagger$\\
+Department of Computer Science, Stanford University, liugf@cs.stanford.edu\\
+ $\dagger$  Department of Computer Science, Rensselaer Polytechnic Institute, trink@cs.rpi.edu\\
+$\ddagger$ Department of Mechanical Engineering, Technion-Israel Institute of Technology, Israel,
+shvalbn@techunix.technion.ac.il}
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+%\author{\authorblockN{Guanfeng Liu}
+%\authorblockA{Department of Computer Science\\
+%Stanford University\\
+%Stanford, CA\\
+%Email:liugf@cs.stanford.edu}
+%  \and
+%\authorblockN{J.C. Trinkle}
+%\authorblockA{Department of Computer Science\\
+%Rensselaer Polytechnic Institute\\
+%110 8th St., Troy, NY 12180-3590\\
+% Email: trink@cs.rpi.edu}
+%\and
+%\authorblockN{N. Shvalb}
+%\authorblockA{Department of Mechanical Engineering\\
+%Technion-Israel
+%Institute of Technology, Israel\\
+%Email: shvalbn@techunix.technion.ac.il
+%}
+%}
+
+% avoiding spaces at the end of the author lines is not a problem with
+% conference papers because we don't use \thanks or \IEEEmembership
+
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+%
+%\author{\authorblockN{Michael Shell\authorrefmark{1},
+%Homer Simpson\authorrefmark{2},
+%James Kirk\authorrefmark{3},
+%Montgomery Scott\authorrefmark{3} and
+%Eldon Tyrell\authorrefmark{4}}
+%\authorblockA{\authorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: mshell@ece.gatech.edu}
+%\authorblockA{\authorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\authorblockA{\authorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\authorblockA{\authorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+
+% use only for invited papers
+%\specialpapernotice{(Invited Paper)}
+
+% make the title area
+\maketitle
+
+%\IEEEpeerreviewmaketitle
+%\pagestyle{empty}
+%\thispagestyle{empty}
+
+\begin{abstract}
+We study the motion problem for planar {\sl star-shaped}
+manipulators. These manipulators are formed by joining $k$ ``legs"
+to a common point (like the thorax of an insect) and then fixing the
+``feet" to the ground.  The result is a planar parallel manipulator
+with $k-1$ independent closed loops.  A topological analysis is used
+to understand the global structure of the configuration space so that
+planning problem can be solved exactly. The worst-case complexity of
+our algorithm is $O(k^3N^3)$, where $N$ is the maximum number of
+links in a leg.  A simple example illustrating our method is given.
+\end{abstract}
+
+% no keywords
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+%
+% for peerreview papers, inserts a page break and creates the second title.
+% Will be ignored for other modes.
+%
+%\section*{To Do}
+%\begin{enumerate}
+%
+%\item
+%
+%\end{enumerate}
+
+\section{Introduction}
+Due to the computational complexity and difficulty of implementing
+general exact motion planning algorithms, such as Canny's
+\cite{Can88}, today sample-base algorithms, such as Kavraki's
+\cite{KSLO96} dominate motion planning research. However, there are
+important classes of problems for which these algorithms do not
+perform well. These arise in systems whose configuration space
+(C-space) cannot effectively be represented as a set of parameters
+with simple bounds, but rather is most naturally represented as a
+variety of co-dimension one or greater embedded in a
+higher-dimensional ambient space \cite{YLK01}. Examples of the
+systems include manipulators with one or multiple closed loops,
+whose configuration space is defined by loop closure constraints.
+The RLG method \cite{Cortes02,CS03} improves the sampling techniques
+through estimating the regions of sampling parameters. However, its
+efficiency relies on the accuracy of the estimation, which often
+varies case by case. Moreover, it ignores the global structure of
+C-space, and may fail to sample globally important regions.
+%and for which specialized exact methods have not been developed.
+%This provides motivation to try to develop effective exact
+%algorithms.
+
+
+%Cortes et al.
+%\cite{Cortes02} propose a RLG (Random Loop Generator) method for
+%generating random configurations for a single loop, which was
+%further extended for manipulators with multiple kinematic loops
+%\cite{CS03}. This method relies on an estimation of the possible
+%region of configuration variables.
+Recent advances in the understanding of the global structure of
+C-spaces of single-loop closed chains \cite{TM02,LTrss05} allows us
+to develop an effective exact algorithm for a class of manipulators
+with multiple loops, namely, the planar {\sl star-shaped}
+manipulators. These manipulators are formed by joining $k$ planar
+``legs" to a common point (like the thorax of an insect) and then
+fixing the ``feet" to the ground.  The result is a planar parallel
+manipulator with $k-1$ independent closed loops. Each independent
+loop imposes an algebraic kinematic constraint equation on the
+system, and so the C-space of star-shaped manipulators is an
+algebraic variety embedded in the joint space. Walking robots whose
+legs are SCARA robots with axes perpendicular to the ground can be
+modeled as a planar star-shaped manipulators.
+%The most relevant previous work is that of Milgram, Trinkle, and Liu
+%\cite{TM02,LTMwafr04,LTrss05}.  In those papers, the C-space of
+%manipulators forming a single closed loop are analysed from a global
+%topological perspective, and the topological properties are used to
+%guide the design of complete algorithms.  The range of problem
+%covered includes three-dimensional single-loop closed chains with
+%spherical joints without obstacles and two-dimensional single-loop
+%closed chains with point obstacles.
+
+%In the former case, the
+%complexity of the planning algorithm given was $O(n^3)$, where $n$
+%is the number of links in the loop.  The worst-case complexity of
+%the algorithm obtained for the latter was $\Omega(m^{n-3})$ and $O(m^{2n-7})$
+%with $m$ being the number of point obstacles in the workspace,
+%so unfortunately its practicality is currently limited to
+%closed chains with about 6 links and 10 obstacles.
+
+ %previous topological methods for C-space connectivity analysis are
+%extended to the case of planar star-shaped manipulators without
+%obstacle.
+Here, we extend the previous topological methods in
+\cite{TM02,LTrss05} for C-space connectivity analysis to the case of
+planar star-shaped manipulators without obstacle. We derive
+important global properties of C-space and use these results to
+derive a necessary and sufficient condition for path existence
+problem.  A complete algorithm based on the properties is
+implemented and examples are presented.
+
+\section{Notation}
+\begin{center}
+\begin{tabular}{rl}
+\hline \hline \multicolumn{2}{c}{Manipulator Notation} \\ \hline
+${M}$ & - Manipulator \\
+$A$ & - Root junction or thorax of ${M}$ \\
+$o_i$ & - Grounding point of foot $i$ of ${M}$ \\
+$n_j$ & - Number of links in ${M}_j$ \\
+$l_{j,i}$ & - Length of link $i$ of ${M}_j$; $i=1,...,n_j$ \\
+$\theta_{j,i}$ & - Angle of link $i$ relative to link $i-1$ \\
+${M}_j$ & - Leg $j$ of ${M}$ with foot fixed at $o_j$ \\
+               & and other end free, $j=1,...,k$ \\
+$\tilde {M}_j(p)$ & - Leg $j$ of ${M}$ with foot fixed at $o_j$\\
+               & and other end fixed at $p$ \\
+$\tilde {M}(p)$ & - Manipulator with $A$ fixed at $p$\\
+$L_j$ & - Sum of lengths of links of ${M}_j$ \\
+${\cal L}_j(p)$ & - A set of long links of $\tilde {M}_j(p)$ \\
+$|{\cal L}_j^*(p)|$ & - Number of long links of $\tilde {M}_j(p)$ \\
+               \hline \hline
+  \multicolumn{2}{c}{Workspace Notation} \\ \hline
+$W_A$ & - Workspace of $A$ \\
+$^dU_i$ & - Cell of dimension $d$ of $W_A$ \\
+$p$ & - Point in the plane of ${M}$ \\
+$\gamma = p(t)$ & - Curve in the plane of ${M}$ \\
+$f$ & - Kinematic map of $A$ \\
+$f_j$ & - Kinematic map of endpoint of $M_j$ \\
+$\Sigma_A$ & - Singular set of $f$ in $W_A$  \\
+$\Sigma_j$ & - Singular set of $f_j$ \\
+                 \hline \hline
+  \multicolumn{2}{c}{Configuration Space (C-space) Notation} \\
+\hline
+${\cal C}$ & - C-space of ${M}$ \\
+$\tilde {\cal C}(p)$ & - C-space of $\tilde {M}(p)$ \\
+${\cal C}_j$ & - C-space of ${M}_j$ \\
+$\tilde {\cal C}_j(p)$ & - C-space of $\tilde {M}_j(p)$ \\
+$c$ & - Point in C-space \\ \hline \hline
+\end{tabular}
+\end{center}
+
+\section{Preliminaries}
+\label{section1}
+
+The class of planar manipulators studied here are refered to as
+planar {\sl star-shaped} manipulators (see Fig.~\ref{X-shape}). A
+star-shaped manipulator is composed of $k$ serial chains with all
+revolute joints.  Leg $M_j$ is composed of $n_j$ links of lengths
+$l_{j,i}, i=1,...,n_j$  with angles $\theta_{j,i}, i=1,...,n_j$. At
+one end (the foot), $M_j$ is connected to ground by a revolute joint
+fixed at the point $o_j$. At the other end, it is connected by
+another revolute joint to a junction point denoted by $A$. Note that
+when $k$ is one, a star-shaped manipulator is an open serial chain.
+When $k$ is two, it is a single-loop closed chain.
+\begin{figure}
+  \centering
+  \includegraphics[width=3in]{fig/x-shape.eps}
+  \caption{Star-shaped manipulator with $k=4$.}
+  \label{X-shape}
+\end{figure}
+
+Assuming that the foot of $M_j$ is fixed at $o_j$, let
+$f_j(\Theta_j)=p$ denote the kinematic map of $M_j$, where $\Theta_j
+= (\theta_{j,1}, \cdots, \theta_{j,n_j})$ is the tuple of joint
+angles, and $p$ is the location of the endpoint of the leg (the
+thorax end). When $M_j$ is detached from the junction $A$, the image
+of its joint space is the reachable set of positions of the free end
+of the leg, called the workspace $W_j$. In the absence of joint limits,
+the workspace $W_j$ is an
+annulus if and only if there exists one link with length strictly
+greater than the sum of all the other link lengths. Otherwise it is
+a disk. Clearly, the workspace $W_A$ of $A$ when all the legs are
+connected to $A$ is given by:
+\begin{equation}
+\label{eq:defW}
+   W_A = \bigcap_{j=1}^k W_j.
+\end{equation}
+
+In our study of ${\cal C}$, it will be convenient to refer to
+several other C-spaces. The C-space of leg $M_j$ when detached from
+the rest of the manipulator will be denoted by ${\cal C}_j$. When
+the endpoint is fixed at the point $p$, leg $j$ will be denoted by
+$\tilde M_j(p)$, where the tilde is used to emphasize the fact that
+the endpoint has been fixed. Note that $\tilde M_j(p)$ is a
+single-loop planar closed chain, about which much is known (see
+\cite{TM02}), including global structural properties of its C-space,
+denoted by $\tilde {\cal C}_j(p) = f_j^{-1}(p)$.
+
+When the junction $A$ of a star-shaped manipulator is fixed at point
+$p$, its C-space will be denoted by $\tilde {\cal C}(p)$. Since
+collisions are ignored, the motions of the legs are independent, and
+therefore the C-space of the manipulator (with fixed junction) is
+the product of the C-spaces of the legs with all endpoints fixed at
+$p$:
+\begin{equation}
+\label{eq:def_tildeCp}
+   \left. \begin{array}{rcl}
+   \tilde {\cal C}(p) & = & \tilde {\cal C}_1(p) \ \times
+           \cdots \times \ \tilde {\cal C}_k(p) \\ [5pt]
+          & = & f_1^{-1}(p) \ \times \cdots \times \ f_k^{-1}(p) \\ [5pt]
+          & = & f^{-1}(p)
+   \end{array} \right\}
+\end{equation}
+where by analogy, $f$ is a total kinematic map of the star-shaped
+manipulator. Loosely speaking, the union of the C-spaces $\tilde
+{\cal C}(p)$ at each point $p$ in $W_A$ gives the C-space of a
+star-shaped manipulator:
+\begin{equation}
+\label{eq:def_C}
+   {\cal C} = \bigcup_{p \in W_A} \tilde {\cal C}(p).
+\end{equation}
+%Denote by $c$, $c_j$, $\tilde c(p)$, or $\tilde c_j(p)$, a point in
+%${\cal C}$, ${\cal C}_j$, $\tilde {\cal C}(p)$, or $\tilde {\cal
+%C}_j(p)$, respectively.
+
+Several properties of the C-spaces ${\cal C}_j$ and $\tilde {\cal
+C}_j(p)$ are highly relevant and so are reviewed here before
+analyzing the C-space of star-shaped manipulators.  It is well known
+that the C-space of $M_j$ is a product of circles ({\em i.e.,}
+${\cal C}_j = (S^1)^{n_j}$).  The workspace $W_j$ contains a
+singular set $\Sigma_j$ which is composed of all points $p$ in $W_j$
+for which the Jacobian of the kinematic map $Df_j(\Theta_j)$ drops
+rank for some $\Theta_j \in f_j^{-1}(p)$. These points form
+concentric circles of radii $|l_{j,1}\pm l_{j,2} \pm \cdots \pm
+l_{j,n_j}|$, as shown in Fig~\ref{fig:single-leg}. When $A$ coincides
+with a point in $\Sigma_j$, the links can be arranged such that they
+are all colinear, in which case the number of instantaneous degrees
+of freedom of the endpoint of the leg is reduced from two to one.
+\begin{figure}
+  \centering
+  \includegraphics[width=3in]{fig/nir-paper-1b.eps}
+  \caption{{\bf Left:} The workspace $W_j$ of a three-link open chain $M_j$
+    based at $o_j$. The singular set $\Sigma_j$ of the kinematic map $f_j$ is four
+    concentric circles.  The small circles, figure eights, and points at 12 o'clock
+    show the topology of the C-space $\tilde {\cal C}_j(p)$ of the
+    leg when its endpoint is fixed at a point in one of the seven regions
+    delineated by the singular circles (one of the four circles or one of
+    the three open annular regions between them).  {\bf Right:} The inverse
+    image of the curve $\gamma$ - a ``pair of pants."}
+ \label{fig:single-leg}
+\end{figure}
+
+Now consider the case where the endpoint of leg $j$ is fixed to the
+point $p$.  In other words, we are interested in the C-space $\tilde
+{\cal C}_j(p)$ of $\tilde M_j(p)$. In the 12 o'clock position in
+Fig.~\ref{fig:single-leg}, points, circles, and figure eights are
+drawn to represent the global structures of $\tilde {\cal C}_j(p)$
+in the seven regions of $W_j$. Specifically, when $A$ is fixed to a
+point $p$ on the outer-most singular circle, $\tilde {\cal C}_j(p)$
+is a single point. For $p$ fixed to any point in the largest open
+annular region, C-space is a single circle. Continuing inward, the
+possible C-space types are a figure eight (on the second largest
+singular circle), two disconnected circles, a figure eight again, a
+single circle, and a single point (on the inner-most singular
+circle).
+
+A detailed analysis of $\tilde {\cal C}_j(p)$ with an arbitrary
+number of links in $\tilde M_j(p)$ can be found in \cite{TM02}. The
+results that will be particularly useful in the analysis of
+star-shaped manipulators follow.  First, the connectivity of $\tilde
+{\cal C}_j(p)$ is uniquely determined by the number of ``long
+links."  Consider the augmented link set composed of the links of
+$M_j$ and $\overline {o_jp}$, which will be called the fixed base
+link with length denoted by $l_{j,0}$. Let $L_j$ be the sum of all
+the link lengths including the fixed base link ({\em i.e.,} $L_j =
+\sum_{i=0}^{n_j} l_{j,i}$). Further, let ${\cal L}_j(p)$ be a subset
+of $\{0,1,...,n_j\}$ such that $l_{j,\alpha}+l_{j,\beta} > L_j / 2;
+\ \alpha,\beta \in {\cal L}_j(p), \ \alpha \neq \beta$. Over all
+such sets, let ${\cal L}_j^*(p)$ be a set of maximal cardinality.
+Then the number of long links of $\tilde M_j(p)$ is defined as
+$|{\cal L}_j^*(p)|$, where $| \cdot |$ denotes set cardinality.
+
+\medskip
+\begin{Lemma} {\bf Kapovich and Milson \cite{KM95}, Trinkle and
+Milgram \cite{TM02}}\\
+\label{lem-02} \rm The C-space $\tilde {\cal C}_j(p) = f_j^{-1}(p)$
+has two components if and only if $|{\cal L}_j^*(p)|=3$, and is
+connected if and only if $|{\cal L}_j^*(p)|=2$ or $0$. No other
+cardinality is possible.
+\end{Lemma}
+
+\medskip
+
+Let us return to the discussion of Fig.~\ref{fig:single-leg}.
+Viewing $W_j$ as a base manifold and the C-space corresponding to
+each end point location as a fibre, it is apparent that the singular
+set $\Sigma_j$ partitions $W_j$ into regions over which the C-spaces
+$\tilde {\cal C}_j(p)$ form a trivial fibration. The implications of
+this observation are useful in determining the C-space of more
+complicated mechanisms.  Consider a modification to $\tilde M_j(p)$
+that allows the endpoint to move along a one-dimensional curve
+segment $\gamma$ within $W_j$.  Then as long as $\gamma$ is entirely
+contained in one of the regions defined by the singular circles,
+$\tilde {\cal C}_j(\gamma) = \tilde {\cal C}_j(p) \times I$, where
+$I$ is the interval.  If $\gamma$ crosses a singular circle
+transversally, then $\tilde {\cal C}_j(\gamma) = (\tilde {\cal
+C}_j(p_1) \times I) \bigcup \tilde {\cal C}_j(p_3) \bigcup (\tilde
+{\cal C}_j(p_2) \times I)$, where $p_1$ is a point in one of the two
+open angular regions containing $\gamma$, $p_2$ is a point in the
+other, and $p_3$ is a point on the singular circle crossed by
+$\gamma$, and $\bigcup$ denotes the standard ``gluing" operation. In
+Fig.~\ref{fig:single-leg}, an example $\gamma$ and the corresponding
+C-space $\tilde {\cal C}_j(\gamma)$ are shown.
+
+\section{Analysis of Star-Shaped Manipulators}
+\label{section-2} For star-shaped manipulators with one or two legs,
+the global topological properties of the C-space ${\cal C}$ are
+fully understood (for one, see \cite{Lat92}; for two, see
+\cite{TM02,MT04}). The goals of this section are to study the global
+properties of ${\cal C}$ when $M$ has more than two legs and to
+derive necessary and sufficient conditions for solution existence to
+the motion planning problem.
+
+\subsubsection{Local Analysis}
+As a direct generalization of the singular set of a single leg, we
+define the singular set of a star-shaped manipulator as a subset
+$\Sigma$ of $W_A$ such that for every $p \in \Sigma$, there exists a
+configuration $c$ such that at least one of the Jacobians
+$\{Df_1(c),\cdots,Df_k(c)\}$ drops rank.  By definition we have:
+\begin{eqnarray}
+\label{eqn-01}
+ \Sigma=\left(\bigcup_{i=1}^k \Sigma_i \right)\bigcap W_A.
+\end{eqnarray}
+An advantage of this definition is that $\Sigma$ can be used to
+stratify $W_A$ such that each stratum is trivially fibred.
+Figure~\ref{fig:double-leg} shows a star-shaped manipulator with two
+legs.  The singular set $\Sigma$ is the boundary of the lune formed by the
+intersection of the outer singular circles of their individual
+workspaces.  For every point interior to the lune, the fibre is two
+circles (the direct product of two points with one circle). The
+fibres associated to the vertices of the lune are single points,
+which correspond to simultaneous full extension of the two legs.
+%Note the singular set $\Sigma$ is the boundary of the lune.
+\begin{figure}
+  \centering
+  \includegraphics[width=3in]{fig/nir-paper-2a.eps}
+ \caption{The workspace $W_A$ of $A$ for a star-shaped manipulator with $k=2$
+    is the intersection of the workspaces of $A$ for each leg considered
+    separately.  The singular set $\Sigma$ is composed of the black
+    circular arcs where they bound or intersect the gray area.
+    }
+ \label{fig:double-leg}
+\end{figure}
+
+Fig.~\ref{fig:chambers} shows a possible workspace for a star-shaped
+manipulator with three legs. The singular set defines 65 distinct
+sets $^dU_i$ of varying dimension $d$, where $i$ is an arbitrarily
+assigned index that simply counts components. We will refer to these
+sets as {\sl chambers}. There are 12 two-dimensional, 32
+one-dimensional, and 21 zero-dimensional chambers, each of which is
+trivially fibred. More generally, the intersections among the arcs
+composing $\Sigma$ are zero-dimensional chambers, denoted $^0\!U_i$,
+$i=1,\cdots,^0\!m$. Removing the $^0\!U_i$ from $\Sigma$ partitions
+it into open one-dimensional chambers $^1\!U_i$, $i=1,\cdots,^1\!m$.
+Removing $^0\!U_i$ and $^1\!U_i$ from $W_A$ yields open
+two-dimensional sets $^2\!U_i, \ i=1,\cdots,^2\!m$, for which the
+following relationships hold:
+\begin{eqnarray}
+\Sigma & = & \left(\bigcup_{i=1}^{^0\!m} {}^0\!U_i \right) \bigcup
+\left(\bigcup_{i=1}^{^1\!m} {}^1\!U_i \right) \\[5pt]
+W_A - \Sigma & = & \bigcup_{i=1}^{^2\!m} {}^2\!U_i.
+\end{eqnarray}
+\begin{figure}
+ \vbox{
+      \centering {\epsfysize=2.3in \epsffile{fig/nir-paper-3a.eps}}
+      }
+ \caption{Workspace (shaded gray) of a star-shaped manipulator with
+ three legs. The singular set partitions $W_A$ into $12$ two-dimensional,
+ 32 one-dimensional, and 21 zero-dimensional chambers.}
+ \label{fig:chambers}
+\end{figure}
+
+ \smallskip
+
+\begin{Proposition}
+\label{prop-01} \rm For all $d=0,1,2$ and $i$, $f^{-1}(^d\!U_i) \ =
+\ ^d\!U_i \times f^{-1}(p)$, where $p$ is any point in $^d\!U_i$ and
+the operator $\times$ denotes the direct product. Gluing the
+$f^{-1}(^d\!U_i)$ for all $i$ and $d$ gives the total C-space ${\cal
+C}$.
+\end{Proposition}
+
+\medskip
+
+%{\bf Proof:} When $d=0$, ${}^0\!U_i$ contains a single point, the
+%result follows. When $d=1$, ${}^1\!U_i$ belongs to one singular
+%circle of one leg, say $\tilde M_j$. Any two points $p_1,p_2 \in
+%{}^1\!U_i$ are related by a Euclidean rotation $p_2-o_j =
+%R(p_1-o_j)$, indicating that $\tilde {\cal C}_j(p_1)$ and $\tilde
+%{\cal C}_j(p_2)$ are homeomorphic. Thus $\tilde {\cal C}_j(p)$ for
+%all $p \in {}^1\!U_i$ have equivalent topological structure. For the
+%other legs $\tilde M_l$, $l \neq j$, according to \cite{MT04} (Lemma
+%$6.1$ and Corollary~$6.5$) $\tilde {\cal C}_l(p)$ for all $p \in
+%{}^1\!U_i$ have equivalent topological structures as ${}^1\!U_i$ is
+%free of singular points of $\tilde M_l(p)$. Thus $f^{-1}(p) = \tilde
+%{\cal C}_1(p)\times \cdots \times \tilde {\cal C}_k(p)$ for all $p
+%\in {}^1\!U_i$ have equivalent topological structures. The case when
+%$d=2$ can be proved by applying Lemma $6.1$ and Corollary $6.5$ of
+%\cite{MT04} to all legs. \hfill$\blacksquare$
+
+\medskip
+
+Proposition \ref{prop-01} and the fact that ${}^d\!U_i$ is a simply
+connected set, reveal that
+%the connectivity of $f^{-1}({}^d\!U_i)$
+%is same as that of a single fibre
+%$f^{-1}(p)=f_1^{-1}(p) \times \cdots \times f_k^{-1}(p)$
+%${\tilde {\cal C}}(p)$, $p\in {}^d\!U_i$.
+%Moreover,
+each component
+of $f^{-1}({}^d\!U_i)$
+%$\cap_{p \in {}^d\!U_i} {\tilde {\cal C}}(p)$
+is a direct product of one component of ${\tilde {\cal C}}_j(p)$,
+$j=1,\cdots,k$, with a $d$-dimensional disk. Using $|{\cal
+L}_j^*(p)|$, $j=1,\cdots,k$ and Lemma \ref{lem-02}, one can show
+that the number of components of $f^{-1}({}^d\!U_i)$ is $2^{k_0}$,
+where $k_0 \leq k$ is the number of legs for which $|{\cal
+L}_j^*(p)| = 3$.
+
+\smallskip
+
+\subsubsection{Local Path Existence}
+Before considering the global path existence problem, consider
+motion planning between two valid configurations $c_{\rm init}$ and
+$c_{\rm goal}$ for which the junction $A$ lies in the same chamber.
+Since the fibre over every point in ${}^d\!U_i$ is equivalent, path
+existence amounts to checking the component memberships of the
+configurations $c_{\rm init}$ and $c_{\rm goal}$.
+
+For a single leg $\tilde{M}_j(p)$, if the number of long links
+$|{\cal L}_j^*(p)|$ is not three, then any two configurations of
+$\tilde{M}_j(p)$ are in the same component. When $|{\cal
+L}_j^*(p)|=3$, choose any two long links and test the sign of the
+angle between them (with full extension taken as zero).  There are
+two possible signs, one corresponding to {\sl elbow-up} and the
+other to {\sl elbow-down}. If for two distinct configurations of
+$\tilde{M}_j$, $A$ lies in the same chamber, there is a continuous
+motion between them while keeping $A$ in this chamber, if and only
+if the elbow sign is the same at both configurations (naturally, one
+must perform the sign test with the same two links and in the same
+order for both configurations). Considering all the legs together, a
+continuous motion of $A$ in ${}^d\!U_i$ exists if and only if a
+motion exists for each leg individually. The previous discussion
+serves to prove the following result.
+
+\medskip
+
+\begin{Proposition}
+\label{prop-2} \rm Restricted to $f^{-1}({}^d\!U_i)$, two
+configurations $c_1,c_2 \in f^{-1}({}^d\!U_i)$ are path connected if
+and only if for each leg $\tilde M_j$ with $|{\cal L}_j^*|=3$ in
+${}^d\!U_i$, the elbow angle of $\tilde M_j$ has the same sign at
+$c_1$ and $c_2$.
+\end{Proposition}
+
+\medskip
+
+Proposition \ref{prop-2} completely solves the path existence
+problem if $W_A$ consists of a single chamber. However, things
+become complex when $W_A$ has more than one chamber.
+
+\subsubsection{Singular Set and Global C-space Analysis}
+
+Recall that the C-space ${\cal C}$ is a union of
+$f^{-1}({}^d\!U_i)$, $d \in \{0,1,2\}$, $i=1,\cdots,{}^d\!m$ and
+that $f^{-1}(p)$, $p\in {}^d\!U_i$ for $d\neq 2$ and all $i$ is a
+set containing at least a singularity of $f$.
+Combining the local C-space and singular set analysis
+yields the global structure of C-space.
+
+\medskip
+
+\begin{Proposition}
+\label{prop-sing} \rm For all $p \in \Sigma_j$, $f_j^{-1}(p)$ is a
+singular set containing isolated singularities. If a singularity
+separates its neighborhood $V$ in $f_j^{-1}(p)$, then it is these
+singularities which glue the two separated components in
+$f_j^{-1}(q)$ where $q \in W_A-\Sigma_j$ is a point sufficiently
+close to $p$.
+\end{Proposition}
+
+\medskip
+
+%{\bf Proof:} First it is obvious that $f_j^{-1}(p)$ contains
+%isolated singularities for there are finite ways to colinearize all
+%the links of a close chain. Second, let
+%\[
+%   \gamma: (-\varepsilon,\varepsilon) \rightarrow W_A,\, \gamma(0)=p
+%\]
+%be a curve that is transverse to $\Sigma_j$. According to Corollary
+%6.6 of \cite{MT04}, the distance function $s(\gamma(t))=\int_{0}^t
+%|{\dot \gamma}|dt$ defines a Morse function on $f_j^{-1}(\gamma)$
+%\[
+%   s \circ f_j: f_j^{-1}(\gamma) \rightarrow \reals.
+%\]
+%Note that $0$ is a singular value of $s \circ f_j$ and the isolated
+%singularities of $f_j^{-1}(p)$ are also singularities of $s \circ
+%f_j$. The result of Morse theory applying to $s \circ f_j$ yields
+%that $(s \circ f_j)^{-1}(0)=f_j^{-1}(p)$ is given by attaching a
+%handle to $(s \circ f_j)^{-1}(\varepsilon_0)=f_j^{-1}(q)$ for a
+%sufficiently small $\varepsilon_0$ and $q$ a point sufficiently
+%close to $p$. The Proposition follows.
+%  \hfill$\blacksquare$\medskip
+
+Next, we establish necessary and sufficient conditions for the
+connectivity of ${\cal C}$.  Let ${\cal J}$ be the index set such
+that for all $j \in {\cal J}$, $|{\cal L}_j^*|=3$ for at least one
+chamber ${}^d\!U_i$. We prove the following theorem.
+
+\medskip
+
+\begin{Theorem}
+\label{them-1} \rm Suppose $W_A = \bigcup_{d=0}^2 \left(
+\bigcup_{i=1}^{{}^d\!m} {}^d\!U_i \right)$.  Then ${\cal C} =
+f^{-1}(W_A)$ is connected if and only if:
+\begin{enumerate}
+\item
+    $W_A$ is connected;
+\item
+    $\Sigma_j \bigcap W_A \ne \emptyset$ for all $j \in {\cal J}$.
+\end{enumerate}
+\end{Theorem}
+
+\medskip
+
+{\bf Proof:(sketch)} Notice that ${\cal C}$ is connected if and only
+if any two possible configurations of leg $j$ are connected for all
+$j$. These are exactly what Item 1 and 2 imply.
+%(i) ``Necessity": Since ${\cal C}$ is a fibration of
+%the base manifold $W_A$, it can have one component only when $W_A$
+%has one component.  Thus item $1$ of Theorem~\ref{them-1} is
+%required.
+%%
+%Second, in order that ${\cal C}$ be connected, for each leg $M_j$
+%restricted to $W_A$, the C-space ${\tilde {\cal C}}_j(W_A) =
+%f_j^{-1}(W_A)$ must be connected. By definition, for all $j \in
+%{\cal J}$, there exists a chamber ${}^d\!U_i$ such that $|{\cal
+%L}_j^*|=3$. The result of Proposition \ref{prop-sing} means that
+%${\tilde {\cal C}}_j(W_A)$ is connected only if $W_A \bigcap
+%\Sigma_j \ne \emptyset$.
+%
+%(ii) ``Sufficiency": Item 1 and 2 imply that ${\tilde {\cal
+%C}}_j(W_A)$ are path connected for all $j$. Moreover, ${\cal C}$ is
+%a fibration over $W_A$. The result follows.
+\hfill$\blacksquare$\medskip
+
+Fig.~\ref{fibre} illustrates the global connectivity for an example
+$W_A$ corresponding to a star-shaped manipulator with two legs and a
+workspace for which there are two chambers $^2U_1$ and $^2U_3$ where
+leg~1 has three long links and another chamber $^2U_4$ where both
+legs have three long links.  Among these chambers, ${}^1\!U_1$ and
+${}^1\!U_2$ belong to $\Sigma_1$, and ${}^1\!U_3$ belongs to
+$\Sigma_2$. According to Theorem~\ref{them-1}, the C-space is path
+connected.  In this example, the ${\cal C}$ is the product of the
+two structures shown.
+\begin{figure}
+ \vbox{
+      \centering {\epsfysize=2.8in \epsffile{fig/fibre.eps}}
+      }
+ \caption{C-space of a star-shape manipulator with two legs.
+ For purposes of simplicity, only the portion of $f^{-1}(\gamma)$
+ is shown, where $\gamma$ is a continuous curve in $W_A$
+ that visits all chambers. }
+ \label{fibre}
+\end{figure}
+
+\smallskip
+
+\begin{Corollary}
+\label{cor-1} \rm Two configurations $c_1$ and $c_2$ of a
+star-shaped manipulator are in the same component if and only if
+\begin{enumerate}
+\item $f(c_1)$ and $f(c_2)$ are in the same component of $W_A$;
+\item For each leg $j$ with $|{\cal L}_j^*|=3$ for all chambers
+${}^d\!U_i$ in the component of $W_A$ which contains $f(c_1)$ and
+$f(c_2)$, the elbow sign is same at both $c_1$ and $c_2$.
+\end{enumerate}
+\end{Corollary}
+
+%\medskip
+
+%\begin{Remark}
+%\rm As a matter of fact, $\Sigma$ completely determines the
+%connectivity of C-space. To plan a path between two given
+%configurations, often motions of the junction to points on $\Sigma$
+%are produced to adjust the signs of the leg angles. However,
+%possible deviation of the junction from $\Sigma$ caused by numerical
+%errors, somtimes makes it impossible to adjust the sign of the leg
+%while fixing its end point. For these reasons, points in 2D chambers
+%are preferred for sign adjustment.
+%\end{Remark}
+
+%
+%\subsection{Subsection Heading Here}
+%Subsection text here.
+%
+%\subsubsection{Subsubsection Heading Here}
+%Subsubsection text here.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class option
+% should be used if it is desired that the figures are to be displayed while
+% in draft mode.
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+%
+%\begin{figure}
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex,
+% and a .pdf suffix will be assumed for pdflatex
+%\caption{Simulation Results}
+%\label{fig_sim}
+%\end{figure}
+
+
+% An example of a double column floating figure using two subfigures.
+%(The subfigure.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfigure command, the
+% \label for the overall fgure must come after \caption.
+% \hfil must be used as a separator to get equal spacing
+%
+%\begin{figure*}
+%\centerline{\subfigure[Case I]{\includegraphics[width=2.5in]{subfigcase1}
+% where an .eps filename suffix will be assumed under latex,
+% and a .pdf suffix will be assumed for pdflatex
+%\label{fig_first_case}}
+%\hfil
+%\subfigure[Case II]{\includegraphics[width=2.5in]{subfigcase2}
+% where an .eps filename suffix will be assumed under latex,
+% and a .pdf suffix will be assumed for pdflatex
+%\label{fig_second_case}}}
+%\caption{Simulation results}
+%\label{fig_sim}
+%\end{figure*}
+
+
+
+% An example of a floating table. Note that, for IEEE style tables, the
+% \caption command should come BEFORE the table. Table text will default to
+% \footnotesize as IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+%\caption{An Example of a Table}
+%\label{table_example}
+%\begin{center}
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{center}
+%\end{table}
+
+\section{A Polynomial-Time, Exact, Complete Algorithm}
+Our algorithm consists of two main routines, {\tt PathExists} and
+{\tt ConstructPath}.  The logical flow of {\tt PathExists} is
+illustrated in Figure~\ref{PathExists}. Its input is the topology
+and link lengths of a star-shaped manipulator and two valid
+configurations, $c_{\rm init}$ and $c_{\rm goal}$.  The output is
+the answer to the path existence question. Below we will show that
+the complexity of {\tt PathExists} is $O(k^3+kN)$, where $N$ is the
+maximum number of links in a leg and $k$ is the number of legs.
+\begin{figure}
+  \centering
+  \includegraphics[width=2.5in]{fig/star-shaped-flow-chart3.eps}
+  \caption{Logical flow and complexity of the major steps
+  of {\tt PathExists}.}
+  \label{PathExists}
+\end{figure}
+
+The approach taken is to compute $W_A$ and then, for each leg with
+its end point constrained to lie in $W_A$, to determine if its
+initial and goal configurations are path connected.  Since the
+C-space of a leg is guaranteed to be connected if one of its
+singular circles $\Sigma_j$ intersects $W_A$, the most straight
+forward way to test connectivity is to explicitly perform the
+intersections.  However, since there are as many as $2^{n_j-1}$
+singular circles, any algorithm based on this approach will have
+worst-case complexity that is at least exponential in $N$. The key
+idea of {\tt PathExists} is a polynomial-time algorithm for checking
+the existence of an intersection between $W_A$ and a singular
+circle.
+
+\medskip
+
+\noindent \framebox{1. Construct $W_A$} Recall that $W_A$ is the
+intersection of the workspaces of the legs when they are
+disconnected from $A$.  Each workspace is a disk or annulus, which
+can be determined by finding the length of the longest link and
+comparing it with the sum of all the other link lengths of that leg.
+ The boundary circles of these annuli decompose the plane into 2-D
+open cells, among which, those can be reached by all legs constitute
+$W_A$. We adopt a cell-decomposition algorithm (e.g., the line
+sweeping algorithm) to compute a graph representation for $W_A$.
+%For each leg, computation of the workspace is $O(n_j)$, where recall
+%that $n_j$ is the number of links in leg $j$. Since there are $k$
+%legs, computing the workspaces of the legs is $O(kN)$. The last step
+%in the construction of $W_A$ is the pairwise intersection of the
+%$O(k)$ boundary circles of the legs. Thus the overall complexity of
+%constructing $W_A$ is $O(k^2 + kN)$.
+The complexity of constructing the graph is $O(k^2+kN)$.
+\medskip \\
+\framebox{2. Are $p_{\rm init}$ and $p_{\rm goal}$ in same component
+of $W_A$?}  As an immediate consequence of the cell decomposition,
+this can be answered directly by searching the cell graph. This
+requires $O(k^2)$ since in worst case the number of nodes in the
+graph is $O(k^2)$.
+%One can compute $p_{\rm init}$ and $p_{\rm goal}$ from
+%$c_{\rm init}$ and $c_{\rm goal}$ from the kinematic map of any leg,
+%which is $O(N)$. Extend rays from $p_{\rm init}$ and $p_{\rm goal}$
+%and count the number of intersections of each ray with the boundary
+%of each component of $W_A$.  The component with an odd number of
+%intersections (counting tangencies as two intersections) contains
+%the point. Since there are at most $O(k^2)$ arcs defining $W_A$,
+%this step is $O(k^2)$.
+\medskip  \\
+\framebox{3. Compute $J$} This step is used to filter out easy
+solution existence checks, based on the cardinality and members of
+the sets ${\cal L}_j^*(p_{\rm init})$ and ${\cal L}_j^*(p_{\rm
+goal})$. For each leg $\tilde M_j(p_{\rm init})$, compute $L_j$ (see
+Section \ref{section1}) and find the three longest links of the set
+$\{l_{j,0},...,l_{j_{n_j}} \}$.  Denote these links by $(p_{\rm
+init}; \lambda_{j,1},\lambda_{j,2},\lambda_{j,3})$.  Do the same for
+$(p_{\rm goal})$ and define $(p_{\rm goal};
+\lambda_{j,1},\lambda_{j,2},\lambda_{j,3})$. This requires $O(N)$
+work. Finally, $|{\cal L}_j^*(p_{(\cdot)})| = 3$ if and only if
+$\lambda_{j,2} + \lambda_{j,3} > L_j/2$.  If ${\cal L}_j^*(p_{\rm
+init}) = {\cal L}_j^*(p_{\rm goal})$ and $|{\cal L}_j^*(p_{\rm
+init})| = 3$, and if the signs of the long links are different at
+$c_{\rm init}$ and $c_{\rm goal}$, then add $j$ into $J$.
+Computing $J$ is $O(kN)$. \medskip  \\
+%\framebox{4. Compute extreme values of $||p-o_j||$; $p \in W_A$,
+%$j\in J$} If $o_j$ is interior to $W_A$, then the minimum length is
+%zero. This will be determined as a byproduct of the ray-shooting
+%test above. Otherwise the minimum and maximum can be computed by
+%finding the minimum and maximum distances from $o_j$ to each arc on
+%the boundary of $W_A$.  In worst case this requires $O(k^2)$
+%intersections between a line segment and a circular arc, for each
+%leg, so this step is $O(k^3)$. \medskip  \\
+\framebox{4. Does the set of long links vary for all $j \in J$?} If
+and only if a way point $p_j \in W_A$ exists such that ${\cal L}_j^*(p_j) \neq {\cal
+L}_j^*(p_{\rm init})$, then it is possible to make the long links
+colinear and thus change the signs of their relative angles. This
+can be done by computing a point $p_j \in W_A$ on the boundary of the
+cell which contains $p_{\rm goal}$ and keeps the same constant
+${\cal L}_j^*(p)$ for all $p$ in this cell. This boundary is
+characterized by $\lambda_{j,2}+\lambda_{j,3}=L_j/2$. Using the fact
+that the base link is the only link with variable link length, $\{p_j \mid j \in J\}$
+can be computed in $O(k^3+kN)$.
+%If and only if $p \in W_A$ exists such that ${\cal L}_j^*(p) \neq
+%{\cal L}_j^*(p_{\rm init})$, then it is possible to make the long
+%links colinear and thus change the signs of their relative angles.
+%This can be done by computing a base length $l_{j,0}$ satisfying
+%$\lambda_{j,2}(l_{j,0})+\lambda_{j,3}(l_{j,0})=L_j(l_{j,0})/2$ (Note
+%that $L_j$ varies linearly with $l_{j,0}$, and $\lambda_{j,2}$ and
+%$\lambda_{j,3})$ vary discontinuously with $l_{j,0}$.)  Finding such
+%a base length or determinining nonexistence of such can be computed
+%in constant time for each leg, so this step is $O(k)$.
+
+\medskip
+
+The basic idea of {\tt ConstructPath} 
+%is that when moving from
+%$c_{\rm init}$ to $c_{\rm goal}$, those legs $j \in J$ require a
+%change in the signs of relative angles between a pair of long links,
+%some of the legs with three long
+%links when $A$ is fixed at $p_{\rm init}$ and $p_{\rm goal}$ will
+%require a change in the signs of relative angles between long links,
+%which is always possible at the way point $p_j$ or other singular
+%points of the corresponding leg. A natural approach then is 
+is to use
+two kinds of motion generation algorithms: {\sl accordion move} and
+{\sl sign-adjust move}.  The former moves the thorax endpoint (at
+$A$) along a specified path segment with all legs moving compliantly
+so that all loop closures are maintained.
+%without changing the sign of the relative
+%angle between a pair of long links in legs.
+The latter keeps the endpoint fixed at a way point $q_j \in
+\Sigma_j$ while moving
+leg $j$ into a colinear configuration and then to a nearby
+configuration with the sign of the relative angle between a pair of
+long links in this leg chosen to match those of $c_{\rm goal}$.
+
+The input of {\tt ConstructPath} is $W_A$ and its cell graph,
+$c_{\rm init}$, $c_{\rm goal}$, and the set of way points $p_{j}\,
+\in W_A, \, j\in J$ computed during the execution of {\tt
+PathExist}.
+
+\noindent \framebox{1. Construct an initial path} {\tt
+ConstructPath} explores the cell graph of $W_A$, and constructs a
+path in $W_A$ connecting $p_{\rm init}$ to $p_{\rm goal}$ and
+visiting all of the way points. Since there are at most $k$ way
+points, this can be done in $O(k^3)$ time (the path has $k$ segments
+each with $O(k^2)$ arcs).
+
+\noindent \framebox{2. Construct {\em guards} and insert the {\rm
+guards} into the path} Notice that accordion moves keep the 
+sign of the relative angle between a pair of long links of leg $j$ 
+only when the thorax endpoint moves in a cell where ${\tilde C}_j$ has two components. 
+%Notice that when one accordion moves a leg in
+%a cell in which the number of long links is not $3$ (called
+%one-component cell), neither the signs of concatenating angles, nor
+%the sign between any pair of links in legs will be kept invariant.
+%Thus even the sign between a pair of long links is adjusted to the
+%desired one at a way point (e.g., $p_j$), it still could change if
+%the leg keeps moving accordionly in this one-component cell. 
+For this reason, we set {\em guards} $\{q_j\}$ for legs which have three long
+links at $p_{\rm goal}$. The set of such legs is denoted $I$. 
+$\{q_j\}$ is computed as the last intersection point between the above constructed path
+in $W_A$ and the boundary of the two-component cell of leg $j$
+containing $p_{\rm goal}$, for all leg $j \in I$. 
+%Thus the number of guards ($q_j$'s) may be more than
+%the number of way points. 
+Inserting these {\em guards} into the
+path. 
+%Later when we construct the path in ${\cal C}$, sign-adjust
+%moves are only performed at {\em guards} $q_j$ (but not $p_j$) for
+%after that the thorax endpoint gets into the two-component cell and
+%the sign between a pair of long links will not change during
+%accordion moves, i.e., the leg only stays in one component its
+%C-space. 
+Assuming each arc in the path is approximated by fixed
+number of line segments, finding guards is $O(k^3)$.
+
+\noindent \framebox{3. Accordion moves and sign-adjust moves} The
+path in ${\cal C}$ then is produced by using accordion moves along
+the path and sign-adjust moves at the {\em guards}. At each {\em
+guard} $q_j$, $j\in I$, one checks the sign between a pair of long links of leg $j$. 
+If it does not match the goal one, do sign-adjust
+move, otherwise, accordion moves keep going on. Once $A$ is
+coincident with $p_{\rm goal}$, one is assured by the previous
+steps, that with $A$ fixed at $p_{\rm goal}$, the configuration of
+each leg is in the same component of its current C-space $\tilde
+C_j(p_{\rm goal})$ as $c_{\rm goal}$. The final move can be
+accomplished using a special accordion move algorithm found in
+\cite{TM02}. 
+%At this stage, we remark that finding the set of way
+%points $p_j$ and planning an initial path visiting all $p_j$ is
+%necessary for otherwise, an arbitrary path between $p_{\rm init}$
+%and $p_{\rm goal}$ may not intersect the boundary of the
+%two-component cell of a leg that contains $p_{\rm goal}$.
+
+The complexity of the accordion move algorithms reported in
+\cite{TM02} are $O(N^3)$. Since the path has $O(k^3)$ line segments
+%Since there are $O(k^2)$ boundary segments, the number of path
+%segments is also $O(k^2)$.
+%If we
+%assume that each boundary segment in the path is approximated by a
+%constant number of line segments, then
+the complexity of {\tt ConstructPath} is $O(k^3N^3)$.  Note that
+accordion move algorithms with the required behavior can be designed
+to be $O(N^2)$, so the complexity of {\tt ConstructPath} could be
+reduced.
+
+Overall, our path planning algorithm is  $O(k^3N^3)$.
+
+
+%The basic idea of {\tt ConstructPath} is that when moving from
+%$c_{\rm init}$ to $c_{\rm goal}$, some of the legs with three long
+%links when $A$ is fixed at $p_{\rm init}$ and $p_{\rm goal}$ will
+%require a change in the signs of relative angles between long links, which is
+%always possible at a singular point of the corresponding leg. A
+%natural approach then is to use two kinds of motion generation
+%algorithms: {\sl accordion move} and {\sl sign-adjust move}.  The
+%former moves the thorax endpoint (at $A$) along a specified path
+%segment without changing the sign of the ralative angle
+%between a pair of long links in legs.
+%The latter keeps the endpoint fixed at a way point
+%$p \in \Sigma_j$ while moving leg $j$ into a colinear configuration
+%and then to a nearby configuration with the sign of the relative angle
+%between a pair of long links in this leg
+%chosen to match those of $c_{\rm goal}$.
+
+%The input of {\tt ConstructPath} is $W_A$, $c_{\rm init}$, $c_{\rm
+%goal}$, and the set of way points $p_{j}\, \in W_A, \, j\in J$
+%computed during the execution of {\tt PathExist}.  {\tt
+%ConstructPath} constructs a path in $W_A$ connecting $p_{\rm init}$
+%to $p_{\rm goal}$ and visiting all of the way points.  Since there
+%are at most $k$ way points, this can be done in $O(k^3)$ time by
+%connecting all these points with straight lines to the boundary of
+%$W_A$.  Though crude, a path can be constructed by moving from
+%$c_{\rm init}$ to the boundary, around the boundary to the line
+%segment connected to one of the way points, along the line to the
+%way point, back to the boundary, and so on, until all way points
+%have been visited and $p_{\rm goal}$ has been reached.  The path in
+%${\cal C}$ then is produced by using accordion moves along the path
+%and sign-adjust moves at the way points.  Once $A$ is coincident
+%with $p_{\rm goal}$, one is assured by the previous steps, that with
+%$A$ fixed at $p_{\rm goal}$, the configuration of each leg is in
+%the same component of its current C-space $\tilde C_j(p_{\rm
+%goal})$ as $c_{\rm goal}$.  The final move can be accomplished using
+%a special accordion move algorithm found in \cite{TM02}.
+
+%The complexity of the accordion move algorithms reported in
+%\cite{TM02} are $O(N^3)$.  Since there are $O(k^2)$ boundary
+%segments, the number of path segments is also $O(k^2)$.  If we
+%assume that each boundary segment in the path is approximated by a
+%constant number of line segments, then the complexity of {\tt
+%ConstructPath} is $O(k^2N^3)$.  Note that accordion move algorithms
+%with the required behavior can be designed to be $O(N^2)$, so the
+%complexity of {\tt ConstructPath} could be reduced.
+%Overall, our path planning algorithm is  $O(k^3 + k^2N^3)$.
+\section{Example}
+In this example, the manipulator has three three-link legs, one of
+which has three long links when $A$ is fixed at 
+$p_{\rm goal}$. Figure~\ref{start-goal} shows the manipulator in
+it's starting and goal configurations.  Since when $A$ is fixed at
+$p_{\rm goal}$, the C-space of two of the legs have one component,
+our algorithm requires that $A$ move from its initial location to
+one guard, and then to the goal.  At the guard, the two lower legs can remain fixed while the other leg is
+moved to adjust the signs of its relative angles.  
+%In this
+%particular example, we chose to move $A$ to a point on the singular
+%set of the leg in question.  
+This leg was then moved to make all its
+links colinear. Before leaving the guard via the next
+accordion move, leg's angles were adjusted to match the relative
+signs in the goal configuration.
+Figures~\ref{accordion},~\ref{adjust_sign},~\ref{accordion_goal},
+and~\ref{TMalg} show the progress of the manipulation plan as the
+steps of the complete planning algorithm are carried out.
+ Animation of the motion in
+this example can be found in
+\verb$http://www.cs.rpi.edu/~liugf/multiloop$.
+\begin{figure}
+  \centering
+  \includegraphics[width=2.2in]{fig/two_config.eps}
+  \caption{Manipulator's initial configuration (junction on the right, drawn red)
+  and goal configuration (junction just below the top foot, drawn blue.}
+  \label{start-goal}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=2.2in]{fig/accordion.eps}
+  \caption{All legs use an accordion move to move the junction $A$ to the guard on
+  a singular circle of leg~2.}
+  \label{accordion}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=2.2in]{fig/adjust_sign.eps}
+  \caption{With the junction $A$ at the guard of
+  leg~2, its join angles can be adjusted to achieve the signs required
+  at the goal configuration.}
+  \label{adjust_sign}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=2.2in]{fig/adjust_goal.eps}
+  \caption{All legs use an accordion move to move the junction $A$ to its
+  goal location.  The sign of leg 2 are preserved guaranteeing
+  that leg~2 will be in the correct C-space component once $A$ is fixed at
+  the goal position.}
+  \label{accordion_goal}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=2.2in]{fig/TMalg.eps}
+  \caption{All legs use the Trinkle-Milgram algorithm to achieve their
+  goal configurations with the junction $A$ fixed.}
+  \label{TMalg}
+\end{figure}
+
+\section{Conclusion}
+In this paper, we study the global structural properties of planar star-shaped
+manipulators. Via the analysis of the singular set $\Sigma$,
+we derive the global connectivity of the C-space, and necessary and sufficient conditions
+for path existence. Based on these results, we devise a complete algorithm for motion planning.
+Simulation examples are used to illustrate the key ideas behind the motion planning problem
+of planar star-shaped manipulators.
+
+
+% conference papers do not normally have an appendix
+
+% use section* for acknowledgement
+\section*{Acknowledgment}
+% optional entry into table of contents (if used)
+%\addcontentsline{toc}{section}{Acknowledgment}
+%The authors would like to thank Nir Shvalb and Moshe Shoham for
+%their insightful comments on aspects of this work, 
+The authors would like to thank Ryan Trinkle for
+help on the analysis of the solution existence algorithm, and the
+National Science Foundation for its support through grants 0139701
+(DMS-FRG), 0413227 (IIS-RCV), and 0420703 (MRI).
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+% NOTE: BibTeX documentation can be easily obtained at:
+% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% standard IEEE bibliography style from:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/supported/IEEEtran/bibtex
+%\bibliographystyle{IEEEtran.bst}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+
+\begin{thebibliography}{10}
+
+\bibitem{Can88}
+J.F. Canny, \emph{The Complexity of Robot Motion Planning}. \hskip
+1em plus 0.5em minus 0.4em\relax Cambridge, MA: MIT Press, 1988.
+
+\bibitem{Cortes02}
+J. Cort\'es, T. Sim\'eon, and J.P. Laumond, \emph{A Random Loop
+Generator for Planning the Motions of Closed Kinematic Chains using
+PRM Methods}. \hskip 1em plus 0.5em minus 0.4em\relax In Proceedings
+of the 2002 IEEE International Conference on Robotics and
+Automation, pages 2141-2146, 2002.
+
+\bibitem{CS03}
+J. Cortes and T. Sim\'eon, \emph{Probabilistic Motion Planning for
+Parallel Mechanisms}. \hskip 1em plus 0.5em minus 0.4em\relax In
+Proceedings of the 2003 IEEE International Conference on Robotics
+and Automation, pages 4354-4359, 2003.
+
+\bibitem{KM95}
+M. Kapovich and J. Millson, \emph{On the moduli spaces of polygons
+in the Euclidean plane}. \hskip 1em plus 0.5em minus 0.4em\relax
+Journal of Differential Geometry, Vol. 42, PP. 133-164, 1995.
+
+\bibitem{KSLO96} L.E. Kavraki, P. $\check{S}$vestka, J.C. Latombe,
+and M.H. Overmars, \emph{Probablistic Roadmaps for path planning in
+high-dimensional configuration space}. \hskip 1em plus 0.5em minus
+0.4em\relax IEEE Transactions on Robotics and Automation,
+12(4):566-580, 1996.
+
+%\bibitem{Lat92}
+%J.C. Latombe, \emph{Robot Motion PLanning}. \hskip 1em plus 0.5em
+%minus 0.4em\relax Kluwer Academic Publishers, 1992.
+
+%\bibitem{MT04}
+%R.J. Milgram and J.C. Trinkle, \emph{The Geometry of Configuration
+%Spaces for Closed Chains in Two and Three Dimensions}. \hskip 1em
+%plus 0.5em minus 0.4em\relax Homology Homotopy and Applications,
+%6(1):237-267, 2004.
+
+\bibitem{TM02}
+J.C. Trinkle and R.J. Milgram, \emph{Complete Path Planning for
+Closed Kinematic Chains with Spherical Joints}. \hskip 1em plus
+0.5em minus 0.4em\relax International Jounral of Robotics Research,
+21(9):773-789, December, 2002.
+
+%\bibitem{LTMwafr04}
+%G.F. Liu, J.C. Trinkle and R.J. Milgram, \emph{Toward Complete Path Planning
+%for Planar 3R-Manipulators Among Point Obstacles}. \hskip 1em plus
+%0.5em minus 0.4em\relax In Algorithmic Foundations of Robotics VI, STAR 17, Springer-Verlag,
+%329-344, 2005.
+
+\bibitem{LTrss05}
+G.F. Liu and J.C. Trinkle, \emph{Complete Path Planning for Planar Closed Chains Among Point Obstacles}.
+\hskip 1em plus 0.5em minus 0.4em
+\relax In Robotics: Science and Systems, MIT Press, 2005.
+
+\bibitem{YLK01}
+J. Yakey, S. M. LaValle, and L. E. Kavraki, \emph{Randomized path
+planning for linkages with closed kinematic chains}. \hskip 1em plus
+0.5em minus 0.4em \relax IEEE Transactions on Robotics and
+Automation, 17(6):951--958, December 2001.
+
+%
+%%\bibitem{SHS87}
+%%J. Schwartz, J. Hopcroft, and M. Sharir, \emph{Planning, Geometry,
+%%and Complexity of Robot Motion}. \hskip 1em plus 0.5em minus
+%%0.4em\relax Ablex, 1987.
+%
+%
+%\bibitem{RRT}
+%S. M. LaValle and J. J. Kuffner, \emph{Rapidly-exploring random
+%trees: Progress and prospects}. \hskip 1em plus 0.5em minus
+%0.4em\relax In B. R. Donald, K. M. Lynch, and D. Rus, editors,
+%Algorithmic and Computational Robotics: New Directions, pages
+%293-308, A K Peters, Wellesley, MA, 2001.
+%
+%\bibitem{Lin04}
+%F. Lingelbach, \emph{Path Planning using Probabilistic Cell
+%Decomposition}. \hskip 1em plus 0.5em minus 0.4em\relax IEEE
+%International Conference on Robotics and Automation, PP. 467-472,
+%2004.
+%
+%\bibitem{LBL04}
+%S.M. LaValle, M.S. Branicky and S.R. Lindemann, \emph{On the
+%Relationship between Classical Grid Search and Probabilistic
+%Roadmaps}. \hskip 1em plus 0.5em minus 0.4em\relax
+% The International Journal of Robotics Research, Number 23, Volume 7/8
+% (2004):673-692.
+%
+%\bibitem{LSB}
+%S. R. Lindemann and S. M. LaValle, \emph{Current issues in
+%sampling-based motion planning}. \hskip 1em plus 0.5em minus 0.4em
+%\relax In P. Dario and R. Chatila, editors, Proc. Eighth Int'l Symp.
+%on Robotics Research. Springer-Verlag, Berlin, 2004. To appear.
+%
+%\bibitem{Mer00}
+%J.P. Merlet, \emph{Parallel Robots}. \hskip 1em plus 0.5em minus
+%0.4em \relax Kluwer Academic Publishers, 2000.
+%
+%\bibitem{SS83}
+%J.T. Schwartz and M. Sharir, \emph{On the piano movers II. General
+%techniques for computing topological properties on real algebraic
+%manifolds}. \hskip 1em plus 0.5em minus 0.4em \relax Adv. Appl.
+%Math., vol.4, PP. 298-351, 1983.
+
+%\bibitem{HA01}
+%L. Han and N.M. Amato, \emph{A kinematics-based probabilistic
+%roadmap method for closed chain systems}. \hskip 1em plus 0.5em
+%minus 0.4em \relax in Algorithmic and Computational Robotics: New
+%Directions, B.R. Donald, K.M. Lynch, and D. Rus, Eds. AK Peters,
+%Wellesley, PP. 233-246, 2001.
+%
+%\bibitem{ABDJV98}
+%N. Amato, B. Bayazit, L. Dale, C. Jones, and D. Vallejo,
+%\emph{OBPRM: An obstacle-based PRM for 3d workspaces}. \hskip 1em
+%plus 0.5em minus 0.4em \relax in Robotics: The Algorithmic
+%Perspective, P. Agarwal, L. Kavraki, and M. Mason, Eds. Natick, MA:
+%A.K. Peters, 1998, PP. 156-168.
+%
+%\bibitem{BOS99}
+%V. Boor, M. Overmas, and A.F. van der Stappen, \emph{The Gaussian
+%sampling strategy for probabilistic roadmap planners}. \hskip 1em
+%plus 0.5em minus 0.4em \relax IEEE International Conference on
+%Robotics and Automation, 1999.
+%
+%\bibitem{BK00}
+%R. Bohlin and L. Kavraki, \emph{Path planning using lazy PRM}.
+%\hskip 1em plus 0.5em minus 0.4em \relax IEEE International
+%Conference on Robotics and Automation, PP. 521-528, 2000.
+%
+%\bibitem{KL00}
+%J.J. Kuffner and S.M. LaValle, \emph{RRT-Connect: An Efficient
+%Approach to Single-Query Path Planning}. \hskip 1em plus 0.5em minus
+%0.4em \relax IEEE International Conference on Robotics and
+%Automation, PP. 995-1001, 2000.
+
+%\bibitem{HKLR02}
+%D. Hsu, R. Kindel, J.-C. Latombe, \emph{Randomized Kinodynamic
+%Motion Planning with Moving Obstacles}. \hskip 1em plus 0.5em minus
+%0.4em \relax International Journal of Robotics Research, Vol 21, No.
+%3, PP. 233-255, 2002.
+%
+%\bibitem{KKL98}
+%L. Kavraki, M.N. Kolountzakis, and J.-C. Latombe, \emph{Analysis of
+%Probabilistic Roadmaps for Path Planning}. \hskip 1em plus 0.5em
+%minus 0.4em \relax IEEE Transactions on Robotics and Automation,
+%Vol. 14, PP. 166-171, 1998.
+%
+%\bibitem{LK04}
+%A.M. Ladd and L.E. Kavraki, \emph{Measure Theoretic Analysis of
+%Probabilistic Path Planning}. \hskip 1em plus 0.5em minus 0.4em
+%\relax IEEE Transactions on Robotics and Automation, Vol. 20, No. 2,
+%PP. 229-242, 2004.
+%
+%\bibitem{LK99}
+%S.M. LaValle and J.J. Kuffner, \emph{Randomized kinodynamic
+%planning}. \hskip 1em plus 0.5em minus 0.4em \relax IEEE
+%International Conference on Robotics and Automation, 1999.
+
+%\bibitem{BLOY01}
+%M.S. Branicky, S.M. LaValle, K. Olson, and L.B. Yang,
+%\emph{Quasi-Randomized Path Planning}. \hskip 1em plus 0.5em minus
+%0.4em \relax IEEE International Conference on Robotics and
+%Automation, PP. 1481-1487, 2001.
+
+%\bibitem{icra}
+%G.F. Liu, J.C. Trinkle, R.J. Milgram,  \emph{Complete Path
+%Planning for Planar 2-R Manipulators With Point Obstacles}. \hskip
+%1em plus 0.5em minus 0.4em\relax Proceedings of IEEE International
+%Conference on Robotics and Automation, 3263-3269, 2004.
+
+%\bibitem{LTMwafr-2004}
+%G.F. Liu, J.C. Trinkle, R.J. Milgram, \emph{Complete Path Planning
+%for Planar 3R-Manipulators Among Point Obstacles}. \hskip 1em plus
+%0.5em minus 0.4em\relax To appear in Proceedings of WAFR 2004.
+
+%
+%\bibitem{SSB05}
+%N. Shvalb, M. Shoham, D. Blanc \emph{The Configuration
+%Space of an Arachnoid Mechanism}. \hskip 1em plus 0.5em minus
+%0.4em\relax To appear in Forum Mathemaicum 2005.
+%
+%%\bibitem{HK98}
+%%J.-C. Hausmann and A. Knutson, \emph{The cohomology ring of polygon
+%%spaces}. \hskip 1em plus 0.5em minus 0.4em\relax Ann. Inst. Fourier,
+%%Vol. 48, PP. 281-321, 1998.
+%%
+%%\bibitem{KTT98}
+%%Y. Kamiyama, M. Tezuka, and T. Toma, \emph{Homology of the
+%%Configuration Spaces of Quasi-Equilateral Polygon Linkages}. \hskip
+%%1em plus 0.5em minus 0.4em\relax Transactions of the American
+%%Mathematical Society, Vol. 350, No. 12, PP. 4869-4896, 1998.
+%%
+%%\bibitem{BL91}
+%%J. Barraquand and J.-C. Latombe, \emph{Nonholonomic Multibody Mobile
+%%Robots: Controllability and motion planning in the presence of
+%%obstacles}. \hskip 1em plus 0.5em minus 0.4em\relax IEEE
+%%Interantional Conference on Robotics and Automation, PP. 2328-2335,
+%%1991.
+%%
+%%\bibitem{NS83}
+%%C. Nash and S. Sen, \emph{Topology and Geometry for Physicists}.
+%%\hskip 1em plus 0.5em minus 0.4em\relax Academic Press, 1983.
+%%
+%%\bibitem{GP74}
+%%V. Guillemin and A. Pollack \emph{Defferential Topology}. \hskip 1em
+%%plus 0.5em minus 0.4em\relax Publisher:Prentice Hall PTR, 1974.
+%%
+%%\bibitem{WH86}
+%%J. Hopcroft and G. Wilfong, \emph{On the motion of objects in
+%%contact}. \hskip 1em plus 0.5em minus 0.4em \relax Int. J. Robotics
+%%Research, Vol. 4, 1986, PP. 32-46.
+%
+%\bibitem{CG99}
+%M. Cherif and K.K. Gupta, \emph{Planning Quasi-Static Fingertip
+%Manipulation For Reconfiguring Objects}. \hskip 1em plus 0.5em minus
+%0.4em\relax IEEE Transactions on Robotics and Automation, Vol. 15,
+%No. 5, PP. 837-848, 1999.
+%
+% \bibitem{Koditschek87}
+%D. E. Koditschek, \emph{Exact Robot Navigation by Means of Potential
+%Functions: Some Topological Considerations}. \hskip 1em plus 0.5em
+%minus 0.4em\relax IEEE International Conference on Robotics and
+%Automation, PP. 1-6, 1987.
+%
+%\bibitem{Lozano-Perez83}
+%Lozano-Perez83, \emph{Spatial Planning: A Configuration Space
+%Approach}. \hskip 1em plus 0.5em minus 0.4em \relax IEEE
+%Transactions on Computers, Vol. C-32, No. 2, PP. 108-119, 1983.
+%
+%\bibitem{RK88}
+%E. Rimon and D. E. Koditschek, \emph{Exact Robot Navigation Using
+%Cost Functions: The Case of Distinct Spherical Boundaries in $E^n$}.
+%\hskip 1em plus 0.5em minus 0.4em\relax IEEE International
+%Conference on Robotics and Automation, PP. 1791-1796, 1988.
+
+%\bibitem{HLM97}
+%D. Hsu, J.C. Latombe, and R. Motwani, \emph{Path Planning in
+%Expansive Configuration Spaces}. \hskip 1em plus 0.5em minus 0.4em
+%\relax IEEE International Conference on Robotics and Automation,
+%1997.
+
+%\bibitem{RK89}
+%E. Rimon and D. E. Koditschek, \emph{The Construction of Analytic
+%Diffeomorphisms for Exact Robot Navigation on Star Worlds}. \hskip
+%1em plus 0.5em minus 0.4em\relax IEEE International Conference on
+%Robotics and Automation, PP. 21-26, 1989.
+%
+\end{thebibliography}
+
+% that's all folks
+\end{document}

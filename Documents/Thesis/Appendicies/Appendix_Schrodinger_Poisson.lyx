@@ -1,0 +1,465 @@
+#LyX 1.6.8 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass scrreprt
+\options a4paper,titlepage
+\use_default_options false
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine natbib_numerical
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Self-Consistent Solution of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Schr
+\backslash
+"{o}dinger 
+\end_layout
+
+\end_inset
+
+-Poisson Model
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "cha:Appendix_Schrodinger_Poisson"
+
+\end_inset
+
+For a quantitative discussion of carriers that are strongly confined to
+ a small area, it is necessary to consider not only the band-edge and external
+ potential, but also the carrier-carrier electrostatic potential.
+ We start by considering the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Schr
+\backslash
+"{o}dinger 
+\end_layout
+
+\end_inset
+
+ equation in the slowly varying envelope approximation in one dimension
+\begin_inset Formula \begin{equation}
+\frac{\hbar^{2}}{2}\frac{d}{dz}\left(\frac{1}{m^{*}(z)}\frac{d}{dz}\right)\varphi(z)+V(z)\varphi(z)=E\varphi(z)\label{eq:Slowly_Varying_Envelope_Approximation_Sch_Eq}\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $V(z)$
+\end_inset
+
+ is the overall potential and 
+\begin_inset Formula $\varphi(z)$
+\end_inset
+
+ is the slowly varying envelope.
+ The Poisson equation 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Poissons_Eq"
+
+\end_inset
+
+ can be formulated as
+\begin_inset Formula \begin{equation}
+\frac{d}{dz}\left(\epsilon(z)\frac{d}{dz}\right)V_{\rho}(z)=-e[N_{D}^{+}(z)-n(z)-N_{A}^{-}(z)+p(z)],\label{eq:Poisson_Equation_CB}\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\epsilon(z)$
+\end_inset
+
+ is the position dependent dielectric constant, 
+\begin_inset Formula $V_{\rho}(z)$
+\end_inset
+
+ is the electrostatic potential and 
+\begin_inset Formula $e$
+\end_inset
+
+ denotes the elementary charge.
+ N.
+ 
+\begin_inset Formula $N_{D}^{+}(z)$
+\end_inset
+
+ represents the ionized donor distribution and 
+\begin_inset Formula $n(z)$
+\end_inset
+
+ is the electron distribution.
+ For now, we only consider the conduction-band, so we set 
+\begin_inset Formula $N_{A}^{-}(z)=p(z)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The first coupling term between these two equations is the overall potential
+\begin_inset Formula \begin{equation}
+V(z)=V_{CB}(z)-eV_{\rho}(z)\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $V_{CB}(z)$
+\end_inset
+
+ represents the conduction-band profile given by the material composition.
+ The second coupling term is the electron concentration 
+\begin_inset Formula $n(z)$
+\end_inset
+
+, which is calculated from the envelope function 
+\begin_inset Formula $\varphi$
+\end_inset
+
+and the Fermi level 
+\begin_inset Formula $E_{F}$
+\end_inset
+
+
+\begin_inset Formula \begin{equation}
+n(z)=\frac{m^{*}(z)k_{B}T}{\pi\mathcal{L}\hbar^{2}}\sum_{\mathbf{k}}\left|\varphi_{\mathbf{k}}(z)\right|^{2}\ln\left(1+e^{\frac{E_{F}-E_{\mathbf{k}}}{k_{B}T}}\right),\label{eq:Fermi_Level_Eq}\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $k_{B}$
+\end_inset
+
+ is the Boltzmann constant, 
+\begin_inset Formula $T$
+\end_inset
+
+ is the temperature, 
+\begin_inset Formula $\mathcal{L}$
+\end_inset
+
+ is the length of the heterostructure and 
+\begin_inset Formula $E$
+\end_inset
+
+ is the eigenenergy.
+ The summation over 
+\begin_inset Formula $\mathbf{k}$
+\end_inset
+
+ represents the summation over all eigenstates (including spin).
+ As a consequence, we have to solve for a given heterostructure with given
+ donor concentration 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Slowly_Varying_Envelope_Approximation_Sch_Eq"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Poisson_Equation_CB"
+
+\end_inset
+
+ self-consistently.
+ We restrict ourselves to model only the mesoscopic part and not the whole
+ device, so we have to define appropriate boundary conditions for the envelope
+ function and the electrostatic potential.
+ The boundary conditions for the envelope function are given by 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Shooting_Method_Boundary_Conditions"
+
+\end_inset
+
+, whereas we set the electrostatic potential 
+\begin_inset Formula $V_{\rho}$
+\end_inset
+
+ to zero at the boundaries 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Chuang1995"
+
+\end_inset
+
+, which is equivalent to assume the device in equilibrium.
+\end_layout
+
+\begin_layout Standard
+To solve 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Slowly_Varying_Envelope_Approximation_Sch_Eq"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Poisson_Equation_CB"
+
+\end_inset
+
+ numerically, we apply the shooting method from Appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Appendix_Two_Band_Numerics"
+
+\end_inset
+
+ to the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Schr
+\backslash
+"{o}dinger 
+\end_layout
+
+\end_inset
+
+ equation and to the Poisson equation a finite-difference scheme, which
+ reads
+\begin_inset Formula \begin{eqnarray}
+0 & = & \frac{1}{2\left(\delta z\right)^{2}}\left((\epsilon_{i}+\epsilon_{i-1})V_{\rho,i-1}-(\epsilon_{i-1}+2\epsilon_{i}+\epsilon_{i+1})V_{\rho,i}+(\epsilon_{i}+\epsilon_{i+1})V_{\rho,i+1}\right)\nonumber \\
+ &  & +e(N_{D,i}^{+}-n_{i}),\end{eqnarray}
+
+\end_inset
+
+where 
+\begin_inset Formula $\delta z$
+\end_inset
+
+ is the spatial discretization.
+ Equilibrium conditions require us to choose the Fermi level appropriate
+ to allow that
+\begin_inset Formula \begin{equation}
+\int_{-\infty}^{\infty}N_{D}^{+}(z)dz=\int_{-\infty}^{\infty}n(z)dz.\label{eq:Equalibrium_Condition}\end{equation}
+
+\end_inset
+
+To ensure this equilibrium condition, we solve 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Fermi_Level_Eq"
+
+\end_inset
+
+ with the constraint 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Equalibrium_Condition"
+
+\end_inset
+
+ to obtain the Fermi level 
+\begin_inset Formula $E_{F}$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/Appendix_Schr_Poisson_Schematic.eps
+	lyxscale 60
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Program_Flow_Schr_Poisson"
+
+\end_inset
+
+Program flow for self-consistent solution of 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Schr
+\backslash
+"{o}dinger 
+\end_layout
+
+\end_inset
+
+-Poisson under equilibrium condition with given donor concentration.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Program_Flow_Schr_Poisson"
+
+\end_inset
+
+ shows the program flow to obtain the self-consistent solution of the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Schr
+\backslash
+"{o}dinger 
+\end_layout
+
+\end_inset
+
+-Poisson system under equilibrium condition.
+ First, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Schr
+\backslash
+"{o}dinger 
+\end_layout
+
+\end_inset
+
+’s equation is solved assuming an initial potential 
+\begin_inset Formula $V(z)=V_{CB}(z),\, V_{\rho}(z)=0$
+\end_inset
+
+.
+ Next, the Fermi level 
+\begin_inset Formula $E_{F}$
+\end_inset
+
+ and the carrier distribution 
+\begin_inset Formula $n(z)$
+\end_inset
+
+ are obtained by solving 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Fermi_Level_Eq"
+
+\end_inset
+
+ with respect to 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Equalibrium_Condition"
+
+\end_inset
+
+.
+ Then, the Poisson equation is solved resulting in a new electrostatic potential
+ 
+\begin_inset Formula $V_{\rho,\textrm{new}}(z)$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $|V_{\rho,\textrm{new}}(z)-V_{\rho}(z)|$
+\end_inset
+
+ is smaller than a pre-defined value 
+\begin_inset Formula $δ$
+\end_inset
+
+, we obtain the converged solution.
+ Otherwise, the electrostatic potential is updated 
+\begin_inset Formula $V_{\rho}(z)(z)=V_{\rho}(z)+Γ(V_{\rho,\textrm{new}}(z)-V_{\rho}(z))$
+\end_inset
+
+, where 0 < 
+\begin_inset Formula $Γ$
+\end_inset
+
+ < 1 is a damping parameter used to improve convergence.
+\end_layout
+
+\end_body
+\end_document

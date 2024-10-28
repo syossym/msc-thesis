@@ -1,0 +1,402 @@
+#LyX 1.6.4 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass report
+\begin_preamble
+
+\linespread{1.3}
+\usepackage{setspace}
+
+ 
+
+
+
+
+%\usepackage{ccaption}
+
+\usepackage{subfigure}
+
+\usepackage{rotating}
+
+\usepackage{lscape}
+
+
+\usepackage{amsthm}
+
+\usepackage{mathrsfs}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}
+\theoremstyle{remark}\newtheorem*{remark}{Remark}
+
+\newcommand{\Phid}[0]{\dot{\Phi}}
+\newcommand{\Phib}[0]{\bar{\Phi}}
+
+\newcommand{\de}[0]{\delta}
+\newcommand{\deb}[0]{\bar{\delta}}
+
+\newcommand{\that}[0]{\hat{\theta}}
+
+%\usepackage{endfloat}
+%\nomarkersintext
+
+\topmargin -0.6true in
+\textwidth 15true cm
+\textheight 9.5true in
+\oddsidemargin 0.25true in
+\evensidemargin 0.25true in
+\headsep 0.4true in
+
+\usepackage{fancyheadings}
+
+
+\addtolength{\headheight}{2.5pt}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter~~#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection~~#1}{}}
+\ifthenelse{\boolean{@twoside}}
+{
+        \rhead[\bfseries \rightmark]{\bfseries \thepage}
+        \lhead[\bfseries \leftmark]{\bfseries \thepage}
+        \addtolength{\headwidth}{\marginparsep}
+        \addtolength{\headwidth}{\marginparwidth}
+}{
+        \lhead{\bfseries \leftmark}
+        \rhead{\bfseries \thepage}
+}
+\cfoot{}
+
+%---------------------------------------------------------
+%---------------------------------------------------------
+\end_preamble
+\options a4paper,titlepage
+\use_default_options false
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\pdf_title "Parametric interactions in opto-acoustic cavities"
+\pdf_author "Daniel Price"
+\pdf_subject "parametric interactions"
+\pdf_keywords "parametric interactions, opto-acoustic coupling"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 0
+\cite_engine natbib_numerical
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "titlepage/Titlepage.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "abstract/Abstract.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "acknowledgments/Preface.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "acknowledgments/Acknowledgments.lyx"
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{roman}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Newpage newpage
+\end_inset
+
+ 
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+markboth{}{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{arabic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Introduction
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "chapters/Introduction/introduction.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Microresonators
+\begin_inset CommandInset label
+LatexCommand label
+name "cha:Microresonators"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "chapters/Microresonators/Microresonators.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Characterisation of a silicon micromirror
+\begin_inset CommandInset label
+LatexCommand label
+name "cha:Characterisation-by-electrostatic"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Chapter
+Characterisation of a silicon nitride membrane 
+\begin_inset CommandInset label
+LatexCommand label
+name "cha:Characterisation-by-piezo "
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Summary
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "chapters/Summary/summary.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\bibname}{References}
+\end_inset
+
+
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "references/refs"
+options "bibtotoc,unsrt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+\start_of_appendix
+Project proposal
+\end_layout
+
+\begin_layout Standard
+Project proposal goes here
+\end_layout
+
+\begin_layout Chapter
+Quantum opto-acoustic interactions
+\begin_inset CommandInset label
+LatexCommand label
+name "cha:QO description"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Another appendix goes here
+\end_layout
+
+\end_body
+\end_document

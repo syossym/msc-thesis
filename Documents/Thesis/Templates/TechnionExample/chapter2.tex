@@ -1,0 +1,1263 @@
+\chapter{Motion Planning for a Class of Planar Closed-Chain Manipulators}
+\label{chap2}
+
+\textsf{Accepted to \textsl{International Journal of Robotic Research}, 2006.} \\
+\textsf{Co-authors: Guanfeng Liu, Jeff Trinkle and Moshe
+Shoham.}\\
+\textsf{Presented in \textsl{IEEE International
+Conference on Robotics and Automation}, 2006.} \\
+
+We study the motion planning problem for planar {\sl star-shaped}
+manipulators. These manipulators are formed by joining $k$ ``legs"
+to a common point (like the thorax of an insect) and then fixing
+the ``feet" to the ground.  The result is a planar parallel
+manipulator with $k-1$ independent closed loops.  A topological
+analysis is used to understand the global structure the
+configuration space so that planning problem can be solved
+exactly. The worst-case complexity of our algorithm is
+$O(k^3N^3)$, where $N$ is the maximum number of links in a leg.
+Examples illustrating our method are given.
+
+\sect{Introduction} The canonical robot motion planning problem is
+known as the ``piano movers'" problem.  In this problem, one is
+given initial and goal configurations of a ``piano" (a rigid body
+that is free to move in an environment with fixed rigid obstacles)
+and geometric models of the piano and obstacles.  The goal is to
+find a continuous motion of the piano connecting the initial and
+goal configurations. Lozano-Perez studied this problem in
+configuration space, or \cspace, a space in which a configuration
+of the piano maps to a point, a motion maps to a continuous curve,
+and the obstacles map to the C-obstacle, {\em i.e.,} the set
+corresponding to overlap between the piano and an obstacle
+\cite{Lozano-Perez83}.  The dimension of \cspace \ is equal to the
+number of degrees of freedom of the system. The free space, or
+C-free, is what remains after removing the C-obstacle from
+\cspace. In \cspace, the motion planning problem becomes a path
+planning problem. That is, one must construct a continuous path
+connecting the initial and goal configurations that lies entirely
+within C-free. Theoretical results for the piano movers' problem
+were first obtained by Schwartz, Sharir, and Hopcroft
+\cite{SS83,SHS87}. They found that the problem is PSPACE hard, and
+proposed an algorithm based on Collins' decomposition to find a
+path. Since the worst-case running time of Collins' decomposition
+algorithm is doubly exponential in the dimension of \cspace, it is
+impractical.
+
+The more complex generalized movers' problem, is the problem in
+which there are multiple rigid bodies moving simultaneously in a
+workspace. The bodies are the links of one or more robots, and
+thus may be required to obey constraints corresponding to their
+kinematic structures and joint limits. Given the importance of
+motion planning problem in robotics, researchers worked to find
+more efficient algorithms despite the depressing complexity
+results found earlier. The most efficient exact method known is
+Canny's algorithm, which has time complexity that is only singly
+exponential in the dimension of \cspace \cite{Can88}. He also made
+the important observation that this bound is worst-case optimal,
+since the worst-case number of components in \cspace \ is
+exponential in its dimension. Canny's algorithm is very difficult
+to implement - to date no full implementation exists.
+
+In the 1990's, the intractability of exact motion planning for
+general problems stimulated a paradigm shift to randomized
+methods. The method of Barraquand and Latombe combined potential
+field methods with random walk \cite{BL91}.  In essence, a
+potential field method defines an artificial potential field on
+\cspace \ such that the goal configuration is the global minimum
+of the potential function and no saddle points or other local
+minima exist. When the function has this property, motion planning
+can be done by any gradient following algorithm. An important
+class of such functions are navigation functions
+\cite{Koditschek87,RK88,RK89}. Ideally, the potential function
+will be a function of the goal configuration, and the global
+minimum property will hold for all possible goal configurations.
+Since such potential functions can be difficult to design,
+Barraquand and Latombe suggested the use of random walks to escape
+local minima \cite{BL91}. This modification yielded a method that
+is practically effective and probabilistically complete.
+
+When possibly many motion planning queries must be handled for a
+single static environment, a different type of randomized method
+has been found to be more efficient than rerunning the
+Barraquand-Latombe algorithm for each query. The probabilistic
+roadmap method (PRM) of Kavraki {\em et. al} \cite{KSLO96}, is an
+easy-to-implement randomized version of Canny's \cite{Can88}.
+
+Because PRMs have been successful in solving problems in \cspace s
+with dimension approaching 100, many researchers have worked to
+make the method more efficient ({\em e.g.,}
+\cite{ABDJV98,BOS99,BK00}) and to modify it to solve more
+challenging types of problems, such as those with closed kinematic
+loops, nonholonomic constraints, dynamics, and intermittent
+contact ({\em e.g.,} \cite{YLK01,HA01,CG99,KL00,LK99,RRT}).
+
+In this paper, we are particularly interested in planar {\sl
+star-shaped manipulators}. These manipulators are formed by
+joining $k$ planar ``legs" to a common point (like the thorax of
+an insect) and then fixing the ``feet" to the ground.  The result
+is a planar parallel manipulator with $k-1$ independent closed
+loops. They are important because they arise in parallel
+manipulators, walking robots, and dexterous manipulation, and
+motion plans are difficult to obtain using PRMs. In such systems,
+\cspace \ is often most naturally viewed as a lower-dimensional
+space embedded in an ambient space (typically the joint space).
+The embedding results from equality constraints corresponding to
+kinematic loop closure. In such settings, it is difficult to
+obtain an explicit description of \cspace \ with minimal number of
+parameters and a suitable metric to guide sample generation. These
+problems make it difficult to construct a roadmap with the
+requisite properties, and hence difficult  to solve motion
+planning problems for systems with kinematic loops using PRMs. The
+RLG (random loop generator) method \cite{Cortes02,CS03} improves
+the sampling techniques through estimating the regions of sampling
+parameters. However, its efficiency relies on the accuracy of the
+estimation, which often varies case by case. Moreover, it ignores
+the global structure of \cspace, and may fail to sample globally
+important regions.
+%
+\begin{figure}
+  \centering
+  \includegraphics[width=3in]{fig_2/x-shape.eps}
+  \caption{Star-shaped manipulator with $k=4$.}
+  \label{X-shape}
+\end{figure}
+%
+The difficulties associated with applying randomized motion
+planning methods to manipulators with closed chains and the
+availability of new results in topology \cite{KTT,KM,MT1,SSB05}
+have recently led to renewed interest in exact planning
+algorithms. Trinkle and Milgram derived some topological
+properties of the \cspace s (the number of components and the
+structures of the components) of single-loop closed chains with
+spherical joints in a workspace {\em without} obstacles
+\cite{MT2,MT1}.  These properties drove the design of a complete,
+polynomial-time motion planning algorithm that works roughly as
+follows.
+%
+\begin{enumerate}
+\item Choose a subset ${\cal A}$ of the links that can be
+positioned arbitrarily, and yet the remaining links can close the
+loop; \item Move the links in ${\cal A}$ to their goal
+orientations along an arbitrary path while maintaining loop
+closure; \item Permanently fix the orientations of the links in
+${\cal A}$; \item Repeat until all link orientations are fixed.
+\end{enumerate}
+%
+The main result that guided the algorithm's design is Theorem~2 in
+\cite{MT1}. In generic cases, the \cspace \ is the union of
+manifolds that are products of spheres and intervals. The joint
+coordinates corresponding to the spheres are those that can
+contribute to the subset ${\cal A}$ mentioned above and the
+structure of the \cspace \ suggests a local parametrization for
+each step.
+
+Here, the previous methods for \cspace \ connectivity analysis are
+extended to planar star-shaped manipulators with revolute joints.
+These manipulators have a common junction point and $k$ $(k>0)$
+legs connecting the junction to the fixed base. Following a
+topological analysis of the global structure of \cspace \ (i.e.,
+the structure of the inverse kinematics of the manipulator), the
+motion planning problem is solved completely in polynomial time.
+Furthermore since we consider only a point end-effector, the
+direct kinematics is straightforward while the inverse kinematics
+is more complex. Thus, while for most parallel mechanisms using
+\cspace \ as a mean for path planning should be carefully
+considered, here our approach is natural.
+
+Note that this paper is aimed at possibly more complex
+macromolecules with non-covalent bonds (not just manipulators) for
+which the number of legs and links in each leg may be very large
+\cite{JRKT01}. So such a polynomial-complex algorithm would play a
+key role in several issues in structural biology, such as
+structure prediction in protein folding and binding, and study of
+protein mobility in folded states. In these applications, we are
+interested in the robot motion planning problem without
+considering the control and sensor issues.
+
+The main contributions of this paper are two folds. First, we
+establish the global connectivity of the \cspace \ of star-shaped
+manipulators via a combination of the cell decomposition of
+workspace and the structure of the \cspace \ at points in all
+cells. Although the results seem obvious, the proof detail is
+highly non-trivial. Second, the global connectivity result of
+\cspace \ only suggests an exponential algorithm for path
+existence, which makes the motion planning formidable for
+macromolecules with very large number of links. In this paper we
+propose novel techniques for path existence that avoids the
+exponential complexity.
+%
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=3.5in]{fig_2/IK.eps}
+  \caption{Inverse kinematics of a three-link serial chain.}
+ \label{IK}
+\end{figure}
+%
+This paper is organized as follows. In Section \ref{section-1},
+kinematics and singularities of the manipulator are analyzed. In
+Section \ref{section-2}, necessary and sufficient conditions for
+\cspace \ connectivity and path existence are derived, based on
+which a complete polynomial-time algorithm is developed in Section
+\ref{section-3}. Section \ref{section-4} addresses path
+optimization and robustness issues. Section \ref{section-5} shows
+simulation results that tests the effectiveness of our algorithm.
+Finally \ref{section-6} ends this paper with a brief conclusion.
+
+%\sect{Notation}
+%\begin{center}
+%\begin{tabular}{rl}
+%\hline \hline \multicolumn{2}{c}{Manipulator Notation} \\ \hline
+%${M}$ & - Manipulator \\
+%$A$ & - Root junction or thorax of ${M}$ \\
+%$o_i$ & - Grounding point of foot $i$ of ${M}$ \\
+%${M}_j$ & - Leg $j$ of ${M}$ with foot fixed at $o_j$ \\
+%               & and other end free, $j=1,...,k$ \\
+%$n_j$ & - Number of links in ${M}_j$ \\
+%$l_{j,i}$ & - Length of link $i$ of ${M}_j$; $i=1,...,n_j$ \\
+%$\theta_{j,i}$ & - Angle of link $i$ relative to link $i-1$ \\
+%$\tilde {M}_j(p)$ & - Leg $j$ of ${M}$ with foot fixed at $o_j$\\
+%               & and other end fixed at $p$ \\
+%$\tilde {M}(p)$ & - Manipulator with $A$ fixed at $p$\\
+%$L_j$ & - Sum of lengths of links of $\tilde {M}_j(p)$ \\
+%$L_{j,0}$ & - Sum of lengths of links of $M_j$\\
+%${\cal L}_j(p)$ & - A set of long links of $\tilde {M}_j(p)$ \\
+%$|{\cal L}_j^*(p)|$ & - Number of long links of $\tilde {M}_j(p)$ \\
+%               \hline \hline
+%  \multicolumn{2}{c}{Workspace Notation} \\ \hline
+%$W_A$ & - Workspace of $A$ \\
+%$^dU_i$ & - Cell of dimension $d$ of $W_A$ \\
+%$p$ & - Point in the plane of ${M}$ \\
+%$\gamma = p(t)$ & - Curve in the plane of ${M}$ \\
+%$f$ & - Kinematic map of $A$ \\
+%$f_j$ & - Kinematic map of endpoint of $M_j$ \\
+%$\Sigma$ & - Critical set of $f$ in $W_A$  \\
+%$\Sigma_j$ & - Critical set of $f_j$ \\
+%                 \hline \hline
+%  \multicolumn{2}{c}{Configuration Space (\cspace) Notation} \\
+%\hline
+%${\cal C}$ & - \cspace \ of ${M}$ \\
+%$\tilde {\cal C}(p)$ & - \cspace \ of $\tilde {M}(p)$ \\
+%${\cal C}_j$ & - \cspace \ of ${M}_j$ \\
+%$\tilde {\cal C}_j(p)$ & - \cspace \ of $\tilde {M}_j(p)$ \\
+%$c$ & - Point in \cspace \\ \hline \hline
+%\end{tabular}
+%\end{center}
+
+\sect{Preliminaries} \label{section-1}
+\newnot{2-1}
+A star-shaped manipulator is composed of $k$ serial chains with
+all revolute joints (see Fig.~\ref{X-shape}).  Leg $M_j$ is
+composed of $n_j$ links of lengths $l_{j,i}, i=1,...,n_j$
+%jct 1/16/06 - small change
+and joint angles $\theta_{j,i}, i=1,...,n_j$. At one end (the
+foot), $M_j$ is connected to ground by a revolute joint fixed at
+the point $o_j$. At the other end, it is connected by another
+revolute joint to a junction point denoted by $A$. Note that when
+$k$ is one, a star-shaped manipulator is an open serial chain.
+When $k$ is two, it is a single-loop closed chain.
+
+Assuming that the foot of $M_j$ is fixed at $o_j$, let
+$f_j(\Theta_j)=p$ denote the kinematic map of $M_j$, where
+$\Theta_j = (\theta_{j,1}, \cdots, \theta_{j,n_j})$ is the tuple
+of joint angles, and $p$ is the location of the endpoint of the
+leg (the thorax end). When $M_j$ is detached from the junction
+$A$, the image of its joint space is the reachable set of
+positions of the free end of the leg, called the workspace $W_j$.
+%jct 1/16/06 - small change
+In the absence of joint limits, the workspace $W_j$ is an annulus
+if and only if there exists one link with length strictly greater
+than the sum of all the other link lengths. Otherwise it is a
+disk. Clearly, the workspace $W_A$ of $A$ when all the legs are
+connected to $A$ is given by:
+\begin{equation}
+\label{eq:defW}
+   W_A = \bigcap_{j=1}^k W_j.
+\end{equation}
+\newnot{2-4}
+
+In our study of ${\cal C}$, it will be convenient to refer to
+several other \cspace s. The \cspace \ of leg $M_j$ when detached
+from the rest of the manipulator will be denoted by ${\cal C}_j$.
+When the endpoint is fixed at the point $p$, leg $j$ will be
+denoted by $\tilde M_j(p)$, where the tilde is used to emphasize
+the fact that the endpoint has been fixed. Note that $\tilde
+M_j(p)$ is a single-loop planar closed chain, about which much is
+known (see \cite{MT2}), including global structural properties of
+its \cspace, denoted by $\tilde {\cal C}_j(p) = f_j^{-1}(p)$. When
+the junction $A$ of a star-shaped manipulator is fixed at point
+$p$, its \cspace \ will be denoted by $\tilde {\cal C}(p)$. Since
+collisions are ignored, the motions of the legs are independent,
+and therefore the \cspace \ of the manipulator (with fixed
+junction) is the product of the \cspace s of the legs with all
+endpoints fixed at $p$:
+%
+\newnot{2-2}
+\begin{equation}
+\label{eq:def_tildeCp}
+   \left. \begin{array}{rcl}
+   \tilde {\cal C}(p) & = & \tilde {\cal C}_1(p) \ \times
+           \cdots \times \ \tilde {\cal C}_k(p) \\ [5pt]
+          & = & f_1^{-1}(p) \ \times \cdots \times \ f_k^{-1}(p) \\ [5pt]
+          & = & f^{-1}(p)
+   \end{array} \right\}
+\end{equation}
+%
+where by analogy, $f$ is a total kinematic map of the star-shaped
+manipulator. Loosely speaking, the union of the \cspace s $\tilde
+{\cal C}(p)$ at each point $p$ in $W_A$ gives the \cspace \ of a
+star-shaped manipulator: \newnot{2-7}
+%
+\begin{equation}
+\label{eq:def_C}
+   {\cal C} = \bigcup_{p \in W_A} \tilde {\cal C}(p).
+\end{equation}
+%
+Several properties of the \cspace s ${\cal C}_j$ and $\tilde {\cal
+C}_j(p)$ are highly relevant and so are reviewed here before
+analyzing the \cspace \ of star-shaped manipulators.  It is well
+known that the \cspace \ of $M_j$ is a product of circles ({\em
+i.e.,} ${\cal C}_j = (S^1)^{n_j}$)
+%jct 1/16/06 - footnote added
+\footnote{Recall the assumption of no joint limits.}. The
+workspace $W_j$ contains a critical set $\Sigma_j$ which is
+composed of all points $p$ in $W_j$ for which the Jacobian of the
+kinematic map $Df_j(\Theta_j)$ drops rank for some $\Theta_j \in
+f_j^{-1}(p)$. These points form concentric circles of radii
+$|l_{j,1}\pm l_{j,2} \pm \cdots \pm l_{j,n_j}|$, as shown in
+Fig~\ref{fig:single-leg}. When $A$ coincides with a point in
+$\Sigma_j$, the links can be arranged such that they are all
+colinear, in which case the number of instantaneous degrees of
+freedom of the endpoint of the leg is reduced from two to one.
+%
+\begin{figure}
+  \centering
+  \includegraphics[width=3in]{fig_2/nir-paper-1b.eps}
+  \caption{{\bf Left:} The workspace $W_j$ of a three-link open chain $M_j$
+    based at $o_j$. The critical set $\Sigma_j$ of the kinematic map $f_j$ is four
+    concentric circles.  The small circles, figure eights, and points at 12 o'clock
+    show the topology of the \cspace \ $\tilde {\cal C}_j(p)$ of the
+    leg when its endpoint is fixed at a point in one of the seven regions
+    delineated by the critical circles (one of the four circles or one of
+    the three open annular regions between them).  {\bf Right:} The inverse
+    image of the curve $\gamma$ - a ``pair of pants."}
+ \label{fig:single-leg}
+\end{figure}\newnot{2-8}
+%
+Now consider the case where the endpoint of leg $j$ is fixed to
+the point $p$.  In other words, we are interested in the \cspace \
+$\tilde {\cal C}_j(p)$ of $\tilde M_j(p)$, which amounts to
+calculating the inverse kinematics (IK) $f_j^{-1}(p)$. The
+structure of $f_j^{-1}(p)$ has been established in
+\cite{Burdick89} for four-link single-loop closed chains, and in
+\cite{MT2,MT1} for chains with an arbitrary number of links.
+\newnot{2-9}
+
+Next, we compute $f_j^{-1}(p)$ for a three-link serial chain to
+explain the basic idea used in \cite{MT2, MT1} for analyzing the
+IK map of a closed chain with an arbitrary number of links. As
+shown in Fig. \ref{IK}, we begin with the IK of a two-link serial
+chain. Each point in the workspace could have 0,1,or 2 IK
+solutions, and the set of points with constant number of IK
+solutions forms annular regions separated by the critical set of
+this chain. The IK of a three-link serial chain is then deduced by
+breaking the chain into a two-link serial chain and a one-link
+serial chain, and taking the union of the IK solutions of the
+two-link chain for all points in the workspace of the one-link
+chain. It is easy to check that for points in the outer most
+annular region in the workspace of the three-link chain, the
+workspace of the one-link chain (a circle) always intersects with
+the outer-most critical circle of the two-link chain at two
+points, indicating that the IK of this point is the union of two
+curve segments with a pair of endpoints identified, respectively,
+i.e., a circle. The inverse kinematics for points in other regions
+can be derived similarly. The results are shown in
+Fig.~\ref{fig:single-leg}. In the 12 o'clock position, points,
+circles, and figure eights are drawn to represent the global
+structures of $\tilde {\cal C}_j(p)$ in the seven regions of
+$W_j$. Specifically, when $A$ is fixed to a point $p$ on the
+outer-most critical circle, $\tilde {\cal C}_j(p)$ is a single
+point. For $p$ fixed to any point in the largest open annular
+region, \cspace \ is a single circle. Continuing inward, the
+possible \cspace \ types are a figure eight (on the second largest
+critical circle), two disconnected circles, a figure eight again,
+a single circle, and a single point (on the inner-most critical
+circle).
+
+First, the connectivity of $\tilde {\cal C}_j(p)$ is uniquely
+determined by the number of ``long links."  Consider the augmented
+link set composed of the links of $M_j$ and $\overline {o_jp}$,
+which will be called the fixed base link with length denoted by
+$l_{j,0}$. Let $L_j$ be the sum of all the link lengths including
+the fixed base link ({\em i.e.,} $L_j = \sum_{i=0}^{n_j}
+l_{j,i}$). Further, let ${\cal L}_j(p)$ be a subset of
+$\{0,1,...,n_j\}$ such that $l_{j,\alpha}+l_{j,\beta} > L_j / 2; \
+\alpha,\beta \in {\cal L}_j(p), \ \alpha \neq \beta$. Over all
+such sets, let ${\cal L}_j^*(p)$ be a set of maximal cardinality.
+Then the number of long links of $\tilde M_j(p)$ is defined as
+$|{\cal L}_j^*(p)|$, where $| \cdot |$ denotes set cardinality.
+\newnot{2-3}
+
+\medskip
+\begin{Lemma} {\bf Kapovich and Milson \cite{KM}, Trinkle and
+Milgram \cite{MT2}}\\
+\label{lem-02} \rm The \cspace \ $\tilde {\cal C}_j(p) =
+f_j^{-1}(p)$ has two components if and only if $|{\cal
+L}_j^*(p)|=3$, and is connected if and only if $|{\cal
+L}_j^*(p)|=2$ or $0$. No other cardinality is possible.
+\end{Lemma}
+
+\medskip
+
+Let us return to the discussion of Fig.~\ref{fig:single-leg}.
+Viewing $W_j$ as a base manifold and the \cspace \ corresponding
+to each end point location as a fibre, it is apparent that the
+critical set $\Sigma_j$ partitions $W_j$ into regions over which
+the \cspace s $\tilde {\cal C}_j(p)$ form a trivial fibration. The
+implications of this observation are useful in determining the
+\cspace \ of more complicated mechanisms.  Consider a modification
+to $\tilde M_j(p)$ that allows the endpoint to move along a
+one-dimensional curve segment $\gamma$ within $W_j$.  Then as long
+as $\gamma$ is entirely contained in one of the regions defined by
+the critical circles, $\tilde {\cal C}_j(\gamma) = \tilde {\cal
+C}_j(p) \times I$, where $I$ is the interval.  If $\gamma$ crosses
+a critical circle transversally, then $\tilde {\cal C}_j(\gamma) =
+(\tilde {\cal C}_j(p_1) \times I) \bigcup \tilde {\cal C}_j(p_3)
+\bigcup (\tilde {\cal C}_j(p_2) \times I)$, where $p_1$ is a point
+in one of the two open annular regions containing $\gamma$, $p_2$
+is a point in the other, and $p_3$ is a point on the critical
+circle crossed by $\gamma$, and $\bigcup$ denotes the standard
+``gluing" operation. In Fig.~\ref{fig:single-leg}, an example
+$\gamma$ and the corresponding \cspace \ $\tilde {\cal
+C}_j(\gamma)$ are shown.
+
+\sect{Analysis of Star-Shaped Manipulators} \label{section-2} For
+star-shaped manipulators with one or two legs, the global
+topological properties of the \cspace \ ${\cal C}$ are fully
+understood (for one, see \cite{Lat92}; for two, see
+\cite{MT2,MT1}). The goals of this section are to study the global
+properties of ${\cal C}$ when $M$ has more than two legs and to
+derive necessary and sufficient conditions for solution existence
+to the motion planning problem.
+
+\subsubsection{Local Analysis}
+As a direct generalization of the critical set of a single leg, we
+define the critical set of a star-shaped manipulator as a subset
+$\Sigma$ of $W_A$ such that for every $p \in \Sigma$, there exists
+a configuration $c$ such that at least one of the Jacobians
+$\{Df_1(c),\cdots,Df_k(c)\}$ drops rank.  By definition we have:
+%
+\begin{eqnarray}
+\label{eqn-01}
+ \Sigma=\left(\bigcup_{i=1}^k \Sigma_i \right)\bigcap W_A.
+\end{eqnarray}
+%
+An advantage of this definition is that $\Sigma$ can be used to
+stratify $W_A$ such that each stratum is trivially fibred.
+Figure~\ref{fig:double-leg} shows a star-shaped manipulator with
+two legs.  The critical set $\Sigma$ is the boundary of the lune
+formed by the intersection of the outer critical circles of their
+individual workspaces.  For every point interior to the lune, the
+fibre is two circles (the direct product of two points with one
+circle). The fibres associated to the vertices of the lune are
+single points, which correspond to simultaneous full extension of
+the two legs.
+%
+\begin{figure}
+  \centering
+  \includegraphics[width=3in]{fig_2/nir-paper-2a.eps}
+ \caption{The workspace $W_A$ of $A$ for a star-shaped manipulator with $k=2$
+    is the intersection of the workspaces of $A$ for each leg considered
+    separately.  The critical set $\Sigma$ is composed of the black
+    circular arcs where they bound or intersect the gray area.
+    }
+ \label{fig:double-leg}
+\end{figure}
+%
+Fig.~\ref{fig:chambers} shows a possible workspace for a
+star-shaped manipulator with three legs. The critical set defines
+65 distinct sets $^dU_i$ of varying dimension $d$, where $i$ is an
+arbitrarily assigned index that simply counts components. We will
+refer to these sets as {\sl chambers}. There are 12
+two-dimensional, 32 one-dimensional, and 21 zero-dimensional
+chambers, each of which is trivially fibred. Removing the
+$^0\!U_i$ from $\Sigma$ partitions it into open one-dimensional
+chambers $^1\!U_i$, $i=1,\cdots,^1\!m$. Removing $^0\!U_i$ and
+$^1\!U_i$ from $W_A$ yields open two-dimensional sets $^2\!U_i, \
+i=1,\cdots,^2\!m$, for which the following relationships hold:
+%
+\newnot{2-5}
+
+\begin{eqnarray}
+\Sigma & = & \left(\bigcup_{i=1}^{^0\!m} {}^0\!U_i \right) \bigcup
+\left(\bigcup_{i=1}^{^1\!m} {}^1\!U_i \right) \\[5pt]
+W_A - \Sigma & = & \bigcup_{i=1}^{^2\!m} {}^2\!U_i.
+\end{eqnarray}
+\begin{figure}
+ \vbox{
+      \centering {\epsfysize=2.3in \epsffile{fig_2/nir-paper-3a.eps}}
+      }
+ \caption{Workspace (shaded gray) of a star-shaped manipulator with
+ three legs. The critical set partitions $W_A$ into $12$ two-dimensional,
+ 32 one-dimensional, and 21 zero-dimensional chambers.}
+ \label{fig:chambers}
+\end{figure}
+
+\smallskip
+
+\begin{Proposition}
+\label{prop-01} \rm For all $d=0,1,2$ and $i$, $f^{-1}(^d\!U_i) \
+= \ ^d\!U_i \times f^{-1}(p)$, where $p$ is any point in $^d\!U_i$
+and the operator $\times$ denotes the direct product. Gluing the
+$f^{-1}(^d\!U_i)$ for all $i$ and $d$ gives the total \cspace \
+${\cal C}$.
+\end{Proposition}
+
+\medskip
+
+{\bf Proof:} When $d=0$, ${}^0\!U_i$ contains a single point, the
+result follows. When $d=1$, ${}^1\!U_i$ belongs to one critical
+circle of one leg, say $\tilde M_j$. Any two points $p_1,p_2 \in
+{}^1\!U_i$ are related by a Euclidean rotation $p_2-o_j =
+R(p_1-o_j)$, indicating that $\tilde {\cal C}_j(p_1)$ and $\tilde
+{\cal C}_j(p_2)$ are  homotopic. %homeomorphic.
+Thus $\tilde {\cal C}_j(p)$ for all $p \in {}^1\!U_i$ have
+equivalent topological structure. For the other legs $\tilde M_l$,
+$l \neq j$, according to \cite{MT1} (Lemma $6.1$ and
+Corollary~$6.5$) $\tilde {\cal C}_l(p)$ for all $p \in {}^1\!U_i$
+have equivalent topological structures as ${}^1\!U_i$ is free of
+critical points of $\tilde M_l(p)$. Thus $f^{-1}(p) = \tilde {\cal
+C}_1(p)\times \cdots \times \tilde {\cal C}_k(p)$ for all $p \in
+{}^1\!U_i$ have equivalent topological structures. The case when
+$d=2$ can be proved by applying Lemma $6.1$ and Corollary $6.5$ of
+\cite{MT1} to all legs. \hfill$\blacksquare$
+
+\medskip
+
+Proposition \ref{prop-01} and the fact that ${}^d\!U_i$ is a
+simply connected set, reveal that each component of
+$f^{-1}({}^d\!U_i)$ is a direct product of one component of
+${\tilde {\cal C}}_j(p)$, $j=1,\cdots,k$, with a $d$-dimensional
+disk. Using $|{\cal L}_j^*(p)|$, $j=1,\cdots,k$ and Lemma
+\ref{lem-02}, one can show that the number of components of
+$f^{-1}({}^d\!U_i)$ is $2^{k_0}$, where $k_0 \leq k$ is the number
+of legs for which $|{\cal L}_j^*(p)| = 3$.
+
+\smallskip
+
+\subsubsection{Local Path Existence}
+Before considering the global path existence problem, consider
+motion planning between two valid configurations $c_{\rmtt[init]}$
+and $c_{\rmtt[goal]}$ for which the junction $A$ lies in the same
+chamber. Since the fibre over every point in ${}^d\!U_i$ is
+equivalent, path existence amounts to checking the component
+memberships of the configurations $c_{\rmtt[init]}$ and
+$c_{\rmtt[goal]}$.
+
+For a single leg $\tilde{M}_j(p)$, if the number of long links
+$|{\cal L}_j^*(p)|$ is not three, then any two configurations of
+$\tilde{M}_j(p)$ are in the same component. When $|{\cal
+L}_j^*(p)|=3$, choose any two long links and test the sign of the
+angle between them (with full extension taken as zero).  There are
+two possible signs, one corresponding to {\sl elbow-up} and the
+other to {\sl elbow-down}. If for two distinct configurations of
+$\tilde{M}_j$, $A$ lies in the same chamber, there is a continuous
+motion between them while keeping $A$ in this chamber, if and only
+if the elbow sign is the same at both configurations (naturally,
+one must perform the sign test with the same two links and in the
+same order for both configurations). Considering all the legs
+together, a continuous motion of $A$ in ${}^d\!U_i$ exists if and
+only if a motion exists for each leg individually. The previous
+discussion serves to prove the following result.
+
+\medskip
+
+\begin{Proposition}
+\label{prop-2} \rm Restricted to $f^{-1}({}^d\!U_i)$, two
+configurations $c_1,c_2 \in f^{-1}({}^d\!U_i)$ are path connected
+if and only if for each leg $\tilde M_j$ with $|{\cal L}_j^*|=3$
+in ${}^d\!U_i$, the elbow angle of $\tilde M_j$ has the same sign
+at $c_1$ and $c_2$.
+\end{Proposition}
+
+\medskip
+
+Proposition \ref{prop-2} completely solves the path existence
+problem if $W_A$ consists of a single chamber. However, things
+become complex when $W_A$ has more than one chamber.
+
+\subsubsection{Singular Set and Global \cspace \ Analysis}
+
+Recall that the \cspace \ ${\cal C}$ is a union of
+$f^{-1}({}^d\!U_i)$, $d \in \{0,1,2\}$, $i=1,\cdots,{}^d\!m$ and
+that $f^{-1}(p)$, $p\in {}^d\!U_i$ for $d\neq 2$ and all $i$ is a
+set containing at least a singularity of $f$. Combining the local
+\cspace \ and singular set analysis yields the global structure of
+\cspace.
+
+\medskip
+
+\begin{Proposition}
+\label{prop-sing} \rm For all $p \in \Sigma_j$, $f_j^{-1}(p)$ is a
+singular set containing isolated singularities. If a singularity
+separates its neighborhood $V$ in $f_j^{-1}(p)$, then it is these
+singularities which glue the two separated components in
+$f_j^{-1}(q)$ where $q \in W_A-\Sigma_j$ is a point sufficiently
+close to $p$.
+\end{Proposition}
+
+\medskip
+
+{\bf Proof:} First it is obvious that $f_j^{-1}(p)$ contains
+isolated singularities for there are finite ways to colinearize
+all the links of a close chain. Second, let
+\[
+   \gamma: (-\varepsilon,\varepsilon) \rightarrow W_A,\, \gamma(0)=p
+\]
+\newnot{2-6}
+be a curve that is transverse to $\Sigma_j$. According to
+Corollary 6.6 of \cite{MT1}, the distance function
+$s(\gamma(t))=\int_{0}^t |{\dot \gamma}|dt$ defines a Morse
+function on $f_j^{-1}(\gamma)$
+\[
+   s \circ f_j: f_j^{-1}(\gamma) \rightarrow \reals.
+\]
+Note that $0$ is a singular value of $s \circ f_j$ and the
+isolated singularities of $f_j^{-1}(p)$ are also singularities of
+$s \circ f_j$. The result of Morse theory applying to $s \circ
+f_j$ yields that $(s \circ f_j)^{-1}(0)=f_j^{-1}(p)$ is given by
+attaching a handle to $(s \circ
+f_j)^{-1}(\varepsilon_0)=f_j^{-1}(q)$ for a sufficiently small
+$\varepsilon_0$ and $q$ a point sufficiently close to $p$. The
+Proposition follows.
+  \hfill$\blacksquare$\medskip
+
+%jct 1/16/06 - changed all {\cal J} to J based on reviewer question - 4 places.
+Next, we establish necessary and sufficient conditions for the
+connectivity of ${\cal C}$.  Let ${J}$ be the index set such that
+for all $j \in {J}$, $|{\cal L}_j^*|=3$ for at least one chamber
+${}^d\!U_i$. We prove the following theorem.
+
+\medskip
+
+\begin{Theorem}
+\label{them-1} \rm Suppose $W_A = \bigcup_{d=0}^2 \left(
+\bigcup_{i=1}^{{}^d\!m} {}^d\!U_i \right)$.  Then ${\cal C} =
+f^{-1}(W_A)$ is connected if and only if:
+\begin{enumerate}
+\item
+    $W_A$ is connected;
+\item
+    $\Sigma_j \bigcap W_A \ne \emptyset$ for all $j \in {J}$.
+\end{enumerate}
+\end{Theorem}
+
+\medskip
+
+{\bf Proof:} (i) ``Necessity:" Since ${\cal C}$ is a fibration of
+the base manifold $W_A$, it can have one component only when $W_A$
+has one component.  Thus item $1$ of Theorem~\ref{them-1} is
+required.
+%
+Second, in order that ${\cal C}$ be connected, for each leg $M_j$
+restricted to $W_A$, the \cspace \ ${\tilde {\cal C}}_j(W_A) =
+f_j^{-1}(W_A)$ must be connected. By definition, for all $j \in
+{J}$, there exists a chamber ${}^d\!U_i$ such that $|{\cal
+L}_j^*|=3$. The result of Proposition \ref{prop-sing} means that
+${\tilde {\cal C}}_j(W_A)$ is connected only if $W_A \bigcap
+\Sigma_j \ne \emptyset$.
+
+(ii) ``Sufficiency:" Item 1 and 2 imply that ${\tilde {\cal
+C}}_j(W_A)$ are path connected for all $j$. Moreover, ${\cal C}$
+is a fibration over $W_A$. The result follows.
+ \hfill$\blacksquare$\medskip
+
+Fig.~\ref{fibre} illustrates the global connectivity for an
+example $W_A$ corresponding to a star-shaped manipulator with two
+legs and a workspace for which there are two chambers $^2U_1$ and
+$^2U_3$ where leg~1 has three long links and another chamber
+$^2U_4$ where both legs have three long links.  Among these
+chambers, ${}^1\!U_1$ and ${}^1\!U_2$ belong to $\Sigma_1$, and
+${}^1\!U_3$ belongs to $\Sigma_2$. According to
+Theorem~\ref{them-1}, the \cspace \ is path connected.  In this
+example, the ${\cal C}$ is the product of the two structures
+shown.
+%
+\begin{figure}
+ \vbox{
+      \centering {\epsfysize=3.2in \epsffile{fig_2/fibre.eps}}
+      }
+ \caption{\cspace \ of a star-shape manipulator with two legs.
+ For simplicity, only the portion of $f^{-1}(\gamma)$
+ is shown, where $\gamma$ is a continuous curve in $W_A$
+ that visits all chambers. }
+ \label{fibre}
+\end{figure}
+
+\smallskip
+
+\begin{Corollary}
+\label{cor-1} \rm Two configurations $c_1$ and $c_2$ of a
+star-shaped manipulator are in the same component if and only if
+\begin{enumerate}
+\item $f(c_1)$ and $f(c_2)$ are in the same component of $W_A$;
+\item For each leg $j$ with $|{\cal L}_j^*|=3$ for all chambers
+${}^d\!U_i$ in the component of $W_A$ which contains $f(c_1)$ and
+$f(c_2)$, the elbow sign is same at both $c_1$ and $c_2$.
+\end{enumerate}
+\end{Corollary}
+
+\medskip
+
+\begin{Remark}
+\rm As a matter of fact, $\Sigma$ completely determines the
+connectivity of \cspace. When computing a path between two given
+configurations, often motions of the junction to points on
+$\Sigma$ are incorporated to allow adjustment of leg-angle signs.
+However, inevitable deviations of the junction from $\Sigma$
+caused by numerical errors, make it impossible to adjust the sign
+of legs while fixing its end point. For these reasons, points in
+2D chambers are preferred for sign adjustment.
+\end{Remark}
+
+\sect{A Polynomial-Time, Exact, Complete Algorithm}
+\label{section-3} Our algorithm consists of two main routines,
+{\tt PathExists} and {\tt ConstructPath}. {\tt PathExists} solves
+the path existence problem, i.e., determining if an initial and an
+goal configuration are path-connected, and {\tt ConstructPath}
+constructs a path between them if there exists a path.
+
+Notice that the \cspace \ of a star-shaped manipulator could be
+very complex. Even the simple planar five-link single-loop closed
+chain, its \cspace \ could be as complex as the connected sum of
+four torii \cite{MT1}. So determining the path existence without
+using the \cspace \ information is difficult. Our strategy is to
+solve the path existence based on the set of critical circles
+$\Sigma_j$ in the workspace, and then construct the path combining
+our knowledge of the workspace and the structure of the \cspace \
+of single-loop closed chains. We emphasize here that the problem
+is not just moving the junction point between an initial and a
+goal position, but moving the manipulator along with all its legs
+from an initial configuration to a goal configuration. So, the
+workspace information will be insufficient for path construction.
+In {\tt ConstructPath}, we employ a move that changes the shape of
+a leg with its endpoint fixed in the workspace. This move, called
+the sign-adjust move, uses the knowledge of the \cspace \ of a
+single-loop closed chain. Below we will show that the overall
+complexity of {\tt PathExists} and {\tt ConstructPath} is
+$O(k^3N^3)$, where $N$ is the maximum number of links in a leg and
+$k$ is the number of legs. The polynomial complexity is key to the
+applications like folding of macromolecules, which can can be
+modeled as a closed chain with large $k$ and $N$.
+
+
+The logical flow of {\tt PathExists} is illustrated in
+Figure~\ref{PathExists}. Its input is the topology and link
+lengths of a star-shaped manipulator and two valid configurations,
+$c_{\rmtt[init]}$ and $c_{\rmtt[goal]}$.  The output is the answer
+to the path existence question.
+%
+\begin{figure}
+  \centering
+  \includegraphics[width=2.8in]{fig_2/star-shaped-flow-chart6_1.eps}
+  \caption{Logical flow and complexity of the major steps
+  of {\tt PathExists}.}
+  \label{PathExists}
+\end{figure}
+%
+The approach taken is to compute $W_A$ and then, for each leg with
+its end point constrained to lie in $W_A$, to determine if its
+initial and goal configurations are path connected. Notice that
+$W_j$ is either a disk or an annular region,  $W_A$ can be
+constructed by calculating the intersections between no more than
+$2n$ circles. So constructing $W_A$ is polynomial-complex.  The
+most difficult issue is to check the path existence. Since the
+\cspace \ of a leg is guaranteed to be connected if one of its
+critical circles $\Sigma_j$ intersects $W_A$, the most straight
+forward way to test connectivity is to explicitly perform the
+intersections. However, since there are as many as $2^{n_j-1}$
+critical circles, any algorithm based on this approach will have
+worst-case complexity that is at least exponential in $N$. The key
+contribution of {\tt PathExists} is a polynomial-time algorithm
+for checking the existence of an intersection between $W_A$ and a
+critical circles - even though there is an exponential number of
+these circles.  Recall that if a leg has three long links, then it
+is impossible to move the leg so that the three long links change
+from an elbow-up configuration to an elbow-down configuration. The
+following algorithm constructs a novel polynomial-complex method
+that can determine if there is point in $W_A$ in which the number
+of long links of a leg is not $3$ (see Step 4 in {\tt
+PathExists}).
+
+\medskip
+
+\noindent \framebox{1. Construct $W_A$}
+We compute $W_A$ in three steps.\\
+Step 1: Compute the boundary circles of $W_j$. In general, $W_j$
+is an
+%jct 1/16/06 - typo
+annulus. The radius of its outer boundary circle is
+$r_{\rmtt[max]}=\sum_{i=1}^{n_j} l_{j,i}$, while that of its inner
+boundary circle, $r_{\rmtt[min]}$, can be determined by comparing
+$l_{\rmtt[max]}:=\max_i l_{j,i}$ and
+$r_{\rmtt[max]}-l_{\rmtt[max]}$.
+
+If $l_{\rmtt[max]}>r_{\rmtt[max]}-l_{\rmtt[max]}$, then
+$r_{\rmtt[min]}=2l_{\rmtt[max]}-r_{\rmtt[max]}$, else,
+$r_{\rmtt[min]}=0$;\\
+Step 2: Decompose the whole plane into cells using all boundary
+circles of all legs (e.g., the line sweeping algorithm can do
+this), and construct the cell adjacency graph;\\
+Step 3: Pick a point from the interior of each cell, compute its
+distance from each base point, and compare the distance with the
+radii of the two boundary circles of $W_j$. The set of cells which
+can be reached by all legs constitute $W_A$.\\
+The complexity of this 2-D cell decomposition algorithm is
+$O(k^2+kN)$.
+\medskip \\
+\framebox{2. Are $p_{\rmtt[init]}$ and $p_{\rmtt[goal]}$ in same
+component of $W_A$?} As an immediate consequence of the cell
+decomposition, this can be answered directly by searching the cell
+graph.
+\medskip  \\
+\framebox{3. Compute $J$} This step is used to filter out easy
+solution existence checks, based on the cardinality and members of
+the sets ${\cal L}_j^*(p_{\rmtt[init]})$ and ${\cal
+L}_j^*(p_{\rmtt[goal]})$. For each leg $\tilde
+M_j(p_{\rmtt[init]})$, compute $L_j$ (see Section~III) and find
+the three longest links of the set $\{l_{j,0},...,l_{j_{n_j}} \}$.
+Denote these links by $(p_{\rmtt[init]};
+\lambda_{j,1},\lambda_{j,2},\lambda_{j,3})$. Do the same for
+$(p_{\rmtt[goal]})$ and define $(p_{\rmtt[goal]};
+\lambda_{j,1},\lambda_{j,2},\lambda_{j,3})$. This requires $O(N)$
+work. Finally, $|{\cal L}_j^*(p_{(\cdot)})| = 3$ if and only if
+$\lambda_{j,2} + \lambda_{j,3} > L_j/2$.  If ${\cal
+L}_j^*(p_{\rmtt[init]}) = {\cal L}_j^*(p_{\rmtt[goal]})$ and
+$|{\cal L}_j^*(p_{\rmtt[init]})| = 3$, and if the signs of the
+long links are different at $c_{\rmtt[init]}$ and
+$c_{\rmtt[goal]}$, then add $j$ into $J$.
+Computing $J$ is $O(kN)$. \medskip  \\
+
+\framebox{4. Does the set of long links vary for all $j \in J$?}
+If and only if $q \in W_A$ exists such that ${\cal L}_j^*(q) \neq
+{\cal L}_j^*(p_{\rmtt[init]})$, then it is possible to make the
+long links colinear and thus change the signs of their relative
+angles. This can be done by computing a point $q \in W_A$ on the
+boundary of the cell that contains $p_{\rmtt[goal]}$ and keeps the
+same set ${\cal L}_j^*(p)$ for all $p$ in this cell. This boundary
+is characterized by $\lambda_{j,2}+\lambda_{j,3}=L_j/2$. Since
+$l_{j,0}$ is the only link whose length varies along with $p$,
+this boundary must be one or two circles (called inner and outer
+circles, respectively) whose radii, denoted $d_{\rmtt[max]}$ and
+$d_{\rmtt[min]}$, depend on the link lengths of the leg. Let
+$L_{j,0}=\sum_{i=1}^{n_j} l_{j,i}$ and suppose the four longest
+links at $p_{\rmtt[goal]}$ are
+$(\lambda_{j,1}>\lambda_{j,2}>\lambda_{j,3}>\lambda_{j,4})$ with
+$\lambda_{j,2}+\lambda_{j,3}>L_j/2$, we deduce the radii of the
+boundary circles for
+four different cases:\\
+Case 1: if $l_{j,0}(p_{\rmtt[goal]})=\lambda_{j,1}$, then
+$d_{\rmtt[max]}= 2(\lambda_{j,2}+\lambda_{j,3})-L_{j,0}$, and
+$d_{\rmtt[min]}=\max \{L_{j,0}-2\lambda_{j,3},
+2(\lambda_{j,3}+\lambda_{j,4})-L_{j,0}\}$.\\
+Case 2: if $l_{j,0}(p_{\rmtt[goal]})=\lambda_{j,2}$,
+$d_{\rmtt[max]}=2(\lambda_{j,1}+\lambda_{j,3})-L_{j,0}$, and
+$d_{\rmtt[min]}=\max\{L_{j,0}-2\lambda_{j,3},
+2(\lambda_{j,3}+\lambda_{j,4})-L_{j,0}\}$.\\
+Case 3: if $l_{j,0}(p_{\rmtt[goal]})=\lambda_{j,3}$,
+$d_{\rmtt[max]}=2(\lambda_{j,1}+\lambda_{j,2})-L_{j,0}$, and
+$d_{\rmtt[min]}=\max\{L_{j,0}-2\lambda_{j,2},2(\lambda_{j,2}+\lambda_{j,4})-L_{j,0}\}
+$. \\
+Case 4: Otherwise,
+$d_{\rmtt[max]}=\min\{2(\lambda_{j,2}+\lambda_{j,3})-L_{j,0},L_{j,0}-2\lambda_{j,2}\}$,
+and $d_{\rmtt[min]}=0$.\\
+If there is no overlap between the two boundary circles and the
+component of $W_A$ that contains $p_{\rmtt[init]}$ and
+$p_{\rmtt[goal]}$, then no path exists between $c_{\rmtt[init]}$
+and $c_{\rmtt[goal]}$. Otherwise, path exists and we obtain way
+points $p_j$ for all legs $j\in J$. Computing $d_{\rmtt[max]}$,
+$d_{\rmtt[min]}$, and the way points $p_j$ is $O(kN)$.
+
+\medskip
+
+The basic idea of {\tt ConstructPath} is that when moving from
+$c_{\rmtt[init]}$ to $c_{\rmtt[goal]}$, those legs $j \in J$ may
+require a change in the signs of relative angles between long
+links, which is always possible at the way point $p_j$ or other
+critical points of the corresponding leg. A natural approach then
+is to use two motion generation primitives: {\sl accordion move}
+and {\sl sign-adjust move}.  The former moves the thorax endpoint
+(at $A$) along a specified path segment with all legs moving
+compliantly so that all loop closures are maintained. The latter
+keeps the endpoint fixed at a way point $q_j \in \Sigma_j$ (e.g.,
+$q_j=p_j$ or other critical points) while moving leg $j$ into a
+singular configuration and then to a nearby configuration with the
+sign of the relative angle between a pair of long links in this
+leg chosen to match those of $c_{\rmtt[goal]}$.
+
+Note that though the guard points $q_j$ are in the critical set
+$\Sigma_j$, the configuration at which leg $j$ approaches these
+points need not to be aligned. Without considering the control
+issue, a leg can be moved to a colinear configuration with the
+thorax fixed. Even if control is considered for the sign-adjust
+move, the thorax can still be maintained to be fixed by keeping
+all other legs not aligned in the vicinity of $q_j$.
+
+The input of {\tt ConstructPath} is $W_A$ and its cell graph,
+$c_{\rmtt[init]}$, $c_{\rmtt[goal]}$, and the set of way points
+$p_{j}\, \in W_A, \, j\in J$ computed during the execution of {\tt
+PathExist}.
+
+\noindent \framebox{1. Construct an initial path} {\tt
+ConstructPath} explores the cell graph of $W_A$, and constructs a
+path in $W_A$ connecting $p_{\rmtt[init]}$ to $p_{\rmtt[goal]}$
+and visiting all of the way points. Since there are at most $k$
+way points, this can be done in $O(k^3)$ time (the path has $k+1$
+segments each with $O(k^2)$ arcs).
+
+\noindent \framebox{2. Construct {\em guards} and insert the {\rm
+guards} into the path} Notice that when one accordion moves a leg
+in a cell in which the number of long links is not $3$ (called
+one-component cell), neither the signs of concatenating angles,
+nor the sign between any pair of links in this leg will be kept
+invariant. Thus even if the desired sign between a pair of long
+links is adjusted at a way point, it still could change if the leg
+keeps moving in a one-component cell. For this reason, we set {\em
+guards} for legs which have three long links at $p_{\rmtt[goal]}$.
+These are the set of points $q_j$, each of which is the last
+intersection point between the above constructed path in $W_A$ and
+the boundary of the two-component cell of leg $j$ containing
+$p_{\rmtt[goal]}$. Thus the number of guards ($q_j$'s) may be more
+than the number of way points since the number of legs that have
+three long links at $p_{\rmtt[goal]}$ may be more than the
+cardinality of $J$. Next the {\em guards} are inserted into the
+path. Later when we construct the path in ${\cal C}$, sign-adjust
+moves are only performed at {\em guards} $q_j$ (but not $p_j$) for
+after that the thorax endpoint gets into the two-component cell
+and the sign between a pair of long links will not change during
+accordion moves, i.e., the leg will always remain in the right
+component of its \cspace.  Assuming each arc in the path is
+approximated by a fixed number of line segments, finding guards is
+$O(k^3)$.
+
+\noindent \framebox{3. Accordion moves and sign-adjust moves} The
+path in ${\cal C}$ then is produced by using accordion moves along
+the path and sign-adjust moves at the {\em guards}. At each {\em
+guard}, one checks the sign between a pair of long links of the
+corresponding leg. If it does not match the goal one, then the
+junction point is fixed while a sign-adjust move is executed,
+otherwise, the accordion move continues. Once $A$ is coincident
+with $p_{\rmtt[goal]}$, one is assured by the previous steps, that
+with $A$ fixed at $p_{\rmtt[goal]}$, the configuration of each leg
+is in the same component of its current \cspace \ $\tilde
+C_j(p_{\rmtt[goal]})$ as $c_{\rmtt[goal]}$. The final move can be
+accomplished using a special accordion move algorithm found in
+\cite{MT1}. At this stage, we remark that finding the set of way
+points $p_j$ and planning an initial path visiting all $p_j$ is
+necessary for otherwise, an arbitrary path between
+$p_{\rmtt[init]}$ and $p_{\rmtt[goal]}$ may not intersect the
+boundary of the two-component cell of a leg that contains
+$p_{\rmtt[goal]}$.
+
+The complexity of the accordion move algorithms reported in
+\cite{MT2} are $O(N^3)$. Since the path has $O(k^3)$ line segments
+the complexity of {\tt ConstructPath} is $O(k^3N^3)$. Note that
+accordion move algorithms with the required behavior can be
+designed to be $O(N^2)$, so the complexity of {\tt ConstructPath}
+could be reduced.
+
+Overall, our path planning algorithm is  $O(k^3N^3)$.
+
+\sect{Path Optimization and Robustness} \label{section-4} If a
+path between two given configurations exists, it is obvious that
+in our algorithm the choice of way points, and thus the path
+between the two configurations, is not unique. So a natural
+problem is path optimization with respect to meaningful metrics
+such as path length and singularity avoidance. Basically we say
+that many possible optimization objectives are potentially useful,
+but we consider the shortest path in this section. Notice that the
+way points are necessary for successively constructing a path from
+$c_{\rmtt[init]}$ to $c_{\rmtt[goal]}$ since an arbitrary chosen
+path of the thorax from $p_{\rmtt[init]}$ to $p_{\rmtt[goal]}$
+(like the line connecting them) will either go out of $W_A$, or
+have no intersection with the critical set $\Sigma_j$, in which a
+sign-adjust move is required for a leg. Thus the optimization
+problem arises in the choice of way points, the order of the way
+points, and the path between two consecutive way points.
+
+One may also take into consideration parallel singularities (cf.
+\cite{SG95}) and try to avoid them as much as possible by
+minimizing the number of singularities crossings. More precisely
+this may be done for example by first clustering singularity
+regions (see \cite{DCSY03}) and then choosing way points with the
+corresponding path having minimum number of crossings of these
+regions, finally their connecting path or trajectories (i.e. a
+path with temporal relations as well as the geometrical ones)
+should be chosen in the proper way (cf. \cite{NTU00}).
+
+Since ${\cal C}$ is a fibration over $W_A$, a meaningful metric
+for ${\cal C}$ is
+\begin{eqnarray}
+\label{rieman-metric}
+  ds^2=a_1 dp^Tdp+ a_2\sum_{j=1^k} du_j^TV_j^TV_jdu_j,\, a_1, a_2>0,
+\end{eqnarray}
+where $a_1$ and $a_2$ are two weights assigned to $dp^Tdp$ and
+$\sum_{j=1^k} du_j^TV_j^TV_jdu_j$, respectively for they are
+quantities with different physical meaning. The column vectors of
+$V_j \in \reals^{n_j \times (n_j-2)}$ forms a basis for the null
+space of the Jacobian $J_j=\frac{\partial f_j}{\partial \Theta_j}$
+of leg $j$, i.e.,
+\[
+    J_jV_j=0.
+\]
+$du_j$ denotes the incremental changes of the local coordinates on
+$\tilde {\cal C}_j(p)$. $dp$ and $V_j du_j$ stands for the
+infinitesimal motion along the base manifold and the fibre,
+respectively. The shortest path problem is to find a path
+$(p(t),\Theta_1(t),\cdots,\Theta_k(t))$ such that
+\begin{eqnarray}
+\label{obj}
+   \int_{t=0}^1 ds
+\end{eqnarray}
+is minimal. The optimal solution to (\ref{obj}) satisfies the
+geodesic equation
+\begin{eqnarray}
+\label{geodesic-eqn}
+   {\ddot v}_k+\Gamma_{ij}^k {\dot v}_i {\dot v}_j=0
+\end{eqnarray}
+where $v=[p^T,u_1^T,\cdots,u_k^T]^T$, and $\Gamma_{ij}^k$ denotes
+the Christoffel symbol of the metric (\ref{rieman-metric}).
+Solving (\ref{geodesic-eqn}) exactly is difficult. However, an
+approximation solution can be derived. Since a path from
+$c_{\rmtt[init]}$ to $c_{\rmtt[goal]}$ is globally optimal if and
+only if this path is also locally optimal, we construct an
+approximate shortest path in a way so that (i) $p(t)$ connects
+$p_{\rmtt[init]}$ and $p_{\rmtt[goal]}$ and visits all $p_i$.
+Moreover, $\int_{t=0}^1 \sqrt{dp^Tdp}$ is minimal; (ii) There is
+minimal number of accordion moves, and each accordion move is
+minimal; (iii) Except for the accordion moves, there is no other
+motions along the fibre.
+\begin{Remark}
+\rm The path constructed in this way is shortest if no accordion
+moves are needed for we always achieve minimal
+$ds=\sqrt{a_1dp^Tdp}$ infinitesimally, while it is only an
+approximation if there is at least one accordion move.
+\end{Remark}
+Mathematically, this problem can be described as
+%
+\[
+    \begin{array}{c}
+     \min  \int_0^1 \|dp\|   \\
+      p(t) \in W_A, \forall t \in [0,1] \\
+      p_i \in \{p(t)\}, \forall i \\
+      p_i \in {\cal A}_{\delta(i)}
+    \end{array}
+\]
+%
+where ${\cal A}_j, j\in J$ is the boundary arcs of the
+two-component cell of leg $j$ that contains $p_{\rmtt[goal]}$.
+$\delta(J)$ is a permutation of $J$ with $\delta(J) =J$. Solving
+this problem exactly is extremely hard, but a random search method
+(for example, the Controlled Random Search Method \cite{BS96}) can
+be used to quickly find a good approximate solution. Using the
+minimal number of accordion moves has been solved in {\tt
+ConstructPath}, and the minimal accordion move problem has been
+solved in \cite{MT1}. Combining these two, (ii) is solved.
+
+To solve (iii), we notice that for a local motion $dp=[dx,dy]$ of
+the thorax endpoint, $d\Theta_j^Td\Theta_j$ is minimized if and
+only if.
+%
+\[
+   d\Theta_j=J_j^+ dp
+\]
+%
+where $J_j^+$=$J_j^T(J_jJ_j^T)^{-1}$.
+
+Another important issue about our planning algorithm is
+robustness. The sign-adjust move of leg $j$ performed at a guard
+$q_j$ is only feasible when ${\cal C}_j(q_j)$ is connected. Since
+$q_j \in \Sigma_j$ which is only 1-D, a small perturbation of the
+junction point in $W_A$ (e.g., due to numerical errors) will
+violate the condition $p \in \Sigma_j$. When $p$ moves into a
+two-component cell, then the sign-adjust move may fail. A remedy
+to this is to modify the path of the thorax in the neighborhood of
+$q_j \in \Sigma_j$ so that a point $q_j'$ in the interior of a
+one-component cell is reached. After the sign of leg $j$ is
+adjusted to the desired one with $p$ fixing at $q_j'$, we apply a
+constrained accordion move algorithm to ensure that the leg $j$
+stays in the right component of ${\cal C}_j(p)$ just before its
+thorax endpoint enters the two-component cell containing
+$p_{\rmtt[goal]}$.  This resulting algorithm will also be robust
+to other errors such as the control and sensor errors if they are
+taken into account.
+
+
+\sect{Examples} \label{section-5}
+%jct 1/16/06 - efficiency -> complexity? correctness?
+In this section, we demonstrate the correctness and complexity of
+our algorithm through two examples: a manipulator with three
+three-link legs, and a manipulator with three five-link legs.
+Movies of the motion plans are very helpful in understanding the
+figures.  They can be found at
+\verb$http://www.cs.rpi.edu/~trink/ccwo.html$.
+%
+\begin{figure}
+  \centering
+  \includegraphics[width=3in]{fig_2/initial_goal_config.eps}
+  \caption{Manipulator's initial configuration (junction on the right, drawn red)
+  and goal configuration (junction just below the top left, drawn blue.) The boundary
+  circles of $W_j$ are drawn as dashed green lines.}
+  \label{start-goal}
+\end{figure}
+%
+\begin{figure}
+  \centering
+  \includegraphics[width=3in]{fig_2/workspace_path_2.eps}
+  \caption{A path between $p_{\rmtt[init]}$ and $p_{\rmtt[goal]}$ that is completely
+  contained in $W_A$.}
+  \label{workspace-path}
+\end{figure}
+%
+\begin{figure}
+  \centering
+  \includegraphics[width=3in]{fig_2/guards.eps}
+  \caption{The two guard points are the last intersection points between the
+  path of $A$ and the boundary circles of two two-component cells.}
+  \label{guard}
+\end{figure}
+%
+\begin{figure}
+  \centering
+  \includegraphics[width=3.5in]{fig_2/first_interval_2.eps}
+  \caption{All legs use an accordion move to move the junction $A$
+  to the first guard $q_1$ of leg $1$.}
+  \label{accordion-1}
+\end{figure}
+%
+\begin{figure}
+  \centering
+  \includegraphics[width=3.5in]{fig_2/second_interval_2.eps}
+  \caption{With the junction $A$ at $q_1$, the joint angles of leg $1$
+can be adjusted to achieve the signs required at the goal
+configuration. All other legs are fixed in place.}
+  \label{adjust_sign-1}
+\end{figure}
+%
+\begin{figure}
+  \centering
+  \includegraphics[width=3.5in]{fig_2/third_interval_2.eps}
+  \caption{All legs use an accordion move to move the junction $A$ to
+  the second guard $q_2$ of leg $2$.}
+  \label{accordion-2}
+\end{figure}
+%
+\begin{figure}
+  \centering
+  \includegraphics[width=3.5in]{fig_2/fourth_interval_2.eps}
+  \caption{With the junction $A$ at $q_2$, the joint angles of leg $2$
+can be adjusted to achieve the signs required at the goal
+configuration. All other legs are fixed in place.}
+  \label{adjust_sign-2}
+\end{figure}
+%
+\begin{figure}
+  \centering
+  \includegraphics[width=3.5in]{fig_2/five_interval_2.eps}
+  \caption{All legs use an accordion move to move the junction $A$ to its
+  goal location.  The signs of the joint angles are preserved guaranteeing
+  that legs~1 and~2 will be in the correct \cspace \ component once $A$ is fixed at
+  the goal position.}
+  \label{accordion_goal}
+\end{figure}
+%
+\begin{figure}
+  \centering
+  \includegraphics[width=3.5in]{fig_2/six_interval_2.eps}
+  \caption{All legs use the Trinkle-Milgram algorithm to achieve their
+  goal configurations with the junction $A$ fixed.}
+  \label{TMalg}
+\end{figure}
+
+In the first example, two of the three legs of the manipulator
+have three long links when $A$ is fixed at $p_{\rmtt[goal]}$.
+Figure~\ref{start-goal} shows the manipulator in its starting and
+goal configurations. Our algorithm predicts $J=\emptyset$.
+
+Then the algorithm constructs a path in $W_A$ from
+$p_{\rmtt[init]}$ to $p_{\rmtt[goal]}$, drawn as the dark solid
+lines in Fig. \ref{workspace-path}.  This path intersects
+
+the boundary of the two-component annular region of leg $j$ that
+contains
+
+$p_{\rmtt[goal]}$ several times, among which $q_j$, $j=1,2$ are
+the last ones. These two points are the guards (drawn as diamonds)
+where sign-adjust moves are performed.
+
+At $q_j$, $j=1,2$, we check the sign of a pair of long links of
+leg~$j$ and see if it matches its sign at the goal. If not, we fix
+the other two legs and adjust the sign of the chosen long links in
+leg $j$. In this particular example, we chose the two longest
+links as the pair of long links,and we find that at $q_1$ the sign
+of leg $1$ does not match that at the goal (while at $q_2$, leg
+$2$ has the same sign as the goal). Before leaving $q_j$ via the
+next accordion move, the pair of long links of leg $j$ was moved
+to the elbow-opposite configuration (recall that there are two
+configurations for these two links, one is ``elbow up", the other
+is ``elbow down"), which has exactly the same sign as the goal
+configuration. The Trinkle-Milgram algorithm \cite{MT2} is used to
+plan such a motion between the two elbow-opposite configurations.
+Figures~\ref{accordion-1} \--\ \ref{TMalg} show the progress of
+the manipulation plan as the steps of the complete planning
+algorithm are carried out.
+
+A bit more complex example in which the star-shaped manipulator
+has three five-link legs is shown in
+\verb$http://www.cs.rpi.edu/~trink/ccwo.html$. The computation
+time for path existence for star-shaped manipulators with less
+than 10 legs, and legs of less than 10 links is typically from
+less than 1 second to a few seconds when run in a Matlab, P4,
+WindowsXP system.
+
+
+
+\sect{Discussion} Star-shaped manipulators are closed chain
+manipulators subject to multiple loop closure constraints. The
+\cspace \ of these manipulators is often a lower-dimensional
+submanifold with high genus \footnote{The genus of a surface is
+defined as the largest number of nonintersecting simple closed
+curves that can be drawn on the surface without separating it.}
+embedded in the ambient space. Computing the silhouette of this
+manifold requires solving the extreme points of the manifold
+either in the ambient space whose dimension is much higher than
+that of the manifold itself, or in a set of local neighborhoods
+(local coordinate charts) whose number grows exponentially along
+with the genus of the submanifold. Although Canny's algorithm is
+very efficient in general, there is difficulty in implementation
+for star-shaped manipulators. Second, the classical cylindrical
+decomposition of \cspace \ (e.g. collin's decomposition) is a
+partition into simple connected subsets of \cspace \ called cells.
+However, this algorithm requires a description of the \cspace \ in
+terms of a set of polynomials over its ambient space. Again
+because the dimension of the ambient space could be very high, the
+computation time of this algorithm could become formidable.
+
+Our algorithm employs the special structural properties (fibration
+over the workspace) of the \cspace \ of star-shaped manipulators.
+It avoids using the coordinates of the ambient space as well as
+the local coordinate charts that covers the \cspace. In our
+algorithm the path existence and path construction are solved in
+polynomial time by combining the cell decomposition of the
+workspace (which is two dimensional and with simple shape) and the
+structure of the \cspace \ of single-loop closed chains. The
+critical set $\Sigma_j$, which marks the change of the topology of
+the \cspace \ of each leg, plays a key role in this algorithm.
+
+\sect{Conclusion} \label{section-6} In this paper, we studied the
+global structural properties of planar star-shaped manipulators.
+Via the analysis of the critical set $\Sigma$, we derived the
+global connectivity of the \cspace, and necessary and sufficient
+conditions for path existence. Based on these results, we devised
+a complete polynomial algorithm for motion planning. Simulation
+examples were used to illustrate the key ideas behind the motion
+planning problem of planar star-shaped manipulators.

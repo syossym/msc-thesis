@@ -1,0 +1,641 @@
+\selectlanguage{english}%
+
+\chapter{Coulomb Correlated Optical Transitions}
+
+\label{cha:Coulomb_Correlated_Optical_Transitions}The preceding chapter
+only considered free carriers and omitted their Coulomb interaction.
+The Coulomb interaction leads to the formation of electron-hole pairs,
+also denoted as \emph{excitons}. Due to their bound nature, the transition
+energy is lowered, leading to absorption below the fundamental band
+gap, while the correlated movement of the electron-hole pair increases
+the transition probability and consequently the transitions strengths.
+As in the previous chapter, the theory review is based mainly on \citet{Chuang1995,Jackson1998,Chow,Haug2009,Schafer2002}.
+
+The present chapter therefore focuses on the inclusion of such many
+body effects in the evaluation of optical properties. A large part
+of the theory presented in the preceding chapter can be recycled.
+In general, only the omitted two-particle interaction Hamiltonian
+$H_{2}$ in \ref{eq:Two_Particle_Hamiltonian} needs to be added to
+the equation of motion for the microscopic polarization \ref{eq:SC_Bloch_Eq_1}.
+The chapter is therefore structured as follows: first, the Coulomb
+Hamiltonian is derived for Bloch functions and transformed into the
+electron-hole picture. Then the Coulomb Hamiltonian is included into
+the equation of motion, and the so called Hartree-Fock approximation
+is performed along with the introduction of screening.
+
+
+\section{Second Quantization}
+
+
+\subsection{Introduction}
+
+If $n_{i},\mathbf{k}_{i}$ denote the quantum number of a Bloch state,
+then the Coulomb Hamiltonian \ref{eq:Two_Particle_Hamiltonian} can
+be written as\begin{equation}
+\hat{H}_{2}=\frac{1}{2}\sum_{\begin{array}{c}
+n_{1}\mathbf{k}_{1},n_{2}\mathbf{k}_{2},\\
+n_{3}\mathbf{k}_{3},n_{4}\mathbf{k}_{4}\end{array}}\left\langle n_{1}\mathbf{k}_{1}n_{2}\mathbf{k}_{2}\mid v\mid n_{3}\mathbf{k}_{3}n_{4}\mathbf{k}_{4}\right\rangle \hat{a}_{n_{1}\mathbf{k}_{1}}^{\dagger}\hat{a}_{n_{2}\mathbf{k}_{2}}^{\dagger}\hat{a}_{n_{3}\mathbf{k}_{3}}\hat{a}_{n_{4}\mathbf{k}_{4}}\label{eq:Coulomb_Hamiltonian_1}\end{equation}
+and the matrix element of the Coulomb operator reads\begin{eqnarray}
+\left\langle n_{1}\mathbf{k}_{1}n_{2}\mathbf{k}_{2}\mid v\mid n_{3}\mathbf{k}_{3}n_{4}\mathbf{k}_{4}\right\rangle  & = & \frac{e^{2}}{4\pi\epsilon_{0}}\int_{\Omega}\int_{\Omega}d\mathbf{r}dzd\mathbf{r}'dz'\varphi_{n_{1}\mathbf{k}_{1}}^{*}(\mathbf{r},z)\varphi_{n_{2}\mathbf{k}_{2}}^{*}(\mathbf{r}',z')\nonumber \\
+ &  & \cdot\frac{1}{\left|(\mathbf{r},z)-(\mathbf{r}',z')\right|}\varphi_{n_{4}\mathbf{k}_{4}}(\mathbf{r},z)\varphi_{n_{3}\mathbf{k}_{3}}(\mathbf{r}',z').\label{eq:Coulomb_Operator_Matrix_Element}\end{eqnarray}
+The Coulomb-potential is mainly long-range and therefore more or less
+constant within a lattice cell. Consequently, the lattice periodic
+part can be averaged over a single crystal cell. The integration is
+then performed over lattice averaged quantities, as suggested in \ref{eq:Matrix_Element_Lattice_Cell_Average}.
+Therefore, rewriting \ref{eq:Coulomb_Operator_Matrix_Element} into
+a more suitable form including lattice cell averages, yields\begin{eqnarray}
+\left\langle n_{1}\mathbf{k}_{1}n_{2}\mathbf{k}_{2}\mid v\mid n_{3}\mathbf{k}_{3}n_{4}\mathbf{k}_{4}\right\rangle  & = & \frac{e^{2}}{4\pi\epsilon_{0}}\int_{\Omega}\int_{\Omega}d\mathbf{r}dzd\mathbf{r}'dz'\frac{1}{\mathcal{A}^{2}}e^{i\left(\mathbf{k}_{4}-\mathbf{k}_{1}\right)\cdot\mathbf{r}}e^{i\left(\mathbf{k}_{3}-\mathbf{k}_{2}\right)\cdot\mathbf{r}'}\nonumber \\
+ &  & \cdot g_{n_{1}\mathbf{k}_{1},n_{4}\mathbf{k}_{4}}(z)g_{n_{2}\mathbf{k}_{2},n_{3}\mathbf{k}_{3}}(z')\frac{1}{\left|(\mathbf{r},z)-(\mathbf{r}',z')\right|},\end{eqnarray}
+where $g_{n_{1}\mathbf{k}_{1},n_{4}\mathbf{k}_{4}}(z)\approx\sum_{i}F_{n_{1}\mathbf{k}_{1},i}^{*}(z)F_{n_{4}\mathbf{k}_{4},i}(z)$
+and $g_{n_{2}\mathbf{k}_{2},n_{3}\mathbf{k}_{3}}(z')$ is defined
+accordingly. The next step is to get rid of the free directions $\mathbf{r}$
+and $\mathbf{r}'$, where the slowly varying part of the Bloch-function
+is given by the plane wave. The first step is to rewrite the term
+$\frac{1}{\left|(\mathbf{r},z)-(\mathbf{r}',z')\right|}$ as $\frac{1}{\sqrt{\left(\mathbf{r}-\mathbf{r}'\right)^{2}+\left(z-z'\right)^{2}}}$.
+Then, the integration over $\mathbf{r}'$ is transformed into the
+integration over the distance between $\mathbf{r}$ and $\mathbf{r}'$,
+$\mathbf{s}=\mathbf{r}-\mathbf{r}'$. So, instead of performing for
+every point r the integration over $\mathbf{r}'$, one integrates
+for every point $\mathbf{r}$ over all possible distances $\mathbf{s}$.
+This approach leads to several simplifications\begin{eqnarray}
+\left\langle n_{1}\mathbf{k}_{1}n_{2}\mathbf{k}_{2}\mid v\mid n_{3}\mathbf{k}_{3}n_{4}\mathbf{k}_{4}\right\rangle  & = & \frac{e^{2}}{4\pi\epsilon_{0}}\int_{\mathcal{L}}\int_{\mathcal{L}}dzdz'\frac{1}{\mathcal{A}^{2}}g_{n_{1}\mathbf{k}_{1},n_{4}\mathbf{k}_{4}}(z)g_{n_{2}\mathbf{k}_{2},n_{3}\mathbf{k}_{3}}(z')\nonumber \\
+ &  & \cdot\int_{\mathcal{A}}\int_{\mathcal{A}}d\mathbf{r}d\mathbf{s}\left[\frac{1}{\sqrt{\mathbf{\left|s\right|}^{2}+\left(z-z'\right)^{2}}}\right.\nonumber \\
+ &  & \left.\cdot e^{i\left(\mathbf{k}_{4}+\mathbf{k}_{3}-\mathbf{k}_{1}-\mathbf{k}_{2}\right)\cdot\mathbf{r}}e^{i\left(\mathbf{k}_{2}-\mathbf{k}_{3}\right)\cdot\mathbf{r}'}\right].\end{eqnarray}
+The integration over $\mathbf{r}$ and $\mathbf{s}$ is decoupled
+and therefore the plane-wave leads to a delta function\begin{equation}
+\int_{\mathcal{A}}d\mathbf{r}e^{i\left(\mathbf{k}_{4}+\mathbf{k}_{3}-\mathbf{k}_{1}-\mathbf{k}_{2}\right)\cdot\mathbf{r}}=\mathcal{A}\delta_{\mathbf{k}_{4}+\mathbf{k}_{3},\mathbf{k}_{1}+\mathbf{k}_{2}}.\label{eq:Delta_1}\end{equation}
+The remaining integration over $z,z'$ and $\mathbf{s}$ depends on
+the dimensionality of the system. 
+
+The Fourier transformation along the free direction $\mathcal{A}$
+defined in \ref{eq:Fourier_Transform} is used to expand $\frac{1}{\mathbf{r}}$\begin{equation}
+\vartheta(\mathbf{s},z,z')=\frac{1}{\sqrt{\mathbf{\left|s\right|}^{2}+\left(z-z'\right)^{2}}}=\sum_{\mathbf{q}}\vartheta_{\mathbf{q}}(z,z')e^{i\mathbf{q}\cdot\mathbf{s}}\label{eq:Inverse_Distance_Fourier_Expansion}\end{equation}
+in terms of its Fourier representation. Taking the integral over $\mathbf{s}$\textbf{\begin{equation}
+\int_{\mathcal{A}}d\mathbf{s}\sum_{\mathbf{q}}\vartheta_{\mathbf{q}}(z,z')e^{i\mathbf{q}\cdot\mathbf{s}}e^{i\left(\mathbf{k}_{2}-\mathbf{k}_{3}\right)\cdot\mathbf{s}}=\mathcal{A}\sum_{\mathbf{q}}\vartheta_{\mathbf{q}}(z,z')\delta_{\mathbf{k}_{3}-\mathbf{k}_{2},\mathbf{q}}\end{equation}
+}leads to another delta function, which can together with \ref{eq:Delta_1}
+be used to simplify \ref{eq:Coulomb_Hamiltonian_1} into\begin{equation}
+\hat{H}_{2}=\frac{1}{2}\sum_{\begin{array}{c}
+n_{1},n_{2}\\
+n_{3},n_{4}\end{array}}\sum_{\mathbf{k}\mathbf{k}'\mathbf{q}}\Theta_{\mathbf{q},\mathbf{k},\mathbf{k}'}^{n_{1},n_{2},n_{3},n_{4}}\hat{a}_{n_{1}\mathbf{k}+\mathbf{q}}^{\dagger}\hat{a}_{n_{2}\mathbf{k}'-\mathbf{q}}^{\dagger}\hat{a}_{n_{3}\mathbf{k}'}\hat{a}_{n_{4}\mathbf{k}}.\label{eq:Coulomb_Hamiltonian_2}\end{equation}
+Here, $\mathbf{k}_{4}$ has been relabeled to $\mathbf{k}$ and $\mathbf{k}_{3}$
+to $\mathbf{k}'$. The term $\Theta_{\mathbf{q},\mathbf{k},\mathbf{k}'}^{n_{1},n_{2},n_{3},n_{4}}$
+contains all parts of \ref{eq:Coulomb_Operator_Matrix_Element} depending
+on actual wavefunctions and on the dimensionality of the nanostructure.
+It is given by\begin{equation}
+\Theta_{\mathbf{q},\mathbf{k},\mathbf{k}'}^{n_{1},n_{2},n_{3},n_{4}}=\frac{e^{2}}{4\pi\epsilon_{0}}\int_{\mathcal{L}}\int_{\mathcal{L}}dzdz'g_{n_{1}\mathbf{k}+\mathbf{q},n_{4}\mathbf{k}}(z)g_{n_{2}\mathbf{k}'-\mathbf{q},n_{3}\mathbf{k}'}(z')\vartheta_{\mathbf{q}}(z,z').\label{eq:Coulomb_Interaction}\end{equation}
+
+
+In the case of a bulk crystal, there is no integration over $z,z'$.
+Then, $\vartheta_{\mathbf{q}}^{3D}$ is given by the 3D Fourier transform
+of the Coulomb potential \begin{equation}
+\vartheta_{\mathbf{q}}^{3D}=\frac{4\pi}{\Omega q^{2}}.\label{eq:3D_Form_Factor}\end{equation}
+
+
+The quantum well case has a 2D plane as the translational invariant
+directions and a 1D axis where symmetry is broken. The 2D Fourier
+transformation of \ref{eq:Inverse_Distance_Fourier_Expansion} gives\begin{equation}
+\vartheta_{\mathbf{q}}^{2D}(z,z')=\frac{2\pi}{\mathcal{A}q}e^{-q\left|z-z'\right|}.\label{eq:2D_Form_Factor}\end{equation}
+Hereby, the factor $\frac{2\pi}{\mathcal{A}q}$ denotes the Fourier
+transform of an ideal quantum well with no extension in the symmetry
+broken direction, while the exponential factor comprises of the finite
+extension of the quantum well wavefunctions. 
+
+For the sake of convinience, we define the form factor term to be
+\begin{equation}
+G_{\mathbf{q},\mathbf{k},\mathbf{k}'}^{n_{1},n_{2},n_{3},n_{4}}=\int_{\mathcal{L}}\int_{\mathcal{L}}dzdz'g_{n_{1}\mathbf{k}+\mathbf{q},n_{4}\mathbf{k}}(z)g_{n_{2}\mathbf{k}'-\mathbf{q},n_{3}\mathbf{k}'}(z')e^{-q\left|z-z'\right|},.\end{equation}
+in terms of which $\Theta_{\mathbf{q},\mathbf{k},\mathbf{k}'}^{n_{1},n_{2},n_{3},n_{4}}$
+can be written as\begin{equation}
+\Theta_{\mathbf{q},\mathbf{k},\mathbf{k}'}^{n_{1},n_{2},n_{3},n_{4}}=G_{\mathbf{q},\mathbf{k},\mathbf{k}'}^{n_{1},n_{2},n_{3},n_{4}}V_{\mathbf{q}}.\label{eq:Coulomb_Interaction_Alternative}\end{equation}
+For the 2D case we can write \begin{equation}
+\Theta_{\mathbf{q},\mathbf{k},\mathbf{k}'}^{n_{1},n_{2},n_{3},n_{4}}=G_{\mathbf{q},\mathbf{k},\mathbf{k}'}^{n_{1},n_{2},n_{3},n_{4}}\frac{e^{2}}{2\epsilon_{r}q\mathcal{A}}.\label{eq:Coulomb_Interaction_Alternative_2D}\end{equation}
+
+
+Inspecting the Coulomb terms, it is clear that these terms diverge
+in the limit of $\mathbf{q}=0$. The divergence can be resolved within
+the \emph{Jellium model} \citet{Haug2009}, where the semiconductor
+is assumed to be intrinsically charge free. As a result, the diverging
+term of the electron-electron interaction at $\mathbf{q}=0$ is canceled
+by the diverging term of the interaction of electrons with the homogeneous
+positive charge background. Hence, terms $\mathbf{q}=0$ within the
+summation over $\mathbf{q}$ are discarded.
+
+
+\subsection{Diagonal Approximation}
+
+The next approximation performed aims to remove two of the four subband
+indices in \ref{eq:Coulomb_Hamiltonian_2} by assuming that Coulomb
+interactions will not cause interband transitions. Then, $n_{1}=n_{4}$
+and $n_{2}=n_{3}$, which is called here diagonal Coulomb approximation.
+This assumption is for example justified at an approximate level in
+symmetrical quantum wells, as the diagonal Coulomb matrix elements
+are due to the symmetry of the wavefunctions, two orders of magnitude
+larger than the off-diagonal \citet{Hader2003}. Also, for single-band
+effective mass wavefunctions, only the diagonal terms remain, while
+others vanish due to the orthogonality of the zone-center functions.
+Using this approximations, the Coulomb Hamiltonian reads\begin{equation}
+\hat{H}_{2}=\frac{1}{2}\sum_{m,n}\sum_{\mathbf{k}\mathbf{k}'\mathbf{q}}\Theta_{\mathbf{q},\mathbf{k},\mathbf{k}'}^{m,n,n,m}\hat{a}_{m\mathbf{k}+\mathbf{q}}^{\dagger}\hat{a}_{n\mathbf{k}'-\mathbf{q}}^{\dagger}\hat{a}_{n\mathbf{k}'}\hat{a}_{m\mathbf{k}}.\label{eq:Coulomb_Hamiltonian_3}\end{equation}
+Consequently, the notation $\Theta_{\mathbf{q},\mathbf{k},\mathbf{k}'}^{m,n,n,m}$
+can be reduced to $\Theta_{\mathbf{q},\mathbf{k},\mathbf{k}'}^{m,n}$.
+
+
+\subsection{Holes}
+
+The next step is to transform the Coulomb Hamiltonian into the electron-hole
+picture. In the diagonal approximation \ref{eq:Coulomb_Hamiltonian_3},
+one distinguishes between electron states in the conduction bands
+$c,d$ and hole states in the valence bands $v,w$. Therefore, the
+following four combinations are possible\begin{equation}
+n=c,\, m=d\,\,\,\, n=c,\, m=v\,\,\,\, n=v,\, m=c\,\,\,\, n=v,\, m=w.\end{equation}
+As next, hole operators are inserted for electrons in the valence
+band. Further, a natural ordering is reestablished by propagating
+the creation operators to the left and the annihilation operators
+to the right and setting the hole creation operator before, the hole
+annihilation operator after the one of the electron. The terms involving
+the sum $\sum_{n=c,m=d}$ are already in that ordering. Permuting
+the hole terms in the sum $\sum_{n=v,m=w}$ introduces a new two-operator
+term while the sums $\sum_{n=c,m=v}$ and $\sum_{n=v,m=c}$ can be
+summed together. Hence, the final Hamiltonian which will be used to
+calculate the microscopic equation of motion is obtained as\begin{eqnarray}
+\hat{H} & = & \sum_{c,\mathbf{k}}E_{c}(\mathbf{k})\hat{a}_{c\mathbf{k}}^{\dagger}\hat{a}_{c\mathbf{k}}-\sum_{v,\mathbf{k}}E_{v}(\mathbf{k})\hat{b}_{v\mathbf{k}}^{\dagger}\hat{b}_{v\mathbf{k}}\label{eq:Full_H_1-1}\\
+ &  & -\mathbf{E}(\mathbf{r},t)\cdot\sum_{c,v,\mathbf{k}}\boldsymbol{\mu}_{cv,\mathbf{k}}\hat{a}_{c\mathbf{k}}^{\dagger}\hat{b}_{v\mathbf{-k}}^{\dagger}+\boldsymbol{\mu}_{cv,\mathbf{k}}^{*}\hat{b}_{v-\mathbf{k}}\hat{a}_{c\mathbf{k}}\label{eq:Full_H_2}\\
+ &  & +\frac{1}{2}\sum_{c,d}\sum_{\mathbf{k}\mathbf{k}'\mathbf{q}}\Theta_{\mathbf{q},\mathbf{k},\mathbf{k}'}^{c,d}\hat{a}_{c\mathbf{k}+\mathbf{q}}^{\dagger}\hat{a}_{d\mathbf{k}'-\mathbf{q}}^{\dagger}\hat{a}_{d\mathbf{k}'}\hat{a}_{c\mathbf{k}}\label{eq:Full_H_3}\\
+ &  & +\frac{1}{2}\sum_{v,w}\sum_{\mathbf{k}\mathbf{k}'\mathbf{q}}\Theta_{-\mathbf{q},-\mathbf{k}'+\mathbf{q},-\mathbf{k}-\mathbf{q}}^{w,v}\hat{b}_{v\mathbf{k}+\mathbf{q}}^{\dagger}\hat{b}_{vk'-\mathbf{q}}^{\dagger}\hat{b}_{w\mathbf{k}'}\hat{b}_{v\mathbf{k}}\label{eq:Full_H_4}\\
+ &  & \sum_{v,\mathbf{k}',\mathbf{q}}\Theta_{-\mathbf{q},-\mathbf{k}'+\mathbf{q},-\mathbf{k}}^{v,v}\hat{b}_{v\mathbf{k}'}^{\dagger}\hat{b}_{v\mathbf{k}'}\label{eq:Full_H_5}\\
+ &  & -\frac{1}{2}\sum_{\mathbf{k}\mathbf{k}'\mathbf{q}}\left\{ \left(\Theta_{-\mathbf{q},-\mathbf{k}'+\mathbf{q},\mathbf{k}}^{v,c}+\Theta_{\mathbf{q},\mathbf{k},\mathbf{q}-\mathbf{k}'}^{c,v}\right)\hat{a}_{c\mathbf{k}+\mathbf{q}}^{\dagger}\hat{b}_{v\mathbf{k}'-\mathbf{q}}^{\dagger}\hat{b}_{v\mathbf{k}'}\hat{a}_{c\mathbf{k}}\right\} .\label{eq:Full_H_6}\end{eqnarray}
+The indices $\mathbf{k}$ and $\mathbf{k}'$ have in some cases been
+swapped, shifted by $\mathbf{q}$ and occasionally changed sign.
+
+
+\section{Transitions Calculation}
+
+
+\subsection{Equations of Motion}
+
+The next task is to evaluate the equation of motion \ref{eq:Heisenberg_Eq_Motion}
+for $\hat{p}_{nm,\mathbf{k}}$, as it has already been done in previous
+chapter, excluding the Coulomb interaction. Therefore, the remaining
+task is to evaluate the commutator of the microscopic polarization
+and the Coulomb Hamiltonian,\begin{equation}
+\frac{d}{dt}\hat{p}_{nm,\mathbf{k}}=\frac{i}{\hbar}\left[\hat{H}_{2}\hat{p}_{nm,\mathbf{k}}\right]+rest\end{equation}
+where $\hat{H}_{2}$ are the Coulomb terms in \ref{eq:Full_H_1-1}.
+The evaluation is straight forward but lengthy: For each four-operator
+term, one writes $\hat{H}_{2}\hat{p}_{nm,\mathbf{k}}-\hat{p}_{nm,\mathbf{k}}\hat{H}_{2}$
+and then permutes $\hat{p}_{nm,\mathbf{k}}$ in the first term to
+the left to obtain the remaining terms which do not cancel finally.
+The remaining terms are resorted at the end into the natural ordering.
+The resulting equation of motion is given by
+
+\begin{eqnarray}
+\frac{d}{dt}\hat{p}_{nm,\mathbf{k}} & = & -\frac{i}{\hbar}\left\{ E_{m}(\mathbf{k})-\left(E_{n}(\mathbf{k})-\sum_{\mathbf{q}}\Theta_{-\mathbf{q},-\mathbf{k}+\mathbf{q},\mathbf{k}}^{n,n}\right)\right\} \hat{p}_{nm,\mathbf{k}}\label{eq:Coulomb_Inter_Polarization_Eq_1}\\
+ &  & -\frac{i}{\hbar}\mathbf{E}(z,t)\cdot\boldsymbol{\mu}_{mn,\mathbf{k}}\left(\sum_{c}\hat{a}_{c\mathbf{k}}^{\dagger}\hat{a}_{m\mathbf{k}}+\sum_{v}\hat{b}_{v-\mathbf{k}}^{\dagger}\hat{b}_{n-\mathbf{k}}-1\right)\label{eq:Coulomb_Inter_Polarization_Eq_2}\\
+ &  & +\frac{i}{2\hbar}\sum_{c,\mathbf{k}',\mathbf{q}}\left(\Theta_{-\mathbf{q},\mathbf{k}+\mathbf{q},\mathbf{k}'}^{m,c}+\Theta_{\mathbf{q},\mathbf{k}',\mathbf{k}+\mathbf{q}}^{c,m}\right)\hat{a}_{c\mathbf{k}'+\mathbf{q}}^{\dagger}\hat{b}_{n-\mathbf{k}}\hat{a}_{c\mathbf{k}'}\hat{a}_{m\mathbf{k}+\mathbf{q}}\label{eq:Coulomb_Inter_Polarization_Eq_3}\\
+ &  & +\frac{i}{2\hbar}\sum_{v,\mathbf{k}',\mathbf{q}}\left(\Theta_{-\mathbf{q},-\mathbf{k}'+\mathbf{q},\mathbf{k}}^{v,n}+\Theta_{\mathbf{q},\mathbf{k},-\mathbf{k}'+\mathbf{q}}^{n,v}\right)\hat{b}_{v\mathbf{k}'-\mathbf{q}}^{\dagger}\hat{b}_{v\mathbf{k}'}\hat{a}_{m\mathbf{k}}\hat{b}_{n-\mathbf{k}-\mathbf{q}}\label{eq:Coulomb_Inter_Polarization_Eq_4}\\
+ &  & -\frac{i}{2\hbar}\sum_{c,\mathbf{k}',\mathbf{q}}\left(\Theta_{-\mathbf{q},\mathbf{k},\mathbf{k}'}^{n,c}+\Theta_{\mathbf{q},\mathbf{k}',\mathbf{k}}^{c,n}\right)\hat{a}_{c\mathbf{k}'+\mathbf{q}}^{\dagger}\hat{b}_{n-\mathbf{k}+\mathbf{q}}\hat{a}_{c\mathbf{k}'}\hat{a}_{m\mathbf{k}}\label{eq:Coulomb_Inter_Polarization_Eq_5}\\
+ &  & -\frac{i}{2\hbar}\sum_{v,\mathbf{k}',\mathbf{q}}\left(\Theta_{-\mathbf{q},-\mathbf{k}'+\mathbf{q},\mathbf{k}-\mathbf{q}}^{v,m}+\Theta_{\mathbf{q},\mathbf{k}-\mathbf{q},-\mathbf{k}'+\mathbf{q}}^{m,v}\right)\hat{b}_{v\mathbf{k}'-\mathbf{q}}^{\dagger}\hat{b}_{n-\mathbf{k}}\hat{b}_{v\mathbf{k}'}\hat{a}_{m\mathbf{k}-\mathbf{q}}\label{eq:Coulomb_Inter_Polarization_Eq_6}\\
+ &  & +\frac{i}{2\hbar}\sum_{\mathbf{q}}\left(\Theta_{-\mathbf{q},\mathbf{k},\mathbf{k}-\mathbf{q}}^{n,m}+\Theta_{\mathbf{q},\mathbf{k}-\mathbf{q},\mathbf{k}}^{m,n}\right)\hat{b}_{n-\mathbf{k}+\mathbf{q}}\hat{a}_{m\mathbf{k}-\mathbf{q}}.\label{eq:Coulomb_Inter_Polarization_Eq_7}\end{eqnarray}
+Taking the two-band approximation of this particular equation and
+ignoring the $\mathbf{k}$ dependence of the Coulomb matrix element
+results in Eq. (3.9) of ref. \citet{Chow}. Comparing this equation
+with the free-carrier result \ref{eq:SC_Bloch_Eq_1} reveals that
+in \ref{eq:Coulomb_Inter_Polarization_Eq_1}, the valence band energy
+is shifted to\begin{equation}
+E_{n}(\mathbf{k})\rightarrow E_{n}(\mathbf{k})-\sum_{\mathbf{q}}\Theta_{-\mathbf{q},-\mathbf{k}+\mathbf{q},\mathbf{k}}^{n,n}.\end{equation}
+The values usually inserted into $E_{v}(\mathbf{k})$ are results
+of a preceding band structure calculation, where parameters are obtained
+from low excitation experiments, where the valence band is full \citet{Chow}.
+Therefore, the $E_{v}(\mathbf{k})$ actually already holds the Coulomb
+energy of the full valence band. The free-carrier calculation implicitly
+included this energy within the band structure result, while it appears
+here explicitly.
+
+Similar equations of motion can be obtained for the carrier population
+operators 
+
+The terms \ref{eq:Coulomb_Inter_Polarization_Eq_3} and \ref{eq:Coulomb_Inter_Polarization_Eq_4}
+are the result of the equation of motion of the conduction-conduction
+and valence-valence terms \ref{eq:Full_H_3}, \ref{eq:Full_H_4} and
+\ref{eq:Full_H_5}. The terms \ref{eq:Coulomb_Inter_Polarization_Eq_5}-\ref{eq:Coulomb_Inter_Polarization_Eq_7}
+are the results of the commutator with the conduction-valence terms
+\ref{eq:Full_H_6}. The term \ref{eq:Coulomb_Inter_Polarization_Eq_7}
+is obtained at the end when \ref{eq:Coulomb_Inter_Polarization_Eq_6}
+is brought into proper order.%
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.25]{\string"C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/4_Infinite_Operator_Hirarchy\string".eps}
+\par\end{centering}
+
+\caption{\label{fig:Infinite_Hierarchy_Operators}Infinite hierarchy of operator
+products for the equtions of motion.}
+
+\end{figure}
+
+
+The obtained equation of motion for the two-particle operator term
+$\hat{p}_{nm,\mathbf{k}}$ obviously depends on the four-particle
+operator terms. Therefore, it would be necessary to calculate the
+equation of motion of the four-particle operator term which would
+couple to a six-particle operator term: one obtains an infinite hierarchy
+of equations, as demonstatred in Fig. \ref{fig:Infinite_Hierarchy_Operators}.
+For this reason, one usually truncates the hierarchy at a certain
+order \citet{Chow}. Factorizing the four-particle operator into two
+two-particle operators yields the\emph{ Hartree-Fock approximation},
+which is considered in the next section.
+
+
+\subsection{Hartree-Fock Approximation}
+
+In the next step, all four-particle operators are factorized into
+all possible products of two-particle operators, of which the expectation
+values are taken. While permuting these operators, the correct sign
+due to the anti-commutation relations has to be tracked. Due to the
+random-phase approximation \ref{eq:Random_Phase_Apprx}, all expectation
+values of two-particle operators reduce either to microscopic polarizations
+$p_{nm,\mathbf{k}}$, particle densities $n_{n,\mathbf{k}}$ or to
+zero. We summarize this approach for a two-operator expectation value%
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.25]{\string"C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/4_HF_Operator_Approximation\string".eps}
+\par\end{centering}
+
+\caption{\label{fig:Schematic_HF_Operator_Approximation}Schematic representation
+of the Hartree-Fock approximation operator product in the equation
+of motion.}
+
+
+
+\end{figure}
+ \begin{eqnarray}
+\frac{d}{dt}\left\langle AB\right\rangle  & = & \frac{d}{dt}\left\langle AB\right\rangle _{HF}+\left(\frac{d}{dt}\left\langle AB\right\rangle -\frac{d}{dt}\left\langle AB\right\rangle _{HF}\right)\nonumber \\
+ & = & \frac{d}{dt}\left\langle AB\right\rangle _{HF}+\frac{d}{dt}\left\langle AB\right\rangle _{col.}\end{eqnarray}
+where $\left\langle AB\right\rangle _{HF}$ is the Hartree-Fock contribution
+to the equation if motion which will be treated in this chapter (see
+Fig. \ref{fig:Schematic_HF_Operator_Approximation}). The term $\left\langle AB\right\rangle _{col.}$
+us a higher-order contribution containing four-operator expectation
+values and they will be discussed briefly later in this chapter. Here,
+we only mention that with the full many-body Hamiltonian \ref{eq:Separated_Hamiltonian-1},
+the Heisenberg equation of motion gives the equation of motion for
+$\left\langle ABCD\right\rangle $ as \begin{equation}
+\frac{d}{dt}\left\langle ABCD\right\rangle =\frac{d}{dt}\left\langle ABCD\right\rangle _{F}+\left(\frac{d}{dt}\left\langle ABCD\right\rangle -\frac{d}{dt}\left\langle ABCD\right\rangle _{F}\right),\end{equation}
+where $\frac{d}{dt}\left\langle ABCD\right\rangle $ contains expectation
+values of products of up to six operators. The label $F$ is used
+to indicate the result from a Hartree-Fock factorization of the four
+and six operator expectation values. We can continue by deriving the
+equation of motion for \begin{equation}
+\left\langle ABCDEF\right\rangle \equiv\left(\frac{d}{dt}\left\langle ABCD\right\rangle -\frac{d}{dt}\left\langle ABCD\right\rangle _{F}\right)\end{equation}
+and so on. The result is a hierarchy of equations, where each succeeding
+equation describes a correlation contribution that is of higher order
+than the one before. In practice, we truncate the hierarchy at some
+point. 
+
+As an example, the factorization of \ref{eq:Coulomb_Inter_Polarization_Eq_3}
+leads to\begin{eqnarray*}
+\left\langle \hat{a}_{c\mathbf{k}'+\mathbf{q}}^{\dagger}\hat{b}_{n-\mathbf{k}}\hat{a}_{c\mathbf{k}'}\hat{a}_{m\mathbf{k}+\mathbf{q}}\right\rangle _{HF} & = & \left\langle \hat{a}_{c\mathbf{k}'+\mathbf{q}}^{\dagger}\hat{b}_{n-\mathbf{k}}\right\rangle \left\langle \hat{a}_{c\mathbf{k}'}\hat{a}_{m\mathbf{k}+\mathbf{q}}\right\rangle \\
+ &  & -\left\langle \hat{a}_{c\mathbf{k}'+\mathbf{q}}^{\dagger}\hat{a}_{c\mathbf{k}'}\right\rangle \left\langle \hat{b}_{n-\mathbf{k}}\hat{a}_{m\mathbf{k}+\mathbf{q}}\right\rangle \\
+ &  & +\left\langle \hat{a}_{c\mathbf{k}'+\mathbf{q}}^{\dagger}\hat{a}_{m\mathbf{k}+\mathbf{q}}\right\rangle \left\langle \hat{b}_{n-\mathbf{k}}\hat{a}_{c\mathbf{k}'}\right\rangle \\
+ & = & 0-\delta_{\mathbf{q}0}+\delta_{\mathbf{k}'\mathbf{k}}\delta_{cm}n_{m,\mathbf{k}+\mathbf{q}}p_{nm,\mathbf{k}}.\end{eqnarray*}
+Other terms are factorized accordingly. The factorized terms of \ref{eq:Coulomb_Inter_Polarization_Eq_3}
+and \ref{eq:Coulomb_Inter_Polarization_Eq_4} can be added to the
+transition energy, while the remaining terms are proportional to the
+inversion factor. Finally, the equation for the microscopic polarization
+in the Hartree-Fock approximation is obtained as\begin{eqnarray}
+\frac{d}{dt}p_{nm,\mathbf{k}} & = & -\frac{i}{\hbar}\hbar\tilde{\omega}_{mn}(\mathbf{k})p_{nm,\mathbf{k}}\nonumber \\
+ &  & -\frac{i}{\hbar}\left\{ \mathbf{E}(z,t)\cdot\boldsymbol{\mu}_{mn,\mathbf{k}}+\sum_{\mathbf{q}}\Theta_{-\mathbf{q},\mathbf{k},\mathbf{k}-\mathbf{q}}^{n,m}p_{nm,\mathbf{k}-\mathbf{q}}\right\} \left(n_{m\mathbf{k}}+n_{n\mathbf{k}}-1\right)\nonumber \\
+ &  & +\frac{\partial}{\partial t}\left.p_{nm,\mathbf{k}}\right|_{col.},\label{eq:HF_Polarization_Eq_Motion}\end{eqnarray}
+and the renormalized transition energy is given as\begin{eqnarray}
+\hbar\tilde{\omega}_{mn}(\mathbf{k}) & = & E_{m}(\mathbf{k})-\left(E_{n}(\mathbf{k})-\sum_{\mathbf{q}}\Theta_{-\mathbf{q},-\mathbf{k}+\mathbf{q},\mathbf{k}}^{n,n}\right)\nonumber \\
+ &  & -\sum_{\mathbf{q}}\left(\Theta_{\mathbf{q},\mathbf{k},\mathbf{k}+\mathbf{q}}^{m,m}n_{m,\mathbf{k}+\mathbf{q}}+\Theta_{\mathbf{q},\mathbf{k},\mathbf{k}+\mathbf{q}}^{n,n}n_{n,\mathbf{k}+\mathbf{q}}\right).\label{eq:Transition_Energy}\end{eqnarray}
+The sum term in \ref{eq:Transition_Energy} is called the \emph{exchange
+shift} term. Inspecting \ref{eq:HF_Polarization_Eq_Motion} reveals
+that the microscopic polarization $p_{nm,\mathbf{k}}$ at $\mathbf{k}$
+is now coupled to the one at $\mathbf{k}'$ by the Coulomb interaction,
+while in the free-carrier expression, the microscopic polarization
+was entirely determined by the momentum matrix element and the inversion.
+This coupling introduces the excitonic effects such as enhancing gain
+or absorption. The higher-order correlation (collisions) contributions
+are denoted similarly to previous chapter with the subscript col.
+The expressions for the carrier distribution operators $\hat{n}_{n\mathbf{k}}$
+and $\hat{n}_{m\mathbf{k}}$ can be obtained similarly. By introducing
+\emph{renormalized Rabi frequency} \begin{equation}
+\Omega_{\mathbf{k}}(z,t)=\mathbf{E}(z,t)\cdot\boldsymbol{\mu}_{mn,\mathbf{k}}+\sum_{\mathbf{q}}\Theta_{-\mathbf{q},\mathbf{k},\mathbf{k}-\mathbf{q}}^{n,m}p_{nm,\mathbf{k}-\mathbf{q}},\label{eq:Renormalized_Rabi_Freq}\end{equation}
+we can rewrite the semicondictor Bloch equations as\begin{eqnarray}
+\frac{d}{dt}p_{nm,\mathbf{k}} & = & -i\tilde{\omega}_{mn}(\mathbf{k})p_{nm,\mathbf{k}}-i\Omega_{\mathbf{k}}(z,t)\left(n_{m\mathbf{k}}+n_{n\mathbf{k}}-1\right)+\frac{\partial}{\partial t}\left.p_{nm,\mathbf{k}}\right|_{col.},\label{eq:HF_Semicondictor_Bloch_Eq_1}\\
+\frac{d}{dt}n_{n\mathbf{k}} & = & i\left[\Omega_{\mathbf{k}}(z,t)p_{nm,\mathbf{k}}^{*}-\Omega_{\mathbf{k}}^{*}(z,t)p_{nm,\mathbf{k}}\right]+\frac{\partial}{\partial t}\left.n_{n\mathbf{k}}\right|_{col.},\label{eq::HF_Semicondictor_Bloch_Eq_2}\\
+\frac{d}{dt}n_{m\mathbf{k}} & = & i\left[\Omega_{\mathbf{k}}(z,t)p_{nm,\mathbf{k}}^{*}-\Omega_{\mathbf{k}}^{*}(z,t)p_{nm,\mathbf{k}}\right]+\frac{\partial}{\partial t}\left.n_{m\mathbf{k}}\right|_{col.}.\label{eq::HF_Semicondictor_Bloch_Eq_3}\end{eqnarray}
+The second term in \ref{eq:Renormalized_Rabi_Freq} is called the
+\emph{Coulomb field renormalization}.
+
+The semiconductor Bloch equations look like the two-level Bloch equations,
+with the exceptions that the transition energy and the electric-dipole
+interaction are renormalized, and the carrier probabilities $n_{n\mathbf{k}}$
+enter instead of the probability difference between upper and lower
+levels. The renormalizations are due to the many-body Coulomb interactions,
+and they couple equations for different $\mathbf{k}$ states. This
+coupling leads to significant complications in the evaluation of \ref{eq:HF_Semicondictor_Bloch_Eq_1}-\ref{eq::HF_Semicondictor_Bloch_Eq_3}
+in comparison to the corresponding free-carrier equations, \ref{eq:SC_Bloch_Eq_1}-\ref{eq:SC_Bloch_Eq_3}.
+If all Coulomb-potential contributions are dropped, the semiconductor
+Bloch equations reduce to the undamped inhomogeneously broadened two-level
+Bloch equations \citet{Chow}. Of course, this limit is unacceptable
+for semiconductors. 
+
+
+\subsection{Many-Body Effects}
+
+There are two important many-body effects that do not appear in the
+Hartree-Fock limit of the equation of motion, the collisions between
+particles and the plasma screening. They occur at high carrier densities.
+The main consequences of the collisions between particles are: 
+\begin{itemize}
+\item A decay of the microscopic polarization $p_{nm,\mathbf{k}}$ that
+we can model with a relaxation time $\gamma$. This implies $\frac{\partial}{\partial t}\left.p_{nm,\mathbf{k}}\right|_{col.}=-\gamma p_{nm,\mathbf{k}}$. 
+\item A rapid equilibration of electrons and holes into Fermi-Dirac distributions.
+We can model this, assuming that the conduction band and the valence
+band are two carrier reservoirs, which are Fermi-distributed, i.e.
+$n_{e\mathbf{k}}=f_{e\mathbf{k}}$ and $n_{h\mathbf{k}}=f_{h\mathbf{k}}$.
+\end{itemize}
+It is more difficult to include the plasma screening effect into \ref{eq:HF_Semicondictor_Bloch_Eq_1}-\ref{eq::HF_Semicondictor_Bloch_Eq_3}.
+The procedure is outlined in this subsection. 
+
+
+\subsubsection{Background Screening}
+
+In the crystal electron Hamiltonian \ref{eq:crystal_H_final}, the
+interaction between ion cores and the interaction between electrons
+and ion cores is merged into the potential $U(\mathbf{r})$, while
+the Coulomb energy between electrons has been retained and later transformed
+into the Bloch states. With the introduction of $\mathbf{k}\cdot\mathbf{p}$
+states, only a restricted number of valence electrons are considered,
+while core electrons are included implicitly. These implicitly included
+core electrons and ion cores screen the Coulomb interaction between
+explicitly included electrons. The effect can be considered by replacing
+the dielectric permittivity of the vacuum $\epsilon_{0}$ with the
+static semiconductor crystal background permittivity $\epsilon_{b}$
+in the Coulomb matrix element \ref{eq:Coulomb_Operator_Matrix_Element}.
+
+
+\subsubsection{Plasma Screening}
+
+A profound weakness of the Hartree-Fock approximation is the lack
+of screening of Coulomb interactions at elevated carrier densities.
+The presence of unbound carriers of the electron-hole plasma leads
+to an adjustment of the carriers to a charge, effectively screening
+it and thereby reducing the Coulomb interaction energy. The lack of
+screening in the Hartree-Fock equations is caused by the early truncation
+of the infinite hierarchy of equations of motion. One therefore introduces
+the screening effect phenomenologically using a dynamic dielectric
+function $\epsilon(\mathbf{q},\omega)$\begin{equation}
+V_{s\mathbf{q}}=\frac{V_{\mathbf{q}}}{\epsilon(\mathbf{q},\omega)},\end{equation}
+where $V_{s\mathbf{q}}$ denotes the screened potential and $V_{\mathbf{q}}$
+the unscreened one%
+\footnote{Note that the Coulomb interaction Hamiltonian with the bare Coulomb
+potential already contains the mechanism for plasma screening. Therefore,
+one should be concerned that an \emph{ad hoc} replacement of $V_{\mathbf{q}}$
+with $V_{s\mathbf{q}}$ might count some screening effects twice.
+Such problems can only be avoided within a systematic many-body approach. %
+}. There are several model dielectric functions, where all have their
+strengths, limitations and weaknesses. One standard approach is the
+\emph{Lindhard's formula} \citet{Chow,Haug2009},\begin{equation}
+\epsilon(\mathbf{q},\omega)=1-V_{\mathbf{q}}\sum_{n\mathbf{k}}\frac{n_{n,\mathbf{k}-\mathbf{q}}-n_{n,\mathbf{k}}}{E_{n}(\mathbf{k}-\mathbf{q})-E_{n}(\mathbf{k})+\hbar\omega+\hbar i\delta},\label{eq:Full_Lindhards_Eq}\end{equation}
+also denoted as randomphase approximation. The Lindhard formula can
+be derived using the self-consistent field (SCF) approach \citet{Ehrenreich1959},
+or more profound, by neglecting vertex corrections in the equation
+of motion for the Green\textquoteright{}s function \citet{Binder1995}
+of the designated system and using the Kadanoff-Baym formalism \citet{Binder1995}.
+The derivation using the SCF approach involves the reaction of a homogeneous
+electron gas to a test charge (see detailed derivation in Appendix
+\ref{cha:Appendix_Screening}). To use Lindhard's formula in optical
+calculations, the test charge potential $V_{\mathbf{q}}$ is replaced
+with the Coulomb potential $\Theta_{\mathbf{q},\mathbf{k},\mathbf{k}'}^{n_{1},n_{2},n_{3},n_{4}}$
+defined in \ref{eq:Coulomb_Interaction_Alternative}, including the
+factor due to the finite extend of the wavefunctions.
+
+There are several far better models \citet{mahan_many-particle_1997}
+for the dielectric screening but the Lindhard formula is still popular
+and commonly used in optoelectronic modeling \citet{Chow} due to
+its simple structure. For many practical applications, the damped
+response of the screening is ignored, therefore setting $(\lyxmathsym{\textgreek{w}}+i\lyxmathsym{\textgreek{d}})$
+to zero. Once $\epsilon(\mathbf{q},0)$ is obtained, one replaces
+the Coulomb potential within all equations with \begin{equation}
+\Theta_{s,\mathbf{q},\mathbf{k},\mathbf{k}'}^{n_{1},n_{2},n_{3},n_{4}}=\frac{1}{\epsilon(\mathbf{q},0)}\Theta_{\mathbf{q},\mathbf{k},\mathbf{k}'}^{n_{1},n_{2},n_{3},n_{4}}.\end{equation}
+Beside its physical importance, the screening introduces the desired
+effect of removing the divergence of the Coulomb potential with $\mathbf{q}\rightarrow0$,
+thereby facilitating the numerical evaluation.%
+\begin{figure}
+\begin{centering}
+\includegraphics{\string"C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/4_Screened_HF_Procedurel\string".eps}
+\par\end{centering}
+
+\caption{\label{fig:Screened_HF_Outline}Outline of an approach that takes
+advantage of a phenomenological derivation of plasma screening, which
+is incorporated directly into the many-body Hamiltonian to give the
+screened Hartree-Fock equations (after \citet{Chow}). }
+
+
+
+\end{figure}
+
+
+The outline of the screened Hatree-Fock approach is presented in Fig.
+\ref{fig:Screened_HF_Outline}.
+
+
+\subsubsection{Coulomb Hole Self Energy}
+
+By replacing the electron operators with hole operators in \ref{eq:Coulomb_Inter_Polarization_Eq_1},
+the valence band energy was shifted by a constant value,\begin{equation}
+E_{n}(\mathbf{k})\rightarrow E_{n}(\mathbf{k})-\sum_{\mathbf{q}}\Theta_{-\mathbf{q},-\mathbf{k}+\mathbf{q},\mathbf{k}}^{n,n}.\end{equation}
+This shift is already implicitly included in the band structure. In
+the high density limit, the Coulomb interaction is screened\begin{equation}
+\Theta_{s,-\mathbf{q},-\mathbf{k}+\mathbf{q},\mathbf{k}}^{n,n}=\frac{\Theta_{-\mathbf{q},-\mathbf{k}+\mathbf{q},\mathbf{k}}^{n,n}}{\epsilon(\mathbf{q},0)}\end{equation}
+and the difference between the unscreened and the screened Coulomb
+interaction leads to a density dependent shift\begin{equation}
+\Delta E_{CH,n}=\sum_{\mathbf{q}}\Theta_{-\mathbf{q},-\mathbf{k}+\mathbf{q},\mathbf{k}}^{n,n}\left(\frac{1}{\epsilon(\mathbf{q})}-1\right).\label{eq:Coulomb_Hole_Self_Energy}\end{equation}
+The shift is denoted as \emph{Debye shift} or \emph{Coulomb-hole self
+energy}.
+
+
+\subsubsection{Screened Exchange Energy}
+
+Beside the Coulomb-hole self energy, the transition energy \ref{eq:Transition_Energy}
+is, compared to the free carrier result, reduced by the density dependent
+\emph{screened exchange shift},\begin{equation}
+\Delta E_{SX,mn}(\mathbf{k})=\sum_{\mathbf{q}}\left(\Theta_{\mathbf{q},\mathbf{k},\mathbf{k}+\mathbf{q}}^{m,m}n_{m,\mathbf{k}+\mathbf{q}}+\Theta_{\mathbf{q},\mathbf{k},\mathbf{k}+\mathbf{q}}^{n,n}n_{n,\mathbf{k}+\mathbf{q}}\right).\label{eq:Screened_Exchange_Shift}\end{equation}
+where the screened Coulomb potentials are used. Within the screened
+Hartree-Fock limit, the transition energy is therefore renormalized\begin{equation}
+\hbar\tilde{\omega}_{mn}(\mathbf{k})=\Delta E_{mn}(\mathbf{k})+\Delta E_{CH,n}-\Delta E_{SX,mn}(\mathbf{k}).\label{eq:Band_Gap_Renormalization}\end{equation}
+Note that both contributions \ref{eq:Coulomb_Hole_Self_Energy} and
+\ref{eq:Screened_Exchange_Shift} reduce the transition energy and
+can lead to a significant red shift.
+
+
+\subsection{Solving the Correlated Equation}
+
+In order to solve the equation of motion \ref{eq:HF_Polarization_Eq_Motion},
+the collision term is approximated using a decay rate $-\gamma p_{mn,\mathbf{k}}$.
+As equation \ref{eq:HF_Polarization_Eq_Motion} couples microscopic
+polarizations $p_{mn,\mathbf{k}}$ of different $\mathbf{k}$ values,
+the equation system has to be solved self-consistently. Therefore,
+the equation is transformed using the same ansatz as in Chapter \ref{cha:Free_Carriers_Optical_Transitions}.
+The fast oscillating $p_{mn,\mathbf{k}}$ is replaced with its slowly-varying
+envelope\begin{equation}
+s_{nm,\mathbf{k}}=p_{mn,\mathbf{k}}e^{-i\left(k_{0}z-\nu t-\phi(z)\right)}.\label{eq:Polarization_Slow_Envelope_Def}\end{equation}
+Inserting \ref{eq:Polarization_Slow_Envelope_Def} into \ref{eq:HF_Polarization_Eq_Motion},
+taking the time derivative, using the plane wave expression for the
+electrical field \ref{eq:Electrical_Field_Ansatz}, skipping the fast
+oscillating parts (as they should average out to zero) and solving
+for the steady state leads to \begin{eqnarray}
+s_{nm,\mathbf{k}} & = & -\frac{1}{i\left(\tilde{\omega}_{mn}(\mathbf{k})-\nu\right)+\gamma}\frac{i}{\hbar}\nonumber \\
+ &  & \cdot\left\{ \mu_{mn,\mathbf{k}}\frac{E(z)}{2}+\sum\Theta_{\mathbf{q},\mathbf{k},\mathbf{k}+\mathbf{q}}^{n,m}s_{nm,\mathbf{k}+\mathbf{q}}\right\} \label{eq:Polarization_Slow_Envelope_Eq}\\
+ &  & \cdot\left(n_{m\mathbf{k}}+n_{n\mathbf{k}}-1\right).\nonumber \end{eqnarray}
+The polarization envelope still depends on the intensity of the considered
+field. Therefore, the field independent solution variable is introduced,
+given by\begin{equation}
+\lambda_{nm,\mathbf{k}}=\frac{2s_{nm,\mathbf{k}}}{E(z)}.\label{eq:Field_Independent_Sol_Var}\end{equation}
+In order to obtain a practicable expression, the lineshape and the
+inversion factor are combined into\begin{equation}
+\Lambda_{nm,\mathbf{k}}=\frac{i}{\hbar}\frac{\left(n_{m\mathbf{k}}+n_{n\mathbf{k}}-1\right)}{i\left(\tilde{\omega}_{mn,\mathbf{k}}-\nu\right)+\gamma}.\label{eq:Lineshape_Inversion_Factor}\end{equation}
+Inserting \ref{eq:Field_Independent_Sol_Var} and \ref{eq:Lineshape_Inversion_Factor}
+into \ref{eq:Polarization_Slow_Envelope_Eq}, yields\begin{equation}
+\Lambda_{nm,\mathbf{k}}\sum\Theta_{\mathbf{q},\mathbf{k},\mathbf{k}+\mathbf{q}}^{n,m}\lambda_{nm,\mathbf{k}+\mathbf{q}}+\lambda_{nm,\mathbf{k}}=-\mu_{mn,\mathbf{k}}\Lambda_{nm,\mathbf{k}}.\end{equation}
+This equation is the self-consistency equation for $\lambda_{nm,\mathbf{k}}$.
+Once solved, the optical susceptibility is calculated using\begin{equation}
+\chi(\nu)=\frac{1}{n_{b}^{2}\epsilon_{0}}\frac{P(z)}{E(z)}=\frac{1}{n_{b}^{2}\epsilon_{0}}\frac{1}{V}\sum_{n,m,\mathbf{k}}\mu_{mn,\mathbf{k}}^{*}\lambda_{nm,\mathbf{k}}.\label{eq:HF_Susceptability}\end{equation}
+Absorption, refractive index change and spontaneous emission can therefrom
+be calculated as already presented in the preceding Chapter \ref{cha:Free_Carriers_Optical_Transitions}.
+In the next section we present the numerical implementation details
+of the solution. 
+
+
+\subsection{Numerical Implementation}
+
+As a consequence of the collisions between particles in the assumed
+equalibrium state, we consider the conduction band and the valence
+band as two carriers reservoirs with Fermi-Dirac distributions for
+the electrons and holes. Thus, we only need to solve the equation
+of motion for the polarization $\hat{p}_{nm,\mathbf{k}}$. Using the
+decay model for the microscopic polarization we obtain\begin{equation}
+\frac{d}{dt}p_{nm,\mathbf{k}}=-i\tilde{\omega}_{mn}(\mathbf{k})p_{nm,\mathbf{k}}-i\Omega_{\mathbf{k}}(z,t)\left(f_{e\mathbf{k}}^{n}+f_{h\mathbf{k}}^{m}-1\right)-\gamma p_{nm,\mathbf{k}},\label{eq:HF_Polarization_Eq_Motion_Numerics}\end{equation}
+where $n$ and $m$ denote the conduction and valence subbands, respectvely,
+involved in the transition. As for the free carrier model, the electron
+and hole densities are given as input parameters, and the chemical
+potentials, $E_{Fc}$ and $E_{Fv}$, are calculated as described in
+section \ref{sub:Carrier_Statistics}. 
+
+As the first step for the calculation, the dielectric function $\epsilon(\mathbf{q})$,
+the Coulomb-hole self energy $\Delta E_{CH,n}$ and the screened exchange
+shift energy $\Delta E_{SX,mn}(\mathbf{k})$ must be evaluated. 
+\begin{itemize}
+\item It is more convinient to evaluate $q\epsilon(\mathbf{q})$ than only
+$\epsilon(\mathbf{q})$. With Fermi-Dirac electron and hole distributions,
+we have from \ref{eq:Full_Lindhards_Eq} \begin{equation}
+q\epsilon(\mathbf{q})=q-\frac{e^{2}}{2\epsilon_{r}A}\sum_{n\mathbf{k}}\frac{f_{n,\mathbf{k}-\mathbf{q}}-f_{n,\mathbf{k}}}{E_{n}(\mathbf{k}-\mathbf{q})-E_{n}(\mathbf{k})}.\end{equation}
+Converting the sum over the $\mathbf{k}$-states into an integral,
+adding the sum over the spin, choosing $\theta$ as the angle between
+$\mathbf{k}$ and $\mathbf{q}$ and assuming no angular dependence
+for the subband structure, we obtain\begin{equation}
+q\epsilon(q)=q-\frac{e^{2}}{4\pi^{2}\epsilon_{r}}\sum_{n}\int_{0}^{\infty}dk\, k\int_{0}^{2\pi}d\theta\frac{f_{n,\left|\mathbf{k}-\mathbf{q}\right|}-f_{n,\mathbf{\left|k\right|}}}{E_{n}\left(\left|\mathbf{k}-\mathbf{q}\right|\right)-E_{n}(\mathbf{\left|k\right|})}.\end{equation}
+with \begin{equation}
+\left|\mathbf{k}'\right|=\left|\mathbf{k}-\mathbf{q}\right|=\left(k^{2}+q^{2}-2kq\cos\theta\right)^{\frac{1}{2}}.\end{equation}
+The integrals can be eveluated here, as before, using the trapezoidal
+method for integration. 
+\item For the Coulomb-hole self energy with Fermi-Dirac distributions we
+can write =\begin{eqnarray}
+\Delta E_{CH,n} & = & \sum_{\mathbf{q}\neq0}\Theta_{-\mathbf{q},-\mathbf{k}+\mathbf{q},\mathbf{k}}^{n,n}\left(\frac{1}{\epsilon(\mathbf{q})}-1\right)\nonumber \\
+ & = & \frac{e^{2}}{4\pi\epsilon_{r}}\int_{0^{+}}^{\infty}dq\, G_{\mathbf{q}}^{n,n}\left(\frac{1}{\epsilon(q)}-1\right).\end{eqnarray}
+
+\item The screened-exchange shift energy becomes\begin{equation}
+\Delta E_{SX,nm}(\mathbf{k})=\sum_{\mathbf{k}'\neq\mathbf{k}}\left(\Theta_{s,\mathbf{q}}^{n,n}f_{e,\mathbf{k}'}^{n}+\Theta_{s,\mathbf{q}}^{m,m}f_{h,\mathbf{k}'}^{m}\right).\end{equation}
+The band indices $m$ and $n$ are defined as before for the interacting
+subbands. If we convert the sum over $\mathbf{k}'$ into an integral
+with $\theta'$ defining the angle between $\mathbf{k}$ and $\mathbf{k}'$
+and we assume a rotationally symmetric band structure, we obtain\begin{equation}
+E_{SX,nm}(\mathbf{k})=\frac{e^{2}}{8\pi^{2}\epsilon_{r}}\int_{0}^{\infty}dk'\int_{0}^{2\pi}d\theta'\,\frac{k'}{q\epsilon(q)}\left(G_{\mathbf{q}}^{n,n}f_{e,\mathbf{k}'}^{n}+G_{\mathbf{q}}^{m,m}f_{h,\mathbf{k}'}^{m}\right)\end{equation}
+where \begin{equation}
+\left|\mathbf{q}\right|=\left|\mathbf{k}-\mathbf{k}'\right|=\left(k^{2}+k'^{2}-2kk'\cos\theta'\right)^{\frac{1}{2}}.\end{equation}
+
+\end{itemize}
+In all the expressions above we use \ref{eq:Coulomb_Interaction_Alternative_2D}
+to describe the coulomb interaction for the 2D case. The form factor
+is explicetly calculated using \begin{equation}
+G_{\mathbf{q}}^{n,m}=\int_{-\infty}^{\infty}dz\int_{-\infty}^{\infty}dz'\left|F_{n,\mathbf{k}}(z)\right|^{2}\left|F_{m,\mathbf{k}}(z')\right|^{2}e^{-q\left|z-z'\right|},\end{equation}
+where $F_{n,\mathbf{k}}(z)$ is the envelope function of the specific
+subband considered.
+
+With the knowledge of these terms, we can now concentrate on \ref{eq:HF_Polarization_Eq_Motion_Numerics}.
+The last difficulty resides in $\Omega_{\mathbf{k}}(z,t)$. The first
+step is to eliminate the rapidly varying phase factor from $p_{nm,\mathbf{k}}$
+and to work with $s_{nm,\mathbf{k}}$ as in \ref{eq:Polarization_Slow_Envelope_Eq}\begin{eqnarray}
+\frac{d}{dt}s_{nm,\mathbf{k}} & = & -\left(i\left(\tilde{\omega}_{n,m}(\mathbf{k})-\nu\right)+\gamma\right)s_{nm,\mathbf{k}}-\frac{i}{\hbar}\mu_{\mathbf{k}}\frac{E(z)}{2}w_{\mathbf{k}}\nonumber \\
+ &  & -\frac{i}{\hbar}w_{\mathbf{k}}\sum_{\mathbf{k}\neq\mathbf{k}'}\Theta_{s,\mathbf{q}}^{n,m}s_{nm,\mathbf{k}'},\label{eq:HF_Slow_Polarization_Eq_Motion_Numerics}\end{eqnarray}
+where we defined $w_{\mathbf{k}}=f_{e\mathbf{k}}^{n}+f_{h\mathbf{k}}^{m}-1$.
+To obtain suscptability spectrum of a medium, \ref{eq:HF_Slow_Polarization_Eq_Motion_Numerics}
+is solved for the steady state (as in the previous section), which
+leads to \begin{equation}
+s_{nm,\mathbf{k}}=-\frac{i}{\hbar}\frac{w_{\mathbf{k}}\mu_{\mathbf{k}}}{i\left(\tilde{\omega}_{n,m}(\mathbf{k})-\nu\right)+\gamma}\left(\frac{E(z)}{2}+\frac{1}{\mu_{\mathbf{k}}}\sum_{\mathbf{k}\neq\mathbf{k}'}\Theta_{s,\mathbf{q}}^{n,m}s_{nm,\mathbf{k}'}\right).\label{eq:Steady_State_Sol_Polarization}\end{equation}
+We define two new variables, the $\mathbf{k}$-dependent complex susceptability
+function \begin{equation}
+\chi_{\mathbf{k}}^{0}=-\Lambda_{nm,\mathbf{k}}\mu_{\mathbf{k}},\end{equation}
+and the Coulomb enhancement factor\begin{equation}
+\Gamma_{\mathbf{k}}^{n,m}=\frac{\lambda_{nm,\mathbf{k}}}{\chi_{\mathbf{k}}^{0}},\end{equation}
+where $\Lambda_{nm,\mathbf{k}}$ and $\lambda_{nm,\mathbf{k}}$ where
+defined in the previous section. Substituting these two expressions
+into \ref{eq:Steady_State_Sol_Polarization} we obtian\begin{equation}
+\Gamma_{\mathbf{k}}^{n,m}(\nu)=1+\frac{1}{\mu_{\mathbf{k}}}\sum_{\mathbf{k}\neq\mathbf{k}'}\Theta_{s,\mathbf{q}}^{n,m}\chi_{\mathbf{k}'}^{0}\Gamma_{\mathbf{k}'}^{n,m}(\nu).\label{eq:Coulomb_Enhancement_Factor_1}\end{equation}
+We consider the last part of this equation and transfor the sum over
+$\mathbf{k}'$ into an integral as before. Furthermore, we assume
+that the microscopic polarization $p_{nm,\mathbf{k}}$ has no angular
+dependence\begin{equation}
+\frac{1}{\mu_{\mathbf{k}}}\sum_{\mathbf{k}\neq\mathbf{k}'}\Theta_{s,\mathbf{q}}^{n,m}\chi_{\mathbf{k}'}^{0}\Gamma_{\mathbf{k}'}^{n,m}(\nu)=\frac{1}{\mu_{\mathbf{k}}}\int_{0}^{\infty}dk'\,\varepsilon_{k,k'}\chi_{k'}^{0}\Gamma_{k'}^{n,m}(\nu),\label{eq:Coulomb_Enhancement_Part}\end{equation}
+where \begin{equation}
+\varepsilon_{k,k'}=\frac{e^{2}}{2\pi^{2}\epsilon_{r}}k'\int_{0}^{2\pi}d\theta'\frac{G_{\mathbf{q}}^{n,m}}{q\epsilon(q)}.\end{equation}
+Inserting \ref{eq:Coulomb_Enhancement_Part} into \ref{eq:Coulomb_Enhancement_Factor_1},
+we obtain \begin{equation}
+\Gamma_{k}^{n,m}(\nu)=1+\frac{1}{\mu_{k}}\int_{0}^{\infty}dk'\,\varepsilon_{k,k'}\chi_{k'}^{0}\Gamma_{k'}^{n,m}(\nu).\label{eq:Coulomb_Enhancement_Factor_2}\end{equation}
+Various approaches exist in the literature to solve this self-consistent
+equation \citet{Haug2009,Chow1994}. We choose to use the most general
+matrix inversion method, in-spite of its tendency to be rater resource
+consuming, as apposed to various approximate methods (such as Pade
+and the dominant momentum methods). To this end we approximate the
+integral over the $k$ space by a sum of trapezoidal areas and discretize
+$k$ and $k'$ with $n$ values and constant step size $\Delta k$%
+\footnote{An elternative choise for $\Delta k$ is to take the elements of the
+$k$ vector as the support of a Gaussian qudrature \citet{haug_quantum_1994}. %
+}. Eq. \ref{eq:Coulomb_Enhancement_Factor_2} can thus be written in
+a matrix form\begin{equation}
+\mathbf{M}\cdot\mathbf{\boldsymbol{\Gamma}}_{\mathbf{k}}^{n,m}=\mathbf{1},\label{eq:Coulomb_Enhancement_Factor_3}\end{equation}
+with \begin{equation}
+\mathbf{\boldsymbol{\Gamma}}_{\mathbf{k}}^{n,m}=\left(\Gamma_{k_{1}}^{n,m},\Gamma_{k_{2}}^{n,m},\cdots,\Gamma_{k_{n}}^{n,m}\right)^{T}\end{equation}
+and \begin{equation}
+\mathbf{M}=\left(\begin{array}{cccc}
+1-\frac{\Delta_{k}}{\mu_{k_{1}}}\varepsilon_{k_{1},k_{1}'}\chi_{k_{1}'}^{0} & -\frac{\Delta_{k}}{\mu_{k_{1}}}\varepsilon_{k_{1},k_{2}'}\chi_{k_{2}'}^{0} & \cdots & -\frac{\Delta_{k}}{\mu_{k_{1}}}\varepsilon_{k_{1},k_{n}'}\chi_{k_{n}'}^{0}\\
+-\frac{\Delta_{k}}{\mu_{k_{1}}}\varepsilon_{k_{1},k_{1}'}\chi_{k_{1}'}^{0} & 1-\frac{\Delta_{k}}{\mu_{k_{2}}}\varepsilon_{k_{2},k_{2}'}\chi_{k_{2}'}^{0} & \cdots & -\frac{\Delta_{k}}{\mu_{k_{2}}}\varepsilon_{k_{2},k_{n}'}\chi_{k_{n}'}^{0}\\
+\vdots & \vdots & \ddots & \vdots\\
+-\frac{\Delta_{k}}{\mu_{k_{n}}}\varepsilon_{k_{n},k_{1}'}\chi_{k_{1}'}^{0} & -\frac{\Delta_{k}}{\mu_{k_{n}}}\varepsilon_{k_{n},k_{2}'}\chi_{k_{2}'}^{0} & \cdots & 1-\frac{\Delta_{k}}{\mu_{k_{n}}}\varepsilon_{k_{n},k_{n}'}\chi_{k_{n}'}^{0}\end{array}\right).\end{equation}
+Eq. \ref{eq:Coulomb_Enhancement_Factor_3} can now be solved using
+standard mathematical methods to obtain $\mathbf{\boldsymbol{\Gamma}}_{\mathbf{k}}^{n,m}$.
+The microscopic polarization can be obtain using \begin{equation}
+p_{nm,\mathbf{k}}=\frac{1}{2}e^{-i\left(k_{0}z-\nu t-\phi(z)\right)}E(z)\chi_{k}^{0}\Gamma_{k}^{n,m}.\label{eq:HF_Final_Polarization}\end{equation}
+
+
+Insering \ref{eq:HF_Final_Polarization} into \ref{eq:HF_Susceptability}
+and using the definitions in chapter \ref{cha:Free_Carriers_Optical_Transitions},
+\ref{eq:Intensity_Gain} and \ref{eq:Sp_Emission_Definition}, we
+can write the expressions for the absorption (or the gain amplitude)
+and spontanious emission spectra\begin{eqnarray}
+\alpha_{HF}(\nu) & = & -\Im\left\{ \frac{i\nu}{\hbar c\epsilon_{0}n_{b}\pi\mathcal{L}}\sum_{n,m,\mathbf{k}}\left|\mu_{nm,\mathbf{k}}\right|^{2}\frac{w_{\mathbf{k}}}{i\left(\tilde{\omega}_{n,m}(\mathbf{k})-\nu\right)+\gamma}\Gamma_{\mathbf{k}}^{n,m}(\nu)\right\} \nonumber \\
+ & = & -\Im\left\{ \frac{i\nu}{\hbar c\epsilon_{0}n_{b}\pi\mathcal{L}}\sum_{n,m}\int_{0}^{\infty}dk\, k\left|\mu_{nm,\mathbf{k}}\right|^{2}\frac{w_{k}}{i\left(\tilde{\omega}_{n,m}(\mathbf{k})-\nu\right)+\gamma}\Gamma_{\mathbf{k}}^{n,m}(\nu)\right\} \label{eq:HF_Absorption}\end{eqnarray}
+and \begin{equation}
+r_{sp,HF}(\nu)=-\frac{n_{b}^{2}(\hbar\nu)^{2}}{\pi^{2}\hbar^{3}c^{2}}\frac{1}{1-\exp\left(\left(\hbar\nu-\left(E_{Fc}-E_{Fv}\right)\right)/k_{B}T\right)}\alpha_{HF}(\nu),\label{eq:HF_Sp_Emission}\end{equation}
+where $\Gamma_{\mathbf{k}}^{n,m}(\nu)$ are the solution of \ref{eq:Coulomb_Enhancement_Factor_3},
+$\tilde{\omega}_{n,m}(\mathbf{k})$ is the renormalized bandgap defined
+in \ref{eq:Band_Gap_Renormalization}, and $\mathcal{L}$ is the length
+if the 2D quantum structure. 
+
+
+\section{Beyond the Hartree-Fock Approximation}
+
+%
+\begin{lyxgreyedout}
+Put here a short overview of the higher order effects...
+\end{lyxgreyedout}
+\selectlanguage{english}
+

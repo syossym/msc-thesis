@@ -1,0 +1,41 @@
+\selectlanguage{english}%
+\refstepcounter{dummy}
+
+
+
+\setcounter{tocdepth}{2} \tableofcontents{}%\markboth{\spacedlowsmallcaps{\contentsname}}{\spacedlowsmallcaps{\contentsname}}
+
+% work-around to have small caps also here in the headline
+
+% will not work at this place if the TOC has more than 2 pages
+
+% use \manualmark and then the \markboth as above
+
+% later a modification of \automark[section]{chapter}
+
+\clearpage{}
+
+\begingroup
+
+\refstepcounter{dummy}
+
+%\addcontentsline{toc}{chapter}{\listfigurename}
+
+ \listoffigures
+
+
+\vspace*{8ex}
+
+
+\refstepcounter{dummy}
+
+%\addcontentsline{toc}{chapter}{\listtablename}
+
+ \listoftables
+
+
+\vspace*{8ex}
+
+
+\cleardoublepage{}\selectlanguage{english}
+

@@ -1,0 +1,711 @@
+\chapter{Uncertainty singularities in parallel mechanisms}
+\label{chap4}
+
+\textsf{Submitted to \textsl{IEEE Transactions on Robotics}, 2006.} \\
+\textsf{Co-authors: David Blanc and Moshe Shoham.}\\
+
+We study singularities for a parallel mechanism with spherical
+joints and moving planar platform, giving a necessary condition
+for an uncertainty singularity (defined topologically, in terms of
+the \cspace) to occur, and describe the corresponding
+instantaneous kinematic singularity.  An explicit example is
+provided.
+
+
+
+\sect{Introduction} \label{cint}
+%
+Kinematic singularities of parallel mechanisms have been studied
+extensively in the literature (cf.\ \cite{Hu2}, and \cite{Hu1,WW}
+for the example of open kinematic chains). On the other hand, many
+authors have investigated \emph{topological} singularities of the
+\cspace s of such mechanisms (see, e.g., \cite{KM,KT,MT1,SSB05}).
+
+In this note, we study parallel mechanisms with rotational joints and
+planar moving platform, and give a necessary
+geometric condition  for uncertainty singularities in such mechanisms
+(Theorem \ref{thmain}). We then explain how such topological
+singularities give rise to instantaneous kinematic singularities
+(Proposition \ref{pkinsing}).
+Finally, the occurence of an uncertainty singularity is illustrated
+visually in an explicit example (Section \ref{cve}).
+
+\subsection{Topological singularities}
+\label{sts}
+%
+By choosing appropriate local coordinates for a given mechanism $\Gamma$, we
+can think of the set of all its configurations as a topological space
+$\C$, called its \emph{\cspace}, and try to endow it with the
+structure of a differentiable manifold. The points of $\C$  where this
+cannot be done constitute the \emph{topological singularities} of
+$\Gamma$. See Section \ref{cts} below for further details.
+
+These are refered to in the robotics literature as \emph{uncertainty
+singularities}: they occur when the \emph{instantaneous} mobility
+is greater than the \emph{full cycle} mobility  (cf.\ \cite{Hu2}).
+In such a position the mechanism as a whole gains an additional
+degree of freedom. At times, such singularities are the only point
+where two disjoint regions of $\C$ meet, allowing transition between
+different operating modes. See \cite{ZBC} for an examination of such
+transitions in the case of a constraint singularity for a $3$-URU
+$3$-DOF parallel mechanism.
+
+\subsection{Kinematic singularities}
+\label{sks}
+%
+In general, a configuration $\Vc$ is naturally described by the vector \
+$\bx=(x_{1},\dotsc,x_{N})$ \ whose coordinates \ $x_{i}$ \ correspond
+to the positions of the various joints and links of the mechanism.
+In practice, we choose a subset \ $\bx_{\iin}$ \
+of \emph{input} coordinates (corresponding to the actuated joints),
+which can serve as local coordinates for $\C$ around $\Vc$. In
+addition, we often focus on a subset \ $\bx_{\out}$ \ of \emph{output}
+coordinates of interest (which may describe the position of the end
+effector). The structure of the mechanism imposes relations which must
+hold among the coordinate \ $x_{i}$; \ in particular, we may assume that:
+%
+\begin{equation}\label{eq:constr}
+%
+F(\bx_{\iin},\bx_{\out})=0
+%
+\end{equation}
+%
+identically in a neighborhood of $\Vc$ in $\C$. The Jacobian \
+$J:=\frac{\partial F}{\partial\bx}$ \ consists of two blocs \
+$\frac{\partial F}{\partial\bx_{\iin}}$ \ and \
+$J_{\out}:=\frac{\partial F}{\partial\bx_{\out}}$, \ where \
+$J_{\out}$ \ must be nonsingular if the \ $\bx_{\iin}$ \ are to serve
+as local coordinates near $\Vc$.
+
+The kinematics of the mechanism are described by a path \ $\bx(t)$
+\ ($t\in\RRR$) \ in the \cspace. Differentiating \
+\eqref{eq:constr} \ with respect to $t$ we get \ $\frac{\partial
+F}{\partial\bx}\,\dot{\bx}=0$, \ which can be written in the form:
+%
+\begin{equation} \label{eq:gosselin_sing}
+%
+J_{\iin}\ \dot{\bx}_{\iin}~=~J_{\out}\ \dot{\bx}_{\out}
+%
+\end{equation}
+%
+where \ $J_{\iin}:=-\frac{\partial F}{\partial\bx_{\iin}}$. \ If \
+$J_{\out}$ \ is of maximal rank and \ $J_{\iin}$ \ is not, \
+$\Vc$ is called a kinematic singularity \emph{of type I}: this
+means that we cannot obtain every (infinitesimal) change in output we
+may want by an appropriate change in the actuated joints.
+On the other hand, if \ $J_{\iin}$ \ is of maximal rank and  \
+$J_{\out}$ \ is not, $\Vc$ is called singular of \emph{of type II}: in
+this case the actuated joints do not determine uniquely the behavior
+of the outputs.
+Finally, if neither \ $J_{\out}$ \ nor \ $J_{\iin}$ \ is of maximal
+rank, $\Vc$ is called singular \emph{of type III} (cf.\ \cite{GA}).
+Gosselin and Angeles give examples of all three types of
+singularities for a parallel \ $3$-RRR \ planar mechanism.
+
+However, as Zlatanov, Fenton and Benhabib observe, the choice of \
+$\bx_{\iin}$ \ and \ $\bx_{\out}$ \ is arbitrary; moreover, in
+general it need not fully determine the mechanism, which may have
+additional ''passive coordinates'' of interest. They therefore provide
+a different approach to the singularity analysis of an arbitrary
+kinematic chain (see \cite{ZFB1}).
+
+%
+%s2       Topological singularities
+%
+\sect{Topological singularities} \label{cts}
+
+We consider \emph{polygonal} mechanism $\Gamma$ in \ $\RRR^{d}$ \
+($d=2,3$), \ consisting of a moving platform $\Pc$ (planar
+$k$-polygonal), with $k$ branches attached to its vertices. The
+$i$-th branch is a sequence of \ $\nj{i}$ \ concatenated links of
+lengths \ $\lj{i}_{j}$ \ ($j=1,\dotsc\nj{i}$), \ connected by
+spherical joints. One end of the branch is attached to a vertex of
+the moving platform, and the other is fixed  at \
+$\xj{i}\in\RRR^{d}$.
+
+\begin{defn}
+%
+A \emph{configuration} for an $n$-link branch consists of $n$
+vectors \ $(\bv_{1},\dotsc,\bv_{n})$ \ in \ $\RRR^{d}$ \ of
+specified lengths \ $\|\bv_{j}\|=\ell_{j}$ \ ($j=1,\dotsc n$). \
+
+A branch configuration is said to be \emph{aligned} if all the
+vectors \ $\bv_{i}$ \ are scalar multiples of $\bv$, which is
+called the \emph{direction vector} of $V$. The \emph{direction
+line} for $V$ is \ $\Line:=\{\bx+t\bv~|\ t\in\RRR^{}\}$.
+
+A configuration for $\Gamma$ consists of a set \
+$\Vc=(\Vj{1},\dotsc,\Vj{k})$ \ of configurations for each of the $k$
+branches, such that the $k$ endpoints
+%
+$$
+\ppj{i}:=\xj{i}+\sum_{i=1}^{n}\,\bv_{i} \ \ \ (i=1,\dotsc,k)
+$$
+of the corresponding branch configurations form a polygon congruent to the
+given moving platform $\Pc$. The set \ $\C=\C_{\Gamma}$ \ of all such
+configurations, topologized in the obvious way, is the \emph{\cspace}
+of $\Gamma$.
+%
+\end{defn}
+
+\textit{Convention:} \
+%
+Parenthesized superscripts indicate the branch
+number, and subscripts indicate the link number. For example, \
+$\ell_{j}^{(i)}$ \ denotes the length of the $j$-th link of the $i$-th
+branch.
+
+\begin{defn}
+%
+A configuration $\Vc$ for $\Gamma$ is called \emph{singular of type
+  (a)} if two of its branch configurations \
+$\Vj{i_{1}}$ \ and \ $\Vj{i_{2}}$ \ are aligned, with coinciding
+direction lines: \ $\Line\up{i_{1}}=\Line\up{i_{2}}$. \ See Fig.
+\ref{fig:sing1}.
+
+\begin{figure}[ht]
+\centering \epsfysize=5.5cm  \epsffile{fig_4/singular_point1.eps}
+\caption{A singular configuration of type (a)} \label{fig:sing1}
+\end{figure}
+
+It is \emph{singular of type (b)} if three of its branch
+configurations are aligned, with direction lines in the same
+plane meeting in a single point (this is referred to in literature as
+a \emph{flat pencil}). See Fig. \ref{fig:sing2}.
+
+\begin{figure}[ht]
+\centering \epsfysize=6cm  \epsffile{fig_4/singular_point2.eps}
+\caption{A singular configuration of type (b)} \label{fig:sing2}
+\end{figure}
+
+It is \emph{singular of type (c)} if four of its branch configurations
+are aligned, with direction lines in the same plane.
+%
+\end{defn}
+
+We can now formulate our main result:
+
+\begin{thm}\label{thmain}
+%
+A necessary condition for a configuration \ $\Vc=(\Vj{1},\dotsc,\Vj{k})$ \
+of a polygonal mechanism $\Gamma$ to be an uncertainty singularity is that it
+be singular of type (a), (b) or (c).
+%
+\end{thm}
+
+\begin{examples}\label{eks}
+%
+Before sketching the proof, consider the following two examples\vsm:
+
+\noindent (1) \ If $\Vc$ is singular of type (a), as in Fig.
+\ref{fig:sing1}, we can construct an open neighborhood \ $U\subset
+\C$ \ of $\Vc$ as a product \ $U_{\alignd} \times U_{\rest}$. \
+Here \ $U_{\alignd}$ \ may be identified with an neighborhood of
+$\Vc$ in the \cspace\ of a closed chain mechanism \ $\Gamma'$, \
+consisting of the aligned branches of $\Gamma$. In the case where
+the aligned branches have one and two links respectively,  \
+$U_{\alignd}$ \ is a one-point union of two $2$-discs (see
+\cite[Proposition 4.1]{SSB2}), so it is singular.
+
+On the other hand, \ $U_{\rest}$ \ is a neighborhood of $\Vc$ in the
+\cspace\ of the mechanism obtained from $\Gamma$ by omitting the
+aligned branches, which is non-singular (generically)\vsm.
+
+\noindent (2) \ Consider a mechanism with a triangular platform, and
+two branches with one link each. In this case, the workspace
+for the third vertex of the platform is the coupler curve $\gamma$ for the
+corresponding $4$-chain mechanism (see \cite[Ch.\ 4]{Ha}), while the
+workspace for the third branch is an annulus $A$.
+
+For suitable parameters, the boundary \ $\partial A$ \ (where the
+third branch is aligned) will be tangent to $\gamma$. The
+corresponding configuration $\Vc$ for $\Gamma$ will be singular of
+type (b), as in Fig. \ref{fig:second case intuitive}.
+
+\begin{figure}[htb]
+\centering \epsfysize=6cm \leavevmode
+\epsffile{fig_4/intantanious_rotation.eps} \caption{Coupler curve
+tangent to branch workspace boundary} \label{fig:second case
+intuitive}
+\end{figure}
+
+Note that near $\Vc$ each point in $\gamma$ has two
+corresponding configurations, associated to ``elbow up/down''
+positions of the third branch, which coalesce at $\Vc$ itself; thus
+$\Vc$ has a singular neighborhood consisting of two transverse
+intervals\vsm.
+%
+\end{examples}
+
+
+\textit{Sketch of proof of Theorem \ref{thmain}}\vsm:
+
+A configuration $\Vc$ for the polygonal mechanism $\Gamma$ in \
+$\RRR^{d}$ \ ($d=2,3$) \ is determined by the \ $Nd$ \ Cartesian
+coordinates of the endpoints of the \ $N=\sum_{i=1}^{k}\,\nj{i}$ \
+links of $\Gamma$. However, there are \ $M:=N+dk-3(d-1)$ \
+relations among these imposed by the lengths of the links and a
+certain minimal collection $\Ic$ of edges and diagonals of the
+polygonal platform $\Pc$. Thus the \cspace\ $\C$ is the preimage
+of a certain vector \ $Z\in\RRR^{M}$ \ under the \emph{constraint
+map}  \ $F:\RRR^{dN}\to\RRR^{M}$, \ defined:
+%
+\begin{equation}\label{econstr}
+\begin{split}
+%
+F(\Vc)~:=&(f_{\nj{1}}(\Vj{1}),\dotsc,f_{\nj{k}}(\Vj{k}),\\
+&\|\aj{1,2}\|^{2},\dotsc,\|\aj{k-1,k}\|^{2})~,
+%
+\end{split}
+\end{equation}
+%
+where \
+$f_{n}(\bv_{1},\dotsc,\bv_{n}):=(|\bv_{1}|^{2},\dotsc,|\bv_{n}|^{2})$ \
+and \ $\aj{i,j}$ \ is the \ $(i,j)$-diagonal (or edge) of $\Pc$
+spanned by the endpoints of branches $i$ and $j$\vsm.
+
+\noindent\textbf{Step I.}~~~By the Regular Value Theorem, $\C$ will be
+a smooth manifold if \ $\dF_{\Vc}$ \ is of rank $M$, where \
+$\dF_{\Vc}/2$ \ is:
+%
+%\setlength{\arraycolsep}{0pt}
+\begin{equation}\label{edf}
+%
+\begin{pmatrix}
+%
+A\up{1}    & 0         &  0           & \dotsc  & 0        \\
+ 0         & A\up{2}   &  0           & \dotsc  & 0        \\
+ \vdots    & \vdots    &  \vdots      & \ddots  & \vdots   \\
+ 0         & 0         &  0           & \dotsc  & A\up{k}  \\
+\bj{1}{2}  & \bj{2}{1} & 0            & \ldots  & 0        \\
+\bj{1}{3}  & 0         & \bj{3}{1}    & \ldots  & 0        \\
+ 0         & \bj{2}{3} & \bj{3}{2}    & \ldots  & 0        \\
+\vdots     & \vdots    &  \vdots      & \ddots  & \vdots \\
+ 0         & \dotsc    & 0            & \ldots  & \bj{k}{k-1}
+\end{pmatrix}\vspace{4mm}\quad
+%
+\end{equation}
+%
+and \ $A\up{i}$ \ is the \ $\nj{i}\times d\nj{i}$ \ matrix:
+%
+\begin{equation}\label{eai}
+\begin{pmatrix}
+%
+\vj{i}_{1} & \dotsc    & 0              \\
+\vdots     & \ddots    & \vdots         \\
+0          & \dotsc    & \vj{i}_{\nj{i}}
+\end{pmatrix}~.
+%
+\end{equation}
+
+Each edge \ $\aj{i,j}\in\RRR^{d}$ \ appears \ $\nj{i}$ \ times in
+the vector
+%
+\begin{equation}\label{ebj}
+%
+\bj{i}{j}~:=~\underbrace{(\aj{i,j},\aj{i,j},\dotsc,\aj{i,j})}_{\nj{i}}\vsm.
+%
+\end{equation}
+
+\noindent\textbf{Step II.}~~~
+%
+Let \ $\Vc\in\C=F^{-1}(Z)$, \ and consider a vanishing linear
+combination of the rows of \ $\dF_{\Vc}$. \ If some row of \ $A\up{i}$ \
+has a non-zero coefficient, so does at least one of the \ $M-N$ \
+bottom rows; but since these are all repeated, as in \ \eqref{ebj}, \
+we see that all the direction vectors \ $\vj{i}_{j}$ \
+for the $i$-th branch must be equal \ -- \ that is, this
+branch is aligned, with the direction vector \ $\vj{i}$ \ a linear
+combination of appropriate diagonals \ $\aj{k,\ell}$ \ of $\Pc$, and
+thus lying in the plane $\Ec$ determined by $\Pc$.
+
+Moreover, from \ \eqref{edf} \ we see that \ $\sum_{i=1}^{k}\,\vj{i}=\vz$. \
+Therefore, if \ $\vj{i}=\vz$ \ for \ $i\neq i_{0},i_{1}$, \ then \
+$\vj{i_{0}}+\vj{i_{1}}=\vz$, \ and thus branches \ $i_{0}$ \ and \
+$i_{1}$ \ are co-aligned with direction vector \
+$\aj{i_{0},i_{1}}$, \ yielding a singularity of type (a).
+
+On the other hand, if at least four branches are aligned (with
+direction vectors in $E$), we obtain a singularity of type (c)\vsm.
+
+\noindent\textbf{Step III.}~~~
+%
+Now assume we have exactly three aligned branches, say \ $1,2$ \
+and $k$. Let $\hC$ denote the \cspace\ of the mechanism obtained
+by omitting the last ($k$-th) branch \ -- \ again given as the
+fiber of an appropriate constraint map \
+$\hF:\RRR^{(N-\nj{k})d}\times\Sc\to\RRR^{K}$ \ (where \
+$\Sc=S^{d-2}$ \ if \ $k=3$, \ and a point otherwise), with \
+$\hi:\hC\to\RRR^{(N-\nj{k})d}$ \ the inclusion. Similarly, let
+$\Ck$ be the \cspace\ for the $k$-th branch (an \ $\nj{k}$-torus,
+with the obvious embedding \ $i:\Ck\to\RRR^{\nj{k}d}$).
+
+The \emph{workspace} of both mechanisms \ -- \ that is, the
+possible locations for the $k$-th vertex of the moving platform \
+-- \ are in  \ $\RRR^{d}$, \ and we denote the \emph{work maps} by
+\ $\psi:\hC\to\RRR^{d}$ \ and \ $\phi:\Ck\to\RRR^{d}$.
+
+Let \ $X:=\Ck\times\RRR^{(N-\nj{k})d}\times\Sc$, \
+$Y:=\RRR^{d}\times\RRR^{(N-\nj{k})d}\times\Sc$, \ and define \
+$h:X\to Y$ \ to be the product map \ $\phi\times\Id$, \ and \
+$g:\hC\to Y$ \ to be \ $(\psi,\hi)$. \ Thus $\C$ (the \cspace\ for
+$\Gamma$) is the preimage of the submanifold \ $\hC\subseteq Y$ \
+under $h$.
+
+Let \ $\hV\in\hC$ \ be a configuration where branches $1$ and $2$
+are aligned, with distinct direction vectors \ $\oj{1}$, $\oj{2}$ \ in $\Ec$
+(the plane of $\Pc$), and let \ $\Vj{k}\in\Ck$ \ be an aligned
+configuration with direction vector \ $\oj{k}\in\Ec$. \ Assume that \
+$\psi(\hV)=\phi(\Vj{k})$, \ and let \ $\bx\in X$ \ be the
+configuration \ $(\Vj{k},\hi(\hV))$.
+
+To prove Theorem \ref{thmain}, we must show that if the point \
+$\Vc\in\C$ \ defined by \ $(\hV,\Vj{k})$ \ is not singular of type
+(b), then it is smooth. This would follow if $h$ is
+locally transverse to $\hC$ at the points \ $\bx\in X$ \ and \
+$\hV\in\hC$, \ in other words:
+%
+\begin{equation}\label{etransv}
+%
+\Image\dhh_{\bx}~+~T_{\hV}(\hC)~=~T_{\hV}(Y)~.
+%
+\end{equation}
+
+But \ $T_{\Vj{k}}(\Ck)$ \ is just the null space of \
+$A\up{k}$ \ of \eqref{eai}, \ namely: \ $(\oj{k}^{\perp})^{n}$, \
+so it suffices to prove that \ $\oj{k}\in T_{\hV}(\hC)$. \
+Choose unit vectors \ $\cj{i}$ \ spanning \ $\oj{i}^{\perp}$ \
+($i=1,2$) \ in $\Ec$; then \ $\oj{k}\not\in T_{\hV}(\hC)$ \
+only if \ $\oj{k}$ \ is proportional to: \
+$(\aj{1,2}\cdot\cj{2})\,\oj{1}~-~(\oj{1}\cdot\cj{2})\,\aj{1,3}$, \
+which is the vector connecting the meeting point of \
+$\Line\up{1}$ \ and \ $\Line\up{2}$ \ with the end point
+of \ $\Vj{k}$. \ See \cite{SSB2} for the details.\hfill$\Box$
+
+%
+%s3      Kinematic singularities
+%
+\sect{Kinematic singularities} \label{crks}
+
+Theorem \ref{thmain} gives a \emph{necessary} condition for a
+configuration to be singular (topologically): namely, that some
+subset $\{i_{1},\dotsc,i_{m}\}$ \ of its branches be aligned, with
+direction lines \ $(\Line\up{i_{j}})_{j=1}^{m}$. \ Moreover, the
+Pl\"{u}cker line coordinates of these lines must span certain
+types of \emph{varieties}, of positive codimension in \ $\RRR^{6}$
+\ (see \cite[\S 5]{M}).
+
+We now show how uncertainty singularities give rise to kinematic
+singularities, for the polygonal mechanism discussed in Section \ref{cts}.
+
+\subsection{Mechanism architectures}
+\label{sarch}
+
+Recall from \S \ref{sks} that the latter require an
+\emph{actuation input choice} \ -- \ that is, a choice of input
+coordinates \ $\bx_{\iin}$ \ (corresponding to the actuated
+joints), and output coordinates  \ $\bx_{\out}$ \ (corresponding
+to the end effector of the mechanism: in our case, the position
+and orientation of the moving platform).
+
+For the spatial case (i.e., $\Gamma$ embedded in \ $\RRR^{3}$, and
+having spherical joints), \ there are three architectures to
+consider as a result of platform mobility considerations:
+%
+\begin{enumerate}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+%
+\item Six branches \
+  $\{i_{1},\dotsc,i_{6}\}\subseteq\{1,\dotsc,k\}$, \ where the $j$-th
+  branch has \ $\nj{i_{j}}-1$ \ spherical actuators (say, at all
+  joints but the last two).
+%
+\item One branch \ $i_{1}$ \ having a total of \ $\nj{i_{1}}$ \
+  spherical actuators (at each joint but the last); and three more
+  branches \ $i_{2}$, \ $i_{3}$, \ and \ $i_{4}$, \ with \
+  $\nj{i_{j}}-1$ \ spherical actuators in the $j$-th branch \
+  ($j=2,3,4$).
+%
+\item Two branches \ $i_{1}$, \ $i_{2}$ \ with actuators at each joint
+    but the last; and one more branch \ $i_{3}$ \ with \
+  $\nj{i_{3}}-1$ \ spherical actuators.
+%
+\end{enumerate}
+
+\subsection{Kinematic analysis through screw theory}
+\label{ssth}
+
+We use screw theory (see \cite{DH}) to describe the forces operating
+at each joint of our mechanism:
+
+A \emph{screw} $\$ $ is a Pl\"{u}cker vector in \ $\RRR P^{5}$, \
+describing a line \ -- \ or equivalently, the position and
+direction of vector \ -- \ in \  $\RRR^{3}$ \ (cf.\ \cite[\S
+5]{M}). Thus  Fig. \ref{fig:screws} depicts the equivalent
+kinematic chain of an arbitrary branch $i$ of a mechanism, where
+the movement of each spherical joint $j$\ is described by three
+unit screws \ $\sj{i}_{j,1}$, \ $\sj{i}_{j,2}$, \ and \
+$\sj{i}_{j,3}$ \ attached to its center. Note that just before a
+passive joint, we can make do with two screws.
+
+Considering the $i$-th branch as an open chain, we can express the
+instantaneous twist of the end-effector as:
+%
+\begin{equation}
+\label{eq:vector_loop_equation}
+%
+ \$_{p}~=~\sum_{j=0}^{\nj{i}}\,\sum_{k=1}^{3}\,
+\sj{i}_{j,k} \cdot \dot{\theta}\up{i}_{j,k}
+%
+\end{equation}
+%
+where \ $\theta\up{i}_{j,k}$ \ is the input coordinate for the \
+$\sj{i}_{j,k}$ \ screw (cf.\ \cite[\S 5.6]{T}). \newnot{4-1}
+
+\begin{figure}[htb]
+\centering \epsfysize=7cm \leavevmode \epsffile{fig_4/screws.eps}
+\caption{Equivalent kinematic structure of a branch}
+\label{fig:screws}
+\end{figure}
+
+In order to rid \ \eqref{eq:vector_loop_equation} \ of the passive
+joints, for the $i$-th branch, we must multiply both sides by
+appropriate reciprocal screws. More precisely, choose a basis \
+$\{\sjp{i}_{t}\}_{t=1}^{\laj{i}}$ \ for the space \ $\Vj{i}$ \ of common
+reciprocals of the screws of all passive joints for this branch:
+
+\begin{enumerate}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+%
+\item If the branch has \ $\nj{i}-1$ \ spherical actuators, at all
+  joints but the last two, the reciprocal screw for these two joints
+  corresponds to the line passing through them (i.e., \ $\Vj{i}$ \ is
+  one-dimensional).
+%
+\item If the branch has \ $\nj{i}$ \ spherical actuators, at all but
+  the last joint, \ $\Vj{i}$ \ is   $3$-dimensional, with the
+  corresponding lines all passing through the last joint (see \cite[Ch. 5]{T}).
+%
+\end{enumerate}
+
+For the $i$-th branch we obtain a system of \ $\laj{i}$ \ linear
+equations for \ $\$_{p}$:
+%
+\begin{equation}
+\label{eq:one_branch_screw}
+%
+\sjp{i}_{t} \cdot \$_p~=~\sum_{j=0}^{\nj{i}}\,\sum_{k=1}^{3}\,
+\sjp{i}_{t}\cdot \sj{i}_{j,k}\cdot \dot{\theta}\up{i}_{j,k}
+%
+\end{equation}
+%
+($t=1,\dotsc,\lj{i}$), \ in which of course the unactuated inputs \
+$\dot{\theta}\up{i}_{j,k}$ \ have zero coefficient.
+
+Combining the \ $\lambda=\sum_{i=1}^{k}\,\laj{i}$ \ equations \
+\eqref{eq:one_branch_screw} \ for all $k$ branches, we
+obtain equation \ \eqref{eq:gosselin_sing} \ for the chosen
+architecture \ ($\lambda=6$ \ for the first two, and \ $\lambda=7$ \
+for the third).
+
+The \ $\lambda\times 6$ \ matrix \ $J_{\out}$ \ will take the form:
+%
+\begin{equation}
+\label{eq:six_branches_Jout}
+%
+J_{\out}=
+\begin{pmatrix}
+\sjp{1}_{1}\\
+\vdots\\
+\sjp{1}_{\laj{1}}\\
+\vdots\\
+\sjp{k}_{\laj{k}}
+\end{pmatrix}
+%
+\end{equation}
+%
+whose rows are the reciprocal screws of all actuated branches.
+
+The matrix \ $J_{\iin}$ \ is bloc-diagonal:
+$$
+J_{\iin}~=~
+\begin{pmatrix}
+A\up{i_{1}} & \dotsc & 0     \\
+\vdots      & \ddots & \vdots \\
+0           & \dotsc & A\up{i_{k}}
+\end{pmatrix}~,
+$$
+%
+with the $i$-th bloc (for the $i$-th actuated branch, with $d$ passive
+joints) a \ $\laj{i}\times(\nj{i}-d)$ \ matrix of the form:
+$$
+A\up{i}~:=~\begin{pmatrix}
+\sjp{i}_{1}\cdot\sj{i}_{0,1} & \dotsc & \sjp{i}_{1}\cdot\sj{i}_{\nj{i}-d,3}\\
+\vdots & & \vdots \\
+\sjp{i}_{\laj{i}}\cdot\sj{i}_{0,1} & \dotsc &
+\sjp{i}_{\laj{i}}\cdot\sj{i}_{\nj{i}-d,3}
+\end{pmatrix}~.
+$$
+
+\begin{prop}\label{pkinsing}
+%
+For a polygonal mechanism $\Gamma$ (with no unactuated branches), there
+is an instantaneous kinematic singularity of type I or III at any
+uncertainty singularity.
+%
+\end{prop}
+
+\begin{proof}
+%
+At an uncertainty singularity at least two branches are aligned,
+so the reciprocals to the passive joint(s) are reciprocal to all
+screws of these branches, and thus \ $A\up{i}=0$ \ for these branches. Since \
+$\lambda\leq 7$, \ $J_{\iin}$ \ is singular.
+
+Now by Theorem \ref{thmain}, an uncertainty singularity can have:
+%
+\begin{enumerate}
+%
+\item Two coaligned branches, each with a pair of unactuated joints:
+  they have a common reciprocal (and \ $\lambda=6$), \ so \
+  $J_{\out}$ \ has rank \ $\leq 5$. \ The same holds in the second
+  architecture whenever two branches are coaligned.
+%
+\item Three aligned branches whose lines lie in a planar pencil, each with
+  a pair of unactuated joints: in this case the corresponding screws
+  are linearly dependent, so again \ $J_{\out}$ \ has rank \ $\leq 5$.
+%
+\item Four aligned branches whose lines are in one plane: the lines of
+  those with a pair of unactuated joints each lie in a
+  planar pencil (rank $3$). In the first architecture, the last two
+  lines each add at most $1$ to the rank; in the second, adding the last
+  line form a degenerate congruence (total rank $4$). Thus in any case \
+  $J_{\out}$ \ has rank \ $\leq 5$.
+%
+\end{enumerate}
+%
+\end{proof}
+
+%
+%s4      An illustrative example
+%
+\sect{An illustrative example} \label{cve}
+
+We now give an visual presentation of an uncertainty singularity in an
+explicit $3$-URU $3$-DOF mechanism $\Gamma$, introduced
+in \cite{ZFB}.
+
+\begin{figure}[htb]
+\centering \epsfysize=5.6cm \leavevmode \epsffile{fig_4/robot.eps}
+\caption{Singular config. for a 3-DOF 3-URU mechanism}
+\label{fig:triangle2} \end{figure}
+
+The centers of the three U-joints at the base (platform) form an
+equilateral triangle. The three R-joint axes fixed in the base
+(platform) meet (not at the center of the base(platform) triangle) in
+a "Y" shape. The three intermediate R joints in each branch are all
+parallel.
+
+\begin{remark}\label{rem:planarity}
+%
+To enable visualization near the singular configuration \ $\Vc\in\C$, \
+we need a mechanism with instantaneous mobility near $\Vc$ equal to
+$3$. We therefore make sure that the intersection point of the three
+R-joint axes avoids the center of the base platform (otherwise
+mobility would be increased by the additional spin dexterity of the
+extended branch).
+%
+\end{remark}
+
+In the region in $\C$ where $\Gamma$ acts as a planar mechanism
+(see \cite{ZFB2}), the pose of the moving platform $\Pc$ (an equilateral
+triangle) is determined by two coordinates (say, $x$ and $y$) of its
+barycenter $\bp$, and its planar rotation $\phi$. Denote by $r$
+the common distance \ $d(\bp,\ppj{i})$ \ ($i=1,2,3$).
+
+The \wspace\ for each vertex \ $\ppj{i}$ \ of $\Pc$ is an annulus \
+$\Aj{i}$ \ centered at the fixed endpoint \ $\xj{i}$ \ of the $i$-th
+branch, with radii \ $\lj{i}_{1}\pm\lj{i}_{2}$ \ respectively.
+Thus if we fix the orientation $\phi$ of $\Pc$, the resulting
+constrained \wspace\ \ $\Wc_{\phi}$ \ for $\bp$ (the shaded area in
+Fig. \ref{annuli}) is the intersection of three annuli (with centers
+at \ $\Tj{i}$): \ namely, the displacements \ $\hAj{i}$ \ ($i=1,2,3$) \
+of \ $\Aj{i}$ \ by a vector \ $\ppj{i}\bp=\xj{i}\Tj{i}$ \ of length $r$.
+
+\begin{figure}[ht]
+\centering
+\epsfysize=7cm %\epsfxsize=6.4cm\leavevmode
+\epsffile{fig_4/annuli.eps} \caption{constrained \wspace\ \
+$\Wc_{\phi}$\ for $\bp$ with fixed $\phi$} \label{annuli}
+\end{figure}
+
+Thus $\C$ is described in the vicinity of $\Vc$ by the location of
+$\bp$ in \ $\Wc_{\phi}$ and the orientation \ $\phi\in I$. \
+Generically, the \wspace s $\Wc_{\phi}$ \ will all be homeomorphic to
+a fixed space \ $\Wc'$ \ for nearby values of $\phi$, so that a
+neighborhood of $\Vc$ will be a topological product \ $I\times\Wc'$. \
+However, for some values of $\phi$, \ $\Wc_{\phi}$ \ may vanish, so
+a larger neighborhood $U$ of $\Vc$ need not be connected (see Fig.
+\ref{fig:2 boxes}).
+
+\begin{figure}[ht]
+\centering
+\epsfysize=5.8cm %\epsfxsize=6.4cm
+\leavevmode \epsffile{fig_4/before_boxes_kiss.eps}
+\caption{\cspace\ for $3$-RRR mechanism} \label{fig:2 boxes}
+\end{figure}
+
+In addition, we need discrete data on the elbow up/down position of
+each branch at $\Vc$, so the relevant region of $\C$ will actually
+contain eight identical copies of $U$, each consisting of one or more
+product ``boxes'' as above. Since the boundaries of \ $\Wc_{\phi}$ \
+are at the boundaries of the annuli \ $\hAj{i}$, \ where the links of
+the $i$-th branch are aligned, the faces of each box are identified
+with a corresponding face in another box.
+The aligned poses can be calculated analytically using the algorithm
+in Gosselin and Merlet (cf.\ \cite{GM}), since each of the extreme
+situations can be treated as an equivalent $3$-RPR robot, whose
+link lengths are fixed and known.
+
+For example, gluing faces for the situation depicted in Fig.
+\ref{fig:2 boxes} yields two $3$-tori. (Of course, this is only
+true in the region where the mechanism platform motion is planar \
+-- \ see Remark \ref{rem:planarity}; so all we can conclude about
+$\C$ near $\Vc$ is that it has two connected components, locally
+isomorphic to \ $\RRR^{3}$.)
+
+As the parameters vary, we find that the two connected components
+of $U$ approach each other, and for an appropriate value they
+touch at one point (see Fig. \ref{fig:box_kiss}).  As a result,
+$\C$ is now locally homeomorphic to \ $\RRR^{3}
+\vee_{\Vc}\RRR^{3}$ that is a singular point where two regions
+meet.
+
+\begin{figure}[ht]
+\centering
+\epsfysize=5.8cm %\epsfxsize=6.4cm
+\leavevmode \epsffile{fig_4/box_kiss.eps} \caption{\cspace\ is
+locally \ $\textbf{T}^3\vee_c \textbf{T}^3$} \label{fig:box_kiss}
+\end{figure}
+
+
+% conclusions
+
+\section{Conclusions}
+
+In this paper we derive necessary conditions for the existence of
+topological (uncertainty) singularities in a class of spatial and
+planar robots having arbitrary number of legs and arbitrary number
+of spherical joints in each leg, all attached to a moving planar
+platform. We conclude that a topological singularity emerges when
+one of the following holds: two legs are aligned and have common
+direction, three legs are aligned  and form a flat pencil or when
+four legs are aligned and lie in the same plane.
+
+We then relate these topological singular points with the well
+known kinematics ones.
+
+Lastly, these results are used in an illustrative example for a
+topological singular point, where intrinsically the robot
+actuation is not sufficient \--\ regardless of the actuators
+placements.

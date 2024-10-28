@@ -1,0 +1,469 @@
+#LyX 1.6.8 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass scrreprt
+\options a4paper,titlepage
+\use_default_options false
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine natbib_numerical
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+\begin_inset CommandInset label
+LatexCommand label
+name "cha:Appendix_Refractive_Index_GaAlAs"
+
+\end_inset
+
+Refractive Index of 
+\begin_inset Formula $Al_{x}Ga_{1-x}As$
+\end_inset
+
+ Alloy
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Al_{x}Ga_{1-x}As$
+\end_inset
+
+ is the main semiconductor alloy of interest to us throughout this report,
+ and thus its properties are of paramount importance.
+ This appendix deals we the determination of the complex refractive index
+ of this alloy, for any 
+\begin_inset Formula $Al$
+\end_inset
+
+ atoms molar composition 
+\begin_inset Formula $x$
+\end_inset
+
+ and temperature.
+ This parameter is mainly important in determining accurately the optical
+ properties of microcavity structures, discussed in chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Microcavity"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The materials in the binary 
+\begin_inset Formula $Al_{x}Ga_{1-x}As$
+\end_inset
+
+ are essentially lattice matched over the entire composition range.
+ This attribute has been of considerable technical importance, because it
+ has made possible the growth of artificial structures with electronic energy
+ levels tailored to a wide variety of fundamental and applied purposes.
+ These structures and their interfaces can be characterized conveniently
+ and non destructively by visible-near UV optical reflection techniques.
+ However, these techniques require an accurate data base, but at present
+ only incomplete dielectric function data are available.
+\end_layout
+
+\begin_layout Standard
+There are two main approaches in literature towards the determination of
+ the refractive index: theoretical modeling of the dielectric function of
+ the material at hand and semi-empirical approximations of this property
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Adachi1985"
+
+\end_inset
+
+.
+ This methods are, obviously, carefully tailored to each material, an there
+ is a considerable variation between then depending of various factor mainly
+ the temperature.
+ As the theoretical modeling is two complex or ill-adjusted to our needs
+ we resort to the empirical approach.
+\end_layout
+
+\begin_layout Standard
+In 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Aspnes1986"
+
+\end_inset
+
+ the authors present a measurement of the room-temperature pseudo-dielectric
+ function 
+\begin_inset Formula $\epsilon$
+\end_inset
+
+ and related optical function data for 
+\begin_inset Formula $Al_{x}Ga_{1-x}As$
+\end_inset
+
+ alloys for energies 
+\begin_inset Formula $E$
+\end_inset
+
+ from 
+\begin_inset Formula $1.5$
+\end_inset
+
+ to 
+\begin_inset Formula $6.0\, eV$
+\end_inset
+
+ and for compositions 
+\begin_inset Formula $x$
+\end_inset
+
+ from 
+\begin_inset Formula $0$
+\end_inset
+
+ to 
+\begin_inset Formula $0.80$
+\end_inset
+
+ in steps of approximately 
+\begin_inset Formula $0.1$
+\end_inset
+
+.
+ This numerical data has been organized into a database of files which can
+ be downloaded from 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Company2010"
+
+\end_inset
+
+.
+  These files include the real and the imaginary parts of the dielectric
+ function, 
+\begin_inset Formula $\Re\left(\epsilon\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $\Im\left(\epsilon\right)$
+\end_inset
+
+, from which the refractive index can be calculated using
+\begin_inset Formula \begin{equation}
+n=\Re(n)+i\Im(n)=\sqrt{\Re\left(\epsilon\right)+i\Im\left(\epsilon\right)}.\end{equation}
+
+\end_inset
+
+With this experimental curve we can now go ahead and calculate the refractive
+ index for any temperature and energy.
+ The second goal is achieved by a strait-forward interpolation of the experiment
+al curves to the requested energy.
+ Of course, this procedure is valid only in the spectral support region
+ of the experimental data.
+ 
+\end_layout
+
+\begin_layout Standard
+The temperature dependent extrapolation is performed by shifting the experimenta
+l spectra in energy by an amount of 
+\begin_inset Formula $E_{shift}(T)=E_{g}(T)-E_{g}(300K)$
+\end_inset
+
+, which accounts for the direct bandgap shift of the alloy as a function
+ of temperature.
+\end_layout
+
+\begin_layout Standard
+As a illustration, we present in figure 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/AdvancedLab/Figures/GaAlAs_Refractive_Index.eps
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:All_Refractive_Index"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The real and imaginary parts of the refractive index of 
+\begin_inset Formula $Ga_{1-x}Al_{x}As$
+\end_inset
+
+ as a function of energy, for various temperatures and 
+\begin_inset Formula $x=0-1$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+The (a) real and (b) imaginary parts of the refractive index of 
+\begin_inset Formula $Ga_{1-x}Al_{x}As$
+\end_inset
+
+ as a function of energy, for 
+\begin_inset Formula $T=2K$
+\end_inset
+
+ (green), 
+\begin_inset Formula $T=77K$
+\end_inset
+
+ (red) and 
+\begin_inset Formula $T=300K$
+\end_inset
+
+ (blue) and 
+\begin_inset Formula $x=0-1$
+\end_inset
+
+ (from left to right).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:All_Refractive_Index"
+
+\end_inset
+
+ the results of the calculation of the refractive indices for temperatures
+ values relevant to this report (
+\begin_inset Formula $T=2,\,77,\,300\, K$
+\end_inset
+
+) and various values of 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ In figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Refractive_Index_2K"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Refractive_Index_77K"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Refractive_Index_300K"
+
+\end_inset
+
+ we present a zoomed in view of the refractive indices at energy intervals
+ and 
+\begin_inset Formula $x$
+\end_inset
+
+ values relevant to this report, calculated at 
+\begin_inset Formula $T=2,\,77,\,300\, K$
+\end_inset
+
+, respectively.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/AdvancedLab/Figures/GaAlAs_Refractive_Index_2K.eps
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Refractive_Index_2K"
+
+\end_inset
+
+Refractive indices for 
+\begin_inset Formula $T=2K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/AdvancedLab/Figures/GaAlAs_Refractive_Index_77K.eps
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Refractive_Index_77K"
+
+\end_inset
+
+Refractive indices for 
+\begin_inset Formula $T=77K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/AdvancedLab/Figures/GaAlAs_Refractive_Index_300K.eps
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Refractive_Index_300K"
+
+\end_inset
+
+Refractive indices for 
+\begin_inset Formula $T=300K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,144 @@
+#LyX 1.6.8 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass report
+\use_default_options true
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine basic
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Chapter*
+Abstract
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{Abstract}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Semiconductor microcavities (MC) are structures consisting of a heterostructure,
+ such as a quantum well (QW) or a heterojunction, which are embedded between
+ two high reflectivity distributed Bragg reflectors (DBR).
+ In these structures the photonic mode is spatially confined inside the
+ cavity layer.
+ When the cavity layer width is comparable to the exciton wavelength, interactio
+n between the exciton and the confined photon takes place.
+ The interaction strength can be described in two regimes: (a) the weak
+ coupling regime, where this interaction can be described by perturbation
+ theory, and (b) the strong coupling regime, where the system eigenenergies
+ are Rabi split modes termed cavity polaritons.
+\end_layout
+
+\begin_layout Standard
+Recently, reflection and photoluminescence (PL) spectroscopy studies of
+ such structures containing a two-dimensional electron gas (2DEG) have been
+ reported, revealing sharp polaritonic lines, composed of a cavity photon
+ which is in strong interaction with unbound electron-hole (e-h) pair excitation
+s, located at the Fermi edge of the 2DEG.
+ In this study, we present a theoretical framework for the modeling of MCs
+ with embedded QWs, and thereby investigate the interaction of such electron-hol
+e pairs with the light field excitations within these structures near the
+ Fermi edge.
+ We start by considering the electronic properties of a bare QW via a two-level
+ 
+\begin_inset Formula $\mathbf{k\cdot p}$
+\end_inset
+
+ method, where the 2DEG influence is incorporated through a self-consistent
+ the Schrödinger-Poisson model.
+ Once the electronic properties of the QW are found, the light-matter interactio
+n in the QW is modeled via a semi classical approach.
+ We assume a dipole light-matter interaction, and discuss two approximated
+ methods to model the optical properties of the considered QW: (a) the free-carr
+ier model, where the Coulombic interaction is absent and the dephasing is
+ modeled phenomenologically, and (b) the screened Coulomb-correlated model,
+ where we incorporate both the Coulombic interactions between the charge
+ carrier and also discuss the mutual screening effect.
+ This calculation is performed with and without the presence of the 2DEG
+ in the well region of the QW, yielding the complex electrical susceptibility,
+ absorption and spontaneous emission spectra of the investigated of the
+ structure.
+\end_layout
+
+\begin_layout Standard
+Next, the obtained electronic and optical properties of a bare QW are then
+ used to calculate the reflection spectra of the full MC structure, with
+ QW embedded in their cavity region.
+ This is achieved by using the refractive index spectrum of the QW, obtained
+ from its electrical susceptibility calculation, in the transfer matrix
+ calculation of the entire MC reflection spectrum.
+ As for the bare QW, the calculation is performed with and without the presence
+ of 2DEG of various concentrations.
+ Finally, the formulated approach is utilized to calculate the reflection
+ anti-crossing curves of the investigated MC structures, which are analyzed
+ manually and through a fitting procedure to the coupled-oscillator model.
+ This allows us to investigate the influence of the 2DEG of variable concentrati
+ons on the coupling strength of the electron-hole resonances with the cavity
+ photons and of the polaritonic linewidths.
+ 
+\end_layout
+
+\begin_layout Standard
+We show that the strong interaction of the cavity-confined photon with the
+ interband excitations of the two-dimensional electron gas leads to the
+ formation of cavity polaritons.
+ The most significant result is the demonstration that cavity polaritons
+ are indeed formed for high 2DEG densities at the Fermi edge energies.
+ In comparison, our model calculations show that excitons are not formed
+ in bare QWs having a 2DEG with such densities.
+ The coherence between all these e-h pair excitations is induced by the
+ strong interaction with the cavity mode, in contrast with the exciton-polariton
+s case, where the coherence stems from the Coulomb interaction between the
+ electron and hole.
+ 
+\end_layout
+
+\end_body
+\end_document

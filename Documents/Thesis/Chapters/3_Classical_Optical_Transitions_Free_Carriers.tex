@@ -1,0 +1,790 @@
+\selectlanguage{english}%
+
+\chapter{Free Carriers Optical Transitions}
+
+\label{cha:Free_Carriers_Optical_Transitions}Absorption and emission
+of photons in semiconductors and semiconductor nanostructures is the
+result of the complex interaction between light and condensed matter,
+i.e. photons, electrons, and ions. In order to capture the physics
+behind these processes, electromagnetism and quantum mechanics have
+to be combined, leading to a multitude of physical phenomena. This
+thesis focuses on the static properties of nanostructures, such as
+the constant emmision or absorption of light. Therefore, the theory
+will be treated within the time-independent limit. The theory here
+is formulated within the classical limit of optical transitions, where
+the quantum-mechanically treated carriers couple to a classical electromagnetic
+field. The resulting equations are famous and denoted as \emph{semiconductor-Bloch
+equations} \citet{haug_quantum_1994}. These equations have been used
+successfully over decades to describe optical properties within semiconductors.
+A fully consistent treatment of the light-emission would in principle
+require to work in a fully quantized picture (see the review \citet{Kira1999}),
+leading to the \emph{semiconductor-luminescence equations}. Such a
+treatment is beyond the scope of this thesis. The derivation presented
+here serves to illustrate the imposed approximations and to clearly
+document the implemented equations for nanostructures of any dimensionality
+using the electronic structure obtained via the $\mathbf{k}\cdot\mathbf{p}$
+envelope equations. This theory review is based mainly on \citet{Chuang1995,Jackson1998,Chow,Haug2009,Schafer2002}.
+
+The chapter is organized as follows. The first section covers the
+transformation of the crystal Hamiltonian \ref{eq:crystal_H_final}
+into the second quantization. Then, the representation will be rewritten
+in terms of the Bloch states, with a particular focus on the details
+arising when electronic states obtained using the $\mathbf{k}\cdot\mathbf{p}$
+envelope function method are used. In the present chapter, the Coulomb
+interaction will be excluded and thereby, only transitions between
+free carriers will be considered. Coulomb-correlated transitions will
+be treated in Chapter \ref{cha:Coulomb_Correlated_Optical_Transitions}. 
+
+The second section introduces the classical (monochromatic) light
+field and the self-consistent coupling to the electrons within the
+semiconductor nanostructure. The resulting equations allow to calculate
+the optical susceptibility and therefrom absorption, stimulated emission
+and refractive index change. The third section briefly explains how
+spontaneous emission can be obtained from optical susceptibility.
+The fourth section covers the procedure to calculate required matrix
+elements from wavefunctions obtained using the $\mathbf{k}\cdot\mathbf{p}$
+envelope equations.
+
+
+\section{Second Quantization}
+
+
+\subsection{Introduction}
+
+The electrons are fermions and consequently their wavefunction must
+be antisymmetric to obey the Pauli exclusion principle. But instead
+of using a complicated expression for the antisymmetric wavefunction,
+restricted to a constant number of particles, the Hamiltonian can
+be formulated in the second quantization that allows to include a
+varying number of particles and maintain the antisymmetry of the wavefunction
+naturally. Starting with the Hamiltonian \ref{eq:crystal_H_final}
+and separating the interaction with the external electromagnetic field
+leads to\ \begin{eqnarray}
+H & = & \sum_{i}\underbrace{\left(\frac{\mathbf{p}_{i}^{2}}{2m_{0}}+U(\mathbf{r}_{i})\right)}_{H_{1}}+\underbrace{\sum_{i}\left(\frac{e}{m_{0}}\mathbf{A}_{i}\cdot\mathbf{p}_{i}+\frac{e^{2}}{2m_{0}}\mathbf{A}_{i}^{2}\right)}_{H_{e-EM}}\nonumber \\
+ &  & +\underbrace{\frac{1}{2}\sum_{i,j}\frac{e^{2}}{4\pi\epsilon_{0}\left|\mathbf{r}_{i}-\mathbf{r}_{j}\right|}}_{H_{2}}.\label{eq:Separated_Hamiltonian-1}\end{eqnarray}
+Here the pure electro-magnetic Hamiltonian $H_{EM}$ has been dropped
+as it constitutes within the present theory only an additional energy.
+Let $\varphi_{n}$ be the eigenstates of the single particle Hamiltonian
+$H_{1}$\begin{equation}
+H_{1}\varphi_{n}=E\varphi_{n}\end{equation}
+with resulting energies and wavefinctions. Next, the vacuum ground
+state $\left|0\right\rangle $ and creation and annihilation operators
+$\hat{a}_{n}^{\dagger}$ and $\hat{a}_{n}$ are introduced. These
+operators create and destroy a particle with $\varphi_{n}$ and therefore
+act on the state\begin{equation}
+\hat{a}_{n}^{\dagger}\left|0\right\rangle =\left|1_{n}\right\rangle ,\,\,\hat{a}_{n}\left|1_{n}\right\rangle =\left|0\right\rangle ,\,\,\hat{a}_{n}\left|0\right\rangle =0,\,\,\hat{a}_{n}^{\dagger}\left|1_{n}\right\rangle =0.\end{equation}
+The state span an Hilbert space of varying number of particles termed
+as the \emph{Fock space. }The Fock space $\mathcal{F}$ can be defined
+in terms of the direct sum of $N$-particle Hilbert spaces $\mathcal{H}_{N}$\[
+\mathcal{F}=\mathcal{H}_{0}+\mathcal{H}_{1}+\mathcal{H}_{2}+\ldots\]
+The antisymmetry of the state is preserved by the fermion commutation
+rule\begin{equation}
+\left[\hat{a}_{n}^{\dagger},\hat{a}_{n'}\right]_{+}=\hat{a}_{n}^{\dagger}\hat{a}_{n'}+\hat{a}_{n'}\hat{a}_{n}^{\dagger}=\delta_{nn'}\label{eq:commutation_rel_1}\end{equation}
+and\begin{equation}
+\left[\hat{a}_{n},\hat{a}_{n'}\right]_{+}=\left[\hat{a}_{n}^{\dagger},\hat{a}_{n'}^{\dagger}\right]_{+}=0.\label{eq:commutation_rel_2}\end{equation}
+A valuable tool to transfer the Hamiltonian \ref{eq:Separated_Hamiltonian-1}
+(or any other operator) into second quantization representation is
+given by the electron field operator\begin{equation}
+\hat{\Phi}(\mathbf{r},t)=\sum_{n}\varphi_{n}(\mathbf{r})\hat{a}_{n}(t).\end{equation}
+Here, we switch from the Schr\"{o}dinger to the Heisenberg picture.
+For an operator $A$ in the Schr\"{o}dinger picture, the corresponding
+operator in the Heisenberg picture is given by \begin{equation}
+A_{H}=e^{iHt/\hbar}Ae^{-iHt/\hbar},\end{equation}
+where $H$ is the Hamilton operator. As the Heisenberg picture will
+be generally used, the time-dependence of the operators is dropped
+from now on.
+
+
+\subsubsection{Single Particle Hamiltonian}
+
+Using the field operator $\hat{\Phi}(\mathbf{r})$, the representation
+of the single-particle Hamiltonian $H_{1}$ in second quantization
+is given by\begin{eqnarray}
+\hat{H}_{1} & = & \int d\mathbf{r}\hat{\Phi}^{\dagger}(\mathbf{r})H_{1}\hat{\Phi}(\mathbf{r})\nonumber \\
+ & = & \sum_{j,k}\hat{a}_{j}^{\dagger}\hat{a}_{k}\int d\mathbf{r}\varphi_{j}^{*}H_{1}\varphi_{k}\label{eq:Single_Particle_H_Second_Q}\\
+ & = & \sum_{j}\hat{a}_{j}^{\dagger}\hat{a}_{j}E_{j},\nonumber \end{eqnarray}
+which is diagonal as $\varphi_{n}$ is assumed to be an eigenfunction
+of $H_{1}$. The representation in terms of second quantization could
+also be performed using another basis of the single-particle Hilbert
+space, but then \ref{eq:Single_Particle_H_Second_Q} would not be
+diagonal in $jk$. Another detail is that here, the first quasi-particle,
+a particle occupying the eigenstates of the single particle Hamiltonian
+$H_{1}$, has been introduced.
+
+
+\subsubsection{Two Particle Hamiltonian: Coulomb Interaction}
+
+The transformation of the two-particle interaction, the Coulomb term
+$H_{2}$, is similar, but more complicated. The result of the expansion
+is\begin{equation}
+\hat{H}_{2}=\frac{1}{2}\sum_{j,k,l,m}\left\langle jk\mid v\mid lm\right\rangle \hat{a}_{j}^{\dagger}\hat{a}_{k}^{\dagger}\hat{a}_{l}\hat{a}_{m}.\label{eq:Two_Particle_Hamiltonian}\end{equation}
+The matrix element $\left\langle jk\mid v\mid lm\right\rangle $ is
+given by \begin{equation}
+\left\langle jk\mid v\mid lm\right\rangle =\int d\mathbf{r}d\mathbf{r}'\varphi_{j}^{*}(\mathbf{r})\varphi_{k}^{*}(\mathbf{r}')\frac{e^{2}}{4\pi\epsilon_{0}\left|\mathbf{r}-\mathbf{r}'\right|}\varphi_{m}(\mathbf{r})\varphi_{l}(\mathbf{r}').\end{equation}
+Note that the $m$ and the $l$ are swapped in the integral compared
+to the annihilation and creation operators and that in $\left\langle jk\mid v\mid lm\right\rangle $,
+the spin variable must be included, so\[
+\left\langle jk\mid v\mid lm\right\rangle \rightarrow\delta_{s_{j}s_{m}}\delta_{s_{k}s_{l}}\left\langle jk\mid v\mid lm\right\rangle .\]
+
+
+
+\subsubsection{Particle \textendash{} Electromagnetic Field Interaction Hamiltonian}
+
+The next Hamiltonian to quantize is the electron\textendash{}EM field
+interaction Hamiltonian $H_{e\lyxmathsym{\textminus}EM}$ defined
+in \ref{eq:Separated_Hamiltonian-1}. It is clear that $H_{e\lyxmathsym{\textminus}EM}$
+is a one-particle Hamiltonian and therefore its representation in
+the second quantization is obtained by applying the field operators
+as in \ref{eq:Single_Particle_H_Second_Q}, with the difference that
+$\varphi_{n}$ is diagonal in $H_{1}$but not in $H_{e\lyxmathsym{\textminus}EM}$.
+The resulting expression reads\begin{equation}
+\hat{H}_{e-EM}=\sum_{j,k}\left(\frac{e}{m_{0}}\left\langle j\mid\mathbf{A}\cdot\mathbf{p}\mid k\right\rangle +\frac{e^{2}}{2m_{0}}\left\langle j\mid\mathbf{A}^{2}\mid k\right\rangle \right)\hat{a}_{j}^{\dagger}\hat{a}_{k}.\label{eq:Particle_EM_Interaction_H}\end{equation}
+To simplify the Hamiltonian and in order to get rid of the vector
+potential $\mathbf{A}$ in favor of the electric field $\mathbf{E}=-\frac{\partial}{\partial t}\mathbf{A}$
+(Coulomb gauge assumed as before), the \emph{dipole approximation}
+can be applied. As the crystal is a quasi-periodic structure, where
+the periodicity is much smaller than the photon wavelength of usual
+electromagnetic fields, the electric field can be assumed to be constant
+within the range of a lattice cell. This approximation removes the
+spatial dependence of $\mathbf{A}$ and reduces the second term $\left\langle j\mid\mathbf{A}^{2}\mid k\right\rangle $
+to a contribution diagonal in $j,k$, and is therefore proportional
+to the number of electrons and does not contribute to any interband
+transitions. Therefore, it can be treated as an additional energy
+constant and thus be neglected. The remaining term, $\frac{e}{m_{0}}\left\langle j\mid\mathbf{A}\cdot\mathbf{p}\mid k\right\rangle $
+is more difficult to simplify and thus a simplified argument is brought
+here, while the full justification can be found in \citet{Schafer2002}.
+The first step is to relate the momentum matrix element $\mathbf{p}$
+and the dipole transition matrix element $\mathbf{r}$. The relation
+is given by\begin{equation}
+\left[\mathbf{r},H_{1}\right]=\frac{i\hbar}{m_{0}}\mathbf{p},\end{equation}
+where $H_{1}$ is the single particle Hamiltonian. Thus, the second
+term in \ref{eq:Particle_EM_Interaction_H} can transformed into\begin{eqnarray}
+\frac{e}{m_{0}}\left\langle j\mid\mathbf{A}\cdot\mathbf{p}\mid k\right\rangle  & = & \mathbf{A}\cdot\frac{e}{i\hbar}\left\langle j\mid\left[\mathbf{r},H_{1}(\mathbf{r})\right]\mid k\right\rangle \nonumber \\
+ & = & \mathbf{A}\cdot\frac{e}{i\hbar}\left\langle j\mid\mathbf{r}H_{1}(\mathbf{r})-H_{1}(\mathbf{r})\mathbf{r}\mid k\right\rangle \\
+ & = & \mathbf{A}\cdot\frac{e}{i\hbar}\left\langle j\mid\mathbf{r}\mid k\right\rangle \left(E_{k}-E_{j}\right)\nonumber \\
+ & = & -\frac{i}{\hbar}\left(E_{k}-E_{j}\right)\mathbf{A}\cdot\left\langle j\mid\mathbf{d}\mid k\right\rangle ,\nonumber \end{eqnarray}
+where $\mathbf{d}=-e\mathbf{r}$ is the dipole moment. The last step
+involved adding the term $\mathbf{d}_{j,k}\cdot\mathbf{E}-\mathbf{d}_{j,k}\cdot\mathbf{E}$,
+which with the defintion of $\mathbf{E}$ gives\begin{equation}
+\frac{e}{m_{0}}\left\langle j\mid\mathbf{A}\cdot\mathbf{p}\mid k\right\rangle =-\mathbf{d}_{j,k}\cdot\mathbf{E}-\left(\frac{\hbar}{i}\frac{\partial}{\partial t}+E_{j}-E_{k}\right)\mathbf{A}\cdot\mathbf{d}_{j,k}.\end{equation}
+If $\mathbf{A}$ is given by a plane wave $\mathbf{A}_{0}e^{i\left(\omega_{0}t-k_{0}r\right)}$
+with center fraquency $\omega_{0}$ and the transition energies $E_{k}-E_{j}$
+are ranged around $\hbar\omega_{0}$, the expression in the brackets
+vanished and the sipole approxiamtion for the Hamiltonian is obtained,
+\begin{equation}
+\hat{H}_{e-EM}=-\sum_{j,k}\left\langle j\mid\mathbf{d}\cdot\mathbf{E}\mid k\right\rangle \hat{a}_{j}^{\dagger}\hat{a}_{k}.\end{equation}
+
+
+The final Hamiltonian for the crystal electrons \ref{eq:Separated_Hamiltonian-1},
+cand therefore be written as \begin{equation}
+\hat{H}=\sum_{j,k}\left\langle j\mid H_{1}\mid k\right\rangle \hat{a}_{j}^{\dagger}\hat{a}_{k}+\frac{1}{2}\sum_{j,k,l,m}\left\langle jk\mid v\mid lm\right\rangle \hat{a}_{j}^{\dagger}\hat{a}_{k}^{\dagger}\hat{a}_{l}\hat{a}_{m}-\sum_{j,k}\left\langle j\mid\mathbf{d}\cdot\mathbf{E}\mid k\right\rangle \hat{a}_{j}^{\dagger}\hat{a}_{k}.\label{eq:Crystal_Electron_H_General}\end{equation}
+
+
+
+\subsection{Bloch States Formulation}
+
+Up to now, we have ignored the specific form of the wavefunction $\varphi_{n}$.
+Here we consider the wavefunction to be a Bloch function, as presented
+in Chapter \ref{cha:Electronic_Properties_Semiconductors}. Within
+a bulk crystal, the Bloch function is given by \begin{equation}
+\varphi_{n\mathbf{k}}(\mathbf{r})=u_{n\mathbf{k}}(\mathbf{r})e^{i\mathbf{k}\cdot\mathbf{r}},\end{equation}
+where $u_{n\mathbf{k}}(\mathbf{r})$ is lattice periodic and the exponential
+term is slowly varying. The current section aims now to transform
+\ref{eq:Crystal_Electron_H_General} into Bloch states, which needs
+some clarifications and definitions. 
+
+The Bloch-functions are required to be orthonormalized over the crystal
+domain $\Omega$\begin{equation}
+\int_{\Omega}d\mathbf{r}\varphi_{n'\mathbf{k}'}^{*}\varphi_{n\mathbf{k}}=\delta_{n',n}\delta_{\mathbf{k}',\mathbf{k}}.\label{eq:Bloch_Orthonormality}\end{equation}
+The goal now is to represent the Hamiltonian \ref{eq:Crystal_Electron_H_General}
+using the field operator \begin{equation}
+\hat{\Phi}(\mathbf{r},t)=\sum_{n,\mathbf{k}}\varphi_{n\mathbf{k}}\hat{a}_{n\mathbf{k}}(t)\end{equation}
+in terms of the Bloch-functions. As the Bloch-states are not localized,
+the Fourier transform of certain quantities (such as the electromagnetic
+field or the Coulomb interaction) in the translational invariant directions
+will be used to simplify the Hamiltonian. For the spatial Fourier
+transform, the conventions are given by\begin{eqnarray}
+w(\mathbf{r}) & = & \sum_{\mathbf{q}}w(\mathbf{q})e^{i\mathbf{q}\cdot\mathbf{r}},\label{eq:Fourier_Transform}\\
+w(\mathbf{q}) & = & \frac{1}{\mathcal{A}}\int_{\mathcal{A}}d\mathbf{r}w(\mathbf{r})e^{-i\mathbf{q}\cdot\mathbf{r}}.\label{eq:Inverse_Fourier_Transform}\end{eqnarray}
+
+
+
+\subsubsection{Normalization}
+
+In the case of a quantum nanostructure, the Bloch function loses it\textquoteright{}s
+plane wave dependence in the quantized direction and is therefore
+expressed as\begin{equation}
+\varphi_{n\mathbf{k}}(\mathbf{r},z)=\left|n\mathbf{k}\right\rangle =u_{n\mathbf{k}}(\mathbf{r},z)e^{i\mathbf{k}\cdot\mathbf{r}}F_{n\mathbf{k}}(z).\label{eq:Bloch_WF_Nanostructure}\end{equation}
+The free direction is represented by the plane-wave and the symmetry
+broken part by $F(z)$. The indices $n$ now include the subbands.
+In the following, the coordinate $z$ will be used for the symmetry
+broken direction while $\mathbf{r}$ will denote the translational
+invariant direction. 
+
+Regarding the normalization, it is assumed that $\mathcal{A}$ is
+the volume of the translational invariant direction and $\mathcal{L}$
+is the volume of the quantized direction. Obviously, $\Omega=\mathcal{LA}$.
+\ref{eq:Bloch_Orthonormality} is still required to hold, but the
+normalization over the translational invariant direction is distributed
+into the lattice periodic part $u_{n\mathbf{k}}(\mathbf{r},z)$. The
+envelope function $F(z)$ is then normalized over the quantized direction.
+Therefore, for a system quantized in $d$ dimensions, the units of
+the wavefunction parts are given by\begin{equation}
+\underbrace{\varphi_{n\mathbf{k}}(\mathbf{r},z)}_{\frac{1}{\sqrt{m^{3}}}=\frac{1}{\sqrt{\Omega}}}=\underbrace{u_{n\mathbf{k}}(\mathbf{r},z)}_{\frac{1}{\sqrt{m^{3-d}}}=\frac{1}{\sqrt{\mathcal{A}}}}e^{i\mathbf{k}\cdot\mathbf{r}}\underbrace{F_{n\mathbf{k}}(z)}_{\frac{1}{\sqrt{m^{d}}}=\frac{1}{\sqrt{\mathcal{L}}}}.\end{equation}
+
+
+
+\subsubsection{Lattice-Cell Average}
+
+A general problem of the approach using wavefunctions of the $\mathbf{k}\cdot\mathbf{p}$
+envelope equation is that the lattice-periodic functions $u_{n\mathbf{k}}(\mathbf{r},z)$
+are not given in an explicit form. Only their symmetry properties,
+the fact that they are orthogonal to each other and some measurable
+quantities are available. Nevertheless, these properties are sufficient
+for building the Hamiltonian and calculating desired matrix elements,
+within the approximation that lattice-cell averaged quantities are
+used. In the $\mathbf{k}\cdot\mathbf{p}$ method, the envelopes and
+plane waves are assumed to vary little over a crystal cell. If an
+operator $A$ mainly acts on the lattice-periodic part, a matrix element
+between two wavefunctions \ref{eq:Bloch_WF_Nanostructure} can be
+simplified as\begin{equation}
+\left\langle n'\mathbf{k}'\mid A\mid n\mathbf{k}\right\rangle \approx\frac{\mathcal{A}}{V_{c}}\left\langle u_{n'\mathbf{k}'}\mid A\mid u_{n\mathbf{k}}\right\rangle _{V_{c}}\delta_{k',k}\int dzF_{n'\mathbf{k}'}^{*}(z)F_{n\mathbf{k}}(z).\end{equation}
+Here the operator $A$ is replaced with it's lattice averaged quantity\[
+V_{c}^{-1}\left\langle u_{n'\mathbf{k}'}\mid A\mid u_{n\mathbf{k}}\right\rangle _{V_{c}}.\]
+$V_{c}$ denotes the crystal cell and $\left\langle \right\rangle _{V_{c}}$
+the integration over it. The matrix elements found in the literature
+are related by \begin{equation}
+\frac{\mathcal{A}}{V_{c}}\left\langle u_{n'\mathbf{k}'}\mid A\mid u_{n\mathbf{k}}\right\rangle _{V_{c}}=\left\langle \tilde{u}_{n'\mathbf{k}'}\mid A\mid\tilde{u}_{n\mathbf{k}}\right\rangle \label{eq:Matrix_Elements_Relation}\end{equation}
+where $\tilde{u}_{i}$ is the Bloch function normalized with respect
+to a single crystal cell. Therefore to determine values for the short-range
+operator $\left\langle n'\mathbf{k}'\mid A\mid n\mathbf{k}\right\rangle $,
+only the envelope function $F_{n\mathbf{k}}(z)$ and the experimental
+value for $\left\langle \tilde{u}_{n'\mathbf{k}'}\mid A\mid\tilde{u}_{n\mathbf{k}}\right\rangle $
+for the from bulk measurements are required.
+
+The other case is given by the long-range operator $B$, such as the
+Coulomb potential. In that case, the operator is constant over a lattice
+cell and the integral of the matrix element can be reduced using the
+orthogonality of the Bloch functions. The lattice-cell average reads\begin{eqnarray}
+\left\langle n'\mathbf{k}'\mid B\mid n\mathbf{k}\right\rangle  & = & \int_{\Omega}d\mathbf{r}dzu_{n'\mathbf{k}'}^{*}(\mathbf{r},z)e^{-i\mathbf{k}'\cdot\mathbf{r}}F_{n'\mathbf{k}'}^{*}(z)Bu_{n\mathbf{k}}(\mathbf{r},z)e^{i\mathbf{k}\cdot\mathbf{r}}F_{n\mathbf{k}}(z)\nonumber \\
+ & \approx & \int_{\Omega}d\mathbf{r}dz\frac{1}{V_{c}}\left\langle u_{n'\mathbf{k}'}\mid u_{n\mathbf{k}}\right\rangle _{V_{c}}e^{-i\mathbf{k}'\cdot\mathbf{r}}F_{n'\mathbf{k}'}^{*}Bu_{n\mathbf{k}}(\mathbf{r},z)e^{i\mathbf{k}\cdot\mathbf{r}}F_{n\mathbf{k}}(z).\label{eq:Matrix_Element_Lattice_Cell_Average}\end{eqnarray}
+A further simplification depends on the actual form of the considered
+operator.
+
+
+\subsubsection{The Kinetic Term}
+
+To transform the kinetic part into the Bloch states, the eigenfunctions
+$\varphi_{n\mathbf{k}}(\mathbf{r},z)$ of the single particle Hamiltonian
+are inserted into the field operator. Using that particular field
+operator, the kinetic term \ref{eq:Crystal_Electron_H_General} is
+given by\begin{equation}
+\hat{H}_{1}=\sum_{n,\mathbf{k}}\hat{a}_{n\mathbf{k}}^{\dagger}\hat{a}_{n\mathbf{k}}E_{n,\mathbf{k}}.\end{equation}
+
+
+
+\subsubsection{The Interaction Term}
+
+The remaining step is to quantize the electron - electromagnetic field
+interaction Hamiltonian $H_{e-EM}$ within the dipole approximation.
+The Fourier representation of the electric field $\mathbf{E}(\mathbf{r},t)$
+is given by\begin{equation}
+\mathbf{E}(\mathbf{r},t)=\sum_{\mathbf{q}}\mathbf{E}(\mathbf{q},t)e^{i\mathbf{q}\cdot\mathbf{r}}.\end{equation}
+As it is assumed that $\mathbf{E}(\mathbf{r},t)$ is slowly-varying,
+the relevant contributions to the sum will be around very small values
+of $\mathbf{q}$. This allows to pull the $e^{i\mathbf{q}\cdot\mathbf{r}}$
+factor out of the dipole integral in the calculation below. The resulting
+Hamiltonian then reads\begin{eqnarray*}
+ &  & \int_{\Omega}d\mathbf{r}dz\hat{\Phi}^{\dagger}H_{e-EM}\hat{\Phi}\\
+ & = & -\sum_{n',\mathbf{k}',n,\mathbf{k}}\hat{a}_{n'\mathbf{k}'}^{\dagger}\hat{a}_{n\mathbf{k}}\int_{\Omega}d\mathbf{r}dz\varphi_{n'\mathbf{k}'}^{*}\mathbf{d}\cdot\left(\sum_{\mathbf{q}}\mathbf{E}(\mathbf{q},t)e^{i\mathbf{q}\cdot\mathbf{r}}\right)\varphi_{n\mathbf{k}}\\
+ & = & -\sum_{n',\mathbf{k}',n,\mathbf{k}}\sum_{\mathbf{q}}\delta_{\mathbf{k}'\mathbf{k}}\boldsymbol{\mu}_{n'n,\mathbf{k}}\cdot\mathbf{E}(\mathbf{r},t)e^{i\mathbf{q}\cdot\mathbf{r}},\end{eqnarray*}
+where the dipole matrix element between two states $n$ and $n\lyxmathsym{\textasciiacute}$
+with same crystal momentum k is given by\begin{equation}
+\boldsymbol{\mu}_{n'n,\mathbf{k}}=\mathcal{A}\int_{\mathcal{L}}dzu_{n'\mathbf{k}}^{*}F_{n'\mathbf{k}}^{*}\mathbf{d}u_{n\mathbf{k}}F_{n\mathbf{k}}.\end{equation}
+The delta function $\delta_{\mathbf{k}'\mathbf{k}}$ results from
+the plane wave and ensures momentum conservation. In other words,
+only direct transitions are allowed. Using the dipole matrix element,
+the Hamiltonian can finally be written as\begin{equation}
+\hat{H}_{e-EM}=\mathbf{-E}(\mathbf{r},t)\sum_{n',n,\mathbf{k}}\boldsymbol{\mu}_{n',n,\mathbf{k}}\hat{a}_{n'\mathbf{k}}^{\dagger}\hat{a}_{n\mathbf{k}}.\end{equation}
+
+
+The transformation of the two particle Hamiltonian $H_{2}$ is presented
+in the next chapter. For the moment, it is assumed that the carriers
+are \emph{uncorrelated} and their coulomb interaction is included
+in the single particle Hamiltonians. Collecting all single particle
+interactions, the Hamiltonian in the Bloch basis is given as\begin{equation}
+\hat{H}=\sum_{n}E_{n}(\mathbf{k})\hat{a}_{n\mathbf{k}}^{\dagger}\hat{a}_{n\mathbf{k}}\mathbf{-E}(\mathbf{r},t)\sum_{n',n,\mathbf{k}}\boldsymbol{\mu}_{n',n,\mathbf{k}}\hat{a}_{n'\mathbf{k}}^{\dagger}\hat{a}_{n\mathbf{k}}.\end{equation}
+
+
+
+\subsection{Holes}
+
+In a semiconductor at $T=0K$, the valence band is fully occupied
+while the conduction band is empty. With increasing temperature, electrons
+in the valence band get excited into the conduction band and leave
+behind holes. Consequently, it is common to use for the valence band
+the absence of an electron, the hole, as a quasi particle. Therefore,
+if an electron with momentum $\lyxmathsym{\textminus}\mathbf{k}$
+is created ($=\hat{a}_{-\mathbf{k}}^{\dagger}$), a hole with momentum
+$\mathbf{k}$ is annihilated ($=\hat{b}_{\mathbf{k}}$) and vice versa.
+The sign is switched by convention. In order to introduce the concept
+of holes into the Hamiltonian, the commutator rules \ref{eq:commutation_rel_1}
+and \ref{eq:commutation_rel_2} are used to reestablish the normal
+ordering of creation and annihilation operators. One obtains for the
+kinetic and dipole Hamiltonian\begin{eqnarray}
+\hat{H} & = & \sum_{c,\mathbf{k}}E_{c}(\mathbf{k})\hat{a}_{c\mathbf{k}}^{\dagger}\hat{a}_{c\mathbf{k}}-\sum_{v,\mathbf{k}}E_{v}(\mathbf{k})\hat{b}_{b\mathbf{k}}^{\dagger}\hat{b}_{b\mathbf{k}}\nonumber \\
+ &  & -\mathbf{E}(\mathbf{r},t)\left(\sum_{c,v,\mathbf{k}}\boldsymbol{\mu}_{cv,\mathbf{k}}\underbrace{\hat{a}_{c\mathbf{k}}^{\dagger}\hat{b}_{v-\mathbf{k}}^{\dagger}}_{\hat{p}_{vc,\mathbf{k}}^{\dagger}}+\boldsymbol{\mu}_{cv,\mathbf{k}}^{*}\underbrace{\hat{b}_{v-\mathbf{k}}\hat{a}_{c\mathbf{k}}}_{\hat{p}_{vc,\mathbf{k}}}\right).\label{eq:Kinetic_Dipole_H}\end{eqnarray}
+Note that from now on, the summation is distinguished between summation
+over conduction bands indicated with $c$ and valence bands indicated
+using the index $v$. In \ref{eq:Kinetic_Dipole_H}, transitions between
+conduction subbands and transitions between valence subbands have
+been neglected. 
+
+One important point is that in the Hamiltonian \ref{eq:Kinetic_Dipole_H},
+some terms can already be identified: $\hat{n}_{c\mathbf{k}}=\hat{a}_{c\mathbf{k}}^{\dagger}\hat{a}_{c\mathbf{k}}$
+is the number operator counting the number of electrons in the band
+$c$ with crystal momentum $\mathbf{k}$, while $\hat{n}_{v\mathbf{k}}=\hat{b}_{b-\mathbf{k}}^{\dagger}\hat{b}_{b-\mathbf{k}}$
+is the number operator counting the holes in the valence band $v$.
+The term $\hat{p}_{vc,\mathbf{k}}=\hat{b}_{v-\mathbf{k}}\hat{a}_{c\mathbf{k}}$
+is named \emph{microscopic polarization} and is given by the off-diagonal
+density matrix element, giving the correlation between a particle
+in one band and an empty state in the other. In a simplistic view,
+the dipole matrix element $\boldsymbol{\mu}_{cv,\mathbf{k}}$ gives
+the coupling strength of such a correlation to an electric field.
+
+
+\subsection{\label{sub:Carrier_Statistics}Carrier Statistics}
+
+The main interest of the current work is the continuous emission of
+light of a semiconductor, which is given in the steady state of the
+system. In the limit of small light intensity and therefore absence
+of spectral-hole burning, it can be assumed that the carriers relax
+into their quasi-equilibrium distributions, given by the Fermi distributions
+for the electrons in the conduction band\begin{equation}
+n_{c\mathbf{k}}=\left\langle \hat{n}_{c\mathbf{k}}\right\rangle =f_{c\mathbf{k}}=\frac{1}{1+e^{\left(E_{c}(\mathbf{k})-E_{F,c}\right)/k_{B}T}}\label{eq:Conduction_Band_Electrons_Fermi}\end{equation}
+and the holes in the valence band\begin{equation}
+n_{v\mathbf{k}}=\left\langle \hat{n}_{v\mathbf{k}}\right\rangle =f_{v\mathbf{k}}=\frac{1}{1+e^{\left(E_{F,v}-E_{v}(\mathbf{k})\right)/k_{B}T}}.\label{eq:Valence_Band_Hole_Fermi}\end{equation}
+Here, $E_{F,c}$ and $E_{F,v}$ denote the quasi-Fermi levels of the
+electrons and holes, $k_{B}$ is Boltzmann\textquoteright{}s constant
+and $T$ denotes the temperature. The Fermi levels can be calculated
+from the 3D carrier density $N$\begin{equation}
+N=\frac{1}{\Omega}\sum_{c\mathbf{k}}f_{c\mathbf{k}}\label{eq:Electron_3D_Density}\end{equation}
+for electrons and $P$\begin{equation}
+P=\frac{1}{\Omega}\sum_{v\mathbf{k}}f_{v\mathbf{k}}\label{eq:Holes_3D_Density}\end{equation}
+for holes. Here $\Omega$ denotes the volume of the system, which
+is usually unknown. When the sum over $\mathbf{k}$ is transformed
+into an integral\begin{equation}
+\sum_{\mathbf{k}}\rightarrow\frac{2\mathcal{A}}{(2\pi)^{d}}\int d\mathbf{k}\end{equation}
+the unknown $\Omega$ volume is removed and one ends up with known
+quantities ($\mathcal{L}=\Omega/\mathcal{A}$). $d$ denotes the dimensionality
+of the $\mathbf{k}$-space. Note the factor 2 which stems from the
+implicit summation over the spin states. For an ideal 2D quantum well,
+the electrons are free to move only in the plane of the active layer,
+so that the summation over $\mathbf{k}$ is restricted to two dimensions
+according to \begin{equation}
+\sum_{\mathbf{k}}\rightarrow\frac{2\mathcal{A}}{(2\pi)^{2}}\int dk2\pi k,\label{eq:2D_Symmetric_k_Sum_Integral}\end{equation}
+where we assume that the function summed over is cylindrically symmetric
+(which is a reasonable assumption for the subband structure near the
+zone center $\mathbf{k}=0$). As the $\mathbf{k}$ dependence of the
+distributions for general band structures is quite evolved, an analytical
+inversion of \ref{eq:Electron_3D_Density} and \ref{eq:Holes_3D_Density}
+is not feasible. Therefore, the simplest way to calculate the quasi-Fermi
+levels is to perform a numerical Newton procedure to find the roots
+of $N_{0}\lyxmathsym{\textminus}N(E_{F})=0$.
+
+
+\section{Transitions Calculation}
+
+
+\subsection{Introduction}
+
+Classically, an electric field $\mathbf{E}$ in a semiconductor induces
+dipoles. These dipoles create a macroscopic polarization $\mathbf{P}$.
+The induced polarization $\mathbf{P}(t)$ at time $t$ depends on
+the electric field $\mathbf{E}(t')$ at time $t'<t$. Their relation
+is defined in terms of a time-dependent susceptibility $\chi(t-t')$
+(in this case a scalar)\begin{equation}
+\mathbf{P}(t)=\epsilon_{b}\int_{\infty}^{t}\chi(t-t')\mathbf{E}(t')dt'.\label{eq:Polarization_Time_Domain}\end{equation}
+Taking the Fourier transform of \ref{eq:Polarization_Time_Domain}
+leads to the more convenient form\begin{equation}
+\mathbf{P}(\omega)=\epsilon_{b}\chi(\omega)\mathbf{E}(\omega).\label{eq:Polarization_Freq_Domain}\end{equation}
+The polarization influences the electric field via the electric displacement\begin{equation}
+\mathbf{D}=\epsilon\mathbf{E}=\epsilon_{b}\mathbf{E}+\mathbf{P}.\label{eq:Electric_Displacement}\end{equation}
+Therefore, the creation of dipoles and the amplification of an electric
+field needs to be treated self-consistently. The aim is therefore
+to calculate the polarization quantum-mechanically in the presence
+of an electric field and obtain a self-consistent formula for the
+steady state. 
+
+As a first step, Maxwell\textquoteright{}s equations are rewritten
+to give a single relation between the electric field E and the macroscopic
+polarization $\mathbf{P}$. Taking the curl of\begin{equation}
+\nabla\times\mathbf{H}-\frac{\partial\mathbf{D}}{\partial t}=\mathbf{j}\label{eq:Maxwells_1}\end{equation}
+and using \begin{equation}
+\nabla\times\mathbf{E}=-\frac{\partial\mathbf{B}}{\partial t},\label{eq:Maxwells_2}\end{equation}
+ones obtains\begin{eqnarray}
+\nabla\times\nabla\times\mathbf{E} & = & -\nabla\times\frac{\partial\mu_{0}\mathbf{H}}{\partial t},\\
+\nabla\left(\nabla\cdot\mathbf{E}\right)-\nabla^{2}\mathbf{E} & = & -\mu_{0}\frac{\partial}{\partial t}\left(\nabla\times\mathbf{H}\right).\end{eqnarray}
+On the left hand side, the term $\nabla\cdot\mathbf{E}=0$ vanishes,
+assuming charge neutrality and homogeneous media. On the right hand
+side, using \ref{eq:Maxwells_1}, $\nabla\times\mathbf{H}$ is replaced
+by the electric displacement $\mathbf{D}$\begin{equation}
+\nabla\left(\nabla\cdot\mathbf{E}\right)-\nabla^{2}\mathbf{E}\approx-\nabla^{2}\mathbf{E}=-\mu_{0}\frac{\partial^{2}\mathbf{D}}{\partial t^{2}},\end{equation}
+which now allows to introduce the macroscopic polarization $\mathbf{P}$
+using \ref{eq:Electric_Displacement}\begin{equation}
+-\nabla^{2}\mathbf{E}+\mu_{0}\epsilon_{b}\frac{\partial^{2}\mathbf{E}}{\partial t^{2}}=-\mu_{0}\frac{\partial^{2}\mathbf{P}}{\partial t^{2}}.\label{eq:Helmholtz_Eq}\end{equation}
+This equation is the\emph{ inhomogeneous Helmholtz equation}. The
+next step is to assume a monochromatic electrical field $\mathbf{E}$
+(traveling into $z$-direction) given by\begin{equation}
+\mathbf{E}(z,t)=\frac{1}{2}\hat{e}_{i}E(z)e^{i\left(k_{0}z-\nu t-\phi(z)\right)}+\mbox{c.c},\label{eq:Electrical_Field_Ansatz}\end{equation}
+where $k_{0}=\nu n/c$ is the photo wavenumber and $\hat{e}_{i}$is
+a unit vector orthogonal to $\hat{e}_{z}$. $\phi(z)$ us the real
+phase shift and $E(z)$ is the real field amplitude, varying little
+within an optical wavelength. $\nu$ denotes the field frequency.
+It is assumed that the spacial strong oscillatory part is properly
+described by the plane wave. The electric field induces a polarization
+\begin{equation}
+\mathbf{P}(z,t)=\frac{1}{2}\hat{e}_{i}P(z)e^{i\left(k_{0}z-\nu t-\phi(z)\right)}+\mbox{c.c}.\label{eq:Polarization_Ansatz}\end{equation}
+The next step is to insert \ref{eq:Electrical_Field_Ansatz} and \ref{eq:Polarization_Ansatz}
+into \ref{eq:Helmholtz_Eq} and neglect all terms containing $\partial_{z}^{2}E(z)$,
+$\partial_{z}^{2}\phi(z)$ and $\partial_{z}E(z)\partial_{z}\phi(z)$.
+This approach is denoted as the \emph{slowly varying envelope approximation}
+and one ends up with an equation for the amplitudes $E(z)$ and $P(z)$,\begin{equation}
+\partial_{z}E(z)-iE(z)\partial_{z}\phi(z)=i\frac{\mu_{0}\nu^{2}}{2k_{0}}\chi(z)E(z).\end{equation}
+Splitting into real and imaginary parts and using \ref{eq:Polarization_Freq_Domain},
+the \emph{self consistent} equations are obtained as\begin{eqnarray}
+\partial_{z}E(z) & = & -\frac{\nu}{2\epsilon_{0}nc}\Im\left\{ P(z)\right\} =-\frac{k_{0}}{2}\chi^{\prime\prime}(z)E(z)\\
+\partial_{z}\phi(z) & = & -\frac{1}{E(z)}\frac{\nu}{2\epsilon_{0}nc}\Re\left\{ P(z)\right\} =-\frac{k_{0}}{2}\chi^{\prime}(z)\end{eqnarray}
+where $\chi=\chi^{\prime}+i\chi^{\prime\prime}$. Consequently, the
+intensity gain (amplitude is half of it) is defined by\begin{equation}
+G=-k_{0}\chi^{\prime\prime},\label{eq:Intensity_Gain}\end{equation}
+and the change of refractive index (via a continuous phase change)
+is given by the real part of the susceptibility\begin{equation}
+\frac{\delta n}{n}=\frac{\chi^{\prime}}{2}.\label{eq:Refractive_Index_Change}\end{equation}
+The absorption can be obtained from the intensity gain through $\alpha=-G$.
+
+
+\subsection{Quantum Microscopic Polarization}
+
+The second step is to couple quantum mechanical observables to the
+solids properties. The dipole interaction between electrons and the
+electric field is given by \begin{equation}
+H_{e-EM}=-V\mathbf{P}\cdot\mathbf{E},\end{equation}
+where $V$ is the volume of the system and $\mathbf{P}$ is defined
+as the macroscopic polarization density\begin{equation}
+\mathbf{P}=\frac{1}{V}\sum_{n,n',\mathbf{k}}\boldsymbol{\mu}_{n'n,\mathbf{k}}\left\langle \hat{a}_{n'\mathbf{k}}^{\dagger}\hat{a}_{n\mathbf{k}}\right\rangle =\frac{1}{V}\sum_{c.v.\mathbf{k}}\boldsymbol{\mu}_{cv,\mathbf{k}}p_{vc,\mathbf{k}}^{\dagger}+\boldsymbol{\mu}_{cv,\mathbf{k}}^{*}p_{vc,\mathbf{k}}\end{equation}
+from which the optical properties \ref{eq:Intensity_Gain} and \ref{eq:Refractive_Index_Change}
+can be obtained. Here, the expectation value $p_{vc,\mathbf{k}}=\left\langle \hat{p}_{vc,\mathbf{k}}\right\rangle $
+has been used. The amplitude $P(z)$ of the macroscopic polarization
+$\mathbf{P}(z,t)$ used for the optical properties is given by \begin{equation}
+P(z)=2e^{-i\left(k_{0}z-\nu t-\phi(z)\right)}\frac{1}{V}\sum_{c.v.\mathbf{k}}\boldsymbol{\mu}_{cv,\mathbf{k}}^{*}p_{vc,\mathbf{k}}\end{equation}
+The other term of the polarization containing $p_{vc,\mathbf{k}}^{\dagger}$
+is related to the complex conjugate part of \ref{eq:Polarization_Ansatz}
+and is not required to determine the macroscopic amplitude $P(z)$.
+
+
+\subsection{Heisenberg's Equation of Motion}
+
+In order to calculate the expectation value $p_{nm,\mathbf{k}}$,
+the equation of motion of the microscopic polarization operator $\hat{p}_{nm,\mathbf{k}}$
+ has to be solved. Here the index $m$ is used for the conduction
+band and $n$ for the valence band of interest. The indices $c$ and
+$v$ will be used for the summation over remaining conduction and
+valence bands. The Heisenberg equation of motion for a time dependent
+operator $\hat{O}$ is given by \citet{Chow}\begin{equation}
+\frac{d}{dt}\hat{O}=\frac{i}{\hbar}\left[\hat{H},\hat{O}\right].\label{eq:Heisenberg_Eq_Motion}\end{equation}
+Applying to the microscopic polarization operator, one obtains\begin{equation}
+\frac{d}{dt}\hat{p}_{nm,\mathbf{k}}=\frac{i}{\hbar}\left[\hat{H}_{1},\hat{p}_{nm,\mathbf{k}}\right]+\frac{i}{\hbar}\left[\hat{H}_{e-EM},\hat{p}_{nm,\mathbf{k}}\right].\end{equation}
+The evaluation of the first commutator gives\begin{equation}
+-\frac{i}{\hbar}\left(E_{c}(\mathbf{k})-E_{v}(\mathbf{k})\right)\hat{p}_{nm,\mathbf{k}}.\end{equation}
+For the second operator\begin{equation}
+\frac{1}{V}\sum_{c,v,\mathbf{k}'}\boldsymbol{\mu}_{cv,\mathbf{k}'}\hat{p}_{vc,\mathbf{k}'}^{\dagger}+\boldsymbol{\mu}_{cv,\mathbf{k}'}^{*}\hat{p}_{vc,\mathbf{k}'},\end{equation}
+the second term containing $\hat{p}_{vc,\mathbf{k}}$ vanishes because
+four anticommuting exchanges are required (leading to no sign change)
+to obtain $\hat{p}_{nm,\mathbf{k}}\hat{H}-\hat{p}_{nm,\mathbf{k}}\hat{H}=0$.
+Therefore, one is left with the first term, where operators are exchanged
+to transform $\hat{H}\hat{p}$ into $\hat{p}\hat{H}$\begin{eqnarray}
+\hat{a}_{c\mathbf{k}'}^{\dagger}\hat{b}_{c\mathbf{-k}'}^{\dagger}\hat{b}_{n\mathbf{k}}\hat{a}_{m\mathbf{k}} & \rightarrow & \hat{a}_{c\mathbf{k}'}^{\dagger}\hat{a}_{m\mathbf{k}}\delta_{v,n}\delta_{\mathbf{k}',\mathbf{k}}\nonumber \\
+ &  & +\hat{b}_{v-\mathbf{k}'}^{\dagger}\hat{b}_{n\mathbf{-k}}\delta_{c,m}\delta_{\mathbf{k}',\mathbf{k}}\\
+ &  & -\delta_{\mathbf{k}',\mathbf{k}}\delta_{n,v}\delta_{m,c}+\hat{p}\hat{H}.\nonumber \end{eqnarray}
+The delta functions of the remaining terms lead in the sum over $c,v$
+and $\mathbf{k}'$ to\begin{equation}
+\sum_{c}\hat{a}_{c\mathbf{k}}^{\dagger}\hat{a}_{m\mathbf{k}}+\sum_{v}\hat{b}_{v-\mathbf{k}}\hat{b}_{n-\mathbf{k}}-1.\end{equation}
+Here, the sums over $c$ and $v$ except for$c=m$ and $v=n$ will
+vanish when later the expectation value $\left\langle \hat{a}_{c\mathbf{k}}^{\dagger}\hat{a}_{m\mathbf{k}}\right\rangle $
+is taken. Therefore, the sums are neglected from now on. This approximation
+scheme is called the \emph{random phase approximation}. The hand waving
+argument is that the expectation value $\left\langle \hat{a}_{n'\mathbf{k}'}^{\dagger}\hat{a}_{n\mathbf{k}}\right\rangle $
+has a dominant time-dependence\begin{equation}
+\left\langle \hat{a}_{n'\mathbf{k}'}^{\dagger}\hat{a}_{n\mathbf{k}}\right\rangle \propto e^{i\left(\omega_{n'\mathbf{k}'}-\omega_{n\mathbf{k}}\right)t}\label{eq:Random_Phase_Apprx}\end{equation}
+and therefore rapidly oscillates for $\omega_{n'\mathbf{k}'}\neq\omega_{n\mathbf{k}}$
+and then averages out over time.
+
+The terms with $c=m$ and $v=n$ are the density operators $\hat{n}_{m\mathbf{k}}$
+and $\hat{n}_{n\mathbf{k}}$. Collecting everything and taking the
+expectation values, the equation of motion of the free carrier microscopic
+polarization is\begin{eqnarray}
+\frac{d}{dt}\hat{p}_{nm,\mathbf{k}} & = & -\frac{i}{\hbar}\left(E_{m}(\mathbf{k})-E_{n}(\mathbf{k})\right)\hat{p}_{nm,\mathbf{k}}\nonumber \\
+ &  & -\frac{i}{\hbar}\mathbf{E}(z,t)\cdot\boldsymbol{\mu}_{mn,\mathbf{k}}\left(\hat{n}_{m\mathbf{k}}+\hat{n}_{n\mathbf{k}}-1\right)\nonumber \\
+ &  & +\left.\frac{\partial}{\partial t}\hat{p}_{nm,\mathbf{k}}\right|_{col.}.\label{eq:SC_Bloch_Eq_1}\end{eqnarray}
+Similar equations can be formulated for the carriers density operators
+$\hat{n}_{m\mathbf{k}}$ and $\hat{n}_{n\mathbf{k}}$\begin{eqnarray}
+\frac{d\hat{n}_{n\mathbf{k}}}{dt} & = & -\frac{2}{\hbar}\Im\left\{ \mathbf{E}(z,t)\cdot\boldsymbol{\mu}_{\mathbf{k}}\hat{p}_{nm,\mathbf{k}}^{*}\right\} \nonumber \\
+ &  & +\left.\frac{\partial}{\partial t}\hat{n}_{n,\mathbf{k}}\right|_{col.},\label{eq:SC_Bloch_Eq_2}\\
+\frac{d\hat{n}_{m\mathbf{k}}}{dt} & = & -\frac{2}{\hbar}\Im\left\{ \mathbf{E}(z,t)\cdot\boldsymbol{\mu}_{\mathbf{k}}\hat{p}_{nm,\mathbf{k}}^{*}\right\} \nonumber \\
+ &  & +\left.\frac{\partial}{\partial t}\hat{n}_{m,\mathbf{k}}\right|_{col.}.\label{eq:SC_Bloch_Eq_3}\end{eqnarray}
+These equations constitute the\emph{ semiconductor Bloch equations
+\citet{Haug2009},} for the free-carrier case. These semiconductor
+Bloch equations constitute the basis for most of our understanding
+of the optical properties of semiconductors and semiconductor microstructures.
+Depending on the strength and time dynamics of the applied laser light
+field, one can distinguish several relevant regimes: 
+\begin{itemize}
+\item the low excitation regime in which the exciton resonances - sometimes
+accompanied by exciton molecule (biexciton) resonances - dominate
+the optical properties. The interaction with phonons provides the
+most important relaxation and dephasing mechanism. As the density
+increases gradually, scattering between electron-hole excitations
+also becomes important. 
+\item the high excitation regime in which an electron-hole plasma is excited.
+Here, the screening of the Coulomb interaction by the optically excited
+carriers and the collective plasma oscillations are the relevant physical
+phenomena. The main dissipative mechanism is the carrier-carrier Coulomb
+scattering. 
+\item the quasi-equilibrium regime which can be realized on relatively long
+time scales. Here, the excitations have relaxed into a quasi-equilibrium
+and can be described by thermal distributions. The relatively slow
+approach to equilibrium can be described by a semi-classical relaxation
+and dephasing kinetics.
+\item the ultrafast regime in which quantum coherence and the beginning
+dissipation determine the optical response. The process of decoherence,
+of the beginning relaxation and the build-up of correlations, e.g.,
+by a time-dependent screening are governed by the quantum kinetics
+with memory structure of the carrier-carrier and carrier-phonon scattering.
+\end{itemize}
+Thoughout this thesis, the high-excitation and quasi-equalibrium regimes
+dominate the theoretical analysis of the discussed quantum structures.
+Generally, the scattering terms in the semiconductor Bloch equations
+describe all the couplings of the polarizations and populations, i.e.,
+of the single-particle density matrix elements to higher-order correlations,
+such as two-particle and phonon- or photon-assisted density matrices.
+However, in many cases one can identify specific physical mechanisms
+that dominate the scattering terms in some of the excitation regimes
+listed above. For example, in the low excitation regime often the
+coupling of the excited carriers to phonons determines relaxation
+and dephasing, whereas at high carrier densities carrier-carrier scattering
+dominates. For relatively long pulses, Markov approximations for the
+scattering processes are often justified, and the scattering terms
+can be described by Boltzmann-like scattering rates due to carrier-phonon
+or carrier-carrier scattering, respectively \citet{Haug2009}.
+
+In all situations, the semiconductor Bloch equations are a very suitable
+theoretical framework which, however, has to be supplemented with
+an appropriate treatment of the scattering terms in order to describe
+the various aspects of the rich physics which one encounters in pulse
+excited semiconductors. In general, the semiconductor Bloch equations
+have to be treated together with the Maxwell equations for the light
+field in order to determine the optical response. This self consistent
+coupling of Maxwell and semiconductor Bloch equations (for shortness
+also called Maxwell-semiconductor-Bloch equations) is needed as soon
+as spatially extended structures are analyzed where light propagation
+effects become important. Relevant examples are the polariton effects,
+as well as semiconductor lasers or the phenomenon of optical bistability
+\citet{Haug2009}. In optically thin samples, however, where propagation
+effects are unimportant, the transmitted light field is proportional
+to the calculated polarization field. Under these conditions one can
+treat the semiconductor Bloch equations separately from Maxwell's
+equations to calculate the optical response.
+
+The first term in \ref{eq:SC_Bloch_Eq_2} and \ref{eq:SC_Bloch_Eq_3}
+describes the generation of electrons and holes pairs by the absorption
+of light. As long as the scattering terms are ignored, the rate of
+change of the hole population \ref{eq:SC_Bloch_Eq_3} is identical
+to the rate of change of the electron population \ref{eq:SC_Bloch_Eq_2}.
+The scattering terms require a more sophisticated treatment and some
+of these will be addressed in chapter \ref{cha:Coulomb_Correlated_Optical_Transitions}.
+For the moment, scattering is approximated using a a simple phenomenological
+decay rate model given by\begin{eqnarray}
+\left.\frac{\partial}{\partial t}\hat{p}_{nm,\mathbf{k}}\right|_{col.} & \approx & -\gamma\hat{p}_{nm,\mathbf{k}},\end{eqnarray}
+
+
+
+\subsection{Solving the Free Carrier Equation}
+
+To solve \ref{eq:SC_Bloch_Eq_1} one could use the approach given
+in \citealp{Chow} and formally integrate the differential equation.
+A simpler way is to replace the oscillating microscopic polarization
+$p_{nm,\mathbf{k}}$ by its slowly varying envelope\begin{equation}
+s_{nm,\mathbf{k}}=p_{nm,\mathbf{k}}e^{-i\left(k_{0}z-\nu t-\phi(z)\right)},\label{eq:Slowly_Varying_Envelope_Polarization}\end{equation}
+where $\nu$ is the frequency of the optical field, and solve for
+the steady state of \begin{equation}
+\frac{d}{dt}s_{nm,\mathbf{k}}=0.\end{equation}
+Inserting \ref{eq:Slowly_Varying_Envelope_Polarization} and \ref{eq:Electrical_Field_Ansatz}
+into \ref{eq:SC_Bloch_Eq_1}, and skipping all fast oscillating parts
+(as they should average out over time), leads to\begin{equation}
+p_{nm,\mathbf{k}}=-\frac{i}{\hbar}\frac{E(z)}{2}\mu_{mn,\mathbf{k}}\frac{n_{m\mathbf{k}}+n_{n\mathbf{k}}-1}{i\left(\omega_{n,m}(\mathbf{k})-\nu\right)+\gamma}e^{-i\left(k_{0}z-\nu t-\phi(z)\right)},\end{equation}
+where $\omega_{n,m}(\mathbf{k})$ is defined by \begin{equation}
+\hbar\omega_{n,m}(\mathbf{k})=E_{m}(\mathbf{k})-E_{n}(\mathbf{k}).\end{equation}
+ Inserting this equation into \ref{eq:Intensity_Gain} we obtain the
+expression for the absorption spectrrum \begin{equation}
+\alpha_{FCT}(\nu)=k_{0}\chi^{\prime\prime}=-\frac{\nu}{\epsilon_{0}n_{b}c}\frac{1}{\hbar}\frac{1}{\Omega}\sum_{n,m,\mathbf{k}}\left|\mu_{nm,\mathbf{k}}\right|^{2}\left(n_{nk}+n_{m\mathbf{k}}-1\right)\frac{\gamma}{\left(\omega_{n,m}(\mathbf{k})-\nu\right)^{2}+\gamma^{2}}.\label{eq:Absorption_FCT}\end{equation}
+Here, the$\mu_{nm,\mathbf{k}}$ denotes the dipole matrix element,
+between the subbands $n$ and $m$, along the polarization of the
+light field, resulting from the scalar product between the monochromatic
+light field $\mathbf{E}$ and the dipole $\boldsymbol{\mu}_{nm,\mathbf{k}}$.
+
+In order to avaluate numericaly the absorption spectrum we make the
+following assumptions:
+\begin{itemize}
+\item The system under discussion is 2 dimensional and all $\mathbf{k}$-vector
+dependencies are cylindrically symmetric. Thus, we can use \ref{eq:2D_Symmetric_k_Sum_Integral}
+transformation from summation to integration for the $\mathbf{k}$-vector.
+\item The system undergoes a rapid equilibration of electrons and holes
+into Fermi-Dirac distributions, which, assuming that the conduction
+band and the valence band are two carrier reservoirs, leads to $n_{e\mathbf{k}}=f_{e\mathbf{k}}$
+and $n_{h\mathbf{k}}=f_{h\mathbf{k}}$.
+\end{itemize}
+Under these assumptions, \ref{eq:Absorption_FCT} becomes \begin{equation}
+\alpha_{FCT}(\nu)=-\frac{\nu}{\hbar c\epsilon_{0}n_{b}\pi\mathcal{L}}\sum_{n,m}\int_{0}^{\infty}dk\, k\left|\mu_{nm,\mathbf{k}}\right|^{2}\left(f_{ek}^{n}+f_{hk}^{m}-1\right)\frac{\gamma}{\left(\omega_{n,m}(\mathbf{k})-\nu\right)^{2}+\gamma^{2}},\end{equation}
+where $\mathcal{L}$ is the length of the 2D quantum system.
+
+
+\section{Spontaneous Emission}
+
+The spontaneous emission within a semiconductor nanostructure can
+be obtained from the amplification $G$ of the photon field, i.e.
+the complex part of the optical susceptibility $\chi^{\prime\prime}$.
+Using a phenomenological approach, \ref{eq:Absorption_FCT} can be
+divided into an emitting and an absorbing part, $G=G_{e}-G_{a}$.
+The term $n_{c\mathbf{k}}+n_{v\mathbf{k}}-1$ is the inversion of
+the electron-hole population in the semiconductor, which can be rewritten
+to\begin{equation}
+n_{c\mathbf{k}}+n_{v\mathbf{k}}-1=n_{c\mathbf{k}}n_{v\mathbf{k}}-\left(1-n_{c\mathbf{k}}\right)\left(1-n_{v\mathbf{k}}\right).\end{equation}
+The first term on rhs denotes the probability of a photon emission,
+i.e. electron and hole is occupied, while the second term denotes
+the probability of a photon absorption. Therefore by evaluating \ref{eq:Absorption_FCT}
+including only the emission probability term $G_{e}\sim n_{c\mathbf{k}}n_{v\mathbf{k}}$,
+the spontaneous emission probability per unit length is obtained.
+As the velocity of a photon in the semiconductor is given by $c/n_{b}$,
+the spontaneous emission probability per second is given by $G_{e}c/n_{b}$.
+Neglecting the existence of a cavity, the photon density of states
+(of photons with energy $\hbar\omega$) is given by\begin{equation}
+N(\hbar\omega)=\frac{n_{b}^{3}(\hbar\omega)^{2}}{\pi^{2}\hbar^{3}c^{3}}\end{equation}
+and therefore the spontaneous emission ($s^{\lyxmathsym{\textminus}1}m^{\lyxmathsym{\textminus}3}eV^{\lyxmathsym{\textminus}1}$)
+per second per unit volume per unit energy is given by\begin{equation}
+r_{sp}(\hbar\omega)=\frac{n_{b}^{3}(\hbar\omega)^{2}}{\pi^{2}\hbar^{3}c^{2}}G_{e}\end{equation}
+where as the spontaneous emission intensity ($s^{\lyxmathsym{\textminus}1}m^{\lyxmathsym{\textminus}3}$)
+is given by\begin{equation}
+I_{sp}\left(\hbar\omega\right)=\hbar\omega r_{sp}\left(\hbar\omega\right).\end{equation}
+Note that the result can be related to the Kubo-Martin-Schwinger (KMS)
+\citet{Martin1959a} relation. The relation between emission and inversion
+gives\begin{equation}
+\frac{f_{c\mathbf{k}}f_{v\mathbf{k}}}{f_{c\mathbf{k}}+f_{v\mathbf{k}}-1}=\frac{1}{1-\exp\left(\left(E_{c}(\mathbf{k})-E_{v}(\mathbf{k})-\left(E_{Fc}-E_{Fv}\right)\right)/k_{B}T\right)}.\label{eq:Inversion_Emmision_Relation}\end{equation}
+Due to the Lorentzian in \ref{eq:Absorption_FCT}, the transition
+energy $E_{c}(\mathbf{k})-E_{v}(\mathbf{k})$ is close to the photon
+energy. Consequently, it may be replaced with $\hbar\omega$ on the
+r.h.s of \ref{eq:Inversion_Emmision_Relation}, which allows to pull
+the factor \ref{eq:Inversion_Emmision_Relation} out of the $k$-sum
+in \ref{eq:Absorption_FCT}, leading to the KMS relation\begin{equation}
+r_{sp}(\hbar\omega)=\frac{n_{b}^{2}(\hbar\omega)^{2}}{\pi^{2}\hbar^{3}c^{2}}\frac{1}{1-\exp\left(\left(\hbar\omega-\left(E_{Fc}-E_{Fv}\right)\right)/k_{B}T\right)}G(\hbar\omega)\label{eq:Sp_Emission_Definition}\end{equation}
+between gain and spontaneous emission.
+
+Another aspect to consider is the dependence of the dipole matrix
+element $\mu_{cv,\mathbf{k}}$ on the polarization of the light field.
+Therefore, the average of all possible transitions is usually taken
+for the spontaneous emission\begin{equation}
+\mu_{cv,\mathbf{k}}^{sp}=\frac{1}{3}\sum_{i=x,y,z}\mu_{cv,\mathbf{k}}^{i}.\end{equation}
+The spontaneous emission rate per unit volume ($s^{\lyxmathsym{\textminus}1}m^{\lyxmathsym{\textminus}3}$)
+is given by integrating $r_{sp}(\hbar\omega)$ over the energy\begin{equation}
+R_{sp}=\int_{0}^{\infty}r_{sp}(\hbar\omega)d\hbar\omega=Bnp\end{equation}
+which defines another figure of merit, the spontaneous emission $B$
+coefficient ($m^{3}s^{\lyxmathsym{\textminus}1}$).
+
+There is an obvious pathological feature when such a relation is used
+to obtain the spontaneous emission: if the electric field is zero,
+then no spontaneous emission would exist. The root of this misbehavior
+is due to the fact that the quantization of the electro-magnetic field
+is not included. Including this, spontaneous emission would occur
+- spontaneously. Nevertheless, the spontaneous emission of a two level
+system treated using quantized electro-magnetic fields does not differ
+from dipole radiation, therefore the error of the classical treatment
+may be small enough for the present purpose.
+
+
+\section{Dipole Matrix Element}
+
+The evaluation of the interband dipole matrix element $\boldsymbol{\mu}_{mn,\mathbf{k}}$
+between the solutions of the $\mathbf{k}\cdot\mathbf{p}$ band structure
+calculation is not straight-forward. In the general case, the envelope
+functions are given by\begin{equation}
+\varphi_{m\mathbf{k}}=\sum_{i}F_{m,i\mathbf{k}}u_{i0},\end{equation}
+where $u_{i0}$ are again zone-center Bloch functions. Using this
+expansion, the dipole matrix element between two states is given by
+\begin{equation}
+\boldsymbol{\mu}_{n'n,\mathbf{k}}=\mathcal{A}\int_{\mathcal{L}}dz\sum_{i,j}u_{i0}^{*}F_{m,i\mathbf{k}}^{*}\mathbf{d}u_{j0}F_{n,j\mathbf{k}}.\end{equation}
+The question to answer is to whether the dipole operator is acting
+on the lattice periodic part $u_{j0}$ or on the envelope part $F_{i}$.
+The issue has been addressed by Burt and others \citealp{Burt1995,Burt1993},
+concluding that the expression is dominated by\begin{equation}
+\boldsymbol{\mu}_{n'n,\mathbf{k}}\approx\frac{\mathcal{A}}{V_{c}}\sum_{i,j}\left\langle u_{i0}\mid u_{j0}\right\rangle _{V_{c}}\int_{\mathcal{L}}dzF_{m,i\mathbf{k}}^{*}\mathbf{d}F_{n,j\mathbf{k}}.\end{equation}
+But, within a $\mathbf{k}\cdot\mathbf{p}$ calculation involving only
+single-band models for both, conduction and valence band, the last
+expression evaluates due to the orthogonality of $u_{c0}$ and $u_{v0}$
+to zero%
+\footnote{This fact also applies to $4\times4$ and $6\times6$ $\mathbf{k}\cdot\mathbf{p}$
+valence band models.%
+}. Therefore, no transition between conduction and valence subbands
+in such models would exist. The reason lies in the single-band approximation.
+While the wavefunction of e.g. conduction subbands is dominated by
+the envelope modulating $u_{c0}$, the interband dipole moment is
+dominated by the admixture of $u_{v0}$ into the conduction subbands
+and $u_{c0}$ into the valence subbands. Working within the $8\times8$
+model would therefore resolve the problem.
+
+A simpler solution, allowing to use non-$8\times8$ models without
+the pathological feature of vanishing transition probabilities, is
+to use the momentum- instead of the dipole matrix element. The relation
+can be derived using the Heisenberg equation of motion for the position
+operator $r$, given by\begin{equation}
+\frac{\partial}{\partial t}\mathbf{r}=\frac{i}{\hbar}\left[H,\mathbf{r}\right].\end{equation}
+Assuming that $n$ and $m$ are eigenfunctions of the Hamiltonian
+$H$ with corresponding eigenenergies $E_{n}$ and $E_{m}$, replacing
+the derivative of the position operator by the momentum operator and
+$H\left|m\right\rangle $ by $E_{m}\left|m\right\rangle $ , one obtains\begin{equation}
+\left\langle n\mid\mathbf{p}\mid m\right\rangle =\frac{im}{\hbar}\left(E_{n}-E_{m}\right)\left\langle n\mid\mathbf{r}\mid m\right\rangle .\end{equation}
+The electron dipole operator (electrons are negatively charged) is
+related to the position operator by $\mathbf{d}=e\mathbf{r}$ leading
+to \begin{equation}
+\left\langle n\mid\mathbf{d}\mid m\right\rangle =e\frac{\hbar}{im}\frac{\left\langle n\mid\mathbf{p}\mid m\right\rangle }{\left(E_{n}-E_{m}\right)}.\end{equation}
+Within direct transitions, the energy difference $E_{n}-E_{m}$ can
+be replaced by the photon energy $\hbar\omega$, leading to the simple
+expression for $\boldsymbol{\mu}_{mn,\mathbf{k}}$ in terms of the
+momentum matrix element\begin{equation}
+\boldsymbol{\mu}_{mn,\mathbf{k}}=\frac{e}{im\omega}\mathbf{p}_{mn,\mathbf{k}}.\end{equation}
+In the approximation of slowly varying envelopes, the derivatives
+of the envelopes are small and the momentum matrix element is dominated
+by\begin{equation}
+\mathbf{p}_{mn,\mathbf{k}}\approx\frac{\mathcal{A}}{V_{c}}\sum_{i,j}\left\langle u_{i0}\mid\mathbf{p}\mid u_{j0}\right\rangle _{V_{c}}\int_{\mathcal{L}}dzF_{m,i\mathbf{k}}^{*}F_{n,j\mathbf{k}}.\label{eq:Momentum_Matrix_Element_Approx}\end{equation}
+The momentum matrix elements are related via \ref{eq:Matrix_Elements_Relation}
+to band structure parameters $P$, defined e.g. in \ref{eq:Valence_Band_Edge_Energy}.
+This approximation is commonly applied and is also used in the remainder
+of the thesis.
+
+Beside the neglected derivatives of the envelopes, the approximation
+\ref{eq:Momentum_Matrix_Element_Approx} neglects the effect of remote
+bands. \ref{eq:Momentum_Matrix_Element_Approx} considers only transitions
+between zone-center functions $u_{i0}$ included explicitly in the
+Hamiltonian. In the $\mathbf{k}\cdot\mathbf{p}$ envelope equations,
+the effect of remote bands is included using L\"{o}wdins perturbation
+theory. Therefore, beside the mixing of the explicitly considered
+states in the Hamiltonian, the zone-center functions away from $k$
+include remote contributions. Consequently, transitions between remote
+contributions have to be included in a consistent definition of the
+momentum matrix elements \citealp{Enders1995a}.
+
+%
+\begin{lyxgreyedout}
+Put here the momentum matrix calculation in the 2 band model.
+\end{lyxgreyedout}
+\selectlanguage{english}
+

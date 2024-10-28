@@ -1,0 +1,30 @@
+
+<!-- saved from url=(0056)http://tug.org/texmf-dist/tex/latex/sauerj/optparams.sty -->
+<HTML><BODY><PRE style="word-wrap: break-word; white-space: pre-wrap;">%%
+%% This is file `optparams.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% optparams.dtx  (with options: `package')
+%% 
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{optparams}
+   [2004/08/14 v0.9 multiple optional parameters in macros]
+\newcommand{\optparams}[2]{%
+\optparams@{#1}{}{#2}%
+}
+\def\optparams@#1#2#3{%
+\@ifnextchar[{%
+\optparams@@{#1}{#2}#3\@nil%
+}{%
+#1#2#3%
+}%
+}
+\def\optparams@@#1#2[#3]#4\@nil[#5]{%
+\optparams@{#1}{#2[#5]}{#4}%
+}
+\endinput
+%%
+%% End of file `optparams.sty'.
+</PRE><DIV id="directions_extension" style="position: absolute !important; background-image: initial !important; background-attachment: initial !important; background-origin: initial !important; background-clip: initial !important; background-color: rgb(238, 238, 255) !important; border-top-width: 1px !important; border-right-width: 1px !important; border-bottom-width: 1px !important; border-left-width: 1px !important; border-top-style: solid !important; border-right-style: solid !important; border-bottom-style: solid !important; border-left-style: solid !important; border-top-color: rgb(170, 170, 255) !important; border-right-color: rgb(170, 170, 255) !important; border-bottom-color: rgb(170, 170, 255) !important; border-left-color: rgb(170, 170, 255) !important; padding-top: 3px !important; padding-right: 3px !important; padding-bottom: 3px !important; padding-left: 3px !important; display: none; border-top-left-radius: 5px 5px !important; border-top-right-radius: 5px 5px !important; border-bottom-right-radius: 5px 5px !important; border-bottom-left-radius: 5px 5px !important; background-position: initial initial !important; background-repeat: initial initial !important; "></DIV></BODY></HTML>

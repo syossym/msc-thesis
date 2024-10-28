@@ -1,0 +1,424 @@
+\selectlanguage{english}%
+
+\chapter{Semiconductor Microcavity}
+
+\label{cha:Microcavity}%
+\begin{lyxgreyedout}
+ Put intro here... 
+\end{lyxgreyedout}
+
+
+
+\section{Optical Resonator}
+
+An optical resonator is a device used for confining light at certain
+frequencies. The classical resonator (such a the Fabri-Perot etalon
+seen in Fig. \ref{fig:etalon-multiple_reflections}) consists of two
+planar mirrors, separated by a distance $l$. The region between the
+two mirror is called the spacer layer and its refractove index is
+denoted by $n$. For now we assume that the medium outside the structure
+is plain air. The transmitions spectrum of this structure exhibits
+a pattern of repetative peaks of large transmission corresponding
+to resonances of the etalon. This varying transmission function is
+caused by an interference between the multiple reflections of light
+between the two reflecting surfaces (see Fig. \ref{fig:etalon-multiple_reflections}).
+Contructive interference iccurs if the transmitted beams are in phase,
+which corresponds to a high-transmission peak. for transmitted beams
+that are out-of-phase a destructive interference occurs, which corresponds
+to a minimum in the transmission spectrum. The multiple-reflected
+beams' phase matching depends in the wavelength $\lambda$ of the
+light, the beam incidence angle $\theta$, the etalon thickness $l$
+and the refractive index of the spacer material $n$.
+
+%
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.6]{\string"C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/5_Fabri_Perot_Etalon\string".eps}
+\par\end{centering}
+
+\caption{\label{fig:etalon-multiple_reflections}Fabri-Perot etalon multiple
+reflections.}
+
+
+
+\end{figure}
+
+
+The phase between each successive reflection is \citet{Born2002}
+\begin{equation}
+\delta=\left(\frac{2\pi}{\lambda}\right)2nl\cos\left(\theta\right)\end{equation}
+If both surfaces have reflectance $R$, the transmittance function
+of the entire structure is given by \begin{equation}
+T=\frac{(1-R)^{2}}{1+R^{2}-2R\cos\left(\delta\right)}=\frac{1}{1+F\sin^{2}\left(\frac{\delta}{2}\right)},\end{equation}
+where $F=\frac{4R}{(1-R)^{2}}$ is the finesse coefficient. Fig. \ref{fig:etalon-transmittance-function}
+shows the dependence of the trasmittence on the phase parameter $\delta$,
+for various values of $R$ (or equavalently of $F$). The maximum
+tranmission occurs when the optical path length difference $2nl\cos(\theta)$
+between each transmitted beam is an interger multiple of the wavelength.
+In the absence of absorption, the reflectance of the structure $R$
+is the complement of the transmittence, i.e. $R+T=1$. The maximum
+reflectivity is given by \begin{equation}
+R_{max}=1-\frac{1}{1+F},\end{equation}
+which occurs when the path-length difference is equal to half an odd
+multiple of the wavelength.
+
+%
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.5]{\string"C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/5_Fabri_Perot_Transmission\string".eps}
+\par\end{centering}
+
+\caption{\label{fig:etalon-transmittance-function}Resonator transmittance
+function for various values of mirror reflectrance $R$. $\delta\lambda$
+is the full-width half-maximum of the transmission band.}
+
+
+
+\end{figure}
+
+
+The wavelength separation between adjacent transmission peaks or free
+spectral range (FSR) of the etalon, $\lyxmathsym{\textgreek{D}\textgreek{l}}$,
+is given by \begin{equation}
+\Delta\lambda=\frac{\lambda_{0}^{2}}{2nl\cos(\theta)+\lambda_{0}},\end{equation}
+where $\lyxmathsym{\textgreek{l}}_{0}$ is the central wavelength
+of the nearest transmission peak. The FSR is related to the full-width
+half-maximum (FWHM) $\lyxmathsym{\textgreek{d}\textgreek{l}}$ of
+any one transmission band by a quantity known as the \emph{finesse\begin{equation}
+\mathcal{F}=\frac{\Delta\lambda}{\delta\lambda}=\frac{\pi}{2\arcsin(1/\sqrt{F})}\end{equation}
+ }
+
+
+\section{Distributed Bragg Reflector}
+
+The reflecting surfaces (or mirrors) modeled in previous section by
+a reflectivity parameter $R$ are realized in practive by a stack
+of multiple layers of alternating semicondictor materials with varying
+refractive indices called Distributed Bragg Reflector (DBR) (see Fig.
+\ref{fig:Schematic-DBR}). The alternating high and low indices, denoted
+respectively by $n_{H}$ and $n_{L}$, and the semiconductor layer
+thicknesses satisfy the following condiction\begin{equation}
+n_{L}l_{L}=n_{H}l_{H}=\frac{\lambda_{c}}{4},\end{equation}
+where $\lambda_{c}$ is the center wavelength of the high reflectevity
+region of the structure. The two indices $n_{l}$ and $n_{r}$ are,
+respectively, the left- and right-hand cladding material refractive
+indices.
+
+The principle of operation can be understood as follows. Each interface
+between the two materials contributes a Fresnel reflection. For the
+design wavelength $\lambda_{c}$, the optical path length difference
+between reflections from subsequent interfaces is half the wavelength;
+in addition, the reflection coefficients for the interfaces have alternating
+signs. Therefore, all reflected components from the interfaces interfere
+constructively, which results in a strong reflection. The reflectivity
+achieved is determined by the number of layer pairs and by the refractive
+index contrast between the layer materials. The reflection bandwidth
+is determined mainly by the index contrast, $n_{H}-n_{L}$.
+
+%
+\begin{figure}
+\begin{centering}
+\includegraphics[clip,scale=0.5]{\string"C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/5_DBR_Schematic\string".eps}
+\par\end{centering}
+
+\caption{\label{fig:Schematic-DBR}Schematic illustration of a Distributed
+Bragg Reflector (DBR). $z$ represents the growth direction of the
+layered structure.}
+
+\end{figure}
+
+
+In order to analyze the reflection and transmittance of the DBR, we
+use the Transfer Matrix formalism \citet{Macleod2001}, as is described
+in the next section.
+
+
+\subsection{Transfer Matrix Method (TMM)}
+
+A monochromatic electric field of frequency $\omega$ propagating
+in a dielecric medium, assuming a frequency independent dielectric
+function, can be shown to satisfy the following wave eqaution \begin{equation}
+\nabla^{2}\mathbf{E}(\mathbf{r})+\frac{\omega^{2}}{c^{2}(r)}\mathbf{E}(\mathbf{r})=0,\label{eq:E_wave_eqaution_r}\end{equation}
+where \[
+\mathbf{E}(\mathbf{r},t)=\Re\left\{ \mathbf{E}(\mathbf{r})e^{i\omega t}\right\} ,\]
+the speed of light in the dielectric $c(r)=c_{0}/n(r)$, $c_{0}$
+being the speed on light in the vacuum and $n(r)$ the location dependent
+refractive index.
+
+A medium consisting of pairs of two different dielectric materials
+with different refraction indices has a growth axis, $\hat{z}$, dependent
+refraction index, i.e. $n(r)=n(z)$. Therefore equation \ref{eq:E_wave_eqaution_r}
+can be written as\begin{equation}
+\nabla^{2}\mathbf{E}(\rho,z)+\frac{\omega^{2}}{c^{2}(z)}\mathbf{E}(\rho,z)=0.\label{eq:E_wave_equation_z}\end{equation}
+Because of the translational invariance along the in-plane, the solution
+of Eq. \ref{eq:E_wave_equation_z} consists of plane waves along the
+in-plane direction. For a given in-plane wave vector $k_{||}$ (parallel
+to the dielectric layer plane) we can make the following ansatz for
+the solution \begin{equation}
+\mathbf{E}_{\mathbf{k}_{||}}=E_{\mathbf{k}_{||},\omega}(z)e^{i\mathbf{k}_{||}\cdot\mathbf{\rho}}.\end{equation}
+Substituting into Eq. \ref{eq:E_wave_equation_z} yields the following
+one-dimensional equation\begin{equation}
+\frac{d^{2}E_{\mathbf{k}_{||},\omega}(z)}{dz^{2}}+\left(\frac{\omega^{2}}{c^{2}(z)}-k_{||}^{2}\right)E_{\mathbf{k}_{||},\omega}(z)=0.\end{equation}
+This equation can be solved separately for each layer of the stack.
+The solution for a homogeneouos layer with a constant refractive index
+is of the form\begin{eqnarray}
+E_{\mathbf{k}_{||},\omega}(z) & = & E^{+}e^{ik_{z}z}+E^{-}e^{-ik_{z}z},\nonumber \\
+k_{z} & = & \sqrt{\frac{\omega^{2}}{c^{2}}-\mathbf{k}_{||}^{2}}.\end{eqnarray}
+
+
+The solution is a linear cobnination of two traveling waves in opposite
+direction along the $\hat{z}$ axis. A non-evanescent wave solution
+exist only if $\frac{\omega}{c}>\mathbf{k}_{||}$. The complex amplitudes
+of the forward ($E^{+})$ and backward ($E^{-}$) propagating waves
+are determined from the boundary cnditions at each interface between
+two adjacent layers of the stack.
+
+The relation between the two complex amplitudes between two point
+along the propagation direction, $z_{1}$ and $z_{2}$, can be expressed
+as a $2\times2$ matrix transfer matix. From here on we assume the
+non-unique basis for the transfer matrix is $(E^{+},E^{-})$. The
+transfer matrix takes into account the propagation through the deielectric
+media and the boundary conditions at each interface between two adjacent
+layers. The boundary conditions resulting from Maxwell's equations
+%
+\begin{lyxgreyedout}
+Put here the number of Maxwell's equations 
+\end{lyxgreyedout}
+ state that tangential components of the electric and magnetic fields
+are continuous across the interface. %
+\begin{lyxgreyedout}
+Furhter discuss the boundary conditions here
+\end{lyxgreyedout}
+ The boundary conditions for the field components can be wtritten
+as\begin{align}
+D_{\perp1} & =D_{\perp2}\nonumber \\
+B_{\perp1} & =B_{\perp2}\nonumber \\
+E_{\parallel1} & =E_{\parallel2}\label{eq:field_boundary_conditions}\\
+H_{\parallel1} & =H_{\parallel2}\nonumber \end{align}
+For siplicity we assume propagation only in the $\hat{z}$ direction.
+The boundary conditions for the eletric field become (see Fig. %
+\begin{lyxgreyedout}
+Schematic description of (a) light propagation through an inteface
+between two andjacent dielectric layers and (b) light propagation
+in a homogenous medium.
+\end{lyxgreyedout}
+ \begin{eqnarray}
+E_{1}^{+}+E_{1}^{-} & = & E_{2}^{+}+E_{2}^{-}\\
+n_{2}\left(E_{2}^{+}-E_{2}^{-}\right) & = & n_{1}\left(E_{1}^{+}-E_{1}^{-}\right)\end{eqnarray}
+
+
+The interface transfer matrix $M_{i}$, for both linear polarizations
+of the field, TE and TM, can be written as\begin{equation}
+\left(\begin{array}{c}
+E_{2}^{+}\\
+E_{2}^{-}\end{array}\right)=\frac{1}{2n_{2}}\left(\begin{array}{cc}
+n_{2}+n_{1} & n_{2}-n_{1}\\
+n_{2}-n_{1} & n_{2}+n_{1}\end{array}\right)\left(\begin{array}{c}
+E_{1}^{+}\\
+E_{1}^{-}\end{array}\right)\equiv M_{i}\left(\begin{array}{c}
+E_{1}^{+}\\
+E_{1}^{-}\end{array}\right)\end{equation}
+for a wave propagating from layer 1 to layer 2. The in-layer propagation
+trasfer matrix $M_{p}$, which relates different vectors at $z_{1}$
+and $z_{2}$ in the same layer can be written as (Fig. %
+\begin{lyxgreyedout}
+same figure as above, b
+\end{lyxgreyedout}
+)\begin{equation}
+\left(\begin{array}{c}
+E_{2}^{+}\\
+E_{2}^{-}\end{array}\right)=\left(\begin{array}{cc}
+e^{ikl} & 0\\
+0 & e^{-ikl}\end{array}\right)\left(\begin{array}{c}
+E_{1}^{+}\\
+E_{1}^{-}\end{array}\right)\equiv M_{p}\left(\begin{array}{c}
+E_{1}^{+}\\
+E_{1}^{-}\end{array}\right),\end{equation}
+where $k=\left(\nicefrac{\omega}{c_{0}}\right)n$.
+
+This amplitude propagation approach can be applyed to the entire multilayer
+structure, for which the transfer matrix is simply the multipliction
+of $M_{i}$ and $M_{p}$ matrices for each boundary and layer\begin{equation}
+M_{DBR}=\prod_{m}M_{i,m}M_{p,m},\end{equation}
+where $m$ is the dielectric layer index. The explicit relation between
+the amplitudes of the incident electric field in the DBR structure
+and the transmitted field on the other side can be written as \begin{equation}
+\left(\begin{array}{c}
+E_{out}^{+}\\
+0\end{array}\right)=\left(\begin{array}{cc}
+M_{11} & M_{12}\\
+M_{21} & M_{22}\end{array}\right)\left(\begin{array}{c}
+E_{in}^{+}\\
+E_{in}^{-}\end{array}\right).\end{equation}
+
+
+The reflection and tranmission coefficients of the entire structure
+can thus be written as\begin{eqnarray}
+r_{DBR} & = & -\frac{M_{21}}{M_{22}}\\
+t_{DBR} & = & \frac{\det(M_{DBR})}{M_{22}}\end{eqnarray}
+
+
+%
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.6]{\string"C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/5_DBR_Profile_Reflectivity\string".eps}
+\par\end{centering}
+
+\caption{\label{fig:Sample_DBR_reflection}Simulation of a DBR structure with
+35 alternating high and low layers, where (a) is the refreactive index
+profile as a function of the growth axis, (b) the amplitude and phase
+of the normal incidence reflection function this structure as a fucntion
+of normalized wavelength, $\lambda/\lambda_{c}$, and (c) the same
+amplitude as a function of the phase acquired by the EM field at each
+layer, $\phi=\frac{2\pi l_{i}n_{i}}{\lambda}$.}
+
+\end{figure}
+
+
+The reflection coefficient can be expressed as $r_{DBR}(\lambda)=|r|e^{i\alpha_{r}}$.
+It can be shown that for a structure containing $2N+1$ layers of
+high and low refractive indices (as in Fig. \ref{fig:Schematic-DBR}),
+so that the outermost layers are of high refractive index, $n_{H}$,
+and for the case of $k_{i}l_{i}=\frac{\pi}{2}$ \begin{equation}
+|r|=\left(\frac{1-\left(\frac{n_{H}}{n_{L}}\right)^{2N}\frac{n_{H}^{2}}{n_{r}n_{l}}}{1+\left(\frac{n_{H}}{n_{L}}\right)^{2N}\frac{n_{H}^{2}}{n_{r}n_{l}}}\right)^{2}.\end{equation}
+%
+\begin{lyxgreyedout}
+The phase within the region of high reflectivity (the \emph{stop band})
+of the reflector can be expressed as \begin{equation}
+\alpha_{r}=\frac{n_{c}L_{DBR}}{c}\left(\omega-\omega_{c}\right),\end{equation}
+where $L_{DBR}$ is the penetration depth into the DBR and is given
+by \citet{Savona1995}\begin{equation}
+L_{DBR}=\frac{\lambda_{c}}{2}\frac{n_{L}n_{H}}{n_{c}\left(n_{H}-n_{L}\right)}.\end{equation}
+
+\end{lyxgreyedout}
+
+
+As an illustration, we present in Fig. \ref{fig:Sample_DBR_reflection}
+an exact calculation of the reflection coefficient of a DBR containing
+35 pairs of alternating high and low reflractive index layers. The
+refractive indices for the simulation are $n_{l}=1$ (air), $n_{H}=3.45$
+($Al_{0.2}Ga_{0.8}As$), $n_{L}=2.98$ ($AlAs$) and $n_{r}=3.59$
+($GaAs$) (the structure refractive index profile is presented in
+(a)). In subplots (b) and (c) we plot the reflection coefficient as
+a function of the normalized wavelength, $\nicefrac{\lambda}{\lambda_{c}}$,
+and the phase acquired by the electromagnetic field at each layer,
+$\phi=\frac{2\pi l_{i}n_{i}}{\lambda}$. The stop-band, as can be
+clearly seen from these plots, is centered at $\phi=\frac{\pi}{2}$,
+which corresponds to $\lambda_{c}$. In subplot (b) we also present
+the reflectivity phase $\alpha_{r}$, where the zero-phase crossing
+is observed at $\lambda_{c}$ as expected for the left-face reflection. 
+
+
+\section{Microvity Optical Characteristics }
+
+
+\subsection{Microcavity Reflection Spectrum }
+
+A microcavity (MC) is a Fabry-Perot resonator, whose mirrors are two
+DBRs and the spacer material is a semicondictor layer with refractive
+index $n_{c}$ and of length $l_{c}=\frac{\lambda_{c}}{2n_{c}}m$
+($m$ is a positive integer). The microcavity can be analyzed similarly
+to the DBR using the transfer matrix formalism. The MC's transfer
+matrix for a wave traveling from left to right can be written as \begin{equation}
+M_{MC}=M_{DBR}^{r}M_{c}M_{DBR}^{l},\label{eq:MC_transfer_matrix_1}\end{equation}
+where $M_{c}$ is the transfer matrix of the spacer (cavity) layer.
+We can write the these three transfer matrices in their most general
+form as\begin{eqnarray}
+M_{DBR}^{r} & = & \frac{n_{c}}{n_{r}}\left(\begin{array}{cc}
+\frac{1}{t_{r}^{\star}} & -\frac{r_{r}^{\star}}{t_{r}^{\star}}\\
+-\frac{r_{r}}{t_{r}} & \frac{1}{t_{r}}\end{array}\right),\\
+M_{DBR}^{l} & = & \frac{n_{l}}{n_{c}}\left(\begin{array}{cc}
+\frac{1}{t_{l}^{\star}} & \frac{r_{l}}{t_{l}}\\
+\frac{r_{l}^{\star}}{t_{l}^{\star}} & \frac{1}{t_{l}}\end{array}\right),\\
+M_{c} & = & \left(\begin{array}{cc}
+e^{ikl_{c}} & 0\\
+0 & e^{-ikl_{c}}\end{array}\right),\end{eqnarray}
+where $\left(r_{l},\, t_{l}\right)$ and $\left(r_{r},\, t_{r}\right)$
+are, respectively, the reflection and transmission coefficients of
+the left- and right-hand DBR mirrors (see Fig. \ref{fig:Microcavity_schematic_structure})
+and $n_{l}$ and $n_{r}$ are the left- and right-hand cladding material
+refractive indices, respecively.
+
+%
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.4]{\string"C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/5_MC_Schematic\string".eps}
+\par\end{centering}
+
+\caption{\label{fig:Microcavity_schematic_structure}Microcavity schematic
+structure.}
+
+
+
+\end{figure}
+
+
+Insering these matrices into Eq. \ref{eq:MC_transfer_matrix_1} yields
+\begin{equation}
+M_{MC}=\left(\frac{n_{L}}{n_{H}}\right)^{2}\left(\begin{array}{cc}
+\frac{e^{ikl_{eff}}-R^{\star}e^{-ikl_{eff}}}{T^{\star}} & \frac{r_{l}e^{ikl_{eff}}-r_{r}^{\star}e^{-ikl_{eff}}}{t_{l}t_{r}^{\star}}\\
+\frac{r_{l}^{\star}e^{-ikl_{eff}}-r_{r}e^{ikl_{eff}}}{t_{l}^{\star}t_{r}} & \frac{e^{-ikl_{eff}}-Re^{ikl_{eff}}}{T}\end{array}\right),\end{equation}
+where $T=t_{l}t_{r}$ and $R=r_{l}r_{r}$. $l_{eff}$ is not equal
+to $l_{c}$ but rather to $l_{eff}=l_{c}+l_{p}$, where $l_{p}$ is
+the penetration depth of the cavity field into the DBR \citet{Savona1995}
+and is given by \begin{equation}
+l_{p}=\frac{\lambda_{c}}{2}\frac{n_{L}n_{H}}{n_{c}\left(n_{H}-n_{L}\right)}.\end{equation}
+The reflectance and transmittance of the MC can thus be wtritten as
+\begin{eqnarray}
+T_{MC} & = & \frac{1}{\det\left(M_{MC}\right)|M_{MC}^{22}|^{2}}=\frac{T}{\left(1-R\right)^{2}+4R\sin^{2}\left(k_{z}l_{eff}\right)}\\
+R_{MC} & = & \frac{|M_{MC}^{21}|^{2}}{|M_{MC}^{22}|^{2}}=\frac{\left(|r_{r}|-|r_{l}|\right)^{2}+4R\sin^{2}\left(k_{z}l_{eff}\right)}{\left(1-R\right)^{2}+4R\sin^{2}\left(k_{z}l_{eff}\right)}\end{eqnarray}
+It is clear that there are several modes which stisfy the condition
+$k_{z}l_{eff}=m\pi$. As we increase the number of layers in the DBR
+mirrors the stop-band reflectivity approaches unity and the cavity
+field reflection line becomes narrower. Because of the finite transmittion
+probability of the DBR, the MC mode has a FWHM which can be shown
+to be \citet{Savona1995} \begin{equation}
+2\gamma_{c}=\frac{1-R_{MC}}{\sqrt{R_{MC}}}\frac{c}{n_{c}l_{eff}}.\end{equation}
+$\gamma_{c}$ is a homogenous lifetime broadening of the confined
+cavity mode, caused by the decay through the mirrors.
+
+%
+\begin{figure}
+\begin{centering}
+\includegraphics[scale=0.6]{\string"C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/5_MC_Profile_Reflectivity\string".eps}
+\par\end{centering}
+
+\caption{\label{fig:Sample_MC_reflection}Simulation of a microcavity with
+two DBR's with 35 alternating high and low refractive index layers
+each, where (a) is the refreactive index profile as a function of
+the growth axis, (b) the amplitude and phase of the normal incidence
+reflection function this structure as a fucntion of normalized wavelength,
+$\lambda/\lambda_{c}$, and (c) the same amplitude as a function of
+the phase acquired by the EM field at each layer, $\phi=\frac{2\pi l_{i}n_{i}}{\lambda}$.
+The inset in (c) shows the reflection profile in the vicinity of $\phi=\frac{\pi}{2}$.}
+
+
+
+\end{figure}
+
+
+As an illustration, we present in Fig. \ref{fig:Sample_MC_reflection}
+the simulation results of a sample microcavity with two DBR mirrors
+with 35 alternating layers of high and low refractive index each and
+cavity length of $l_{c}=\frac{\lambda_{c}}{2n_{c}}$. This calculation
+was performed using the direct TMM calculation of the entire the structure,
+similarly to the DBR simulation presented above. The DBR parameters
+are the same as in Fig. \ref{fig:Sample_DBR_reflection}, while for
+the cavity we choose $n_{c}=n_{H}=3.45$ ($Al_{0.2}Ga_{0.8}As$).
+
+%
+\begin{lyxgreyedout}
+
+\subsection{Microcavity Confined Photon}
+
+The photon confinement along the $\hat{z}$ axis leads to the following
+photon energy dispersion is \citet{Skolnick1998} \begin{equation}
+E_{ph}(k_{\parallel})=\frac{\hbar ck}{n_{c}}=\frac{\hbar c}{n_{c}}\sqrt{\left(\frac{2\pi m}{l_{c}}\right)^{2}+k_{\parallel}^{2}},\end{equation}
+where $m$ is a positive integer. For small $k_{\parallel}$ we approximate
+the dispersion relation to a parabola \begin{equation}
+E_{ph}(k_{\parallel})\cong\frac{2\pi\hbar c}{n_{c}l_{c}}\left(1+\frac{\hbar^{2}k_{\parallel}^{2}}{2m_{ph}}\right).\end{equation}
+Here we define the photon in-plane effective mass $m_{ph}=\frac{\hbar n_{c}}{cl_{c}}\approx10^{-5}m_{0}$,
+where $m_{0}$ is the free electron mass.
+\end{lyxgreyedout}
+\selectlanguage{english}
+

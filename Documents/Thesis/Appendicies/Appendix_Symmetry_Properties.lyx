@@ -1,0 +1,1780 @@
+#LyX 1.6.8 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass scrreprt
+\options a4paper,titlepage
+\use_default_options false
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine natbib_numerical
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Symmetry Properties of Wavefunctions
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "cha:Appendix_Symmetry_Properties"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this appendix we present a short overview of the symmetry properties
+ of bulk semiconductor wavefunction, expressed in the mathematical formulation
+ of the group theory.
+ 
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $H(\mathbf{r})=T+U(\mathbf{r})$
+\end_inset
+
+ be the Hamiltonian in 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:zero_center_Bloch_Equation"
+
+\end_inset
+
+ with the kinetic operator 
+\begin_inset Formula $T$
+\end_inset
+
+ and crystal potential 
+\begin_inset Formula $U(\mathbf{r})$
+\end_inset
+
+, and let 
+\begin_inset Formula $G$
+\end_inset
+
+ be the point group
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+A 
+\emph on
+crystallographic point group
+\emph default
+ is a set of symmetry operations, like rotations or reflections, that leave
+ a point fixed while moving each atom of the crystal to the position of
+ an atom of the same kind.
+ That is, an infinite crystal would look exactly the same before and after
+ any of the operations in its point group.
+ In the classification of crystals, each point group corresponds to a crystal
+ class.
+\end_layout
+
+\end_inset
+
+ of the crystal such that the symmetry operator 
+\begin_inset Formula $g\in G$
+\end_inset
+
+, the crystal potential is invariant, i.e.
+ 
+\begin_inset Formula \begin{equation}
+\forall g\in G,\,\,\, U(g^{-1}\mathbf{r})=U(\mathbf{r}).\end{equation}
+
+\end_inset
+
+The kinetic operator 
+\begin_inset Formula $T$
+\end_inset
+
+ is naturally invariant under the action of the elements in the point group
+ 
+\begin_inset Formula $G$
+\end_inset
+
+.
+ Assuming that 
+\begin_inset Formula $\psi(\mathbf{r})$
+\end_inset
+
+ is an eigenfunction of 
+\begin_inset Formula $H$
+\end_inset
+
+ with 
+\begin_inset Formula $H(\mathbf{r})\psi(\mathbf{r})=E\psi(\mathbf{r})$
+\end_inset
+
+ and applying the symmetry operator 
+\begin_inset Formula $g$
+\end_inset
+
+, leads to 
+\begin_inset Formula \begin{equation}
+H(g^{-1}\mathbf{r})\psi(g^{-1}\mathbf{r})=H(\mathbf{r})\psi(g^{-1}\mathbf{r})=E\psi(g^{-1}\mathbf{r}).\end{equation}
+
+\end_inset
+
+Obviously 
+\begin_inset Formula $\psi'(\mathbf{r})=\psi(g^{-1}\mathbf{r})$
+\end_inset
+
+ is also an eigenfunction of the Hamiltonian operator 
+\begin_inset Formula $H(\mathbf{r})$
+\end_inset
+
+ with eigenvalue 
+\begin_inset Formula $E$
+\end_inset
+
+.
+ The wavefunction 
+\begin_inset Formula $\psi′(\mathbf{r})$
+\end_inset
+
+ might be the same wavefunction as 
+\begin_inset Formula $\psi(\mathbf{r})$
+\end_inset
+
+ or might be linearly independent.
+ Applying all symmetry operations 
+\begin_inset Formula $g\in G$
+\end_inset
+
+ therefore results in a set of wavefunctions with the same eigenvalue 
+\begin_inset Formula $E$
+\end_inset
+
+, spanning a function space
+\begin_inset Formula \begin{equation}
+I_{\psi}=\left\{ \psi'(\mathbf{r})|\psi'(\mathbf{r})=\psi'(g^{-1}\mathbf{r})\,\,\,\forall g\in G\right\} .\end{equation}
+
+\end_inset
+
+Now, the point group 
+\begin_inset Formula $G$
+\end_inset
+
+ is a closed group, meaning that for 
+\begin_inset Formula $g,\, f\in G:\, gf\in G$
+\end_inset
+
+.
+ Therefore, the function space 
+\begin_inset Formula $I_{\psi}$
+\end_inset
+
+ is invariant under the action of 
+\begin_inset Formula $G$
+\end_inset
+
+, 
+\begin_inset Formula \begin{equation}
+\psi(\mathbf{r})\in I_{\psi}\Rightarrow\psi(g^{-1}\mathbf{r})\in I_{\psi}.\end{equation}
+
+\end_inset
+
+Suppose that 
+\begin_inset Formula $\left\{ \psi_{0},\psi_{1},\ldots,\psi_{N}\right\} $
+\end_inset
+
+ is the basis of the subspace 
+\begin_inset Formula $I_{\psi}$
+\end_inset
+
+, which is assumed to be of the dimension 
+\begin_inset Formula $N$
+\end_inset
+
+.
+ The basis is denoted as being the
+\emph on
+ irreducible representation
+\emph default
+ of the group 
+\begin_inset Formula $G$
+\end_inset
+
+.
+ The desirable property deduced from group theory is that for every symmetry
+ group, there are only a few distinct irreducible representations.
+ Every irreducible representation describes an unique way how wavefunctions
+ are transformed under the action of the elements of a symmetry group 
+\begin_inset Formula $G$
+\end_inset
+
+.
+ Therefore, the eigenfunctions of the crystal Hamiltonian 
+\begin_inset Formula $H$
+\end_inset
+
+ can be classified according to the irreducible representation they form.
+ It is clear that each eigenfunction does only belong to one irreducible
+ representation and it is clear that eigenfunctions corresponding to different
+ irreducible representations are always orthogonal.
+ In the following, the theory will be focused on the zinc-blende crystal,
+ for which the symmetry group of the Hamiltonian is 
+\begin_inset Formula $T_{d}$
+\end_inset
+
+, the tetrahedral group.
+ The elements are given by the 24 symmetry operations mapping a tetrahedron
+ to itself.
+ For an appropriate alignment and orientation, the symmetry operations are
+ listed in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Symmetry_operations_Td"
+
+\end_inset
+
+.
+ 
+\begin_inset Formula $T_{d}$
+\end_inset
+
+ has in total five distinct irreducible representations, which are commonly
+ labeled as 
+\begin_inset Formula $\Gamma_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $\Gamma_{2}$
+\end_inset
+
+, 
+\begin_inset Formula $\Gamma_{12}$
+\end_inset
+
+, 
+\begin_inset Formula $\Gamma_{15}$
+\end_inset
+
+ and 
+\begin_inset Formula $\Gamma_{25}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\Gamma_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\Gamma_{2}$
+\end_inset
+
+ are one dimensional representations, 
+\begin_inset Formula $\Gamma_{12}$
+\end_inset
+
+ is a two dimensional and 
+\begin_inset Formula $\Gamma_{15}$
+\end_inset
+
+ and 
+\begin_inset Formula $\Gamma_{25}$
+\end_inset
+
+ are three dimensional.
+ The basis functions for all irreducible representations are given in Table
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Basis_functions_Td"
+
+\end_inset
+
+.
+ The representation 
+\begin_inset Formula $\Gamma_{1}$
+\end_inset
+
+ is the identity representation, also denoted as trivial representation,
+ leaving the wavefunction invariant.
+ An atomic wavefunction with 
+\begin_inset Formula $s$
+\end_inset
+
+-like symmetry transforms accordingly, i.e.
+ is left unchanged under the action of the elements of the group 
+\begin_inset Formula $T_{d}$
+\end_inset
+
+.
+ An example of the 
+\begin_inset Formula $\Gamma_{1}$
+\end_inset
+
+ representation is given by the conduction band at the 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ point of 
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Symmetry_operations_Td"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+Symmetry operations of the group 
+\begin_inset Formula $T_{d}$
+\end_inset
+
+ using the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Sch
+\backslash
+"{o}nflies
+\end_layout
+
+\end_inset
+
+ notation.
+\end_layout
+
+\end_inset
+
+Symmetry operations of the group 
+\begin_inset Formula $T_{d}$
+\end_inset
+
+ using the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Sch
+\backslash
+"{o}nflies
+\end_layout
+
+\end_inset
+
+ notation (notations after 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Yu2005"
+
+\end_inset
+
+).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features>
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Type
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Operation
+\series default
+ 
+\begin_inset Formula $\left(xyz\right)\rightarrow\left(\ldots\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row endhead="true">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $E$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(xyz\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3C_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(\bar{x}\bar{y}z\right),\left(xy\bar{z}\right),\left(\bar{x}y\bar{z}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $8C_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(zxy\right),\left(yzx\right),\left(\bar{y}z\bar{x}\right),\left(\bar{z}\bar{x}y\right),\left(\bar{y}\bar{z}x\right),\left(z\bar{x}\bar{y}\right),\left(y\bar{z}\bar{x}\right),\left(\bar{z}x\bar{y}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $6C_{4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(\bar{x}z\bar{y}\right),\left(\bar{x}\bar{z}y\right),\left(z\bar{y}\bar{x}\right),\left(\bar{z}\bar{y}x\right),\left(\bar{y}x\bar{z}\right),\left(y\bar{x}\bar{z}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $6\sigma$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(\bar{y}x\bar{z}\right),\left(yxz\right),\left(\bar{z}y\bar{x}\right),\left(zyx\right),\left(xzy\right),\left(x\bar{z}\bar{y}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ zinc-blende, direct bandgap III-V semiconductors.
+ The conduction band at the 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ point is non-degenerate with a wavefunction obeying 
+\begin_inset Formula $s$
+\end_inset
+
+-type symmetry.
+ Another important irreducible representation is given by the top of the
+ valence band at the 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ point.
+ Neglecting the later considered spin-orbit splitting, the valence band
+ is threefold degenerate, with 
+\begin_inset Formula $p$
+\end_inset
+
+-type basis functions 
+\begin_inset Formula $x,y$
+\end_inset
+
+ and 
+\begin_inset Formula $z$
+\end_inset
+
+, transforming under the action of 
+\begin_inset Formula $T_{d}$
+\end_inset
+
+ according to the elements of a vector.
+ The 
+\begin_inset Formula $p$
+\end_inset
+
+-type basis functions correspond to the representation 
+\begin_inset Formula $\Gamma_{15}$
+\end_inset
+
+.
+ The goal is now to use the introduced group theory to analyze the properties
+ of the momentum matrix elements 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:momentum_matrix_element"
+
+\end_inset
+
+.
+ The momentum operator 
+\begin_inset Formula $\mathbf{p}$
+\end_inset
+
+ is given by a vector of three operators
+\begin_inset Formula \[
+\mathbf{p}=\left(\begin{array}{c}
+p_{x}\\
+p_{y}\\
+p_{z}\end{array}\right),\]
+
+\end_inset
+
+obviously transforming like the elements of a vector.
+ Therefore, the momentum operator forms an irreducible representation of
+ 
+\begin_inset Formula $\Gamma_{15}$
+\end_inset
+
+.
+ The action of the momentum operator on wavefunctions of the irreducible
+ representation 
+\begin_inset Formula $\Gamma_{j}$
+\end_inset
+
+ leads to a new expression.
+ The corresponding representation is given by the 
+\emph on
+direct product
+\emph default
+ 
+\begin_inset Formula $\Gamma_{15}\otimes\Gamma_{j}$
+\end_inset
+
+ (see 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Yu2005"
+
+\end_inset
+
+, p.
+ 46), as one has 
+\begin_inset Formula $p_{u}$
+\end_inset
+
+ acting on the basis function 
+\begin_inset Formula $\psi_{v}$
+\end_inset
+
+ for 
+\begin_inset Formula $u=x,y,z$
+\end_inset
+
+ and 
+\begin_inset Formula $v=1,...,N$
+\end_inset
+
+.
+ The direct product is not 
+\emph on
+irreducible
+\emph default
+, but can be decomposed into a 
+\emph on
+direct sum
+\emph default
+ of irreducible representations 
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Basis_functions_Td"
+
+\end_inset
+
+Basis functions of the tetrahedral symmetry group 
+\begin_inset Formula $T_{d}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="3">
+<features>
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\begin_inset Formula $\Gamma_{i}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Dimension
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Basis functions
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Gamma_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $xyz$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Gamma_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x^{4}\left(y^{2}-z^{2}\right)+y^{4}\left(z^{2}-x^{2}\right)+z^{2}\left(x^{2}-y^{2}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Gamma_{12}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left(x^{2}-y^{2}\right),\, z^{2}-\frac{1}{2}\left(x^{2}+y^{2}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Gamma_{15}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x,\, y,\, z$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Gamma_{25}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x\left(y^{2}-z^{2}\right),\, y\left(z^{2}-x^{2}\right),\, z\left(x^{2}-y^{2}\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula \begin{equation}
+\Gamma_{15}\otimes\Gamma_{j}=\sum_{u}\oplus\Gamma_{i}.\label{eq:direct_sum}\end{equation}
+
+\end_inset
+
+Recall that functions not belonging to the same irreducible representation
+ are orthogonal.
+ Therefore, the matrix element 
+\begin_inset Formula $\left\langle \psi^{\Gamma_{i}}\mid\mathbf{p}\mid\psi^{\Gamma_{j}}\right\rangle $
+\end_inset
+
+ between two wavefunctions belonging to the irreducible representation 
+\begin_inset Formula $\Gamma_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $\Gamma_{j}$
+\end_inset
+
+ is nonzero only if the direct sum 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:direct_sum"
+
+\end_inset
+
+ of the direct product 
+\begin_inset Formula $\Gamma_{15}\otimes\Gamma_{j}$
+\end_inset
+
+ contains 
+\begin_inset Formula $\Gamma_{i}$
+\end_inset
+
+.
+ For the tetrahedral symmetry, the decomposition of the direct product into
+ the direct sum is given in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Direct_products_Gamma15"
+
+\end_inset
+
+, from which the vanishing momentum matrix elements 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:momentum_matrix_element"
+
+\end_inset
+
+ can be calculated.
+ They are given by the matrix in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:The_non_vanishing_momentum_elements_Td"
+
+\end_inset
+
+.
+ Within the matrix, X denotes a non-vanishing and the 0 denotes a vanishing
+ matrix element.
+ In order to further reduce the number of unknowns, equivalent matrix elements
+ can be determined using the basis functions defined in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Basis_functions_Td"
+
+\end_inset
+
+ and symmetry operations of 
+\begin_inset Formula $G$
+\end_inset
+
+.
+ As an example, 
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Direct_products_Gamma15"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+Direct products of the 
+\begin_inset Formula $\Gamma_{15}$
+\end_inset
+
+ representation with all representations of 
+\begin_inset Formula $T_{d}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+Direct products of the 
+\begin_inset Formula $\Gamma_{15}$
+\end_inset
+
+ representation with all representations of 
+\begin_inset Formula $T_{d}$
+\end_inset
+
+ (after 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Yu2005"
+
+\end_inset
+
+).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features>
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Direct product
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Direct sum
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Gamma_{15}\otimes\Gamma_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Gamma_{15}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Gamma_{15}\otimes\Gamma_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Gamma_{25}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Gamma_{15}\otimes\Gamma_{12}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Gamma_{15}\oplus\Gamma_{25}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Gamma_{15}\otimes\Gamma_{15}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Gamma_{15}\oplus\Gamma_{25}\oplus\Gamma_{12}\oplus\Gamma_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Gamma_{15}\otimes\Gamma_{25}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Gamma_{15}\oplus\Gamma_{25}\oplus\Gamma_{12}\oplus\Gamma_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ for the 
+\begin_inset Formula $\Gamma_{1}$
+\end_inset
+
+ type conduction band, the only non-vanishing momentum matrix elements involve
+ - according to Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:The_non_vanishing_momentum_elements_Td"
+
+\end_inset
+
+ - only bands belonging to 
+\begin_inset Formula $\Gamma_{15}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\Gamma_{1}$
+\end_inset
+
+ is represented by the function 
+\begin_inset Formula $xyz$
+\end_inset
+
+ and 
+\begin_inset Formula $\Gamma_{15}$
+\end_inset
+
+ by 
+\begin_inset Formula $x,y$
+\end_inset
+
+ and 
+\begin_inset Formula $z$
+\end_inset
+
+.
+ The only non-vanishing matrix element is of the type 
+\begin_inset Formula $\left\langle xyz\mid p_{x}\mid x\right\rangle $
+\end_inset
+
+.
+ For the other, e.g.
+ 
+\begin_inset Formula $\left\langle xyz\mid p_{x}\mid z\right\rangle $
+\end_inset
+
+, a rotation of the crystal by 
+\begin_inset Formula $180°$
+\end_inset
+
+ around the rotation axis 
+\begin_inset Formula $[001]$
+\end_inset
+
+ results in
+\begin_inset Formula \[
+\left\langle xyz\mid p_{x}\mid x\right\rangle =-\left\langle xyz\mid p_{x}\mid z\right\rangle ,\]
+
+\end_inset
+
+which can only be met if the matrix element is zero.
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:The_non_vanishing_momentum_elements_Td"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The non-vanishing momentum matrix elements between the states corresponding
+ to different irreducible representations of the tetrahedral symmetry group.
+ 
+\end_layout
+
+\end_inset
+
+The non-vanishing momentum matrix elements between the states corresponding
+ to different irreducible representations of the tetrahedral symmetry group.
+ A zero denotes a vanishing and X a non-vanishing element.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="6">
+<features>
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathbf{p}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left|\psi^{\Gamma_{1}}\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left|\psi^{\Gamma_{2}}\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left|\psi^{\Gamma_{12}}\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left|\psi^{\Gamma_{15}}\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left|\psi^{\Gamma_{25}}\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left\langle \psi^{\Gamma_{1}}\right|$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left\langle \psi^{\Gamma_{2}}\right|$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+X
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left\langle \psi^{\Gamma_{12}}\right|$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+X
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left\langle \psi^{\Gamma_{15}}\right|$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+X
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\left\langle \psi^{\Gamma_{25}}\right|$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+X
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+X
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

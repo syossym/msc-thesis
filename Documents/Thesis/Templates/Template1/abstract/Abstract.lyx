@@ -1,0 +1,66 @@
+#LyX 1.6.0rc3 created this file. For more info see http://www.lyx.org/
+\lyxformat 340
+\begin_document
+\begin_header
+\textclass report
+\options a4paper,titlepage
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 0
+\cite_engine natbib_authoryear
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Abstract
+A recent invention by researchers at the University of Western Australia
+ (UWA), is the Opto-Acoustic Parametric Amplifier (OAPA).
+ Essentially, it controls the vibration of a resonator by coupling it to
+ optical degrees of freedom.
+ Microresonator characterisation is an important preliminary step in the
+ construction of an OAPA.
+ Here, two schemes for determining the set of resonant frequencies of a
+ microresonator and their corresponding Q-factors and mode shapes are discussed.
+ The first was realised experimentally at Laboratoire Kastler Brossel (LKB)
+ in Paris; the second at UWA in Perth.
+ Both experiments were motivated by a collaborative effort between the two
+ groups, who wish to create an OAPA to demonstrate mode damping and amplificatio
+n.
+ The results of these experiments are compared and contrasted against theoretica
+l predictions and their benefits and downfalls are discussed.
+ To complement this, a short overview of relevant theory and literature
+ is also presented.
+\end_layout
+
+\end_body
+\end_document

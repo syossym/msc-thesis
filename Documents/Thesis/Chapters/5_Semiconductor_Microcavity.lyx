@@ -1,0 +1,7324 @@
+#LyX 1.6.8 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass scrreprt
+\options a4paper,titlepage
+\use_default_options false
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 0
+\cite_engine natbib_numerical
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\bullet 0 0 17 -1
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Semiconductor Microcavities and Polaritonic Effect
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "cha:Microcavity"
+
+\end_inset
+
+In the previous two chapters, we have considered the optical properties
+ of bare quantum wells, and the influence of the the introduced 2DEG inside
+ the cavity region.
+ As we have seen, these structures allow efficient confinement of charge
+ carriers in a defined region of the structure, which allows us to easily
+ probe their electronic and optical properties.
+ In this chapter we explore another form of confinement, namely that of
+ electromagnetic radiation, through the use of microcavity structures consisting
+ of a cavity layer cladded by a distributed Bragg reflector on each side.
+ A heterostructure, such as quantum well or heterojunctions, can be embedded
+ within the MC.
+ Inside such a structure, the photon mode is spatially confined inside the
+ cavity region, and when the cavity width is comparable to the wavelength
+ of the QW resonant modes (excitons), a resonant interaction takes place.
+ These interaction modes are termed 
+\emph on
+polaritons
+\emph default
+, and the examination of their optical properties constitute the main objective
+ of this chapter.
+ 
+\end_layout
+
+\begin_layout Standard
+We start our discussion by giving a brief introduction to the classical
+ theory of microcavities, by describing the optical properties of Fabri-Perot
+ resonators, followed by a description of a distributed Bragg reflector
+ (DBR) mirrors, and finally the introduction of semiconductor resonator
+ built of a cavity layer cladded with two DBR mirrors.
+ The method for the calculation of optical reflection and transmition of
+ such structures is presented, together with the characterization of electromagn
+etic distribution inside the cavity region and the dispersion properties
+ of the confined photonic mode.
+ 
+\end_layout
+
+\begin_layout Standard
+Next, in order to introduce the interaction of electromagnetic field mode
+ with a QW confine electron-hole resonance, we present simple idealized
+ models for the interaction of a two-level electronic system with a photon
+ mode.
+ We complicate the model by considering multiple two-level systems interacting
+ with the photon field mode, and then apply them to the case of semiconductor
+ microcavities and the polaritonic modes.
+ Here we put a special emphasis on the coupled oscillator model to describe
+ the polariton dispersion relations.
+ 
+\end_layout
+
+\begin_layout Standard
+In the last part of this chapter, we present a unified framework for the
+ calculation of the optical properties of MCs with embedded QWs in the cavity
+ region, obtained by combining the numerical approaches formulate in this
+ and previous chapters.
+ We also discuss the influence of the introduction of 2DEG into the well
+ region of the embedded QWs and compare the results to the optical properties
+ of bare QWs, presented in chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Coulomb_Correlated_Optical_Transitions"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Optical Resonator
+\end_layout
+
+\begin_layout Standard
+An optical resonator is a device used for confining light at certain frequencies.
+ The classical resonator (such a the Fabri-Perot etalon seen in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:etalon-multiple_reflections"
+
+\end_inset
+
+) consists of two planar mirrors, separated by a distance 
+\begin_inset Formula $l$
+\end_inset
+
+.
+ The region between the two mirror is called the spacer layer and its refractive
+ index is denoted by 
+\begin_inset Formula $n$
+\end_inset
+
+.
+ For now we assume that the medium outside the structure is plain air.
+ The transmitions spectrum of this structure exhibits a pattern of repetitive
+ peaks of large transmission corresponding to resonances of the etalon.
+ This varying transmission function is caused by an interference between
+ the multiple reflections of light between the two reflecting surfaces (see
+ Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:etalon-multiple_reflections"
+
+\end_inset
+
+).
+ Constructive interference occurs if the transmitted beams are in phase,
+ which corresponds to a high-transmission peak.
+ for transmitted beams that are out-of-phase a destructive interference
+ occurs, which corresponds to a minimum in the transmission spectrum.
+ The multiple-reflected beams' phase matching depends in the wavelength
+ 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ of the light, the beam incidence angle 
+\begin_inset Formula $\theta$
+\end_inset
+
+, the etalon thickness 
+\begin_inset Formula $l$
+\end_inset
+
+ and the refractive index of the spacer material 
+\begin_inset Formula $n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/5_Fabri_Perot_Etalon.eps
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:etalon-multiple_reflections"
+
+\end_inset
+
+Fabri-Perot etalon multiple reflections.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The phase between each successive reflection is 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Born2002"
+
+\end_inset
+
+ 
+\begin_inset Formula \begin{equation}
+\delta=\left(\frac{2\pi}{\lambda}\right)2nl\cos\left(\theta\right)\end{equation}
+
+\end_inset
+
+If both surfaces have reflectance 
+\begin_inset Formula $R$
+\end_inset
+
+, the transmittance function of the entire structure is given by 
+\begin_inset Formula \begin{equation}
+T=\frac{(1-R)^{2}}{1+R^{2}-2R\cos\left(\delta\right)}=\frac{1}{1+F\sin^{2}\left(\frac{\delta}{2}\right)},\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $F=\frac{4R}{(1-R)^{2}}$
+\end_inset
+
+ is the finesse coefficient.
+ Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:etalon-transmittance-function"
+
+\end_inset
+
+ shows the dependence of the transmittance on the phase parameter 
+\begin_inset Formula $\delta$
+\end_inset
+
+, for various values of 
+\begin_inset Formula $R$
+\end_inset
+
+ (or equivalently of 
+\begin_inset Formula $F$
+\end_inset
+
+).
+ The maximum transmission occurs when the optical path length difference
+ 
+\begin_inset Formula $2nl\cos(\theta)$
+\end_inset
+
+ between each transmitted beam is an integer multiple of the wavelength.
+ In the absence of absorption, the reflectance of the structure 
+\begin_inset Formula $R$
+\end_inset
+
+ is the complement of the transmittance, i.e.
+ 
+\begin_inset Formula $R+T=1$
+\end_inset
+
+.
+ The maximum reflectivity is given by 
+\begin_inset Formula \begin{equation}
+R_{max}=1-\frac{1}{1+F},\end{equation}
+
+\end_inset
+
+which occurs when the path-length difference is equal to half an odd multiple
+ of the wavelength.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/5_Fabri_Perot_Transmission.eps
+	lyxscale 50
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:etalon-transmittance-function"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+Resonator transmittance function for various values of mirror reflectance.
+\end_layout
+
+\end_inset
+
+Resonator transmittance function for various values of mirror reflectance
+ 
+\begin_inset Formula $R$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\delta\lambda$
+\end_inset
+
+ is the full-width half-maximum of the transmission band.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The wavelength separation between adjacent transmission peaks or free spectral
+ range (FSR) of the etalon, 
+\begin_inset Formula $Δλ$
+\end_inset
+
+, is given by 
+\begin_inset Formula \begin{equation}
+\Delta\lambda=\frac{\lambda_{0}^{2}}{2nl\cos(\theta)+\lambda_{0}},\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $λ_{0}$
+\end_inset
+
+ is the central wavelength of the nearest transmission peak.
+ The FSR is related to the full-width half-maximum (FWHM) 
+\begin_inset Formula $δλ$
+\end_inset
+
+ of any one transmission band by a quantity known as the 
+\emph on
+finesse
+\begin_inset Formula \begin{equation}
+\mathcal{F}=\frac{\Delta\lambda}{\delta\lambda}=\frac{\pi}{2\arcsin(1/\sqrt{F})}\end{equation}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+Distributed Bragg Reflector
+\end_layout
+
+\begin_layout Standard
+The reflecting surfaces (or mirrors) modeled in previous section by a reflectivi
+ty parameter 
+\begin_inset Formula $R$
+\end_inset
+
+ are realized in practice by a stack of multiple layers of alternating semicondu
+ctor materials with varying refractive indices called Distributed Bragg
+ Reflector (DBR) (see Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Schematic-DBR"
+
+\end_inset
+
+).
+ The alternating high and low indices, denoted respectively by 
+\begin_inset Formula $n_{H}$
+\end_inset
+
+ and 
+\begin_inset Formula $n_{L}$
+\end_inset
+
+, and the semiconductor layer thicknesses satisfy the following condition
+\begin_inset Formula \begin{equation}
+n_{L}l_{L}=n_{H}l_{H}=\frac{\lambda_{c}}{4},\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\lambda_{c}$
+\end_inset
+
+ is the center wavelength of the high reflectivity region of the structure.
+ The two indices 
+\begin_inset Formula $n_{l}$
+\end_inset
+
+ and 
+\begin_inset Formula $n_{r}$
+\end_inset
+
+ are, respectively, the left- and right-hand cladding material refractive
+ indices.
+\end_layout
+
+\begin_layout Standard
+The principle of operation can be understood as follows.
+ Each interface between the two materials contributes a Fresnel reflection.
+ For the design wavelength 
+\begin_inset Formula $\lambda_{c}$
+\end_inset
+
+, the optical path length difference between reflections from subsequent
+ interfaces is half the wavelength; in addition, the reflection coefficients
+ for the interfaces have alternating signs.
+ Therefore, all reflected components from the interfaces interfere constructivel
+y, which results in a strong reflection.
+ The reflectivity achieved is determined by the number of layer pairs and
+ by the refractive index contrast between the layer materials.
+ The reflection bandwidth is determined mainly by the index contrast, 
+\begin_inset Formula $n_{H}-n_{L}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/5_DBR_Schematic.eps
+	lyxscale 50
+	scale 50
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Schematic-DBR"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+Schematic illustration of a Distributed Bragg Reflector.
+\end_layout
+
+\end_inset
+
+Schematic illustration of a Distributed Bragg Reflector (DBR).
+ 
+\begin_inset Formula $z$
+\end_inset
+
+ represents the growth direction of the layered structure.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In order to analyze the reflection and transmittance of the DBR, we use
+ the Transfer Matrix formalism 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Macleod2001"
+
+\end_inset
+
+, as is described in the next section.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Transfer-Matrix-Method"
+
+\end_inset
+
+Transfer Matrix Method (TMM)
+\end_layout
+
+\begin_layout Standard
+A monochromatic electric field of frequency 
+\begin_inset Formula $\omega$
+\end_inset
+
+ propagating in a dielectric medium, assuming a frequency independent dielectric
+ function, can be shown to satisfy the following wave equation 
+\begin_inset Formula \begin{equation}
+\nabla^{2}\mathbf{E}(\mathbf{r})+\frac{\omega^{2}}{c^{2}(r)}\mathbf{E}(\mathbf{r})=0,\label{eq:E_wave_eqaution_r}\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula \[
+\mathbf{E}(\mathbf{r},t)=\Re\left\{ \mathbf{E}(\mathbf{r})e^{i\omega t}\right\} ,\]
+
+\end_inset
+
+the speed of light in the dielectric 
+\begin_inset Formula $c(r)=c_{0}/n(r)$
+\end_inset
+
+, 
+\begin_inset Formula $c_{0}$
+\end_inset
+
+ being the speed on light in the vacuum and 
+\begin_inset Formula $n(r)$
+\end_inset
+
+ the location dependent refractive index.
+\end_layout
+
+\begin_layout Standard
+A medium consisting of pairs of two different dielectric materials with
+ different refraction indices has a growth axis, 
+\begin_inset Formula $\hat{z}$
+\end_inset
+
+, dependent refraction index, i.e.
+ 
+\begin_inset Formula $n(r)=n(z)$
+\end_inset
+
+.
+ Therefore equation 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:E_wave_eqaution_r"
+
+\end_inset
+
+ can be written as
+\begin_inset Formula \begin{equation}
+\nabla^{2}\mathbf{E}(\rho,z)+\frac{\omega^{2}}{c^{2}(z)}\mathbf{E}(\rho,z)=0.\label{eq:E_wave_equation_z}\end{equation}
+
+\end_inset
+
+Because of the translational invariance along the in-plane, the solution
+ of Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:E_wave_equation_z"
+
+\end_inset
+
+ consists of plane waves along the in-plane direction.
+ For a given in-plane wave vector 
+\begin_inset Formula $k_{t}$
+\end_inset
+
+ (parallel to the dielectric layer plane) we can make the following ansatz
+ for the solution 
+\begin_inset Formula \begin{equation}
+\mathbf{E}_{\mathbf{k}_{t}}=E_{\mathbf{k}_{t},\omega}(z)e^{i\mathbf{k}_{t}\cdot\mathbf{\rho}}.\end{equation}
+
+\end_inset
+
+Substituting into Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:E_wave_equation_z"
+
+\end_inset
+
+ yields the following one-dimensional equation
+\begin_inset Formula \begin{equation}
+\frac{d^{2}E_{\mathbf{k}_{t},\omega}(z)}{dz^{2}}+\left(\frac{\omega^{2}}{c^{2}(z)}-k_{t}^{2}\right)E_{\mathbf{k}_{t},\omega}(z)=0.\end{equation}
+
+\end_inset
+
+This equation can be solved separately for each layer of the stack.
+ The solution for a homogeneous layer with a constant refractive index is
+ of the form
+\begin_inset Formula \begin{eqnarray}
+E_{\mathbf{k}_{t},\omega}(z) & = & E^{+}e^{ik_{z}z}+E^{-}e^{-ik_{z}z},\nonumber \\
+k_{z} & = & \sqrt{\frac{\omega^{2}}{c^{2}}-\mathbf{k}_{t}^{2}}.\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The solution is a linear combination of two traveling waves in opposite
+ direction along the 
+\begin_inset Formula $\hat{z}$
+\end_inset
+
+ axis.
+ A non-evanescent wave solution exist only if 
+\begin_inset Formula $\frac{\omega}{c}>\mathbf{k}_{t}$
+\end_inset
+
+.
+ The complex amplitudes of the forward (
+\begin_inset Formula $E^{+})$
+\end_inset
+
+ and backward (
+\begin_inset Formula $E^{-}$
+\end_inset
+
+) propagating waves are determined from the boundary conditions at each
+ interface between two adjacent layers of the stack.
+\end_layout
+
+\begin_layout Standard
+The relation between the two complex amplitudes between two point along
+ the propagation direction, 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $z_{2}$
+\end_inset
+
+, can be expressed as a 
+\begin_inset Formula $2\times2$
+\end_inset
+
+ matrix transfer matrix.
+ From here on we assume the non-unique basis for the transfer matrix is
+ 
+\begin_inset Formula $(E^{+},E^{-})$
+\end_inset
+
+.
+ The transfer matrix takes into account the propagation through the dielectric
+ media and the boundary conditions at each interface between two adjacent
+ layers.
+ The boundary conditions resulting from Maxwell's equations state that tangentia
+l components of the electric and magnetic fields are continuous across the
+ interface.
+ The boundary conditions for the field components can be written as
+\begin_inset Formula \begin{align}
+D_{\perp1} & =D_{\perp2}\nonumber \\
+B_{\perp1} & =B_{\perp2}\nonumber \\
+E_{\parallel1} & =E_{\parallel2}\label{eq:62}\\
+H_{\parallel1} & =H_{\parallel2}\nonumber \end{align}
+
+\end_inset
+
+For simplicity we assume propagation only in the 
+\begin_inset Formula $\hat{z}$
+\end_inset
+
+ direction and normal incidence of the light waves on the dielectric interfaces.
+ The boundary conditions for the electric field become
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../../AdvancedLab/Figures/Boundary_And_Propagation.png
+	lyxscale 60
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Ligth_Propagation_Interface"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+Schematic description of light propagation through an interface between
+ two adjacent dielectric layers and light propagation in a homogeneous medium.
+\end_layout
+
+\end_inset
+
+Schematic description of (a) light propagation through an interface between
+ two adjacent dielectric layers and (b) light propagation in a homogeneous
+ medium.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ (see Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Ligth_Propagation_Interface"
+
+\end_inset
+
+(a)) 
+\begin_inset Formula \begin{eqnarray}
+E_{1}^{+}+E_{1}^{-} & = & E_{2}^{+}+E_{2}^{-}\label{eq:63}\\
+n_{2}\left(E_{2}^{+}-E_{2}^{-}\right) & = & n_{1}\left(E_{1}^{+}-E_{1}^{-}\right)\label{eq:64}\end{eqnarray}
+
+\end_inset
+
+The interface transfer matrix 
+\begin_inset Formula $M_{i}$
+\end_inset
+
+, for both linear polarizations of the field, TE and TM, can be written
+ as
+\begin_inset Formula \begin{equation}
+\left(\begin{array}{c}
+E_{2}^{+}\\
+E_{2}^{-}\end{array}\right)=\frac{1}{2n_{2}}\left(\begin{array}{cc}
+n_{2}+n_{1} & n_{2}-n_{1}\\
+n_{2}-n_{1} & n_{2}+n_{1}\end{array}\right)\left(\begin{array}{c}
+E_{1}^{+}\\
+E_{1}^{-}\end{array}\right)\equiv M_{i}\left(\begin{array}{c}
+E_{1}^{+}\\
+E_{1}^{-}\end{array}\right)\end{equation}
+
+\end_inset
+
+or a wave propagating from layer 1 to layer 2.
+ The in-layer propagation transfer matrix 
+\begin_inset Formula $M_{p}$
+\end_inset
+
+, which relates different vectors at 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $z_{2}$
+\end_inset
+
+ in the same layer can be written as (Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Ligth_Propagation_Interface"
+
+\end_inset
+
+(b))
+\begin_inset Formula \begin{equation}
+\left(\begin{array}{c}
+E_{2}^{+}\\
+E_{2}^{-}\end{array}\right)=\left(\begin{array}{cc}
+e^{ikl} & 0\\
+0 & e^{-ikl}\end{array}\right)\left(\begin{array}{c}
+E_{1}^{+}\\
+E_{1}^{-}\end{array}\right)\equiv M_{p}\left(\begin{array}{c}
+E_{1}^{+}\\
+E_{1}^{-}\end{array}\right),\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $k=\left(\nicefrac{\omega}{c_{0}}\right)n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+This amplitude propagation approach can be applied to the entire multilayer
+ structure, for which the transfer matrix is simply the multiplication of
+ 
+\begin_inset Formula $M_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $M_{p}$
+\end_inset
+
+ matrices for each boundary and layer
+\begin_inset Formula \begin{equation}
+M_{DBR}=\prod_{m}M_{i,m}M_{p,m},\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $m$
+\end_inset
+
+ is the dielectric layer index.
+ The explicit relation between the amplitudes of the incident electric field
+ in the DBR structure and the transmitted field on the other side can be
+ written as 
+\begin_inset Formula \begin{equation}
+\left(\begin{array}{c}
+E_{out}^{+}\\
+0\end{array}\right)=\left(\begin{array}{cc}
+M_{11} & M_{12}\\
+M_{21} & M_{22}\end{array}\right)\left(\begin{array}{c}
+E_{in}^{+}\\
+E_{in}^{-}\end{array}\right).\label{eq:Transfer_Matrix_Formulation}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The reflection and transmission coefficients of the entire structure can
+ thus be written as
+\begin_inset Formula \begin{eqnarray}
+r_{DBR} & = & -\frac{M_{21}}{M_{22}}\\
+t_{DBR} & = & \frac{\det(M_{DBR})}{M_{22}}\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/5_DBR_Profile_Reflectivity.eps
+	lyxscale 50
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Sample_DBR_reflection"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The amplitude and phase of the normal incidence reflection calculation of
+ a DBR structure with 35 layers with alternating high and low refraction
+ indices.
+\end_layout
+
+\end_inset
+
+Simulation of a DBR structure with 35 alternating high and low refraction
+ index layers, where (a) is the refractive index profile as a function of
+ the growth axis, (b) the amplitude and phase of the normal incidence reflection
+ function this structure as a function of normalized wavelength, 
+\begin_inset Formula $\lambda/\lambda_{c}$
+\end_inset
+
+, and (c) the same amplitude as a function of the phase acquired by the
+ EM field at each layer, 
+\begin_inset Formula $\phi=\frac{2\pi l_{i}n_{i}}{\lambda}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The reflection coefficient can be expressed as 
+\begin_inset Formula $r_{DBR}(\lambda)=|r|e^{i\alpha_{r}}$
+\end_inset
+
+.
+ It can be shown that for a structure containing 
+\begin_inset Formula $2N+1$
+\end_inset
+
+ layers of high and low refractive indices (as in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Schematic-DBR"
+
+\end_inset
+
+), so that the outermost layers are of high refractive index, 
+\begin_inset Formula $n_{H}$
+\end_inset
+
+, and for the case of 
+\begin_inset Formula $k_{i}l_{i}=\frac{\pi}{2}$
+\end_inset
+
+ 
+\begin_inset Formula \begin{equation}
+|r|=\left(\frac{1-\left(\frac{n_{H}}{n_{L}}\right)^{2N}\frac{n_{H}^{2}}{n_{r}n_{l}}}{1+\left(\frac{n_{H}}{n_{L}}\right)^{2N}\frac{n_{H}^{2}}{n_{r}n_{l}}}\right)^{2}.\end{equation}
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+The phase within the region of high reflectivity (the 
+\emph on
+stop band
+\emph default
+) of the reflector can be expressed as 
+\begin_inset Formula \begin{equation}
+\alpha_{r}=\frac{n_{c}L_{DBR}}{c}\left(\omega-\omega_{c}\right),\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $L_{DBR}$
+\end_inset
+
+ is the penetration depth into the DBR and is given by 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "savona_exact_1995"
+
+\end_inset
+
+
+\begin_inset Formula \begin{equation}
+L_{DBR}=\frac{\lambda_{c}}{2}\frac{n_{L}n_{H}}{n_{c}\left(n_{H}-n_{L}\right)}.\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As an illustration, we present in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sample_DBR_reflection"
+
+\end_inset
+
+ an exact calculation of the reflection coefficient of a DBR containing
+ 35 pairs of alternating high and low refractive index layers.
+ The refractive indices for the simulation are 
+\begin_inset Formula $n_{l}=1$
+\end_inset
+
+ (air), 
+\begin_inset Formula $n_{H}=3.45$
+\end_inset
+
+ (
+\begin_inset Formula $Al_{0.2}Ga_{0.8}As$
+\end_inset
+
+), 
+\begin_inset Formula $n_{L}=2.98$
+\end_inset
+
+ (
+\begin_inset Formula $AlAs$
+\end_inset
+
+) and 
+\begin_inset Formula $n_{r}=3.59$
+\end_inset
+
+ (
+\begin_inset Formula $GaAs$
+\end_inset
+
+) (the structure refractive index profile is presented in (a)).
+ In subplots (b) and (c) we plot the reflection coefficient as a function
+ of the normalized wavelength, 
+\begin_inset Formula $\nicefrac{\lambda}{\lambda_{c}}$
+\end_inset
+
+, and the phase acquired by the electromagnetic field at each layer, 
+\begin_inset Formula $\phi=\frac{2\pi l_{i}n_{i}}{\lambda}$
+\end_inset
+
+.
+ The stop-band, as can be clearly seen from these plots, is centered at
+ 
+\begin_inset Formula $\phi=\frac{\pi}{2}$
+\end_inset
+
+, which corresponds to 
+\begin_inset Formula $\lambda_{c}$
+\end_inset
+
+.
+ In subplot (b) we also present the reflectivity phase 
+\begin_inset Formula $\alpha_{r}$
+\end_inset
+
+, where the zero-phase crossing is observed at 
+\begin_inset Formula $\lambda_{c}$
+\end_inset
+
+ as expected for the left-face reflection.
+ 
+\end_layout
+
+\begin_layout Section
+Microcavity Optical Characteristics 
+\end_layout
+
+\begin_layout Subsection
+Microcavity Reflection Spectrum 
+\end_layout
+
+\begin_layout Standard
+A microcavity (MC) is a Fabry-Perot resonator, whose mirrors are two DBRs
+ and the spacer material is a semiconductor layer with refractive index
+ 
+\begin_inset Formula $n_{c}$
+\end_inset
+
+ and of length 
+\begin_inset Formula $l_{c}=\frac{\lambda_{c}}{2n_{c}}m$
+\end_inset
+
+ (
+\begin_inset Formula $m$
+\end_inset
+
+ is a positive integer).
+ The microcavity can be analyzed similarly to the DBR using the transfer
+ matrix formalism.
+ The MC's transfer matrix for a wave traveling from left to right can be
+ written as 
+\begin_inset Formula \begin{equation}
+M_{MC}=M_{DBR}^{r}M_{c}M_{DBR}^{l},\label{eq:MC_transfer_matrix_1}\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $M_{c}$
+\end_inset
+
+ is the transfer matrix of the spacer (cavity) layer.
+ We can write the these three transfer matrices in their most general form
+ as
+\begin_inset Formula \begin{eqnarray}
+M_{DBR}^{r} & = & \frac{n_{c}}{n_{r}}\left(\begin{array}{cc}
+\frac{1}{t_{r}^{\star}} & -\frac{r_{r}^{\star}}{t_{r}^{\star}}\\
+-\frac{r_{r}}{t_{r}} & \frac{1}{t_{r}}\end{array}\right),\\
+M_{DBR}^{l} & = & \frac{n_{l}}{n_{c}}\left(\begin{array}{cc}
+\frac{1}{t_{l}^{\star}} & \frac{r_{l}}{t_{l}}\\
+\frac{r_{l}^{\star}}{t_{l}^{\star}} & \frac{1}{t_{l}}\end{array}\right),\\
+M_{c} & = & \left(\begin{array}{cc}
+e^{ikl_{c}} & 0\\
+0 & e^{-ikl_{c}}\end{array}\right),\end{eqnarray}
+
+\end_inset
+
+where 
+\begin_inset Formula $\left(r_{l},\, t_{l}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $\left(r_{r},\, t_{r}\right)$
+\end_inset
+
+ are, respectively, the reflection and transmission coefficients of the
+ left- and right-hand DBR mirrors (see Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Microcavity_schematic_structure"
+
+\end_inset
+
+) and 
+\begin_inset Formula $n_{l}$
+\end_inset
+
+ and 
+\begin_inset Formula $n_{r}$
+\end_inset
+
+ are the left- and right-hand cladding material refractive indices, respectively.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/5_MC_Schematic.eps
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Microcavity_schematic_structure"
+
+\end_inset
+
+A microcavity schematic structure.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Inserting these matrices into Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:MC_transfer_matrix_1"
+
+\end_inset
+
+ yields 
+\begin_inset Formula \begin{equation}
+M_{MC}=\left(\frac{n_{L}}{n_{H}}\right)^{2}\left(\begin{array}{cc}
+\frac{e^{ikl_{eff}}-R^{\star}e^{-ikl_{eff}}}{T^{\star}} & \frac{r_{l}e^{ikl_{eff}}-r_{r}^{\star}e^{-ikl_{eff}}}{t_{l}t_{r}^{\star}}\\
+\frac{r_{l}^{\star}e^{-ikl_{eff}}-r_{r}e^{ikl_{eff}}}{t_{l}^{\star}t_{r}} & \frac{e^{-ikl_{eff}}-Re^{ikl_{eff}}}{T}\end{array}\right),\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $T=t_{l}t_{r}$
+\end_inset
+
+ and 
+\begin_inset Formula $R=r_{l}r_{r}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $l_{eff}$
+\end_inset
+
+ is not equal to 
+\begin_inset Formula $l_{c}$
+\end_inset
+
+ but rather to 
+\begin_inset Formula $l_{eff}=l_{c}+l_{p}$
+\end_inset
+
+, where 
+\begin_inset Formula $l_{p}$
+\end_inset
+
+ is the penetration depth of the cavity field into the DBR 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "savona_exact_1995"
+
+\end_inset
+
+ and is given by 
+\begin_inset Formula \begin{equation}
+l_{p}=\frac{\lambda_{c}}{2}\frac{n_{L}n_{H}}{n_{c}\left(n_{H}-n_{L}\right)}.\end{equation}
+
+\end_inset
+
+The reflectance and transmittance of the MC can thus be written as 
+\begin_inset Formula \begin{eqnarray}
+T_{MC} & = & \frac{1}{\det\left(M_{MC}\right)|M_{MC}^{22}|^{2}}=\frac{T}{\left(1-R\right)^{2}+4R\sin^{2}\left(k_{z}l_{eff}\right)}\\
+R_{MC} & = & \frac{|M_{MC}^{21}|^{2}}{|M_{MC}^{22}|^{2}}=\frac{\left(|r_{r}|-|r_{l}|\right)^{2}+4R\sin^{2}\left(k_{z}l_{eff}\right)}{\left(1-R\right)^{2}+4R\sin^{2}\left(k_{z}l_{eff}\right)}\end{eqnarray}
+
+\end_inset
+
+It is clear that there are several modes which satisfy the condition 
+\begin_inset Formula $k_{z}l_{eff}=m\pi$
+\end_inset
+
+.
+ As we increase the number of layers in the DBR mirrors the stop-band reflectivi
+ty approaches unity and the cavity field reflection line becomes narrower.
+ Because of the finite transmission probability of the DBR, the MC mode
+ has a FWHM which can be shown to be 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "savona_exact_1995"
+
+\end_inset
+
+ 
+\begin_inset Formula \begin{equation}
+2\gamma_{c}=\frac{1-R_{MC}}{\sqrt{R_{MC}}}\frac{c}{n_{c}l_{eff}}.\label{eq:MC_Mode_Linewidth}\end{equation}
+
+\end_inset
+
+
+\begin_inset Formula $\gamma_{c}$
+\end_inset
+
+ is a homogeneous lifetime broadening of the confined cavity mode, caused
+ by the decay through the mirrors.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/5_MC_Profile_Reflectivity.eps
+	lyxscale 50
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Sample_MC_reflection"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+Amplitude and phase of the normal incidence reflection function for a microcavit
+y with two DBR's with 35 alternating high and low refractive index layers.
+\end_layout
+
+\end_inset
+
+Simulation of a microcavity with two DBR's with 35 alternating high and
+ low refractive index layers each, where (a) is the refreactive index profile
+ as a function of the growth axis, (b) the amplitude and phase of the normal
+ incidence reflection function this structure as a function of normalized
+ wavelength, 
+\begin_inset Formula $\lambda/\lambda_{c}$
+\end_inset
+
+, and (c) the same amplitude as a function of the phase acquired by the
+ EM field at each layer, 
+\begin_inset Formula $\phi=\frac{2\pi l_{i}n_{i}}{\lambda}$
+\end_inset
+
+.
+ The inset in (c) shows the reflection profile in the vicinity of 
+\begin_inset Formula $\phi=\frac{\pi}{2}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As an illustration, we present in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sample_MC_reflection"
+
+\end_inset
+
+ the simulation results of a sample microcavity with two DBR mirrors with
+ 35 alternating layers of high and low refractive index each and cavity
+ length of 
+\begin_inset Formula $l_{c}=\frac{\lambda_{c}}{2n_{c}}$
+\end_inset
+
+.
+ This calculation was performed using the direct TMM calculation of the
+ entire the structure, similarly to the DBR simulation presented above.
+ The DBR parameters are the same as in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sample_DBR_reflection"
+
+\end_inset
+
+, while for the cavity we choose 
+\begin_inset Formula $n_{c}=n_{H}=3.45$
+\end_inset
+
+ (
+\begin_inset Formula $Al_{0.2}Ga_{0.8}As$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/5_MC_Profile_Field_Profile_1.eps
+	scale 50
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/5_MC_Profile_Field_Profile_2.eps
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Sample_MC_E_Amplitude"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+Calculation of the electric field amplitude of a microcavity for two DBR
+ mirror configurations.
+\end_layout
+
+\end_inset
+
+Simulation the electric field amplitude of a microcavity with DBR mirrors
+ made of (a) 15 left and 25 right alternating layers and (b) 22 left and
+ right alternating layers.
+ The cavity in this calculation is 
+\begin_inset Formula $\lambda$
+\end_inset
+
+-wide and the layer materials are the same as in previous calculations.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Using the same procedure, the electric field buildup can be calculated inside
+ the cavity.
+ This is obtained by plugging the accumulated transfer matrix 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:MC_transfer_matrix_1"
+
+\end_inset
+
+ for each layer of the structure into 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Transfer_Matrix_Formulation"
+
+\end_inset
+
+, with the use of appropriate initial electric field amplitudes.
+ As an illustration we plot in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sample_MC_E_Amplitude"
+
+\end_inset
+
+ the electric field profile inside a 
+\begin_inset Formula $\lambda$
+\end_inset
+
+-wide microcavity for two configurations of the cavity DBR mirrors.
+ The spatial and spectral localization of the electric field intensity and
+ its enhancement (from (a) to (b)) is clearly seen.
+ 
+\end_layout
+
+\begin_layout Subsection
+Microcavity Confined Photon
+\end_layout
+
+\begin_layout Standard
+The dispersion of the MC modes is defined as the 
+\begin_inset Formula $k_{t}$
+\end_inset
+
+ dependence of the MC-mode energy.
+ As we have seen in the previous section, it is obtained from the resonance
+ condition 
+\begin_inset Formula $k_{z}l_{eff}=m\pi$
+\end_inset
+
+, where 
+\begin_inset Formula $k_{z}=\sqrt{\frac{\omega^{2}}{c^{2}}-k_{t}^{2}}$
+\end_inset
+
+.
+ Combining this condition with the condition for a propagating wave indside
+ the cavity, 
+\begin_inset Formula $k_{t}^{2}<\frac{\omega^{2}}{c^{2}}$
+\end_inset
+
+, we can write the MC-mode dispersion relation of the form 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Skolnick1998"
+
+\end_inset
+
+ 
+\begin_inset Formula \begin{equation}
+E_{ph}\left(k_{t}\right)=\frac{\hbar ck}{n_{c}}=\frac{\hbar c}{n_{c}}\sqrt{\left(\frac{2\pi m}{l_{c}}\right)^{2}+k_{t}^{2}},\label{eq:MC_Mode_Dispersion}\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $m$
+\end_inset
+
+ is a positive integer.
+ For small 
+\begin_inset Formula $k_{t}$
+\end_inset
+
+ we approximate the dispersion relation to a parabola 
+\begin_inset Formula \begin{equation}
+E_{ph}(k_{t})\cong\frac{2\pi\hbar c}{n_{c}l_{c}}\left(1+\frac{\hbar^{2}k_{t}^{2}}{2m_{ph}}\right).\end{equation}
+
+\end_inset
+
+The parabolic dispersion can be interpreted as a cavity photon that carries
+ a very small in-plane effective mass 
+\begin_inset Formula $m_{ph}=\frac{\hbar n_{c}}{cl_{c}}\approx10^{-5}m_{0}$
+\end_inset
+
+, where 
+\begin_inset Formula $m_{0}$
+\end_inset
+
+ is the free electron mass.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/5_MC_Photon_Dispersion.eps
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:MC_Photon_Dispersion"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+Microcavity confined photon dispersion curves for various resonance modes.
+\end_layout
+
+\end_inset
+
+Microcavity confined photon dispersion curves for various resonance modes
+ (solid blue) compared to a free photon dispersion curve 
+\begin_inset Formula $E_{ph,f}(k_{t})=\frac{\hbar ck_{t}}{n_{c}}$
+\end_inset
+
+ (dotted red).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+We plot the confined photon dispersion, for various values of 
+\begin_inset Formula $m$
+\end_inset
+
+, in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Photon_Dispersion"
+
+\end_inset
+
+ and compare in to the free photon dispersion.
+ For high 
+\begin_inset Formula $k_{t}$
+\end_inset
+
+values, the confined photon dispersion coincides with the free photon dispersion
+ for all the modes.
+\end_layout
+
+\begin_layout Section
+Microcavity Polaritons
+\end_layout
+
+\begin_layout Standard
+As we have seen in previous sections, a MC is used to sort out a single
+ mode of the electromagnetic field that is confined in one direction.
+ Semiconductor microcavities with embedded QWs are of particular interest
+ as they exhibit a one-dimensional confinement of both the electronic states
+ and the electromagnetic field 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Ducloy1996"
+
+\end_inset
+
+.
+ The resonant transitions (excitons) in QWs behave like a two-level absorber
+ system due to their enhanced oscillator strength and the large binding
+ energy resulting from the quantum confinement 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Andreani1990"
+
+\end_inset
+
+.
+ The interaction of the MC-photon with the QW-exciton leads to several new
+ effects that can generally be divided into two classes: (a) the enhancement
+ or inhibition of the spontaneous emission rate in the weak coupling regime
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Yokoyama1990"
+
+\end_inset
+
+ and (b) the observation of new eigen-modes with a Rabi splitting (normal
+ mode splitting) between them, in the strong coupling regime 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Zhu1990,Weisbuch1992"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The coupled exciton-photon eigenstates of the QW embedded in a MC are called
+ 
+\emph on
+cavity polaritons
+\emph default
+, by analogy with the exciton-polariton modes of the bulk material 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Hopfield1958"
+
+\end_inset
+
+.
+ Various theoretical models have been proposed to describe the exciton-cavity
+ polariton such as a semi-classical linear dispersion model, in which the
+ active medium is represented by a Lorentzian oscillator 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Savona1999,Weisbuch1992,Zhu1990"
+
+\end_inset
+
+, and a quantum mechanical model representing the MC-photon and the QW exciton
+ as two coupled harmonic oscillators 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Pau1995,Skolnick1998,Girlanda1995"
+
+\end_inset
+
+.
+ The semi-classical model has the advantage of using the realistic MC parameters
+ and it gives the reflectivity, transmission and absorption spectra.
+ The coupled oscillators model is more suitable for the description of the
+ dynamics of the MC-polaritons.
+ A full quantum mechanical treatment developed in
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Savona1995"
+
+\end_inset
+
+ is out of the scope of this thesis.
+ In this section we elaborate on the quantum mechanical model for the two-level
+ absorber and extend the analog to a microcavity polariton.
+ The presented review in primarily based on 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Rapaport2001"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Subsection
+Bulk Exciton Polaritons
+\end_layout
+
+\begin_layout Plain Layout
+Polaritons are the normal modes of optically active excitons and a radiation
+ field in solids 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Hopfield1958"
+
+\end_inset
+
+.
+ In other words, the polariton involves a spatially coherent coupling of
+ the exciton with the optical field.
+ In an infinite crystal, only those excitons at the crossing of the noninteracti
+ng exciton and photon dispersions can decay, owing to to the requirement
+ of energy-momentum conservation in the radiation process (see Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Bulk_Polarioton_Dispersion"
+
+\end_inset
+
+).
+ However, the exciton-photon coupling leads to an anticrossing in the polariton
+ dispersions.
+ Thus exciton polaritons in the bulk are stationary.
+ Their radiative decay must be associated with phonons, defects, impurities,
+ or crystal interfaces.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/5_Bulk_Polariton_Dispersion.eps
+	display false
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Bulk_Polarioton_Dispersion"
+
+\end_inset
+
+Schematic representation of the dispersion of the upper and lower polaritons
+ and of the longitudinal exciton (solid lines).
+ The dispersion of the uncoupled photon and transverse exciton modes is
+ also shown (dashed lines).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Strong Absorber-Photon Coupling 
+\end_layout
+
+\begin_layout Subsubsection
+Single Two-Level System
+\end_layout
+
+\begin_layout Standard
+To understand the interaction of a single photon mode with two-level absorber
+ we employ the Jaynes-Cummings model 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Jaynes1962,Haroche1984,Raimond1996"
+
+\end_inset
+
+, where a single photon mode is described by the Fock Hamiltonian 
+\begin_inset Formula \begin{equation}
+H_{F}=\hbar\omega\left(p^{\dagger}p+\frac{1}{2}\right).\end{equation}
+
+\end_inset
+
+Here 
+\begin_inset Formula $p^{\dagger}$
+\end_inset
+
+ and 
+\begin_inset Formula $p$
+\end_inset
+
+ are, respectively, the creation and annihilation operators that connect
+ different photon Fock states, defined in analogy to 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Creation_Annihilation_Operations"
+
+\end_inset
+
+, as 
+\begin_inset Formula \begin{eqnarray}
+p\left|n\right\rangle  & = & \sqrt{n}\left|n-1\right\rangle ,\\
+p^{\dagger}\left|n\right\rangle  & = & \sqrt{n+1}\left|n+1\right\rangle .\end{eqnarray}
+
+\end_inset
+
+
+\begin_inset Formula $p^{\dagger}$
+\end_inset
+
+ and 
+\begin_inset Formula $p$
+\end_inset
+
+ obey the bosonic commutation relation 
+\begin_inset Formula $\left[p,p^{\dagger}\right]=1$
+\end_inset
+
+.
+ The field operator of the photon field 
+\begin_inset Formula $\mathbf{E}(\mathbf{r})$
+\end_inset
+
+ is given by 
+\begin_inset Formula \begin{equation}
+\mathbf{E}(\mathbf{r})=\sqrt{\frac{\hbar\omega}{2\epsilon_{0}V}}\left[pf\left(\mathbf{r}\right)+p^{\dagger}f\left(\mathbf{r}\right)\right],\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $f\left(\mathbf{r}\right)$
+\end_inset
+
+ is a complex vector function that describes the polarization and relative
+ amplitude of the cavity mode at the position 
+\begin_inset Formula $\mathbf{r}$
+\end_inset
+
+.
+ The effective cavity mode volume 
+\begin_inset Formula $V$
+\end_inset
+
+ is defined as 
+\begin_inset Formula $V=\int\left|f\left(\mathbf{r}\right)\right|^{2}d^{3}\mathbf{r}$
+\end_inset
+
+.
+ The atomic two-level system is described by a two-level Hamiltonian 
+\begin_inset Formula \begin{equation}
+H_{A}=\frac{1}{2}\hbar\omega\hat{\sigma}_{z},\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\sigma_{z}$
+\end_inset
+
+ is a spin 
+\begin_inset Formula $1/2$
+\end_inset
+
+ like operator.
+ We also define two additional operators 
+\begin_inset Formula \begin{eqnarray}
+\sigma_{+}\left|g\right\rangle  & = & \left|e\right\rangle ,\\
+\sigma_{-}\left|e\right\rangle  & = & \left|g\right\rangle ,\end{eqnarray}
+
+\end_inset
+
+where 
+\begin_inset Formula $\left|g\right\rangle $
+\end_inset
+
+ and 
+\begin_inset Formula $\left|e\right\rangle $
+\end_inset
+
+ represent, respectively, the ground and excited states.
+ These operators obey the fermionic commutation relations 
+\begin_inset Formula $\left[\sigma_{+},\sigma_{-}\right]=2\sigma_{z}$
+\end_inset
+
+.
+ The atom-field interaction is once again the dipole interaction (as in
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Particle_E_Interaction"
+
+\end_inset
+
+) and is given by
+\begin_inset Formula \begin{equation}
+H_{I}=\mathbf{d}\cdot\mathbf{\mathbf{E}}=-\hbar\Omega f(r)\left[p\sigma_{+}+p^{\dagger}\sigma_{-}\right].\label{eq:Atom_Field_Interaction}\end{equation}
+
+\end_inset
+
+Here, 
+\series bold
+
+\begin_inset Formula $\mathbf{d}$
+\end_inset
+
+ 
+\series default
+is the electric dipole matrix element between the ground and excited states
+ of the atom and 
+\begin_inset Formula $\Omega$
+\end_inset
+
+, the coupling term, is given by 
+\begin_inset Formula \begin{equation}
+\Omega=\frac{d}{\hbar}\sqrt{\frac{\hbar\omega}{2\epsilon_{0}V}}.\label{eq:Rabi_Splitting_Energy}\end{equation}
+
+\end_inset
+
+The ground state of the entire system is 
+\begin_inset Formula $\left|g;0\right\rangle $
+\end_inset
+
+ with the atom is the ground state and the optical cavity is devoid of photons.
+ At the resonance, i.e.
+ 
+\begin_inset Formula $\omega=\omega_{0}$
+\end_inset
+
+, and without the atom-field interaction, all the excited states of the
+ entire system are grouped into 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+equidistant manifolds of 
+\end_layout
+
+\end_inset
+
+doubly degenerate level groups (see Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:2_Level_Absorber_Levels"
+
+\end_inset
+
+(a)) 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $\left|g;n+1\right\rangle $
+\end_inset
+
+ and 
+\begin_inset Formula $\left|e;n\right\rangle $
+\end_inset
+
+.
+ The atom-field interaction 
+\begin_inset Formula $H_{I}$
+\end_inset
+
+ couples only the doublet states 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+within each manifold and doesn't couple states from different manifolds
+\end_layout
+
+\end_inset
+
+ within each group and doesn't couple states from different level groups.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/Two_Level_Absorber_Interaction_Picture.emf
+	display false
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:2_Level_Absorber_Levels"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+Energy levels of the uncoupled absorber and field modes and the dressed
+ energy levels of the coupled system.
+ 
+\end_layout
+
+\end_inset
+
+(a) Energy levels of the uncoupled absorber and field modes and (b) the
+ dressed energy levels of the coupled system.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+Therefore, diagonalizing 
+\begin_inset Formula $H_{I}$
+\end_inset
+
+ amounts to separate diagonalization of 
+\begin_inset Formula $2\times2$
+\end_inset
+
+ matrices in each of these manifolds.
+\end_layout
+
+\end_inset
+
+ The interaction then lifts the degeneracy within each group and new states
+ are formed which are merely a linear combination of the doublets.
+ These new states 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+of each manifold
+\end_layout
+
+\end_inset
+
+ are termed 
+\begin_inset Quotes eld
+\end_inset
+
+dressed states
+\begin_inset Quotes erd
+\end_inset
+
+ or the 
+\begin_inset Quotes eld
+\end_inset
+
+dressed atom basis
+\begin_inset Quotes erd
+\end_inset
+
+, seen in Fig.
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\noun default
+\color inherit
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:2_Level_Absorber_Levels"
+
+\end_inset
+
+(b).
+\end_layout
+
+\begin_layout Standard
+From 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Atom_Field_Interaction"
+
+\end_inset
+
+, the eigenstates of the system are
+\begin_inset Formula \begin{equation}
+\left|\pm,n\right\rangle =\frac{1}{\sqrt{2}}\left[\left|e,n\right\rangle \mp\left|g,n+1\right\rangle \right],\end{equation}
+
+\end_inset
+
+constituting symmetric and anti-symmetric combinations of the uncoupled
+ states.
+ The eigenenergies are given by
+\begin_inset Formula \begin{equation}
+E_{\pm,n}=\left(n+1\right)\hbar\omega_{0}\pm\hbar\Omega f(r)\sqrt{n+1}.\end{equation}
+
+\end_inset
+
+The double degeneracy is lifted by the interaction and the separation between
+ the dressed states within each group is 
+\begin_inset Formula $2\hbar\Omega f(r)\sqrt{n+1}$
+\end_inset
+
+, termed the Rabi splitting.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+In this case the absorption or emission spectra are highly nonlinear in
+ the sense that they are strongly dependent on the number of photons.
+ For example, while the emission spectrum from 
+\begin_inset Formula $N=1$
+\end_inset
+
+ to 
+\begin_inset Formula $N=0$
+\end_inset
+
+ manifold consists of only two line with an energy separation of 
+\begin_inset Formula $2\hbar\Omega f\left(r\right)$
+\end_inset
+
+, the emission spectrum from 
+\begin_inset Formula $N=2$
+\end_inset
+
+ to 
+\begin_inset Formula $N=1$
+\end_inset
+
+ manifold has four lines with different energy separation.
+ In general, the dressed states of the 
+\begin_inset Formula $N$
+\end_inset
+
+ manifold are split by 
+\begin_inset Formula $2\hbar\Omega=f\left(r\right)\sqrt{N}$
+\end_inset
+
+ and the emission spectrum from the 
+\begin_inset Formula $N$
+\end_inset
+
+ to the 
+\begin_inset Formula $N-1$
+\end_inset
+
+ excitation manifold makes a continuous transition from four separate lines
+ to three lines 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Mollow1969"
+
+\end_inset
+
+ with increasing 
+\begin_inset Formula $N$
+\end_inset
+
+, because the two central transition lines becoming degenerate.
+ This nonlinearity stems from the fermionic nature of the atomic spin operator.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We now assume the initial state of the system to be
+\begin_inset Formula \begin{equation}
+\left|\psi\left(t=0\right)\right\rangle =\left|e,1\right\rangle =\frac{1}{\sqrt{2}}\left[\left|+\right\rangle +\left|-\right\rangle \right].\end{equation}
+
+\end_inset
+
+after a finite period of time 
+\begin_inset Formula $t$
+\end_inset
+
+ the system will be in the state 
+\begin_inset Formula \begin{equation}
+\left|\psi\left(t\right)\right\rangle =\frac{1}{\sqrt{2}}\left[\left|+\right\rangle e^{-iE_{+}t/\hbar}+\left|-\right\rangle e^{-iE_{-}t/\hbar}\right].\end{equation}
+
+\end_inset
+
+The probability that the field mode is excited and the absorber is in its
+ ground state is not stationary but rather of the form 
+\begin_inset Formula \begin{equation}
+\left|\left\langle e,n\vert\psi\left(t\right)\right\rangle \right|^{2}=\frac{1}{2}\left(1+\cos\Omega t\right),\end{equation}
+
+\end_inset
+
+termed the Rabi oscillations.
+ If the absorber is in its excited states and it emits a photon, then it
+ will subsequently reabsorb the photon.
+ There is no irreversible decay in this model since there is only one photon
+ mode.
+ In reality, the cavity damping 
+\begin_inset Formula $Q$
+\end_inset
+
+ factor is finite leading to a cavity damping 
+\begin_inset Formula $\gamma_{cav}$
+\end_inset
+
+.
+ In the strong coupling regime, the vacuum Rabi splitting must be greater
+ than the cavity damping and the absorber damping, i.e., 
+\begin_inset Formula $\hbar\Omega>\gamma_{cav},\,\gamma_{abs}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Multiple Two-Level Systems
+\end_layout
+
+\begin_layout Standard
+An extension of the former system is a setting of multiple two level atoms
+ interacting with a single photon mode.
+ This system is of relevance to the semiconductor MCs, since it involves
+ a large ensemble of absorbers (or QW excitations).
+ We consider a set of 
+\begin_inset Formula $N$
+\end_inset
+
+ identical two level atoms, where we assume that the atoms interact only
+ through their coupling to the radiation field.
+ Thus, the atomic Hamiltonian as well as the atom-field interaction are
+ sums of the individual atomic Hamiltonians.
+ Since all the atoms are coupled to the field in a similar fashion, the
+ excitation of the atomic system is equally shared among all atoms, and
+ the coupled atom-radiation system has 
+\begin_inset Formula $N+1$
+\end_inset
+
+ non-degenerate, equidistant energy levels.
+ This description is valid also for QWs in resonant structures since typical
+ exciton size is much smaller than the optical wavelength (
+\begin_inset Formula $a_{0}\ll\lambda$
+\end_inset
+
+) 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Haug2009"
+
+\end_inset
+
+.
+ The atomic Hamiltonian and the atom-field interaction can be then expressed
+ in terms of collective operators defined by 
+\begin_inset Formula \begin{equation}
+\sigma_{z}=\sum_{i}\sigma_{z,i},\,\,\sigma_{+}=\sum_{i}\sigma_{+,i},\,\,\sigma_{-}=\sum_{i}\sigma_{-,i}.\end{equation}
+
+\end_inset
+
+The atom-field interaction Hamiltonian is 
+\begin_inset Formula \begin{equation}
+H_{I}=\hbar\Omega\left[a\sigma_{+}+a^{\dagger}\sigma_{-}\right],\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ is the single atom single photon Rabi frequency, defined by 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Rabi_Splitting_Energy"
+
+\end_inset
+
+ and assuming 
+\begin_inset Formula $f\left(r\right)$
+\end_inset
+
+ is unity for all the atoms.
+ Due to the symmetrical form of the raising and lowering operators, the
+ excitation is equally shared among the atoms.
+ The atomic Hamiltonian has 
+\begin_inset Formula $N+1$
+\end_inset
+
+ non-degenerate levels 
+\begin_inset Formula $\left|J,M\right\rangle $
+\end_inset
+
+ with 
+\begin_inset Formula $J=N/2$
+\end_inset
+
+ and 
+\begin_inset Formula $-J\leq M\leq J$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+The two lowest states of the atomic system are the ground state 
+\begin_inset Formula $\left|G\right\rangle =\left|J,-J\right\rangle $
+\end_inset
+
+ and the first excited state 
+\begin_inset Formula $\left|E\right\rangle =\left|J,-J+1\right\rangle $
+\end_inset
+
+.
+ The ground state of the coupled system of atoms and cavity atoms is 
+\begin_inset Formula $\left|G,0\right\rangle $
+\end_inset
+
+, which describes an atomic ground state with an empty cavity.
+ The two degenerate states in the first group under resonant condition are
+ 
+\begin_inset Formula $\left|G,1\right\rangle $
+\end_inset
+
+ and 
+\begin_inset Formula $\left|E,0\right\rangle $
+\end_inset
+
+.
+ These two states are coupled by the atom-field interaction to form two
+ dressed states exactly as for the single atom case 
+\begin_inset Formula \begin{equation}
+\left|\pm,0\right\rangle =\frac{1}{\sqrt{2}}\left[\left|E,0\right\rangle \mp\left|G,1\right\rangle \right].\end{equation}
+
+\end_inset
+
+The eigenenergies of these states are given by 
+\begin_inset Formula \begin{equation}
+E_{\pm}=\hbar\omega_{0}\pm\hbar\Omega\sqrt{N}.\end{equation}
+
+\end_inset
+
+The splitting energy in this case becomes larger by the factor 
+\begin_inset Formula $\sqrt{N}$
+\end_inset
+
+ than the isolated atom, i.e., there is an enhancement of the splitting because
+ of the collective coupling of the atoms with the field.
+ 
+\end_layout
+
+\begin_layout Standard
+This discussion results hold only for weak light intensities, when there
+ is only one photon in the cavity.
+ The structure of higher dressed state groups is quite different from lowest
+ state groups and thus it is different from the single atom case.
+ For example, there are three equally spaced dressed levels in the second
+ group, four in the third and so on.
+ The spectra corresponding to these excitations are therefore very complicated.
+ In the limit of very large 
+\begin_inset Formula $N$
+\end_inset
+
+, it was shown 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Haroche1984"
+
+\end_inset
+
+ that the dressed state ladder consist of levels remaining nearly equidistant
+ over a large energy range, with a spacing between nearby levels being of
+ the order of 
+\begin_inset Formula $2m\hbar\Omega\sqrt{N}$
+\end_inset
+
+, where 
+\begin_inset Formula $m$
+\end_inset
+
+ is the photon number.
+ As a result, the spectra of all the state groups will have only two distinct
+ lines with an energy separation of 
+\begin_inset Formula $2\hbar\Omega\sqrt{N}$
+\end_inset
+
+.
+ This system of many atoms where 
+\begin_inset Formula $m\ll N$
+\end_inset
+
+, is similar to the dressed boson case described by the coupled oscillator
+ model described in the next section.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Coupled Harmonic Oscillator
+\end_layout
+
+\begin_layout Standard
+When two harmonic oscillators interact resonantly, the coupled system can
+ be respresented by new normal modes, which are eigenstates of the total
+ system Hamiltonian of the form
+\begin_inset Formula \begin{equation}
+H=\hbar\omega_{0}\left(a^{\dagger}a+\frac{1}{2}\right)+\hbar\omega_{0}\left(b^{\dagger}b+\frac{1}{2}\right)+\hbar\Omega\left(a^{\dagger}b+b^{\dagger}a\right).\end{equation}
+
+\end_inset
+
+Here both field operators satisfy the boson commutation relation.
+ As we have mentioned before, in the case of 
+\begin_inset Formula $N\gg1$
+\end_inset
+
+ identical atoms with 
+\begin_inset Formula $m$
+\end_inset
+
+ photons (
+\begin_inset Formula $m\ll N$
+\end_inset
+
+) that are resonantly coupled to a single mode, the above dressed boson
+ is a valid concept.
+ The coupling constant 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ is then not the single atom Rabi frequency 
+\begin_inset Formula $\Omega_{s}$
+\end_inset
+
+, but the enhanced 
+\begin_inset Formula $\Omega_{s}\sqrt{N}$
+\end_inset
+
+ collective coupling of all the atoms.
+ An exciton in a semiconductor QW is in fact similar to such an assembly
+ of 
+\begin_inset Formula $N$
+\end_inset
+
+ identical atoms, namely each lattice site having a unit dipole moment correspon
+ds to a single two level atom.
+ 
+\end_layout
+
+\begin_layout Standard
+The dressed bosons spectrum for 
+\begin_inset Formula $m=1$
+\end_inset
+
+ is identical to that of the corresponding dressed fermions.
+ The 
+\begin_inset Formula $m=2$
+\end_inset
+
+ excitation state group has three degenerate bare states 
+\begin_inset Formula $\left|2\right\rangle _{a}\left|0\right\rangle _{b},\,\left|1\right\rangle _{a}\left|1\right\rangle _{b}$
+\end_inset
+
+ and 
+\begin_inset Formula $\left|0\right\rangle _{a}\left|2\right\rangle _{b}$
+\end_inset
+
+, that split into three non-degenerate dressed states
+\begin_inset Formula \begin{eqnarray}
+\left|2,-\right\rangle  & = & \frac{1}{2}\left|2\right\rangle _{a}\left|0\right\rangle _{b}-\frac{1}{\sqrt{2}}\left|1\right\rangle _{a}\left|1\right\rangle _{b}+\frac{1}{2}\left|0\right\rangle _{a}\left|2\right\rangle _{b},\\
+\left|2,+\right\rangle  & = & \frac{1}{2}\left|2\right\rangle _{a}\left|0\right\rangle _{b}+\frac{1}{\sqrt{2}}\left|1\right\rangle _{a}\left|1\right\rangle _{b}+\frac{1}{2}\left|0\right\rangle _{a}\left|2\right\rangle _{b},\\
+\left|2,0\right\rangle  & = & -\frac{1}{\sqrt{2}}\left|2\right\rangle _{a}\left|0\right\rangle _{b}+\frac{1}{\sqrt{2}}\left|0\right\rangle _{a}\left|2\right\rangle _{b},\end{eqnarray}
+
+\end_inset
+
+with a frequency separation of 
+\begin_inset Formula $2\Omega$
+\end_inset
+
+.
+ The emission spectrum from the 
+\begin_inset Formula $m=2$
+\end_inset
+
+ to 
+\begin_inset Formula $m=1$
+\end_inset
+
+ state groups is, however, identical to that from 
+\begin_inset Formula $m=1$
+\end_inset
+
+ to 
+\begin_inset Formula $m=0$
+\end_inset
+
+ consisting of only two separate lines.
+ This is because of the six possible transitions, two are forbidden and
+ two pairs are degenerate.
+ In general, the emission spectrum always has only two lines irrespective
+ of the excitation state group.
+ The dressed boson is then a perfectly linear system.
+ Note that there is no difference between the fermion and boson cases for
+ the first state group, thus in order to observe the differences a very
+ high light intensity must be employed.
+\end_layout
+
+\begin_layout Subsection
+Strong Coupling in a Semiconductor Microcavity
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+As described in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Excitonic-Effects"
+
+\end_inset
+
+, the exciton states are quantized parallel to the growth direction due
+ to the QW electronic confinement but, as for the photonic states, their
+ in-plane motion is free with a continuum of in-plane excitonic wave vector
+ states.
+ 
+\end_layout
+
+\end_inset
+
+As mentioned in the previous sections, excitons are similar to the two-level
+ systems since only coupling between excitons and photon states of the same
+ in-plane wave vector are allowed.
+ This coupling mixes the exciton and the photon modes and the normal modes
+ are similar to a dressed boson, and thus in analogy this modes are called
+ dressed excitons.
+ When this splitting is significantly greater then both the exciton and
+ the cavity linewidths the system is said to be in the strong coupling regime.
+ Two different models are usually used to describe such a system 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Savona1999,Savona1995,Pau1995"
+
+\end_inset
+
+.
+ The first is a coupled quantum oscillators and the second is the semiclassical
+ linear dispersion model (LDM).
+ A brief summary of these two models is given and a new approach to the
+ cavity polariton modeling is presented.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:MC_Coupled_Oscillator_Model"
+
+\end_inset
+
+Coupled Oscillator Model
+\end_layout
+
+\begin_layout Standard
+In the coupled oscillator model, we treat both the exciton transition and
+ the photon mode as two quantum harmonic oscillators that are coupled together
+ via their dipole interaction.
+ The simplest Hamiltonian that describes this system can be written as
+\begin_inset Formula \begin{equation}
+H=\left(E_{X}\left(\mathbf{k}_{t}\right)+\gamma_{X}\right)b^{\dagger}b+\left(E_{C}\left(\mathbf{k}_{t}\right)+\gamma_{C}\right)a^{\dagger}a+\hbar\Omega\left(a^{\dagger}b+b^{\dagger}a\right),\label{eq:Photon_Exciton_Coupled_Oscillator_Hamiltonian}\end{equation}
+
+\end_inset
+
+where we assume a single MC mode interacting with one electron-hole (exciton)
+ mode.
+ 
+\begin_inset Formula $\gamma_{X}$
+\end_inset
+
+ is the phenomenological linewidth of the exciton and 
+\begin_inset Formula $\gamma_{C}$
+\end_inset
+
+ is the cavity photon mode linewidth given by eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:MC_Mode_Linewidth"
+
+\end_inset
+
+.
+ 
+\begin_inset Formula $b$
+\end_inset
+
+ and 
+\begin_inset Formula $b^{\dagger}$
+\end_inset
+
+ are the exciton creation and annihilation operators.
+ 
+\begin_inset Formula $E_{C}\left(\mathbf{k}_{t}\right)$
+\end_inset
+
+ is the photon in-plane dispersion inside the cavity given by eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:MC_Mode_Dispersion"
+
+\end_inset
+
+.
+ This Hamiltonian can be written in a matrix form as 
+\begin_inset Formula \begin{equation}
+H=\left(\begin{array}{cc}
+E_{X}\left(k_{t}\right)+i\gamma_{X} & \frac{\hbar\Omega}{2}\\
+\frac{\hbar\Omega}{2} & E_{C}\left(k_{t}\right)+i\gamma_{C}\end{array}\right).\end{equation}
+
+\end_inset
+
+For this simple model, the diagonalization of this Hamiltonian for each
+ 
+\begin_inset Formula $k_{t}$
+\end_inset
+
+ gives the polariton eigenenergies
+\begin_inset Formula \begin{equation}
+E_{\pm}\left(k_{t}\right)=\frac{E_{X}\left(k_{t}\right)+E_{C}\left(k_{t}\right)}{2}\pm\sqrt{\left[E_{X}\left(k_{t}\right)-E_{C}\left(k_{t}\right)+i\left(\frac{\gamma_{X}-\gamma_{C}}{2}\right)\right]+\left(\frac{\hbar\Omega}{2}\right)^{2}}.\end{equation}
+
+\end_inset
+
+We denote the eigenvalues of this This model can be extended to include
+ larger number of exciton modes and the same single cavity mode, in which
+ case the Hamiltonian matrix to be diagonalized becomes 
+\begin_inset Formula $(N_{X}+1)\times(N_{X}+1)$
+\end_inset
+
+, where 
+\begin_inset Formula $N_{X}$
+\end_inset
+
+ is the number of strongly interacting excitons present in the system.
+ For example, for 
+\begin_inset Formula $E_{1}-HH_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $E_{1}-LH_{1}$
+\end_inset
+
+ excitons the Hamiltonian becomes 
+\begin_inset Formula \begin{equation}
+H=\left(\begin{array}{ccc}
+E_{C}\left(k_{t}\right)+i\gamma_{C} & \frac{\hbar\Omega_{X_{LH}}}{2} & \frac{\hbar\Omega_{X_{HH}}}{2}\\
+\left(\frac{\hbar\Omega_{X_{LH}}}{2}\right)^{*} & E_{X_{LH}}\left(k_{t}\right)-i\gamma_{X_{LH}} & 0\\
+\left(\frac{\hbar\Omega_{X_{HH}}}{2}\right)^{*} & 0 & E_{X_{HH}}\left(k_{t}\right)+i\gamma_{X_{HH}}\end{array}\right).\label{eq:Two_Exiton_Coupled_Oscillator_Fit_Hamiltonian}\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In order to simplify the coupled oscillator Hamiltonian 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Photon_Exciton_Coupled_Oscillator_Hamiltonian"
+
+\end_inset
+
+ and present a more particle-like picture of the polariton, we apply the
+ Bogoliuvob's transformation 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Hopfield1958"
+
+\end_inset
+
+ to obtain 
+\begin_inset Formula \begin{equation}
+H_{Pol}=\sum_{i}(E_{p,i}-i\gamma_{p,i})p_{i}^{\dagger}p_{i},\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $p_{i}^{\dagger}$
+\end_inset
+
+ and 
+\begin_inset Formula $p_{i}$
+\end_inset
+
+ are, respectively, the 
+\begin_inset Formula $i$
+\end_inset
+
+-th polariton branch creation and annihilation operators, 
+\begin_inset Formula $E_{p,i}$
+\end_inset
+
+ is the eigenergy of this polariton branch and 
+\begin_inset Formula $\gamma_{p,i}$
+\end_inset
+
+ is its linewidth.
+ The eigenstates of this Hamiltonian can be written as 
+\begin_inset Formula \begin{equation}
+\left|P_{i}\right\rangle =\left|\alpha_{C}\right|^{2}\left|C\right\rangle +\sum_{j}\left|\alpha_{i,j}\right|^{2}\left|X_{j}\right\rangle ,\label{eq:Polariton_Wavefunction}\end{equation}
+
+\end_inset
+
+where 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $\left|C\right\rangle $
+\end_inset
+
+ and 
+\begin_inset Formula $\left|X_{j}\right\rangle $
+\end_inset
+
+ are, respectively, the cavity mode and the 
+\begin_inset Formula $j$
+\end_inset
+
+-th bare exciton wavefunctions, 
+\begin_inset Formula $\alpha_{C}$
+\end_inset
+
+ and 
+\begin_inset Formula $\alpha_{i,j}$
+\end_inset
+
+ are the admixing coefficients of the polariton.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Linear Dispersion Model and Beyond
+\end_layout
+
+\begin_layout Standard
+Another description for the optical response of QW excitons inside a MC
+ structure within the linear regime can be given in the framework of the
+ semiclassical linear dispersion model 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Savona1995,Pau1995"
+
+\end_inset
+
+.
+ In this model, the transfer matrix formalism is used to describe the light
+ propagation inside the MC layers (as explained earlier in this chapter).
+ In the typical formulation of the model, the QW resonances (excitons) are
+ treated as a resonant Lorentzian dispersive term in the dielectric response
+ function of the QW material.
+ The advantage of the LDM approach in calculating the absorption, transmission
+ and reflection spectra is that it takes into account the geometry of the
+ MC including all the DBR's.
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing single
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/Computation_Outline_2.emf
+	lyxscale 60
+	display false
+	scale 70
+	rotateAngle 270
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Computation_Outline"
+
+\end_inset
+
+Schematic description of the proposed computation model.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+We propose an altered version of the LDM approach, in which the results
+ of the calculations presented in chapters 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Free_Carriers_Optical_Transitions"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Coulomb_Correlated_Optical_Transitions"
+
+\end_inset
+
+ are used to model the dielectric response of the QW material.
+ The use of this fully theoretical approach enables us to examine the optical
+ properties of varieties of quantum structures, especially and specifically
+ those of MC with embedded QWs in the cavity region.
+ Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Computation_Outline"
+
+\end_inset
+
+ presents a schematic outline of the proposed numerical approach.
+ The computational starts with the definition of several inputs:
+\end_layout
+
+\begin_layout Itemize
+\paragraph_spacing single
+The physical parameters: ambient temperature 
+\begin_inset Formula $T,$
+\end_inset
+
+ 2DEG concentration 
+\begin_inset Formula $n_{e}$
+\end_inset
+
+ and a phenomenological broadening parameter 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ (set using a fit to experimental results, as discussed in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:HF_Numerical_Results"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+\paragraph_spacing single
+The quantum structure definition, namely the material composition and width
+ of the epitaxial layers comprising the investigated structures.
+\end_layout
+
+\begin_layout Itemize
+\paragraph_spacing single
+The common physical parameters used throughout the calculations.
+ 
+\end_layout
+
+\begin_layout Itemize
+\paragraph_spacing single
+Various numerical calculation parameters, such as the maximal value and
+ quantization of transverse wave vector 
+\begin_inset Formula $k_{t}$
+\end_inset
+
+ grid, the energy diapason for the spectra calculations etc..
+ 
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing single
+The calculation is built of two separate phases.
+ First, the cavity region of the full MC structure is considered as it contains
+ the active section of the structure, namely the QW and its cladding layers
+ (marked as the QW region of the calculation in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Computation_Outline"
+
+\end_inset
+
+).
+ As can be seen in the figure, first the 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Schr
+\backslash
+"{o}dinger
+\end_layout
+
+\end_inset
+
+-Poisson model, formulated in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Schrodinger_Poisson_Model"
+
+\end_inset
+
+, is utilized to measure the influence of the introduced 2DEG on the band
+ edges of the structure.
+ Once the band edges are calculated, the two-band 
+\begin_inset Formula $\mathbf{k.p}$
+\end_inset
+
+ model, formulated in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Two-Band-Model"
+
+\end_inset
+
+, is used to calculate the conduction and valence subband dispersions up
+ to 
+\begin_inset Formula $k_{t}$
+\end_inset
+
+ values far away from the Brillouin zone center.
+ Once the dispersion relations are calculated, the momentum (or dipole)
+ matrix elements can be calculated for each subband transition combination,
+ as formulated in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Dipole-Matrix-Element"
+
+\end_inset
+
+.
+ Once the electronic properties of the QW are calculated the optical properties
+ can be addressed.
+ To this end, the two models for the light-matter interaction presented
+ in chapters 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Free_Carriers_Optical_Transitions"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Coulomb_Correlated_Optical_Transitions"
+
+\end_inset
+
+ are used to calculate the optical susceptibility, absorption and spontaneous
+ emission spectra of the structure at hand.
+ 
+\end_layout
+
+\begin_layout Standard
+The second phase of the proposed approach considers the MC as a whole, and
+ uses the results of the first bare QW phase results as an input (marked
+ as the MC+QW phase in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Computation_Outline"
+
+\end_inset
+
+).
+ The optical parameters of the bare QW are used to model the complex refractive
+ indices of the cavity region of the MC, which facilitates in the reflection
+ spectrum calculation using the TMM described in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Transfer-Matrix-Method"
+
+\end_inset
+
+.
+ The reflection spectra represent the ultimate goal of this calculation
+ and can analyzed much like experimental results.
+ To facilitate further analysis the minima of the reflection spectra are
+ extracted and afterwards are fitted using the coupled oscillator model.
+\end_layout
+
+\begin_layout Standard
+In the next section we present an application of the second phase of the
+ above elaborated approach, and discuss the result and their analysis.
+\end_layout
+
+\begin_layout Section
+Numerical Results
+\end_layout
+
+\begin_layout Standard
+In this section we present the results of the theoretical approach outlined
+ in the previous section.
+ We start by presenting a sample structure of a bare MC used throughout
+ this section, and calculate its reflection spectrum.
+ Next we present the reflection spectra of the same MC strictures but with
+ embedded QW structures in the cavity region.
+ As in the discussion of the optical parameters of bare QW in chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Coulomb_Correlated_Optical_Transitions"
+
+\end_inset
+
+, we consider separately the doped and undoped QW structures.
+ The reflection spectra, for both cases, are analyzed using the coupled
+ oscillator model and various extracted parameters are presented and discussed.
+\end_layout
+
+\begin_layout Subsection
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Bare_Microcavity_Numerical_Results"
+
+\end_inset
+
+Bare Microcavity
+\end_layout
+
+\begin_layout Standard
+We now present the structure of a sample used extensively in our experimental
+ studies, and thus is an ideal candidate for theoretical modeling.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/Bare_MC_Structure.emf
+	lyxscale 70
+	display false
+	scale 70
+	rotateAngle 270
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Schematic_Barel_MC_Structure"
+
+\end_inset
+
+Schematic profiles of the simulated microcavity devoid of the embedded QW
+ in the cavity region.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Schematic_Barel_MC_Structure"
+
+\end_inset
+
+ presents a schematic cross-sectional picture of the epitaxial semiconductor
+ layers, including their composition and physical width.
+ The considered structure is deposited upon a 
+\begin_inset Formula $GaAs$
+\end_inset
+
+ thick substrate layer, followed by 25 alternating 
+\begin_inset Formula $602\,\textrm{Å}$
+\end_inset
+
+ and 
+\begin_inset Formula $710\,\textrm{Å}$
+\end_inset
+
+ wide 
+\begin_inset Formula $AlAs$
+\end_inset
+
+ and 
+\begin_inset Formula $Al_{0.1}Ga_{0.9}As$
+\end_inset
+
+ layers, respectively.
+ This collection of layers comprises the first of a pair of DBR mirrors
+ of the MC.
+ Atop of this structure a 
+\begin_inset Formula $2438\,\textrm{Å}$
+\end_inset
+
+ wide 
+\begin_inset Formula $Al_{0.1}Ga_{0.9}As$
+\end_inset
+
+ layer is deposited, plays the role of the cavity region, which is immediately
+ followed by another structure of 15 alternating 
+\begin_inset Formula $602\,\textrm{Å}$
+\end_inset
+
+ and 
+\begin_inset Formula $710\,\textrm{Å}$
+\end_inset
+
+ wide 
+\begin_inset Formula $AlAs$
+\end_inset
+
+ and 
+\begin_inset Formula $Al_{0.1}Ga_{0.9}As$
+\end_inset
+
+ layers, respectively, being the second DBR mirror of the structure.
+ Finally, atop of the entire MC a thin 
+\begin_inset Formula $GaAs$
+\end_inset
+
+ cladding is placed.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/Wafer_Schematic_Structure.png
+	lyxscale 50
+	display false
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Wafer_Schematic_Structure"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+Schematic description of a typical sample wafer and the cross-sectional
+ width profile of such a wafer.
+ 
+\end_layout
+
+\end_inset
+
+Schematic description of (a) a typical sample wafer and (b) the cross-sectional
+ width profile of such a wafer.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Wafer_Schematic_Structure"
+
+\end_inset
+
+(a) presents the top and side views of a wafer from which a sample is cloven
+ for actual experimental measurements.
+ The side view of the wafer presents the varying width profile along the
+ radius, which is uniform across all the epitaxial layers of the structure,
+ i.e.
+ the thickness of each layer described in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Schematic_Barel_MC_Structure"
+
+\end_inset
+
+ changes by the same amount along the wafer radius.
+ All samples for experimental investigation have a nonlinear width profile,
+ presented in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Wafer_Schematic_Structure"
+
+\end_inset
+
+(b), where the width detuning parameter 
+\begin_inset Formula $\delta$
+\end_inset
+
+ is defined as the ratio between the width along the wafer radius 
+\begin_inset Formula $W(r)$
+\end_inset
+
+ and the width at the wafer center 
+\begin_inset Formula $W(r=0)$
+\end_inset
+
+.
+ Note that the widths of the epitaxial layers presented in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Schematic_Barel_MC_Structure"
+
+\end_inset
+
+ are in fact the wafer center values, i.e.
+ the widths along the radius diminish in a direct proportion to the detuning
+ parameter profile.
+ In order to simplify result analysis, all calculations in this thesis assume
+ a linear 
+\begin_inset Formula $\delta-r$
+\end_inset
+
+ dependence.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/Structure_2_10_05_2_delta_0_94_Bare_MC_Reflection.eps
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Bare_MC_Reflection_Spectrum"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The reflection spectrum of the simulated microcavity structure , calculated
+ using the transfer matrix method for width detuning 
+\begin_inset Formula $\delta=0.94$
+\end_inset
+
+ at 
+\begin_inset Formula $T=2\, K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+The reflection spectrum of the simulated microcavity structure (from figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Schematic_Barel_MC_Structure"
+
+\end_inset
+
+), calculated using the transfer matrix method for width detuning 
+\begin_inset Formula $\delta=0.94$
+\end_inset
+
+ at 
+\begin_inset Formula $T=2\, K$
+\end_inset
+
+.
+ The red and green dashed lines mark, respectively, the location of the
+ cavity mode and the first low energy side-band.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/Structure_2_10_05_2_Reflection_Minima.eps
+	lyxscale 60
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Bare_MC_Reflection_Minima"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The reflection spectrum minima energies and values, calculated for the simulated
+ structure  for various detunings.
+\end_layout
+
+\end_inset
+
+The reflection spectrum minima (a) energies and (b) values, calculated for
+ the simulated structure (from figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Schematic_Barel_MC_Structure"
+
+\end_inset
+
+) for various detunings.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Bare_MC_Reflection_Spectrum"
+
+\end_inset
+
+ presents the reflection spectrum of the discussed bare MC structure calculated
+ at 
+\begin_inset Formula $T=2\, K$
+\end_inset
+
+ using the TMM, presented in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Transfer-Matrix-Method"
+
+\end_inset
+
+, for width detuning 
+\begin_inset Formula $\delta=0.94$
+\end_inset
+
+, i.e.
+ the epitaxial layers widths shrink by 
+\begin_inset Formula $6\%$
+\end_inset
+
+ compared to the wafer center values.
+ As an input to the calculation the layers and the refractive indices of
+ the various epitaxial layers are used.
+ The refractive indices are obtained by using empirical results presented
+ in chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Appendix_Refractive_Index_GaAlAs"
+
+\end_inset
+
+ for the 
+\begin_inset Formula $Ga_{x}Al_{1-x}As$
+\end_inset
+
+ alloys.
+ The red dashed line marks the location of the low reflectivity cavity mode
+ location, while the green dashed line marks the location of the first low
+ energy side-band.
+ This calculation can be performed for various values of width detuning
+ parameter 
+\begin_inset Formula $\delta$
+\end_inset
+
+ and ambient temperature 
+\begin_inset Formula $T$
+\end_inset
+
+.
+ Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Bare_MC_Reflection_Minima"
+
+\end_inset
+
+(a) and (b) present, respectively, the energetic locations of the reflection
+ spectrum minima and the respective reflection values as a function of wafer
+ width detuning 
+\begin_inset Formula $\delta$
+\end_inset
+
+, calculated for 
+\begin_inset Formula $T=2\, K$
+\end_inset
+
+.
+ The cavity mode and the side-band are again marked, respectively, in red
+ and green.
+ It can be easily seen that the cavity mode moves to higher energies as
+ we probe the reflection away from the wafer center (
+\begin_inset Formula $\delta=1$
+\end_inset
+
+), a phenomenon reflecting the linear change of the epitaxial layers widths
+ mentioned above.
+\end_layout
+
+\begin_layout Subsection
+Embedded Undoped QW
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/MC_with_embedded_undoped_QW_Schematic_Structure.emf
+	scale 70
+	rotateAngle 270
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Schematic_MC_with_undoped_QW_Structure"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+Schematic profiles of the simulated microcavity with embedded undoped QW
+ in the cavity region.
+\end_layout
+
+\end_inset
+
+Schematic profiles of the simulated microcavity with embedded undoped QW
+ in the cavity region.
+ The linear width detuning parameter 
+\begin_inset Formula $\delta$
+\end_inset
+
+ profile is given as an inset.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+As we have seen in the previous section, the reflection spectrum of the
+ discussed microcavity structure has a characteristic high reflectivity
+ wide window with a narrow deep trench at the cavity mode energy.
+ We have also seen that the energetic location of this mode follows linearly
+ the change in the structure width detuning, 
+\begin_inset Formula $\delta$
+\end_inset
+
+.
+ In this section we examine the consequences of introducing a single undoped
+ QW into the cavity region of the MC on the reflection of the entire structure.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Schematic_MC_with_undoped_QW_Structure"
+
+\end_inset
+
+ presents such a structure, with the physical dimensions of the various
+ epitaxial layers and their composition, together with the width detuning
+ parameter radial profile (shown in the inset).
+ In order to use the TMM method in the reflection spectrum calculation,
+ the refractive indices of the added QW layers have to be considered.
+ While the cladding 
+\begin_inset Formula $Al_{0.1}Ga_{0.9}As$
+\end_inset
+
+ layers complex refractive index spectrum can be modeled using the semi-empirica
+l results of appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Appendix_Refractive_Index_GaAlAs"
+
+\end_inset
+
+, the well layer index should be separately addressed being the active layer
+ of the structure.
+ As we have seen in chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Free_Carriers_Optical_Transitions"
+
+\end_inset
+
+, the refractive index can be linked to the complex electrical susceptibility
+ of the medium through 
+\begin_inset Formula \begin{equation}
+n(\omega)=\sqrt{1+4\pi\chi(\omega)}.\end{equation}
+
+\end_inset
+
+In our case, the complex electrical susceptibility spectrum is a superposition
+ of the intrinsic 
+\begin_inset Formula $GaAs$
+\end_inset
+
+ susceptibility, obtained using the empirical data of appendix 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Appendix_Refractive_Index_GaAlAs"
+
+\end_inset
+
+, and the results of the theoretical model presented in the previous chapter,
+ namely the HF model, so that 
+\begin_inset Formula $\chi=\chi_{GaAs}+\chi_{QW}^{HF}$
+\end_inset
+
+.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/Well_Refractive_Index.eps
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:QW_Total_Refractive_Index_Example"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The total refractive index spectrum of a bare 
+\begin_inset Formula $200\,\textrm{Å}$
+\end_inset
+
+ wide 
+\begin_inset Formula $GaAs/Al_{0.1}Ga_{0.9}As$
+\end_inset
+
+ quantum well, with a 2DEG with concentration of 
+\begin_inset Formula $n_{e}=1\times10^{11}\, cm^{-2}$
+\end_inset
+
+ in the well region.
+\end_layout
+
+\end_inset
+
+The real (blue) and imaginary (red) parts of the total refractive index
+ spectrum of a bare 
+\begin_inset Formula $200\,\textrm{Å}$
+\end_inset
+
+ wide 
+\begin_inset Formula $GaAs$
+\end_inset
+
+ QW, surrounded by 
+\begin_inset Formula $Al_{0.1}Ga_{0.9}As$
+\end_inset
+
+ barriers with 
+\begin_inset Formula $\delta$
+\end_inset
+
+-doped layers introduced at 
+\begin_inset Formula $1000\,\textrm{Å}$
+\end_inset
+
+ away from the barrier-well boundaries, inducing a 2DEG with concentration
+ of 
+\begin_inset Formula $n_{e}=1\times10^{11}\, cm^{-2}$
+\end_inset
+
+ in the well region.
+ These results were obtained using the HF model for (a) TE and (b) TM polarizati
+ons for 
+\begin_inset Formula $T=2\, K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:QW_Total_Refractive_Index_Example"
+
+\end_inset
+
+ presents an example for such a calculation of 
+\begin_inset Formula $n(\omega)$
+\end_inset
+
+ for a 
+\begin_inset Formula $200\,\textrm{Å}$
+\end_inset
+
+ wide 
+\begin_inset Formula $GaAs$
+\end_inset
+
+ QW surrounded by 
+\begin_inset Formula $Al_{0.1}Ga_{0.9}As$
+\end_inset
+
+ barriers with 
+\begin_inset Formula $\delta$
+\end_inset
+
+-doped layers introduced at 
+\begin_inset Formula $1000\,\textrm{Å}$
+\end_inset
+
+ away from the barrier-well boundaries, inducing a 2DEG with concentration
+ of 
+\begin_inset Formula $n_{e}=1\times10^{11}\, cm^{-2}$
+\end_inset
+
+ in the well region.
+ The obvious similarities to the results of the susceptibility calculation
+ of section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:HF_Doped_Structures_Results"
+
+\end_inset
+
+ for this concentration are clear.
+ 
+\end_layout
+
+\begin_layout Standard
+Now that the refractive index spectra are known for each of the epitaxial
+ layers of the structure, the reflection spectra can be obtained using a
+ standard TMM calculation.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_2K_N_1e6_gamma_1e11_Full_Reflection_TE_1.eps
+	scale 60
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_2K_N_1e6_gamma_1e11_Full_Reflection_TM_1.eps
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:MC_QW_embedded_Undoped_Reflection_Spectra"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The reflection spectra for various width detuning values calculated for
+ normal incident light both polarization polarizations, at 
+\begin_inset Formula $T=2\, K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+The reflection spectra for various width detuning values (
+\begin_inset Formula $\delta=0.94\div1$
+\end_inset
+
+) calculated for normal incident light of (a) TE and (b) TM polarizations,
+ at 
+\begin_inset Formula $T=2\, K$
+\end_inset
+
+.
+ The inset in (a) shows a zoomed-in view on one of the reflection spectra
+ comprising the waterfall plot (for 
+\begin_inset Formula $\delta=0.97$
+\end_inset
+
+), and the red dashed diagonal line in (a) marks the location of the cavity
+ mode.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Moreover, this calculation can be performed for multiple values of the width
+ detuning parameter 
+\begin_inset Formula $\delta$
+\end_inset
+
+ of the structure in order to trace the influence of the layers width alteration
+ of the reflection spectra of the entire structure.
+ Results of such a calculation at 
+\begin_inset Formula $T=2\, K$
+\end_inset
+
+, performed for 
+\begin_inset Formula $\delta=0.94\div1$
+\end_inset
+
+, are presented in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_QW_embedded_Undoped_Reflection_Spectra"
+
+\end_inset
+
+ for the two light polarizations as a waterfall chart.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+This particular form of data plotting reveals clearly the strong interaction
+ of the excitonic resonances in the QW with the photonic mode in the cavity.
+ 
+\end_layout
+
+\end_inset
+
+The inset in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_QW_embedded_Undoped_Reflection_Spectra"
+
+\end_inset
+
+(a) shows the reflection spectrum at 
+\begin_inset Formula $\delta=0.98$
+\end_inset
+
+ as an illustration.
+ As we have seen in the previous section, the alteration of the detuning
+ parameter 
+\begin_inset Formula $\delta$
+\end_inset
+
+ leads to an energetic shift in the cavity mode location, thereby causing
+ it to interact with the excitonic resonances present in the QW.
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_2K_N_1e6_gamma_1e11_Full_Reflection_AC_TE_1.eps
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_2K_N_1e6_gamma_1e11_Full_Reflection_AC_TM_1.eps
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:MC_Undoped_QW_Refelction_Minima_Anticrossing"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+Reflection minima anticrossing curves for both polarizations of incident
+ light, calculated at 
+\begin_inset Formula $T=2\, K$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+Reflection minima anticrossing curves, extracted from figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_QW_embedded_Undoped_Reflection_Spectra"
+
+\end_inset
+
+, for (a) TE and (b) TM polarizations of incident light, calculated at 
+\begin_inset Formula $T=2\, K$
+\end_inset
+
+.
+ The red dashed line represents the location of the bare MC cavity mode
+ while the horizontal green dashed lines in (a) mark the location of the
+ electronic resonances.
+ The black dashed circles in both figures mark the interactions areas of
+ the cavity mode and the first three excitons.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+These strong interactions lead to a characteristic splittings in the cavity
+ mode location seen clearly in these figures for both polarizations.
+ The location of the noninteracting cavity mode is marked by the diagonal
+ red dashed line.
+ This interaction region splitting can be better seen by plotting the reflection
+ spectra minima as a function of the cavity mode energy 
+\begin_inset Formula $E_{C}$
+\end_inset
+
+, as shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Undoped_QW_Refelction_Minima_Anticrossing"
+
+\end_inset
+
+ (for both polarizations), where each set of points along the vertical represent
+s a single 
+\begin_inset Formula $\delta$
+\end_inset
+
+ value.
+ Again, the red diagonal dashed line marks the cavity mode dispersion.
+ The obtained dispersion plots are conventionally termed the reflection
+ anti-crossing curves, reflecting the interaction region splittings in the
+ dispersion curves (circled areas in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Undoped_QW_Refelction_Minima_Anticrossing"
+
+\end_inset
+
+), and each branch represents a polariton mode.
+ The most striking feature of these representation of the data
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ compared to the reflection spectra
+\end_layout
+
+\end_inset
+
+ is the plethora of resonances present, most of which are hardly recognizable
+ in the reflection spectra in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_QW_embedded_Undoped_Reflection_Spectra"
+
+\end_inset
+
+, marked by green horizontal dashed lines.
+ By comparing these curves to the bare QW complex susceptibility calculations
+ in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Chi_Undoped_HF_2K"
+
+\end_inset
+
+ we can make several observations.
+ First, the locations of the resonance lines in the reflection anti-crossing
+ curves are unsurprisingly similar to the susceptibility resonances.
+ Furthermore, the amount of splitting in the interaction regions and relative
+ strengths of the resonance lines, expressed mainly by the depth of the
+ particular reflection spectrum minima, coincide with the relative amplitudes
+ of the susceptibility spectra resonances.
+ The lowest-most resonance in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Undoped_QW_Refelction_Minima_Anticrossing"
+
+\end_inset
+
+(a) exhibits the largest splitting, in correlation with the largest absolute
+ amplitude of this particular resonance for the TE and TM susceptibility
+ spectra of 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Chi_Undoped_HF_2K"
+
+\end_inset
+
+.
+ We thus state the direct connection between the amplitude of the electronic
+ resonance of the bare QW to the amount of splitting in the reflection spectrum,
+ i.e.
+ the interaction strength of light-matter interaction in the cavity.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_2K_N_1e6_gamma_1e11_Full_Reflection_AC_TM_Fit.eps
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:TM_Anticrossing_Coupled_Oscillator_Fit"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The TM polarization reflection minima anticrossing curves fitted using the
+ coupled oscillator model, calculated at 
+\begin_inset Formula $T=2\, K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+The TM polarization reflection minima anticrossing curves fitted using the
+ coupled oscillator model, calculated at 
+\begin_inset Formula $T=2\, K$
+\end_inset
+
+.
+ The blue dotted lines are the simulation results, while the red solid lines
+ represent the coupled oscillator fitting curves.
+ The various resonance energies are marked by the green dashed horizontal
+ lines and are denoted as 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+, where 
+\begin_inset Formula $i=1-7$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:TM_Anticrossing_Coupled_Oscillator_Fit"
+
+\end_inset
+
+ presents the calculated TM polarization reflection anti-crossing curves
+ (blue dots, as in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Undoped_QW_Refelction_Minima_Anticrossing"
+
+\end_inset
+
+(b)) with a superimposed coupled oscillator model fit results (red curves).
+ The fitting was performed using the model presented is section 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "sub:MC_Coupled_Oscillator_Model"
+
+\end_inset
+
+ with 7 excitons (denoted 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+) corresponding to the seven resonances observed in the calculation results.
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:MC_Undoped_QW_Extracted_Parameters_Manual_Couples_Oscillator"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The extracted parameters of the simulated structure for each of the seven
+ resonances 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+The extracted parameters of the simulated structure for each of the seven
+ resonances 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+ marked in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:TM_Anticrossing_Coupled_Oscillator_Fit"
+
+\end_inset
+
+.
+ The second column from the left lists the energetic location of the resonances
+ extracted manually from the figure, while the next three columns contain
+ the coupled oscillator fit parameters.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="5">
+<features>
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Manual
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Coupled oscillator
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $E_{X}$
+\end_inset
+
+ (eV)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $E_{X}$
+\end_inset
+
+ (eV)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\hbar\Omega_{X}$
+\end_inset
+
+ (meV)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\gamma_{X}$
+\end_inset
+
+ (
+\begin_inset Formula $10^{-3}$
+\end_inset
+
+ meV)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $X_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.5242
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.5241 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.4 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3.66$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $X_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.5275
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.5274
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3.09$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $X_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.5306
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.5306
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.626 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3.23$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $X_{4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.5315
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.5315
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.28 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1.66$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $X_{5}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.5328
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.5329
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $19.1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $X_{6}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.5343
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.5243 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.377
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2.03$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $X_{7}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.5376
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.5375
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.765 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $607$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $CM$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1.7109$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+The fit parameters 
+\begin_inset Formula $E_{X},\,\hbar\Omega_{X}$
+\end_inset
+
+ and 
+\begin_inset Formula $\gamma_{X}$
+\end_inset
+
+ are listed in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:MC_Undoped_QW_Extracted_Parameters_Manual_Couples_Oscillator"
+
+\end_inset
+
+ together with a list of manually obtained energetic locations of these
+ resonances.
+ The fitting curves lie very close to the calculated anti-crossing data.
+ The fitting model energy parameter 
+\begin_inset Formula $E_{X}$
+\end_inset
+
+ values are almost identical to the manually obtained values and the fitted
+ coupling constant, 
+\begin_inset Formula $\hbar\Omega_{X}$
+\end_inset
+
+, reflect the coupling strength in the interaction regions between the photon
+ and the excitonic fields, and their size is in direct correlation to the
+ observed splitting between adjacent branches of the anti-crossing dispersion
+ curves.
+ Using this data we can also convince ourselves that the strong interaction
+ condition, namely that 
+\begin_inset Formula $\hbar\Omega_{X}>\gamma_{X},\,\gamma_{C}$
+\end_inset
+
+, is satisfied for each one of the polaritonic branches.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/MC_Undoped_QW_TM_Anticrossing_Polariton_Fraction.png
+	lyxscale 40
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:MC_Undoped_QW_TM_Anticrossing_Polariton_Fraction"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The TM polarization reflection minima anticrossing curves together with
+ respective polariton admixing coefficients.
+ 
+\end_layout
+
+\end_inset
+
+The TM polarization reflection minima anticrossing curves (left panel) together
+ with respective polariton admixing coefficients 
+\begin_inset Formula $\left|\alpha_{i,j}\right|^{2}$
+\end_inset
+
+ (right panel).
+ An example of the interaction region is marked by the dashed red line and
+ the cavity mode is marked by 
+\begin_inset Formula $C$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Now we have performed the data coupled oscillator fit to the calculated
+ reflection spectra, the polariton admixing coefficients can be extracted
+ by a simple diagonalization of the obtained Hamiltonian.
+ The results of this procedure for the TM polarization are presented in
+ figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Undoped_QW_TM_Anticrossing_Polariton_Fraction"
+
+\end_inset
+
+, where in the left panel we replot the anti-crossing polariton curves,
+ already shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:TM_Anticrossing_Coupled_Oscillator_Fit"
+
+\end_inset
+
+, and on the right panel we present the admixing coefficients spectra.
+ The numbering on the left is of the polaritonic branches, while on the
+ right we enumerate the bare cavity mode (1) and the bare excitons (2-8).
+ The red dashed line, shown in the 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $\left|\alpha_{i,j}\right|^{2}$
+\end_inset
+
+ plot, marks the location of the interaction region and is omitted for the
+ other seven subplots.
+ The presence of the cavity mode (curve 1) in each one of the polariton
+ branches can be clearly seen, together with two dominant excitonic contribution
+s.
+ The strong cavity mode interaction with the bare excitonic modes leads
+ to relatively large admixing of elementary electronic excitations that
+ are very different in nature.
+\end_layout
+
+\begin_layout Subsection
+Embedded Doped QW
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/MC_with_embedded_doped_QW_Schematic_Structure.emf
+	lyxscale 60
+	scale 70
+	rotateAngle 270
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Schematic_MC_with_doped_QW_Structure"
+
+\end_inset
+
+Schematic profiles of the simulated microcavity with embedded doped QW in
+ the cavity region.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Now we turn to the case of the doped QWs embedded inside the cavity region
+ of the MC structure.
+ We present such a structure in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Schematic_MC_with_doped_QW_Structure"
+
+\end_inset
+
+, together with the physical dimensions of the various epitaxial layers
+ and the width detuning profile (as an inset).
+ As for the undoped stricture case, we perform a reflection spectrum calculation
+ using the TMM approach, but now we use the calculated bare QW electrical
+ susceptibility to obtain the well layer refractive index for each of the
+ considered 2DEG concentrations.
+ For the sake of continuity, we use the results presented in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:HF_Doped_Structures_Results"
+
+\end_inset
+
+ in the previous chapter for ambient temperature of 
+\begin_inset Formula $T=2\, K$
+\end_inset
+
+, i.e.
+ the calculation parameters are 
+\begin_inset Formula $n_{e}=1\times10^{9}\div5\times10^{11}\, cm^{-2}$
+\end_inset
+
+, 
+\begin_inset Formula $\gamma=1\times10^{11}\, sec^{-1}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_2K_2DEG_gamma_1e11_s2_10_05_2_Reflection_TE.eps
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:MC_Doped_QW_TE_Reflection_2DEG"
+
+\end_inset
+
+The TE reflection spectra as a function of the cavity mode energy, calculated
+ for each of the considered 2DEG concentrations for various width detunings,
+ at 
+\begin_inset Formula $T=2\, K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_2K_2DEG_gamma_1e11_s2_10_05_2_Reflection_TM.eps
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:MC_Doped_QW_TM_Reflection_2DEG"
+
+\end_inset
+
+The TM reflection spectra as a function of the cavity mode energy, calculated
+ for each of the considered 2DEG concentrations for various width detunings,
+ at 
+\begin_inset Formula $T=2\, K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Doped_QW_TE_Reflection_2DEG"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Doped_QW_TM_Reflection_2DEG"
+
+\end_inset
+
+ present a collection of calculated reflection spectra in a waterfall plot
+ style (similar to figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Bare_MC_Reflection_Spectrum"
+
+\end_inset
+
+), respectively for the TE and TM normal incident light polarizations, where
+ each subplot in both figures corresponds to a certain 
+\begin_inset Formula $n_{e}$
+\end_inset
+
+ value.
+ As before, the width detuning parameter 
+\begin_inset Formula $\delta$
+\end_inset
+
+ values rise from the bottom up for each of the subplots.
+ Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Doped_QW_TE_Reflection_Anticrossing"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Doped_QW_TM_Reflection_Anticrossing_Coupled_Oscillator"
+
+\end_inset
+
+ show the appropriate reflection anti-crossing curves for each 2DEG concentratio
+n, respectively for the TE and TM polarizations, extracted from the individual
+ reflection spectra by registering the reflection dip minima.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Doped_QW_TM_Reflection_Anticrossing_Coupled_Oscillator"
+
+\end_inset
+
+ also presents the results of the coupled oscillator model fitting in the
+ form of superimposed red curves.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_2K_2DEG_gamma_1e11_s2_10_05_2_Reflection_Anti_Crossing_TE.eps
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:MC_Doped_QW_TE_Reflection_Anticrossing"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The TE reflection minima anticrossing curves extracted for each 2DEG concentrati
+on from the reflection curves
+\end_layout
+
+\end_inset
+
+The TE reflection minima anticrossing curves (dotted blue) extracted for
+ each 2DEG concentration from the reflection curves in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Doped_QW_TE_Reflection_2DEG"
+
+\end_inset
+
+.
+ The cavity mode location is marked by the diagonal red line in each subplot.
+ The suitable 2DEG concentration is shown above each subplot.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_2K_2DEG_gamma_1e11_s2_10_05_2_Reflection_Fitted_TE.eps
+	lyxscale 45
+	scale 45
+	rotateAngle 270
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:MC_Doped_QW_TM_Reflection_Anticrossing_Coupled_Oscillator"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The TM reflection minima anticrossing curves extracted for each 2DEG concentrati
+on from the reflection curves
+\end_layout
+
+\end_inset
+
+The TM reflection minima anticrossing curves (blue dots) extracted for each
+ 2DEG concentration from the reflection curves in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Doped_QW_TE_Reflection_2DEG"
+
+\end_inset
+
+, with the superimposed coupled oscillator fitted curves (solid red).
+ The respective 2DEG concentration is shown above each subplot in units
+ of 
+\begin_inset Formula $cm^{-2}$
+\end_inset
+
+ and the three visible resonances (green dashed lines) are marked as 
+\begin_inset Formula $X_{i}$
+\end_inset
+
+, 
+\begin_inset Formula $i=1-3$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_2K_2DEG_gamma_1e11_s2_10_05_2_Reflection_Anti_Crossing_TM.eps
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+These reflection spectra and the derivative anti-crossing dispersion curves
+ present several dominant effects.
+ First, the characteristic strong coupling splitting in the cavity mode
+ and bare exciton interaction regions can be clearly seen, i.e.
+ the presence of polaritons is verified.
+ Moreover, these polaritonic branches remain visible in the structure along
+ much of the discussed 2DEG concentrations diapason (up to 
+\begin_inset Formula $n_{e}=2\times10^{11}\, cm^{-2}$
+\end_inset
+
+), contrary to the excitonic lines disappearance for high 2DEG concentrations
+ observed in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:HF_Doped_Structures_Results"
+
+\end_inset
+
+ for the bare doped QW.
+ This can be seen clearly for both polarizations of the incident light.
+ We can thus deduce that the strong interaction of the QW resonances with
+ the cavity mode photon delays the effect of the introduced free electrons
+ on these bound resonances.
+ Another noticeable effect present in these figures is the gradual shift
+ in the location of the bare excitonic resonance line, seen especially well
+ in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Doped_QW_TM_Reflection_Anticrossing_Coupled_Oscillator"
+
+\end_inset
+
+.
+ This shift can be attributed to the shift in the Fermi energy with the
+ rise of the electron concentration, as was discussed in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:HF_Doped_Structures_Results"
+
+\end_inset
+
+ for the bare doped QW.
+ It can be also seen that while the shift is not linear for each of the
+ three resonances, marked by green dashed lines in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Doped_QW_TM_Reflection_Anticrossing_Coupled_Oscillator"
+
+\end_inset
+
+, the distance between these line remains approximately costant along the
+ whole investigated diapason of 2DEG concentrations.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Code/Results/Plots/2_10_05_2_Doped/Const_gamma_1e11/Exciton_E_1.eps
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:MC_Doped_QW_Resonance_Energies"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The reflection anti-crossing resonance energies as a function of 2DEG concentrat
+ions, obtained manually and from the coupled oscillator fit results for
+ both polarizations.
+\end_layout
+
+\end_inset
+
+The reflection anti-crossing resonance energies as a function of 2DEG concentrat
+ions, obtained manually (red circles) and from the coupled oscillator fit
+ results (blue dots) for (a) TE and (b) TM polarizations.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_2K_N_2DEG_7e10_Conduction_Valence_Dispersion.eps
+	lyxscale 60
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Bare_QW_Conduction_Valence_Dispersion_N_2DEG_7e10"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+Calculated first conduction and first three valence subbands dispersion
+ relations for a bare doped QW with 
+\begin_inset Formula $n_{e}=7\times10^{10}\, cm^{-2}$
+\end_inset
+
+, for 
+\begin_inset Formula $T=2\, K$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+Calculated first conduction (
+\begin_inset Formula $E_{1}$
+\end_inset
+
+) and first three valence (
+\begin_inset Formula $HH_{1},\, LH_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $HH_{2}$
+\end_inset
+
+) subbands dispersion relations for a bare doped QW with 
+\begin_inset Formula $n_{e}=7\times10^{10}\, cm^{-2}$
+\end_inset
+
+, for 
+\begin_inset Formula $T=2\, K$
+\end_inset
+
+.
+ The Fermi edge energy 
+\begin_inset Formula $E_{F}$
+\end_inset
+
+ and wavevector 
+\begin_inset Formula $k_{F}$
+\end_inset
+
+ are marked, respectively red and black dashed lines,, together with intersubban
+d transition energies.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Doped_QW_Resonance_Energies"
+
+\end_inset
+
+ presents the energetic locations of the reflection anti-crossing resonances,
+ 
+\begin_inset Formula $E_{X_{i}}$
+\end_inset
+
+, extracted manually (red empty circles) and obtained from the coupled oscillato
+r fit (blue dots) of the reflection spectra presented previously as a function
+ of the 2DEG concentrations (in a semi logarithmic scale).
+ As we have already seen for the undoped well case in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:MC_Undoped_QW_Extracted_Parameters_Manual_Couples_Oscillator"
+
+\end_inset
+
+, the coupled oscillator model fit gives very similar results to the manually
+ extracted points.
+ Now we can identify each of the resonance lines in the reflection anti-crossing
+ plots.
+ To that end, we examine the energetic transitions present in a bare doped
+ QW for a specific 2DEG concentration, say 
+\begin_inset Formula $n_{e}=7\times10^{10}\, cm^{-2}$
+\end_inset
+
+.
+ Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Bare_QW_Conduction_Valence_Dispersion_N_2DEG_7e10"
+
+\end_inset
+
+ presents the results of a QW conduction and valence subbands dispersion
+ relations calculation for this particular case using the 
+\begin_inset Formula $\mathbf{k\cdot p}$
+\end_inset
+
+ method outlined in chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Electronic_Properties_Semiconductors"
+
+\end_inset
+
+.
+ We present only the first conduction and three valence subbands, together
+ with the Fermi edge energy for this particular 2DEG concentration.
+ The possible transitions at 
+\begin_inset Formula $k_{F}$
+\end_inset
+
+ are explicitly marked.
+ 
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Calculated_Intersubband_Energy_Differences"
+
+\end_inset
+
+The calculated intersubband transition energies for a bare doped QW with
+ 
+\begin_inset Formula $n_{e}=7\times10^{10}\, cm^{-2}$
+\end_inset
+
+ and the difference between them.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="7">
+<features>
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $k_{t}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\begin{array}{c}
+\Delta E_{E_{1}-HH_{1}}\\
+(E_{1})\,(\textrm{eV})\end{array}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\begin{array}{c}
+\Delta E_{E_{1}-LH_{1}}\\
+(E_{2})\,(\textrm{eV})\end{array}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\begin{array}{c}
+\Delta E_{E_{1}-HH_{2}}\\
+(E_{3})\,(\textrm{eV})\end{array}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\begin{array}{c}
+E_{2}-E_{1}\\
+(\textrm{meV})\end{array}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\begin{array}{c}
+E_{3}-E_{1}\\
+(\textrm{meV})\end{array}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\begin{array}{c}
+E_{3}-E_{2}\\
+(\textrm{meV})\end{array}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.5323
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.5367 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.5396
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6.7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $k_{F}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.536
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.5389
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.5443
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8.3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5.4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+In table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Calculated_Intersubband_Energy_Differences"
+
+\end_inset
+
+ we summarize the intersubband transition energies at 
+\begin_inset Formula $k_{t}=0,\, k_{F}$
+\end_inset
+
+ and the energetic difference between them.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+ First, we compare these calculated transition energies to the values obtained
+ from figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Doped_QW_Resonance_Energies"
+
+\end_inset
+
+ for this 2DEG concentration.
+\end_layout
+
+\end_inset
+
+ It is not surprising that the calculated transition energies do not match
+ the values marked in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Doped_QW_Resonance_Energies"
+
+\end_inset
+
+ for this 2DEG concentration, as these transition energies do not take into
+ consideration the bandgap renormalization effect inherent to the electrical
+ susceptibility calculation.
+ Granted that the estimate for this renormalization energy, obtained from
+ figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Total_Bandgap_Renormalization"
+
+\end_inset
+
+(a), is 
+\begin_inset Formula $\approx-4.5\, meV$
+\end_inset
+
+ for 
+\begin_inset Formula $n_{e}=7\times10^{10}\, cm^{-2}$
+\end_inset
+
+, the actual transition energy for the two examined resonances in figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Doped_QW_Resonance_Energies"
+
+\end_inset
+
+ are 
+\begin_inset Formula $1.5356\, eV$
+\end_inset
+
+ and 
+\begin_inset Formula $1.5386\, eV$
+\end_inset
+
+, respectively for 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+.
+ These values are very close to the values of the Fermi edge transition
+ energies, i.e.
+ at 
+\begin_inset Formula $k_{t}=k_{F}$
+\end_inset
+
+.
+ In order to verify this observation, we calculate the differences between
+ the resonance energies in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Doped_QW_Resonance_Energies"
+
+\end_inset
+
+ for various 2DEG concentrations, and plot them graphically in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Doped_QW_Delta_Resonance_Energy"
+
+\end_inset
+
+.
+ For the considered 2DEG concentration, the energetic differences between
+ 
+\begin_inset Formula $X_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $X_{2}$
+\end_inset
+
+ resonances is 
+\begin_inset Formula $3\, meV$
+\end_inset
+
+, a value very close to the 
+\begin_inset Formula $2.9\, meV$
+\end_inset
+
+ obtained from the intersubband transitions calculation in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Calculated_Intersubband_Energy_Differences"
+
+\end_inset
+
+.
+ By performing the same procedure for the all other 2DEG concentration values,
+ we can state that the observed 
+\begin_inset Formula $X_{1},\, X_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $X_{3}$
+\end_inset
+
+ resonances in the reflection anti-crossing curves are, respectively, the
+ 
+\begin_inset Formula $E_{1}-HH_{1},\, E_{1}-LH_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $E_{1}-HH_{2}$
+\end_inset
+
+ intersubband transitions at the Fermi edge energy.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Code/Results/Plots/2_10_05_2_Doped/Const_gamma_1e11/delta_Exciton_E_1.eps
+	lyxscale 60
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:MC_Doped_QW_Delta_Resonance_Energy"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The energetic distance between the anticrossing resonance lines as a function
+ of 2DEG concentrations for both polarizations.
+\end_layout
+
+\end_inset
+
+The energetic distance between the anticrossing resonance lines as a function
+ of 2DEG concentrations for the (a) TE and (b) TM polarizations.
+ The vertical dashed line marks the location of the 
+\begin_inset Formula $n_{e}=7\times10^{10}\, cm^{-2}$
+\end_inset
+
+ concentration values.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Code/Results/Plots/2_10_05_2_Doped/Const_gamma_1e11/delta_Exciton_E_12_1.eps
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Zoomed in view of the resonance line separation of the 
+\begin_inset Formula $E_{1}-HH_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $E_{1}-LH_{1}$
+\end_inset
+
+ resonances for the two considered polarizations, obtained (a) manually
+ and (b) from the coupled oscillator model fit.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Code/Results/Plots/2_10_05_2_Doped/Const_gamma_1e11/Omega_X_Fit_1.eps
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:MC_Doped_QW_Omega_Fit"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The coupling parameters extracted from the coupled oscillator fit of the
+ reflection anti-crossing curves, for both polarizations, as a function
+ of the 2DEG concentration.
+\end_layout
+
+\end_inset
+
+The coupling parameters extracted from the coupled oscillator fit of the
+ reflection anti-crossing curves, for the (a) TE and (b) TM polarizations,
+ as a function of the 2DEG concentration.
+ The dashed lines mark the general trend of the various collections of data
+ points.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Now that we have identified the nature of the various resonances present
+ in the reflection anti-crossing curves, we discuss their various other
+ properties.
+ Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Doped_QW_Omega_Fit"
+
+\end_inset
+
+ presents the coupling coefficients obtained for each resonance from the
+ coupled oscillator model as a function of the 2DEG concentration.
+ We can draw several conclusions from these plots.
+ First, the general trends of the coupling coefficients can be clearly seen
+ (marked by the respective dashed lines).
+ It is clear that the 
+\begin_inset Formula $E_{1}-HH_{1}$
+\end_inset
+
+ resonance is much more susceptible to the change in the 2DEG concentration
+ than the 
+\begin_inset Formula $E_{1}-LH_{1}$
+\end_inset
+
+ resonance.
+ Second, the cavity mode coupling to the 
+\begin_inset Formula $E_{1}-HH_{1}$
+\end_inset
+
+ resonance (or exciton) is stronger than to the 
+\begin_inset Formula $E_{1}-LH_{1}$
+\end_inset
+
+ resonance for the TE polarization, while the situation is the other way
+ around for the TM polarization.
+ This switch in the coupling strength can be traced back to the relative
+ amplitudes of the lowest two resonance of the bare QW absorption (and thus
+ of the complex susceptibility) spectra in figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Alpha_Rsp_TE_DEG_HF_2K"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Alpha_Rsp_TM_DEG_HF_2K"
+
+\end_inset
+
+, where the for the TE polarization (fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Alpha_Rsp_TE_DEG_HF_2K"
+
+\end_inset
+
+) the lowest resonance is the dominant one, and visa versa for the TM polarizati
+on (fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Alpha_Rsp_TM_DEG_HF_2K"
+
+\end_inset
+
+).
+ Finally, by comparing the absolute values of these coupling coefficients
+ to those obtained earlier for the MC structure with the undoped QW (using
+ the values listed in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:MC_Undoped_QW_Extracted_Parameters_Manual_Couples_Oscillator"
+
+\end_inset
+
+), we can state that the introduction of 2DEG inside the cavity region doesn't
+ impact substantially the coupling strength of the cavity mode photon to
+ the electronic resonances present in the QW.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Code/Results/Plots/2_10_05_2_Doped/Const_gamma_1e11/Omega_X_Calc_1.eps
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The calculated minimal distances between the minima anticrossing curves
+ for (a) TE and (b) TM polarizations.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Code/Results/Plots/2_10_05_2_Doped/Const_gamma_1e11/Omega_X_Dist_1.eps
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:MC_Doped_QW_Resonance_Energetic_Distance"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The energetic distance between adjecent anti-crossing curves near resonance
+ lines as a function of the 2DEG concentration for both polarizations.
+\end_layout
+
+\end_inset
+
+The energetic distance between adjecent anti-crossing curves near resonance
+ lines as a function of the 2DEG concentration for (a) TE and (b) TM polarizatio
+ns.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Doped_QW_Resonance_Energetic_Distance"
+
+\end_inset
+
+ presents the Euclidean distances between the various polaritonic branches
+ in the reflection anti-crossing curves in figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Doped_QW_TE_Reflection_Anticrossing"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Doped_QW_TM_Reflection_Anticrossing_Coupled_Oscillator"
+
+\end_inset
+
+, respectively for the TE and TM polarizations.
+ By comparing the obtained plots to figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Doped_QW_Omega_Fit"
+
+\end_inset
+
+, we can convince ourselves that this, in fact, can be an alternative method
+ for the calculation of the cavity mode photon coupling to the QW excitons.
+ We can claim this based on the similarity of the absolute values of the
+ respective curves in the two figures, and the appearance of the discussed
+ switch of the 
+\begin_inset Formula $E_{1}-HH_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $E_{1}-LH_{1}$
+\end_inset
+
+ coupling strength between the two polarizations.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Code/Results/Plots/2_10_05_2_Doped/Const_gamma_1e11/gamma_X_Fit_2.eps
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:MC_Doped_QW_Coupled_Oscillator_Linewidth"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The resonance interaction linewidths extracted for various resonances using
+ the coupled oscillator model fit of the anti-crossing curves as a function
+ of the 2DEG concentration, for both polarizations.
+ 
+\end_layout
+
+\end_inset
+
+The resonance interaction linewidths extracted for various resonances using
+ the coupled oscillator model fit of the anti-crossing curves as a function
+ of the 2DEG concentration, for (a) TE and (b) TM polarizations.
+ The dashed line mark the general trend of the appropriate resonance linewidth
+ parameter.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Now we turn to discuss the linewidth properties of the calculated reflection
+ spectra.
+ Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Doped_QW_Coupled_Oscillator_Linewidth"
+
+\end_inset
+
+ presents the coupled oscillator linewidth parameter, 
+\begin_inset Formula $\gamma_{X}$
+\end_inset
+
+, dependence on the 2DEG concentration, obtained from the fit to the reflection
+ spectra presented earlier.
+ We can clearly see that the TM polarization fitting parameters in figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Doped_QW_Coupled_Oscillator_Linewidth"
+
+\end_inset
+
+(b) are unintelligible and thus should be ignored.
+ The TE polarization fitted parameters in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Doped_QW_Coupled_Oscillator_Linewidth"
+
+\end_inset
+
+(a) exhibit a clear trends (marked by the dashed lines) towards rising linewidth
+s of all three visible resonances, reflecting the dephasing of the bound
+ excitonic states due to the rising 2DEG electron concentrations.
+ For comparison, we plot the bare MC cavity mode linewidth, found to be
+ during the calculations in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Bare_Microcavity_Numerical_Results"
+
+\end_inset
+
+ to be 
+\begin_inset Formula $1.3\, eV$
+\end_inset
+
+.
+ In order to further validate these results, we perform a manual calculation
+ of the FWHM of the reflection spectra along multiple values of the 2DEG
+ concentration, for a single value of the width detuning parameter 
+\begin_inset Formula $\delta$
+\end_inset
+
+.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_2K_2DEG_gamma_1e11_s2_10_05_2_Reflection_TE_delta_0_9528.eps
+	lyxscale 50
+	scale 55
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/T_2K_2DEG_gamma_1e11_s2_10_05_2_Reflection_TM_delta_0_9528.eps
+	lyxscale 50
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:MC_Doped_QW_Reflection_delta_0_9528"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+Reflection spectra for various 2DEG concentrations calculated at width detuning
+ of 
+\begin_inset Formula $\delta\approx0.95$
+\end_inset
+
+, for both polarizations of the incident light.
+ 
+\end_layout
+
+\end_inset
+
+Reflection spectra for various 2DEG concentrations calculated at width detuning
+ of 
+\begin_inset Formula $\delta\approx0.95$
+\end_inset
+
+, for the (a) TE and (b) TM polarizations of the incident light.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Code/Results/Plots/2_10_05_2_Doped/Const_gamma_1e11/gamma_X_Calc_1.eps
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:MC_Doped_QW_Linewidth_FWHM"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The reflection spectra linewidths function of the 2DEG concentration, extracted
+ manually (via FWHM calculation) for each of the present resonances at width
+ detuning of 
+\begin_inset Formula $\delta\approx0.95$
+\end_inset
+
+ , for both polarizations.
+\end_layout
+
+\end_inset
+
+The reflection spectra linewidths function of the 2DEG concentration, extracted
+ manually (via FWHM calculation) for each of the present resonances at width
+ detuning of 
+\begin_inset Formula $\delta\approx0.95$
+\end_inset
+
+ , for (a) TE and (b) TM polarizations.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Doped_QW_Reflection_delta_0_9528"
+
+\end_inset
+
+ presents the reflection spectra calculated at 
+\begin_inset Formula $\delta=0.9528$
+\end_inset
+
+ for the full diapason of the 2DEG concentrations for both polarizations.
+ Here, the broadening of the resonance lines be clearly seen from the low
+ concentrations up to the higher ones.
+ These figures reveal two additional effects, discussed earlier in this
+ thesis.
+ The first is the gradual disappearance of the excitonic resonances due
+ to the lowering of the coupling strength, and the second is the gradual
+ shift of these fading resonance lines towards higher energies with the
+ rising 2DEG concentrations.
+ Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Doped_QW_Linewidth_FWHM"
+
+\end_inset
+
+ presents the results of the FWHM calculation of the three major resonances
+ present in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Doped_QW_Reflection_delta_0_9528"
+
+\end_inset
+
+ plotted as a function of the 2DEG concentration.
+ As expected, the obtained plots are somewhat similar to the coupled oscillator
+ fitting linewidth parameters in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Doped_QW_Coupled_Oscillator_Linewidth"
+
+\end_inset
+
+, but there are also several differences.
+ First of all, the there is a consistency between the results for both light
+ polarizations.
+ Furthermore, the most dominant resonances, namely 
+\begin_inset Formula $E_{1}-HH_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $E_{1}-LH_{1}$
+\end_inset
+
+, exhibit quite different behavior.
+ While 
+\begin_inset Formula $E_{1}-HH_{1}$
+\end_inset
+
+ linewidths rise almost monotonically with the 2DEG concentration, the 
+\begin_inset Formula $E_{1}-LH_{1}$
+\end_inset
+
+ linewidths have a somewhat more complex trajectory, where we first we observe
+ a declining trend up to 
+\begin_inset Formula $n_{e}\approx1\times10^{10}\, cm^{-2}$
+\end_inset
+
+ which then reverts and rises steadily up to the high 2DEG concentrations.
+ Comparing the calculated coupling strengths between the cavity mode photon
+ and the excitonic resonances, presented above in figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Doped_QW_Omega_Fit"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Doped_QW_Resonance_Energetic_Distance"
+
+\end_inset
+
+, to the linewidths discussed above, we can easily see that the strong interacti
+on condition that 
+\begin_inset Formula $\hbar\Omega_{X_{i}}>\gamma_{X_{i}}$
+\end_inset
+
+ is maintained for most of the discussed 2DEG concentrations diapason.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Code/Results/Plots/2_10_05_2_Doped/Const_gamma_1e11/Linewidth_N_3e9_Fit_1.eps
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:MC_Doped_QW_Transmition_Peaks_FWHM_1e9"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The fitted amplitude and width of the transmition peaks as a function of
+ cavity mode energy, obtained for each resonance branch for both polarizations
+ at 
+\begin_inset Formula $n_{e}=3\times10^{9}\, cm^{-2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+The fitted amplitude and width of the transmition peaks as a function of
+ cavity mode energy, obtained for each resonance branch (numbered 1-4) for
+ the TE (left panel) and TM (right panel) at 
+\begin_inset Formula $n_{e}=3\times10^{9}\, cm^{-2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Code/Results/Plots/2_10_05_2_Doped/Const_gamma_1e11/Linewidth_N_3e10_Fit_1.eps
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:MC_Doped_QW_Transmition_Peaks_FWHM_3e10"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The fitted amplitude and width of the transmition peaks as a function of
+ cavity mode energy, obtained for each resonance branch for both polarizations
+ at 
+\begin_inset Formula $n_{e}=3\times10^{10}\, cm^{-2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+The fitted amplitude and width of the transmition peaks as a function of
+ cavity mode energy,, obtained for each resonance branch (numbered 1-3)
+ for the TE (left panel) and TM (right panel) at 
+\begin_inset Formula $n_{e}=3\times10^{10}\, cm^{-2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Code/Results/Plots/2_10_05_2_Doped/Const_gamma_1e11/Linewidth_N_1e11_Fit_1.eps
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:MC_Doped_QW_Transmition_Peaks_FWHM_1e11"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+The fitted amplitude and width of the transmition peaks as a function of
+ cavity mode energy, obtained for each resonance branch for both polarizations
+ at 
+\begin_inset Formula $n_{e}=1\times10^{11}\, cm^{-2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+The fitted amplitude and width of the transmition peaks as a function of
+ cavity mode energy, obtained for each resonance (numbered 1-3) for the
+ TE (left panel) and TM (right panel) at 
+\begin_inset Formula $n_{e}=1\times10^{11}\, cm^{-2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+The previous discussion considered the evolution of the polaritonic linewidths
+ with the 2DEG concentration in the considered diapason.
+ Now we turn to the calculation of the linewidths dependence on the cavity
+ mode energy for a particular gas concentration.
+ As the manual FWHM calculation of the various spectral dips for each reflection
+ spectrum for every value of the width detuning parameter 
+\begin_inset Formula $\delta$
+\end_inset
+
+ is a rather daunting task, we opt to a more approximate approach.
+ For each value of 
+\begin_inset Formula $\delta$
+\end_inset
+
+, we convert the reflection spectrum to transmition and subsequently fit
+ the obtained curve with a Lorentzian target function of the form 
+\begin_inset Formula \begin{equation}
+T=1-\left|r\right|^{2}=\sum_{i}A_{i}\frac{w_{i}}{2\pi}\frac{1}{(E-E_{i})^{2}+(w_{i}/2)^{2}},\end{equation}
+
+\end_inset
+
+where the parameters 
+\begin_inset Formula $A_{i},\, w_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $E_{i}$
+\end_inset
+
+, including the range of 
+\begin_inset Formula $i$
+\end_inset
+
+, are all determined through a least-squares fitting procedure.
+ Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Doped_QW_Transmition_Peaks_FWHM_1e9"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Doped_QW_Transmition_Peaks_FWHM_3e10"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Doped_QW_Transmition_Peaks_FWHM_1e11"
+
+\end_inset
+
+ present the results of such a fit, respectively for 
+\begin_inset Formula $n_{e}=3\times10^{9},\,3\times10^{10}$
+\end_inset
+
+ and 
+\begin_inset Formula $1\times10^{11}\, cm^{-2}$
+\end_inset
+
+ 2DEG concentrations.
+ In each of these figures we present the amplitudes of the transmitions
+ peaks and their width for both light polarizations.
+ 
+\end_layout
+
+\begin_layout Standard
+The amplitudes 
+\begin_inset Formula $A_{i}$
+\end_inset
+
+ in each figures (and for each polarization) present a picture of the relative
+ admixture of the various polaritonic branches in the resulting reflection
+ spectrum picture.
+ For the low 2DEG concentration, four of these branches are present, while
+ with the rise of concentration the high energy resonances phase and only
+ strongest of these remain.
+ Moreover, a collective energetic shift can be seen with the rise of the
+ 2DEG concentration in all of the present amplitude curves.
+ The FWHM curves exhibit a somewhat more complicated behavior, but the overall
+ trend of rising linewidth with the 2DEG concentration is still noticeable.
+ This complex behavior can be analyzed qualitatively by considering the
+ lineshapes of the individual excitons interacting with the cavity mode
+ electron 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Ramon2002"
+
+\end_inset
+
+, a discussion which is outside the scope of this thesis.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Code/Results/Plots/2_10_05_2_Doped/Const_gamma_1e11/Polariton_Fraction_4.emf
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:MC_Doped_QW_Polariton_Admixing_1e9"
+
+\end_inset
+
+The polariton admixing coefficients extracted from the coupled oscillator
+ model fit of the anti-crossing curves for 
+\begin_inset Formula $n_{e}=3\times10^{9}\, cm^{-2}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Code/Results/Plots/2_10_05_2_Doped/Const_gamma_1e11/Polariton_Fraction_5.emf
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:MC_Doped_QW_Polariton_Admixing_3e10"
+
+\end_inset
+
+The polariton admixing coefficients extracted from the coupled oscillator
+ model fit of the anti-crossing curves for 
+\begin_inset Formula $n_{e}=3\times10^{10}\, cm^{-2}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Code/Results/Plots/2_10_05_2_Doped/Const_gamma_1e11/Polariton_Fraction_6.emf
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:MC_Doped_QW_Polariton_Admixing_1e11"
+
+\end_inset
+
+The polariton admixing coefficients extracted from the coupled oscillator
+ model fit of the anti-crossing curves for 
+\begin_inset Formula $n_{e}=1\times10^{11}\, cm^{-2}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Finally, we present in figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Doped_QW_Polariton_Admixing_1e9"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Doped_QW_Polariton_Admixing_3e10"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MC_Doped_QW_Polariton_Admixing_1e11"
+
+\end_inset
+
+ the polariton admixing coefficients extracted through the coupled oscillator
+ model fitting of the reflection anti-crossing spectra, similarly to procedure
+ employed in the previous section.
+ Here, as for the undoped QW case, the strong presence of the cavity mode
+ photon is clearly seen, maintaining its strong coupling with the individual
+ excitonic resonances and thus ensuring their survival up the very high
+ 2DEG concentration values.
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,410 @@
+#LyX 1.6.8 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass scrreprt
+\options a4paper,titlepage
+\use_default_options false
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\cite_engine natbib_numerical
+\use_bibtopic false
+\paperorientation portrait
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Lindhard Screening Model
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "cha:Appendix_Screening"
+
+\end_inset
+
+To implement the screened Hartree-Fock approximation in chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cha:Coulomb_Correlated_Optical_Transitions"
+
+\end_inset
+
+, we need a screening model.
+ One approach is to use a self-consistent quantum theory of plasma screening
+ involving arguments from classical electrodynamics and quantum mechanics
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Chow1994"
+
+\end_inset
+
+.
+ Given an electron at the origin of our coordinate system, we wish to know
+ what effect this electron has on its surroundings.
+ To find out, we introduce a test charge, i.e., a charge sufficiently small
+ as to cause negligible perturbation.
+ In vacuum, the electrostatic potential due to the electron is 
+\begin_inset Formula $\phi(r)=e/r$
+\end_inset
+
+.
+ However, in a semiconductor there is a background dielectric constant 
+\begin_inset Formula $\epsilon_{b}$
+\end_inset
+
+ which is due to everything in the semiconductor in the absence of the carriers
+ themselves.
+ Furthermore, there is the carrier distribution that is changed by the presence
+ of the test electron at the origin 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Figures/4_Lindhard_Screening.eps
+	lyxscale 20
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Lindhards_Formula_Schematic"
+
+\end_inset
+
+
+\begin_inset OptArg
+status open
+
+\begin_layout Plain Layout
+Change in the carrier distribution due to an electron at the origin.
+\end_layout
+
+\end_inset
+
+Change in the carrier distribution due to an electron at the origin (after
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Chow1994"
+
+\end_inset
+
+).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ (see Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Lindhards_Formula_Schematic"
+
+\end_inset
+
+).
+ The new carrier distribution, 
+\begin_inset Formula $\left\langle n_{s}(\mathbf{r})\right\rangle $
+\end_inset
+
+, in turn changes the electrostatic potential.
+ We denote the carrier density distribution as an expectation value since
+ we plan to calculate it quantum mechanically.
+ To derive the induced carrier distribution, we first simplify the problem
+ by assuming that the screening effects of an electron-hole plasma equal
+ the sum of the effects resulting from the separate electron and hole plasmas.
+ As such we neglect excitonic screening, which is not a bad approximation
+ for the elevated carrier densities present in conventional semiconductor
+ heterostructures.
+ The density distribution operator can be defined as 
+\begin_inset Formula \begin{eqnarray}
+\hat{n}(\mathbf{r}) & = & \psi^{\dagger}(\mathbf{r})\psi(\mathbf{r})\nonumber \\
+ & = & \frac{1}{V}\sum_{\mathbf{k},\mathbf{k}'}e^{i\left(\mathbf{k}-\mathbf{k}'\right)\cdot\mathbf{r}}\hat{a}_{\mathbf{k}'}^{\dagger}\hat{a}_{\mathbf{k}}\nonumber \\
+ & = & \sum_{\mathbf{q}}n_{\mathbf{q}}e^{i\mathbf{q}\cdot\mathbf{r}},\label{eq:Density_Distribution_Operator}\end{eqnarray}
+
+\end_inset
+
+where 
+\begin_inset Formula \begin{equation}
+n_{\mathbf{q}}=\frac{1}{V}\sum_{\mathbf{k}}\hat{a}_{\mathbf{k}-\mathbf{q}}^{\dagger}\hat{a}_{\mathbf{k}}\end{equation}
+
+\end_inset
+
+is the Fourier amplitude of the density distribution operator.
+ Starting with the electron plasma, we can note from 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Density_Distribution_Operator"
+
+\end_inset
+
+ that the corresponding quantum-mechanical operator for the screened electron
+ charge distribution is 
+\begin_inset Formula $e\hat{n}_{s}(\mathbf{r})$
+\end_inset
+
+ with
+\begin_inset Formula \begin{eqnarray}
+\hat{n}_{s}(\mathbf{r}) & = & \frac{1}{V}\sum_{\mathbf{k},\mathbf{k}'}e^{i\left(\mathbf{k}-\mathbf{k}'\right)\cdot\mathbf{r}}\hat{a}_{\mathbf{k}-\mathbf{q}}^{\dagger}\hat{a}_{\mathbf{k}}\\
+ & = & \sum_{\mathbf{q}}n_{s\mathbf{q}}e^{i\mathbf{q}\cdot\mathbf{r}}.\end{eqnarray}
+
+\end_inset
+
+Here, the Fourier transform of the density operator is given by 
+\begin_inset Formula $n_{s\mathbf{q}}=\frac{1}{V}\sum_{\mathbf{k}}\hat{a}_{\mathbf{k}-\mathbf{q}}^{\dagger}\hat{a}_{\mathbf{k}}$
+\end_inset
+
+, and 
+\begin_inset Formula $V$
+\end_inset
+
+ is the volume of the semiconductor medium.
+ In a rigorous treatment we would use the electronic part of the many-body
+ Hamiltonian to obtain an equation of motion for 
+\begin_inset Formula $n_{s\mathbf{q}}$
+\end_inset
+
+.
+ At the level of a self-consistent Hartree-Fock approach, we can treat screening
+ effects on the basis of an effective single-particle Hamiltonian 
+\begin_inset Formula \begin{equation}
+\hat{H}_{eff}=\sum_{\mathbf{k}}E_{e}(\mathbf{k})\hat{a}_{\mathbf{k}}^{\dagger}\hat{a}_{\mathbf{k}}\mathbf{-}V\sum_{\mathbf{q}}V_{s\mathbf{q}}n_{s,-\mathbf{q}},\label{eq:Effective_Single_Particle_Hamiltonian}\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula \begin{equation}
+V_{s\mathbf{q}}=\frac{1}{V}\int d^{3}rV_{s}(r)e^{-i\mathbf{q}\cdot\mathbf{r}},\end{equation}
+
+\end_inset
+
+with 
+\begin_inset Formula $V_{s}(r)=e\phi_{s}(r)$
+\end_inset
+
+, and 
+\begin_inset Formula $\phi_{s}(r)$
+\end_inset
+
+ is the screened electrostatic potential.
+\end_layout
+
+\begin_layout Standard
+With the effective Hamiltonian 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Effective_Single_Particle_Hamiltonian"
+
+\end_inset
+
+, we get the equation of motion 
+\begin_inset Formula \begin{eqnarray}
+i\hbar\frac{d}{dt}\hat{a}_{\mathbf{k}-\mathbf{q}}^{\dagger}\hat{a}_{\mathbf{k}} & = & \left[\hat{a}_{\mathbf{k}-\mathbf{q}}^{\dagger}\hat{a}_{\mathbf{k}},\hat{H}_{eff}\right]\nonumber \\
+ & = & \left(E_{e}(\mathbf{k})-E_{e}(\mathbf{k}-\mathbf{q})\right)\hat{a}_{\mathbf{k}-\mathbf{q}}^{\dagger}\hat{a}_{\mathbf{k}}\nonumber \\
+ &  & +\sum_{\mathbf{p}}V_{s\mathbf{p}}\left(\hat{a}_{\mathbf{k}-\mathbf{q}}^{\dagger}\hat{a}_{\mathbf{k}+\mathbf{p}}-\hat{a}_{\mathbf{k}-\mathbf{q}-\mathbf{p}}^{\dagger}\hat{a}_{\mathbf{k}}\right).\end{eqnarray}
+
+\end_inset
+
+Taking the expectation value and keeping only slowly varying terms, namely
+ those with 
+\begin_inset Formula $\mathbf{p}=-\mathbf{q}$
+\end_inset
+
+, we get 
+\begin_inset Formula \begin{eqnarray}
+i\hbar\frac{d}{dt}\left\langle \hat{a}_{\mathbf{k}-\mathbf{q}}^{\dagger}\hat{a}_{\mathbf{k}}\right\rangle  & = & \left(E_{e}(\mathbf{k})-E_{e}(\mathbf{k}-\mathbf{q})\right)\left\langle \hat{a}_{\mathbf{k}-\mathbf{q}}^{\dagger}\hat{a}_{\mathbf{k}}\right\rangle \nonumber \\
+ &  & +V_{s\mathbf{q}}\left(n_{\mathbf{k}-\mathbf{q}}-n_{\mathbf{q}}\right).\label{eq:Distribution_Function_Eq_Motion}\end{eqnarray}
+
+\end_inset
+
+We suppose that 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\noun off
+\color none
+
+\begin_inset Formula $\left\langle \hat{a}_{\mathbf{k}-\mathbf{q}}^{\dagger}\hat{a}_{\mathbf{k}}\right\rangle $
+\end_inset
+
+ has solution of the form 
+\begin_inset Formula $e^{\left(\delta-i\omega\right)t}$
+\end_inset
+
+, where the infinitesimal 
+\begin_inset Formula $\delta$
+\end_inset
+
+ indicates that the perturbation has been switched on adiabatically, i.e.,
+ that we had a homogeneous plasma at 
+\begin_inset Formula $t=-\infty$
+\end_inset
+
+.
+ We further suppose that the induced charge distribution follows this response.
+ This transforms 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Distribution_Function_Eq_Motion"
+
+\end_inset
+
+ to 
+\begin_inset Formula \begin{equation}
+\left\langle \hat{a}_{\mathbf{k}-\mathbf{q}}^{\dagger}\hat{a}_{\mathbf{k}}\right\rangle =V_{s\mathbf{q}}\frac{n_{\mathbf{k}-\mathbf{q}}-n_{\mathbf{q}}}{\hbar\left(\omega+i\delta\right)-E_{e}(\mathbf{k})+E_{e}(\mathbf{k}-\mathbf{q})}\end{equation}
+
+\end_inset
+
+and 
+\begin_inset Formula \begin{equation}
+\left\langle n_{s\mathbf{q}}\right\rangle =\frac{V_{s\mathbf{q}}}{V}\sum_{\mathbf{k}}\frac{n_{\mathbf{k}-\mathbf{q}}-n_{\mathbf{q}}}{\hbar\left(\omega+i\delta\right)-E_{e}(\mathbf{k})+E_{e}(\mathbf{k}-\mathbf{q})}.\label{eq:Distribution_Expectation_Value}\end{equation}
+
+\end_inset
+
+The induced charge distribution is a source in Poisson's equation 
+\begin_inset Formula \begin{equation}
+\nabla^{2}\phi_{s}(r)=-\frac{4\pi e}{\epsilon_{b}}\left[n_{e}(\mathbf{r})+\left\langle n_{s\mathbf{q}}\right\rangle \right].\end{equation}
+
+\end_inset
+
+The Fourier transform of this equation is 
+\begin_inset Formula \begin{equation}
+\phi_{s\mathbf{q}}=\frac{4\pi e}{\epsilon_{b}q^{2}}\left(\frac{1}{V}+\left\langle n_{s\mathbf{q}}\right\rangle \right),\label{eq:Potential_Fourier_Transform}\end{equation}
+
+\end_inset
+
+where for a point charge at the origin 
+\begin_inset Formula \begin{equation}
+n_{e\mathbf{q}}=\frac{1}{V}\int d^{3}r\delta^{3}\left(\mathbf{r}\right)e^{-i\mathbf{q}\cdot\mathbf{r}}=\frac{1}{V}.\end{equation}
+
+\end_inset
+
+Using 
+\begin_inset Formula $V_{s\mathbf{q}}\equiv e\phi_{s\mathbf{q}}$
+\end_inset
+
+, substitute 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Distribution_Expectation_Value"
+
+\end_inset
+
+ into 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Potential_Fourier_Transform"
+
+\end_inset
+
+ and solve for 
+\begin_inset Formula $V_{s\mathbf{q}}$
+\end_inset
+
+ to find 
+\begin_inset Formula \begin{equation}
+V_{s\mathbf{q}}=V_{\mathbf{q}}\left(1-V_{q}\sum_{\mathbf{k}}\frac{n_{\mathbf{k}-\mathbf{q}}-n_{\mathbf{q}}}{\hbar\left(\omega+i\delta\right)-E_{e}(\mathbf{k})+E_{e}(\mathbf{k}-\mathbf{q})}\right)^{-1},\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $V_{q}$
+\end_inset
+
+ is the unscreened Coulomb potential.
+ Repeating the derivation for the hole plasma, and adding the electron and
+ hole contributions, we find the screened Coulomb potential energy between
+ carriers 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset Formula \begin{equation}
+V_{s\mathbf{q}}=\frac{V_{\mathbf{q}}}{\epsilon_{\mathbf{q}}(\omega)},\end{equation}
+
+\end_inset
+
+where the longitudinal dielectric function is given by 
+\begin_inset Formula \begin{equation}
+\epsilon_{\mathbf{q}}(\omega)=1-V_{\mathbf{q}}\sum_{n\mathbf{k}}\frac{n_{n,\mathbf{k}-\mathbf{q}}-n_{n,\mathbf{q}}}{\hbar\left(\omega+i\delta\right)-E_{n}(\mathbf{k})+E_{n}(\mathbf{k}-\mathbf{q})}\end{equation}
+
+\end_inset
+
+This equation is the Lindhard formula.
+ It describes a complex retarded dielectric function, i.e., the poles are
+ in the lower complex frequency plane, and it includes spatial dispersion
+ (
+\begin_inset Formula $\mathbf{q}$
+\end_inset
+
+ dependence) and spectral dispersion (
+\begin_inset Formula $\omega$
+\end_inset
+
+ dependence).
+ 
+\end_layout
+
+\end_body
+\end_document

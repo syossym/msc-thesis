@@ -1,0 +1,3106 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (MiKTeX 2.8) (preloaded format=pdflatex 2010.4.9)  10 APR 2010 23:01
+entering extended mode
+**C:/Users/Yossi*Michaeli/Documents/Thesis/Documents/Thesis/Main_2.tex
+("C:/Users/Yossi Michaeli/Documents/Thesis/Documents/Thesis/Main_2.tex"
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman, ngerman, german-x-2009-06-19, ngerman-x-2009-06-19, french, loaded.
+("C:\Program Files\MiKTeX 2.8\tex\latex\koma-script\scrreprt.cls"
+Document Class: scrreprt 2009/07/24 v3.04a KOMA-Script document class (report)
+("C:\Program Files\MiKTeX 2.8\tex\latex\koma-script\scrkbase.sty"
+Package: scrkbase 2009/07/24 v3.04a KOMA-Script package (KOMA-Script-dependent 
+basics and keyval usage)
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\koma-script\scrbase.sty"
+Package: scrbase 2009/07/24 v3.04a KOMA-Script package (KOMA-Script-independent
+ basics and keyval usage)
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\koma-script\scrlfile.sty"
+Package: scrlfile 2009/03/25 v3.03 KOMA-Script package (loading files)
+
+Package scrlfile, 2009/03/25 v3.03 KOMA-Script package (loading files)
+                  Copyright (C) Markus Kohm
+
+))) ("C:\Program Files\MiKTeX 2.8\tex\latex\koma-script\tocbasic.sty"
+Package: tocbasic 2009/06/08 v3.03b KOMA-Script package (handling toc-files)
+)
+Package tocbasic Info: omitting babel extension for `toc'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `toc' on input line 117.
+Package tocbasic Info: omitting babel extension for `lof'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `lof' on input line 118.
+Package tocbasic Info: omitting babel extension for `lot'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `lot' on input line 119.
+Package scrreprt Info: You've used obsolete option `10pt'.
+(scrreprt)             \KOMAExecuteOptions{fontsize=10pt} will be
+(scrreprt)             used instead.
+(scrreprt)             You may simply replace `10pt'
+(scrreprt)             by `fontsize=10pt'.
+Class scrreprt Info: You've used standard option `openright'.
+(scrreprt)           This is correct!
+(scrreprt)           Internaly I'm using `open=right'.
+(scrreprt)           If you'd like to set the option with \KOMAoptions,
+(scrreprt)           you'd have to use `open=right' there
+(scrreprt)           instead of `openright', too.
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\base\fleqn.clo"
+File: fleqn.clo 1998/08/17 v1.1c Standard LaTeX option (flush left equations)
+\mathindent=\dimen102
+)
+
+Class scrreprt Warning: You've used obsolete option `pointlessnumbers'.
+(scrreprt)              Usage of this option indicates an old document and
+(scrreprt)              changes compatibility level using
+(scrreprt)              `numbers=noenddot,version=first'.
+(scrreprt)              If you don't want this, you should simply replace
+(scrreprt)              usage of option `pointlessnumbers' by `numbers=noenddot
+'.
+
+Class scrreprt Info: Switching compatibility level to `first'.
+Package scrreprt Info: You've used obsolete option `10pt'.
+(scrreprt)             \KOMAExecuteOptions{fontsize=10pt} will be
+(scrreprt)             used instead.
+(scrreprt)             You may simply replace `10pt'
+(scrreprt)             by `fontsize=10pt'.
+
+Class scrreprt Warning: You've used obsolete option `cleardoubleempty'.
+(scrreprt)              Usage of this option indicates an old document and
+(scrreprt)              changes compatibility level using
+(scrreprt)              `cleardoublepage=empty,version=first'.
+(scrreprt)              If you don't want this, you should simply replace
+(scrreprt)              usage of option `cleardoubleempty' by `cleardoublepage=
+empty'.
+
+Class scrreprt Info: Switching compatibility level to `first'.
+Class scrreprt Info: File `scrsize10pt.clo' used to setup font sizes on input l
+ine 1271.
+("C:\Program Files\MiKTeX 2.8\tex\latex\koma-script\scrsize10pt.clo"
+File: scrsize10pt.clo 2009/07/24 v3.04a KOMA-Script font size class option (10p
+t)
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\koma-script\typearea.sty"
+Package: typearea 2009/07/24 v3.04a KOMA-Script package (type area)
+
+Package typearea, 2009/07/24 v3.04a KOMA-Script package (type area)
+                  Copyright (C) Frank Neukam, 1992-1994
+                  Copyright (C) Markus Kohm, 1994-
+
+\ta@bcor=\skip41
+\ta@div=\count79
+Package typearea Info: You've used standard option `a4paper'.
+(typearea)             This is correct!
+(typearea)             Internaly I'm using `paper=a4'.
+(typearea)             If you'd like to set the option with \KOMAoptions,
+(typearea)             you'd have to use `paper=a4' there
+(typearea)             instead of `a4paper', too.
+\ta@hblk=\skip42
+\ta@vblk=\skip43
+\ta@temp=\skip44
+Package typearea Info: These are the values describing the layout:
+(typearea)             DIV  = 8
+(typearea)             BCOR = 14.22636pt
+(typearea)             \paperwidth      = 597.50793pt
+(typearea)              \textwidth      = 364.55101pt
+(typearea)              DIV departure   = -1%
+(typearea)              \evensidemargin = 73.55038pt
+(typearea)              \oddsidemargin  = 14.86656pt
+(typearea)             \paperheight     = 845.04694pt
+(typearea)              \textheight     = 454.0pt
+(typearea)              \topmargin      = 33.36087pt
+(typearea)              \headheight     = 15.0pt
+(typearea)              \headsep        = 18.0pt
+(typearea)              \topskip        = 10.0pt
+(typearea)              \footskip       = 42.0pt
+(typearea)              \baselineskip   = 12.0pt
+(typearea)              on input line 1115.
+)
+\c@part=\count80
+\c@chapter=\count81
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\abovecaptionskip=\skip45
+\belowcaptionskip=\skip46
+\c@pti@nb@sid@b@x=\box26
+\c@figure=\count87
+\c@table=\count88
+\bibindent=\dimen103
+) ("C:\Program Files\MiKTeX 2.8\tex\latex\base\fontenc.sty"
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\base\t1enc.def"
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
+("C:\Program Files\MiKTeX 2.8\tex\latex\base\inputenc.sty"
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks15
+\inpenc@posthook=\toks16
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\base\latin9.def"
+File: latin9.def 2008/03/30 v1.1d Input encoding file
+))
+("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\color.sty"
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2009/08/25 v0.04m Graphics/color for pdfTeX
+\Gread@gobject=\count89
+))
+("C:\Program Files\MiKTeX 2.8\tex\generic\babel\babel.sty"
+Package: babel 2008/07/06 v3.8l The Babel package
+
+*************************************
+* Local config file bblopts.cfg used
+*
+("C:\Program Files\MiKTeX 2.8\tex\latex\00miktex\bblopts.cfg"
+File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
+)
+("C:\Program Files\MiKTeX 2.8\tex\generic\babel\english.ldf"
+Language: english 2005/03/30 v3.3o English support from the babel system
+
+("C:\Program Files\MiKTeX 2.8\tex\generic\babel\babel.def"
+File: babel.def 2008/07/06 v3.8l Babel common definitions
+\babel@savecnt=\count90
+\U@D=\dimen104
+)
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+)
+("C:\Program Files\MiKTeX 2.8\tex\generic\babel\english.ldf"
+Language: english 2005/03/30 v3.3o English support from the babel system
+))
+("C:\Program Files\MiKTeX 2.8\tex\latex\tools\verbatim.sty"
+Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks17
+\verbatim@line=\toks18
+\verbatim@in@stream=\read1
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\booktabs\booktabs.sty"
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen105
+\lightrulewidth=\dimen106
+\cmidrulewidth=\dimen107
+\belowrulesep=\dimen108
+\belowbottomsep=\dimen109
+\aboverulesep=\dimen110
+\abovetopsep=\dimen111
+\cmidrulesep=\dimen112
+\cmidrulekern=\dimen113
+\defaultaddspace=\dimen114
+\@cmidla=\count91
+\@cmidlb=\count92
+\@aboverulesep=\dimen115
+\@belowrulesep=\dimen116
+\@thisruleclass=\count93
+\@lastruleclass=\count94
+\@thisrulewidth=\dimen117
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\units\units.sty"
+Package: units 1998/08/04 v0.9b Typesetting units
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\units\nicefrac.sty"
+Package: nicefrac 1998/08/04 v0.9b Nice fractions
+\L@UnitsRaiseDisplaystyle=\skip47
+\L@UnitsRaiseTextstyle=\skip48
+\L@UnitsRaiseScriptstyle=\skip49
+))
+("C:\Program Files\MiKTeX 2.8\tex\latex\base\textcomp.sty"
+Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\base\ts1enc.def"
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+)
+LaTeX Info: Redefining \oldstylenums on input line 266.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 281.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 282.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 283.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 284.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 285.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 286.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 287.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 288.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 289.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 290.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 291.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 292.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 293.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 294.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 295.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 296.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 297.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 298.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 299.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 300.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 301.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 302.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 303.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 304.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 305.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 306.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 307.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 308.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 309.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 310.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 311.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 312.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 313.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 314.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 315.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 316.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 317.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 318.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 319.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 320.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 321.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 322.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 323.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 324.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 325.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 326.
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\ams\math\amsmath.sty"
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip50
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files\MiKTeX 2.8\tex\latex\ams\math\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\ams\math\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks19
+\ex@=\dimen118
+))
+("C:\Program Files\MiKTeX 2.8\tex\latex\ams\math\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen119
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\ams\math\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count95
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count96
+\leftroot@=\count97
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count98
+\DOTSCASE@=\count99
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box27
+\strutbox@=\box28
+\big@size=\dimen120
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count100
+\c@MaxMatrixCols=\count101
+\dotsspace@=\muskip10
+\c@parentequation=\count102
+\dspbrk@lvl=\count103
+\tag@help=\toks20
+\row@=\count104
+\column@=\count105
+\maxfields@=\count106
+\andhelp@=\toks21
+\eqnshift@=\dimen121
+\alignsep@=\dimen122
+\tagshift@=\dimen123
+\tagwidth@=\dimen124
+\totwidth@=\dimen125
+\lineht@=\dimen126
+\@envbody=\toks22
+\multlinegap=\skip51
+\multlinetaggap=\skip52
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+)
+\Gin@req@height=\dimen127
+\Gin@req@width=\dimen128
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\setspace\setspace.sty"
+Package: setspace 2000/12/01 6.7 Contributed and Supported LaTeX2e package
+
+Package: `setspace' 6.7 <2000/12/01>
+) ("C:\Program Files\MiKTeX 2.8\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2009/06/22 v3.00
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+))
+("C:\Program Files\MiKTeX 2.8\tex\latex\natbib\natbib.sty"
+Package: natbib 2009/11/07 8.31a (PWD, AO)
+\bibhang=\skip53
+\bibsep=\skip54
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count107
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\hyperref\hyperref.sty"
+Package: hyperref 2009/10/19 v6.79b Hypertext links for LaTeX
+
+("C:\Program Files\MiKTeX 2.8\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2009/04/10 v2.0 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in pdf mode detected.
+)
+("C:\Program Files\MiKTeX 2.8\tex\generic\oberdiek\ifvtex.sty"
+Package: ifvtex 2008/11/04 v1.4 Switches for detecting VTeX and its modes (HO)
+Package ifvtex Info: VTeX not detected.
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\ifxetex\ifxetex.sty"
+Package: ifxetex 2009/01/23 v0.5 Provides ifxetex conditional
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\oberdiek\hycolor.sty"
+Package: hycolor 2009/10/02 v1.5 Code for color options of hyperref/bookmark (H
+O)
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\oberdiek\xcolor-patch.sty"
+Package: xcolor-patch 2009/10/02 xcolor patch
+))
+\@linkdim=\dimen129
+\Hy@linkcounter=\count108
+\Hy@pagecounter=\count109
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\hyperref\pd1enc.def"
+File: pd1enc.def 2009/10/19 v6.79b Hyperref: PDFDocEncoding definition (HO)
+)
+("C:\Program Files\MiKTeX 2.8\tex\generic\oberdiek\etexcmds.sty"
+Package: etexcmds 2007/12/12 v1.2 Prefix for e-TeX command names (HO)
+
+("C:\Program Files\MiKTeX 2.8\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2007/09/09 v1.2 Providing info/warning/message (HO)
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\00miktex\hyperref.cfg"
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2009/08/13 v3.4 Keyval support for LaTeX options (HO)
+
+("C:\Program Files\MiKTeX 2.8\tex\generic\oberdiek\kvsetkeys.sty"
+Package: kvsetkeys 2009/07/30 v1.5 Key value parser with default handler suppor
+t (HO)
+))
+Package hyperref Info: Option `unicode' set `true' on input line 2864.
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\hyperref\puenc.def"
+File: puenc.def 2009/10/19 v6.79b Hyperref: PDF Unicode definition (HO)
+)
+Package hyperref Info: Option `pdfusetitle' set `true' on input line 2864.
+Package hyperref Info: Option `bookmarks' set `true' on input line 2864.
+Package hyperref Info: Option `bookmarksnumbered' set `false' on input line 286
+4.
+Package hyperref Info: Option `bookmarksopen' set `false' on input line 2864.
+Package hyperref Info: Option `breaklinks' set `false' on input line 2864.
+Package hyperref Info: Option `colorlinks' set `false' on input line 2864.
+Package hyperref Info: Hyper figures OFF on input line 2975.
+Package hyperref Info: Link nesting OFF on input line 2980.
+Package hyperref Info: Hyper index ON on input line 2983.
+Package hyperref Info: Plain pages OFF on input line 2990.
+Package hyperref Info: Backreferencing OFF on input line 2995.
+
+Implicit mode ON; LaTeX internals redefined
+Package hyperref Info: Bookmarks ON on input line 3191.
+("C:\Program Files\MiKTeX 2.8\tex\latex\ltxmisc\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 3428.
+
+("C:\Program Files\MiKTeX 2.8\tex\generic\oberdiek\bitset.sty"
+Package: bitset 2007/09/28 v1.0 Data type bit set (HO)
+
+("C:\Program Files\MiKTeX 2.8\tex\generic\oberdiek\intcalc.sty"
+Package: intcalc 2007/09/27 v1.1 Expandable integer calculations (HO)
+)
+("C:\Program Files\MiKTeX 2.8\tex\generic\oberdiek\bigintcalc.sty"
+Package: bigintcalc 2007/11/11 v1.1 Expandable big integer calculations (HO)
+
+("C:\Program Files\MiKTeX 2.8\tex\generic\oberdiek\pdftexcmds.sty"
+Package: pdftexcmds 2009/09/23 v0.6 LuaTeX support for pdfTeX utility functions
+ (HO)
+
+("C:\Program Files\MiKTeX 2.8\tex\generic\oberdiek\ifluatex.sty"
+Package: ifluatex 2009/04/17 v1.2 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+("C:\Program Files\MiKTeX 2.8\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2009/08/05 v1.0 Some LaTeX kernel commands for general use (HO
+)
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+)))
+\Fld@menulength=\count110
+\Field@Width=\dimen130
+\Fld@charsize=\dimen131
+\Field@toks=\toks24
+Package hyperref Info: Hyper figures OFF on input line 4377.
+Package hyperref Info: Link nesting OFF on input line 4382.
+Package hyperref Info: Hyper index ON on input line 4385.
+Package hyperref Info: backreferencing OFF on input line 4392.
+Package hyperref Info: Link coloring OFF on input line 4397.
+Package hyperref Info: Link coloring with OCG OFF on input line 4402.
+Package hyperref Info: PDF/A mode OFF on input line 4407.
+
+("C:\Program Files\MiKTeX 2.8\tex\generic\oberdiek\atbegshi.sty"
+Package: atbegshi 2008/07/31 v1.9 At begin shipout hook (HO)
+)
+\Hy@abspage=\count111
+\c@Item=\count112
+\c@Hfootnote=\count113
+)
+*hyperref using default driver hpdftex*
+("C:\Program Files\MiKTeX 2.8\tex\latex\hyperref\hpdftex.def"
+File: hpdftex.def 2009/10/19 v6.79b Hyperref driver for pdfTeX
+\Fld@listcount=\count114
+)
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\preamble.sty"
+
+LaTeX Warning: You have requested package `preamble',
+               but the package provides `classicthesis-ldpkg'.
+
+Package: classicthesis-ldpkg 2008/10/01 v2.5 Package Loader for Classic Thesis 
+Style
+("C:\Program Files\MiKTeX 2.8\tex\latex\base\fontenc.sty"
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\base\t1enc.def"
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
+("C:\Program Files\MiKTeX 2.8\tex\latex\tools\xspace.sty"
+Package: xspace 2006/05/08 v1.12 Space after command names (DPC,MH)
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\tools\tabularx.sty"
+Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\tools\array.sty"
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen132
+\extrarowheight=\dimen133
+\NC@list=\toks25
+\extratabsurround=\skip55
+\backup@length=\skip56
+)
+\TX@col@width=\dimen134
+\TX@old@table=\dimen135
+\TX@old@col=\dimen136
+\TX@target=\dimen137
+\TX@delta=\dimen138
+\TX@cols=\count115
+\TX@ftn=\toks26
+)
+("C:\Users\Yossi Michaeli\AppData\Roaming\MiKTeX\2.8\tex\latex\mparhack\mparhac
+k.sty"
+Package: mparhack 2005/04/17 v1.4 (T. Sgouros and S. Ulrich)
+) ("C:\Program Files\MiKTeX 2.8\tex\latex\base\fixltx2e.sty"
+Package: fixltx2e 2006/09/13 v1.1m fixes to LaTeX
+LaTeX Info: Redefining \em on input line 420.
+LaTeX Info: Redefining \textsubscript on input line 424.
+LaTeX Info: The control sequence `\[' is already robust on input line 471.
+LaTeX Info: The control sequence `\]' is already robust on input line 472.
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\ltxmisc\relsize.sty"
+Package: relsize 2003/07/04 ver 3.1
+)
+("C:\Users\Yossi Michaeli\AppData\Roaming\MiKTeX\2.8\tex\latex\acronym\acronym.
+sty"
+Package: acronym 2009/10/20 v1.35 Support for acronyms (Tobias Oetiker)
+ ("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\suffix.sty"
+Package: suffix 2006/07/15 1.5 Variant command support
+)
+\AC@clearlist=\toks27
+)
+\c@dummy=\count116
+
+("C:\Users\Yossi Michaeli\AppData\Roaming\MiKTeX\2.8\tex\latex\caption\caption.
+sty"
+Package: caption 2010/01/09 v3.1m Customizing captions (AR)
+
+("C:\Users\Yossi Michaeli\AppData\Roaming\MiKTeX\2.8\tex\latex\caption\caption3
+.sty"
+Package: caption3 2010/01/14 v3.1m caption3 kernel (AR)
+\captionmargin=\dimen139
+\captionmargin@=\dimen140
+\captionwidth=\dimen141
+\caption@indent=\dimen142
+\caption@parindent=\dimen143
+\caption@hangindent=\dimen144
+)
+Package caption Info: KOMA-Script document class.
+\c@ContinuedFloat=\count117
+Package caption Info: hyperref package is loaded.
+) ("C:\Program Files\MiKTeX 2.8\tex\latex\carlisle\remreset.sty")
+("C:\Program Files\MiKTeX 2.8\tex\latex\listings\listings.sty"
+\lst@mode=\count118
+\lst@gtempboxa=\box29
+\lst@token=\toks28
+\lst@length=\count119
+\lst@currlwidth=\dimen145
+\lst@column=\count120
+\lst@pos=\count121
+\lst@lostspace=\dimen146
+\lst@width=\dimen147
+\lst@newlines=\count122
+\lst@lineno=\count123
+\lst@maxwidth=\dimen148
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\listings\lstmisc.sty"
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+\c@lstnumber=\count124
+\lst@skipnumbers=\count125
+\lst@framebox=\box30
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\listings\listings.cfg"
+File: listings.cfg 2007/02/22 1.4 listings configuration
+))
+Package: listings 2007/02/22 1.4 (Carsten Heinz)
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\listings\lstlang1.sty"
+File: lstlang1.sty 2004/09/05 1.3 listings language file
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\listings\lstlang2.sty"
+File: lstlang2.sty 2004/09/05 1.3 listings language file
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\listings\lstlang3.sty"
+File: lstlang3.sty 2004/09/05 1.3 listings language file
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\listings\lstlang1.sty"
+File: lstlang1.sty 2004/09/05 1.3 listings language file
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\listings\lstlang2.sty"
+File: lstlang2.sty 2004/09/05 1.3 listings language file
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\listings\lstlang3.sty"
+File: lstlang3.sty 2004/09/05 1.3 listings language file
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\listings\lstlang1.sty"
+File: lstlang1.sty 2004/09/05 1.3 listings language file
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\listings\lstlang2.sty"
+File: lstlang2.sty 2004/09/05 1.3 listings language file
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\listings\lstlang3.sty"
+File: lstlang3.sty 2004/09/05 1.3 listings language file
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\listings\lstmisc.sty"
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\hyperref\backref.sty"
+Package: backref 2006/09/05 v1.28 Bibliographical back referencing
+)
+("C:\Users\Yossi Michaeli\AppData\Roaming\MiKTeX\2.8\tex\latex\tocloft\tocloft.
+sty"
+Package: tocloft 2009/09/04 v2.3d parameterised ToC, etc., typesetting
+
+
+Package tocloft Note: The document has chapter divisions.
+
+\cftparskip=\skip57
+\cftbeforetoctitleskip=\skip58
+\cftaftertoctitleskip=\skip59
+\cftbeforepartskip=\skip60
+\cftpartnumwidth=\skip61
+\cftpartindent=\skip62
+\cftbeforechapskip=\skip63
+\cftchapindent=\skip64
+\cftchapnumwidth=\skip65
+\cftbeforesecskip=\skip66
+\cftsecindent=\skip67
+\cftsecnumwidth=\skip68
+\cftbeforesubsecskip=\skip69
+\cftsubsecindent=\skip70
+\cftsubsecnumwidth=\skip71
+\cftbeforesubsubsecskip=\skip72
+\cftsubsubsecindent=\skip73
+\cftsubsubsecnumwidth=\skip74
+\cftbeforeparaskip=\skip75
+\cftparaindent=\skip76
+\cftparanumwidth=\skip77
+\cftbeforesubparaskip=\skip78
+\cftsubparaindent=\skip79
+\cftsubparanumwidth=\skip80
+\cftbeforeloftitleskip=\skip81
+\cftafterloftitleskip=\skip82
+\cftbeforefigskip=\skip83
+\cftfigindent=\skip84
+\cftfignumwidth=\skip85
+\c@lofdepth=\count126
+\c@lotdepth=\count127
+\cftbeforelottitleskip=\skip86
+\cftafterlottitleskip=\skip87
+\cftbeforetabskip=\skip88
+\cfttabindent=\skip89
+\cfttabnumwidth=\skip90
+)
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\nm_classicthesis.st
+y"
+
+LaTeX Warning: You have requested package `nm_classicthesis',
+               but the package provides `classicthesis'.
+
+Package: classicthesis 2008/10/01 v2.5 Typographic Style for a classic-looking 
+thesis
+("C:\Program Files\MiKTeX 2.8\tex\latex\xcolor\xcolor.sty"
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+LaTeX Info: Redefining \color on input line 702.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\dvipsnam.def"
+File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+("C:\Program Files\MiKTeX 2.8\tex\latex\psnfss\mathpazo.sty"
+Package: mathpazo 2005/04/12 PSNFSS-v9.2a Palatino w/ Pazo Math (D.Puga, WaS) 
+\symupright=\mathgroup6
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\bera\beramono.sty"
+Package: beramono 2004/01/31 (WaS)
+)
+("C:\Users\Yossi Michaeli\AppData\Roaming\MiKTeX\2.8\tex\latex\eulervm\eulervm.
+sty"
+Package: eulervm 2005/01/11 v4.0 (WaS)
+)
+("C:\Users\Yossi Michaeli\AppData\Roaming\MiKTeX\2.8\tex\latex\microtype\microt
+ype.sty"
+Package: microtype 2010/01/10 v2.4 Micro-typography with pdfTeX (RS)
+\MT@toks=\toks29
+\MT@count=\count128
+LaTeX Info: Redefining \lsstyle on input line 1597.
+LaTeX Info: Redefining \lslig on input line 1597.
+\MT@outer@space=\skip91
+LaTeX Info: Redefining \textls on input line 1605.
+\MT@outer@kern=\dimen149
+LaTeX Info: Redefining \textmicrotypecontext on input line 2156.
+Package microtype Info: Loading configuration file microtype.cfg.
+
+("C:\Users\Yossi Michaeli\AppData\Roaming\MiKTeX\2.8\tex\latex\microtype\microt
+ype.cfg"
+File: microtype.cfg 2010/01/10 v2.4 microtype main configuration file (RS)
+))
+Package classicthesis Info: A4 paper, Palatino or other on input line 234.
+Package typearea Info: These are the values describing the layout:
+(typearea)             DIV  = areaset
+(typearea)             BCOR = 14.22636pt
+(typearea)             \paperwidth      = 597.50793pt
+(typearea)              \textwidth      = 312.0pt
+(typearea)              \evensidemargin = 108.58438pt
+(typearea)              \oddsidemargin  = 32.38356pt
+(typearea)             \paperheight     = 845.04694pt
+(typearea)              \textheight     = 686.0pt
+(typearea)              \topmargin      = -44.25435pt
+(typearea)              \headheight     = 15.0pt
+(typearea)              \headsep        = 18.0pt
+(typearea)              \topskip        = 10.0pt
+(typearea)              \footskip       = 42.0pt
+(typearea)              \baselineskip   = 12.0pt
+(typearea)              on input line 234.
+
+("C:\Users\Yossi Michaeli\AppData\Roaming\MiKTeX\2.8\tex\latex\textcase\textcas
+e.sty"
+Package: textcase 2004/10/07 v0.07 Text only upper/lower case changing (DPC)
+) ("C:\Program Files\MiKTeX 2.8\tex\latex\soul\soul.sty"
+Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
+\SOUL@word=\toks30
+\SOUL@lasttoken=\toks31
+\SOUL@cmds=\toks32
+\SOUL@buffer=\toks33
+\SOUL@token=\toks34
+\SOUL@spaceskip=\skip92
+\SOUL@ttwidth=\dimen150
+\SOUL@uldp=\dimen151
+\SOUL@ulht=\dimen152
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\koma-script\scrpage2.sty"
+Package: scrpage2 2008/12/08 v2.3 LaTeX2e KOMA-Script package
+LaTeX Info: Redefining \pagemark on input line 176.
+)
+("C:\Users\Yossi Michaeli\AppData\Roaming\MiKTeX\2.8\tex\latex\titlesec\titlese
+c.sty"
+Package: titlesec 2007/08/12 v2.8 Sectioning titles
+\ttl@box=\box31
+\beforetitleunit=\skip93
+\aftertitleunit=\skip94
+\ttl@plus=\dimen153
+\ttl@minus=\dimen154
+\ttl@toksa=\toks35
+\titlewidth=\dimen155
+\titlewidthlast=\dimen156
+\titlewidthfirst=\dimen157
+)
+\newnumberwidth=\skip95
+\beforebibskip=\skip96
+\figurelabelwidth=\skip97
+\tablelabelwidth=\skip98
+ ("C:\Program Files\MiKTeX 2.8\tex\latex\koma-script\scrtime.sty"
+Package: scrtime 2009/01/01 v1.1p LaTeX2e KOMA-Script package
+))
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\floatpag.sty"
+Package: floatpag 1999/04/29 FLOAT PAGESTYLE
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\prettyref\prettyref.sty"
+Package: prettyref 1998/07/09 v3.0
+)
+("C:\Program Files\MiKTeX 2.8\tex\latex\graphics\lscape.sty"
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+\abcd=\skip99
+Package hyperref Info: Option `colorlinks' set `true' on input line 391.
+Package hyperref Info: Option `linktocpage' set `true' on input line 391.
+Package hyperref Info: Option `breaklinks' set `true' on input line 391.
+Package hyperref Info: Option `pageanchor' set `true' on input line 391.
+Package hyperref Info: Option `plainpages' set `false' on input line 391.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 391.
+
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 391.
+Package hyperref Info: Option `hypertexnames' set `true' on input line 391.
+)
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Main_2.aux"
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Frontmatter/TitlePa
+ge.aux")
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Frontmatter/Titleba
+ck.aux")
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Frontmatter/Abstrac
+t.aux")
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Frontmatter/Acknowl
+edgment.aux")
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Frontmatter/Content
+s.aux")
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Chapters/1_Introduc
+tion.aux")
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Chapters/2_Electron
+ic_Properties_of_Semiconductors.aux")
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Chapters/3_Classica
+l_Optical_Transitions_Free_Carriers.aux")
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Chapters/4_Classica
+l_Optical_Transitions_Coulomb_Correlated.aux")
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Chapters/5_Semicond
+uctor_Microcavity.aux")
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Appendicies/Appendi
+x_Symmetry_Properties.aux")
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Appendicies/Appendi
+x_k_dot_p_Numerics.aux")
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Appendicies/Appendi
+x_Schrodinger_Poisson.aux")
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Appendicies/Appendi
+x_Screening.aux")
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\References/Bibliogr
+aphy.aux"))
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 49.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 49.
+ ("C:\Program Files\MiKTeX 2.8\tex\latex\base\ts1cmr.fd"
+File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 49.
+LaTeX Font Info:    Try loading font information for LGR+cmr on input line 49.
+
+("C:\Program Files\MiKTeX 2.8\tex\generic\babel\lgrcmr.fd"
+File: lgrcmr.fd 2008/06/17 v2.3 Greek Computer Modern
+)
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Try loading font information for T1+pplj on input line 49.
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\psnfss\t1pplj.fd"
+File: t1pplj.fd 2004/09/06 font definitions for T1/pplj.
+)
+("C:\Program Files\MiKTeX 2.8\tex\context\base\supp-pdf.tex"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count129
+\scratchdimen=\dimen158
+\scratchbox=\box32
+\nofMPsegments=\count130
+\nofMParguments=\count131
+\everyMPshowfont=\toks36
+\MPscratchCnt=\count132
+\MPscratchDim=\dimen159
+\MPnumerator=\count133
+\everyMPtoPDFconversion=\toks37
+)
+Package hyperref Info: Link coloring ON on input line 49.
+ ("C:\Program Files\MiKTeX 2.8\tex\latex\hyperref\nameref.sty"
+Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
+
+("C:\Program Files\MiKTeX 2.8\tex\latex\oberdiek\refcount.sty"
+Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
+)
+\c@section@level=\count134
+)
+LaTeX Info: Redefining \ref on input line 49.
+LaTeX Info: Redefining \pageref on input line 49.
+
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Main_2.out")
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Main_2.out")
+\@outlinefile=\write3
+\AtBeginShipoutBox=\box33
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count135
+Package backref Info: ** backref set up for natbib ** on input line 49.
+LaTeX Info: Redefining \microtypecontext on input line 49.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `basictext'.
+Package microtype Info: No tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+
+("C:\Users\Yossi Michaeli\AppData\Roaming\MiKTeX\2.8\tex\latex\microtype\mt-ppl
+.cfg"
+File: mt-ppl.cfg 2005/11/16 v1.6 microtype config. file: Palatino (RS)
+)
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Frontmatter/TitlePa
+ge.tex"
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/pplj/m/sc/12'.
+(microtype)             Ignoring protrusion settings for this character.
+ [1
+
+
+
+
+{C:/Users/Yossi Michaeli/AppData/Local/MiKTeX/2.8/pdftex/config/pdftex.map}])
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Frontmatter/Titleba
+ck.tex"
+LaTeX Font Info:    Try loading font information for TS1+pplj on input line 9.
+ ("C:\Program Files\MiKTeX 2.8\tex\latex\psnfss\ts1pplj.fd"
+File: ts1pplj.fd 2004/09/06 font definitions for TS1/pplj.
+)) [2
+
+
+]
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Frontmatter/Abstrac
+t.tex") [3
+
+
+
+
+]
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Frontmatter/Acknowl
+edgment.tex"
+LaTeX Font Info:    Font shape `T1/pplj/m/sl' in size <10> not available
+(Font)              Font shape `T1/pplj/m/it' tried instead on input line 5.
+LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <10> not available
+(Font)              Font shape `T1/pplj/b/n' tried instead on input line 12.
+
+
+Package natbib Warning: Citation `knuth:1974' on page iv undefined on input lin
+e 12.
+
+
+Package natbib Warning: Citation `knuth:1974' on page iv undefined on input lin
+e 13.
+
+[4
+
+
+]) [5
+
+
+]
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Frontmatter/Content
+s.tex" [6
+
+
+
+
+]
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Main_2.toc"
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/pplj/m/sc/10'.
+(microtype)             Ignoring protrusion settings for this character.
+LaTeX Font Info:    Try loading font information for U+zeur on input line 30.
+
+("C:\Users\Yossi Michaeli\AppData\Roaming\MiKTeX\2.8\tex\latex\eulervm\uzeur.fd
+"
+File: uzeur.fd 2005/01/11 v4.0 (WaS)
+)
+("C:\Users\Yossi Michaeli\AppData\Roaming\MiKTeX\2.8\tex\latex\microtype\mt-eur
+.cfg"
+File: mt-eur.cfg 2006/07/31 v1.1 microtype config. file: AMS Euler Roman (RS)
+)
+LaTeX Font Info:    Try loading font information for U+zeus on input line 30.
+
+("C:\Users\Yossi Michaeli\AppData\Roaming\MiKTeX\2.8\tex\latex\eulervm\uzeus.fd
+"
+File: uzeus.fd 2005/01/11 v4.0 (WaS)
+)
+("C:\Users\Yossi Michaeli\AppData\Roaming\MiKTeX\2.8\tex\latex\microtype\mt-eus
+.cfg"
+File: mt-eus.cfg 2006/07/28 v1.2 microtype config. file: AMS Euler Script (RS)
+)
+LaTeX Font Info:    Try loading font information for U+zeuex on input line 30.
+
+("C:\Users\Yossi Michaeli\AppData\Roaming\MiKTeX\2.8\tex\latex\eulervm\uzeuex.f
+d"
+File: uzeuex.fd 2005/01/11 v4.0 (WaS)
+)
+("C:\Users\Yossi Michaeli\AppData\Roaming\MiKTeX\2.8\tex\latex\microtype\mt-msa
+.cfg"
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+("C:\Users\Yossi Michaeli\AppData\Roaming\MiKTeX\2.8\tex\latex\microtype\mt-msb
+.cfg"
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 30.
+
+ ("C:\Program Files\MiKTeX 2.8\tex\latex\psnfss\ot1zplm.fd"
+File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
+) [7])
+\tf@toc=\write4
+
+[8] ("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Main_2.lof"
+
+Package natbib Warning: Citation `Piprek2003' on page ix undefined on input lin
+e 26.
+
+
+Overfull \hbox (12.95813pt too wide) in paragraph at lines 27--27
+ [][] []\T1/pplj/m/n/10 (-20) Schematic band struc-ture clas-si-fi-ca-tion in t
+he Löwdin 
+ []
+
+
+Package natbib Warning: Citation `Zory1993' on page ix undefined on input line 
+29.
+
+
+Package natbib Warning: Citation `Zory1993' on page ix undefined on input line 
+30.
+
+
+LaTeX Warning: Command \r invalid in math mode on input line 32.
+
+
+Package natbib Warning: Citation `harrison_quantum_2000' on page ix undefined o
+n input line 33.
+
+[9
+
+
+
+]
+
+LaTeX Warning: Command \r invalid in math mode on input line 34.
+
+
+Package natbib Warning: Citation `Chow' on page x undefined on input line 49.
+
+
+Overfull \hbox (24.75784pt too wide) in paragraph at lines 66--66
+ [][] []\T1/pplj/m/n/10 (-20) Program flow for self-consistent so-lu-tion of Sc
+hrödinger 
+ []
+
+[10]
+
+Package natbib Warning: Citation `Chow1994' on page xi undefined on input line 
+71.
+
+)
+\tf@lof=\write5
+ [11] [12
+
+
+]
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Main_2.lot"
+
+Package natbib Warning: Citation `Yu2005' on page xiii undefined on input line 
+39.
+
+
+Package natbib Warning: Citation `Yu2005' on page xiii undefined on input line 
+41.
+
+)
+\tf@lot=\write6
+ [13] [14
+
+
+])
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Chapters/1_Introduc
+tion.tex"
+Chapter 1.
+
+Class scrreprt Warning: \float@addtolists detected!
+(scrreprt)              You should use the features of package `tocbasic'
+(scrreprt)              instead of \float@addtolists.
+(scrreprt)              Support for \float@addtolists may be removed from
+(scrreprt)              `scrreprt' soon .
+
+) [1
+
+
+
+
+] [2
+
+
+
+] [3
+
+
+] [4]
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Chapters/2_Electron
+ic_Properties_of_Semiconductors.tex"
+Chapter 2.
+
+Overfull \hbox (0.59991pt too wide) in paragraph at lines 27--36
+\T1/pplj/m/n/10 (-20) equa-tion, the con-cept of solv-ing the re-sult-ing singl
+e-particle Schrödinger
+ []
+
+
+Package natbib Warning: Citation `Jackson1998' on page 5 undefined on input lin
+e 51.
+
+
+Package natbib Warning: Citation `Jackson1998' on page 5 undefined on input lin
+e 61.
+
+[5
+
+
+
+]
+
+Package natbib Warning: Citation `Yu2005' on page 6 undefined on input line 86.
+
+
+
+Package natbib Warning: Citation `Yu2005' on page 6 undefined on input line 111
+.
+
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/pplj/m/sc/9'.
+(microtype)             Ignoring protrusion settings for this character.
+[6]
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 118.
+
+
+! LaTeX Error: Unknown graphics extension: .eps.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.122 .../Figures/2_Bloch_Theorem_Sch\string".eps}
+                                                  
+? 
+LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <9> not available
+(Font)              Font shape `T1/pplj/b/n' tried instead on input line 129.
+
+Package natbib Warning: Citation `Piprek2003' on page 7 undefined on input line
+ 129.
+
+
+Package natbib Warning: Citation `Piprek2003' on page 7 undefined on input line
+ 129.
+
+
+LaTeX Warning: Command \textminus invalid in math mode on input line 150.
+
+
+LaTeX Warning: Command \textminus invalid in math mode on input line 150.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 152.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 152.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 152.
+
+[7]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 160.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\cdot' on input line 160.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 160.
+
+
+Package natbib Warning: Citation `Chuang1995' on page 8 undefined on input line
+ 169.
+
+
+Package natbib Warning: Citation `Yu2005' on page 8 undefined on input line 176
+.
+
+
+Package natbib Warning: Citation `kane_handbooksemiconductors_1982' on page 8 u
+ndefined on input line 178.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 182.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 193.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 193.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 199.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 199.
+
+[8]
+
+Package natbib Warning: Citation `Yu2005' on page 9 undefined on input line 215
+.
+
+
+Package natbib Warning: Citation `Bir1974a' on page 9 undefined on input line 2
+15.
+
+
+Package natbib Warning: Citation `Kane1957' on page 9 undefined on input line 2
+28.
+
+
+Package natbib Warning: Citation `Kohn1955a' on page 9 undefined on input line 
+234.
+
+
+Package natbib Warning: Citation `Lowdin1951a' on page 9 undefined on input lin
+e 236.
+
+
+! LaTeX Error: Unknown graphics extension: .eps.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.248 ...Figures/2_Luttinger_Kohn_Sch\string".eps}
+                                                  
+? 
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 270.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 270.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 270.
+
+[9]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 285.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\cdot' on input line 285.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 285.
+
+[10]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 323.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\cdot' on input line 323.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 323.
+
+
+LaTeX Warning: Command \textminus invalid in math mode on input line 329.
+
+
+LaTeX Warning: Command \textminus invalid in math mode on input line 329.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 337.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 344.
+
+
+Package natbib Warning: Citation `Chuang1995' on page 11 undefined on input lin
+e 349.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 350.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 350.
+
+
+Package natbib Warning: Citation `BenDaniel1966' on page 11 undefined on input 
+line 353.
+
+
+Package natbib Warning: Citation `Morrow1984' on page 11 undefined on input lin
+e 355.
+
+[11]
+
+Package natbib Warning: Citation `Altarelli1983' on page 12 undefined on input 
+line 379.
+
+
+Package natbib Warning: Citation `Bastard1981' on page 12 undefined on input li
+ne 379.
+
+
+Package natbib Warning: Citation `Bastard1982' on page 12 undefined on input li
+ne 379.
+
+
+Package natbib Warning: Citation `Eppenga1987' on page 12 undefined on input li
+ne 379.
+
+
+Package natbib Warning: Citation `Chuang1991a' on page 12 undefined on input li
+ne 379.
+
+
+Package natbib Warning: Citation `Burt1994' on page 12 undefined on input line 
+387.
+
+
+Package natbib Warning: Citation `Burt1999' on page 12 undefined on input line 
+387.
+
+
+Package natbib Warning: Citation `Burt1992' on page 12 undefined on input line 
+387.
+
+
+Package natbib Warning: Citation `Burt1988' on page 12 undefined on input line 
+387.
+
+
+Package natbib Warning: Citation `Burt1992' on page 12 undefined on input line 
+394.
+
+
+Package natbib Warning: Citation `Burt1999' on page 12 undefined on input line 
+394.
+
+
+Package natbib Warning: Citation `Burt1994' on page 12 undefined on input line 
+395.
+
+
+Package natbib Warning: Citation `Veprek2008' on page 12 undefined on input lin
+e 401.
+
+
+Package natbib Warning: Citation `Foreman1993' on page 12 undefined on input li
+ne 402.
+
+
+Package natbib Warning: Citation `Foreman1998a' on page 12 undefined on input l
+ine 406.
+
+
+Package natbib Warning: Citation `Foreman1995b' on page 12 undefined on input l
+ine 406.
+
+
+Package natbib Warning: Citation `Krebs1999b' on page 12 undefined on input lin
+e 410.
+
+
+Package natbib Warning: Citation `Rodina2006' on page 12 undefined on input lin
+e 411.
+
+
+Package natbib Warning: Citation `kane_handbooksemiconductors_1982' on page 12 
+undefined on input line 433.
+
+[12]
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 436.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 437.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 438.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 439.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 443.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 449.
+
+
+Package natbib Warning: Citation `Yu2005' on page 13 undefined on input line 45
+2.
+
+
+Package natbib Warning: Citation `Dresselhaus1955a' on page 13 undefined on inp
+ut line 458.
+
+[13]
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 490.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 490.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 490.
+
+
+Package natbib Warning: Citation `Foreman1995b' on page 14 undefined on input l
+ine 494.
+
+
+Package natbib Warning: Citation `Foreman1993' on page 14 undefined on input li
+ne 509.
+
+
+Package natbib Warning: Citation `Foreman1995b' on page 14 undefined on input l
+ine 514.
+
+
+LaTeX Warning: Reference `eq:Hr4_coefficients' on page 14 undefined on input li
+ne 516.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 518.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 522.
+
+[14] [15]
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 555.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 555.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 555.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 555.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 555.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 555.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 555.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 555.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 555.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 555.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 555.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 555.
+
+[16
+
+]
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 570.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 571.
+
+LaTeX Font Info:    Try loading font information for LGR+pplj on input line 600
+.
+LaTeX Font Info:    No file LGRpplj.fd. on input line 600.
+
+LaTeX Font Warning: Font shape `LGR/pplj/m/n' undefined
+(Font)              using `LGR/cmr/m/n' instead on input line 600.
+
+
+("C:\Users\Yossi Michaeli\AppData\Roaming\MiKTeX\2.8\tex\latex\microtype\mt-cmr
+.cfg"
+File: mt-cmr.cfg 2009/11/09 v2.0 microtype config. file: Computer Modern Roman 
+(RS)
+)
+
+Package natbib Warning: Citation `Enders1995a' on page 17 undefined on input li
+ne 610.
+
+[17
+
+]
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 621.
+
+
+Package natbib Warning: Citation `kane_handbooksemiconductors_1982' on page 18 
+undefined on input line 624.
+
+
+! LaTeX Error: Unknown graphics extension: .eps.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.648 ...esis/Figures/2_GaAs_Bulk_k_p\string".eps}
+                                                  
+? 
+
+LaTeX Warning: Command \textasciiacute invalid in math mode on input line 670.
+
+
+LaTeX Warning: Command \textasciiacute invalid in math mode on input line 670.
+
+
+LaTeX Warning: Command \textasciiacute invalid in math mode on input line 670.
+
+
+LaTeX Warning: Command \textasciiacute invalid in math mode on input line 670.
+
+[18]
+
+Package natbib Warning: Citation `Luttinger1956' on page 19 undefined on input 
+line 708.
+
+
+LaTeX Warning: Command \textasciiacute invalid in math mode on input line 709.
+
+
+LaTeX Warning: Command \textasciiacute invalid in math mode on input line 709.
+
+
+LaTeX Warning: Command \textasciiacute invalid in math mode on input line 709.
+
+
+LaTeX Warning: Command \textasciiacute invalid in math mode on input line 709.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 712.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 713.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 714.
+
+[19]
+
+Package natbib Warning: Citation `Chuang1995' on page 20 undefined on input lin
+e 720.
+
+
+Package natbib Warning: Citation `Luttinger1956' on page 20 undefined on input 
+line 720.
+
+
+Package natbib Warning: Citation `Kohn1955a' on page 20 undefined on input line
+ 720.
+
+
+Overfull \hbox (112.94955pt too wide) detected at line 729
+ $\T1/pplj/b/n/10 H[] \U/zeus/m/n/10 ½ []$  
+ []
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 731.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 732.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 735.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 736.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 737.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 742.
+
+
+Package natbib Warning: Citation `Chuang1995' on page 20 undefined on input lin
+e 747.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 753.
+
+[20]
+
+Package natbib Warning: Citation `Broido1985' on page 21 undefined on input lin
+e 780.
+
+
+Package natbib Warning: Citation `Andreani1987' on page 21 undefined on input l
+ine 780.
+
+
+Package natbib Warning: Citation `Chuang1995' on page 21 undefined on input lin
+e 780.
+
+
+Package natbib Warning: Citation `Broido1985' on page 21 undefined on input lin
+e 783.
+
+[21]
+
+! LaTeX Error: Unknown graphics extension: .eps.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.863 ...ments/Thesis/Figures/2_HH_LH\string".eps}
+                                                  
+? 
+
+Package natbib Warning: Citation `Zory1993' on page 22 undefined on input line 
+873.
+
+
+Package natbib Warning: Citation `Zory1993' on page 22 undefined on input line 
+873.
+
+[22]
+
+! LaTeX Error: Unknown graphics extension: .eps.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.914 ...ematic_Transverse_Dispersion\string".eps}
+                                                  
+? 
+
+Package natbib Warning: Citation `Zory1993' on page 23 undefined on input line 
+921.
+
+
+Package natbib Warning: Citation `Zory1993' on page 23 undefined on input line 
+921.
+
+
+! LaTeX Error: Unknown graphics extension: .eps.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.935 ..._Four_Plane_Wave_States_kt_0\string".eps}
+                                                  
+? 
+[23]
+Overfull \hbox (57.05415pt too wide) in alignment at lines 957--959
+ [][][] []
+ []
+
+
+! LaTeX Error: Unknown graphics extension: .eps.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.979 ...As_QW_Valence_Dispersion_DOS\string".eps}
+                                                  
+? 
+
+LaTeX Warning: Command \r invalid in math mode on input line 987.
+
+
+LaTeX Warning: Command \r invalid in math mode on input line 987.
+
+
+LaTeX Warning: Command \r invalid in math mode on input line 993.
+
+[24]
+
+Package natbib Warning: Citation `Jackson1998' on page 25 undefined on input li
+ne 1035.
+
+
+! LaTeX Error: Unknown graphics extension: .eps.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1046 ...es/2_Infinite_Plane_E_Field\string".eps}
+                                                  
+? 
+
+Package natbib Warning: Citation `harrison_quantum_2000' on page 25 undefined o
+n input line 1051.
+
+
+Package natbib Warning: Citation `harrison_quantum_2000' on page 25 undefined o
+n input line 1051.
+
+
+Overfull \hbox (11.17067pt too wide) in paragraph at lines 1036--1057
+\T1/pplj/m/n/10 (-20) Given that the po-ten-tial pro-files, $\U/zeur/m/n/10 V[]
+\U/zeus/m/n/10 ¨\U/zeur/m/n/10 Z\U/zeus/m/n/10 ©$ \T1/pplj/m/n/10 (-20) for ex-
+am-ple, are one-dimensional,
+ []
+
+[25]
+
+! LaTeX Error: Unknown graphics extension: .eps.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1097 .../Figures/2_Poisson_Ex_Sigma\string".eps}
+                                                  
+? 
+
+LaTeX Warning: Command \r invalid in math mode on input line 1102.
+
+
+LaTeX Warning: Command \r invalid in math mode on input line 1102.
+
+
+LaTeX Warning: Command \r invalid in math mode on input line 1114.
+
+
+LaTeX Warning: Command \r invalid in math mode on input line 1117.
+
+
+LaTeX Warning: Command \r invalid in math mode on input line 1118.
+
+
+! LaTeX Error: Unknown graphics extension: .eps.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1128 ...esis/Figures/2_Poisson_Ex_E\string".eps}
+                                                  
+? 
+[26]
+
+! LaTeX Error: Unknown graphics extension: .eps.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1151 ...esis/Figures/2_Poisson_Ex_V\string".eps}
+                                                  
+? 
+
+! LaTeX Error: Unknown graphics extension: .eps.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1195 ...hrodinger_Poisson_Schematic\string".eps}
+                                                  
+? 
+[27]
+
+! LaTeX Error: Unknown graphics extension: .eps.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1214 .../Figures/2_Poisson_Ex_V_int\string".eps}
+                                                  
+? 
+
+LaTeX Warning: Command \r invalid in math mode on input line 1240.
+
+
+LaTeX Warning: Command \r invalid in math mode on input line 1241.
+
+
+LaTeX Warning: Command \r invalid in math mode on input line 1242.
+
+
+! LaTeX Error: Unknown graphics extension: .eps.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1252 ...son_Modulation_Doping_V_int\string".eps}
+                                                  
+? 
+) [28]
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Chapters/3_Classica
+l_Optical_Transitions_Free_Carriers.tex"
+Chapter 3.
+
+Package natbib Warning: Citation `haug_quantum_1994' on page 29 undefined on in
+put line 17.
+
+
+Package natbib Warning: Citation `Kira1999' on page 29 undefined on input line 
+20.
+
+
+Package natbib Warning: Citation `Chuang1995' on page 29 undefined on input lin
+e 26.
+
+
+Package natbib Warning: Citation `Jackson1998' on page 29 undefined on input li
+ne 26.
+
+
+Package natbib Warning: Citation `Chow' on page 29 undefined on input line 26.
+
+
+Package natbib Warning: Citation `Haug2009' on page 29 undefined on input line 
+26.
+
+
+Package natbib Warning: Citation `Schafer2002' on page 29 undefined on input li
+ne 26.
+
+[29
+
+
+
+
+]
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 92.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 92.
+
+[30]
+
+LaTeX Warning: Command \textminus invalid in math mode on input line 134.
+
+
+LaTeX Warning: Command \textminus invalid in math mode on input line 134.
+
+
+LaTeX Warning: Command \textminus invalid in math mode on input line 135.
+
+
+LaTeX Warning: Command \textminus invalid in math mode on input line 135.
+
+
+LaTeX Warning: Command \textminus invalid in math mode on input line 139.
+
+
+LaTeX Warning: Command \textminus invalid in math mode on input line 139.
+
+
+Package natbib Warning: Citation `Schafer2002' on page 31 undefined on input li
+ne 155.
+
+[31]
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 159.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 162.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 163.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 164.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 165.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 169.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 172.
+
+
+Overfull \hbox (44.39627pt too wide) detected at line 180
+ $[] \U/zeus/m/n/10 ½ [] [] [][] « [] [] [] [][][][]   [] [] [][]\T1/pplj/m/n/1
+0 .$  
+ []
+
+[32] [33]
+Overfull \hbox (49.50128pt too wide) in alignment at lines 268--270
+ [][][] []
+ []
+
+[34]
+
+LaTeX Warning: Command \textasciiacute invalid in math mode on input line 301.
+
+
+LaTeX Warning: Command \textasciiacute invalid in math mode on input line 301.
+
+
+LaTeX Warning: Command \textminus invalid in math mode on input line 327.
+
+
+LaTeX Warning: Command \textminus invalid in math mode on input line 327.
+
+[35] [36]
+
+LaTeX Warning: Command \textminus invalid in math mode on input line 393.
+
+
+LaTeX Warning: Command \textminus invalid in math mode on input line 393.
+
+[37] [38]
+
+Package natbib Warning: Citation `Chow' on page 39 undefined on input line 494.
+
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 495.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 497.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 497.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 499.
+
+[39]
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 527.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 528.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 532.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 534.
+
+
+Package natbib Warning: Citation `Haug2009' on page 40 undefined on input line 
+537.
+
+[40]
+
+Package natbib Warning: Citation `Haug2009' on page 41 undefined on input line 
+579.
+
+
+Overfull \hbox (4.44089pt too wide) in paragraph at lines 565--580
+\T1/pplj/m/n/10 (-20) Thoughout this the-sis, the high-excitation and quasi-equ
+alibrium regimes
+ []
+
+
+Package natbib Warning: Citation `Haug2009' on page 41 undefined on input line 
+593.
+
+[41]
+
+Package natbib Warning: Citation `Chow' on page 42 undefined on input line 615.
+
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 625.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 627.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 630.
+
+
+Overfull \hbox (73.25015pt too wide) detected at line 630
+ $\U/zeur/m/n/10 []\U/zeus/m/n/10 ¨\U/zeur/m/n/10 \U/zeus/m/n/10 © ½ \U/zeur/
+m/n/10 k[][] \U/zeus/m/n/10 ½  [][][] [] [][] [] []\T1/pplj/m/n/10 .$  
+ []
+
+[42]
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 648.
+
+
+Overfull \hbox (58.76869pt too wide) detected at line 648
+ $\U/zeur/m/n/10 []\U/zeus/m/n/10 ¨\U/zeur/m/n/10 \U/zeus/m/n/10 © ½  [] [] [
+][] \U/zeur/m/n/10 dk k [][] [] []\T1/pplj/m/n/10 ,$  
+ []
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 671.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 672.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 672.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 672.
+
+
+LaTeX Warning: Command \textminus invalid in math mode on input line 673.
+
+
+LaTeX Warning: Command \textminus invalid in math mode on input line 673.
+
+
+LaTeX Warning: Command \textminus invalid in math mode on input line 673.
+
+
+LaTeX Warning: Command \textminus invalid in math mode on input line 673.
+
+
+LaTeX Warning: Command \textminus invalid in math mode on input line 673.
+
+
+LaTeX Warning: Command \textminus invalid in math mode on input line 673.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 675.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 675.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 675.
+
+
+LaTeX Warning: Command \textminus invalid in math mode on input line 676.
+
+
+LaTeX Warning: Command \textminus invalid in math mode on input line 676.
+
+
+LaTeX Warning: Command \textminus invalid in math mode on input line 676.
+
+
+LaTeX Warning: Command \textminus invalid in math mode on input line 676.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 678.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 678.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 678.
+
+
+Package natbib Warning: Citation `Martin1959a' on page 43 undefined on input li
+ne 680.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 685.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 689.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 689.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 689.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 689.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 689.
+
+[43]
+
+LaTeX Warning: Command \textminus invalid in math mode on input line 697.
+
+
+LaTeX Warning: Command \textminus invalid in math mode on input line 697.
+
+
+LaTeX Warning: Command \textminus invalid in math mode on input line 697.
+
+
+LaTeX Warning: Command \textminus invalid in math mode on input line 697.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 698.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 699.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 699.
+
+
+LaTeX Warning: Command \textminus invalid in math mode on input line 701.
+
+
+LaTeX Warning: Command \textminus invalid in math mode on input line 701.
+
+
+Package natbib Warning: Citation `Burt1995' on page 44 undefined on input line 
+727.
+
+
+Package natbib Warning: Citation `Burt1993' on page 44 undefined on input line 
+727.
+
+[44]
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 749.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 754.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 758.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 760.
+
+
+Package natbib Warning: Citation `Enders1995a' on page 45 undefined on input li
+ne 783.
+
+[45]) [46]
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Chapters/4_Classica
+l_Optical_Transitions_Coulomb_Correlated.tex"
+Chapter 4.
+
+Package natbib Warning: Citation `Chuang1995' on page 47 undefined on input lin
+e 12.
+
+
+Package natbib Warning: Citation `Jackson1998' on page 47 undefined on input li
+ne 12.
+
+
+Package natbib Warning: Citation `Chow' on page 47 undefined on input line 12.
+
+
+Package natbib Warning: Citation `Haug2009' on page 47 undefined on input line 
+12.
+
+
+Package natbib Warning: Citation `Schafer2002' on page 47 undefined on input li
+ne 12.
+
+
+Overfull \hbox (14.63857pt too wide) detected at line 37
+ $[] \U/zeus/m/n/10 ½ [] [] [] [][][][]$  
+ []
+
+
+Overfull \hbox (46.23164pt too wide) in alignment at lines 38--40
+ [][][] []
+ []
+
+
+Overfull \hbox (53.69777pt too wide) in alignment at lines 46--48
+ [][][] []
+ []
+
+[47
+
+
+
+
+]
+Overfull \hbox (53.75877pt too wide) in alignment at lines 60--63
+ [][][] []
+ []
+
+
+Overfull \hbox (6.83199pt too wide) detected at line 85
+ $\U/zeur/m/n/10 [] \U/zeus/m/n/10 ½ [] [][] [][] \U/zeur/m/n/10 dzdz[]g[]\U/z
+eus/m/n/10 ¨\U/zeur/m/n/10 z\U/zeus/m/n/10 ©\U/zeur/m/n/10 g[]\U/zeus/m/n/10 ¨\
+U/zeur/m/n/10 z[]\U/zeus/m/n/10 ©\U/zeur/m/n/10 #[]\U/zeus/m/n/10 ¨\U/zeur/m/n/
+10 z\T1/pplj/m/n/10 , \U/zeur/m/n/10 z[]\U/zeus/m/n/10 ©\T1/pplj/m/n/10 .$  
+ []
+
+[48]
+
+Package natbib Warning: Citation `Haug2009' on page 49 undefined on input line 
+115.
+
+
+Package natbib Warning: Citation `Hader2003' on page 49 undefined on input line
+ 132.
+
+[49] [50]
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 179.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 189.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 190.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 191.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 192.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 193.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 194.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 195.
+
+
+Overfull \hbox (53.02666pt too wide) in alignment at lines 188--195
+ [][][] []
+ []
+
+
+Package natbib Warning: Citation `Chow' on page 51 undefined on input line 198.
+
+
+
+Package natbib Warning: Citation `Chow' on page 51 undefined on input line 205.
+
+
+
+! LaTeX Error: Unknown graphics extension: .eps.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.224 ...4_Infinite_Operator_Hirarchy\string".eps}
+                                                  
+? 
+[51]
+
+Package natbib Warning: Citation `Chow' on page 52 undefined on input line 240.
+
+
+
+! LaTeX Error: Unknown graphics extension: .eps.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.257 .../4_HF_Operator_Approximation\string".eps}
+                                                  
+? 
+[52]
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 301.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 301.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 302.
+
+
+Overfull \hbox (40.00009pt too wide) in alignment at lines 300--303
+ [][][] []
+ []
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 305.
+
+
+Overfull \hbox (35.85442pt too wide) in alignment at lines 320--323
+ [][][] []
+ []
+
+[53]
+
+Package natbib Warning: Citation `Chow' on page 54 undefined on input line 337.
+
+
+[54]
+
+Package natbib Warning: Citation `Chow' on page 55 undefined on input line 396.
+
+
+
+Package natbib Warning: Citation `Haug2009' on page 55 undefined on input line 
+396.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 397.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 397.
+
+
+Package natbib Warning: Citation `Ehrenreich1959' on page 55 undefined on input
+ line 399.
+
+
+Package natbib Warning: Citation `Binder1995' on page 55 undefined on input lin
+e 401.
+
+
+Package natbib Warning: Citation `Binder1995' on page 55 undefined on input lin
+e 402.
+
+
+Package natbib Warning: Citation `mahan_many-particle_1997' on page 55 undefine
+d on input line 411.
+
+
+Package natbib Warning: Citation `Chow' on page 55 undefined on input line 413.
+
+
+
+! LaTeX Error: Unknown graphics extension: .eps.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.424 ...res/4_Screened_HF_Procedurel\string".eps}
+                                                  
+? 
+
+Package natbib Warning: Citation `Chow' on page 55 undefined on input line 430.
+
+
+
+Package natbib Warning: Citation `Chow' on page 55 undefined on input line 430.
+
+
+[55]
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 464.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 486.
+
+[56]
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 495.
+
+[57]
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 567.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 568.
+
+[58]
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 573.
+
+
+Package natbib Warning: Citation `Haug2009' on page 59 undefined on input line 
+594.
+
+
+Package natbib Warning: Citation `Chow1994' on page 59 undefined on input line 
+594.
+
+LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <8> not available
+(Font)              Font shape `T1/pplj/b/n' tried instead on input line 602.
+
+Package natbib Warning: Citation `haug_quantum_1994' on page 59 undefined on in
+put line 602.
+
+[59]
+Overfull \hbox (15.4623pt too wide) detected at line 612
+ $\T1/pplj/b/n/10 M \U/zeus/m/n/10 ½ [] \T1/pplj/m/n/10 .$  
+ []
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 624.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 625.
+
+
+Overfull \hbox (52.01952pt too wide) in alignment at lines 623--625
+ [][][] []
+ []
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 627.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 627.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 627.
+
+) [60]
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Chapters/5_Semicond
+uctor_Microcavity.tex"
+Chapter 5.
+
+! LaTeX Error: Unknown graphics extension: .eps.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.36 .../Figures/5_Fabri_Perot_Etalon\string".eps}
+                                                  
+? 
+
+Package natbib Warning: Citation `Born2002' on page 61 undefined on input line 
+47.
+
+
+! LaTeX Error: Unknown graphics extension: .eps.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.68 ...es/5_Fabri_Perot_Transmission\string".eps}
+                                                  
+? 
+[61
+
+
+
+
+]
+
+! LaTeX Error: Unknown graphics extension: .eps.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.121 ...esis/Figures/5_DBR_Schematic\string".eps}
+                                                  
+? 
+
+Package natbib Warning: Citation `Macleod2001' on page 62 undefined on input li
+ne 132.
+
+[62] [63]
+
+! LaTeX Error: Unknown graphics extension: .eps.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.264 ...s/5_DBR_Profile_Reflectivity\string".eps}
+                                                  
+? 
+[64]
+
+Package natbib Warning: Citation `Savona1995' on page 65 undefined on input lin
+e 290.
+
+[65]
+
+! LaTeX Error: Unknown graphics extension: .eps.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.345 ...hesis/Figures/5_MC_Schematic\string".eps}
+                                                  
+? 
+
+Package natbib Warning: Citation `Savona1995' on page 66 undefined on input lin
+e 363.
+
+
+Package natbib Warning: Citation `Savona1995' on page 66 undefined on input lin
+e 375.
+
+
+! LaTeX Error: Unknown graphics extension: .eps.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.383 ...es/5_MC_Profile_Reflectivity\string".eps}
+                                                  
+? 
+[66]
+
+Package natbib Warning: Citation `Skolnick1998' on page 67 undefined on input l
+ine 415.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 416.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 416.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 419.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 419.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 420.
+
+) [67] [68
+
+
+
+] [69
+
+
+] [70]
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Appendicies/Appendi
+x_Symmetry_Properties.tex"
+Appendix A.
+
+LaTeX Warning: Command \textasciiacute invalid in math mode on input line 31.
+
+
+LaTeX Warning: Command \textasciiacute invalid in math mode on input line 31.
+
+
+Package natbib Warning: Citation `Yu2005' on page 71 undefined on input line 92
+.
+
+
+Package natbib Warning: Citation `Yu2005' on page 71 undefined on input line 92
+.
+
+[71
+
+
+
+]
+
+Package natbib Warning: Citation `Yu2005' on page 72 undefined on input line 11
+6.
+
+
+Package natbib Warning: Citation `Yu2005' on page 72 undefined on input line 18
+1.
+
+
+Package natbib Warning: Citation `Yu2005' on page 72 undefined on input line 18
+1.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 190.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 190.
+
+[72]) [73] [74]
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Appendicies/Appendi
+x_k_dot_p_Numerics.tex"
+Appendix B.
+
+Package natbib Warning: Citation `harrison_quantum_2000' on page 75 undefined o
+n input line 6.
+
+[75
+
+
+
+
+]
+Overfull \hbox (46.77751pt too wide) in alignment at lines 90--96
+ [][][] []
+ []
+
+[76] [77] [78]
+
+Package natbib Warning: Citation `harrison_quantum_2000' on page 79 undefined o
+n input line 185.
+
+) [79]
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Appendicies/Appendi
+x_Schrodinger_Poisson.tex" [80
+
+
+
+
+]
+Appendix C.
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 10.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 28.
+
+
+Package natbib Warning: Citation `Chuang1995' on page 81 undefined on input lin
+e 40.
+
+
+Overfull \hbox (50.05322pt too wide) in alignment at lines 47--49
+ [][][] []
+ []
+
+[81]
+
+! LaTeX Error: Unknown graphics extension: .eps.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.60 ...pendix_Schr_Poisson_Schematic\string".eps}
+                                                  
+? 
+) [82]
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Appendicies/Appendi
+x_Screening.tex"
+Appendix D.
+
+Package natbib Warning: Citation `Chow1994' on page 83 undefined on input line 
+9.
+
+
+! LaTeX Error: Unknown graphics extension: .eps.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.21 .../Figures/4_Lindhard_Screening\string".eps}
+                                                  
+? 
+
+Package natbib Warning: Citation `Chow1994' on page 83 undefined on input line 
+25.
+
+
+Package natbib Warning: Citation `Chow1994' on page 83 undefined on input line 
+25.
+
+[83
+
+
+
+
+]
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 64.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 69.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 78.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 80.
+
+[84]
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 91.
+
+
+Package eulervm Warning: Symbol \hbar not available;
+(eulervm)                \hslash will be used instead on input line 97.
+
+) [85] [86
+
+
+
+]
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\References/Bibliogr
+aphy.tex"
+No file Main_2.bbl.
+)
+
+Package natbib Warning: There were undefined citations.
+
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Main_2.aux"
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Frontmatter/TitlePa
+ge.aux")
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Frontmatter/Titleba
+ck.aux")
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Frontmatter/Abstrac
+t.aux")
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Frontmatter/Acknowl
+edgment.aux")
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Frontmatter/Content
+s.aux")
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Chapters/1_Introduc
+tion.aux")
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Chapters/2_Electron
+ic_Properties_of_Semiconductors.aux")
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Chapters/3_Classica
+l_Optical_Transitions_Free_Carriers.aux")
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Chapters/4_Classica
+l_Optical_Transitions_Coulomb_Correlated.aux")
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Chapters/5_Semicond
+uctor_Microcavity.aux")
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Appendicies/Appendi
+x_Symmetry_Properties.aux")
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Appendicies/Appendi
+x_k_dot_p_Numerics.aux")
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Appendicies/Appendi
+x_Schrodinger_Poisson.aux")
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\Appendicies/Appendi
+x_Screening.aux")
+("C:\Users\Yossi Michaeli\Documents\Thesis\Documents\Thesis\References/Bibliogr
+aphy.aux")
+
+Package mparhack Warning: Marginpars may have changed.
+(mparhack)                Rerun to get them right.
+
+)
+
+ *File List*
+scrreprt.cls    2009/07/24 v3.04a KOMA-Script document class (report)
+scrkbase.sty    2009/07/24 v3.04a KOMA-Script package (KOMA-Script-dependent ba
+sics and keyval usage)
+ scrbase.sty    2009/07/24 v3.04a KOMA-Script package (KOMA-Script-independent 
+basics and keyval usage)
+  keyval.sty    1999/03/16 v1.13 key=value parser (DPC)
+scrlfile.sty    2009/03/25 v3.03 KOMA-Script package (loading files)
+tocbasic.sty    2009/06/08 v3.03b KOMA-Script package (handling toc-files)
+   fleqn.clo    1998/08/17 v1.1c Standard LaTeX option (flush left equations)
+scrsize10pt.clo    2009/07/24 v3.04a KOMA-Script font size class option (10pt)
+typearea.sty    2009/07/24 v3.04a KOMA-Script package (type area)
+ fontenc.sty
+   t1enc.def    2005/09/27 v1.99g Standard LaTeX file
+inputenc.sty    2008/03/30 v1.1d Input encoding file
+  latin9.def    2008/03/30 v1.1d Input encoding file
+   color.sty    1999/02/16
+   color.cfg    2007/01/18 v1.5 color configuration of teTeX/TeXLive
+  pdftex.def    2009/08/25 v0.04m Graphics/color for pdfTeX
+   babel.sty    2008/07/06 v3.8l The Babel package
+ bblopts.cfg    2006/07/31 v1.0 MiKTeX 'babel' configuration
+ english.ldf    2005/03/30 v3.3o English support from the babel system
+ english.ldf    2005/03/30 v3.3o English support from the babel system
+verbatim.sty    2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
+booktabs.sty    2005/04/14 v1.61803 publication quality tables
+   units.sty    1998/08/04 v0.9b Typesetting units
+  ifthen.sty    2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+nicefrac.sty    1998/08/04 v0.9b Nice fractions
+textcomp.sty    2005/09/27 v1.99g Standard LaTeX package
+  ts1enc.def    2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+ amsmath.sty    2000/07/18 v2.13 AMS math features
+ amstext.sty    2000/06/29 v2.01
+  amsgen.sty    1999/11/30 v2.0
+  amsbsy.sty    1999/11/29 v1.2d
+  amsopn.sty    1999/12/14 v2.01 operator names
+graphicx.sty    1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+graphics.sty    2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+    trig.sty    1999/03/16 v1.09 sin cos tan (DPC)
+graphics.cfg    2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+setspace.sty    2000/12/01 6.7 Contributed and Supported LaTeX2e package
+ amssymb.sty    2009/06/22 v3.00
+amsfonts.sty    2009/06/22 v3.00 Basic AMSFonts support
+  natbib.sty    2009/11/07 8.31a (PWD, AO)
+hyperref.sty    2009/10/19 v6.79b Hypertext links for LaTeX
+   ifpdf.sty    2009/04/10 v2.0 Provides the ifpdf switch (HO)
+  ifvtex.sty    2008/11/04 v1.4 Switches for detecting VTeX and its modes (HO)
+ ifxetex.sty    2009/01/23 v0.5 Provides ifxetex conditional
+ hycolor.sty    2009/10/02 v1.5 Code for color options of hyperref/bookmark (HO
+)
+xcolor-patch.sty    2009/10/02 xcolor patch
+  pd1enc.def    2009/10/19 v6.79b Hyperref: PDFDocEncoding definition (HO)
+etexcmds.sty    2007/12/12 v1.2 Prefix for e-TeX command names (HO)
+infwarerr.sty    2007/09/09 v1.2 Providing info/warning/message (HO)
+hyperref.cfg    2002/06/06 v1.2 hyperref configuration of TeXLive
+kvoptions.sty    2009/08/13 v3.4 Keyval support for LaTeX options (HO)
+kvsetkeys.sty    2009/07/30 v1.5 Key value parser with default handler support 
+(HO)
+   puenc.def    2009/10/19 v6.79b Hyperref: PDF Unicode definition (HO)
+     url.sty    2006/04/12  ver 3.3  Verb mode for urls, etc.
+  bitset.sty    2007/09/28 v1.0 Data type bit set (HO)
+ intcalc.sty    2007/09/27 v1.1 Expandable integer calculations (HO)
+bigintcalc.sty    2007/11/11 v1.1 Expandable big integer calculations (HO)
+pdftexcmds.sty    2009/09/23 v0.6 LuaTeX support for pdfTeX utility functions (
+HO)
+ifluatex.sty    2009/04/17 v1.2 Provides the ifluatex switch (HO)
+ ltxcmds.sty    2009/08/05 v1.0 Some LaTeX kernel commands for general use (HO)
+
+atbegshi.sty    2008/07/31 v1.9 At begin shipout hook (HO)
+ hpdftex.def    2009/10/19 v6.79b Hyperref driver for pdfTeX
+preamble.sty    2008/10/01 v2.5 Package Loader for Classic Thesis Style
+ fontenc.sty
+   t1enc.def    2005/09/27 v1.99g Standard LaTeX file
+  xspace.sty    2006/05/08 v1.12 Space after command names (DPC,MH)
+tabularx.sty    1999/01/07 v2.07 `tabularx' package (DPC)
+   array.sty    2008/09/09 v2.4c Tabular extension package (FMi)
+mparhack.sty    2005/04/17 v1.4 (T. Sgouros and S. Ulrich)
+fixltx2e.sty    2006/09/13 v1.1m fixes to LaTeX
+ relsize.sty    2003/07/04 ver 3.1
+ acronym.sty    2009/10/20 v1.35 Support for acronyms (Tobias Oetiker)
+  suffix.sty    2006/07/15 1.5 Variant command support
+ caption.sty    2010/01/09 v3.1m Customizing captions (AR)
+caption3.sty    2010/01/14 v3.1m caption3 kernel (AR)
+remreset.sty    
+listings.sty    2007/02/22 1.4 (Carsten Heinz)
+ lstmisc.sty    2007/02/22 1.4 (Carsten Heinz)
+listings.cfg    2007/02/22 1.4 listings configuration
+lstlang1.sty    2004/09/05 1.3 listings language file
+lstlang2.sty    2004/09/05 1.3 listings language file
+lstlang3.sty    2004/09/05 1.3 listings language file
+lstlang1.sty    2004/09/05 1.3 listings language file
+lstlang2.sty    2004/09/05 1.3 listings language file
+lstlang3.sty    2004/09/05 1.3 listings language file
+lstlang1.sty    2004/09/05 1.3 listings language file
+lstlang2.sty    2004/09/05 1.3 listings language file
+lstlang3.sty    2004/09/05 1.3 listings language file
+ lstmisc.sty    2007/02/22 1.4 (Carsten Heinz)
+ backref.sty    2006/09/05 v1.28 Bibliographical back referencing
+ tocloft.sty    2009/09/04 v2.3d parameterised ToC, etc., typesetting
+nm_classicthesis.sty    2008/10/01 v2.5 Typographic Style for a classic-looking
+ thesis
+  xcolor.sty    2007/01/21 v2.11 LaTeX color extensions (UK)
+   color.cfg    2007/01/18 v1.5 color configuration of teTeX/TeXLive
+dvipsnam.def    1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+mathpazo.sty    2005/04/12 PSNFSS-v9.2a Palatino w/ Pazo Math (D.Puga, WaS) 
+beramono.sty    2004/01/31 (WaS)
+ eulervm.sty    2005/01/11 v4.0 (WaS)
+microtype.sty    2010/01/10 v2.4 Micro-typography with pdfTeX (RS)
+microtype.cfg    2010/01/10 v2.4 microtype main configuration file (RS)
+textcase.sty    2004/10/07 v0.07 Text only upper/lower case changing (DPC)
+    soul.sty    2003/11/17 v2.4 letterspacing/underlining (mf)
+scrpage2.sty    2008/12/08 v2.3 LaTeX2e KOMA-Script package
+titlesec.sty    2007/08/12 v2.8 Sectioning titles
+ scrtime.sty    2009/01/01 v1.1p LaTeX2e KOMA-Script package
+floatpag.sty    1999/04/29 FLOAT PAGESTYLE
+prettyref.sty    1998/07/09 v3.0
+  lscape.sty    2000/10/22 v3.01 Landscape Pages (DPC)
+  ts1cmr.fd    1999/05/25 v2.5h Standard LaTeX font definitions
+  lgrcmr.fd    2008/06/17 v2.3 Greek Computer Modern
+  t1pplj.fd    2004/09/06 font definitions for T1/pplj.
+supp-pdf.tex
+ nameref.sty    2007/05/29 v2.31 Cross-referencing by name of section
+refcount.sty    2008/08/11 v3.1 Data extraction from references (HO)
+  Main_2.out
+  Main_2.out
+  mt-ppl.cfg    2005/11/16 v1.6 microtype config. file: Palatino (RS)
+Frontmatter/TitlePage.tex
+Frontmatter/Titleback.tex
+ ts1pplj.fd    2004/09/06 font definitions for TS1/pplj.
+Frontmatter/Abstract.tex
+Frontmatter/Acknowledgment.tex
+Frontmatter/Contents.tex
+   uzeur.fd    2005/01/11 v4.0 (WaS)
+  mt-eur.cfg    2006/07/31 v1.1 microtype config. file: AMS Euler Roman (RS)
+   uzeus.fd    2005/01/11 v4.0 (WaS)
+  mt-eus.cfg    2006/07/28 v1.2 microtype config. file: AMS Euler Script (RS)
+  uzeuex.fd    2005/01/11 v4.0 (WaS)
+  mt-msa.cfg    2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+  mt-msb.cfg    2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+ ot1zplm.fd    2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
+Chapters/1_Introduction.tex
+Chapters/2_Electronic_Properties_of_Semiconductors.tex
+  mt-cmr.cfg    2009/11/09 v2.0 microtype config. file: Computer Modern Roman (
+RS)
+Chapters/3_Classical_Optical_Transitions_Free_Carriers.tex
+Chapters/4_Classical_Optical_Transitions_Coulomb_Correlated.tex
+Chapters/5_Semiconductor_Microcavity.tex
+Appendicies/Appendix_Symmetry_Properties.tex
+Appendicies/Appendix_k_dot_p_Numerics.tex
+Appendicies/Appendix_Schrodinger_Poisson.tex
+Appendicies/Appendix_Screening.tex
+References/Bibliography.tex
+ ***********
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(\end occurred inside a group at level 2)
+
+### semi simple group (level 2) entered at line 18 (\begingroup)
+### semi simple group (level 1) entered at line 4 (\begingroup)
+### bottom level 
+Here is how much of TeX's memory you used:
+ 16995 strings out of 495269
+ 264681 string characters out of 3180138
+ 415334 words of memory out of 3000000
+ 18667 multiletter control sequences out of 15000+200000
+ 116502 words of font info for 509 fonts, out of 3000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 49i,19n,69p,941b,1029s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.8/fonts/enc/dvips/fontname/8r.enc}<C
+:/Program Files/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Progra
+m Files/MiKTeX 2.8/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Program Files/M
+iKTeX 2.8/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.
+8/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.8/fonts/t
+ype1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.8/fonts/type1/pub
+lic/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.8/fonts/type1/public/amsfo
+nts/euler/euex10.pfb><C:/Program Files/MiKTeX 2.8/fonts/type1/public/amsfonts/e
+uler/eufm10.pfb><C:/Program Files/MiKTeX 2.8/fonts/type1/public/amsfonts/euler/
+eufm7.pfb><C:/Program Files/MiKTeX 2.8/fonts/type1/public/amsfonts/euler/eurb10
+.pfb><C:/Program Files/MiKTeX 2.8/fonts/type1/public/amsfonts/euler/eurm10.pfb>
+<C:/Program Files/MiKTeX 2.8/fonts/type1/public/amsfonts/euler/eurm5.pfb><C:/Pr
+ogram Files/MiKTeX 2.8/fonts/type1/public/amsfonts/euler/eurm7.pfb><C:/Program 
+Files/MiKTeX 2.8/fonts/type1/public/amsfonts/euler/eusm10.pfb><C:/Program Files
+/MiKTeX 2.8/fonts/type1/public/amsfonts/euler/eusm7.pfb><C:/Users/Yossi Michael
+i/AppData/Roaming/MiKTeX/2.8/fonts/type1/public/fpl/fplbj8a.pfb><C:/Users/Yossi
+ Michaeli/AppData/Roaming/MiKTeX/2.8/fonts/type1/public/mathpazo/fplmb.pfb><C:/
+Users/Yossi Michaeli/AppData/Roaming/MiKTeX/2.8/fonts/type1/public/fpl/fplrc8a.
+pfb><C:/Users/Yossi Michaeli/AppData/Roaming/MiKTeX/2.8/fonts/type1/public/fpl/
+fplrij8a.pfb><C:/Program Files/MiKTeX 2.8/fonts/type1/public/amsfonts/symbols/m
+sam10.pfb><C:/Program Files/MiKTeX 2.8/fonts/type1/urw/palatino/uplb8a.pfb><C:/
+Program Files/MiKTeX 2.8/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files/
+MiKTeX 2.8/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on Main_2.pdf (100 pages, 743477 bytes).
+PDF statistics:
+ 1534 PDF objects out of 1728 (max. 8388607)
+ 515 named destinations out of 1000 (max. 500000)
+ 71065 words of extra memory for PDF output out of 74296 (max. 10000000)
+

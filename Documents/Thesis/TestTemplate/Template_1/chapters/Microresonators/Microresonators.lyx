@@ -1,0 +1,211 @@
+#LyX 1.6.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 345
+\begin_document
+\begin_header
+\textclass report
+\options a4paper,titlepage
+\use_default_options false
+\language english
+\inputencoding auto
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_amsmath 1
+\use_esint 0
+\cite_engine natbib_authoryear
+\use_bibtopic false
+\paperorientation portrait
+\leftmargin 3cm
+\topmargin 4cm
+\rightmargin 3cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip bigskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\author "" 
+\author "" 
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+This chapter gives a brief overview of the important theorems and parameters
+ for understanding the dynamics of resonant systems, such as the OAPA.
+ In particular, those relevant to mechanical resonators with masses in the
+ 
+\begin_inset Formula $\mu g-ng$
+\end_inset
+
+ range, which are known as 
+\begin_inset Quotes eld
+\end_inset
+
+microresonators
+\begin_inset Quotes erd
+\end_inset
+
+.
+ The main properties of note for a microresonator are their resonant frequencies
+, 
+\begin_inset Formula $Q$
+\end_inset
+
+-factors, power spectra and mode shapes; these are discussed in the sections
+ below.
+ The resonators of interest to this thesis are a silicon nitride membrane
+ of dimensions 
+\begin_inset Formula $3mm\times3mm\times50nm$
+\end_inset
+
+ and a silicon mirror of dimensions 
+\begin_inset Formula $1mm\times1mm\times60\mu m$
+\end_inset
+
+, which are shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:microtechno"
+
+\end_inset
+
+, and are discussed at length in Chapters 3 and 4.
+\end_layout
+
+\begin_layout Section
+The wave equation
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:The-wave-equation"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Near resonance, the dynamics of a vibrating membrane, such as the silicon
+ nitride membrane discussed in Chapter 4, can be described by the wave equation
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Waves1977"
+
+\end_inset
+
+.
+ For a square, lossless membrane in the 
+\begin_inset Formula $(x,y)$
+\end_inset
+
+ plane, with edges (i.e.
+ boundary conditions), located at 
+\begin_inset Formula $(0,0),\,(0,B),\,(A,0),\,(A,B)$
+\end_inset
+
+, the transverse motion of the membrane 
+\begin_inset Formula $u(x,y,t)$
+\end_inset
+
+ satisfies the partial differential equation
+\begin_inset Formula \begin{equation}
+\nabla^{2}u(x,y,t)=\frac{1}{c^{2}}\frac{\partial^{2}u(x,y,t)}{\partial t^{2}}.\label{eq:wave eqn}\end{equation}
+
+\end_inset
+
+This is known as the wave equation.
+ Here, 
+\begin_inset Formula $c=\sqrt{F_{T}\rho}$
+\end_inset
+
+, where 
+\begin_inset Formula $F_{T}$
+\end_inset
+
+ is the tension force and 
+\begin_inset Formula $\rho$
+\end_inset
+
+ is mass per unit area.
+ The solutions to this are of the form
+\begin_inset Formula \begin{equation}
+u(x,y,t)=A\, sin(\frac{n_{1}\pi x}{A})sin(\frac{n_{2}\pi y}{B})cos(rct+\epsilon),\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $n_{1},n_{2}\in\mathbb{Z}^{+}$
+\end_inset
+
+ and are known as the mode numbers, and 
+\begin_inset Formula $r^{2}=\sqrt{\frac{n_{1}^{2}}{A^{2}}+\frac{n_{2}^{2}}{B^{2}}}\pi^{2}$
+\end_inset
+
+.
+ The first three solutions to this equation are shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:First 3 wave eqn"
+
+\end_inset
+
+.
+ The frequency 
+\begin_inset Formula $\omega_{n_{1},n_{2}}$
+\end_inset
+
+ of vibration is given by 
+\begin_inset Formula $rc/2\pi$
+\end_inset
+
+, or
+\begin_inset Formula \begin{eqnarray}
+\omega_{n_{1},n_{2}} & = & \sqrt{\left(\frac{n_{1}^{2}}{A^{2}}+\frac{n_{2}^{2}}{B^{2}}\right)\frac{F_{T}}{4\rho}}.\label{eq:mn}\end{eqnarray}
+
+\end_inset
+
+In a square membrane with side length 
+\begin_inset Formula $L=A=B$
+\end_inset
+
+, this simplifies to
+\begin_inset Formula \begin{eqnarray}
+\omega_{n_{1},n_{2}} & = & \omega_{1,1}\,\sqrt{\frac{n_{1}^{2}+n_{2}^{2}}{2}},\label{eq:wave reln}\end{eqnarray}
+
+\end_inset
+
+where 
+\begin_inset Formula $m$
+\end_inset
+
+ is the mass of the membrane.
+ It is convenient to refer to each of these resonances in terms of their
+ mode mode numbers, which are denoted in this thesis as a bracketed pair,
+ 
+\begin_inset Formula $(n_{1},n_{2})$
+\end_inset
+
+.
+ 
+\end_layout
+
+\end_body
+\end_document

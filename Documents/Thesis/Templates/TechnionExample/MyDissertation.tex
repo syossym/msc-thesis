@@ -1,0 +1,247 @@
+%======================================================================
+%                               Dissertation
+%                                Nir Shvalb
+%
+%                                  2.5.06
+%========================== Including Packages ===========================
+\documentclass[12pt,final,a4paper,oneside]{report}
+\usepackage[centertags]{amsmath}
+\usepackage{amsfonts}
+\usepackage{multicol}
+\usepackage{hebfont}
+\usepackage[all]{xypic}
+\usepackage{epsf}
+\usepackage{amssymb}
+\usepackage{lscape}
+\usepackage{amsthm}
+\usepackage{newlfont}
+\usepackage{graphics}
+\usepackage{epsfig}
+\usepackage{proposal} %DAL Thesis Style
+\usepackage{hyperref}
+\usepackage{latexsym}
+\usepackage{amstext}
+\usepackage{verbatim}
+\usepackage{subfigure}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{makeidx}         % allows index generation
+\usepackage{graphicx}        % standard LaTeX graphics tool when including figure files
+%\usepackage{palatino, url, multicol}
+%\usepackage{xtocinc} %Include Table of Contents as the first entry in TOC
+%\usepackage{hebrew}
+%\usepackage{hebcal}
+%\usepackage[bottom]{footmisc}% places footnotes at page bottom
+
+%========================================================================
+\hfuzz2pt % Don't bother to report over-full boxes if over-edge is < 2pt
+
+% Line spacing ====================================================================
+\newlength{\defbaselineskip}
+\setlength{\defbaselineskip}{\baselineskip}
+\newcommand{\setlinespacing}[1]%
+           {\setlength{\baselineskip}{#1 \defbaselineskip}}
+\newcommand{\doublespacing}{\setlength{\baselineskip}%
+                           {2.0 \defbaselineskip}}
+\newcommand{\singlespacing}{\setlength{\baselineskip}{\defbaselineskip}}
+\newcommand{\hsp}{\hspace{10 mm}}
+\newcommand{\hs}{\hspace{5 mm}}
+\newcommand{\hsm}{\hspace{2 mm}}
+\newcommand{\vs}{\vspace{7 mm}}
+\newcommand{\vsm}{\vspace{2 mm}}
+% MATH ====================================================================
+\def\cspace{configuration space}
+%\def\RR{\mathbb{R}}
+\def\TT{\mathbb{T}}
+\def\R{\mathcal{R}}
+\def\C{\mathcal{C}}
+\def\L{\mathcal{L}}
+% LIST OF NOTATIONS ====================================================================
+\def\listofnotations{\input symbols.tex \clearpage}
+\def\addnotation #1#2{#1 \dotfill \pageref{#2}}
+\def\newnot#1{\label{#1}}
+
+% ====================== Definitions CHAPTER 0 ======================
+\def\N{\mathcal{N}}
+% ====================== Definitions CHAPTER 1 ======================
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{subsec}[thm]{}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\newtheorem{example}[thm]{Example}
+\newtheorem{fact}[thm]{Fact}
+\theoremstyle{definition}
+\newtheorem*{org}{Organization}
+\theoremstyle{remark}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{assume}[thm]{Assumptions}
+\newtheorem{conj}[thm]{Conjecture}
+\numberwithin{equation}{section} \numberwithin{figure}{section}
+\def\sect{\setcounter{thm}{0}\section}
+\newcommand{\eee}{\hfill$\Box$}
+\newcommand{\col}{\operatorname{Col}}
+\newcommand{\conv}{\operatorname{conv}}
+\newcommand{\Edge}{\operatorname{Edge}}
+\newcommand{\In}{\mathfrak{In}} \newcommand{\Int}{\operatorname{Int}}
+\newcommand{\Out}{\mathfrak{Out}} \newcommand{\pt}{\operatorname{pt}}
+\newcommand{\rank}{\operatorname{Rank}}
+\newcommand{\spn}{\operatorname{Span}}
+\newcommand{\Vertex}{\operatorname{Vertex}}
+\newtheorem*{exm}{Example}
+\def\cspace{configuration space}
+\def\ggraph{$G$-graph}
+\def\smech{arachnoid mechanism}
+\def\Re{\mathbb{R}}
+\def\Ze{\mathbb{Z}}
+\newcommand{\Sb}[1]{{\mathbf{S}^{#1}}}
+\def\D{\mathcal{D}}
+\def\A{\mathcal{A}}
+\def\M{\mathcal{M}}
+\def\H{\overline{\mathcal{D}}}
+\def\PP{\mathcal{P}}
+\def\U{\mathcal{U}}
+\newcommand{\T}[1]{{\mathbf{T}^{#1}}}
+\def\V{\mathcal{V}}
+\def\W{\mathcal{W}}
+\def\Wc{\mathcal{W}}
+\def\Vc{\mathcal{V}}
+\def\Xc{\mathcal{X}}
+\def\Lc{\mathcal{L}}
+\newcommand{\rmtt}[1]{\textit{\rm{#1}}}
+\newcommand{\up}[1]{\sp{({#1})}}
+\newcommand{\Lj}[1]{L\up{#1}}
+\newcommand{\lj}[1]{\ell\up{#1}}
+\newcommand{\nj}[1]{n\up{#1}}
+\newcommand{\Vj}[1]{V\up{#1}}
+\newcommand{\vj}[1]{\bv\up{#1}}
+\newcommand{\Wi}[1]{W\up{#1}}
+\newcommand{\xj}[1]{\bx\up{#1}}
+\newcommand{\dsc}[1]{\D({#1})}
+\newcommand{\hle}[1]{\overline{\dsc{#1}^{c}}}
+\newcommand{\anl}[1]{\A({#1})}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\bw}{\mathbf{w}}
+\newcommand{\by}{\mathbf{y}}
+% ====================== Definitions CHAPTER 2 ======================
+\newtheorem{assumption}{{\bf Assumption.}}
+\newtheorem{Proposition}{{\bf Proposition.}}
+\newtheorem{Lemma}{{\bf Lemma}}
+\newtheorem{Theorem}{{\bf Theorem}}
+\newtheorem{Corollary}{{\bf Corollary}}
+\newtheorem{Remark}{{\bf Remark}}
+\newtheorem{Algorithm}{{\bf Algorithm}}
+\newcommand{\reals}{{\Bbb R}}
+\def\V{\mathcal{V}}
+\def\Vc{\mathcal{V}}
+\newcommand{\dif}[2]{\partial_{{#2}}\,{#1}}
+\newcommand{\diff}[2]{\partial_{{#2}}\,{#1}}
+\newcommand{\vp}[1]{(\bv\up{#1})^{\perp}}
+\newcommand{\Ind}{\operatorname{Ind}}
+\newcommand{\wspace}{work space}
+\newcommand{\ap}[1]{(\ba\up{1,{#1}})^{\perp}}
+\newcommand{\hj}[1]{h\up{#1}}
+\newcommand{\vpp}[1]{(\vj{{#1}}_{1})^{\perp}\cdot\vj{{#1}}_{2}}
+\newcommand{\vw}{\vec{\bw}}
+% ====================== Definitions CHAPTER 3 ======================
+\newenvironment{myeq}[1][]
+{\stepcounter{thm}\begin{equation}\tag{\thethm}{#1}}
+{\end{equation}}
+%
+\newcommand{\mydiag}[2][]{\myeq[#1]{\xymatrix{#2}}}
+\newcommand{\mydiagram}[2][]
+{\stepcounter{thm}\begin{equation}
+     \tag{\thethm}{#1}\xymatrix{#2}\end{equation}}
+%use:  \mydiagram[\label{``label''}]{``xy-pic syntax''}
+%
+\newenvironment{mysubsection}[2][]
+{\begin{subsec}\begin{upshape}\begin{bfseries}{#2.}
+\end{bfseries}{#1}}
+{\end{upshape}\end{subsec}}
+%
+\newenvironment{mysubsect}[2][]
+{\begin{subsec}\begin{upshape}\begin{bfseries}{#2\vsm.}
+\end{bfseries}{#1}}
+{\end{upshape}\end{subsec}}
+%
+\newcommand{\w}[2][ ]{\ \ensuremath{#2}{#1}\ }
+
+\newcommand{\dd}{\operatorname{d}}
+\newcommand{\df}{\operatorname{df}}
+\newcommand{\dF}{\operatorname{dF}}
+\newcommand{\dhh}{\operatorname{dh}}
+\newcommand{\Id}{\operatorname{Id}}
+\newcommand{\Image}{\operatorname{Im}}
+\newcommand{\Line}{\operatorname{Line}}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\RR}[1]{{\mathbb R}^{#1}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\hC}{\hat{\C}}
+\newcommand{\hd}{\hat{\bd}}
+\newcommand{\hF}{\hat{F}}
+\newcommand{\hI}{\hat{\Ic}}
+\newcommand{\hV}{\hat{\Vc}}
+\newcommand{\hi}{\hat{\text{\textit{\i}}}}
+\newcommand{\Ck}{\C(k)}
+\newcommand{\hP}{\hat{\Phi}}
+\newcommand{\Ec}{\mathcal{E}}
+\newcommand{\Gc}{\mathcal{G}}
+\newcommand{\Ic}{\mathcal{I}}
+\def\Lc{\mathcal{L}}
+\newcommand{\Pc}{\mathcal{P}}
+\newcommand{\Sc}{\mathcal{S}}
+\def\Xc{\mathcal{X}}
+\newcommand{\aj}[1]{\ba\up{#1}}
+\newcommand{\bj}[2]{\vec{\bb}\sp{({#1},{#2})}}
+\newcommand{\cj}[1]{\bc\up{#1}}
+\newcommand{\gj}[1]{g\up{#1}}
+\newcommand{\mj}[1]{m\up{#1}}
+\newcommand{\ppj}[1]{\bp\up{#1}}
+\newcommand{\uj}[2]{\vec{\mathbf u}\sp{({#1})}\sb{#2}}
+\newcommand{\oj}[1]{\bo_{#1}}
+\newcommand{\wj}[2]{\vec{\mathbf w}\sp{({#1})}\sb{#2}}
+\newcommand{\yj}[1]{\by\up{#1}}
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\bc}{\mathbf{c}}
+\newcommand{\bd}{\mathbf{d}}
+\newcommand{\be}{\mathbf{e}}
+\newcommand{\bX}{\mathbf{X}}
+\newcommand{\bp}{\mathbf{p}}
+\newcommand{\bz}{\mathbf{z}}
+\newcommand{\vy}[1]{\vec{\by}\up{#1}}
+\newcommand{\bo}{\mathbf{\omega}}
+\newcommand{\vz}{\mathbf{0}}
+% ====================== Definitions CHAPTER 4 ======================
+\newcommand{\alignd}{\operatorname{aligned}}
+\newcommand{\rest}{\operatorname{rest}}
+\newcommand{\iin}{\operatorname{in}}
+\newcommand{\out}{\operatorname{out}}
+\newcommand{\RRR}{\mathbb{R}}
+\newcommand{\Ac}{\mathcal{A}}
+\newcommand{\Aj}[1]{\Ac\up{#1}}
+\newcommand{\hAj}[1]{\hat{\Ac}\up{#1}}
+\newcommand{\laj}[1]{\lambda\up{#1}}
+\newcommand{\sj}[1]{\$\up{#1}}
+\newcommand{\Tj}[1]{T\up{#1}}
+\newcommand{\sjp}[1]{\$^{({#1})\perp}}
+\newtheorem{examples}[thm]{Examples}
+
+% ====================== start document ======================
+\begin{document}
+\include{thesis_frontpages} % heading, ack, abstract
+\pagenumbering{arabic}
+\include{chapter1}
+\include{chapter2}
+\include{chapter3}
+\include{chapter4}
+\include{discussion}
+\include{appendix}
+\include{bib}
+\include{hebrew}
+
+\end{document}
