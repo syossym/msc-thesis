@@ -1,0 +1,19 @@
+function DataStruct = ExtractParameters(DataStruct, T, type)
+
+figure('Name', type); box on;
+for (ii=1:length(DataStruct.Data(:,1)))
+   plot(DataStruct.E, DataStruct.Data(ii,:));
+        xlabel('E [eV]'); title([N_text ' - TE - Press the Return key to terminate the input']);
+        hold on; axis tight;
+        but = 1; Fits{ii}.TE = [];
+        while (but == 1)
+            [x_TE,y_TE,but] = ginput(1);
+            if (but==1)
+                Fits{ii}.TE = [Fits{ii}.TE, y_TE];
+                plot(current_vec.Detuning.E_min_MC, y_TE*ones(1, length(current_vec.Detuning.E_min_MC)), ':r');
+                drawnow;
+            end
+        end
+        hold off;
+   
+end

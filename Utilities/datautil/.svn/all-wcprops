@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/datautil
+END
+base64decode.m
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/datautil/base64decode.m
+END
+byte2nybble.m
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/datautil/byte2nybble.m
+END
+nybble2byte.m
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/datautil/nybble2byte.m
+END
+base64encode.m
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/datautil/base64encode.m
+END

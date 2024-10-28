@@ -1,0 +1,226 @@
+#
+# QWWAD code Makefile, written by Paul Harrison, summer 1999
+#
+# You must read ../README before proceeding!
+#
+# Define the directory to put the executables, note you must have write
+# access and make sure there is no `white space' at the end of the line
+
+BIN=/home/ph/bin
+
+# Uncomment the compiler definitions below appropriate for your system
+#
+# HP-UX
+
+#CC=cc
+#CCOPTIONS=-Aa -D_HPUX_SOURCE
+#LIBS=-lm
+#NAGLIB=
+
+# SunOS
+
+#CC=cc
+#CCOPTIONS= -DSUN -Xt
+#LIBS=-lm
+#NAGLIB=
+
+# Linux
+
+#CC=gcc
+#CCOPTIONS=
+#LIBS=-lm
+#NAGLIB=-lnagc -lpthread
+
+# IRIX
+
+#CC=cc 
+#CCOPTIONS=-ansi
+#LIBS=-lm
+#NAGLIB=-lnagc
+
+# There should be no need to alter anything below this line
+
+# The majority of the code can be compiled with a standard command
+
+default:	canwrite \
+		csss cszb d0 d02D d03D dos ebe \
+		efcwire efcwwf effv efiw efiwire efkpsl efmfv efpqw \
+		efsdot efsdwf efshoot efsqw efsx efwf efxm efxv \
+		gde hup ivdb ovl ppcd ppee ppsg ppvfq pth \
+		rlv-fcc rlv-sc rlv-ss sbp scp sfr slk \
+		srcc srelo srmpr srrad tdb tsb 
+
+canwrite:	
+		@echo "Making sure that you can write to $(BIN)"; test -w $(BIN)
+
+csss:	csss.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o csss csss.c $(LIBS)
+
+cszb:	cszb.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o cszb cszb.c $(LIBS)
+
+d0:	d0.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o d0 d0.c $(LIBS)
+
+d02D:	d02D.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o d02D d02D.c $(LIBS)
+
+d03D:	d03D.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o d03D d03D.c $(LIBS)
+
+dos:	dos.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o dos dos.c $(LIBS)
+
+ebe:	ebe.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o ebe ebe.c $(LIBS)
+
+efcwire:efcwire.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o efcwire efcwire.c $(LIBS)
+
+efcwwf:	efcwwf.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o efcwwf efcwwf.c $(LIBS)
+
+effv:	effv.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o effv effv.c $(LIBS)
+
+efiw:	efiw.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o efiw efiw.c $(LIBS)
+
+efiwire:efiwire.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o efiwire efiwire.c $(LIBS)
+
+efkpsl:	efkpsl.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o efkpsl efkpsl.c $(LIBS)
+
+efmfv:	efmfv.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o efmfv efmfv.c $(LIBS)
+
+efpqw:	efpqw.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o efpqw efpqw.c $(LIBS)
+
+efsdot:	efsdot.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o efsdot efsdot.c $(LIBS)
+
+efsdwf:	efsdwf.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o efsdwf efsdwf.c $(LIBS)
+
+efshoot:efshoot.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o efshoot efshoot.c $(LIBS)
+
+efsqw:	efsqw.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o efsqw efsqw.c $(LIBS)
+
+efsx:	efsx.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o efsx efsx.c $(LIBS)
+
+efwf:	efwf.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o efwf efwf.c $(LIBS)
+
+efxm:	efxm.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o efxm efxm.c $(LIBS)
+
+efxv:	efxv.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o efxv efxv.c $(LIBS)
+
+gde:	gde.c dox.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o gde gde.c $(LIBS)
+
+hup:	hup.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o hup hup.c $(LIBS)
+
+ivdb:	ivdb.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o ivdb ivdb.c $(LIBS)
+
+ovl:	ovl.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o ovl ovl.c $(LIBS)
+
+ppcd:	ppcd.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o ppcd ppcd.c $(LIBS)
+
+ppee:	ppee.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o ppee ppee.c $(LIBS)
+
+ppsg:	ppsg.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o ppsg ppsg.c $(LIBS)
+
+ppvfq:	ppvfq.c ppff.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o ppvfq ppvfq.c $(LIBS)
+
+pth:	pth.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o pth pth.c $(LIBS)
+
+rlv-fcc:rlv-fcc.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o rlv-fcc rlv-fcc.c $(LIBS)
+
+rlv-sc:	rlv-sc.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o rlv-sc rlv-sc.c $(LIBS)
+
+rlv-ss:	rlv-ss.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o rlv-ss rlv-ss.c $(LIBS)
+
+sbp:	sbp.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o sbp sbp.c $(LIBS)
+
+scp:	scp.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o scp scp.c $(LIBS)
+
+sfr:	sfr.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o sfr sfr.c $(LIBS)
+
+slk:	slk.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o slk slk.c $(LIBS)
+
+srcc:	srcc.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o srcc srcc.c $(LIBS)
+
+srelo:	srelo.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o srelo srelo.c $(LIBS)
+
+srmpr:	srmpr.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o srmpr srmpr.c $(LIBS)
+
+srrad:	srrad.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o srrad srrad.c $(LIBS)
+
+tdb:	tdb.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o tdb tdb.c $(LIBS)
+
+tsb:	tsb.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o tsb tsb.c $(LIBS)
+
+
+# The final two need particular instructions
+
+pp:	pplb ppsl
+
+pplb:	pplb.c ppff.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o pplb pplb.c $(LIBS) $(NAGLIB)
+
+ppsl:	ppsl.c ppff.c bools.h const.h maths.h struct.h
+	$(CC) $(CCOPTIONS) -o ppsl ppsl.c $(LIBS) $(NAGLIB)
+
+# Now install
+
+install:
+	cp cspd.awk csqd.awk xyz2pdb \
+	csss cszb d0 d02D d03D dos ebe \
+	efcwire efcwwf effv efiw efiwire efkpsl efmfv efpqw \
+	efsdot efsdwf efshoot efsqw efsx efwf efxm efxv \
+	gde hup ivdb ovl ppcd ppee ppsg ppvfq pth \
+	rlv-fcc rlv-sc rlv-ss sbp scp sfr slk \
+	srcc srelo srmpr srrad tdb tsb \
+	$(BIN)
+
+installpp: 
+	cp pplb ppsl $(BIN)
+
+clean:
+	rm \
+	csss cszb d0 d02D d03D dos ebe \
+	efcwire efcwwf effv efiw efiwire efkpsl efmfv efpqw \
+	efsdot efsdwf efshoot efsqw efsx efwf efxm efxv \
+	gde hup ivdb ovl ppcd ppee ppsg ppvfq pth \
+	rlv-fcc rlv-sc rlv-ss sbp scp sfr slk \
+	srcc srelo srmpr srrad tdb tsb
+cleanpp:
+	rm pplb ppsl

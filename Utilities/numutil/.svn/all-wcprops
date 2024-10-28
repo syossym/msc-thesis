@@ -1,0 +1,269 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil
+END
+int8_to_hex.m
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/int8_to_hex.m
+END
+prevpowof10.m
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/prevpowof10.m
+END
+hex_to_int8.m
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/hex_to_int8.m
+END
+numlexle.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/numlexle.m
+END
+uint32_to_hex.m
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/uint32_to_hex.m
+END
+hex_to_uint32.m
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/hex_to_uint32.m
+END
+numlexne.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/numlexne.m
+END
+uint16_to_hex.m
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/uint16_to_hex.m
+END
+hex_to_uint16.m
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/hex_to_uint16.m
+END
+qnan.m
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/qnan.m
+END
+uint64_to_hex.m
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/uint64_to_hex.m
+END
+unpacknum.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/unpacknum.m
+END
+prevpow.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/prevpow.m
+END
+roundeven.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/roundeven.m
+END
+int32_to_hex.m
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/int32_to_hex.m
+END
+int16_to_hex.m
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/int16_to_hex.m
+END
+truncdec.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/truncdec.m
+END
+commaint.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/commaint.m
+END
+numlexlt.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/numlexlt.m
+END
+nextpowof2.m
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/nextpowof2.m
+END
+uint8_to_hex.m
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/uint8_to_hex.m
+END
+truncdig.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/truncdig.m
+END
+int2digits.m
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/int2digits.m
+END
+numlexge.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/numlexge.m
+END
+single_as_uint8_to_double.m
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/single_as_uint8_to_double.m
+END
+nextpowof10.m
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/nextpowof10.m
+END
+numlexeq.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/numlexeq.m
+END
+hex_to_uint64.m
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/hex_to_uint64.m
+END
+fixdec.m
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/fixdec.m
+END
+divisors.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/divisors.m
+END
+rounddec.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/rounddec.m
+END
+numlexgt.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/numlexgt.m
+END
+nextpow.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/nextpow.m
+END
+single_as_uint32_to_double.m
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/single_as_uint32_to_double.m
+END
+hex_to_int32.m
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/hex_to_int32.m
+END
+real48_as_uint8_to_double.m
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/real48_as_uint8_to_double.m
+END
+real48_as_double_to_uint8.m
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/real48_as_double_to_uint8.m
+END
+single_as_uint16_to_double.m
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/single_as_uint16_to_double.m
+END
+hex_to_int16.m
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/hex_to_int16.m
+END
+numlexcmp.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/numlexcmp.m
+END
+prevpowof2.m
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/prevpowof2.m
+END
+fixdig.m
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/fixdig.m
+END
+rounddig.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/rounddig.m
+END
+hex_to_uint8.m
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/numutil/hex_to_uint8.m
+END

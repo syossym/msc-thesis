@@ -1,0 +1,53 @@
+function E_f = QuasiFermiLevels(particle, V, subband_min, band_index, DOS, N, T)
+
+% Solutions are sought, using a stepping algorithm, a midpoint rule and 
+% finally a Newton-Raphson method, to the equation f(E_F)=0.  This 
+% function has been derived by integrating the total density of states
+% multiplied by the Fermi-Dirac distribution function across the in-plane
+% energy thus giving the total electron density, i.e.
+% 
+%      oo
+% Ne=  I  f(E)N(E) dE
+%      Eo
+% 
+% where f(E) is the normal Fermi-Dirac distribution function and
+% N(E)=m/(pi*sqr(hbar)) is the areal density of states in a QW.
+
+k_B = 1.3806504e-23;    % Boltzmann constant (J K^?1)
+hbar = 1.055e-34; 
+
+dE = 0.001*1e-3*q;
+
+E_min = subband_min;
+V_max = max(V);
+
+x = E_min - 20*k_B*T;    % first value of x
+
+% In this implementation, the upper limit of integration is set at the 
+% Fermi level+10kT, limited at potential maximum.
+
+E_max = x + 10*k_B*T;      % subband maximum (top of QW)
+if (E_max > V_max)
+    E_max = V_max;
+end
+
+y2 = f(x,E_max,E_min,DOS,N,T);
+
+
+
+
+% -------- Inner Functions ---------%
+
+function y = f(E_f,E_max,E_min,DOS,N,T)
+
+k_B = 1.3806504e-23;    % Boltzmann constant (J K^?1)
+hbar = 1.055e-34; 
+
+y = (DOS/sqrt(hbar))*(k_B*T/hbar)*...
+		(...
+		((E_max-E_f)/(k_B*T)-log(1+exp((E_max-E_f)/(k_B*T))))-...
+		((E_min-E_f)/(k_B*T)-log(1+exp((E_min-E_f)/(k_B*T))))...
+		)...
+		-N;
+    
+return y;

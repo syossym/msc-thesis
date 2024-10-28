@@ -1,0 +1,20 @@
+function sProp = fGetMaterial(name)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% fGetMaterial
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   										   
+% This function  
+% other simulation files.
+%
+%   Input: - 
+%   
+%   Output: -
+%
+% Tested: Matlab 7.6.0
+% Created by: Yossi Michaeli, September 2009
+% Edited by: -
+%	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+global sConsts;

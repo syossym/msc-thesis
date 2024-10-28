@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/imgutil
+END
+imtype.m
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/imgutil/imtype.m
+END
+imflipud.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/imgutil/imflipud.m
+END
+imfliplr.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/imgutil/imfliplr.m
+END
+imview.m
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/imgutil/imview.m
+END
+imcheck.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/imgutil/imcheck.m
+END
+imrot90.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/imgutil/imrot90.m
+END

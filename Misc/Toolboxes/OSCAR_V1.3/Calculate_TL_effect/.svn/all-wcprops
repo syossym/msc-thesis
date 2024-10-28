@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Calculate_TL_effect
+END
+Beam_parameter.m
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Calculate_TL_effect/Beam_parameter.m
+END
+Propagate_Field.m
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Calculate_TL_effect/Propagate_Field.m
+END
+CreateField.m
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Calculate_TL_effect/CreateField.m
+END
+Calculate_power.m
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Calculate_TL_effect/Calculate_power.m
+END
+Beam_parameter2D.m
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Calculate_TL_effect/Beam_parameter2D.m
+END
+Propa_mirror.m
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Calculate_TL_effect/Propa_mirror.m
+END
+CreateMirror.m
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Calculate_TL_effect/CreateMirror.m
+END
+Find_resonance_length.m
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Calculate_TL_effect/Find_resonance_length.m
+END
+Get_results.m
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Calculate_TL_effect/Get_results.m
+END
+Readme.txt
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Calculate_TL_effect/Readme.txt
+END
+Make_propagation.m
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Calculate_TL_effect/Make_propagation.m
+END
+Plot_Field.m
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Calculate_TL_effect/Plot_Field.m
+END
+Build_Field_Cavity.m
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Calculate_TL_effect/Build_Field_Cavity.m
+END
+From_Ansys.txt
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Calculate_TL_effect/From_Ansys.txt
+END

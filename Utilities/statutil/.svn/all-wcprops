@@ -1,0 +1,167 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/statutil
+END
+cloglog.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/statutil/cloglog.m
+END
+iqrange.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/statutil/iqrange.m
+END
+varfact.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/statutil/varfact.m
+END
+isvarmat.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/statutil/isvarmat.m
+END
+medmad.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/statutil/medmad.m
+END
+ilogit.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/statutil/ilogit.m
+END
+meanvar.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/statutil/meanvar.m
+END
+covmat.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/statutil/covmat.m
+END
+spherernd.m
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/statutil/spherernd.m
+END
+varmat.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/statutil/varmat.m
+END
+range.m
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/statutil/range.m
+END
+empcdf.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/statutil/empcdf.m
+END
+icloglog.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/statutil/icloglog.m
+END
+var2corr.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/statutil/var2corr.m
+END
+scalevar.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/statutil/scalevar.m
+END
+mad.m
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/statutil/mad.m
+END
+nansum.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/statutil/nansum.m
+END
+perctile.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/statutil/perctile.m
+END
+corrmat.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/statutil/corrmat.m
+END
+randw.m
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/statutil/randw.m
+END
+order.m
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/statutil/order.m
+END
+nanmean.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/statutil/nanmean.m
+END
+corrsort.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/statutil/corrsort.m
+END
+varchk.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/statutil/varchk.m
+END
+logit.m
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/statutil/logit.m
+END
+ranks.m
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/statutil/ranks.m
+END
+quantile.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/statutil/quantile.m
+END

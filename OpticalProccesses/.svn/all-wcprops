@@ -1,0 +1,305 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses
+END
+HartreeFock_Test8.m
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/HartreeFock_Test8.m
+END
+SingleQW_AbsorptionGain.asv
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/SingleQW_AbsorptionGain.asv
+END
+matlab.mat
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/matlab.mat
+END
+SingleQW_AbsorptionGain.m
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/SingleQW_AbsorptionGain.m
+END
+PlotAbsorptionSpEmission.m
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/PlotAbsorptionSpEmission.m
+END
+CalculateScreening.m
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/CalculateScreening.m
+END
+Gain_MBT_HF.m
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/Gain_MBT_HF.m
+END
+E_CH.m
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/E_CH.m
+END
+PlotOpticalSimulationParams.asv
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/PlotOpticalSimulationParams.asv
+END
+PlotOpticalSimulationParams.m
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/PlotOpticalSimulationParams.m
+END
+ThetaESxCalculation.m
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/ThetaESxCalculation.m
+END
+FermiDirac.m
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/FermiDirac.m
+END
+G_q.m
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/G_q.m
+END
+ThetaMat.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/ThetaMat.m
+END
+Gain_MBT_HF_Fast.m
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/Gain_MBT_HF_Fast.m
+END
+Gain_FCT.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/Gain_FCT.m
+END
+CalculateECH.m
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/CalculateECH.m
+END
+QuasiFermiLevels.asv
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/QuasiFermiLevels.asv
+END
+QuasiFermiLevels.m
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/QuasiFermiLevels.m
+END
+SingleQW_DEG_FCT_HF.m
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/SingleQW_DEG_FCT_HF.m
+END
+DosAbsorptionGain.asv
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/DosAbsorptionGain.asv
+END
+CalculateTheta.m
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/CalculateTheta.m
+END
+HartreeFock_HelperFunctions.m
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/HartreeFock_HelperFunctions.m
+END
+DosAbsorptionGain.m
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/DosAbsorptionGain.m
+END
+DEG_FCT_HF_1.m
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/DEG_FCT_HF_1.m
+END
+CreateSimulationResultsDir.m
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/CreateSimulationResultsDir.m
+END
+DEG_FCT_HF_2.m
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/DEG_FCT_HF_2.m
+END
+DEG_FCT_HF_3.m
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/DEG_FCT_HF_3.m
+END
+CalculateOpticalParameters.asv
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/CalculateOpticalParameters.asv
+END
+DEG_FCT_HF_4.m
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/DEG_FCT_HF_4.m
+END
+CalculateGain.m
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/CalculateGain.m
+END
+DEG_FCT_HF_5.m
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/DEG_FCT_HF_5.m
+END
+CalculateOpticalParameters.m
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/CalculateOpticalParameters.m
+END
+Screening_Test1.m
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/Screening_Test1.m
+END
+E_SX.m
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/E_SX.m
+END
+test1.m
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/test1.m
+END
+CalculateThetaESX.m
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/CalculateThetaESX.m
+END
+CalculateDos.m
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/CalculateDos.m
+END
+CalculateEnhancement.m
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/CalculateEnhancement.m
+END
+Eps_q.m
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/Eps_q.m
+END
+FreeCarrier_Test1.m
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/FreeCarrier_Test1.m
+END
+CalculateQuasiFermiLevel.m
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/CalculateQuasiFermiLevel.m
+END
+HartreeFock_Test1.m
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/HartreeFock_Test1.m
+END
+HartreeFock_Test2.m
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/HartreeFock_Test2.m
+END
+HartreeFock_Test3.m
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/HartreeFock_Test3.m
+END
+HartreeFock_Test4.m
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/HartreeFock_Test4.m
+END
+HartreeFock_Test5.m
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/HartreeFock_Test5.m
+END
+CalculateHFEnhancement.m
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/CalculateHFEnhancement.m
+END
+HartreeFock_Test6.m
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/HartreeFock_Test6.m
+END
+HartreeFock_Test7.m
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/50/trunk/MSc_Matlab_Code/OpticalProccesses/HartreeFock_Test7.m
+END

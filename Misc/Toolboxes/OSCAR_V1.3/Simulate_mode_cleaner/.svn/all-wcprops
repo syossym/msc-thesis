@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Simulate_mode_cleaner
+END
+Propagate_Field.m
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Simulate_mode_cleaner/Propagate_Field.m
+END
+Beam_parameter2D.m
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Simulate_mode_cleaner/Beam_parameter2D.m
+END
+Run_OSCAR.m
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Simulate_mode_cleaner/Run_OSCAR.m
+END
+Fit_Gaussian2.m
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Simulate_mode_cleaner/Fit_Gaussian2.m
+END
+CreateMirror.m
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Simulate_mode_cleaner/CreateMirror.m
+END
+Get_results.m
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Simulate_mode_cleaner/Get_results.m
+END
+Beam_parameter.m
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Simulate_mode_cleaner/Beam_parameter.m
+END
+CreateField.m
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Simulate_mode_cleaner/CreateField.m
+END
+Calculate_power.m
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Simulate_mode_cleaner/Calculate_power.m
+END
+Propa_mirror.m
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Simulate_mode_cleaner/Propa_mirror.m
+END
+Find_resonance_length.m
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Simulate_mode_cleaner/Find_resonance_length.m
+END
+Make_propagation.m
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Simulate_mode_cleaner/Make_propagation.m
+END
+Readme.txt
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Simulate_mode_cleaner/Readme.txt
+END
+Build_Field_Cavity.m
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Simulate_mode_cleaner/Build_Field_Cavity.m
+END
+Plot_Field.m
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Simulate_mode_cleaner/Plot_Field.m
+END

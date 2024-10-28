@@ -1,0 +1,2 @@
+OSCAR running on the GPU is available on demand.
+It requires GPUmat to run (available at: http://gp-you.org/) and a graphic card CUDA compatible

@@ -1,0 +1,173 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/timeutil
+END
+weeksinyear.m
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/timeutil/weeksinyear.m
+END
+jdate2jd.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/timeutil/jdate2jd.m
+END
+jd2jdate.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/timeutil/jd2jdate.m
+END
+istime.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/timeutil/istime.m
+END
+mjd2date.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/timeutil/mjd2date.m
+END
+days2hms.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/timeutil/days2hms.m
+END
+date2mjd.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/timeutil/date2mjd.m
+END
+hms2days.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/timeutil/hms2days.m
+END
+monthofyear.m
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/timeutil/monthofyear.m
+END
+daysinmonth.m
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/timeutil/daysinmonth.m
+END
+isleapyear.m
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/timeutil/isleapyear.m
+END
+weekofyear.m
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/timeutil/weekofyear.m
+END
+sec2hms.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/timeutil/sec2hms.m
+END
+hms2sec.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/timeutil/hms2sec.m
+END
+dayofmonth.m
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/timeutil/dayofmonth.m
+END
+daysinyear.m
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/timeutil/daysinyear.m
+END
+isdate.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/timeutil/isdate.m
+END
+jd2mjd.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/timeutil/jd2mjd.m
+END
+mjd2jd.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/timeutil/mjd2jd.m
+END
+date2jd.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/timeutil/date2jd.m
+END
+jd2date.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/timeutil/jd2date.m
+END
+dayofweek.m
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/timeutil/dayofweek.m
+END
+yearnum.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/timeutil/yearnum.m
+END
+unixsecs2date.m
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/timeutil/unixsecs2date.m
+END
+date2unixsecs.m
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/timeutil/date2unixsecs.m
+END
+easterday.m
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/timeutil/easterday.m
+END
+dayofyear.m
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/timeutil/dayofyear.m
+END
+isjdate.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/timeutil/isjdate.m
+END

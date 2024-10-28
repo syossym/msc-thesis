@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Calculate_diffraction_loss
+END
+Beam_parameter.m
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Calculate_diffraction_loss/Beam_parameter.m
+END
+Propagate_Field.m
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Calculate_diffraction_loss/Propagate_Field.m
+END
+CreateField.m
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Calculate_diffraction_loss/CreateField.m
+END
+Calculate_power.m
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Calculate_diffraction_loss/Calculate_power.m
+END
+Propa_mirror.m
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Calculate_diffraction_loss/Propa_mirror.m
+END
+Run_OSCAR.m
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Calculate_diffraction_loss/Run_OSCAR.m
+END
+Fit_Gaussian.m
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Calculate_diffraction_loss/Fit_Gaussian.m
+END
+CreateMirror.m
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Calculate_diffraction_loss/CreateMirror.m
+END
+Find_resonance_length.m
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Calculate_diffraction_loss/Find_resonance_length.m
+END
+Get_results.m
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Calculate_diffraction_loss/Get_results.m
+END
+Readme.txt
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Calculate_diffraction_loss/Readme.txt
+END
+Make_propagation.m
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Calculate_diffraction_loss/Make_propagation.m
+END
+Plot_Field.m
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Calculate_diffraction_loss/Plot_Field.m
+END
+Build_Field_Cavity.m
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/OSCAR_V1.3/Calculate_diffraction_loss/Build_Field_Cavity.m
+END

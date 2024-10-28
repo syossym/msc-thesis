@@ -1,0 +1,15 @@
+function E_g = GetMaterialBandGap(E_g_0,x,T)
+
+E_g = M.E_g_300;
+switch (M.Name)
+    case 'GaAs',
+        E_g = M.E_g_0 - 5.405e-4*T^2/(T+204);
+    case 'AlAs',
+        E_g = M.E_g_0 - 6e-4*T^2/(T+408); 
+    case ('AlGaAs' || 'GaAlAs'),
+        E_g_GaAs_X = 1.981-(4.6e-4*T^2)/(204+T);
+        E_g_AlAs_X = 2.239-(6e-4*T^2)/(408+T);
+        E_g_GaAs_G = 1.521-(5.58e-4*T^2)/(220+T);
+        E_g_AlAs_G = 2.891-(8.78e-4*T^2)/(332+T);
+
+end

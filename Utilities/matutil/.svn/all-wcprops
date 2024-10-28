@@ -1,0 +1,413 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil
+END
+distmat1.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/distmat1.m
+END
+movsum.m
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/movsum.m
+END
+distmat3.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/distmat3.m
+END
+iseven.m
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/iseven.m
+END
+asrow.m
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/asrow.m
+END
+xkron.m
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/xkron.m
+END
+isodd.m
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/isodd.m
+END
+maskrepelem.m
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/maskrepelem.m
+END
+acosplus1.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/acosplus1.m
+END
+fnsdim.m
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/fnsdim.m
+END
+fmap.m
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/fmap.m
+END
+repelm.m
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/repelm.m
+END
+vecfill.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/vecfill.m
+END
+isascii.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/isascii.m
+END
+reparray.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/reparray.m
+END
+isrowvector.m
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/isrowvector.m
+END
+isupper.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/isupper.m
+END
+tanhminus1.m
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/tanhminus1.m
+END
+swapdims.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/swapdims.m
+END
+blockrot90.m
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/blockrot90.m
+END
+blockflipdim.m
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/blockflipdim.m
+END
+wraprad.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/wraprad.m
+END
+asvec.m
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/asvec.m
+END
+isscalar.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/isscalar.m
+END
+cropbyval.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/cropbyval.m
+END
+ascol.m
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/ascol.m
+END
+rotarray.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/rotarray.m
+END
+zeroscls.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/zeroscls.m
+END
+bounds2ind.m
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/bounds2ind.m
+END
+gsexpand.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/gsexpand.m
+END
+subdivide.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/subdivide.m
+END
+xrepmat.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/xrepmat.m
+END
+acoshplus1.m
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/acoshplus1.m
+END
+islower.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/islower.m
+END
+distmat0.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/distmat0.m
+END
+distmat2.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/distmat2.m
+END
+cummax.m
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/cummax.m
+END
+iscolvector.m
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/iscolvector.m
+END
+ndimgrid.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/ndimgrid.m
+END
+blockflipud.m
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/blockflipud.m
+END
+flipalldims.m
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/flipalldims.m
+END
+resize.m
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/resize.m
+END
+findcols.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/findcols.m
+END
+distmat.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/distmat.m
+END
+isposint.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/isposint.m
+END
+powerset.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/powerset.m
+END
+isalnum.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/isalnum.m
+END
+issymmetric.m
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/issymmetric.m
+END
+tanpluspihalf.m
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/tanpluspihalf.m
+END
+latexmat.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/latexmat.m
+END
+cosminus1.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/cosminus1.m
+END
+isalpha.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/isalpha.m
+END
+atanminuspihalf.m
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/atanminuspihalf.m
+END
+isxdigit.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/isxdigit.m
+END
+isint.m
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/isint.m
+END
+coshminus1.m
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/coshminus1.m
+END
+splitarray.m
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/splitarray.m
+END
+findrows.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/findrows.m
+END
+sinc.m
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/sinc.m
+END
+isdigit.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/isdigit.m
+END
+isprtchr.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/isprtchr.m
+END
+isvector.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/isvector.m
+END
+mergearray.m
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/mergearray.m
+END
+ismatrix.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/ismatrix.m
+END
+sexpand.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/sexpand.m
+END
+blockfliplr.m
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/blockfliplr.m
+END
+mahaldist.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/mahaldist.m
+END
+blockdiag.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/matutil/blockdiag.m
+END

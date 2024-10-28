@@ -1,0 +1,42 @@
+%% Init
+
+close all; clear all; clc;
+warning off;
+
+% Set project directories
+global project_path;
+project_path = 'C:\Users\Yossi Michaeli\Documents\Thesis\Code';
+cd(project_path);
+run('.\Common\AddPath.m');
+
+% Create the physical constants structure
+Constants;
+
+colors = ['b', 'r', 'g', 'k', 'c', 'm', 'b', 'r', 'g', 'k', 'c', 'm', 'b', 'r', 'g', 'k', 'c', 'm', 'b', 'r', 'g', 'k', 'c', 'm'];
+
+%% Read the experimental results files
+
+load('Ne_White_Lamp_Spectrum.mat');
+
+global father_dirname;
+
+father_dirname = uigetdir(project_path, 'Pick Experimental Data Directory');
+filenames = dir(father_dirname);
+
+figure(1); hold on; box on;
+stem(Ne_peaks_E./Consts.e_0, 7e4*ones(size(Ne_peaks_E)), ':');
+
+for (ii=1:4) %length(filenames))
+    temp1 = strsplit('_', filenames(ii).name);
+    temp2 = strsplit('.', filenames(ii).name);
+    if(strcmp(temp1(1), 'calib') && strcmp(temp2(end), 'dat'))
+        data{ii} = load([father_dirname '/' filenames(ii).name]);
+        [maxs,mins] = peakdet(data{ii}(:,2),50, data{ii}(:,1));
+        plot(data{ii}(:,1)-0.1, data{ii}(:,2), 'Color', 'r'); pause;
+        %stem(maxs(:,1), 7e4*ones(size(maxs(:,1))), 'r'); 
+    end
+end
+
+
+
+axis tight;

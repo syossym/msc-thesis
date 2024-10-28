@@ -1,0 +1,131 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/strutil
+END
+strsplit.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/strutil/strsplit.m
+END
+strflushleft.m
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/strutil/strflushleft.m
+END
+strjoin.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/strutil/strjoin.m
+END
+dewhite.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/strutil/dewhite.m
+END
+strlexge.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/strutil/strlexge.m
+END
+ddewhite.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/strutil/ddewhite.m
+END
+rstrrep.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/strutil/rstrrep.m
+END
+strlexle.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/strutil/strlexle.m
+END
+sizestr.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/strutil/sizestr.m
+END
+strlexne.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/strutil/strlexne.m
+END
+ddeblank.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/strutil/ddeblank.m
+END
+strlexeq.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/strutil/strlexeq.m
+END
+rot13.m
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/strutil/rot13.m
+END
+strflushright.m
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/strutil/strflushright.m
+END
+strcenter.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/strutil/strcenter.m
+END
+unrot13.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/strutil/unrot13.m
+END
+strlexgt.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/strutil/strlexgt.m
+END
+strlexlt.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/strutil/strlexlt.m
+END
+untabify.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/strutil/untabify.m
+END
+strlexcmp.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/strutil/strlexcmp.m
+END
+substr.m
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/strutil/substr.m
+END

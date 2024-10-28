@@ -1,0 +1,291 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML is auto-generated from an M-file.
+To make changes, update the M-file and republish this document.
+      --><title>CalculateRefractiveIndex</title><meta name="generator" content="MATLAB 7.10"><meta name="date" content="2010-06-04"><meta name="m-file" content="CalculateRefractiveIndex"><style type="text/css">
+
+body {
+  background-color: white;
+  margin:10px;
+}
+
+h1 {
+  color: #990000; 
+  font-size: x-large;
+}
+
+h2 {
+  color: #990000;
+  font-size: medium;
+}
+
+/* Make the text shrink to fit narrow windows, but not stretch too far in 
+wide windows. */ 
+p,h1,h2,div.content div {
+  max-width: 600px;
+  /* Hack for IE6 */
+  width: auto !important; width: 600px;
+}
+
+pre.codeinput {
+  background: #EEEEEE;
+  padding: 10px;
+}
+@media print {
+  pre.codeinput {word-wrap:break-word; width:100%;}
+} 
+
+span.keyword {color: #0000FF}
+span.comment {color: #228B22}
+span.string {color: #A020F0}
+span.untermstring {color: #B20000}
+span.syscmd {color: #B28C00}
+
+pre.codeoutput {
+  color: #666666;
+  padding: 10px;
+}
+
+pre.error {
+  color: red;
+}
+
+p.footer {
+  text-align: right;
+  font-size: xx-small;
+  font-weight: lighter;
+  font-style: italic;
+  color: gray;
+}
+
+  </style></head><body><div class="content"><pre class="codeinput"><span class="keyword">function</span> n = CalculateRefractiveIndex(method, x, T, E)
+
+<span class="keyword">global</span> Consts aquila_control
+
+<span class="keyword">if</span> (x==1)
+    material = <span class="string">'AlAs'</span>;
+<span class="keyword">elseif</span> (x==0)
+    material = <span class="string">'GaAs'</span>;
+<span class="keyword">else</span>
+    material = <span class="string">'GaAlAs'</span>;
+<span class="keyword">end</span>
+
+<span class="keyword">switch</span> (method)
+    <span class="keyword">case</span> <span class="string">'exp_1'</span>,
+        n = GetExpRefractiveIndex(x, T, E);
+    <span class="keyword">case</span> <span class="string">'exp_2'</span>,
+        n = GetRefractiveIndex(material, E, x);
+    <span class="keyword">case</span> <span class="string">'emp_1'</span>,
+        n = EmpiricalRefraciveIndex(<span class="string">'Sellemeier'</span>,x,T,E);
+    <span class="keyword">case</span> <span class="string">'emp_2'</span>,
+        n = EmpiricalRefraciveIndex(<span class="string">'Zhang'</span>,x,T,E);
+<span class="keyword">end</span>
+
+<span class="keyword">function</span> n = GetExpRefractiveIndex(x, T, E_interp)
+
+<span class="keyword">global</span> Consts;
+
+<span class="comment">% Load the experimental data</span>
+n_GaAs = load(<span class="string">'Materials\n_GaAs_300K.mat'</span>);
+n_AlAs = load(<span class="string">'Materials\n_AlAs_300K.mat'</span>);
+n_GaAlAs = load(<span class="string">'Materials\n_GaAlAs_300K.mat'</span>);
+
+<span class="comment">% Calculate the refractive index</span>
+<span class="keyword">if</span> (x==1)
+    d_Eg = GetMaterialBandGap(x,T)-GetMaterialBandGap(x,300);
+    n_real = interp1(n_AlAs.E+d_Eg, n_AlAs.AlAs(:,1).', E_interp, <span class="string">'pchip'</span>);
+    n_imag = interp1(n_AlAs.E+d_Eg, n_AlAs.AlAs(:,2).', E_interp, <span class="string">'pchip'</span>);
+    <span class="comment">%n_imag(n_AlAs.E+d_Eg&lt;GetMaterialBandGap(x,T)) = 0;</span>
+    n = n_real + 1i*n_imag;
+<span class="keyword">elseif</span> (x==0)
+    d_Eg = GetMaterialBandGap(x,T)-GetMaterialBandGap(x,300);;
+    n_real = interp1(n_GaAs.E+d_Eg, n_GaAs.GaAs(:,1).', E_interp, <span class="string">'pchip'</span>);
+    n_imag = interp1(n_GaAs.E+d_Eg, n_GaAs.GaAs(:,2).', E_interp, <span class="string">'pchip'</span>);
+
+    <span class="comment">%n_imag(n_imag&lt;0.05) = 0;</span>
+    n = n_real + 1i*n_imag;
+<span class="keyword">else</span>
+    <span class="comment">%     if (x &lt; 0.69)</span>
+    <span class="comment">%         aquila_control.T = T;</span>
+    <span class="comment">%         E_g_T = gaasmaterial(x,'E_G6G8');</span>
+    <span class="comment">%         aquila_control.T = 300;</span>
+    <span class="comment">%         E_g_300 = gaasmaterial(x,'E_G6G8');</span>
+    <span class="comment">%         d_Eg = E_g_T-E_g_300;</span>
+    <span class="comment">%     else</span>
+
+    <span class="comment">%d_Eg = GetMaterialBandGap(x,T)-GetMaterialBandGap(x,300);</span>
+    <span class="comment">%end</span>
+
+    <span class="comment">%     E = n_AlAs.E;</span>
+    <span class="comment">%     n_real = (1-x).*(n_GaAs.GaAs(1:length(E),1)) + x.*(n_AlAs.AlAs(:,1));</span>
+    <span class="comment">%     n_imag = (1-x).*(n_GaAs.GaAs(1:length(E),2)) + x.*(n_AlAs.AlAs(:,2));</span>
+    <span class="comment">%</span>
+    <span class="comment">%     %n_imag(n_imag&lt;0.05) = 0;</span>
+    <span class="comment">%</span>
+    <span class="comment">%     n_real = interp1(E+d_Eg, n_real, E_interp, 'pchip');</span>
+    <span class="comment">%     n_imag = interp1(E+d_Eg, n_imag, E_interp, 'pchip');</span>
+    <span class="comment">%     n = n_real + 1i*n_imag;</span>
+
+    d_Eg = GetMaterialBandGap(x,T)-GetMaterialBandGap(x,300);
+    n_300K = n_GaAlAs.AlGaAs{floor(x*10)};
+    E = 1:n_300K.E(2)-n_300K.E(1):1.5-n_300K.E(2)-n_300K.E(1);
+    E = [E, n_300K.E];
+    n_imag = padarray(n_300K.n_imag.'[0 3],<span class="string">'symmetric'</span>,<span class="string">'pre'</span>
+    n_real = interp1(n_300K.E+d_Eg, n_300K.n_real.', E_interp, <span class="string">'cubic'</span>);
+    n_imag = interp1(n_300K.E+d_Eg, , E_interp, <span class="string">'pchip'</span>);
+    n_imag(E_interp&lt;1.5) = 0;
+    n = n_real + 1i*n_imag;
+
+<span class="keyword">end</span>
+
+<span class="keyword">function</span> n = EmpiricalRefraciveIndex(method,x,T,E)
+
+<span class="keyword">global</span> Consts;
+
+<span class="keyword">switch</span> (method)
+    <span class="keyword">case</span> <span class="string">'Sellemeier'</span>,
+        n = ModifiedSellmeierEquation(x, T, E);
+    <span class="keyword">case</span> <span class="string">'Zhang'</span>,
+        <span class="keyword">switch</span> (x)
+            <span class="keyword">case</span> 0,    <span class="comment">% GaAs</span>
+                E_0 = 1.5192 + 2.862e-2*(1-coth(1.59e-2/(2*Consts.k_B_eV*T))) + <span class="keyword">...</span>
+                    3.696e-2*(1-coth(3.36e-2/(2*Consts.k_B_eV*T)));
+                A = 7.3377 + 5.534e-4*T - 3.56e-7*T^2;
+                E_1_sq = 3.791 - 3.779e-4*T - 1.121e-6*T^2;
+
+                n = sqrt(A+0.001680081./(E_0^2-E.^2)+13.603615./(E_1_sq-E.^(1.22)));
+            <span class="keyword">case</span> 1,    <span class="comment">% AlAs</span>
+                E_0 = 3.099 + 2.862e-2*(1-coth(1.59e-2/(2*Consts.k_B_eV*T))) + <span class="keyword">...</span>
+                    3.696e-2*(1-coth(3.36e-2/(2*Consts.k_B_eV*T)));
+                A = 2.857 + 4.574e-4*T - 2.942e-7*T^2;
+                E_1_sq = 11.717 - 3.779e-4*T - 1.121e-6*T^2;
+                R = 2.157e-3./(1.331e-3-E.^2);
+
+                n = sqrt(A + 0.060876./(E_0^2-E.^2) + 61.064215./(E_1_sq-E.^2)+R);
+            <span class="keyword">otherwise</span>, <span class="comment">% GaAlAs</span>
+                n_GaAs = EmpiricalRefraciveIndex(<span class="string">'Zhang'</span>,0,T,E);
+                n_AlAs = EmpiricalRefraciveIndex(<span class="string">'Zhang'</span>,1,T,E);
+                n = (1-x).*n_GaAs + x.*n_AlAs;
+        <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre><pre class="codeoutput">Error: File: C:\Users\Yossi Michaeli\Documents\Thesis\Code\Final\CalculateRefractiveIndex.m Line: 73 Column: 38
+Unbalanced or unexpected parenthesis or bracket.
+</pre><p class="footer"><br>
+      Published with MATLAB&reg; 7.10<br></p></div><!--
+##### SOURCE BEGIN #####
+function n = CalculateRefractiveIndex(method, x, T, E)
+
+global Consts aquila_control
+
+if (x==1)
+    material = 'AlAs';
+elseif (x==0)
+    material = 'GaAs';
+else
+    material = 'GaAlAs';
+end
+
+switch (method)
+    case 'exp_1',
+        n = GetExpRefractiveIndex(x, T, E);
+    case 'exp_2',
+        n = GetRefractiveIndex(material, E, x);
+    case 'emp_1',
+        n = EmpiricalRefraciveIndex('Sellemeier',x,T,E);
+    case 'emp_2',
+        n = EmpiricalRefraciveIndex('Zhang',x,T,E);
+end
+
+function n = GetExpRefractiveIndex(x, T, E_interp)
+
+global Consts;
+
+% Load the experimental data
+n_GaAs = load('Materials\n_GaAs_300K.mat');
+n_AlAs = load('Materials\n_AlAs_300K.mat');
+n_GaAlAs = load('Materials\n_GaAlAs_300K.mat');
+
+% Calculate the refractive index
+if (x==1)
+    d_Eg = GetMaterialBandGap(x,T)-GetMaterialBandGap(x,300);
+    n_real = interp1(n_AlAs.E+d_Eg, n_AlAs.AlAs(:,1).', E_interp, 'pchip');
+    n_imag = interp1(n_AlAs.E+d_Eg, n_AlAs.AlAs(:,2).', E_interp, 'pchip');
+    %n_imag(n_AlAs.E+d_Eg<GetMaterialBandGap(x,T)) = 0;
+    n = n_real + 1i*n_imag;
+elseif (x==0)
+    d_Eg = GetMaterialBandGap(x,T)-GetMaterialBandGap(x,300);;
+    n_real = interp1(n_GaAs.E+d_Eg, n_GaAs.GaAs(:,1).', E_interp, 'pchip');
+    n_imag = interp1(n_GaAs.E+d_Eg, n_GaAs.GaAs(:,2).', E_interp, 'pchip');
+    
+    %n_imag(n_imag<0.05) = 0;
+    n = n_real + 1i*n_imag;
+else
+    %     if (x < 0.69)
+    %         aquila_control.T = T;
+    %         E_g_T = gaasmaterial(x,'E_G6G8');
+    %         aquila_control.T = 300;
+    %         E_g_300 = gaasmaterial(x,'E_G6G8');
+    %         d_Eg = E_g_T-E_g_300;
+    %     else
+    
+    %d_Eg = GetMaterialBandGap(x,T)-GetMaterialBandGap(x,300);
+    %end
+    
+    %     E = n_AlAs.E;
+    %     n_real = (1-x).*(n_GaAs.GaAs(1:length(E),1)) + x.*(n_AlAs.AlAs(:,1));
+    %     n_imag = (1-x).*(n_GaAs.GaAs(1:length(E),2)) + x.*(n_AlAs.AlAs(:,2));
+    %
+    %     %n_imag(n_imag<0.05) = 0;
+    %
+    %     n_real = interp1(E+d_Eg, n_real, E_interp, 'pchip');
+    %     n_imag = interp1(E+d_Eg, n_imag, E_interp, 'pchip');
+    %     n = n_real + 1i*n_imag;
+    
+    d_Eg = GetMaterialBandGap(x,T)-GetMaterialBandGap(x,300);
+    n_300K = n_GaAlAs.AlGaAs{floor(x*10)};
+    E = 1:n_300K.E(2)-n_300K.E(1):1.5-n_300K.E(2)-n_300K.E(1);
+    E = [E, n_300K.E];
+    n_imag = padarray(n_300K.n_imag.'[0 3],'symmetric','pre'
+    n_real = interp1(n_300K.E+d_Eg, n_300K.n_real.', E_interp, 'cubic');
+    n_imag = interp1(n_300K.E+d_Eg, , E_interp, 'pchip');
+    n_imag(E_interp<1.5) = 0;
+    n = n_real + 1i*n_imag;
+    
+end
+
+function n = EmpiricalRefraciveIndex(method,x,T,E)
+
+global Consts;
+
+switch (method)
+    case 'Sellemeier',
+        n = ModifiedSellmeierEquation(x, T, E);
+    case 'Zhang',
+        switch (x)
+            case 0,    % GaAs
+                E_0 = 1.5192 + 2.862e-2*(1-coth(1.59e-2/(2*Consts.k_B_eV*T))) + ...
+                    3.696e-2*(1-coth(3.36e-2/(2*Consts.k_B_eV*T)));
+                A = 7.3377 + 5.534e-4*T - 3.56e-7*T^2;
+                E_1_sq = 3.791 - 3.779e-4*T - 1.121e-6*T^2;
+                
+                n = sqrt(A+0.001680081./(E_0^2-E.^2)+13.603615./(E_1_sq-E.^(1.22)));
+            case 1,    % AlAs
+                E_0 = 3.099 + 2.862e-2*(1-coth(1.59e-2/(2*Consts.k_B_eV*T))) + ...
+                    3.696e-2*(1-coth(3.36e-2/(2*Consts.k_B_eV*T)));
+                A = 2.857 + 4.574e-4*T - 2.942e-7*T^2;
+                E_1_sq = 11.717 - 3.779e-4*T - 1.121e-6*T^2;
+                R = 2.157e-3./(1.331e-3-E.^2);
+                
+                n = sqrt(A + 0.060876./(E_0^2-E.^2) + 61.064215./(E_1_sq-E.^2)+R);
+            otherwise, % GaAlAs
+                n_GaAs = EmpiricalRefraciveIndex('Zhang',0,T,E);
+                n_AlAs = EmpiricalRefraciveIndex('Zhang',1,T,E);
+                n = (1-x).*n_GaAs + x.*n_AlAs;
+        end
+end
+##### SOURCE END #####
+--></body></html>

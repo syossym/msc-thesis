@@ -1,0 +1,239 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil
+END
+atan2deg.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/atan2deg.m
+END
+expminus1.m
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/expminus1.m
+END
+unwrapdeg.m
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/unwrapdeg.m
+END
+nthroot.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/nthroot.m
+END
+prcoftot.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/prcoftot.m
+END
+binomcoef.m
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/binomcoef.m
+END
+atan2grad.m
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/atan2grad.m
+END
+atandeg.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/atandeg.m
+END
+acosdeg.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/acosdeg.m
+END
+sindeg.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/sindeg.m
+END
+logspace2.m
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/logspace2.m
+END
+gcd2.m
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/gcd2.m
+END
+tangrad.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/tangrad.m
+END
+ndmtimes.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/ndmtimes.m
+END
+atangrad.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/atangrad.m
+END
+cosgrad.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/cosgrad.m
+END
+acosgrad.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/acosgrad.m
+END
+factorial2.m
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/factorial2.m
+END
+singrad.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/singrad.m
+END
+asingrad.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/asingrad.m
+END
+wrapdeg.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/wrapdeg.m
+END
+isprime2.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/isprime2.m
+END
+ndmtimes_loop_naive.m
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/ndmtimes_loop_naive.m
+END
+dawson.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/dawson.m
+END
+lcm2.m
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/lcm2.m
+END
+logspace10.m
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/logspace10.m
+END
+tandeg.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/tandeg.m
+END
+cosdeg.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/cosdeg.m
+END
+wrapgrad.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/wrapgrad.m
+END
+unwrapgrad.m
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/unwrapgrad.m
+END
+asindeg.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/asindeg.m
+END
+logbase.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/logbase.m
+END
+fibonacci.m
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/fibonacci.m
+END
+prcdiff.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/prcdiff.m
+END
+logbase10.m
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/logbase10.m
+END
+nchoose2.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/nchoose2.m
+END
+ndmtimes_loop_optim.m
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/ndmtimes_loop_optim.m
+END
+cuberoot.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/cuberoot.m
+END
+log1p.m
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/63/trunk/MSc_Matlab_Code/Utilities/mathutil/log1p.m
+END

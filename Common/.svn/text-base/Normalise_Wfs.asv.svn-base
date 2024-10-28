@@ -1,0 +1,18 @@
+function normWfs = Normalise_Wfs(z,wfs,type)
+
+[x,y] = size(wfs);
+
+if (x>y)
+   wfs = wfs.'; 
+end
+normWfs = zeros(size(wfs));
+for (ii=1:length(wfs(:,1)))
+    if (strcmp(type, 'Abs'))
+        dem = sqrt(trapz(z,abs(wfs(ii,:)).^2));
+    elseif (
+    if (dem~=0)
+        normWfs(ii,:) = wfs(ii,:)/sqrt(trapz(z,abs(wfs(ii,:)).^2));
+    else
+        normWfs(ii,:) = wfs(ii,:);
+    end
+end

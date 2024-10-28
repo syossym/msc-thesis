@@ -1,0 +1,931 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   
+      <!--
+This HTML is auto-generated from an M-file.
+To make changes, update the M-file and republish this document.
+      -->
+      <title>HartreeFock_Test7</title>
+      <meta name="generator" content="MATLAB 7.8">
+      <meta name="date" content="2009-12-19">
+      <meta name="m-file" content="HartreeFock_Test7"><style type="text/css">
+
+body {
+  background-color: white;
+  margin:10px;
+}
+
+h1 {
+  color: #990000; 
+  font-size: x-large;
+}
+
+h2 {
+  color: #990000;
+  font-size: medium;
+}
+
+/* Make the text shrink to fit narrow windows, but not stretch too far in 
+wide windows. */ 
+p,h1,h2,div.content div {
+  max-width: 600px;
+  /* Hack for IE6 */
+  width: auto !important; width: 600px;
+}
+
+pre.codeinput {
+  background: #EEEEEE;
+  padding: 10px;
+}
+@media print {
+  pre.codeinput {word-wrap:break-word; width:100%;}
+} 
+
+span.keyword {color: #0000FF}
+span.comment {color: #228B22}
+span.string {color: #A020F0}
+span.untermstring {color: #B20000}
+span.syscmd {color: #B28C00}
+
+pre.codeoutput {
+  color: #666666;
+  padding: 10px;
+}
+
+pre.error {
+  color: red;
+}
+
+p.footer {
+  text-align: right;
+  font-size: xx-small;
+  font-weight: lighter;
+  font-style: italic;
+  color: gray;
+}
+
+  </style></head>
+   <body>
+      <div class="content">
+         <h2>Contents</h2>
+         <div>
+            <ul>
+               <li><a href="#2">Part 1 - Subband energies</a></li>
+               <li><a href="#3">Part 2 - Gain Spectra</a></li>
+            </ul>
+         </div><pre class="codeinput"><span class="comment">%function HartreeFock_Test3()</span>
+
+warning <span class="string">off</span>;
+<span class="keyword">global</span> Consts;
+<span class="keyword">global</span> R G_TE G_TM z_exp;
+</pre><h2>Part 1 - Subband energies<a name="2"></a></h2>
+         <p>close all; clc; %clear all; warning off;</p>
+         <p>%Init project</p><pre class="codeinput"><span class="keyword">global</span> project_path;
+project_path = <span class="string">'C:\Users\Yossi Mchaeli\Documents\Code\MATLAB\Thesis'</span>;
+cd(project_path);
+run(<span class="string">'.\Common\AddPath.m'</span>);
+
+Constants;
+
+<span class="comment">% well_width = 200   % [A]</span>
+<span class="comment">% x = 1;</span>
+<span class="comment">% Res1 = SingleQW_kp(well_width,x);</span>
+
+L_z = 50e-10;
+x = 0.2;
+T = 300;
+Structure = { <span class="string">'GaAlAs'</span> , 100, x ;
+              <span class="string">'GaAs'</span>, L_z*1e10, 0;
+              <span class="string">'GaAlAs'</span> , 100, x };
+
+<span class="comment">%Res2 = GeneralStructure_TransferMatrix(Structure, T);</span>
+
+R = Res2;
+
+close <span class="string">all</span>;
+</pre><h2>Part 2 - Gain Spectra<a name="3"></a></h2><pre class="codeinput"><span class="comment">% Definitions</span>
+con_vec = [2e11,6e11,2e12,3e12,4e12];    <span class="comment">% [cm^-2]</span>
+gamma = 1e13;                                      <span class="comment">% [s^-1]</span>
+dk = R.k_t_mat(2) - R.k_t_mat(1);
+deltaE_vc_0 = (Res2.E_k_v{1}(1)/Consts.e_0 + Res2.E_k_c{1}(1)/Consts.e_0)
+E_exc = (deltaE_vc_0-0.1)*Consts.e_0 : 1e-3*Consts.e_0 : (deltaE_vc_0+0.3)*Consts.e_0;
+<span class="comment">%E_exc = (R.Materials{2}.E_g-0.1)*Consts.e_0 : 0.001*Consts.e_0 : (R.Materials{2}.E_g+0.5)*Consts.e_0;</span>
+Mb = sqrt(Consts.e_0*R.Materials{2}.E_p*Consts.m_0/6);
+C_g = 1./(Consts.hbar*Consts.c*Consts.eps_0*L_z*pi*R.Materials{2}.n);
+init_E = 0.01*Consts.e_0;
+cb_len = 1; vb_len = 3;
+
+<span class="comment">% Simulation grids</span>
+sim_index = 1:500;
+k_vec = R.k_t_mat(sim_index);
+k_len = length(k_vec);
+k_mat = repmat(k_vec.^2, k_len, 1);
+theta = [0:0.1:2*pi];
+z_exp = -abs(repmat(R.z_grid,1,length(R.z_grid)) -<span class="keyword">...</span>
+    repmat(R.z_grid',length(R.z_grid),1));
+
+<span class="keyword">for</span> (con_num = 1:length(con_vec))
+
+    <span class="comment">% Carrier concentrations</span>
+    N = con_vec(con_num);
+    P = N;
+
+    <span class="comment">% Quasi Fermi levels</span>
+    options = optimset(<span class="string">'TolFun'</span>,1e-100,<span class="string">'TolX'</span>,1e-100,<span class="string">'MaxIter'</span>,5000,<span class="string">'MaxFunEvals'</span>,5000,<span class="string">'Display'</span>,<span class="string">'iter'</span>);
+    E_fv = fzero(@(E_fv) TargetFermiIntegral(R.k_t_mat, R.E_k_v, E_fv, P*1e4, T, L_z), init_E, options);
+    E_fc = fzero(@(E_fc) TargetFermiIntegral(R.k_t_mat, R.E_k_c, E_fc, N*1e4, T, L_z), init_E, options);
+
+    D_E_CH_con = {};
+    D_E_SX_con = {};
+    w_tag_con  = {};
+    <span class="keyword">for</span> (cb_num = 1:cb_len)
+        <span class="keyword">for</span> (vb_num = 1:vb_len)
+<span class="comment">%             disp(['-- Parameter calculations - cb=' num2str(cb_num) ', vb=' num2str(vb_num)]);</span>
+<span class="comment">%</span>
+<span class="comment">%             % Carrier distributions -----------------------------------</span>
+<span class="comment">%             E_e = R.E_k_c{cb_num}(sim_index);</span>
+<span class="comment">%             E_h = R.E_k_v{vb_num}(sim_index);</span>
+<span class="comment">%             f_h = FermiDirac(E_fv, E_h, T);</span>
+<span class="comment">%             f_e = FermiDirac(E_fc, E_e, T);</span>
+<span class="comment">%</span>
+<span class="comment">%             % Simulation definitions ----------------------------------</span>
+<span class="comment">%             Psi_e = abs(R.wf_e_mat{cb_num}(:,2));</span>
+<span class="comment">%             Psi_hh = abs(R.wf_h_mat{vb_num}(:,2));</span>
+<span class="comment">%             Psi_lh = abs(R.wf_h_mat{vb_num}(:,3));</span>
+<span class="comment">%             Xi_e = repmat(Psi_e.^2, 1, length(R.z_grid));</span>
+<span class="comment">%             Xi_h = repmat(Psi_hh.'.^2 + Psi_lh.'.^2, length(R.z_grid), 1);</span>
+<span class="comment">%             Xi_ee = Xi_e.*Xi_e.';</span>
+<span class="comment">%             Xi_hh = Xi_h.'.*Xi_h;</span>
+<span class="comment">%             Xi_eh = Xi_e.*Xi_h;</span>
+<span class="comment">%</span>
+<span class="comment">%             % Prelimenary clalculations -------------------------------</span>
+<span class="comment">%             disp('Calculating form factors');</span>
+<span class="comment">%             Gq_eh = G_q(Xi_eh,k_vec,R.z_grid);</span>
+<span class="comment">%             Gq_ee = G_q(Xi_ee,k_vec,R.z_grid);</span>
+<span class="comment">%             Gq_hh = G_q(Xi_hh,k_vec,R.z_grid);</span>
+<span class="comment">%             disp('Calculating screened dielectric function');</span>
+<span class="comment">%             eps_q = Eps_q(k_vec,theta,E_fv,E_fc,T,f_e,f_h,E_e,E_h,R.Materials{2}.eps_r);</span>
+<span class="comment">%             eps_q(1) = eps_q(2);</span>
+<span class="comment">%</span>
+<span class="comment">% %             figure(1);</span>
+<span class="comment">% %             subplot(211);</span>
+<span class="comment">% %             plot(k_vec, Gq_eh, 'b', k_vec, Gq_ee, 'r', k_vec, Gq_hh, 'g');</span>
+<span class="comment">% %             ylabel('G_q');</span>
+<span class="comment">% %             legend('G_q^{eh}', 'G_q^{ee}', 'G_q^{hh}');</span>
+<span class="comment">% %             subplot(212);</span>
+<span class="comment">% %             plot(k_vec, eps_q./k_vec);</span>
+<span class="comment">% %             xlabel('k'); ylabel('\epsilon_q');</span>
+<span class="comment">% %             drawnow;</span>
+<span class="comment">%</span>
+<span class="comment">%             % Theta matrix and Screened-exchange shift energy calculation --------------------------------</span>
+<span class="comment">%             disp('Calculating Theta matrix and Screened-exchange shift energy');</span>
+<span class="comment">%             [Theta{cb_num,vb_num}, D_E_SX{cb_num,vb_num}] = ThetaESxCalculation(Gq_ee,Gq_hh,Gq_eh,theta,eps_q,k_vec,f_e,f_h,R.Materials{2}.eps_r);</span>
+<span class="comment">%</span>
+<span class="comment">%             % Xi matrix calculation -----------------------------------</span>
+<span class="comment">%             disp('Calculating D_E_CH');</span>
+<span class="comment">%             q_vec = k_vec; q_vec(1) = q_vec(2);</span>
+<span class="comment">%             D_E_CH{cb_num,vb_num} = E_CH(Gq_hh,eps_q,k_vec,q_vec,R.Materials{2}.eps_r);</span>
+<span class="comment">%</span>
+            <span class="comment">% Bandgap renormalization</span>
+            w_mn_tag{cb_num,vb_num} = (E_h + E_e + D_E_CH{cb_num,vb_num}.*ones(size(k_vec)) + D_E_SX{cb_num,vb_num})./Consts.hbar;
+            w_mn{cb_num,vb_num} = (E_h + E_e)./Consts.hbar;
+        <span class="keyword">end</span>
+    <span class="keyword">end</span>
+
+    disp(<span class="string">'-- Spectrum calculation'</span>);
+    <span class="keyword">for</span> (ee = 1:length(E_exc))
+        E_exc(ee);
+        w = (E_exc(ee)./Consts.hbar);
+        sum_TE_MBT = 0;
+        sum_TM_MBT = 0;
+        sum_TE_FCT = 0;
+        sum_TM_FCT = 0;
+
+        <span class="keyword">for</span> (cb_num = 1:cb_len)
+            <span class="keyword">for</span> (vb_num = 1:vb_len)
+
+                <span class="comment">% Carrier distributions -----------------------------------</span>
+                E_e = R.E_k_c{cb_num}(sim_index);
+                E_h = R.E_k_v{vb_num}(sim_index);
+                f_h = FermiDirac(E_fv, E_h, T);
+                f_e = FermiDirac(E_fc, E_e, T);
+                omega = f_e + f_h - 1;
+
+                <span class="comment">% Simulation definitions ----------------------------------</span>
+                mu_TE = sqrt(squeeze(R.rtsTE(vb_num,cb_num,sim_index))).'.*Mb;
+                mu_TM = sqrt(squeeze(R.rtsTM(vb_num,cb_num,sim_index))).'.*Mb;
+
+                Xi_0_TE = (-1i/Consts.hbar).*((omega.*mu_TE)./(1i*(w_mn_tag{cb_num,vb_num}-w)+gamma));
+                Xi_0_TM = (-1i/Consts.hbar).*((omega.*mu_TM)./(1i*(w_mn_tag{cb_num,vb_num}-w)+gamma));
+
+<span class="comment">%                 % Coulomb enhancement factor calculation ------------------</span>
+<span class="comment">%                 M_TE = eye(k_len);</span>
+<span class="comment">%                 M_TE = M_TE - repmat((dk./mu_TE).', 1, k_len).*repmat(Xi_0_TE, k_len, 1).*Theta{cb_num,vb_num};%(:,end:-1:1).*1e8;</span>
+                M_TE = repmat((1./mu_TE).', 1, k_len).*repmat(Xi_0_TE, k_len, 1).*Theta{cb_num,vb_num};
+                Q_k_TE = 1./(1-trapz(k_vec, M_TE, 2)/L_z/100);
+                M_TM = repmat((1./mu_TM).', 1, k_len).*repmat(Xi_0_TM, k_len, 1).*Theta{cb_num,vb_num};
+                Q_k_TM = 1./(1-trapz(k_vec, M_TM, 2)/L_z/100);
+
+<span class="comment">%                 M_TM = eye(k_len);</span>
+<span class="comment">%                 M_TM = M_TM - repmat((dk./mu_TM).', 1, k_len).*repmat(Xi_0_TM, k_len, 1).*Theta{cb_num,vb_num};%(:,end:-1:1).*1e8;</span>
+<span class="comment">%                 Q_k_TE = M_TE\ones(k_len,1);</span>
+<span class="comment">%                 Q_k_TM = M_TM\ones(k_len,1);</span>
+
+<span class="comment">%                 M_TE = zeros(k_len); M_TM = zeros(k_len);</span>
+<span class="comment">%                 for (kk=1:k_len)</span>
+<span class="comment">%                     for (kk_tag=1:k_len)</span>
+<span class="comment">%                         if (kk==kk_tag)</span>
+<span class="comment">%                            M_TE(kk,kk_tag) = 1 + k_vec(kk_tag)*(1i/Consts.hbar)*dk*Theta{cb_num,vb_num}(kk,kk_tag)*omega(kk)*...</span>
+<span class="comment">%                                                  (mu_TE(kk_tag)/mu_TE(kk))*(1/(1i*(w_tag{cb_num,vb_num}(kk_tag)-w)+gamma));</span>
+<span class="comment">%                            M_TM(kk,kk_tag) = 1 + k_vec(kk_tag)*(1i/Consts.hbar)*dk*Theta{cb_num,vb_num}(kk,kk_tag)*omega(kk)*...</span>
+<span class="comment">%                                                  (mu_TM(kk_tag)/mu_TM(kk))*(1/(1i*(w_tag{cb_num,vb_num}(kk_tag)-w)+gamma));</span>
+<span class="comment">%                         else</span>
+<span class="comment">%                            M_TE(kk,kk_tag) = k_vec(kk_tag)*(1i/Consts.hbar)*dk*Theta{cb_num,vb_num}(kk,kk_tag)*omega(kk)*...</span>
+<span class="comment">%                                              (mu_TE(kk_tag)/mu_TE(kk))*(1/(1i*(w_tag{cb_num,vb_num}(kk_tag)-w)+gamma));</span>
+<span class="comment">%                            M_TM(kk,kk_tag) = k_vec(kk_tag)*(1i/Consts.hbar)*dk*Theta{cb_num,vb_num}(kk,kk_tag)*omega(kk)*...</span>
+<span class="comment">%                                              (mu_TM(kk_tag)/mu_TM(kk))*(1/(1i*(w_tag{cb_num,vb_num}(kk_tag)-w)+gamma));</span>
+<span class="comment">%                         end</span>
+<span class="comment">%                     end</span>
+<span class="comment">%                 end</span>
+<span class="comment">%</span>
+<span class="comment">%                 Q_k_TE = (M_TE)\ones(k_len,1);</span>
+<span class="comment">%                 Q_k_TM = (M_TM)\ones(k_len,1);</span>
+
+                <span class="comment">% Calculating gain sum elements ---------------------------</span>
+                I_TE_FCT = 2*trapz(k_vec, k_vec.*mu_TE.^2.*(f_e+f_h-1).*(gamma./((w_mn{cb_num,vb_num}-w).^2+gamma^2)));
+                I_TM_FCT = 2*trapz(k_vec, k_vec.*mu_TM.^2.*(f_e+f_h-1).*(gamma./((w_mn{cb_num,vb_num}-w).^2+gamma^2)));
+                sum_TE_FCT = sum_TE_FCT + I_TE_FCT;
+                sum_TM_FCT = sum_TM_FCT + I_TM_FCT;
+
+                I_TE_MBT = 2*trapz(k_vec, k_vec.*mu_TE.^2.*omega.*(1./(1i*(w_mn_tag{cb_num,vb_num}-w)+gamma)).*Q_k_TE.');
+                I_TM_MBT = 2*trapz(k_vec, k_vec.*mu_TM.^2.*omega.*(1./(1i*(w_mn_tag{cb_num,vb_num}-w)+gamma)).*Q_k_TM.');
+                sum_TE_MBT = sum_TE_MBT + I_TE_MBT;
+                sum_TM_MBT = sum_TM_MBT + I_TM_MBT;
+            <span class="keyword">end</span>
+        <span class="keyword">end</span>
+
+        G_TE_FCT(ee) = C_g.*w.*sum_TE_FCT*L_z;
+        G_TM_FCT(ee) = C_g.*w.*sum_TM_FCT*L_z;
+        G_TE_MBT(ee) = imag(C_g.*1i*w.*sum_TE_MBT*L_z);
+        G_TM_MBT(ee) = imag(C_g.*1i*w.*sum_TE_MBT*L_z);
+        D_E_CH_con = {D_E_CH_con, D_E_CH};
+        D_E_SX_con = {D_E_SX_con, D_E_SX};
+        w_tag_con = {w_tag_con, w_tag};
+    <span class="keyword">end</span>
+
+    index_TE_MBT = find(abs(G_TE_MBT) == max(abs(G_TE_MBT(1:round(length(G_TE_MBT)/3)))));
+    index_TM_MBT = find(abs(G_TM_MBT) == max(abs(G_TM_MBT(1:round(length(G_TM_MBT)/3)))));
+
+    figure(2);
+    subplot(211);
+    plot(E_exc/Consts.e_0, G_TE_MBT/100, <span class="string">'b'</span>, E_exc/Consts.e_0, G_TE_FCT/100, <span class="string">'b:'</span>); hold <span class="string">on</span>;
+    plot(deltaE_vc_0*ones(size(G_TE_MBT)), G_TE_MBT/100, <span class="string">'g:'</span>);
+    ylabel(<span class="string">'G [cm^{-1}]'</span>);
+    text(E_exc(index_TE_MBT)/Consts.e_0,G_TE_MBT(index_TE_MBT)/100, [num2str(N/1e12), <span class="string">'x10^{12} cm^{-2}'</span>], <span class="string">'FontSize'</span>, 8);
+    subplot(212);
+    plot(E_exc/Consts.e_0, G_TM_MBT/100, <span class="string">'b'</span>, E_exc/Consts.e_0, G_TE_FCT/100, <span class="string">'b:'</span>); hold <span class="string">on</span>;
+    plot(deltaE_vc_0*ones(size(G_TM_MBT)), G_TM_MBT/100, <span class="string">'g:'</span>);
+    text(E_exc(index_TM_MBT)/Consts.e_0,G_TM_MBT(index_TM_MBT)/100, [num2str(N/1e12), <span class="string">'x10^{12} cm^{-2}'</span>], <span class="string">'FontSize'</span>, 8);
+    xlabel(<span class="string">'E [eV]'</span>); ylabel(<span class="string">'G [cm^{-1}]'</span>);
+<span class="keyword">end</span>
+</pre><pre class="codeoutput">
+deltaE_vc_0 =
+
+    1.5080
+
+ 
+Search for an interval around 1.60218e-021 containing a sign change:
+ Func-count    a          f(a)             b          f(b)        Procedure
+    1    1.60218e-021  8.02686e+024  1.60218e-021  8.02686e+024   initial interval
+    3    1.55686e-021  7.95109e+024  1.64749e-021  8.10319e+024   search
+    5    1.53809e-021  7.91987e+024  1.66626e-021  8.13497e+024   search
+    7    1.51154e-021  7.87588e+024  1.69281e-021  8.18009e+024   search
+    9      1.474e-021  7.81399e+024  1.73035e-021  8.24422e+024   search
+   11    1.42091e-021  7.72713e+024  1.78344e-021  8.33558e+024   search
+   13    1.34583e-021  7.60558e+024  1.85852e-021  8.46612e+024   search
+   15    1.23965e-021  7.43625e+024  1.96471e-021  8.65343e+024   search
+   17    1.08948e-021  7.20187e+024  2.11487e-021  8.92376e+024   search
+   19    8.77114e-022  6.88042e+024  2.32724e-021  9.31707e+024   search
+   21    5.76784e-022  6.44542e+024  2.62757e-021  9.89563e+024   search
+   23    1.52052e-022  5.86811e+024   3.0523e-021  1.07595e+025   search
+   25   -4.48609e-022  5.12361e+024  3.65296e-021  1.20745e+025   search
+   27   -1.29807e-021  4.20357e+024  4.50243e-021  1.41256e+025   search
+   29    -2.4994e-021  3.13686e+024  5.70375e-021  1.74147e+025   search
+   31   -4.19832e-021  2.01291e+024  7.40268e-021  2.28265e+025   search
+   33   -6.60097e-021  9.85494e+023  9.80532e-021  3.18192e+025   search
+   35   -9.99882e-021  2.21556e+023  1.32032e-020  4.62301e+025   search
+   36   -1.48041e-020 -2.03141e+023  1.32032e-020  4.62301e+025   search
+ 
+Search for a zero in the interval [-1.48041e-020, 1.32032e-020]:
+ Func-count    x          f(x)             Procedure
+   36   -1.48041e-020 -2.03141e+023        initial
+   37   -1.46816e-020 -1.97259e+023        interpolation
+   38   -1.05894e-020  1.40034e+023        interpolation
+   39   -1.22884e-020 -4.00834e+022        interpolation
+   40   -1.19103e-020 -6.01298e+021        interpolation
+   41   -1.18463e-020   6.0451e+019        interpolation
+   42   -1.18469e-020 -4.54459e+017        interpolation
+   43   -1.18469e-020 -3.40033e+013        interpolation
+   44   -1.18469e-020 -6.71089e+007        interpolation
+   45   -1.18469e-020 -6.71089e+007        interpolation
+ 
+Zero found in the interval [-1.48041e-020, 1.32032e-020]
+ 
+Search for an interval around 1.60218e-021 containing a sign change:
+ Func-count    a          f(a)             b          f(b)        Procedure
+    1    1.60218e-021       -4e+023  1.60218e-021       -4e+023   initial interval
+    3    1.55686e-021       -4e+023  1.64749e-021       -4e+023   search
+    5    1.53809e-021       -4e+023  1.66626e-021       -4e+023   search
+    7    1.51154e-021       -4e+023  1.69281e-021       -4e+023   search
+    9      1.474e-021       -4e+023  1.73035e-021       -4e+023   search
+   11    1.42091e-021       -4e+023  1.78344e-021       -4e+023   search
+   13    1.34583e-021       -4e+023  1.85852e-021       -4e+023   search
+   15    1.23965e-021       -4e+023  1.96471e-021       -4e+023   search
+   17    1.08948e-021       -4e+023  2.11487e-021       -4e+023   search
+   19    8.77114e-022       -4e+023  2.32724e-021       -4e+023   search
+   21    5.76784e-022       -4e+023  2.62757e-021       -4e+023   search
+   23    1.52052e-022       -4e+023   3.0523e-021       -4e+023   search
+   25   -4.48609e-022       -4e+023  3.65296e-021       -4e+023   search
+   27   -1.29807e-021       -4e+023  4.50243e-021       -4e+023   search
+   29    -2.4994e-021       -4e+023  5.70375e-021       -4e+023   search
+   31   -4.19832e-021       -4e+023  7.40268e-021       -4e+023   search
+   33   -6.60097e-021       -4e+023  9.80532e-021       -4e+023   search
+   35   -9.99882e-021       -4e+023  1.32032e-020       -4e+023   search
+   37   -1.48041e-020       -4e+023  1.80085e-020       -4e+023   search
+   39   -2.15998e-020       -4e+023  2.48042e-020       -4e+023   search
+   41   -3.12104e-020       -4e+023  3.44148e-020       -4e+023   search
+   43   -4.48018e-020       -4e+023  4.80062e-020       -4e+023   search
+   45    -6.4023e-020       -4e+023  6.72273e-020       -4e+023   search
+   47   -9.12058e-020       -4e+023  9.44102e-020       -4e+023   search
+   49   -1.29648e-019       -4e+023  1.32852e-019       -4e+023   search
+   51   -1.84014e-019       -4e+023  1.87218e-019 -3.99994e+023   search
+   53   -2.60898e-019       -4e+023  2.64103e-019  1.02989e+025   search
+ 
+Search for a zero in the interval [-2.60898e-019, 2.64103e-019]:
+ Func-count    x          f(x)             Procedure
+   53   -2.60898e-019       -4e+023        initial
+   54    -2.4127e-019       -4e+023        interpolation
+   55    1.14163e-020       -4e+023        bisection
+   56     1.3776e-019       -4e+023        bisection
+   57    2.00931e-019 -3.99843e+023        bisection
+   58    2.32517e-019 -1.10915e+023        bisection
+   59    2.32517e-019 -1.10915e+023        interpolation
+   60    2.33188e-019 -6.57251e+022        interpolation
+   61    2.34131e-019  8.19952e+021        interpolation
+   62    2.34026e-019 -6.45611e+020        interpolation
+   63    2.34034e-019 -5.64394e+018        interpolation
+   64    2.34034e-019  5.33331e+013        interpolation
+   65    2.34034e-019 -4.02653e+008        interpolation
+   66    2.34034e-019 -4.02653e+008        interpolation
+ 
+Zero found in the interval [-2.60898e-019, 2.64103e-019]
+-- Spectrum calculation
+ 
+Search for an interval around 1.60218e-021 containing a sign change:
+ Func-count    a          f(a)             b          f(b)        Procedure
+    1    1.60218e-021  7.22686e+024  1.60218e-021  7.22686e+024   initial interval
+    3    1.55686e-021  7.15109e+024  1.64749e-021  7.30319e+024   search
+    5    1.53809e-021  7.11987e+024  1.66626e-021  7.33497e+024   search
+    7    1.51154e-021  7.07588e+024  1.69281e-021  7.38009e+024   search
+    9      1.474e-021  7.01399e+024  1.73035e-021  7.44422e+024   search
+   11    1.42091e-021  6.92713e+024  1.78344e-021  7.53558e+024   search
+   13    1.34583e-021  6.80558e+024  1.85852e-021  7.66612e+024   search
+   15    1.23965e-021  6.63625e+024  1.96471e-021  7.85343e+024   search
+   17    1.08948e-021  6.40187e+024  2.11487e-021  8.12376e+024   search
+   19    8.77114e-022  6.08042e+024  2.32724e-021  8.51707e+024   search
+   21    5.76784e-022  5.64542e+024  2.62757e-021  9.09563e+024   search
+   23    1.52052e-022  5.06811e+024   3.0523e-021  9.95945e+024   search
+   25   -4.48609e-022  4.32361e+024  3.65296e-021  1.12745e+025   search
+   27   -1.29807e-021  3.40357e+024  4.50243e-021  1.33256e+025   search
+   29    -2.4994e-021  2.33686e+024  5.70375e-021  1.66147e+025   search
+   31   -4.19832e-021  1.21291e+024  7.40268e-021  2.20265e+025   search
+   33   -6.60097e-021  1.85494e+023  9.80532e-021  3.10192e+025   search
+   34   -9.99882e-021 -5.78444e+023  9.80532e-021  3.10192e+025   search
+ 
+Search for a zero in the interval [-9.99882e-021, 9.80532e-021]:
+ Func-count    x          f(x)             Procedure
+   34   -9.99882e-021 -5.78444e+023        initial
+   35   -9.63627e-021 -5.22518e+023        interpolation
+   36   -6.30515e-021  2.84449e+023        interpolation
+   37   -7.47934e-021 -7.21406e+022        interpolation
+   38   -7.24179e-021 -7.46198e+021        interpolation
+   39   -7.21509e-021  3.07939e+019        interpolation
+   40    -7.2152e-021  -9.3377e+016        interpolation
+   41    -7.2152e-021  -1.1634e+012        interpolation
+   42    -7.2152e-021  2.68435e+008        interpolation
+   43    -7.2152e-021  2.68435e+008        interpolation
+   44    -7.2152e-021  2.68435e+008        interpolation
+ 
+Zero found in the interval [-9.99882e-021, 9.80532e-021]
+ 
+Search for an interval around 1.60218e-021 containing a sign change:
+ Func-count    a          f(a)             b          f(b)        Procedure
+    1    1.60218e-021     -1.2e+024  1.60218e-021     -1.2e+024   initial interval
+    3    1.55686e-021     -1.2e+024  1.64749e-021     -1.2e+024   search
+    5    1.53809e-021     -1.2e+024  1.66626e-021     -1.2e+024   search
+    7    1.51154e-021     -1.2e+024  1.69281e-021     -1.2e+024   search
+    9      1.474e-021     -1.2e+024  1.73035e-021     -1.2e+024   search
+   11    1.42091e-021     -1.2e+024  1.78344e-021     -1.2e+024   search
+   13    1.34583e-021     -1.2e+024  1.85852e-021     -1.2e+024   search
+   15    1.23965e-021     -1.2e+024  1.96471e-021     -1.2e+024   search
+   17    1.08948e-021     -1.2e+024  2.11487e-021     -1.2e+024   search
+   19    8.77114e-022     -1.2e+024  2.32724e-021     -1.2e+024   search
+   21    5.76784e-022     -1.2e+024  2.62757e-021     -1.2e+024   search
+   23    1.52052e-022     -1.2e+024   3.0523e-021     -1.2e+024   search
+   25   -4.48609e-022     -1.2e+024  3.65296e-021     -1.2e+024   search
+   27   -1.29807e-021     -1.2e+024  4.50243e-021     -1.2e+024   search
+   29    -2.4994e-021     -1.2e+024  5.70375e-021     -1.2e+024   search
+   31   -4.19832e-021     -1.2e+024  7.40268e-021     -1.2e+024   search
+   33   -6.60097e-021     -1.2e+024  9.80532e-021     -1.2e+024   search
+   35   -9.99882e-021     -1.2e+024  1.32032e-020     -1.2e+024   search
+   37   -1.48041e-020     -1.2e+024  1.80085e-020     -1.2e+024   search
+   39   -2.15998e-020     -1.2e+024  2.48042e-020     -1.2e+024   search
+   41   -3.12104e-020     -1.2e+024  3.44148e-020     -1.2e+024   search
+   43   -4.48018e-020     -1.2e+024  4.80062e-020     -1.2e+024   search
+   45    -6.4023e-020     -1.2e+024  6.72273e-020     -1.2e+024   search
+   47   -9.12058e-020     -1.2e+024  9.44102e-020     -1.2e+024   search
+   49   -1.29648e-019     -1.2e+024  1.32852e-019     -1.2e+024   search
+   51   -1.84014e-019     -1.2e+024  1.87218e-019 -1.19999e+024   search
+   53   -2.60898e-019     -1.2e+024  2.64103e-019  9.49893e+024   search
+ 
+Search for a zero in the interval [-2.60898e-019, 2.64103e-019]:
+ Func-count    x          f(x)             Procedure
+   53   -2.60898e-019     -1.2e+024        initial
+   54   -2.02014e-019     -1.2e+024        interpolation
+   55    3.10444e-020     -1.2e+024        bisection
+   56    1.47574e-019     -1.2e+024        bisection
+   57    2.05838e-019 -1.19949e+024        bisection
+   58     2.3497e-019 -7.14492e+023        bisection
+   59     2.3497e-019 -7.14492e+023        bisection
+   60    2.38041e-019    -3.24e+023        interpolation
+   61    2.40314e-019   8.6157e+022        interpolation
+   62    2.39836e-019 -8.75392e+021        interpolation
+   63     2.3988e-019 -1.92904e+020        interpolation
+   64    2.39881e-019  2.14338e+016        interpolation
+   65    2.39881e-019 -1.10367e+012        interpolation
+   66    2.39881e-019  3.89231e+009        interpolation
+   67    2.39881e-019  3.89231e+009        interpolation
+ 
+Zero found in the interval [-2.60898e-019, 2.64103e-019]
+-- Spectrum calculation
+ 
+Search for an interval around 1.60218e-021 containing a sign change:
+ Func-count    a          f(a)             b          f(b)        Procedure
+    1    1.60218e-021  4.42686e+024  1.60218e-021  4.42686e+024   initial interval
+    3    1.55686e-021  4.35109e+024  1.64749e-021  4.50319e+024   search
+    5    1.53809e-021  4.31987e+024  1.66626e-021  4.53497e+024   search
+    7    1.51154e-021  4.27588e+024  1.69281e-021  4.58009e+024   search
+    9      1.474e-021  4.21399e+024  1.73035e-021  4.64422e+024   search
+   11    1.42091e-021  4.12713e+024  1.78344e-021  4.73558e+024   search
+   13    1.34583e-021  4.00558e+024  1.85852e-021  4.86612e+024   search
+   15    1.23965e-021  3.83625e+024  1.96471e-021  5.05343e+024   search
+   17    1.08948e-021  3.60187e+024  2.11487e-021  5.32376e+024   search
+   19    8.77114e-022  3.28042e+024  2.32724e-021  5.71707e+024   search
+   21    5.76784e-022  2.84542e+024  2.62757e-021  6.29563e+024   search
+   23    1.52052e-022  2.26811e+024   3.0523e-021  7.15945e+024   search
+   25   -4.48609e-022  1.52361e+024  3.65296e-021  8.47447e+024   search
+   27   -1.29807e-021  6.03569e+023  4.50243e-021  1.05256e+025   search
+   28    -2.4994e-021 -4.63137e+023  4.50243e-021  1.05256e+025   search
+ 
+Search for a zero in the interval [-2.4994e-021, 4.50243e-021]:
+ Func-count    x          f(x)             Procedure
+   28    -2.4994e-021 -4.63137e+023        initial
+   29   -2.20429e-021  -2.2434e+023        interpolation
+   30   -1.93284e-021  8.22996e+021        interpolation
+   31   -1.94245e-021 -2.17587e+020        interpolation
+   32    -1.9422e-021 -2.03112e+017        interpolation
+   33    -1.9422e-021  6.44245e+009        interpolation
+   34    -1.9422e-021             0        interpolation
+ 
+Zero found in the interval [-2.4994e-021, 4.50243e-021]
+ 
+Search for an interval around 1.60218e-021 containing a sign change:
+ Func-count    a          f(a)             b          f(b)        Procedure
+    1    1.60218e-021       -4e+024  1.60218e-021       -4e+024   initial interval
+    3    1.55686e-021       -4e+024  1.64749e-021       -4e+024   search
+    5    1.53809e-021       -4e+024  1.66626e-021       -4e+024   search
+    7    1.51154e-021       -4e+024  1.69281e-021       -4e+024   search
+    9      1.474e-021       -4e+024  1.73035e-021       -4e+024   search
+   11    1.42091e-021       -4e+024  1.78344e-021       -4e+024   search
+   13    1.34583e-021       -4e+024  1.85852e-021       -4e+024   search
+   15    1.23965e-021       -4e+024  1.96471e-021       -4e+024   search
+   17    1.08948e-021       -4e+024  2.11487e-021       -4e+024   search
+   19    8.77114e-022       -4e+024  2.32724e-021       -4e+024   search
+   21    5.76784e-022       -4e+024  2.62757e-021       -4e+024   search
+   23    1.52052e-022       -4e+024   3.0523e-021       -4e+024   search
+   25   -4.48609e-022       -4e+024  3.65296e-021       -4e+024   search
+   27   -1.29807e-021       -4e+024  4.50243e-021       -4e+024   search
+   29    -2.4994e-021       -4e+024  5.70375e-021       -4e+024   search
+   31   -4.19832e-021       -4e+024  7.40268e-021       -4e+024   search
+   33   -6.60097e-021       -4e+024  9.80532e-021       -4e+024   search
+   35   -9.99882e-021       -4e+024  1.32032e-020       -4e+024   search
+   37   -1.48041e-020       -4e+024  1.80085e-020       -4e+024   search
+   39   -2.15998e-020       -4e+024  2.48042e-020       -4e+024   search
+   41   -3.12104e-020       -4e+024  3.44148e-020       -4e+024   search
+   43   -4.48018e-020       -4e+024  4.80062e-020       -4e+024   search
+   45    -6.4023e-020       -4e+024  6.72273e-020       -4e+024   search
+   47   -9.12058e-020       -4e+024  9.44102e-020       -4e+024   search
+   49   -1.29648e-019       -4e+024  1.32852e-019       -4e+024   search
+   51   -1.84014e-019       -4e+024  1.87218e-019 -3.99999e+024   search
+   53   -2.60898e-019       -4e+024  2.64103e-019  6.69893e+024   search
+ 
+Search for a zero in the interval [-2.60898e-019, 2.64103e-019]:
+ Func-count    x          f(x)             Procedure
+   53   -2.60898e-019       -4e+024        initial
+   54   -6.46167e-020       -4e+024        interpolation
+   55     9.9743e-020       -4e+024        bisection
+   56    1.81923e-019       -4e+024        bisection
+   57    2.23013e-019 -3.96797e+024        bisection
+   58    2.43558e-019 -1.95347e+024        bisection
+   59     2.5383e-019  1.48635e+024        bisection
+   60    2.49392e-019 -1.75157e+023        interpolation
+   61    2.49859e-019 -1.31905e+022        interpolation
+   62    2.49897e-019  8.77289e+018        interpolation
+   63    2.49897e-019 -6.23684e+015        interpolation
+   64    2.49897e-019  3.22123e+009        interpolation
+   65    2.49897e-019  3.22123e+009        interpolation
+ 
+Zero found in the interval [-2.60898e-019, 2.64103e-019]
+-- Spectrum calculation
+ 
+Search for an interval around 1.60218e-021 containing a sign change:
+ Func-count    a          f(a)             b          f(b)        Procedure
+    1    1.60218e-021  2.42686e+024  1.60218e-021  2.42686e+024   initial interval
+    3    1.55686e-021  2.35109e+024  1.64749e-021  2.50319e+024   search
+    5    1.53809e-021  2.31987e+024  1.66626e-021  2.53497e+024   search
+    7    1.51154e-021  2.27588e+024  1.69281e-021  2.58009e+024   search
+    9      1.474e-021  2.21399e+024  1.73035e-021  2.64422e+024   search
+   11    1.42091e-021  2.12713e+024  1.78344e-021  2.73558e+024   search
+   13    1.34583e-021  2.00558e+024  1.85852e-021  2.86612e+024   search
+   15    1.23965e-021  1.83625e+024  1.96471e-021  3.05343e+024   search
+   17    1.08948e-021  1.60187e+024  2.11487e-021  3.32376e+024   search
+   19    8.77114e-022  1.28042e+024  2.32724e-021  3.71707e+024   search
+   21    5.76784e-022  8.45422e+023  2.62757e-021  4.29563e+024   search
+   23    1.52052e-022  2.68114e+023   3.0523e-021  5.15945e+024   search
+   24   -4.48609e-022 -4.76387e+023   3.0523e-021  5.15945e+024   search
+ 
+Search for a zero in the interval [-4.48609e-022, 3.0523e-021]:
+ Func-count    x          f(x)             Procedure
+   24   -4.48609e-022 -4.76387e+023        initial
+   25   -1.52684e-022 -1.19817e+023        interpolation
+   26   -5.55019e-023  1.57272e+021        interpolation
+   27    -5.6761e-023 -1.37952e+019        interpolation
+   28     -5.675e-023 -1.56705e+015        interpolation
+   29     -5.675e-023 -1.07374e+009        interpolation
+   30     -5.675e-023 -1.07374e+009        interpolation
+   31     -5.675e-023 -1.07374e+009        bisection
+   32     -5.675e-023  1.07374e+009        interpolation
+   33     -5.675e-023             0        bisection
+ 
+Zero found in the interval [-4.48609e-022, 3.0523e-021]
+ 
+Search for an interval around 1.60218e-021 containing a sign change:
+ Func-count    a          f(a)             b          f(b)        Procedure
+    1    1.60218e-021       -6e+024  1.60218e-021       -6e+024   initial interval
+    3    1.55686e-021       -6e+024  1.64749e-021       -6e+024   search
+    5    1.53809e-021       -6e+024  1.66626e-021       -6e+024   search
+    7    1.51154e-021       -6e+024  1.69281e-021       -6e+024   search
+    9      1.474e-021       -6e+024  1.73035e-021       -6e+024   search
+   11    1.42091e-021       -6e+024  1.78344e-021       -6e+024   search
+   13    1.34583e-021       -6e+024  1.85852e-021       -6e+024   search
+   15    1.23965e-021       -6e+024  1.96471e-021       -6e+024   search
+   17    1.08948e-021       -6e+024  2.11487e-021       -6e+024   search
+   19    8.77114e-022       -6e+024  2.32724e-021       -6e+024   search
+   21    5.76784e-022       -6e+024  2.62757e-021       -6e+024   search
+   23    1.52052e-022       -6e+024   3.0523e-021       -6e+024   search
+   25   -4.48609e-022       -6e+024  3.65296e-021       -6e+024   search
+   27   -1.29807e-021       -6e+024  4.50243e-021       -6e+024   search
+   29    -2.4994e-021       -6e+024  5.70375e-021       -6e+024   search
+   31   -4.19832e-021       -6e+024  7.40268e-021       -6e+024   search
+   33   -6.60097e-021       -6e+024  9.80532e-021       -6e+024   search
+   35   -9.99882e-021       -6e+024  1.32032e-020       -6e+024   search
+   37   -1.48041e-020       -6e+024  1.80085e-020       -6e+024   search
+   39   -2.15998e-020       -6e+024  2.48042e-020       -6e+024   search
+   41   -3.12104e-020       -6e+024  3.44148e-020       -6e+024   search
+   43   -4.48018e-020       -6e+024  4.80062e-020       -6e+024   search
+   45    -6.4023e-020       -6e+024  6.72273e-020       -6e+024   search
+   47   -9.12058e-020       -6e+024  9.44102e-020       -6e+024   search
+   49   -1.29648e-019       -6e+024  1.32852e-019       -6e+024   search
+   51   -1.84014e-019       -6e+024  1.87218e-019 -5.99999e+024   search
+   53   -2.60898e-019       -6e+024  2.64103e-019  4.69893e+024   search
+ 
+Search for a zero in the interval [-2.60898e-019, 2.64103e-019]:
+ Func-count    x          f(x)             Procedure
+   53    2.64103e-019  4.69893e+024        initial
+   54    2.64103e-019  4.69893e+024        interpolation
+   55    2.64103e-019  4.69893e+024        interpolation
+   56    2.64103e-019  4.69893e+024        interpolation
+   57    2.44543e-019 -3.68668e+024        interpolation
+   58    2.53142e-019 -7.91084e+023        interpolation
+   59    2.55153e-019  4.31684e+022        interpolation
+   60    2.55049e-019 -1.81157e+021        interpolation
+   61    2.55053e-019 -3.98024e+018        interpolation
+   62    2.55053e-019  9.01943e+011        interpolation
+   63    2.55053e-019  8.58993e+009        interpolation
+   64    2.55053e-019  8.58993e+009        interpolation
+ 
+Zero found in the interval [-2.60898e-019, 2.64103e-019]
+-- Spectrum calculation
+ 
+Search for an interval around 1.60218e-021 containing a sign change:
+ Func-count    a          f(a)             b          f(b)        Procedure
+    1    1.60218e-021  4.26858e+023  1.60218e-021  4.26858e+023   initial interval
+    3    1.55686e-021  3.51088e+023  1.64749e-021   5.0319e+023   search
+    5    1.53809e-021  3.19867e+023  1.66626e-021  5.34972e+023   search
+    7    1.51154e-021  2.75878e+023  1.69281e-021  5.80086e+023   search
+    9      1.474e-021  2.13995e+023  1.73035e-021  6.44217e+023   search
+   11    1.42091e-021  1.27129e+023  1.78344e-021  7.35579e+023   search
+   13    1.34583e-021  5.57633e+021  1.85852e-021  8.66123e+023   search
+   14    1.23965e-021 -1.63754e+023  1.85852e-021  8.66123e+023   search
+ 
+Search for a zero in the interval [1.23965e-021, 1.85852e-021]:
+ Func-count    x          f(x)             Procedure
+   14    1.23965e-021 -1.63754e+023        initial
+   15    1.33805e-021 -6.93099e+021        interpolation
+   16    1.34236e-021  4.01241e+018        interpolation
+   17    1.34236e-021 -1.43852e+015        interpolation
+   18    1.34236e-021             0        interpolation
+ 
+Zero found in the interval [1.23965e-021, 1.85852e-021]
+ 
+Search for an interval around 1.60218e-021 containing a sign change:
+ Func-count    a          f(a)             b          f(b)        Procedure
+    1    1.60218e-021       -8e+024  1.60218e-021       -8e+024   initial interval
+    3    1.55686e-021       -8e+024  1.64749e-021       -8e+024   search
+    5    1.53809e-021       -8e+024  1.66626e-021       -8e+024   search
+    7    1.51154e-021       -8e+024  1.69281e-021       -8e+024   search
+    9      1.474e-021       -8e+024  1.73035e-021       -8e+024   search
+   11    1.42091e-021       -8e+024  1.78344e-021       -8e+024   search
+   13    1.34583e-021       -8e+024  1.85852e-021       -8e+024   search
+   15    1.23965e-021       -8e+024  1.96471e-021       -8e+024   search
+   17    1.08948e-021       -8e+024  2.11487e-021       -8e+024   search
+   19    8.77114e-022       -8e+024  2.32724e-021       -8e+024   search
+   21    5.76784e-022       -8e+024  2.62757e-021       -8e+024   search
+   23    1.52052e-022       -8e+024   3.0523e-021       -8e+024   search
+   25   -4.48609e-022       -8e+024  3.65296e-021       -8e+024   search
+   27   -1.29807e-021       -8e+024  4.50243e-021       -8e+024   search
+   29    -2.4994e-021       -8e+024  5.70375e-021       -8e+024   search
+   31   -4.19832e-021       -8e+024  7.40268e-021       -8e+024   search
+   33   -6.60097e-021       -8e+024  9.80532e-021       -8e+024   search
+   35   -9.99882e-021       -8e+024  1.32032e-020       -8e+024   search
+   37   -1.48041e-020       -8e+024  1.80085e-020       -8e+024   search
+   39   -2.15998e-020       -8e+024  2.48042e-020       -8e+024   search
+   41   -3.12104e-020       -8e+024  3.44148e-020       -8e+024   search
+   43   -4.48018e-020       -8e+024  4.80062e-020       -8e+024   search
+   45    -6.4023e-020       -8e+024  6.72273e-020       -8e+024   search
+   47   -9.12058e-020       -8e+024  9.44102e-020       -8e+024   search
+   49   -1.29648e-019       -8e+024  1.32852e-019       -8e+024   search
+   51   -1.84014e-019       -8e+024  1.87218e-019 -7.99999e+024   search
+   53   -2.60898e-019       -8e+024  2.64103e-019  2.69893e+024   search
+ 
+Search for a zero in the interval [-2.60898e-019, 2.64103e-019]:
+ Func-count    x          f(x)             Procedure
+   53    2.64103e-019  2.69893e+024        initial
+   54    2.64103e-019  2.69893e+024        interpolation
+   55    2.64103e-019  2.69893e+024        interpolation
+   56     2.5552e-019 -1.79641e+024        interpolation
+   57     2.5895e-019 -1.67513e+023        interpolation
+   58    2.59282e-019   2.9284e+021        interpolation
+   59    2.59276e-019 -1.85753e+019        interpolation
+   60    2.59276e-019 -2.02482e+015        interpolation
+   61    2.59276e-019  6.44245e+009        interpolation
+   62    2.59276e-019  6.44245e+009        interpolation
+ 
+Zero found in the interval [-2.60898e-019, 2.64103e-019]
+-- Spectrum calculation
+</pre><img vspace="5" hspace="5" src="HartreeFock_Test7_01.png" alt=""> <p class="footer"><br>
+            Published with MATLAB&reg; 7.8<br></p>
+      </div>
+      <!--
+##### SOURCE BEGIN #####
+%function HartreeFock_Test3()
+
+warning off;
+global Consts;
+global R G_TE G_TM z_exp;
+
+%% Part 1 - Subband energies
+% close all; clc; %clear all;
+% warning off;
+%
+% %Init project
+global project_path;
+project_path = 'C:\Users\Yossi Mchaeli\Documents\Code\MATLAB\Thesis';
+cd(project_path);
+run('.\Common\AddPath.m');
+
+Constants;
+
+% well_width = 200   % [A]
+% x = 1;
+% Res1 = SingleQW_kp(well_width,x);
+
+L_z = 50e-10;
+x = 0.2;
+T = 300;
+Structure = { 'GaAlAs' , 100, x ;
+              'GaAs', L_z*1e10, 0;
+              'GaAlAs' , 100, x };
+
+%Res2 = GeneralStructure_TransferMatrix(Structure, T);
+
+R = Res2;
+
+close all;
+
+%% Part 2 - Gain Spectra
+
+% Definitions
+con_vec = [2e11,6e11,2e12,3e12,4e12];    % [cm^-2]
+gamma = 1e13;                                      % [s^-1]
+dk = R.k_t_mat(2) - R.k_t_mat(1);
+deltaE_vc_0 = (Res2.E_k_v{1}(1)/Consts.e_0 + Res2.E_k_c{1}(1)/Consts.e_0)
+E_exc = (deltaE_vc_0-0.1)*Consts.e_0 : 1e-3*Consts.e_0 : (deltaE_vc_0+0.3)*Consts.e_0;
+%E_exc = (R.Materials{2}.E_g-0.1)*Consts.e_0 : 0.001*Consts.e_0 : (R.Materials{2}.E_g+0.5)*Consts.e_0;
+Mb = sqrt(Consts.e_0*R.Materials{2}.E_p*Consts.m_0/6);
+C_g = 1./(Consts.hbar*Consts.c*Consts.eps_0*L_z*pi*R.Materials{2}.n);
+init_E = 0.01*Consts.e_0;
+cb_len = 1; vb_len = 3;
+
+% Simulation grids
+sim_index = 1:500;
+k_vec = R.k_t_mat(sim_index);
+k_len = length(k_vec);
+k_mat = repmat(k_vec.^2, k_len, 1);
+theta = [0:0.1:2*pi];
+z_exp = -abs(repmat(R.z_grid,1,length(R.z_grid)) -...
+    repmat(R.z_grid',length(R.z_grid),1));
+
+for (con_num = 1:length(con_vec))
+    
+    % Carrier concentrations
+    N = con_vec(con_num);
+    P = N;
+    
+    % Quasi Fermi levels
+    options = optimset('TolFun',1e-100,'TolX',1e-100,'MaxIter',5000,'MaxFunEvals',5000,'Display','iter');
+    E_fv = fzero(@(E_fv) TargetFermiIntegral(R.k_t_mat, R.E_k_v, E_fv, P*1e4, T, L_z), init_E, options);
+    E_fc = fzero(@(E_fc) TargetFermiIntegral(R.k_t_mat, R.E_k_c, E_fc, N*1e4, T, L_z), init_E, options);
+    
+    D_E_CH_con = {};
+    D_E_SX_con = {};
+    w_tag_con  = {};
+    for (cb_num = 1:cb_len)
+        for (vb_num = 1:vb_len)
+%             disp(['REPLACE_WITH_DASH_DASH Parameter calculations - cb=' num2str(cb_num) ', vb=' num2str(vb_num)]);
+%             
+%             % Carrier distributions REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH-
+%             E_e = R.E_k_c{cb_num}(sim_index);
+%             E_h = R.E_k_v{vb_num}(sim_index);
+%             f_h = FermiDirac(E_fv, E_h, T);
+%             f_e = FermiDirac(E_fc, E_e, T);
+% 
+%             % Simulation definitions REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH
+%             Psi_e = abs(R.wf_e_mat{cb_num}(:,2));
+%             Psi_hh = abs(R.wf_h_mat{vb_num}(:,2));
+%             Psi_lh = abs(R.wf_h_mat{vb_num}(:,3));
+%             Xi_e = repmat(Psi_e.^2, 1, length(R.z_grid));
+%             Xi_h = repmat(Psi_hh.'.^2 + Psi_lh.'.^2, length(R.z_grid), 1);
+%             Xi_ee = Xi_e.*Xi_e.';
+%             Xi_hh = Xi_h.'.*Xi_h;
+%             Xi_eh = Xi_e.*Xi_h;
+%             
+%             % Prelimenary clalculations REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH-
+%             disp('Calculating form factors');
+%             Gq_eh = G_q(Xi_eh,k_vec,R.z_grid);
+%             Gq_ee = G_q(Xi_ee,k_vec,R.z_grid);
+%             Gq_hh = G_q(Xi_hh,k_vec,R.z_grid);
+%             disp('Calculating screened dielectric function');
+%             eps_q = Eps_q(k_vec,theta,E_fv,E_fc,T,f_e,f_h,E_e,E_h,R.Materials{2}.eps_r);
+%             eps_q(1) = eps_q(2);
+%             
+% %             figure(1);
+% %             subplot(211);
+% %             plot(k_vec, Gq_eh, 'b', k_vec, Gq_ee, 'r', k_vec, Gq_hh, 'g');
+% %             ylabel('G_q');
+% %             legend('G_q^{eh}', 'G_q^{ee}', 'G_q^{hh}');
+% %             subplot(212);
+% %             plot(k_vec, eps_q./k_vec);
+% %             xlabel('k'); ylabel('\epsilon_q');
+% %             drawnow;
+%             
+%             % Theta matrix and Screened-exchange shift energy calculation REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH
+%             disp('Calculating Theta matrix and Screened-exchange shift energy');
+%             [Theta{cb_num,vb_num}, D_E_SX{cb_num,vb_num}] = ThetaESxCalculation(Gq_ee,Gq_hh,Gq_eh,theta,eps_q,k_vec,f_e,f_h,R.Materials{2}.eps_r);
+%             
+%             % Xi matrix calculation REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH-
+%             disp('Calculating D_E_CH');
+%             q_vec = k_vec; q_vec(1) = q_vec(2);
+%             D_E_CH{cb_num,vb_num} = E_CH(Gq_hh,eps_q,k_vec,q_vec,R.Materials{2}.eps_r);
+%                      
+            % Bandgap renormalization
+            w_mn_tag{cb_num,vb_num} = (E_h + E_e + D_E_CH{cb_num,vb_num}.*ones(size(k_vec)) + D_E_SX{cb_num,vb_num})./Consts.hbar;
+            w_mn{cb_num,vb_num} = (E_h + E_e)./Consts.hbar;
+        end
+    end
+    
+    disp('REPLACE_WITH_DASH_DASH Spectrum calculation');
+    for (ee = 1:length(E_exc))
+        E_exc(ee);
+        w = (E_exc(ee)./Consts.hbar);
+        sum_TE_MBT = 0;
+        sum_TM_MBT = 0;
+        sum_TE_FCT = 0;
+        sum_TM_FCT = 0;
+        
+        for (cb_num = 1:cb_len)
+            for (vb_num = 1:vb_len)
+              
+                % Carrier distributions REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH-
+                E_e = R.E_k_c{cb_num}(sim_index);
+                E_h = R.E_k_v{vb_num}(sim_index);
+                f_h = FermiDirac(E_fv, E_h, T);
+                f_e = FermiDirac(E_fc, E_e, T);
+                omega = f_e + f_h - 1;
+                
+                % Simulation definitions REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH
+                mu_TE = sqrt(squeeze(R.rtsTE(vb_num,cb_num,sim_index))).'.*Mb;
+                mu_TM = sqrt(squeeze(R.rtsTM(vb_num,cb_num,sim_index))).'.*Mb;
+                
+                Xi_0_TE = (-1i/Consts.hbar).*((omega.*mu_TE)./(1i*(w_mn_tag{cb_num,vb_num}-w)+gamma));
+                Xi_0_TM = (-1i/Consts.hbar).*((omega.*mu_TM)./(1i*(w_mn_tag{cb_num,vb_num}-w)+gamma));
+                
+%                 % Coulomb enhancement factor calculation REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH
+%                 M_TE = eye(k_len);
+%                 M_TE = M_TE - repmat((dk./mu_TE).', 1, k_len).*repmat(Xi_0_TE, k_len, 1).*Theta{cb_num,vb_num};%(:,end:-1:1).*1e8;
+                M_TE = repmat((1./mu_TE).', 1, k_len).*repmat(Xi_0_TE, k_len, 1).*Theta{cb_num,vb_num};
+                Q_k_TE = 1./(1-trapz(k_vec, M_TE, 2)/L_z/100);
+                M_TM = repmat((1./mu_TM).', 1, k_len).*repmat(Xi_0_TM, k_len, 1).*Theta{cb_num,vb_num};
+                Q_k_TM = 1./(1-trapz(k_vec, M_TM, 2)/L_z/100);
+                
+%                 M_TM = eye(k_len);
+%                 M_TM = M_TM - repmat((dk./mu_TM).', 1, k_len).*repmat(Xi_0_TM, k_len, 1).*Theta{cb_num,vb_num};%(:,end:-1:1).*1e8;
+%                 Q_k_TE = M_TE\ones(k_len,1);
+%                 Q_k_TM = M_TM\ones(k_len,1);
+
+%                 M_TE = zeros(k_len); M_TM = zeros(k_len);
+%                 for (kk=1:k_len)
+%                     for (kk_tag=1:k_len)
+%                         if (kk==kk_tag)
+%                            M_TE(kk,kk_tag) = 1 + k_vec(kk_tag)*(1i/Consts.hbar)*dk*Theta{cb_num,vb_num}(kk,kk_tag)*omega(kk)*...
+%                                                  (mu_TE(kk_tag)/mu_TE(kk))*(1/(1i*(w_tag{cb_num,vb_num}(kk_tag)-w)+gamma));
+%                            M_TM(kk,kk_tag) = 1 + k_vec(kk_tag)*(1i/Consts.hbar)*dk*Theta{cb_num,vb_num}(kk,kk_tag)*omega(kk)*...
+%                                                  (mu_TM(kk_tag)/mu_TM(kk))*(1/(1i*(w_tag{cb_num,vb_num}(kk_tag)-w)+gamma));
+%                         else
+%                            M_TE(kk,kk_tag) = k_vec(kk_tag)*(1i/Consts.hbar)*dk*Theta{cb_num,vb_num}(kk,kk_tag)*omega(kk)*...
+%                                              (mu_TE(kk_tag)/mu_TE(kk))*(1/(1i*(w_tag{cb_num,vb_num}(kk_tag)-w)+gamma)); 
+%                            M_TM(kk,kk_tag) = k_vec(kk_tag)*(1i/Consts.hbar)*dk*Theta{cb_num,vb_num}(kk,kk_tag)*omega(kk)*...
+%                                              (mu_TM(kk_tag)/mu_TM(kk))*(1/(1i*(w_tag{cb_num,vb_num}(kk_tag)-w)+gamma));
+%                         end
+%                     end 
+%                 end
+%                 
+%                 Q_k_TE = (M_TE)\ones(k_len,1); 
+%                 Q_k_TM = (M_TM)\ones(k_len,1);
+                
+                % Calculating gain sum elements REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH-
+                I_TE_FCT = 2*trapz(k_vec, k_vec.*mu_TE.^2.*(f_e+f_h-1).*(gamma./((w_mn{cb_num,vb_num}-w).^2+gamma^2)));
+                I_TM_FCT = 2*trapz(k_vec, k_vec.*mu_TM.^2.*(f_e+f_h-1).*(gamma./((w_mn{cb_num,vb_num}-w).^2+gamma^2)));
+                sum_TE_FCT = sum_TE_FCT + I_TE_FCT;
+                sum_TM_FCT = sum_TM_FCT + I_TM_FCT;
+                
+                I_TE_MBT = 2*trapz(k_vec, k_vec.*mu_TE.^2.*omega.*(1./(1i*(w_mn_tag{cb_num,vb_num}-w)+gamma)).*Q_k_TE.');
+                I_TM_MBT = 2*trapz(k_vec, k_vec.*mu_TM.^2.*omega.*(1./(1i*(w_mn_tag{cb_num,vb_num}-w)+gamma)).*Q_k_TM.');
+                sum_TE_MBT = sum_TE_MBT + I_TE_MBT;
+                sum_TM_MBT = sum_TM_MBT + I_TM_MBT;
+            end
+        end
+        
+        G_TE_FCT(ee) = C_g.*w.*sum_TE_FCT*L_z;
+        G_TM_FCT(ee) = C_g.*w.*sum_TM_FCT*L_z;
+        G_TE_MBT(ee) = imag(C_g.*1i*w.*sum_TE_MBT*L_z);
+        G_TM_MBT(ee) = imag(C_g.*1i*w.*sum_TE_MBT*L_z);
+        D_E_CH_con = {D_E_CH_con, D_E_CH};
+        D_E_SX_con = {D_E_SX_con, D_E_SX};
+        w_tag_con = {w_tag_con, w_tag};
+    end
+    
+    index_TE_MBT = find(abs(G_TE_MBT) == max(abs(G_TE_MBT(1:round(length(G_TE_MBT)/3)))));
+    index_TM_MBT = find(abs(G_TM_MBT) == max(abs(G_TM_MBT(1:round(length(G_TM_MBT)/3)))));
+    
+    figure(2);
+    subplot(211);
+    plot(E_exc/Consts.e_0, G_TE_MBT/100, 'b', E_exc/Consts.e_0, G_TE_FCT/100, 'b:'); hold on;
+    plot(deltaE_vc_0*ones(size(G_TE_MBT)), G_TE_MBT/100, 'g:');
+    ylabel('G [cm^{-1}]');
+    text(E_exc(index_TE_MBT)/Consts.e_0,G_TE_MBT(index_TE_MBT)/100, [num2str(N/1e12), 'x10^{12} cm^{-2}'], 'FontSize', 8);
+    subplot(212);
+    plot(E_exc/Consts.e_0, G_TM_MBT/100, 'b', E_exc/Consts.e_0, G_TE_FCT/100, 'b:'); hold on;
+    plot(deltaE_vc_0*ones(size(G_TM_MBT)), G_TM_MBT/100, 'g:');
+    text(E_exc(index_TM_MBT)/Consts.e_0,G_TM_MBT(index_TM_MBT)/100, [num2str(N/1e12), 'x10^{12} cm^{-2}'], 'FontSize', 8);
+    xlabel('E [eV]'); ylabel('G [cm^{-1}]');
+end
+
+##### SOURCE END #####
+-->
+   </body>
+</html>

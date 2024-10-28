@@ -1,0 +1,287 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common
+END
+im_n_GaAs.dat
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/im_n_GaAs.dat
+END
+MCRef1.dat
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/MCRef1.dat
+END
+re_n_GaAs.dat
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/re_n_GaAs.dat
+END
+distance.m
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/distance.m
+END
+GetMaterial.asv
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/GetMaterial.asv
+END
+TargetFermiIntegral.asv
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/TargetFermiIntegral.asv
+END
+GetMaterial.m
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/GetMaterial.m
+END
+fwhm.asv
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/fwhm.asv
+END
+all_constants_ascii.txt
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/all_constants_ascii.txt
+END
+re_n_AlAs.dat
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/re_n_AlAs.dat
+END
+TargetFermiIntegral.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/TargetFermiIntegral.m
+END
+RunExternalCode.asv
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/RunExternalCode.asv
+END
+RepairNanValues.m
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/RepairNanValues.m
+END
+Normalize.m
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/Normalize.m
+END
+fwhm.m
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/fwhm.m
+END
+RunExternalCode.m
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/RunExternalCode.m
+END
+LorentzianFitTargetFunction.asv
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/LorentzianFitTargetFunction.asv
+END
+ReadSimulatedStructure.m
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/ReadSimulatedStructure.m
+END
+Normalise_Wfs.asv
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/Normalise_Wfs.asv
+END
+LorentzianFitTargetFunction.m
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/LorentzianFitTargetFunction.m
+END
+GetExtrema.m
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/GetExtrema.m
+END
+im_n_AlGaAs.dat
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/im_n_AlGaAs.dat
+END
+re_n_AlGaAs.dat
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/re_n_AlGaAs.dat
+END
+Normalise_Wfs.m
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/Normalise_Wfs.m
+END
+peakdet.asv
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/peakdet.asv
+END
+catstruct.m
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/catstruct.m
+END
+peakdet.m
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/peakdet.m
+END
+PlotWaterfall.asv
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/PlotWaterfall.asv
+END
+ipf.m
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/ipf.m
+END
+PlotWaterfall.m
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/PlotWaterfall.m
+END
+peakfit.m
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/peakfit.m
+END
+format_ticks.m
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/format_ticks.m
+END
+extrema2.m
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/extrema2.m
+END
+multfwhm.asv
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/multfwhm.asv
+END
+AddPath.asv
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/AddPath.asv
+END
+multfwhm.m
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/multfwhm.m
+END
+AddPath.m
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/AddPath.m
+END
+extrema.m
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/extrema.m
+END
+exportfig.m
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/exportfig.m
+END
+GetMaterialBandGap.asv
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/GetMaterialBandGap.asv
+END
+laprint.m
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/laprint.m
+END
+tempdata.xls
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/tempdata.xls
+END
+Refractive_Index_Fit_Params.mat
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/Refractive_Index_Fit_Params.mat
+END
+GetMaterialBandGap.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/GetMaterialBandGap.m
+END
+Constants.m
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/Constants.m
+END
+GetRefractiveIndex.asv
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/GetRefractiveIndex.asv
+END
+GetRefractiveIndex.m
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/42/trunk/MSc_Matlab_Code/Common/GetRefractiveIndex.m
+END

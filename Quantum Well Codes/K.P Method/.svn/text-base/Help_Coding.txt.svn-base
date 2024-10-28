@@ -1,0 +1,34 @@
+=========================
+Help - Coding Conventions
+=========================
+
+1. Variable Naming
+-------------------
+All variable names should be preceded by a prefix, indicating its type, as shown in the following table:
+==================================
+      Type      |    Prefix  
+==================================
+     simple     |      v_*
+----------------------------------
+   structure    |      s_*
+----------------------------------
+      cell      |      c_*
+----------------------------------
+   constants,   |
+    indices     |   no prefix
+----------------------------------
+(where * stands for the variable name) 
+
+2. File Naming
+--------------
+All files created inside a project should be named with the following prefixes:
+==================================
+     Type       |    Prefix  
+==================================
+     script     |      s*
+----------------------------------
+    function    |      f*
+----------------------------------
+      help      |     help_*
+----------------------------------
+(where * stands for the file name) 

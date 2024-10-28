@@ -1,0 +1,56 @@
+function Results = ReadDirectoryContents(dirname, Results, T)
+
+global father_dirname;
+
+dirname
+
+filenames = dir(dirname);
+jj = 1;
+
+for (ii=1:length(filenames))
+    if (filenames(ii).isdir && isempty(strfind(filenames(ii).name, '.')))
+        if (~isempty(strfind(filenames(ii).name, 'K')))
+            T = str2double(substr(filenames(ii).name, 0, length(filenames(ii).name)-1));
+            eval(['Results.T' num2str(T) 'K.T = T;']);
+        end
+        
+        Results = ReadDirectoryContents([dirname '\' filenames(ii).name], Results, T);
+    else
+        if (~isempty(strfind(filenames(ii).name, '.dat')))
+            try
+                filename_parts = strsplit('_', filenames(ii).name);
+                file_type = filename_parts{1};
+                if (strcmp(filename_parts{2}, 'lamp'))
+                    spectral_offset = strrep(filename_parts{3}, '.dat', '');
+                    file_type = 'Ref';
+                    
+                    eval(['Results.LampRef{jj}.Spectral_Offset = spectral_offset;']);
+                    eval(['Results.LampRef{jj}.Data = load([dirname ''\'' filenames(ii).name]);']);
+                    eval(['Results.LampRef{jj}.Data = Results.LampRef{jj}.Data(60:910,:);']);                    
+                else   
+                    exposure = filename_parts{2};
+                    spectral_offset = filename_parts{5};
+                    delta_x = strrep(filename_parts{7}, '.dat', '');
+                    
+                    if (strcmp(file_type, 'ref'))
+                        file_type = 'Ref';
+                    elseif (strcmp(file_type, 'pl'))
+                        file_type = 'PL';
+                    end
+                    
+                    eval(['Results.T' num2str(T) 'K.' file_type '.W' spectral_offset '.Exposure = exposure;']);
+                    eval(['Results.T' num2str(T) 'K.' file_type '.W' spectral_offset '.Spectral_Offset = spectral_offset;']);
+                    eval(['Results.T' num2str(T) 'K.' file_type '.W' spectral_offset '.dl = delta_x;']);
+                    loaded_data = load([dirname '\' filenames(ii).name]);
+                    eval(['Results.T' num2str(T) 'K.' file_type '.W' spectral_offset '.Data = load([dirname ''\'' filenames(ii).name]);']);
+                    
+                    eval(['Results.T' num2str(T) 'K.' file_type '.W' spectral_offset '.Data = Results.T' num2str(T) 'K.' file_type 'W' spectral_offset '{jj}.Data(60:910,:);']);
+                end
+                jj = jj + 1;
+            catch exc
+                disp(exc.message);
+            end
+        end
+    end
+end
+

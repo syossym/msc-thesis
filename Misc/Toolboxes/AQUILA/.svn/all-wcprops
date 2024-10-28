@@ -1,0 +1,263 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA
+END
+genmatrix2D.m
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/genmatrix2D.m
+END
+runstructure.m
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/runstructure.m
+END
+schrsolv2D.m
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/schrsolv2D.m
+END
+copying.txt
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/copying.txt
+END
+add_boundary.m
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/add_boundary.m
+END
+mdsi.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/mdsi.m
+END
+readme.m
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/readme.m
+END
+genrhspoi.m
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/genrhspoi.m
+END
+INTFIELD.M
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/INTFIELD.M
+END
+initaquila.m
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/initaquila.m
+END
+Fermi.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/Fermi.m
+END
+license.txt
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/license.txt
+END
+genmatrixpoi.m
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/genmatrixpoi.m
+END
+schrtrack2D.m
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/schrtrack2D.m
+END
+constants.m
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/constants.m
+END
+Extend2D.m
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/Extend2D.m
+END
+sumcharge.m
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/sumcharge.m
+END
+deptoolbox.m
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/deptoolbox.m
+END
+buildstructure.m
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/buildstructure.m
+END
+ADD_PBOX.M
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/ADD_PBOX.M
+END
+addqcharge.m
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/addqcharge.m
+END
+genmatrix1D.m
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/genmatrix1D.m
+END
+Add_bias.m
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/Add_bias.m
+END
+schrsolv1D.m
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/schrsolv1D.m
+END
+GaAsMaterial.m
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/GaAsMaterial.m
+END
+Contents.m
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/Contents.m
+END
+bugs.m
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/bugs.m
+END
+howto.m
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/howto.m
+END
+INVITER1.M
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/INVITER1.M
+END
+INVITER2.M
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/INVITER2.M
+END
+genqcharge.m
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/genqcharge.m
+END
+schrsolve.m
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/schrsolve.m
+END
+schrtrack1D.m
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/schrtrack1D.m
+END
+lowdens.m
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/lowdens.m
+END
+Extend1D.m
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/Extend1D.m
+END
+startpotential.m
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/startpotential.m
+END
+ADD_MBOX.M
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/ADD_MBOX.M
+END
+BOXINDEX.M
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/BOXINDEX.M
+END
+ADD_QBOX.M
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/ADD_QBOX.M
+END
+integrate.m
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/integrate.m
+END
+MAKEGRID.M
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/MAKEGRID.M
+END
+gencharge.m
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/gencharge.m
+END
+structures.m
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/49/trunk/MSc_Matlab_Code/Misc/Toolboxes/AQUILA/structures.m
+END
